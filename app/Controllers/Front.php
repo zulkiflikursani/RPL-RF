@@ -148,31 +148,43 @@ class Front extends BaseController
 			'propinsi' => $provinsi,
 			'instansi_asal' => $instansi,
 			'nohape' => $nohape,
-			'email' => $email,
+			// 'email' => $email,
 			'kode_prodi' => $prodi,
 			'jenis_rpl' => $jenisrpl,
 			'didikakhir' => $didakhir,
 		];
 
 
+		$datasave = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+		if ($datasave) {
+			$result = $ModalBiodata->update(['no_peserta' => $noregis], $data1);
+		} else {
+			$result = $ModalBiodata->insert($data1);
+		}
 
-		$result = $ModalBiodata->save($data1);
+		// print_r($result);
 		if ($result === false) {
 			$datasave = $ModalBiodata->where('no_peserta', $noregis)->findAll();
 			$data = [
 				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
 				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
 				'datasubmit' => $data1,
-				'dataerror' => $ModalBiodata->errors()
+				'databio' => $datasave[0],
+
+				'dataerror' => $ModalBiodata->errors(),
 			];
+
 			return view('Front/rpl-mahasiswa', $data);
 		} else {
 			$datasave = $ModalBiodata->where('no_peserta', $noregis)->findAll();
 			$data = [
 				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
 				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-				'datasubmit' => $datasave,
+				'datasubmit' => $datasave[0],
+				'databio' => $datasave[0],
 				'status' => true,
+
+
 
 			];
 			return view('Front/rpl-mahasiswa', $data);
@@ -213,12 +225,12 @@ class Front extends BaseController
 		if ($datasavebio != null) {
 			$databio = $datasavebio;
 		} else {
-			$databio = null;
+			$databio = $datasave;
 		}
 		$data = [
 			'title_meta' => view('partials/rpl-title-meta', ['title' => 'Bidata Peserta RPL']),
 			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
-			'datasubmit' => $datasave[0],
+			'datasubmit' => $databio,
 			'databio' => $databio,
 			// 'test' => $datasave,
 			'ta_akademik' => $this->getTa_akademik()
@@ -227,13 +239,14 @@ class Front extends BaseController
 	}
 	public function Uploadberkas()
 	{
-		$ModalRegisrasi = new ModelRegistrasi();
+		$ModalBiodata = new ModelBiodata();
 		$noregisrasi = session()->get("noregis");
-		$datasave = $ModalRegisrasi->where('no_registrasi', $noregisrasi)->findAll();
+		$datasavebio = $ModalBiodata->where('no_peserta', $noregisrasi)->findAll();
+
 		$data = [
 			'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
 			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
-			'datasubmit' => $datasave,
+			'datasubmit' => $datasavebio,
 			// 'test' => $datasave,
 			'ta_akademik' => $this->getTa_akademik()
 		];

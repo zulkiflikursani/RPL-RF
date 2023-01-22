@@ -1,7 +1,7 @@
 <div class="container-fluid  text-white pt-3 pb-2" style="background-color:#272e7e !important">
     <div class="row">
         <div class="col-sm-3 ">
-            <img src="assets/images/logo_putih_unifa_footer.png" alt="">
+            <img src="<?= base_url() ?>/assets/images/logo_putih_unifa_footer.png" alt="">
             <h3 class='text-white'>UNIVERSITAS FAJAR</h3>
             <p class='m-0'>Jalan Prof. Dr. H. Abdurrahman Basalamah Ex. Jl Racing Center No.101,Panakkukang - </p>
             <p class='m-0'>Makassar 90231</p>

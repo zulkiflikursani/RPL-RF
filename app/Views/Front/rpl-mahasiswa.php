@@ -38,14 +38,19 @@
 
                     if (isset($status)) {
                         if ($status == true) {
-                            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert"> Anda Berhasil Melakukan Registrasi. Silahkan cek Email anda dan login.<button type="button" class="btn-close" data-bs-dismiss="alert"
+                            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert"> Anda Berhasil Memperbaharui data.<button type="button" class="btn-close" data-bs-dismiss="alert"
                         aria-label="Close"></button></div>';
                         }
                     }
 
                     if (isset($datasubmit)) {
                         // print_r($datasubmit-nama);
-                        $biodata = $datasubmit;
+                        if (isset($jenis_rpl)) {
+                            $biodata = $datasubmit;
+                        } else {
+
+                            $biodata = $datasubmit[0];
+                        }
                         // foreach ($datasubmit as $bio) {
                         //     $biodata['nama'] = $bio['nama'];
                         //     $biodata['email'] = $bio['email'];
@@ -143,23 +148,23 @@
                                                         Terakhir</label>
                                                     <select class="form-select" id="autoSizingSelect" name='didakhir'>
                                                         <option value=''
-                                                            <?= (isset($biodata["didakhir"]) && $biodata["didakhir"] == "" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["didikakhir"]) && $biodata["didikakhir"] == "" ? 'selected="selected"' : '') ?>>
                                                             Pilih...</option>
 
                                                         <option value='1'
-                                                            <?= (isset($biodata["didakhir"]) && $biodata["didakhir"] == "" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["didikakhir"]) && $biodata["didikakhir"] == "1" ? 'selected="selected"' : '') ?>>
                                                             SD</option>
                                                         <option value='2'
-                                                            <?= (isset($biodata["didakhir"]) && $biodata["didakhir"] == "" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["didikakhir"]) && $biodata["didikakhir"] == "2" ? 'selected="selected"' : '') ?>>
                                                             SLTP</option>
                                                         <option value='3'
-                                                            <?= (isset($biodata["didakhir"]) && $biodata["didakhir"] == "" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["didikakhir"]) && $biodata["didikakhir"] == "3" ? 'selected="selected"' : '') ?>>
                                                             SLTA</option>
                                                         <option value='4'
-                                                            <?= (isset($biodata["didakhir"]) && $biodata["didakhir"] == "" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["didikakhir"]) && $biodata["didikakhir"] == "4" ? 'selected="selected"' : '') ?>>
                                                             D3</option>
                                                         <option value='5'
-                                                            <?= (isset($biodata["didakhir"]) && $biodata["didakhir"] == "" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["didikakhir"]) && $biodata["didikakhir"] == "5" ? 'selected="selected"' : '') ?>>
                                                             S1</option>
                                                     </select>
                                                 </div>

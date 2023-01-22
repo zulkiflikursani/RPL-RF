@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ModelBiodata extends Model
+class ModelDokumen extends Model
 {
     protected $table      = 'bio_peserta';
     protected $primaryKey = 'no_peserta';

@@ -130,7 +130,18 @@
                     <?php
                     if (isset($databio)) {
                         if ($databio != null) {
-                            if ($databio['jenis_rpl'] != null) {
+
+                            if (isset($databio['jenis_rpl'])) {
+                                $jenis_rpl = $databio['jenis_rpl'];
+                            } else {
+                                if (isset($databio[0]['jenis_rpl'])) {
+                                    $jenis_rpl = $databio[0]['jenis_rpl'];
+                                } else {
+
+                                    $jenis_rpl = null;
+                                }
+                            }
+                            if ($jenis_rpl != null) {
                     ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="<?= base_url('upload') ?>" id="topnav-dashboard"
