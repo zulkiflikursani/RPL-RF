@@ -13,7 +13,7 @@
     <!-- Begin page -->
     <div id="layout-wrapper">
 
-        <?= $this->include("partials/rpl-horizontal-registrasi") ?>
+        <?= $this->include("partials/rpl-horizontal-afterregis") ?>
 
         <!-- ============================================================== -->
         <!-- Start right Content here -->
@@ -26,7 +26,6 @@
                     <?= $page_title ?>
 
                     <?php
-
                     if (isset($dataerror)) {
                         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
                         foreach ($dataerror as $error) {
@@ -44,9 +43,21 @@
                         }
                     }
 
-                    // if (isset($emailstatus)) {
-                    //     echo $emailstatus;
-                    // }
+                    if (isset($datasubmit)) {
+                        // print_r($datasubmit-nama);
+                        $biodata = $datasubmit;
+                        // foreach ($datasubmit as $bio) {
+                        //     $biodata['nama'] = $bio['nama'];
+                        //     $biodata['email'] = $bio['email'];
+                        //     $biodata['alamat'] = $bio['alamat'];
+                        //     $biodata['kotkab'] = $bio['kotkab'];
+                        //     $biodata['propinsi'] = $bio['propinsi'];
+                        //     $biodata['instansi_asal'] = $bio['instansi_asal'];
+                        //     $biodata['nohape'] = $bio['nohape'];
+                        //     $biodata['kode_prodi'] = $bio['kode_prodi'];
+                        // }
+                    }
+
                     ?>
 
 
@@ -56,13 +67,12 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">Form Registrasi RPL</h4>
-
-                                    <form method="POST" action="<?= base_url("Front/Registrasi") ?>">
+                                    <form method="POST" action="<?= base_url("Front/Insertbiodata") ?>">
                                         <div class="mb-3">
                                             <label for="formrow-nama-input" class="form-label">Nama</label>
                                             <input type="text" class="form-control" id="formrow-firstname-input"
                                                 name="nama" placeholder="Masukkan Nama"
-                                                value="<?= (isset($datasubmit["nama"]) ? $datasubmit["nama"] : '') ?>">
+                                                value="<?= (isset($biodata["nama"]) ? $biodata["nama"] : '') ?>">
                                         </div>
 
                                         <div class="row">
@@ -72,7 +82,7 @@
                                                     <label for="formrow-email-input" class="form-label">Email</label>
                                                     <input type="email" class="form-control" id="formrow-email-input"
                                                         name="email" placeholder="Masukkan Email ID"
-                                                        value="<?= (isset($datasubmit["email"]) ? $datasubmit["email"] : '') ?>">
+                                                        value="<?= (isset($biodata["email"]) ? $biodata["email"] : '') ?>">
                                                 </div>
                                             </div>
 
@@ -84,7 +94,7 @@
                                                     <label for="formrow-inputAlamat" class="form-label">Alamat</label>
                                                     <input type="text" class="form-control" id="formrow-inputAlamat"
                                                         name="alamat" placeholder="Masukkan Alamat"
-                                                        value="<?= (isset($datasubmit["alamat"]) ? $datasubmit["alamat"] : '') ?>">
+                                                        value="<?= (isset($biodata["alamat"]) ? $biodata["alamat"] : '') ?>">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">
@@ -93,7 +103,7 @@
                                                         Kabupaten</label>
                                                     <input type="text" class="form-control" id="formrow-inputKab"
                                                         name="kab" placeholder="Masukkan Kota Kabupaten"
-                                                        value="<?= (isset($datasubmit["kotkab"]) ? $datasubmit["kotkab"] : '') ?>">
+                                                        value="<?= (isset($biodata["kotkab"]) ? $biodata["kotkab"] : '') ?>">
                                                 </div>
                                             </div>
 
@@ -103,7 +113,7 @@
                                                         class="form-label">Provinsi</label>
                                                     <input type="text" class="form-control" id="formrow-inputProvinsi"
                                                         name="provinsi" placeholder="Masukkan Provinsi"
-                                                        value="<?= (isset($datasubmit["propinsi"]) ? $datasubmit["propinsi"] : '') ?>">
+                                                        value="<?= (isset($biodata["propinsi"]) ? $biodata["propinsi"] : '') ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -115,7 +125,7 @@
                                                         Asal</label>
                                                     <input type="text" class="form-control" id="formrow-inputInstansi"
                                                         name="instansi" placeholder="Masukkan Instansi Asal"
-                                                        value="<?= (isset($datasubmit["instansi_asal"]) ? $datasubmit["instansi_asal"] : '') ?>">
+                                                        value="<?= (isset($biodata["instansi_asal"]) ? $biodata["instansi_asal"] : '') ?>">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">
@@ -124,7 +134,34 @@
                                                         (WA)</label>
                                                     <input type="text" class="form-control" id="formrow-inputProvinsi"
                                                         name="nohp" placeholder="Masukkan No. HP"
-                                                        value="<?= (isset($datasubmit["nohape"]) ? $datasubmit["nohape"] : '') ?>">
+                                                        value="<?= (isset($biodata["nohape"]) ? $biodata["nohape"] : '') ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="mb-3">
+                                                    <label for="formrow-inputProvinsi" class="form-label">Pendidikan
+                                                        Terakhir</label>
+                                                    <select class="form-select" id="autoSizingSelect" name='didakhir'>
+                                                        <option value=''
+                                                            <?= (isset($biodata["didakhir"]) && $biodata["didakhir"] == "" ? 'selected="selected"' : '') ?>>
+                                                            Pilih...</option>
+
+                                                        <option value='1'
+                                                            <?= (isset($biodata["didakhir"]) && $biodata["didakhir"] == "" ? 'selected="selected"' : '') ?>>
+                                                            SD</option>
+                                                        <option value='2'
+                                                            <?= (isset($biodata["didakhir"]) && $biodata["didakhir"] == "" ? 'selected="selected"' : '') ?>>
+                                                            SLTP</option>
+                                                        <option value='3'
+                                                            <?= (isset($biodata["didakhir"]) && $biodata["didakhir"] == "" ? 'selected="selected"' : '') ?>>
+                                                            SLTA</option>
+                                                        <option value='4'
+                                                            <?= (isset($biodata["didakhir"]) && $biodata["didakhir"] == "" ? 'selected="selected"' : '') ?>>
+                                                            D3</option>
+                                                        <option value='5'
+                                                            <?= (isset($biodata["didakhir"]) && $biodata["didakhir"] == "" ? 'selected="selected"' : '') ?>>
+                                                            S1</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -136,62 +173,87 @@
                                                         Studi RPL</label>
                                                     <select class="form-select" id="autoSizingSelect" name='prodi'>
                                                         <option value=''
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "" ? 'selected="selected"' : '') ?>>
                                                             Pilih...</option>
                                                         <option value="1"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "1" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "1" ? 'selected="selected"' : '') ?>>
                                                             D3 Akuntansi</option>
                                                         <option value="2"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "2" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "2" ? 'selected="selected"' : '') ?>>
                                                             D3 Binawisata</option>
                                                         <option value="3"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "3" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "3" ? 'selected="selected"' : '') ?>>
                                                             S1 Akuntansi</option>
                                                         <option value="4"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "4" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "4" ? 'selected="selected"' : '') ?>>
                                                             S1 Arsitektur</option>
                                                         <option value="5"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "5" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "5" ? 'selected="selected"' : '') ?>>
                                                             S1 Ilmu Hubungan Internasional</option>
                                                         <option value="6"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "6" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "6" ? 'selected="selected"' : '') ?>>
                                                             S1 Ilmu Komunikasi</option>
                                                         <option value="7"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "7" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "7" ? 'selected="selected"' : '') ?>>
                                                             S1 Informatika</option>
                                                         <option value="8"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "8" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "8" ? 'selected="selected"' : '') ?>>
                                                             S1 Manajemen</option>
                                                         <option value="9"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "9" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "9" ? 'selected="selected"' : '') ?>>
                                                             S1 Sastra Inggris</option>
                                                         <option value="10"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "10" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "10" ? 'selected="selected"' : '') ?>>
                                                             S1 Teknik Elektro</option>
                                                         <option value="11"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "11" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "11" ? 'selected="selected"' : '') ?>>
                                                             S1 Teknik Kimia</option>
                                                         <option value="12"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "12" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "12" ? 'selected="selected"' : '') ?>>
                                                             S1 Teknik Mesin</option>
                                                         <option value="13"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "13" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "13" ? 'selected="selected"' : '') ?>>
                                                             S1 Teknik Sipil</option>
                                                         <option value="14"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "14" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "14" ? 'selected="selected"' : '') ?>>
                                                             S2 Ilmu Komunikasi</option>
                                                         <option value="15"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "15" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "15" ? 'selected="selected"' : '') ?>>
                                                             S2 Manajemen</option>
                                                         <option value="16"
-                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "16" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "16" ? 'selected="selected"' : '') ?>>
                                                             S2 Rekayasa Infrastruktur dan Lingkungan
                                                         </option>
                                                     </select>
                                                 </div>
                                             </div>
+                                            <div class="col-lg-4">
+                                                <div class="mb-3">
+                                                    <label for="formrow-inputPendidikan" class="form-label">Jenis
+                                                        RPL</label>
+                                                    <select class="form-select" id="autoSizingSelect" name='jenis_rpl'>
+                                                        <option value=''
+                                                            <?= (isset($biodata["jenis_rpl"]) && $biodata["jenis_rpl"] == "" ? 'selected="selected"' : '') ?>>
+                                                            Pilih...</option>
+                                                        <option value="1"
+                                                            <?= (isset($biodata["jenis_rpl"]) && $biodata["jenis_rpl"] == "1" ? 'selected="selected"' : '') ?>>
+                                                            A1</option>
+                                                        <option value="2"
+                                                            <?= (isset($biodata["jenis_rpl"]) && $biodata["jenis_rpl"] == "2" ? 'selected="selected"' : '') ?>>
+                                                            A2</option>
+                                                        <option value="3"
+                                                            <?= (isset($biodata["jenis_rpl"]) && $biodata["jenis_rpl"] == "3" ? 'selected="selected"' : '') ?>>
+                                                            A3</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
 
 
+                                        </div>
+                                        <div>
+                                            <p>Pilih Jenis RPL dan Sumbit terlebih dahulu untuk menampilkan Form Upload
+                                                dokumen</p>
                                         </div>
 
 

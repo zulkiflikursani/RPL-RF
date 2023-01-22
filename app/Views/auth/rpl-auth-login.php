@@ -5,7 +5,7 @@
 
     <?= $title_meta ?>
 
-    <?= $this->include('partials/head-css') ?>
+    <?= $this->include('partials/rpl-head-css') ?>
 
 </head>
 
@@ -48,7 +48,7 @@
                                 </a>
                             </div>
                             <div class="p-2">
-                                <form class="form-horizontal" method="post" action="auth-login">
+                                <form class="form-horizontal" method="post" action="<?= base_url("Auth/Login") ?>">
 
                                     <div class="mb-3">
                                         <label for="username" class="form-label">Email</label>
@@ -145,7 +145,7 @@
     <?= $this->include('partials/vendor-scripts') ?>
 
     <!-- App js -->
-    <script src="assets/js/app.js"></script>
+    <script src="<?= base_url() ?>/assets/js/app.js"></script>
 </body>
 
 </html>

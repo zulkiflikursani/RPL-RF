@@ -41,13 +41,19 @@ $routes->setAutoRoute(true);
 
 $routes->get('/', 'Front::index');
 $routes->get('/home', 'Front::index');
+$routes->get('/Biodata', 'Front::Pendaftar');
+$routes->get('/logout', 'Front::Logout');
+$routes->get('/upload', 'Front::Uploadberkas');
 
 // FRONT POST
 $routes->post('Front/Registrasi', 'Front::Registrasi');
 
 
+
 //LOGIN
 $routes->get('/Login', 'Front::login');
+//LOGIN AUTH
+$routes->post('Auth/Login', 'AuthController::Login');
 
 
 

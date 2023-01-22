@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ModelBiodata;
 use App\Models\ModelRegistrasi;
 
 class Front extends BaseController
@@ -23,7 +24,7 @@ class Front extends BaseController
 		$this->request = service('request');
 		$db      = \Config\Database::connect();
 		$ModalRegisrasi = new ModelRegistrasi();
-
+		helper('text');
 
 
 		$ta = $this->getTa_akademik();
@@ -52,7 +53,9 @@ class Front extends BaseController
 		$instansi = $db->escapeString($this->request->getPost("instansi"));
 		$nohape = $db->escapeString($this->request->getPost("nohp"));
 		$prodi = $db->escapeString($this->request->getPost("prodi"));
-		$password = 'dkajdshkasd';
+		$password1 =  random_string('alnum', 6);
+		// $password1 =  "5465465465d";
+		$password = password_hash($password1, PASSWORD_BCRYPT);
 		$data = [
 			'ta_akademik' => $ta,
 			'no_registrasi' => $noregis,
@@ -75,7 +78,7 @@ class Front extends BaseController
 						Berikut ada user untuk login ke Sistem RPL unifa <br>
 						No. Reg	: " . $noregis . "<br>
 						User 	: " . $email . "<br>
-						Pass 	: " . $password . "<br>
+						Pass 	: " . $password1 . "<br>
 						Silahkan Login di " . $link . " <br>
 						Terima kasih";
 		$emailgo = \Config\Services::email();
@@ -109,11 +112,70 @@ class Front extends BaseController
 					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
 					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
 					'datasubmit' => $datasave,
+					'emailstatus' => $emailgo->printDebugger(['headers']),
 					'status' => true,
 
 				];
 				return view('Front/rpl-layouts-horizontal', $data);
 			}
+		}
+	}
+
+	public function insertbiodata()
+	{
+		$this->request = service('request');
+		$db      = \Config\Database::connect();
+		$ModalBiodata = new ModelBiodata();
+
+		$ta = $this->getTa_akademik();
+		$noregis = session()->get("noregis");
+		$nama = $db->escapeString($this->request->getPost("nama"));
+		$alamat = $db->escapeString($this->request->getPost("alamat"));
+		$kab = $db->escapeString($this->request->getPost("kab"));
+		$provinsi = $db->escapeString($this->request->getPost("provinsi"));
+		$email = $db->escapeString($this->request->getPost("email"));
+		$instansi = $db->escapeString($this->request->getPost("instansi"));
+		$nohape = $db->escapeString($this->request->getPost("nohp"));
+		$prodi = $db->escapeString($this->request->getPost("prodi"));
+		$didakhir = $db->escapeString($this->request->getPost("didakhir"));
+		$jenisrpl = $db->escapeString($this->request->getPost("jenis_rpl"));
+		$data1 = [
+			'ta_akademik' => $ta,
+			'no_peserta' => $noregis,
+			'nama' => $nama,
+			'alamat' => $alamat,
+			'kotkab' => $kab,
+			'propinsi' => $provinsi,
+			'instansi_asal' => $instansi,
+			'nohape' => $nohape,
+			'email' => $email,
+			'kode_prodi' => $prodi,
+			'jenis_rpl' => $jenisrpl,
+			'didikakhir' => $didakhir,
+		];
+
+
+
+		$result = $ModalBiodata->save($data1);
+		if ($result === false) {
+			$datasave = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+			$data = [
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+				'datasubmit' => $data1,
+				'dataerror' => $ModalBiodata->errors()
+			];
+			return view('Front/rpl-mahasiswa', $data);
+		} else {
+			$datasave = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+			$data = [
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+				'datasubmit' => $datasave,
+				'status' => true,
+
+			];
+			return view('Front/rpl-mahasiswa', $data);
 		}
 	}
 
@@ -133,6 +195,56 @@ class Front extends BaseController
 
 	public function login()
 	{
+		$data = [
+			'title_meta' => view('partials/rpl-title-meta', ['title' => 'login RPL']),
+			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Login']),
+			'ta_akademik' => $this->getTa_akademik()
+		];
+		return view('auth/rpl-auth-login', $data);
+	}
+
+	public function Pendaftar()
+	{
+		$ModalRegisrasi = new ModelRegistrasi();
+		$ModalBiodata = new ModelBiodata();
+		$noregisrasi = session()->get("noregis");
+		$datasave = $ModalRegisrasi->where('no_registrasi', $noregisrasi)->findAll();
+		$datasavebio = $ModalBiodata->where('no_peserta', $noregisrasi)->findAll();
+		if ($datasavebio != null) {
+			$databio = $datasavebio;
+		} else {
+			$databio = null;
+		}
+		$data = [
+			'title_meta' => view('partials/rpl-title-meta', ['title' => 'Bidata Peserta RPL']),
+			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
+			'datasubmit' => $datasave[0],
+			'databio' => $databio,
+			// 'test' => $datasave,
+			'ta_akademik' => $this->getTa_akademik()
+		];
+		return view('Front/rpl-mahasiswa', $data);
+	}
+	public function Uploadberkas()
+	{
+		$ModalRegisrasi = new ModelRegistrasi();
+		$noregisrasi = session()->get("noregis");
+		$datasave = $ModalRegisrasi->where('no_registrasi', $noregisrasi)->findAll();
+		$data = [
+			'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
+			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
+			'datasubmit' => $datasave,
+			// 'test' => $datasave,
+			'ta_akademik' => $this->getTa_akademik()
+		];
+		return view('Front/rpl-mahasiswa-upload', $data);
+	}
+
+	public function Logout()
+	{
+		session()->destroy();	//unet current user session 
+
+		helper(['form']);
 		$data = [
 			'title_meta' => view('partials/rpl-title-meta', ['title' => 'login RPL']),
 			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Login']),
