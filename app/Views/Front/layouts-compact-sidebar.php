@@ -47,7 +47,8 @@
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="avatar-md profile-user-wid mb-4">
-                                                <img src="assets/images/users/avatar-1.jpg" alt="" class="img-thumbnail rounded-circle">
+                                                <img src="assets/images/users/avatar-1.jpg" alt=""
+                                                    class="img-thumbnail rounded-circle">
                                             </div>
                                             <h5 class="font-size-15 text-truncate">Henry Price</h5>
                                             <p class="text-muted mb-0 text-truncate">UI/UX Designer</p>
@@ -67,7 +68,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="mt-4">
-                                                    <a href="" class="btn btn-primary waves-effect waves-light btn-sm">View Profile <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                                    <a href=""
+                                                        class="btn btn-primary waves-effect waves-light btn-sm">View
+                                                        Profile <i class="mdi mdi-arrow-right ms-1"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -81,10 +84,12 @@
                                         <div class="col-sm-6">
                                             <p class="text-muted">This month</p>
                                             <h3>$34,252</h3>
-                                            <p class="text-muted"><span class="text-success me-2"> 12% <i class="mdi mdi-arrow-up"></i> </span> From previous period</p>
+                                            <p class="text-muted"><span class="text-success me-2"> 12% <i
+                                                        class="mdi mdi-arrow-up"></i> </span> From previous period</p>
 
                                             <div class="mt-4">
-                                                <a href="" class="btn btn-primary waves-effect waves-light btn-sm">View More <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                                <a href="" class="btn btn-primary waves-effect waves-light btn-sm">View
+                                                    More <i class="mdi mdi-arrow-right ms-1"></i></a>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
@@ -108,7 +113,8 @@
                                                     <h4 class="mb-0">1,235</h4>
                                                 </div>
 
-                                                <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                                <div
+                                                    class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
                                                     <span class="avatar-title">
                                                         <i class="bx bx-copy-alt font-size-24"></i>
                                                     </span>
@@ -126,7 +132,8 @@
                                                     <h4 class="mb-0">$35, 723</h4>
                                                 </div>
 
-                                                <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
+                                                <div
+                                                    class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
                                                     <span class="avatar-title rounded-circle bg-primary">
                                                         <i class="bx bx-archive-in font-size-24"></i>
                                                     </span>
@@ -144,7 +151,8 @@
                                                     <h4 class="mb-0">$16.2</h4>
                                                 </div>
 
-                                                <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
+                                                <div
+                                                    class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
                                                     <span class="avatar-title rounded-circle bg-primary">
                                                         <i class="bx bx-purchase-tag-alt font-size-24"></i>
                                                     </span>
@@ -194,9 +202,12 @@
                                             </span>
                                         </div>
                                         <p class="font-16 text-muted mb-2"></p>
-                                        <h5><a href="#" class="text-dark">Facebook - <span class="text-muted font-16">125 sales</span> </a></h5>
-                                        <p class="text-muted">Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus tincidunt.</p>
-                                        <a href="#" class="text-primary font-16">Learn more <i class="mdi mdi-chevron-right"></i></a>
+                                        <h5><a href="#" class="text-dark">Facebook - <span
+                                                    class="text-muted font-16">125 sales</span> </a></h5>
+                                        <p class="text-muted">Maecenas nec odio et ante tincidunt tempus. Donec vitae
+                                            sapien ut libero venenatis faucibus tincidunt.</p>
+                                        <a href="#" class="text-primary font-16">Learn more <i
+                                                class="mdi mdi-chevron-right"></i></a>
                                     </div>
                                     <div class="row mt-4">
                                         <div class="col-4">
@@ -248,7 +259,9 @@
                                             </div>
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
-                                                    <h5 class="font-size-14">22 Nov <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i></h5>
+                                                    <h5 class="font-size-14">22 Nov <i
+                                                            class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                                    </h5>
                                                 </div>
                                                 <div class="flex-grow-1">
                                                     <div>
@@ -263,11 +276,14 @@
                                             </div>
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
-                                                    <h5 class="font-size-14">17 Nov <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i></h5>
+                                                    <h5 class="font-size-14">17 Nov <i
+                                                            class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                                    </h5>
                                                 </div>
                                                 <div class="flex-grow-1">
                                                     <div>
-                                                        Everyone realizes why a new common language would be desirable... <a href="#">Read more</a>
+                                                        Everyone realizes why a new common language would be
+                                                        desirable... <a href="#">Read more</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -278,7 +294,9 @@
                                             </div>
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
-                                                    <h5 class="font-size-14">15 Nov <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i></h5>
+                                                    <h5 class="font-size-14">15 Nov <i
+                                                            class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                                    </h5>
                                                 </div>
                                                 <div class="flex-grow-1">
                                                     <div>
@@ -293,7 +311,9 @@
                                             </div>
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
-                                                    <h5 class="font-size-14">12 Nov <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i></h5>
+                                                    <h5 class="font-size-14">12 Nov <i
+                                                            class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                                    </h5>
                                                 </div>
                                                 <div class="flex-grow-1">
                                                     <div>
@@ -303,7 +323,9 @@
                                             </div>
                                         </li>
                                     </ul>
-                                    <div class="text-center mt-4"><a href="" class="btn btn-primary waves-effect waves-light btn-sm">View More <i class="mdi mdi-arrow-right ms-1"></i></a></div>
+                                    <div class="text-center mt-4"><a href=""
+                                            class="btn btn-primary waves-effect waves-light btn-sm">View More <i
+                                                class="mdi mdi-arrow-right ms-1"></i></a></div>
                                 </div>
                             </div>
                         </div>
@@ -333,7 +355,9 @@
                                                     </td>
                                                     <td>
                                                         <div class="progress bg-transparent progress-sm">
-                                                            <div class="progress-bar bg-primary rounded" role="progressbar" style="width: 94%" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar bg-primary rounded"
+                                                                role="progressbar" style="width: 94%" aria-valuenow="94"
+                                                                aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -346,7 +370,9 @@
                                                     </td>
                                                     <td>
                                                         <div class="progress bg-transparent progress-sm">
-                                                            <div class="progress-bar bg-success rounded" role="progressbar" style="width: 82%" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar bg-success rounded"
+                                                                role="progressbar" style="width: 82%" aria-valuenow="82"
+                                                                aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -359,7 +385,9 @@
                                                     </td>
                                                     <td>
                                                         <div class="progress bg-transparent progress-sm">
-                                                            <div class="progress-bar bg-warning rounded" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar bg-warning rounded"
+                                                                role="progressbar" style="width: 70%" aria-valuenow="70"
+                                                                aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -383,8 +411,10 @@
                                                 <tr>
                                                     <th style="width: 20px;">
                                                         <div class="form-check font-size-16 align-middle">
-                                                            <input class="form-check-input" type="checkbox" id="transactionCheck01">
-                                                            <label class="form-check-label" for="transactionCheck01"></label>
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="transactionCheck01">
+                                                            <label class="form-check-label"
+                                                                for="transactionCheck01"></label>
                                                         </div>
                                                     </th>
                                                     <th class="align-middle">Order ID</th>
@@ -400,11 +430,14 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-check font-size-16">
-                                                            <input class="form-check-input" type="checkbox" id="transactionCheck02">
-                                                            <label class="form-check-label" for="transactionCheck02"></label>
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="transactionCheck02">
+                                                            <label class="form-check-label"
+                                                                for="transactionCheck02"></label>
                                                         </div>
                                                     </td>
-                                                    <td><a href="javascript: void(0);" class="text-body fw-bold">#SK2540</a> </td>
+                                                    <td><a href="javascript: void(0);"
+                                                            class="text-body fw-bold">#SK2540</a> </td>
                                                     <td>Neal Matthews</td>
                                                     <td>
                                                         07 Oct, 2019
@@ -413,14 +446,18 @@
                                                         $400
                                                     </td>
                                                     <td>
-                                                        <span class="badge badge-pill badge-soft-success font-size-11">Paid</span>
+                                                        <span
+                                                            class="badge badge-pill badge-soft-success font-size-11">Paid</span>
                                                     </td>
                                                     <td>
                                                         <i class="fab fa-cc-mastercard me-1"></i> Mastercard
                                                     </td>
                                                     <td>
                                                         <!-- Button trigger modal -->
-                                                        <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".transaction-detailModal">
+                                                        <button type="button"
+                                                            class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target=".transaction-detailModal">
                                                             View Details
                                                         </button>
                                                     </td>
@@ -429,11 +466,14 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-check font-size-16">
-                                                            <input class="form-check-input" type="checkbox" id="transactionCheck03">
-                                                            <label class="form-check-label" for="transactionCheck03"></label>
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="transactionCheck03">
+                                                            <label class="form-check-label"
+                                                                for="transactionCheck03"></label>
                                                         </div>
                                                     </td>
-                                                    <td><a href="javascript: void(0);" class="text-body fw-bold">#SK2541</a> </td>
+                                                    <td><a href="javascript: void(0);"
+                                                            class="text-body fw-bold">#SK2541</a> </td>
                                                     <td>Jamal Burnett</td>
                                                     <td>
                                                         07 Oct, 2019
@@ -442,14 +482,18 @@
                                                         $380
                                                     </td>
                                                     <td>
-                                                        <span class="badge badge-pill badge-soft-danger font-size-11">Chargeback</span>
+                                                        <span
+                                                            class="badge badge-pill badge-soft-danger font-size-11">Chargeback</span>
                                                     </td>
                                                     <td>
                                                         <i class="fab fa-cc-visa me-1"></i> Visa
                                                     </td>
                                                     <td>
                                                         <!-- Button trigger modal -->
-                                                        <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".transaction-detailModal">
+                                                        <button type="button"
+                                                            class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target=".transaction-detailModal">
                                                             View Details
                                                         </button>
                                                     </td>
@@ -458,11 +502,14 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-check font-size-16">
-                                                            <input class="form-check-input" type="checkbox" id="transactionCheck04">
-                                                            <label class="form-check-label" for="transactionCheck04"></label>
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="transactionCheck04">
+                                                            <label class="form-check-label"
+                                                                for="transactionCheck04"></label>
                                                         </div>
                                                     </td>
-                                                    <td><a href="javascript: void(0);" class="text-body fw-bold">#SK2542</a> </td>
+                                                    <td><a href="javascript: void(0);"
+                                                            class="text-body fw-bold">#SK2542</a> </td>
                                                     <td>Juan Mitchell</td>
                                                     <td>
                                                         06 Oct, 2019
@@ -471,14 +518,18 @@
                                                         $384
                                                     </td>
                                                     <td>
-                                                        <span class="badge badge-pill badge-soft-success font-size-11">Paid</span>
+                                                        <span
+                                                            class="badge badge-pill badge-soft-success font-size-11">Paid</span>
                                                     </td>
                                                     <td>
                                                         <i class="fab fa-cc-paypal me-1"></i> Paypal
                                                     </td>
                                                     <td>
                                                         <!-- Button trigger modal -->
-                                                        <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".transaction-detailModal">
+                                                        <button type="button"
+                                                            class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target=".transaction-detailModal">
                                                             View Details
                                                         </button>
                                                     </td>
@@ -486,11 +537,14 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-check font-size-16">
-                                                            <input class="form-check-input" type="checkbox" id="transactionCheck05">
-                                                            <label class="form-check-label" for="transactionCheck05"></label>
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="transactionCheck05">
+                                                            <label class="form-check-label"
+                                                                for="transactionCheck05"></label>
                                                         </div>
                                                     </td>
-                                                    <td><a href="javascript: void(0);" class="text-body fw-bold">#SK2543</a> </td>
+                                                    <td><a href="javascript: void(0);"
+                                                            class="text-body fw-bold">#SK2543</a> </td>
                                                     <td>Barry Dick</td>
                                                     <td>
                                                         05 Oct, 2019
@@ -499,14 +553,18 @@
                                                         $412
                                                     </td>
                                                     <td>
-                                                        <span class="badge badge-pill badge-soft-success font-size-11">Paid</span>
+                                                        <span
+                                                            class="badge badge-pill badge-soft-success font-size-11">Paid</span>
                                                     </td>
                                                     <td>
                                                         <i class="fab fa-cc-mastercard me-1"></i> Mastercard
                                                     </td>
                                                     <td>
                                                         <!-- Button trigger modal -->
-                                                        <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".transaction-detailModal">
+                                                        <button type="button"
+                                                            class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target=".transaction-detailModal">
                                                             View Details
                                                         </button>
                                                     </td>
@@ -514,11 +572,14 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-check font-size-16">
-                                                            <input class="form-check-input" type="checkbox" id="transactionCheck06">
-                                                            <label class="form-check-label" for="transactionCheck06"></label>
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="transactionCheck06">
+                                                            <label class="form-check-label"
+                                                                for="transactionCheck06"></label>
                                                         </div>
                                                     </td>
-                                                    <td><a href="javascript: void(0);" class="text-body fw-bold">#SK2544</a> </td>
+                                                    <td><a href="javascript: void(0);"
+                                                            class="text-body fw-bold">#SK2544</a> </td>
                                                     <td>Ronald Taylor</td>
                                                     <td>
                                                         04 Oct, 2019
@@ -527,14 +588,18 @@
                                                         $404
                                                     </td>
                                                     <td>
-                                                        <span class="badge badge-pill badge-soft-warning font-size-11">Refund</span>
+                                                        <span
+                                                            class="badge badge-pill badge-soft-warning font-size-11">Refund</span>
                                                     </td>
                                                     <td>
                                                         <i class="fab fa-cc-visa me-1"></i> Visa
                                                     </td>
                                                     <td>
                                                         <!-- Button trigger modal -->
-                                                        <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".transaction-detailModal">
+                                                        <button type="button"
+                                                            class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target=".transaction-detailModal">
                                                             View Details
                                                         </button>
                                                     </td>
@@ -542,11 +607,14 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-check font-size-16">
-                                                            <input class="form-check-input" type="checkbox" id="transactionCheck07">
-                                                            <label class="form-check-label" for="transactionCheck07"></label>
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="transactionCheck07">
+                                                            <label class="form-check-label"
+                                                                for="transactionCheck07"></label>
                                                         </div>
                                                     </td>
-                                                    <td><a href="javascript: void(0);" class="text-body fw-bold">#SK2545</a> </td>
+                                                    <td><a href="javascript: void(0);"
+                                                            class="text-body fw-bold">#SK2545</a> </td>
                                                     <td>Jacob Hunter</td>
                                                     <td>
                                                         04 Oct, 2019
@@ -555,14 +623,18 @@
                                                         $392
                                                     </td>
                                                     <td>
-                                                        <span class="badge badge-pill badge-soft-success font-size-11">Paid</span>
+                                                        <span
+                                                            class="badge badge-pill badge-soft-success font-size-11">Paid</span>
                                                     </td>
                                                     <td>
                                                         <i class="fab fa-cc-paypal me-1"></i> Paypal
                                                     </td>
                                                     <td>
                                                         <!-- Button trigger modal -->
-                                                        <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".transaction-detailModal">
+                                                        <button type="button"
+                                                            class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target=".transaction-detailModal">
                                                             View Details
                                                         </button>
                                                     </td>
@@ -582,7 +654,8 @@
             <!-- End Page-content -->
 
             <!-- Transaction Modal -->
-            <div class="modal fade transaction-detailModal" tabindex="-1" role="dialog" aria-labelledby="transaction-detailModalLabel" aria-hidden="true">
+            <div class="modal fade transaction-detailModal" tabindex="-1" role="dialog"
+                aria-labelledby="transaction-detailModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -611,7 +684,8 @@
                                             </th>
                                             <td>
                                                 <div>
-                                                    <h5 class="text-truncate font-size-14">Wireless Headphone (Black)</h5>
+                                                    <h5 class="text-truncate font-size-14">Wireless Headphone (Black)
+                                                    </h5>
                                                     <p class="text-muted mb-0">$ 225 x 1</p>
                                                 </div>
                                             </td>
