@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ModelBiodata;
+use App\Models\ModelDokumen;
 use App\Models\ModelRegistrasi;
 
 class Front extends BaseController
@@ -240,21 +241,26 @@ class Front extends BaseController
 	public function Uploadberkas()
 	{
 		$ModalBiodata = new ModelBiodata();
-		$Modaldokumen = new ModalDokumen();
+		$Modaldokumen = new ModelDokumen();
 		$noregisrasi = session()->get("noregis");
 		$datasavebio = $ModalBiodata->where('no_peserta', $noregisrasi)->findAll();
+		$datadokumen = $Modaldokumen->where('no_peserta', $noregisrasi)->findAll();
+
 
 
 		$data = [
 			'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
 			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
 			'datasubmit' => $datasavebio,
+			'datadok' => $datadokumen,
 			// 'test' => $datasave,
 			'ta_akademik' => $this->getTa_akademik()
 		];
 		return view('Front/rpl-mahasiswa-upload', $data);
 	}
-
+	public function Simpanberkas()
+	{
+	}
 	public function Logout()
 	{
 		session()->destroy();	//unet current user session 

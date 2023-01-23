@@ -73,7 +73,26 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <!-- content -->
-                                                    <form method="POST" action="<?= base_url("Front/Registrasi") ?>">
+                                                    <form method="POST" action="<?= base_url("Front/Simpanberkas") ?>"
+                                                        enctype="multipart/form-data">
+                                                        <div class="mb-3">
+                                                            <label for="formrow-inputPendidikan"
+                                                                class="form-label">Jenis Dokumen</label>
+                                                            <select class="form-select" id="autoSizingSelect"
+                                                                name='prodi'>
+                                                                <option value=''
+                                                                    <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "" ? 'selected="selected"' : '') ?>>
+                                                                    Pilih...</option>
+                                                                <option value="1"></option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="formrow-inputProvinsi" class="form-label">Nama
+                                                                Dokumen</label>
+                                                            <input type="text" class="form-control"
+                                                                id="formrow-inputProvinsi" name="nohp"
+                                                                placeholder="Masukkan Nama Dokumen" value="">
+                                                        </div>
                                                         <div class="mb-3">
                                                             <label for="formrow-nama-input" class="form-label mx-2">File
                                                                 Name</label>
@@ -81,21 +100,14 @@
                                                                 <input type="file" class="form-control"
                                                                     id="inputGroupFile04"
                                                                     aria-describedby="inputGroupFileAddon04"
-                                                                    aria-label="Upload">
-                                                                <button class="btn btn-primary mx-2" type="button"
-                                                                    id="inputGroupFileAddon04">Upload</button>
+                                                                    accept="application/pdf" aria-label="Upload">
                                                             </div>
 
                                                         </div>
-
-
-
-
                                                         <div>
                                                             <button type="submit"
                                                                 class="btn btn-primary w-md">Simpan</button>
-                                                            <button type="submit"
-                                                                class="btn btn-primary w-md">Pengajuan</button>
+
                                                         </div>
                                                     </form>
                                                 </div>
@@ -117,10 +129,24 @@
                                             </thead>
                                             <tbody>
                                                 <?php
+
+                                                if (isset($datadok)) {
+                                                    $i = 1;
+                                                    foreach ($datadok as $datafile) {
+                                                        echo "<tr>
+                                                            <td>$i</td>
+                                                            <td>" . $datafile['jenis_dokumen'] . "</td>
+                                                            <td>" . $datafile['nmfile'] . "</td>
+                                                            <td><button>Liat file</button></td>
+                                                            
+                                                        </tr>";
+                                                        $i++;
+                                                    }
+                                                }
                                                 ?>
                                             </tbody>
                                         </table>
-
+                                        <button type="submit" class="btn btn-primary w-md">Pengajuan</button>
                                     </div>
 
                                 </div>

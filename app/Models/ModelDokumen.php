@@ -6,32 +6,29 @@ use CodeIgniter\Model;
 
 class ModelDokumen extends Model
 {
-    protected $table      = 'tabel dokumen';
-    protected $primaryKey = 'no_peserta';
+    protected $table      = 'dok_portofolio';
+    protected $primaryKey = 'no_dokumen';
 
     protected $returnType     = 'array';
 
 
-    protected $allowedFields = ['ta_akademik', 'no_peserta', 'nama', 'alamat', 'kotkab', 'propinsi', 'instansi_asal', 'nohape', 'email', 'kode_prodi',  'didikakhir', 'jenis_rpl'];
+    protected $allowedFields = ['ta_akademik', 'no_peserta', 'jenis_dokumen', 'no_dokumen', 'nmfile', 'nmfile_asli', 'lokasi_file', 'url', 'tlgbuat', 'tglubah'];
 
     protected $validationRules = [
         'ta_akademik'     => 'required',
         'no_peserta'     => 'required',
-        'nama'     => 'required',
-        'alamat'     => 'required',
-        'kotkab'     => 'required',
-        'propinsi'     => 'required',
-        'instansi_asal'     => 'required',
-        'nohape'     => 'required',
-        'email'        => 'required|valid_email|is_unique[bio_peserta.email]',
-        'kode_prodi'        => 'required',
-        'didikakhir'        => 'required',
-        'jenis_rpl'        => 'required',
+        'no_dokumen'     => 'required|is_unique[dok_portofolio.no_dokumen]',
+        'jenis_dokumen'     => 'required',
+        'nmfile'     => 'required',
+        'nmfile_asli'     => 'required',
+        'lokasi_file'     => 'required',
+        'url'     => 'required',
+
 
     ];
     protected $validationMessages = [
-        'email' => [
-            'is_unique' => 'Sorry. Email sudah digunakan. Silahkan gunakan email yang lain.',
+        'no_dokumen' => [
+            'is_unique' => 'Sorry no dokumen sudah digunakan.Silahkan gunakan nomor dokumen yang lain.',
         ],
     ];
     protected $skipValidation       = false;
