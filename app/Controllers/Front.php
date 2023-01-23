@@ -240,8 +240,10 @@ class Front extends BaseController
 	public function Uploadberkas()
 	{
 		$ModalBiodata = new ModelBiodata();
+		$Modaldokumen = new ModalDokumen();
 		$noregisrasi = session()->get("noregis");
 		$datasavebio = $ModalBiodata->where('no_peserta', $noregisrasi)->findAll();
+
 
 		$data = [
 			'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
