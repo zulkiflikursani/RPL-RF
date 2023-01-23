@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class ModelDokumen extends Model
 {
-    protected $table      = 'bio_peserta';
+    protected $table      = 'tabel dokumen';
     protected $primaryKey = 'no_peserta';
 
     protected $returnType     = 'array';
