@@ -44,23 +44,13 @@
                     }
 
                     if (isset($datasubmit)) {
-                        // print_r($datasubmit-nama);
-                        if (isset($jenis_rpl)) {
+
+                        if (isset($datasubmit["jenis_rpl"])) {
                             $biodata = $datasubmit;
                         } else {
 
                             $biodata = $datasubmit[0];
                         }
-                        // foreach ($datasubmit as $bio) {
-                        //     $biodata['nama'] = $bio['nama'];
-                        //     $biodata['email'] = $bio['email'];
-                        //     $biodata['alamat'] = $bio['alamat'];
-                        //     $biodata['kotkab'] = $bio['kotkab'];
-                        //     $biodata['propinsi'] = $bio['propinsi'];
-                        //     $biodata['instansi_asal'] = $bio['instansi_asal'];
-                        //     $biodata['nohape'] = $bio['nohape'];
-                        //     $biodata['kode_prodi'] = $bio['kode_prodi'];
-                        // }
                     }
 
                     ?>
@@ -180,55 +170,19 @@
                                                         <option value=''
                                                             <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "" ? 'selected="selected"' : '') ?>>
                                                             Pilih...</option>
-                                                        <option value="1"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "1" ? 'selected="selected"' : '') ?>>
-                                                            D3 Akuntansi</option>
-                                                        <option value="2"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "2" ? 'selected="selected"' : '') ?>>
-                                                            D3 Binawisata</option>
-                                                        <option value="3"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "3" ? 'selected="selected"' : '') ?>>
-                                                            S1 Akuntansi</option>
-                                                        <option value="4"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "4" ? 'selected="selected"' : '') ?>>
-                                                            S1 Arsitektur</option>
-                                                        <option value="5"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "5" ? 'selected="selected"' : '') ?>>
-                                                            S1 Ilmu Hubungan Internasional</option>
-                                                        <option value="6"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "6" ? 'selected="selected"' : '') ?>>
-                                                            S1 Ilmu Komunikasi</option>
-                                                        <option value="7"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "7" ? 'selected="selected"' : '') ?>>
-                                                            S1 Informatika</option>
-                                                        <option value="8"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "8" ? 'selected="selected"' : '') ?>>
-                                                            S1 Manajemen</option>
-                                                        <option value="9"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "9" ? 'selected="selected"' : '') ?>>
-                                                            S1 Sastra Inggris</option>
-                                                        <option value="10"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "10" ? 'selected="selected"' : '') ?>>
-                                                            S1 Teknik Elektro</option>
-                                                        <option value="11"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "11" ? 'selected="selected"' : '') ?>>
-                                                            S1 Teknik Kimia</option>
-                                                        <option value="12"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "12" ? 'selected="selected"' : '') ?>>
-                                                            S1 Teknik Mesin</option>
-                                                        <option value="13"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "13" ? 'selected="selected"' : '') ?>>
-                                                            S1 Teknik Sipil</option>
-                                                        <option value="14"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "14" ? 'selected="selected"' : '') ?>>
-                                                            S2 Ilmu Komunikasi</option>
-                                                        <option value="15"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "15" ? 'selected="selected"' : '') ?>>
-                                                            S2 Manajemen</option>
-                                                        <option value="16"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "16" ? 'selected="selected"' : '') ?>>
-                                                            S2 Rekayasa Infrastruktur dan Lingkungan
-                                                        </option>
+                                                        <?php
+                                                        $db      = \Config\Database::connect();
+                                                        $result = $db->query("select * from prodi")->getResult();
+                                                        if ($result != null) {
+                                                            foreach ($result as $row) {
+                                                        ?>
+                                                        <option value="<?= $row->kode_prodi ?>"
+                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == $row->kode_prodi ? 'selected="selected"' : '') ?>>
+                                                            <?= $row->nama_prodi ?></option>
+                                                        <?php
+                                                            }
+                                                        }
+                                                        ?>
                                                     </select>
                                                 </div>
                                             </div>

@@ -365,3 +365,10 @@ CRITICAL - 2023-01-22 22:43:51 --> Argument 1 passed to CodeIgniter\Database\MyS
 #5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
 #6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
 #7 {main}
+CRITICAL - 2023-01-22 23:44:39 --> Call to a member function hasMoved() on null
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#5 {main}

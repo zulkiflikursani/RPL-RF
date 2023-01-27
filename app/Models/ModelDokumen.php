@@ -12,8 +12,12 @@ class ModelDokumen extends Model
     protected $returnType     = 'array';
 
 
-    protected $allowedFields = ['ta_akademik', 'no_peserta', 'jenis_dokumen', 'no_dokumen', 'nmfile', 'nmfile_asli', 'lokasi_file', 'url', 'tlgbuat', 'tglubah'];
+    protected $allowedFields = ['ta_akademik', 'no_peserta', 'jenis_dokumen', 'no_dokumen', 'nmfile', 'nmfile_asli', 'lokasi_file', 'url', 'tglbuat', 'tglubah'];
 
+    protected $useTimestamps = false;
+    protected $dateFormat    = 'datetime';
+    protected $createdField  = 'tglbuat';
+    protected $updatedField  = 'tglubah';
     protected $validationRules = [
         'ta_akademik'     => 'required',
         'no_peserta'     => 'required',
