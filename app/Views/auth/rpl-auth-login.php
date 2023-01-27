@@ -19,8 +19,8 @@
                             <div class="row">
                                 <div class="col-7">
                                     <div class="text-primary p-4">
-                                        <h5 class="text-primary">Welcome Back !</h5>
-                                        <p>Sign in RPL </p>
+                                        <h5 class="text-primary">Welcome !</h5>
+                                        <p>Sign in SILAJU UNIFA </p>
                                     </div>
                                 </div>
                                 <div class="col-5 align-self-end">
@@ -33,7 +33,7 @@
                                 <a href="/" class="auth-logo-light">
                                     <div class="avatar-md profile-user-wid mb-4">
                                         <span class="avatar-title rounded-circle bg-light">
-                                            <img src="assets/images/logo-light.svg" alt="" class="rounded-circle"
+                                            <img src="assets/images/logo-light.png" alt="" class="rounded-circle"
                                                 height="34">
                                         </span>
                                     </div>
@@ -42,7 +42,8 @@
                                 <a href="/" class="auth-logo-dark">
                                     <div class="avatar-md profile-user-wid mb-4">
                                         <span class="avatar-title rounded-circle bg-light">
-                                            <img src="assets/images/logo.svg" alt="" class="rounded-circle" height="34">
+                                            <img src="assets/images/logo-light.png" alt="" class="rounded-circle"
+                                                height="34">
                                         </span>
                                     </div>
                                 </a>
@@ -90,7 +91,7 @@
                                             In</button>
                                     </div>
 
-                                    <div class="mt-4 text-center">
+                                    <!-- <div class="mt-4 text-center">
                                         <h5 class="font-size-14 mb-3">Sign in with</h5>
 
                                         <ul class="list-inline">
@@ -113,7 +114,7 @@
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> -->
 
                                     <div class="mt-4 text-center">
                                         <a href="auth-recoverpw" class="text-muted"><i class="mdi mdi-lock me-1"></i>
@@ -127,11 +128,12 @@
                     <div class="mt-5 text-center">
 
                         <div>
-                            <p>Don't have an account ? <a href="auth-register" class="fw-medium text-primary"> Signup
+                            <p>Don't have an account ? <a href="<?= base_url() ?>" class="fw-medium text-primary">
+                                    Signup
                                     now </a> </p>
                             <p>© <script>
                                 document.write(new Date().getFullYear())
-                                </script> Skote. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                </script> UNIFA Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
                             </p>
                         </div>
                     </div>

@@ -18,7 +18,7 @@
                     </span>
                     <span class="logo-lg">
                         <!-- <img src="assets/images/logo-light.png" alt="" height="19"> -->
-                        <h2 class="text-light">Universitas Fajar</h2>
+                        <!-- <h2 class="text-light">Universitas Fajar</h2> -->
                     </span>
                 </a>
             </div>

@@ -14,11 +14,11 @@
 
                 <a href="/" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-light.svg" alt="" height="22">
+                        <img src="assets/images/logo-light.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <!-- <img src="assets/images/logo-light.png" alt="" height="19"> -->
-                        <h2 class="text-light">Universitas Fajar</h2>
+                        <img src="assets/images/logo-light-icon.png" alt="" height="30">
+                        <!-- <h2 class="text-light">Universitas Fajar</h2> -->
                     </span>
                 </a>
             </div>
@@ -64,16 +64,16 @@
             </div>
 
             <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                <!-- <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
                         alt="Header Avatar">
                     <span class="d-none d-xl-inline-block ms-1" key="t-henry">Henry</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
-                </button>
+                </button> -->
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
+                    <!-- <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
                         <span key="t-profile">Profile</span></a>
                     <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i>
                         <span key="t-my-wallet">My Wallet</span></a>
@@ -86,14 +86,14 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="auth-login"><i
                             class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
-                            key="t-logout">Logout</span></a>
+                            key="t-logout">Logout</span></a> -->
                 </div>
             </div>
 
             <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                <!-- <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
                     <i class="bx bx-cog bx-spin"></i>
-                </button>
+                </button> -->
             </div>
 
         </div>

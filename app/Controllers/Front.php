@@ -390,7 +390,7 @@ class Front extends BaseController
 
 		helper(['form']);
 		$data = [
-			'title_meta' => view('partials/rpl-title-meta', ['title' => 'login RPL']),
+			'title_meta' => view('partials/rpl-title-meta', ['title' => 'login SILAJU']),
 			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Login']),
 			'ta_akademik' => $this->getTa_akademik()
 		];
