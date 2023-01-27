@@ -166,24 +166,14 @@
                                                 <div class="mb-3">
                                                     <label for="formrow-inputPendidikan" class="form-label">Program
                                                         Studi RPL</label>
-                                                    <select class="form-select" id="autoSizingSelect" name='prodi'>
-                                                        <option value=''
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == "" ? 'selected="selected"' : '') ?>>
-                                                            Pilih...</option>
-                                                        <?php
-                                                        $db      = \Config\Database::connect();
-                                                        $result = $db->query("select * from prodi")->getResult();
-                                                        if ($result != null) {
-                                                            foreach ($result as $row) {
-                                                        ?>
-                                                        <option value="<?= $row->kode_prodi ?>"
-                                                            <?= (isset($biodata["kode_prodi"]) && $biodata["kode_prodi"] == $row->kode_prodi ? 'selected="selected"' : '') ?>>
-                                                            <?= $row->nama_prodi ?></option>
-                                                        <?php
-                                                            }
-                                                        }
-                                                        ?>
-                                                    </select>
+                                                    <input type="text" class="form-control" id="formrow-inputProvinsi"
+                                                        name="prodi" placeholder="Masukkan Prodi"
+                                                        value="<?= (isset($biodata["kode_prodi"]) ? $biodata["kode_prodi"] : '') ?>"
+                                                        hidden>
+                                                    <input type="text" class="form-control" id="formrow-inputProvinsi"
+                                                        name="nmnohp" placeholder="Masukkan No. HP"
+                                                        value="<?= (isset($prodi) ? $prodi : '') ?>" disabled>
+
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">

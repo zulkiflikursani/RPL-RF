@@ -62,7 +62,8 @@
                                             <label for="formrow-nama-input" class="form-label">Nama</label>
                                             <input type="text" class="form-control" id="formrow-firstname-input"
                                                 name="nama" placeholder="Masukkan Nama"
-                                                value="<?= (isset($datasubmit["nama"]) ? $datasubmit["nama"] : '') ?>">
+                                                value="<?= (isset($datasubmit["nama"]) ? $datasubmit["nama"] : '') ?>"
+                                                required>
                                         </div>
 
                                         <div class="row">
@@ -72,7 +73,8 @@
                                                     <label for="formrow-email-input" class="form-label">Email</label>
                                                     <input type="email" class="form-control" id="formrow-email-input"
                                                         name="email" placeholder="Masukkan Email ID"
-                                                        value="<?= (isset($datasubmit["email"]) ? $datasubmit["email"] : '') ?>">
+                                                        value="<?= (isset($datasubmit["email"]) ? $datasubmit["email"] : '') ?>"
+                                                        required>
                                                 </div>
                                             </div>
 
@@ -84,7 +86,8 @@
                                                     <label for="formrow-inputAlamat" class="form-label">Alamat</label>
                                                     <input type="text" class="form-control" id="formrow-inputAlamat"
                                                         name="alamat" placeholder="Masukkan Alamat"
-                                                        value="<?= (isset($datasubmit["alamat"]) ? $datasubmit["alamat"] : '') ?>">
+                                                        value="<?= (isset($datasubmit["alamat"]) ? $datasubmit["alamat"] : '') ?>"
+                                                        required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">
@@ -93,7 +96,8 @@
                                                         Kabupaten</label>
                                                     <input type="text" class="form-control" id="formrow-inputKab"
                                                         name="kab" placeholder="Masukkan Kota Kabupaten"
-                                                        value="<?= (isset($datasubmit["kotkab"]) ? $datasubmit["kotkab"] : '') ?>">
+                                                        value="<?= (isset($datasubmit["kotkab"]) ? $datasubmit["kotkab"] : '') ?>"
+                                                        required>
                                                 </div>
                                             </div>
 
@@ -103,7 +107,8 @@
                                                         class="form-label">Provinsi</label>
                                                     <input type="text" class="form-control" id="formrow-inputProvinsi"
                                                         name="provinsi" placeholder="Masukkan Provinsi"
-                                                        value="<?= (isset($datasubmit["propinsi"]) ? $datasubmit["propinsi"] : '') ?>">
+                                                        value="<?= (isset($datasubmit["propinsi"]) ? $datasubmit["propinsi"] : '') ?>"
+                                                        required>
                                                 </div>
                                             </div>
                                         </div>
@@ -115,7 +120,8 @@
                                                         Asal</label>
                                                     <input type="text" class="form-control" id="formrow-inputInstansi"
                                                         name="instansi" placeholder="Masukkan Instansi Asal"
-                                                        value="<?= (isset($datasubmit["instansi_asal"]) ? $datasubmit["instansi_asal"] : '') ?>">
+                                                        value="<?= (isset($datasubmit["instansi_asal"]) ? $datasubmit["instansi_asal"] : '') ?>"
+                                                        required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">
@@ -124,7 +130,8 @@
                                                         (WA)</label>
                                                     <input type="text" class="form-control" id="formrow-inputProvinsi"
                                                         name="nohp" placeholder="Masukkan No. HP"
-                                                        value="<?= (isset($datasubmit["nohape"]) ? $datasubmit["nohape"] : '') ?>">
+                                                        value="<?= (isset($datasubmit["nohape"]) ? $datasubmit["nohape"] : '') ?>"
+                                                        required>
                                                 </div>
                                             </div>
                                         </div>

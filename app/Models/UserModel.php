@@ -22,4 +22,26 @@ class UserModel extends Model
 
         return $data;
     }
+    function check_login($field1, $field2)
+    {
+        $model = new ModelRegistrasi();
+        $user = $model->where('email', $field1)->first();
+        if ($user != null) {
+            if (password_verify($field2, $user['ktkunci'])) {
+                return $user;
+            }
+        } else {
+            $model2 = new ModelPengguna();
+            $user = $model2->where("email", $field1)->first();
+            if ($user != null) {
+                if (password_verify($field2, $user['ktkunci'])) {
+                    return $user;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+    }
 }

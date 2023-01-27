@@ -2,6 +2,7 @@
 
 namespace App\Validation;
 
+use App\Models\ModelPengguna;
 use App\Models\ModelRegistrasi;
 use App\Models\UserModel;
 
@@ -12,8 +13,13 @@ class UserRules
         $model = new ModelRegistrasi();
         $user = $model->where('email', $data['username'])->first();
 
-        if (!$user)
-            return false;
+        if (!$user) {
+            $model = new ModelPengguna();
+            $user = $model->where('email', $data['username'])->first();
+            if (!$user) {
+                return false;
+            }
+        }
 
         return password_verify($data['userpassword'], $user['ktkunci']);
         // return strcmp($data['userpassword'], $user['ktkunci']);

@@ -59,6 +59,15 @@ $routes->get('/Login', 'Front::login');
 $routes->post('Auth/Login', 'AuthController::Login');
 
 
+//Admin
+$routes->get('/Admin', 'Admin::index');
+$routes->get('/pengguna', 'Admin::pengguna');
+$routes->get('/asessor', 'Admin::Asessor');
+
+$routes->post('Admin/SimpanPengguna', 'Admin::SimpanPengguna');
+$routes->post('getDataMhsPerAsessor', 'Admin::getDataMhsPerAsessor');
+
+
 
 //Dashbboard section routing
 $routes->get('dashboard-saas', 'Front::show_dashboard_saas');

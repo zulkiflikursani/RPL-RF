@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ModelRegistrasi;
 use App\Models\UserModel;
+use App\Models\UserModel2;
 
 class AuthController extends BaseController
 {
@@ -88,13 +89,13 @@ class AuthController extends BaseController
 		if ($this->request->getMethod() == 'post') {
 			$rules = [
 				'username' => 'required|min_length[4]|max_length[50]|valid_email',
-				'userpassword' => 'required|min_length[4]|max_length[50]|validateUser[username,userpassword]',
+				'userpassword' => 'required|min_length[4]|max_length[50]|validateUser[reg_peserta,ktkunci]',
 			];
 
 			$errors = [
 				'userpassword' => [
-					'required' => 'Password is required.',
-					'validateUser' => 'Username or Password don\'t match.'
+					'required' => 'Password harus diisi.',
+					'validateUser' => 'Username or Password tidak sesuai.'
 				]
 			];
 
@@ -102,11 +103,26 @@ class AuthController extends BaseController
 				$data['validation'] = $this->validator;
 				$data['title_meta'] = view('partials/title-meta', ['title' => 'Login']);
 			} else {
-				$model = new ModelRegistrasi();
-				$user = $model->where('email', $this->request->getVar('username'))->first();
-
-				$this->setUserSession($user);
-				return redirect()->to('/Biodata');
+				$model2 = new UserModel();
+				$user = $model2->check_login($this->request->getVar('username'), $this->request->getVar('userpassword'));
+				if ($user) {
+					$this->setUserSession($user);
+					if (isset($user["no_registrasi"])) {
+						return redirect()->to('/Biodata');
+					} else {
+						if ($user['sttpengguna'] == 1) {
+							return redirect()->to('/Admin');
+						} else if ($user['sttpengguna'] == 2) {
+							return redirect()->to('/Asessor');
+						} else if ($user['sttpengguna'] == 3) {
+							return redirect()->to('/Prodi');
+						} else if ($user['sttpengguna'] == 4) {
+							return redirect()->to('/Fakultas');
+						} else if ($user['sttpengguna'] == 5) {
+							return redirect()->to('/Manajemen');
+						}
+					}
+				}
 			}
 			return view('auth/rpl-auth-login', $data);
 		}
@@ -117,13 +133,25 @@ class AuthController extends BaseController
 	*/
 	private function setUserSession($user)
 	{
-		$data = [
-			'id' => $user['no_registrasi'],
-			'email' => $user['email'],
-			'username' => $user['nama'],
-			'noregis' => $user['no_registrasi'],
-			'isLoggedIn' => true,
-		];
+		if (isset($user['idpengguna'])) {
+			$data = [
+				'id' => $user['idpengguna'],
+				'email' => $user['email'],
+				'username' => $user['nmpengguna'],
+				// 'noregis' => $user['no_registrasi'],
+				'sttpengguna' => $user['sttpengguna'],
+				'kode_prodi' => $user['sttpengguna'],
+				'isLoggedIn' => true,
+			];
+		} else {
+			$data = [
+				'id' => $user['no_registrasi'],
+				'email' => $user['email'],
+				'username' => $user['nama'],
+				'noregis' => $user['no_registrasi'],
+				'isLoggedIn' => true,
+			];
+		}
 		session()->set($data);
 		return true;
 	}

@@ -80,38 +80,38 @@ class Front extends BaseController
 
 		$link = base_url("Login");
 
-		$message = "Terima Kasih telah melakukan pendaftarn pada Program RPL Unifa  <br>
+		$result = $ModalRegisrasi->insert($data);
+		if ($result === false) {
+			$datasave = $ModalRegisrasi->where('no_registrasi', $noregis)->findAll();
+			$data = [
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+				'datasubmit' => $data,
+				'dataerror' => $ModalRegisrasi->errors()
+			];
+			return view('Front/rpl-layouts-horizontal', $data);
+		} else {
+			$message = "Terima Kasih telah melakukan pendaftarn pada Program RPL Unifa  <br>
 						Berikut ada user untuk login ke Sistem RPL unifa <br>
 						No. Reg	: " . $noregis . "<br>
 						User 	: " . $email . "<br>
 						Pass 	: " . $password1 . "<br>
 						Silahkan Login di " . $link . " <br>
 						Terima kasih";
-		$emailgo = \Config\Services::email();
-		$emailgo->setTo($email);
-		$emailgo->setFrom('rpl.unifa.2023@gmail.com', 'Admin Program RPL Unifa');
-		$emailgo->setSubject('Registrasi RPL Unifa | Password Login');
-		$emailgo->setMessage($message); //your message here
-
-		// $emailgo->setCC('another@emailHere'); //CC
-		// $emailgo->setBCC('thirdEmail@emialHere'); // and BCC
-
-
-		// $emailgo->send();
-		if (!$emailgo->send()) {
-			$email_status = $emailgo->printDebugger(['headers']);
-			// Generate error
-		} else {
-			$result = $ModalRegisrasi->insert($data);
-			if ($result === false) {
-				$datasave = $ModalRegisrasi->where('no_registrasi', $noregis)->findAll();
+			$emailgo = \Config\Services::email();
+			$emailgo->setTo($email);
+			$emailgo->setFrom('rpl.unifa.2023@gmail.com', 'Admin Program RPL Unifa');
+			$emailgo->setSubject('Registrasi RPL Unifa | Password Login');
+			$emailgo->setMessage($message); //your message here
+			if (!$emailgo->send()) {
 				$data = [
 					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
 					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
 					'datasubmit' => $data,
-					'dataerror' => $ModalRegisrasi->errors()
+					'dataerror' => $emailgo->printDebugger(['headers']),
 				];
 				return view('Front/rpl-layouts-horizontal', $data);
+				// Generate error
 			} else {
 				$datasave = $ModalRegisrasi->where('no_registrasi', $noregis)->findAll();
 				$data = [
@@ -242,6 +242,7 @@ class Front extends BaseController
 		$noregisrasi = session()->get("noregis");
 		$datasave = $ModalRegisrasi->where('no_registrasi', $noregisrasi)->findAll();
 		$datasavebio = $ModalBiodata->where('no_peserta', $noregisrasi)->findAll();
+		$prodi = $this->getNamaProdi($this->getNamaProdiFromRegis());
 		if ($datasavebio != null) {
 			$databio = $datasavebio;
 		} else {
@@ -252,6 +253,7 @@ class Front extends BaseController
 			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
 			'datasubmit' => $databio,
 			'databio' => $databio,
+			'prodi' => $prodi,
 			// 'test' => $datasave,
 			'ta_akademik' => $this->getTa_akademik()
 		];
@@ -406,6 +408,14 @@ class Front extends BaseController
 		$result = $db->query("select * from prodi where kode_prodi ='$kode_prodi'")->getRow();
 
 		return $result->nama_prodi;
+	}
+	public function getNamaProdiFromRegis()
+	{
+		$db      = \Config\Database::connect();
+		$noregis = session()->get("noregis");
+		$result = $db->query("select kode_prodi from reg_peserta  where no_registrasi ='$noregis'")->getRow();
+
+		return $result->kode_prodi;
 	}
 
 	public function Klaimmk()
