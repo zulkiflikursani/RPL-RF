@@ -371,14 +371,17 @@ class Front extends BaseController
 		$noregis = session()->get("noregis");
 		$Modaldokumen = new ModelDokumen();
 		$ModalBiodata = new ModelBiodata();
+		$ModalAssesmentMandiri = new ModelTransactionKlaim();
 		$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
 		$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+		$dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa();
 		$data = [
 			'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
 			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
 			'datadok' => $datadokumen,
 			'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
 			'getMatakuliah' => $this->getMatakuliah($databio[0]['kode_prodi']),
+			'dataKlaimMhs' => $dataassementmandiri,
 			'databio' => $databio,
 
 		];

@@ -11,7 +11,7 @@ class ModelTransactionKlaim extends Model
         $db      = \Config\Database::connect();
         $noregis = session()->get("noregis");
         // $kodeprodi = $this->getkodeprodi($noregis);
-        $db      = \Config\Database::connect();
+        // $db      = \Config\Database::connect();
         $BuilderMkHeader = $db->table("mk_klaim_header");
         $BuilderMkDetail = $db->table("mk_klaim_detail");
         $BuilderRefKlaim = $db->table("ref_klaim");
@@ -45,10 +45,10 @@ class ModelTransactionKlaim extends Model
             foreach ($a['ref'] as $ref) {
                 $dataRef = [
                     "idklaim" => $idklaim,
-                    "kode_matakuliah" => $a['kdmk'],
+                    "idcpmk" => $a['idcpmk'],
+                    // "kode_matakuliah" => $a['kdmk'],
                     "no_dokumen" => $ref,
-                    "lokasi_file" => "-",
-                    "nmfile_asli" => "-",
+
                 ];
                 $insertRefKlaim = $BuilderRefKlaim->insert($dataRef);
             }
@@ -60,5 +60,21 @@ class ModelTransactionKlaim extends Model
             $db->transCommit();
             echo "sukses";
         }
+    }
+
+    public function getKlaimMk_mahasiswa()
+    {
+        $db      = \Config\Database::connect();
+        $noregis = session()->get("noregis");
+        $Result = $db->query("SELECT
+                                    *
+                                FROM
+                                    mk_klaim_header
+                                left join mk_klaim_detail on mk_klaim_header.idklaim=mk_klaim_detail.idklaim 
+                                LEFT JOIN ref_klaim on mk_klaim_header.idklaim=ref_klaim.idklaim  and mk_klaim_detail.idcpmk=ref_klaim.idcpmk
+                                WHERE
+                                    mk_klaim_header.no_peserta = '$noregis'")->getResultArray();
+
+        return $Result;
     }
 }

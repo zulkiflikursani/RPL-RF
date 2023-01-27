@@ -94,12 +94,18 @@
 
                                                         <tbody id='tbody-klaim-mk'>
                                                             <?php
-                                                            if (isset($datadok)) {
-                                                                $pilihdokumen = "";
-                                                                foreach ($datadok as $dok) {
-                                                                    $pilihdokumen .= "<option value ='" . $dok['no_dokumen'] . "'>" . $dok['nmfile'] . "</option>";
-                                                                }
-                                                                $selectboxdok = "<select class='form-select' for='ref' multiple>" . $pilihdokumen . "</select>";
+                                                            // if (isset($datadok)) {
+                                                            //     $pilihdokumen = "";
+                                                            //     foreach ($datadok as $dok) {
+                                                            //         $pilihdokumen .= "<option value ='" . $dok['no_dokumen'] . "'>" . $dok['nmfile'] . "</option>";
+                                                            //     }
+                                                            //     $selectboxdok = "<select class='form-select' for='ref' multiple>" . $pilihdokumen . "</select>";
+                                                            // }
+
+                                                            if (isset($dataKlaimMhs) && $dataKlaimMhs != null) {
+                                                                $dataassmandiri = $dataKlaimMhs;
+                                                            } else {
+                                                                $dataassmandiri = array();
                                                             }
                                                             if (isset($getMatakuliah)) {
                                                                 $i = 0;
@@ -122,29 +128,41 @@
                                                                     } else {
                                                                         if ($namamatakulia == $row->nama_matakuliah) {
                                                                             $count++;
+                                                                            $dataklaim = search($dataassmandiri, "idcpmk", $row->idcpmk);
+                                                                            $nilai = "";
+                                                                            if (!empty($dataklaim)) {
+                                                                                $nilai = $dataklaim[0]['klaim'];
+                                                                                $selectnilai = inputnilai("", $nilai);
+                                                                                $selectboxdok = getRefmhs($datadok, $dataklaim);
+                                                                            } else {
+                                                                                $selectnilai = inputnilai("", $nilai);
+                                                                                $selectboxdok = getRefmhs($datadok, "");
+                                                                            }
                                                                             $html .= "<tr idcpmk='$row->idcpmk' kdmk='$row->kode_matakuliah' namamk='$row->nama_matakuliah' 
                                                                             sks='$row->sks'>
                                                                                         <td for='cpmk'>$row->cpmk</td>
-                                                                                        <td for='nilai'><select class='form-select'>
-                                                                                        <option value='' selected>Pilih</option>    
-                                                                                        <option >B</option>    
-                                                                                        <option >C</option>    
-                                                                                        <option >K</option>    
-                                                                                        </select></td>
-                                                                                        <td for='ref'>" . $selectboxdok . "</td>
+                                                                                        " . $selectnilai . "<td for='ref'>" . $selectboxdok . "</td>
                                                                                         </tr>";
                                                                         } else {
-
+                                                                            $dataklaim = search($dataassmandiri, "idcpmk", $html1['idcpmk']);
+                                                                            // echo "</br>";
+                                                                            // echo $html1['cpmk'];;
+                                                                            // echo "</br>";
+                                                                            // print_r($dataklaim);
+                                                                            $nilai = "";
+                                                                            if (!empty($dataklaim)) {
+                                                                                $nilai = $dataklaim[0]['klaim'];
+                                                                                $selectnilai = inputnilai("", $nilai);
+                                                                                $selectboxdok = getRefmhs($datadok, $dataklaim);
+                                                                            } else {
+                                                                                $selectnilai = inputnilai("", $nilai);
+                                                                                $selectboxdok = getRefmhs($datadok, "");
+                                                                            }
                                                                             echo "<tr idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "'>
                                                                                     <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                                     <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
-                                                                                    <td for='nilai'><select class='form-select'>
-                                                                                    <option value='' selected>Pilih</option>    
-                                                                                    <option>B</option>    
-                                                                                    <option>C</option>    
-                                                                                    <option>K</option>    
-                                                                                    </select></td>
+                                                                                    " . $selectnilai . "
                                                                                     <td for='ref'>" . $selectboxdok . "</td>
                                                                                     </tr>" . $html;
                                                                             $i++;
@@ -220,6 +238,12 @@
 </html>
 
 <script>
+$(document).ready(function() {
+    $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+
+    });
+})
+
 function simpan_klaim() {
     jsonObj = [];
     $('#tbody-klaim-mk  > tr').each(function(i, tr) {
@@ -256,3 +280,106 @@ function simpan_klaim() {
     });
 }
 </script>
+<?php
+function search($array, $key, $value)
+{
+    $results = array();
+
+    if (is_array($array)) {
+        if (isset($array[$key]) && $array[$key] == $value) {
+            $results[] = $array;
+        }
+
+        foreach ($array as $subarray) {
+            $results = array_merge($results, search($subarray, $key, $value));
+        }
+    }
+
+    return $results;
+}
+// print_r(search($arr, 'name', 'cat 1'));
+function inputnilai($idcpmk, $nilai)
+{
+    if ($nilai != "") {
+        if ($nilai == "B") {
+            return "<td for='nilai'>
+            <select class='form-select'>
+            <option value='' >Pilih</option>    
+            <option selected >B</option>    
+            <option >C</option>    
+            <option >K</option>    
+            </select></td>";
+        } else if ($nilai == "C") {
+            return "<td for='nilai'>
+            <select class='form-select'>
+            <option value='' >Pilih</option>    
+            <option >B</option>    
+            <option selected >C</option>    
+            <option >K</option>    
+            </select></td>";
+        } else if ($nilai == "K") {
+            return "<td for='nilai'>
+            <select class='form-select'>
+            <option value='' >Pilih</option>    
+            <option >B</option>    
+            <option >C</option>    
+            <option selected >K</option>    
+            </select></td>";
+        } else {
+            return "<td for='nilai'>
+            <select class='form-select'>
+            <option value='' selected>Pilih</option>    
+            <option >B</option>    
+            <option >C</option>    
+            <option >K</option>    
+            </select></td>";
+        }
+    } else {
+        return "<td for='nilai'>
+            <select class='form-select'>
+            <option value='' selected>Pilih</option>    
+            <option >B</option>    
+            <option >C</option>    
+            <option >K</option>    
+            </select></td>";
+    }
+}
+
+function getRefmhs($datadok, $refMhs)
+{
+    if (!empty($refMhs)) {
+        // echo "</br>";
+        // print_r($refMhs);
+        if (isset($datadok)) {
+            $pilihdokumen = "";
+            foreach ($datadok as $dok) {
+                foreach ($refMhs as $row) {
+                    $ref = $row['no_dokumen'];
+                    if ($dok['no_dokumen'] == $ref) {
+                        $selected = "selected";
+                        break;
+                    } else {
+                        $selected = "";
+                    }
+                }
+                $pilihdokumen .= "<option value ='" . $dok['no_dokumen'] . "' $selected>" . $dok['nmfile'] . "</option>";
+            }
+            $selectboxdok = "<select class='form-select' for='ref' multiple>" . $pilihdokumen . "</select>";
+        }
+    } else {
+        if (isset($datadok)) {
+            $pilihdokumen = "";
+            foreach ($datadok as $dok) {
+
+                $pilihdokumen .= "<option value ='" . $dok['no_dokumen'] . "' >" . $dok['nmfile'] . "</option>";
+            }
+            $selectboxdok = "<select class='form-select' for='ref' multiple>" . $pilihdokumen . "</select>";
+        }
+    }
+
+    return $selectboxdok;
+    // $ref = 
+
+}
+
+?>
