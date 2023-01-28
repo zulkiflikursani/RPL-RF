@@ -14,10 +14,10 @@
 
                 <a href="/" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-light.png" alt="" height="22">
+                        <img src="<?= base_url() ?>/assets/images/logo-light.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-light-icon.png" alt="" height="30">
+                        <img src="<?= base_url() ?>/assets/images/logo-light-icon.png" alt="" height="30">
                         <!-- <h2 class="text-light">Universitas Fajar</h2> -->
                     </span>
                 </a>

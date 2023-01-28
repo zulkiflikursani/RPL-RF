@@ -110,8 +110,10 @@
                                                             if (isset($getMatakuliah)) {
                                                                 $i = 0;
                                                                 $namamatakulia = "";
+                                                                $jumlahdata = count($getMatakuliah);
+                                                                $hitdata = 0;
                                                                 foreach ($getMatakuliah as $row) {
-
+                                                                    $hitdata++;
                                                                     if ($namamatakulia == "") {
                                                                         $i++;
                                                                         $html = "";
@@ -176,6 +178,29 @@
                                                                                 "cpmk" => $row->cpmk,
                                                                                 "sks" => $row->sks,
                                                                             ];
+                                                                        }
+                                                                        if ($hitdata == $jumlahdata) {
+                                                                            $dataklaim = search($dataassmandiri, "idcpmk", $html1['idcpmk']);
+                                                                            // echo "</br>";
+                                                                            // echo $html1['cpmk'];;
+                                                                            // echo "</br>";
+                                                                            // print_r($dataklaim);
+                                                                            $nilai = "";
+                                                                            if (!empty($dataklaim)) {
+                                                                                $nilai = $dataklaim[0]['klaim'];
+                                                                                $selectnilai = inputnilai("", $nilai);
+                                                                                $selectboxdok = getRefmhs($datadok, $dataklaim);
+                                                                            } else {
+                                                                                $selectnilai = inputnilai("", $nilai);
+                                                                                $selectboxdok = getRefmhs($datadok, "");
+                                                                            }
+                                                                            echo "<tr idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "'>
+                                                                                    <td for='namamk' rowspan='$count'>" . $i . "</td>
+                                                                                    <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
+                                                                                    <td for='cpmk' >" . $html1['cpmk'] . "</td>
+                                                                                    " . $selectnilai . "
+                                                                                    <td for='ref'>" . $selectboxdok . "</td>
+                                                                                    </tr>" . $html;
                                                                         }
                                                                     }
                                                                 }

@@ -21,36 +21,76 @@ class ModelTransactionKlaim extends Model
         foreach ($formdata['jsonObj'] as $a) {
             $idklaim = $ta_akademik . $noregis . $a['kdmk'];
             // $kdmk = $a['kdmk'];
-            $dataMKHeader = [
-                "idklaim" => $idklaim,
-                "ta_akademik" => $ta_akademik,
-                "no_peserta" => $noregis,
-                "kode_prodi" => $kodeprodi,
-                "kode_matakuliah" => $a['kdmk'],
-                "nama_matakuliah" => $a['nmmk'],
-                "sks" => $a['sks'],
-            ];
-            $dataMKdetail = [
-                "idklaim" => $idklaim,
-                "idcpmk" => $a['idcpmk'],
-                "cpmk" => $a['cpmk'],
-                "klaim" => $a['nilai'],
-                "statusklaim" => 1,
-            ];
-            if ($idklaim1 != $idklaim) {
-                $insertMkheader = $BuilderMkHeader->insert($dataMKHeader);
-                $idklaim1 = $idklaim;
-            }
-            $insertMkhdetail = $BuilderMkDetail->insert($dataMKdetail);
-            foreach ($a['ref'] as $ref) {
-                $dataRef = [
+
+            $cekmk = $this->CekMatakuliah($a['kdmk']);
+            if ($cekmk != null) {
+                $dataMKHeader = [
+                    "idklaim" => $idklaim,
+                    "ta_akademik" => $ta_akademik,
+                    "no_peserta" => $noregis,
+                    "kode_prodi" => $kodeprodi,
+                    "kode_matakuliah" => $a['kdmk'],
+                    "nama_matakuliah" => $a['nmmk'],
+                    "sks" => $a['sks'],
+                ];
+                $dataMKdetail = [
                     "idklaim" => $idklaim,
                     "idcpmk" => $a['idcpmk'],
-                    // "kode_matakuliah" => $a['kdmk'],
-                    "no_dokumen" => $ref,
-
+                    "cpmk" => $a['cpmk'],
+                    "klaim" => $a['nilai'],
+                    "statusklaim" => 1,
                 ];
-                $insertRefKlaim = $BuilderRefKlaim->insert($dataRef);
+                if ($idklaim1 != $idklaim) {
+                    $hapusMkheader = $BuilderMkHeader->where("idklaim", $idklaim)->delete();
+                    $hapusMkhdetail = $BuilderMkDetail->where("idklaim", $idklaim)->delete();
+                    $hapusRefKlaim = $BuilderRefKlaim->where("idklaim", $idklaim)->delete();
+
+                    $insertMkheader = $BuilderMkHeader->insert($dataMKHeader);
+                    $idklaim1 = $idklaim;
+                }
+                $insertMkhdetail = $BuilderMkDetail->insert($dataMKdetail);
+                foreach ($a['ref'] as $ref) {
+                    $dataRef = [
+                        "idklaim" => $idklaim,
+                        "idcpmk" => $a['idcpmk'],
+                        // "kode_matakuliah" => $a['kdmk'],
+                        "no_dokumen" => $ref,
+
+                    ];
+                    $insertRefKlaim = $BuilderRefKlaim->insert($dataRef);
+                }
+            } else {
+                $dataMKHeader = [
+                    "idklaim" => $idklaim,
+                    "ta_akademik" => $ta_akademik,
+                    "no_peserta" => $noregis,
+                    "kode_prodi" => $kodeprodi,
+                    "kode_matakuliah" => $a['kdmk'],
+                    "nama_matakuliah" => $a['nmmk'],
+                    "sks" => $a['sks'],
+                ];
+                $dataMKdetail = [
+                    "idklaim" => $idklaim,
+                    "idcpmk" => $a['idcpmk'],
+                    "cpmk" => $a['cpmk'],
+                    "klaim" => $a['nilai'],
+                    "statusklaim" => 1,
+                ];
+                if ($idklaim1 != $idklaim) {
+                    $insertMkheader = $BuilderMkHeader->insert($dataMKHeader);
+                    $idklaim1 = $idklaim;
+                }
+                $insertMkhdetail = $BuilderMkDetail->insert($dataMKdetail);
+                foreach ($a['ref'] as $ref) {
+                    $dataRef = [
+                        "idklaim" => $idklaim,
+                        "idcpmk" => $a['idcpmk'],
+                        // "kode_matakuliah" => $a['kdmk'],
+                        "no_dokumen" => $ref,
+
+                    ];
+                    $insertRefKlaim = $BuilderRefKlaim->insert($dataRef);
+                }
             }
         }
         if ($db->transStatus() === false) {
@@ -76,5 +116,12 @@ class ModelTransactionKlaim extends Model
                                     mk_klaim_header.no_peserta = '$noregis'")->getResultArray();
 
         return $Result;
+    }
+
+    public function CekMatakuliah($kdmatakuliah)
+    {
+        $modelMkHeader = new ModelKlaimMkHeader();
+        $result = $modelMkHeader->where("kode_matakuliah", $kdmatakuliah)->findAll();
+        return $result;
     }
 }

@@ -2,23 +2,45 @@
 
 namespace App\Controllers;
 
+use App\Models\ModelBiodata;
+use App\Models\ModelDokumen;
+use App\Models\ModelKlaimAsessor;
 use App\Models\ModelPengguna;
 use App\Models\ModelPesertaAsessor;
+use App\Models\ModelTransactionKlaim;
+use App\Models\ModelTransactionKlaimAsessor;
 
 class Admin extends BaseController
 {
     protected $helpers = ['url', 'form'];
     public function index()
     {
-        $modelPengguna = new ModelPesertaAsessor();
-        $dataMhs = $modelPengguna->getdataPesertaBelumPunyaAsessor();
-        $data = [
-            'title_meta' => view('partials/rpl-title-meta', ['title' => 'Admin RPL']),
-            'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-            'dataMhs' => $dataMhs,
-            'ta_akademik' => $this->getTa_akademik()
-        ];
-        return view('Admin/rpl-layouts-horizontal', $data);
+        if (!session()->get('sttpengguna')) {
+            return redirect()->to('/logout');
+        } else if (session()->get('sttpengguna') == 1) {
+            $modelPengguna = new ModelPesertaAsessor();
+            $dataMhs = $modelPengguna->getdataPesertaBelumPunyaAsessor();
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'Admin RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
+                'dataMhs' => $dataMhs,
+                'ta_akademik' => $this->getTa_akademik()
+            ];
+            return view('Admin/rpl-layouts-horizontal', $data);
+        } else if (session()->get('sttpengguna') == 2) {
+            $modelPeserta = new ModelPesertaAsessor();
+
+            $dataAsessor = $modelPeserta->getDataPesertaByAsessor(session()->get('id'));
+
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $this->getTa_akademik(),
+                'dataPesertaAsessor' => $dataAsessor,
+            ];
+
+            return view('Admin/rpl-home-asessor', $data);
+        }
     }
     public function pengguna()
     {
@@ -29,8 +51,8 @@ class Admin extends BaseController
             $dataPengguna = $modelPengguna->findAll();
 
             $data = [
-                'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
-                'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'User RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
                 'ta_akademik' => $this->getTa_akademik(),
                 'dataPengguna' => $dataPengguna,
             ];
@@ -123,7 +145,7 @@ class Admin extends BaseController
                     $dataPengguna = $modelPengguna->findAll();
                     $data = [
                         'title_meta' => view('partials/rpl-title-meta', ['title' => 'Admin RPL']),
-                        'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+                        'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
                         'ta_akademik' => $this->getTa_akademik(),
                         'dataPengguna' => $dataPengguna,
                         'dataerror' => $email_status,
@@ -137,7 +159,7 @@ class Admin extends BaseController
 
                     $data = [
                         'title_meta' => view('partials/rpl-title-meta', ['title' => 'Admin RPL']),
-                        'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+                        'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
                         'ta_akademik' => $this->getTa_akademik(),
                         'dataPengguna' => $dataPengguna,
                         'this' => $this,
@@ -181,7 +203,7 @@ class Admin extends BaseController
                 $dataPengguna = $modelPengguna->findAll();
                 $data = [
                     'title_meta' => view('partials/rpl-title-meta', ['title' => 'Admin RPL']),
-                    'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+                    'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
                     'ta_akademik' => $this->getTa_akademik(),
                     'dataPengguna' => $dataPengguna,
                     'dataerror' => $modelPengguna->errors(),
@@ -194,7 +216,7 @@ class Admin extends BaseController
                 $dataPengguna = $modelPengguna->findAll();
                 $data = [
                     'title_meta' => view('partials/rpl-title-meta', ['title' => 'Admin RPL']),
-                    'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+                    'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
                     'ta_akademik' => $this->getTa_akademik(),
                     'dataPengguna' => $dataPengguna,
                     'status' => true
@@ -213,14 +235,99 @@ class Admin extends BaseController
 
         $data = [
             'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
-            'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+            'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
             'ta_akademik' => $this->getTa_akademik(),
             'dataAsessor' => $dataAsessor,
         ];
 
-        return view('Admin/rpl-data-asessor', $data);
+        return view('Admin/rpl-home-asessor', $data);
+    }
+    public function dataAsessor()
+    {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') == 2) {
+            return redirect()->to('/logout');
+        } else {
+
+            $modelPengguna = new ModelPengguna();
+
+            $dataAsessor = $modelPengguna->where("sttpengguna", 2)->findAll();
+
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $this->getTa_akademik(),
+                'dataAsessor' => $dataAsessor,
+            ];
+
+            return view('Admin/rpl-data-asessor', $data);
+        }
     }
 
+    public function getDataKlaimasessor()
+    {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 2) {
+            return redirect()->to('/logout');
+            // echo "test";
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            helper('text');
+
+            $modelklaimasessor = new ModelKlaimAsessor();
+            $noregis = $db->escapeString($this->request->getPost("noregis"));
+
+            $result = $modelklaimasessor->getDataKlaimAsessor($noregis);
+            echo json_encode($result, false);
+        }
+    }
+    public function tanggapanAsessor($noregis)
+    {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 2) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            $noregis = $db->escapeString($noregis);
+            // $noregis = session()->get("noregis");
+            $Modaldokumen = new ModelDokumen();
+            $ModalBiodata = new ModelBiodata();
+            $ModalAssesmentMandiri = new ModelKlaimAsessor();
+            $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+            $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+            $dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+                'nama_mhs' => $databio[0]['nama'],
+                'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
+                'jenis_rpl' => $databio[0]['jenis_rpl'],
+                'noregis' => $noregis,
+                'dataKlaimMhs' => $dataassementmandiri,
+
+            ];
+            return view('Admin/rpl-assesment-asessor', $data);
+        }
+    }
+
+
+    public function klaimMkAsessor()
+    {
+        $formdata = $this->request->getPost();
+        $lastdata = array();
+        $noregis = session()->get("noregis");
+        $ta_akademik = $this->getTa_akademik();
+        $ModalTransactionKlaim = new ModelKlaimAsessor();
+
+        $simpanklaim = $ModalTransactionKlaim->simpanklaimAsessor($formdata, $ta_akademik);
+    }
+
+    public function getNamaProdi($kode_prodi)
+    {
+        $db      = \Config\Database::connect();
+        $result = $db->query("select * from prodi where kode_prodi ='$kode_prodi'")->getRow();
+
+        return $result->nama_prodi;
+    }
     public function getDataMhsPerAsessor()
     {
         if (!session()->get('sttpengguna')) {
@@ -264,7 +371,7 @@ class Admin extends BaseController
         helper(['form']);
         $data = [
             'title_meta' => view('partials/rpl-title-meta', ['title' => 'login SILAJU']),
-            'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Login']),
+            'page_title' => view('partials/rpl-page-title', ['title' => 'Login', 'pagetitle' => 'Login']),
             'ta_akademik' => $this->getTa_akademik()
         ];
         return view('auth/rpl-auth-login', $data);

@@ -113,7 +113,7 @@ class AuthController extends BaseController
 						if ($user['sttpengguna'] == 1) {
 							return redirect()->to('/Admin');
 						} else if ($user['sttpengguna'] == 2) {
-							return redirect()->to('/Asessor');
+							return redirect()->to('/Admin');
 						} else if ($user['sttpengguna'] == 3) {
 							return redirect()->to('/Prodi');
 						} else if ($user['sttpengguna'] == 4) {

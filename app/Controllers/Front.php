@@ -291,6 +291,8 @@ class Front extends BaseController
 		} else {
 			$url = '-';
 		}
+		$fileNameRandom = $userFile->getRandmName();
+
 
 		$Modaldokumen = new ModelDokumen();
 		$id_dokumen = rand(100000, 999999);
@@ -301,7 +303,7 @@ class Front extends BaseController
 			"no_dokumen" => $id_dokumen,
 			"nmfile" => $nmfile,
 			"lokasi_file" => "uploads/berkas/$noregis",
-			"nmfile_asli" => $userFile->getRandomName(),
+			"nmfile_asli" => $fileNameRandom,
 			"url" => $url,
 
 		];
@@ -323,7 +325,6 @@ class Front extends BaseController
 		$validation->setRules($validationRule);
 
 		$fileName = $userFile->getName();
-		$fileNameRandom = $userFile->getRandomName();
 
 		if ($validation->hasError('userFile')) {
 			$data['error'] = $validation->getError('userFile');
@@ -432,61 +433,6 @@ class Front extends BaseController
 		$ModalTransactionKlaim = new ModelTransactionKlaim();
 
 		$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $kodeprodi, $ta_akademik);
-
-		// $this->db->transOff();
-		// $db->transStart();
-		// $idklaim1 = "";
-		// foreach ($formdata['jsonObj'] as $a) {
-		// 	$idklaim = $ta_akademik . $noregis . $a['kdmk'];
-
-		// 	// $kdmk = $a['kdmk'];
-		// 	$dataMKHeader = [
-		// 		"idklaim" => $idklaim,
-		// 		"ta_akademik" => $ta_akademik,
-		// 		"no_peserta" => $noregis,
-		// 		"kode_prodi" => $kodeprodi,
-		// 		"kode_matakuliah" => $a['kdmk'],
-		// 		"nama_matakuliah" => $a['nmmk'],
-		// 		"sks" => $a['sks'],
-		// 	];
-		// 	$dataMKdetail = [
-		// 		"idklaim" => $idklaim,
-		// 		"idcpmk" => $a['idcpmk'],
-		// 		"cpmk" => $a['cpmk'],
-		// 		"klaim" => $a['nilai'],
-		// 		"statusklaim" => 1,
-		// 	];
-		// 	if ($idklaim1 != $idklaim) {
-		// 		$insertMkheader = $ModalMkHeader->insert($dataMKHeader);
-		// 		$idklaim1 = $idklaim;
-		// 	}
-		// 	$insertMkhdetail = $ModalMkDetail->insert($dataMKdetail);
-		// 	foreach ($a['ref'] as $ref) {
-		// 		$dataRef = [
-		// 			"idklaim" => $idklaim,
-		// 			"kode_matakuliah" => $a['kdmk'],
-		// 			"no_dokumen" => $ref,
-		// 			"lokasi_file" => "-",
-		// 			"nmfile_asli" => "-",
-		// 		];
-		// 		$insertRefKlaim = $ModalRefKlaim->insert($dataRef);
-		// 	}
-		// }
-		// if ($db->transStatus() === false && $insertMkheader && $insertMkhdetail && $insertRefKlaim) {
-		// 	$db->transRollback();
-		// 	print_r($ModalMkHeader->errors());
-		// 	print_r($ModalMkDetail->errors());
-		// 	print_r($ModalRefKlaim->errors());
-		// } else {
-		// 	$db->transCommit();
-		// 	print_r($ModalMkHeader->errors());
-		// 	print_r($ModalMkDetail->errors());
-		// 	print_r($ModalRefKlaim->errors());
-		// 	echo "sukses" . $db->transStatus();
-		// }
-
-		// print_r($formdata);
-		// echo "masuk";
 	}
 
 	public function getkodeprodi($noregis)

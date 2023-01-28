@@ -14,11 +14,11 @@
 
                 <a href="/" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-light.png" alt="" height="22">
+                        <img src="<?= base_url() ?>/assets/images/logo-light.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
                         <!-- <img src="assets/images/logo-light.png" alt="" height="19"> -->
-                        <img src="assets/images/logo-light-icon.png" alt="" height="30">
+                        <img src="<?= base_url() ?>/assets/images/logo-light-icon.png" alt="" height="30">
 
                     </span>
                 </a>
@@ -124,7 +124,7 @@
                     if (session()->get('sttpengguna') == 1 || session()->get('sttpengguna') == 3 || session()->get('sttpengguna') == 4 || session()->get('sttpengguna') == 5) {
                     ?>
                     <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('asessor') ?>" id="topnav-dashboard"
+                        <a class="nav-link arrow-none" href="<?= base_url('dataasessor') ?>" id="topnav-dashboard"
                             role="button">
                             <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Data Asessor' ?></span>
                             <div class="arrow-down"></div>

@@ -63,9 +63,13 @@ $routes->post('Auth/Login', 'AuthController::Login');
 $routes->get('/Admin', 'Admin::index');
 $routes->get('/pengguna', 'Admin::pengguna');
 $routes->get('/asessor', 'Admin::Asessor');
+$routes->get('/dataasessor', 'Admin::dataAsessor');
+$routes->get('/tanggapanasessor/(:any)', 'Admin::tanggapanAsessor/$1');
 
 $routes->post('Admin/SimpanPengguna', 'Admin::SimpanPengguna');
 $routes->post('getDataMhsPerAsessor', 'Admin::getDataMhsPerAsessor');
+$routes->post('klaimmkAsessor', 'Admin::KlaimmkAsessor');
+$routes->post('getDataKlaimAsessor', 'Admin::getDataKlaimasessor');
 
 
 
