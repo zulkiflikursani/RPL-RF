@@ -218,8 +218,11 @@
 
                                         <div>
                                             <button type="button" onclick="simpan_klaim()"
-                                                class="btn btn-primary w-md">Submit</button>
+                                                class="btn btn-outline-danger w-md">Simpan</button>
+                                            <button type="button" onclick="pengajuan_klaim()"
+                                                class="btn btn-primary w-md mx-2">Pengajuan</button>
                                         </div>
+
                                     </form>
                                 </div>
                             </div>
@@ -264,10 +267,44 @@
 
 <script>
 $(document).ready(function() {
-    $('#tbody-klaim-mk  > tr').each(function(i, tr) {
 
-    });
 })
+
+function pengajuan_klaim() {
+    jsonObj = [];
+    $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+        if ($(this).find("td[for=nilai]").find(":selected").val() != "") {
+            var kdmk = $(this).attr("kdmk");
+            var nmmk = $(this).attr("namamk");
+            var sks = $(this).attr("sks");
+            var idcmpk = $(this).attr("idcpmk");
+            var cpmk = $(this).find("td[for=cpmk]").html();
+            var nilai = $(this).find("td[for=nilai]").find(":selected").val();
+            var ref = $(this).find("td[for=ref]").find("select").val();
+
+            item = {}
+            item["kdmk"] = kdmk;
+            item["nmmk"] = nmmk;
+            item["idcpmk"] = idcmpk;
+            item["sks"] = sks;
+            item["cpmk"] = cpmk;
+            item["nilai"] = nilai;
+            item["ref"] = ref;
+
+            jsonObj.push(item);
+        }
+    });
+
+    // console.log(jsonObj)
+    url = '<?= base_url('klaimmk') ?>'
+    $.post(url, {
+        jsonObj
+    }, function(data) {
+        alert(data);
+    }).fail(function() {
+        alert("error");
+    });
+}
 
 function simpan_klaim() {
     jsonObj = [];
@@ -295,7 +332,7 @@ function simpan_klaim() {
     });
 
     // console.log(jsonObj)
-    url = '<?= base_url('klaimmk') ?>'
+    url = '<?= base_url('simpanklaimmk') ?>'
     $.post(url, {
         jsonObj
     }, function(data) {

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ModelBiodata;
 use App\Models\ModelDokumen;
+use App\Models\ModelKlaimAsessor;
 use App\Models\ModelKlaimMkDetail;
 use App\Models\ModelKlaimMkHeader;
 use App\Models\ModelRefKlaim;
@@ -291,7 +292,7 @@ class Front extends BaseController
 		} else {
 			$url = '-';
 		}
-		$fileNameRandom = $userFile->getRandmName();
+		$fileNameRandom = $userFile->getRandomName();
 
 
 		$Modaldokumen = new ModelDokumen();
@@ -369,6 +370,35 @@ class Front extends BaseController
 		}
 	}
 
+	public function AsessmentRespon()
+	{
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$noregis = session()->get('noregis');
+			$this->request = service('request');
+			$db      = \Config\Database::connect();
+			$noregis = $db->escapeString($noregis);
+			// $noregis = session()->get("noregis");
+			$Modaldokumen = new ModelDokumen();
+			$ModalBiodata = new ModelBiodata();
+			$ModalAssesmentMandiri = new ModelKlaimAsessor();
+			$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+			$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+			$dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
+			$data = [
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+				'nama_mhs' => $databio[0]['nama'],
+				'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
+				'jenis_rpl' => $databio[0]['jenis_rpl'],
+				'noregis' => $noregis,
+				'dataKlaimMhs' => $dataassementmandiri,
+
+			];
+			return view('Front/rpl-tanggapan-asessor', $data);
+		}
+	}
 	public function AssesmentMandiri()
 	{
 		$noregis = session()->get("noregis");
@@ -379,7 +409,7 @@ class Front extends BaseController
 		$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
 		$dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa();
 		$data = [
-			'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
+			'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
 			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
 			'datadok' => $datadokumen,
 			'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
@@ -422,17 +452,41 @@ class Front extends BaseController
 	public function Klaimmk()
 	{
 		$formdata = $this->request->getPost();
-		$lastdata = array();
+		$status = 2;
 		$noregis = session()->get("noregis");
 		$kodeprodi = $this->getkodeprodi($noregis);
-		$db      = \Config\Database::connect();
-		$ModalMkHeader = new ModelKlaimMkHeader();
-		$ModalMkDetail = new ModelKlaimMkDetail();
-		$ModalRefKlaim = new ModelRefKlaim();
 		$ta_akademik = $this->getTa_akademik();
 		$ModalTransactionKlaim = new ModelTransactionKlaim();
+		$dataassementmandiri = $ModalTransactionKlaim->getKlaimMk_mahasiswa();
 
-		$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $kodeprodi, $ta_akademik);
+		$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+	}
+
+	public function SimpanKlaimmk()
+	{
+		$formdata = $this->request->getPost();
+		$status = 1;
+		$noregis = session()->get("noregis");
+		$kodeprodi = $this->getkodeprodi($noregis);
+
+		$ta_akademik = $this->getTa_akademik();
+		$ModalTransactionKlaim = new ModelTransactionKlaim();
+		$dataassementmandiri = $ModalTransactionKlaim->getKlaimMk_mahasiswa();
+
+		$statusklaim = "";
+		if ($dataassementmandiri != null) {
+			// print_r($dataassementmandiri);
+			foreach ($dataassementmandiri as $a) {
+				$statusklaim = $a['statusklaim'];
+			};
+
+			// $simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+		}
+		if ($statusklaim == 2) {
+			echo "Tidak bisa mengubah data karena sudah di ajukan";
+		} else if ($statusklaim == 1) {
+			$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+		}
 	}
 
 	public function getkodeprodi($noregis)

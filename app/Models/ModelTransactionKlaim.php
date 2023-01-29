@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class ModelTransactionKlaim extends Model
 {
-    public function simpanklaim($formdata, $kodeprodi, $ta_akademik)
+    public function simpanklaim($formdata, $status, $kodeprodi, $ta_akademik)
     {
         $db      = \Config\Database::connect();
         $noregis = session()->get("noregis");
@@ -38,7 +38,7 @@ class ModelTransactionKlaim extends Model
                     "idcpmk" => $a['idcpmk'],
                     "cpmk" => $a['cpmk'],
                     "klaim" => $a['nilai'],
-                    "statusklaim" => 1,
+                    "statusklaim" => $status,
                 ];
                 if ($idklaim1 != $idklaim) {
                     $hapusMkheader = $BuilderMkHeader->where("idklaim", $idklaim)->delete();
@@ -74,7 +74,7 @@ class ModelTransactionKlaim extends Model
                     "idcpmk" => $a['idcpmk'],
                     "cpmk" => $a['cpmk'],
                     "klaim" => $a['nilai'],
-                    "statusklaim" => 1,
+                    "statusklaim" => $status,
                 ];
                 if ($idklaim1 != $idklaim) {
                     $insertMkheader = $BuilderMkHeader->insert($dataMKHeader);

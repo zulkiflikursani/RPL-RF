@@ -50,6 +50,7 @@ $routes->get('/assesment-mandiri', 'Front::AssesmentMandiri');
 $routes->post('Front/Registrasi', 'Front::Registrasi');
 $routes->post('Simpanberkas', 'Front::Simpanberkas');
 $routes->post('klaimmk', 'Front::Klaimmk');
+$routes->post('simpanklaimmk', 'Front::SimpanKlaimmk');
 
 
 
