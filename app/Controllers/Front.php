@@ -385,18 +385,23 @@ class Front extends BaseController
 			$ModalAssesmentMandiri = new ModelKlaimAsessor();
 			$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
 			$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-			$dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
+			$modelklaimasessor = new ModelKlaimAsessor();
+
+			$result = $modelklaimasessor->getDataResponAsessor($noregis);
+			// $dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
 			$data = [
-				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
-				'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'Tanggapan Asessor', 'pagetitle' => 'Dashboards']),
 				'nama_mhs' => $databio[0]['nama'],
 				'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
 				'jenis_rpl' => $databio[0]['jenis_rpl'],
+				'databio' => $databio,
 				'noregis' => $noregis,
-				'dataKlaimMhs' => $dataassementmandiri,
+				'dataKlaimAsessor' => $result,
+
 
 			];
-			return view('Front/rpl-tanggapan-asessor', $data);
+			return view('Front/rpl-respon-asessor', $data);
 		}
 	}
 	public function AssesmentMandiri()
@@ -458,8 +463,11 @@ class Front extends BaseController
 		$ta_akademik = $this->getTa_akademik();
 		$ModalTransactionKlaim = new ModelTransactionKlaim();
 		$dataassementmandiri = $ModalTransactionKlaim->getKlaimMk_mahasiswa();
-
-		$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+		if ($dataassementmandiri != null) {
+			echo "Klaim sedang diproses. Silahkan menunggu tanggapan Asessor di menu Respon Asessor";
+		} else {
+			$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+		}
 	}
 
 	public function SimpanKlaimmk()
@@ -493,7 +501,6 @@ class Front extends BaseController
 	{
 		$db      = \Config\Database::connect();
 		$result = $db->query("select * from bio_peserta where no_peserta ='$noregis'")->getRow();
-
 		return $result->kode_prodi;
 	}
 	public function getMatakuliah($kode_prodi)

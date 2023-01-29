@@ -55,29 +55,12 @@
 
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Data Asessor</h4>
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="mb-3">
-
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="mb-3">
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
+                                    <h4 class="card-title mb-2">Data Asessor</h4>
                                 </div>
-
                             </div>
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Data Mahasiswa</h4>
+                                    <h4 class="card-title mb-4">Data Mahasiswa Belum Diasesi</h4>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <table class="table table-bordered">
@@ -87,14 +70,99 @@
                                                         <th>No Registrasi</th>
                                                         <th>Nama Mahasiswa</th>
                                                         <th>Program Studi</th>
+                                                        <th>Aksi</th>
+
                                                     </tr>
                                                 </thead>
                                                 <tbody id='bodytable'>
                                                     <?php
                                                     // print_r($dataPesertaAsessor);
-                                                    if ($dataPesertaAsessor) {
+                                                    if ($dataPesertaBelumValid) {
                                                         $i = 0;
-                                                        foreach ($dataPesertaAsessor as $row) {
+                                                        foreach ($dataPesertaBelumValid as $row) {
+                                                            $i++;
+                                                            echo "<tr>
+                                                                    <td>$i</td>
+                                                                    <td>$row->no_peserta</td>
+                                                                    <td>$row->nama</td>
+                                                                    <td>$row->kode_prodi</td>
+                                                                    <td><a href='" . base_url("tanggapanasessor/$row->no_peserta") . "'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
+                                                                </tr>";
+                                                            // echo $row->nama;
+                                                        }
+                                                    }
+                                                    ?>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-4">Data Mahasiswa Sudah Diasesi</h4>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>No Registrasi</th>
+                                                        <th>Nama Mahasiswa</th>
+                                                        <th>Program Studi</th>
+                                                        <th>Aksi</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody id='bodytable'>
+                                                    <?php
+                                                    // print_r($dataPesertaAsessor);
+                                                    if ($dataPesertaSudahValid) {
+                                                        $i = 0;
+                                                        foreach ($dataPesertaSudahValid as $row) {
+                                                            $i++;
+                                                            echo "<tr>
+                                                                    <td>$i</td>
+                                                                    <td>$row->no_peserta</td>
+                                                                    <td>$row->nama</td>
+                                                                    <td>$row->kode_prodi</td>
+                                                                    <td><a href='" . base_url("tanggapanasessor/$row->no_peserta") . "'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
+                                                                </tr>";
+                                                            // echo $row->nama;
+                                                        }
+                                                    }
+                                                    ?>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-4">Data Mahasiswa Sudah Divalidasi Prodi</h4>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>No Registrasi</th>
+                                                        <th>Nama Mahasiswa</th>
+                                                        <th>Program Studi</th>
+                                                        <th>Aksi</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id='bodytable'>
+                                                    <?php
+                                                    // print_r($dataPesertaAsessor);
+                                                    if ($dataPesertaSudahValidProdi) {
+                                                        $i = 0;
+                                                        foreach ($dataPesertaSudahValidProdi as $row) {
                                                             $i++;
                                                             echo "<tr>
                                                                     <td>$i</td>

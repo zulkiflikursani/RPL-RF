@@ -45,6 +45,7 @@ $routes->get('/Biodata', 'Front::Pendaftar');
 $routes->get('/logout', 'Front::Logout');
 $routes->get('/upload', 'Front::Uploadberkas');
 $routes->get('/assesment-mandiri', 'Front::AssesmentMandiri');
+$routes->get('/respon-asessor', 'Front::AsessmentRespon');
 
 // FRONT POST
 $routes->post('Front/Registrasi', 'Front::Registrasi');

@@ -187,11 +187,13 @@
                                                 if (isset($datadok)) {
                                                     $i = 1;
                                                     foreach ($datadok as $datafile) {
+                                                        $url = $datafile['lokasi_file'] . "/" . $datafile['nmfile_asli'];
+                                                        $link = base_url($url);
                                                         echo "<tr>
                                                             <td>$i</td>
                                                             <td>" . $datafile['jenis_dokumen'] . "</td>
                                                             <td>" . $datafile['nmfile'] . "</td>
-                                                            <td><button>Liat file</button></td>
+                                                            <td><a href='" . $link . "' target='_blank'><button class='btn btn-sm btn-primary'>Lihat file</button></a></td>
                                                             
                                                         </tr>";
                                                         $i++;

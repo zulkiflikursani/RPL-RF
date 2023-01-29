@@ -267,6 +267,16 @@
 
 <script>
 $(document).ready(function() {
+    <?php if (isset($dataKlaimMhs)) {
+            if ($dataKlaimMhs[0]['statusklaim'] == 2) {
+        ?>
+    $('select').attr("disabled", true);
+    // alert('d')
+    <?php
+            }
+        }
+
+        ?>
 
 })
 

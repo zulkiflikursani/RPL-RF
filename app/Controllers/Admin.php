@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\ModelBiodata;
 use App\Models\ModelDokumen;
 use App\Models\ModelKlaimAsessor;
+use App\Models\ModelKlaimProdi;
 use App\Models\ModelPengguna;
 use App\Models\ModelPesertaAsessor;
 use App\Models\ModelTransactionKlaim;
@@ -19,7 +20,8 @@ class Admin extends BaseController
             return redirect()->to('/logout');
         } else if (session()->get('sttpengguna') == 1) {
             $modelPengguna = new ModelPesertaAsessor();
-            $dataMhs = $modelPengguna->getdataPesertaBelumPunyaAsessor();
+            $ta_akademik = $this->getTa_akademik();
+            $dataMhs = $modelPengguna->getdataPesertaBelumPunyaAsessor($ta_akademik);
             $data = [
                 'title_meta' => view('partials/rpl-title-meta', ['title' => 'Admin RPL']),
                 'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
@@ -29,14 +31,17 @@ class Admin extends BaseController
             return view('Admin/rpl-layouts-horizontal', $data);
         } else if (session()->get('sttpengguna') == 2) {
             $modelPeserta = new ModelPesertaAsessor();
-
-            $dataAsessor = $modelPeserta->getDataPesertaByAsessor(session()->get('id'));
-
+            $ta_akademik = $this->getTa_akademik();
+            $databelumvalid = $modelPeserta->getDataPesertaAsessroBelumValid(session()->get('id'), $ta_akademik);
+            $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValid(session()->get('id'), $ta_akademik);
+            $datasudahvalidprodi = $modelPeserta->getDataPesertaAsessorSudahValidProdi(session()->get('id'), $ta_akademik);
             $data = [
                 'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
                 'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
                 'ta_akademik' => $this->getTa_akademik(),
-                'dataPesertaAsessor' => $dataAsessor,
+                'dataPesertaBelumValid' => $databelumvalid,
+                'dataPesertaSudahValid' => $datasudahvalid,
+                'dataPesertaSudahValidProdi' => $datasudahvalidprodi,
             ];
 
             return view('Admin/rpl-home-asessor', $data);
@@ -265,7 +270,7 @@ class Admin extends BaseController
 
     public function getDataKlaimasessor()
     {
-        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 2) {
+        if (!session()->get('sttpengguna') && !session()->get('noregis')) {
             return redirect()->to('/logout');
             // echo "test";
         } else {
@@ -317,7 +322,6 @@ class Admin extends BaseController
         $noregis = session()->get("noregis");
         $ta_akademik = $this->getTa_akademik();
         $ModalTransactionKlaim = new ModelKlaimAsessor();
-
         $simpanklaim = $ModalTransactionKlaim->simpanklaimAsessor($formdata, $ta_akademik);
     }
 
@@ -337,7 +341,8 @@ class Admin extends BaseController
             $modelPesertaAsessor = new ModelPesertaAsessor();
             $db      = \Config\Database::connect();
             $idpengguna = $db->escapeString($this->request->getPost("idasessor"));
-            $datapeserta = $modelPesertaAsessor->getDataPesertaByAsessor($idpengguna);
+            $ta_akademik = $this->getTa_akademik();
+            $datapeserta = $modelPesertaAsessor->getDataPesertaByAsessor($idpengguna, $ta_akademik);
             echo json_encode($datapeserta, false);
         }
     }

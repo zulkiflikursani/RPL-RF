@@ -64,10 +64,16 @@
                                     <h4 class="card-title mb-4">Form Registrasi RPL</h4>
                                     <form method="POST" action="<?= base_url("Front/Insertbiodata") ?>">
                                         <div class="mb-3">
+                                            <h3 for="formrow-nama-input" class="form-label">No Registrasi :
+                                                <?= (isset($biodata["no_peserta"]) ? $biodata["no_peserta"] : '') ?>
+                                            </h3>
+                                        </div>
+                                        <div class="mb-3">
                                             <label for="formrow-nama-input" class="form-label">Nama</label>
                                             <input type="text" class="form-control" id="formrow-firstname-input"
                                                 name="nama" placeholder="Masukkan Nama"
-                                                value="<?= (isset($biodata["nama"]) ? $biodata["nama"] : '') ?>">
+                                                value="<?= (isset($biodata["nama"]) ? $biodata["nama"] : '') ?>"
+                                                readonly>
                                         </div>
 
                                         <div class="row">
@@ -77,7 +83,8 @@
                                                     <label for="formrow-email-input" class="form-label">Email</label>
                                                     <input type="email" class="form-control" id="formrow-email-input"
                                                         name="email" placeholder="Masukkan Email ID"
-                                                        value="<?= (isset($biodata["email"]) ? $biodata["email"] : '') ?>">
+                                                        value="<?= (isset($biodata["email"]) ? $biodata["email"] : '') ?>"
+                                                        readonly>
                                                 </div>
                                             </div>
 

@@ -94,8 +94,8 @@
                                                                 <th>CPMK</th>
                                                                 <th>Penguasaan</th>
                                                                 <th>Ref</th>
-                                                                <th>Nilai</th>
                                                                 <th>Tanggapan</th>
+                                                                <th>Nilai</th>
                                                                 <th>Keterangan Tanggapan</th>
                                                             </tr>
 
