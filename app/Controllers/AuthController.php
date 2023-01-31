@@ -110,17 +110,8 @@ class AuthController extends BaseController
 					if (isset($user["no_registrasi"])) {
 						return redirect()->to('/Biodata');
 					} else {
-						if ($user['sttpengguna'] == 1) {
-							return redirect()->to('/Admin');
-						} else if ($user['sttpengguna'] == 2) {
-							return redirect()->to('/Admin');
-						} else if ($user['sttpengguna'] == 3) {
-							return redirect()->to('/Prodi');
-						} else if ($user['sttpengguna'] == 4) {
-							return redirect()->to('/Fakultas');
-						} else if ($user['sttpengguna'] == 5) {
-							return redirect()->to('/Manajemen');
-						}
+
+						return redirect()->to('/Admin');
 					}
 				}
 			}

@@ -53,7 +53,7 @@
 
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Form Assesment RPL</h4>
+                                    <h4 class="card-title mb-4">Tanggapan Asessor RPL</h4>
                                     <form method="POST" action="<?= base_url("Front/Insertbiodata") ?>">
                                         <div class="mb-3">
                                             <label for="formrow-nama-input" class="form-label">Program Studi

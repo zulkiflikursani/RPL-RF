@@ -45,6 +45,23 @@ class Admin extends BaseController
             ];
 
             return view('Admin/rpl-home-asessor', $data);
+        } else if (session()->get('sttpengguna') == 3) {
+            $modelPeserta = new ModelPesertaAsessor();
+            $ta_akademik = $this->getTa_akademik();
+
+            $databelumvalidprodi = $modelPeserta->getDataPesertaAsessroBelumValidProdi(session()->get('id'), $ta_akademik);
+            $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdi(session()->get('id'), $ta_akademik);
+            $datasudahvaliddekan = $modelPeserta->getDataPesertaAsessorSudahValidDekan(session()->get('id'), $ta_akademik);
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $this->getTa_akademik(),
+                'dataPesertaBelumValid' => $databelumvalidprodi,
+                'dataPesertaSudahValid' => $datasudahvalid,
+                'dataPesertaSudahValidDekan' => $datasudahvaliddekan,
+            ];
+
+            view('Admin/rpl-home-prodi', $data);
         }
     }
     public function pengguna()
@@ -167,7 +184,6 @@ class Admin extends BaseController
                         'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
                         'ta_akademik' => $this->getTa_akademik(),
                         'dataPengguna' => $dataPengguna,
-                        'this' => $this,
                         'status' => true
                     ];
 
@@ -268,6 +284,76 @@ class Admin extends BaseController
         }
     }
 
+    public function getdatamahsiswaBelumPunyaAsessor()
+    {
+        if (!session()->get('sttpengguna') && session()->get("sttpengguna") != 1) {
+            return redirect()->to('/logout');
+            // echo "test";
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            helper('text');
+
+            $modelPeserta = new ModelPesertaAsessor();
+            $kode_prodi = $db->escapeString($this->request->getPost("kode_prodi"));
+            $ta_akademik = $this->getTa_akademik();
+            $result = $modelPeserta->getdataPesertaBelumPunyaAsessorByProdi($kode_prodi, $ta_akademik);
+            echo json_encode($result, false);
+        }
+    }
+    public function simpanpesertaasessor()
+    {
+        if (!session()->get('sttpengguna') && session()->get("sttpengguna") != 1) {
+            return redirect()->to('/logout');
+            // echo "test";
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+
+            $modelPeserta = new ModelPesertaAsessor();
+            $no_peserta = $db->escapeString($this->request->getPost("noregis"));
+            $no_asessor = $db->escapeString($this->request->getPost("noasessor"));
+            $ta_akademik = $this->getTa_akademik();
+            $data1 = [
+                "ta_akademik" => $ta_akademik,
+                "no_peserta" => $no_peserta,
+                "no_asessor" => $no_asessor,
+                "id_pengguna" => session()->get('id'),
+            ];
+            $result = $modelPeserta->insert($data1);
+            if ($result === false) {
+                // echo $modelPeserta->error();
+
+                $modelPengguna = new ModelPengguna();
+
+                $dataAsessor = $modelPengguna->where("sttpengguna", 2)->findAll();
+
+                $data = [
+                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
+                    'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+                    'ta_akademik' => $ta_akademik,
+                    'dataerror' => $modelPeserta->errors(),
+                    'dataAsessor' => $dataAsessor,
+                ];
+
+                return view('Admin/rpl-data-asessor', $data);
+            } else {
+                $modelPengguna = new ModelPengguna();
+
+                $dataAsessor = $modelPengguna->where("sttpengguna", 2)->findAll();
+
+                $data = [
+                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
+                    'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+                    'ta_akademik' => $ta_akademik,
+                    'status' => true,
+                    'dataAsessor' => $dataAsessor,
+                ];
+
+                return view('Admin/rpl-data-asessor', $data);
+            }
+        }
+    }
     public function getDataKlaimasessor()
     {
         if (!session()->get('sttpengguna') && !session()->get('noregis')) {
@@ -285,6 +371,12 @@ class Admin extends BaseController
             echo json_encode($result, false);
         }
     }
+    public function getasessorbynoregis($noregis)
+    {
+        $modelPeserta = new ModelPesertaAsessor();
+        $data = $modelPeserta->where('no_peserta', $noregis)->findAll();
+        return $data[0]['no_asessor'];
+    }
     public function tanggapanAsessor($noregis)
     {
         if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 2) {
@@ -293,24 +385,31 @@ class Admin extends BaseController
             $this->request = service('request');
             $db      = \Config\Database::connect();
             $noregis = $db->escapeString($noregis);
-            // $noregis = session()->get("noregis");
-            $Modaldokumen = new ModelDokumen();
-            $ModalBiodata = new ModelBiodata();
-            $ModalAssesmentMandiri = new ModelKlaimAsessor();
-            $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
-            $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-            $dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
-            $data = [
-                'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
-                'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
-                'nama_mhs' => $databio[0]['nama'],
-                'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
-                'jenis_rpl' => $databio[0]['jenis_rpl'],
-                'noregis' => $noregis,
-                'dataKlaimMhs' => $dataassementmandiri,
+            $asessor = $this->getasessorbynoregis($noregis);
+            if ($asessor == session()->get('id')) {
 
-            ];
-            return view('Admin/rpl-assesment-asessor', $data);
+
+                // $noregis = session()->get("noregis");
+                $Modaldokumen = new ModelDokumen();
+                $ModalBiodata = new ModelBiodata();
+                $ModalAssesmentMandiri = new ModelKlaimAsessor();
+                $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+                $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+                $dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
+                $data = [
+                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
+                    'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+                    'nama_mhs' => $databio[0]['nama'],
+                    'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
+                    'jenis_rpl' => $databio[0]['jenis_rpl'],
+                    'noregis' => $noregis,
+                    'dataKlaimMhs' => $dataassementmandiri,
+
+                ];
+                return view('Admin/rpl-assesment-asessor', $data);
+            } else {
+                return redirect()->to(base_url('Admin'));
+            }
         }
     }
 

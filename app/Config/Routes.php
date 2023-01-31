@@ -70,8 +70,10 @@ $routes->get('/tanggapanasessor/(:any)', 'Admin::tanggapanAsessor/$1');
 
 $routes->post('Admin/SimpanPengguna', 'Admin::SimpanPengguna');
 $routes->post('getDataMhsPerAsessor', 'Admin::getDataMhsPerAsessor');
+$routes->post('getdatamhsblmpunyaassessor', 'Admin::getdatamahsiswaBelumPunyaAsessor');
 $routes->post('klaimmkAsessor', 'Admin::KlaimmkAsessor');
 $routes->post('getDataKlaimAsessor', 'Admin::getDataKlaimasessor');
+$routes->post('simpanpesertaasessor', 'Admin::simpanpesertaasessor');
 
 
 
