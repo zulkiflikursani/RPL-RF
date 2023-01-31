@@ -23,7 +23,7 @@ class ModelRegistrasi extends Model
         'propinsi'     => 'required',
         'instansi_asal'     => 'required',
         'nohape'     => 'required',
-        'email'        => 'required|valid_email|is_unique[reg_peserta.email]',
+        'email'        => 'required|valid_email|is_unique[reg_peserta.email]|is_unique[tb_pengguna.email]',
         'kode_prodi'        => 'required',
         'validasi_keu'        => 'required',
         'ktkunci'        => 'required',

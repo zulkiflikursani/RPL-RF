@@ -283,17 +283,17 @@ class AuthController extends BaseController
 
 		$email->setMessage($html);
 		$response = '';
-		try {
-			if ($email->send()) {
-				$response = 'success';
-			} else {
-				// $data = 'error';
-				$response = $email->printDebugger(['headers']);
-			}
-		} catch (Exception $ex) {
-			$response = $ex->getMessage();
-		}
-		return $response;
+		// try {
+		// 	if ($email->send()) {
+		// 		$response = 'success';
+		// 	} else {
+		// 		// $data = 'error';
+		// 		$response = $email->printDebugger(['headers']);
+		// 	}
+		// } catch (Exception $ex) {
+		// 	$response = $ex->getMessage();
+		// }
+		// return $response;
 	}
 
 	/*

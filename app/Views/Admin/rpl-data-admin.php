@@ -193,7 +193,7 @@
                                                             </div>
                                                         </div>
                                                         <div class=" row">
-                                                            <div class="col-lg-4">
+                                                            <div class="col-lg-12">
                                                                 <div class="mb-3">
                                                                     <label for="formrow-inputPendidikan"
                                                                         class="form-label">Status Pengguna</label>
@@ -251,12 +251,12 @@
                                     <table class='table table-bordered'>
                                         <thead>
                                             <tr>
-                                                <th>No</th>
-                                                <th>Nama Asessor</th>
-                                                <th>Email</th>
-                                                <th>Status</th>
-                                                <th>Prodi</th>
-                                                <th>Aksi</th>
+                                                <th class="col-1">No</th>
+                                                <th class="col-3">Nama Asessor</th>
+                                                <th class="col-3">Email</th>
+                                                <th class="col-1">Status</th>
+                                                <th class="col-1">Prodi</th>
+                                                <th class="col-3">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -284,15 +284,52 @@
                                                         <td for='email'>" . $row['email'] . "</td>
                                                         <td for='status' sts='" . $row['sttpengguna'] . "'>" . $statuspengguna . "</td>
                                                         <td for='prodi'>" . $row['kode_prodi'] . "</td>
-                                                        <td><button class='button btn-primary btn-sm' onClick='getData($(this))' >Edit</button><button class='button btn-primary btn-sm mx-2' onClick='getDataHapus($(this))'>Hapus</button></td>
+                                                        <td>
+                                                        <button class='button btn-primary btn-sm' onClick='getData($(this))' >Edit</button>
+                                                        <button class='button btn-primary btn-sm mx-2' onClick='getDataHapus($(this))'>Hapus</button>
+                                                        <button class='button btn-primary btn-sm ' onClick='getDataResetPassword($(this))'>Reset Password</button></td>
                                                     </tr>";
                                                 }
                                             }
                                             ?>
                                         </tbody>
                                     </table>
+                                    <div class="modal fade resetpass-modal" tabindex="-1" role="dialog"
+                                        aria-labelledby="mytambah-modal" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class=" modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="myLargeModalLabel">Perhatian !</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form method="POST" action="<?= base_url("resetpassword") ?>">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label for="formrow-nama-input"
+                                                                        class="form-label">Yakin
+                                                                        akan Mereset Password <span id='email'></span>
+                                                                        ?</label>
+                                                                    <input type="hidden" class="form-control"
+                                                                        id="remail" name="eemail"
+                                                                        placeholder="Masukkan Nama" value="" required
+                                                                        readonly>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-
+                                                        <div class="modal-footer">
+                                                            <button type=" submit" class="btn btn-primary w-md">
+                                                                Ya</button> <button type="button" class="btn btn-light"
+                                                                data-bs-dismiss="modal">Batal</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -301,16 +338,9 @@
                 </div>
                 <!-- end row -->
 
-
-
-
-
-
             </div> <!-- container-fluid -->
         </div>
         <!-- End Page-content -->
-
-
 
         <?= $this->include('partials/rpl-footer') ?>
     </div>
@@ -332,6 +362,14 @@
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 
     <script>
+    function getDataResetPassword(ini) {
+        email = ini.parent().parent().find('td[for=email]').html();
+        $('#email').html(email);
+        $('#remail').val(email);
+        $('.resetpass-modal').modal('show');
+
+    }
+
     function getData(ini) {
         idpengguna = ini.parent().parent().attr('idpengguna')
         nm = ini.parent().parent().find('td[for=nmpengguna]').html();

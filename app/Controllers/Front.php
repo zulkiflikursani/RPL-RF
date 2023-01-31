@@ -228,12 +228,20 @@ class Front extends BaseController
 
 	public function login()
 	{
-		$data = [
-			'title_meta' => view('partials/rpl-title-meta', ['title' => 'login RPL']),
-			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Login']),
-			'ta_akademik' => $this->getTa_akademik()
-		];
-		return view('auth/rpl-auth-login', $data);
+		if (!session()->get('noregis') && !session()->get('id')) {
+			$data = [
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'login RPL']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Login']),
+				'ta_akademik' => $this->getTa_akademik()
+			];
+			return view('auth/rpl-auth-login', $data);
+		} else {
+			if (session()->get('noregis')) {
+				return redirect()->to('/Biodata');
+			} else if (session()->get('id')) {
+				return redirect()->to('/Admin');
+			}
+		}
 	}
 
 	public function Pendaftar()

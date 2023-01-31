@@ -57,6 +57,7 @@ $routes->post('simpanklaimmk', 'Front::SimpanKlaimmk');
 
 //LOGIN
 $routes->get('/Login', 'Front::login');
+$routes->get('/login', 'Front::login');
 //LOGIN AUTH
 $routes->post('Auth/Login', 'AuthController::Login');
 
@@ -71,6 +72,7 @@ $routes->get('/validprodi/(:any)/(:any)', 'Admin::validprodi/$1/$2');
 $routes->get('/validprodi/(:any)', 'Admin::validprodi/$1');
 
 $routes->post('Admin/SimpanPengguna', 'Admin::SimpanPengguna');
+$routes->post('resetpassword', 'Admin::resetPassword');
 $routes->post('getDataMhsPerAsessor', 'Admin::getDataMhsPerAsessor');
 $routes->post('getdatamhsblmpunyaassessor', 'Admin::getdatamahsiswaBelumPunyaAsessor');
 $routes->post('klaimmkAsessor', 'Admin::KlaimmkAsessor');

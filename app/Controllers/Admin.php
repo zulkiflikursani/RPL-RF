@@ -64,6 +64,87 @@ class Admin extends BaseController
             return view('Admin/rpl-home-prodi', $data);
         }
     }
+    public function resetPassword()
+    {
+        if (session()->get('sttpengguna') != 1) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            helper('text');
+
+            $modelPengguna = new ModelPengguna();
+            $email = $db->escapeString($this->request->getPost("eemail"));
+            $password1 =  random_string('alnum', 6);
+            $password = password_hash($password1, PASSWORD_BCRYPT);
+
+            $data1 = [
+                "ktkunci" => $password,
+            ];
+
+            $link = base_url("Login");
+            $result = $modelPengguna->update(['email' => $email], $data1);
+            if ($result === false) {
+                // $modelPengguna = new ModelPengguna();
+                $dataPengguna = $modelPengguna->findAll();
+                $data = [
+                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'Admin RPL']),
+                    'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
+                    'ta_akademik' => $this->getTa_akademik(),
+                    'dataPengguna' => $dataPengguna,
+                    'dataerror' => $modelPengguna->errors(),
+                    'status' => false,
+
+                ];
+
+                return view('Admin/rpl-data-admin', $data);
+            } else {
+                $message = "Berhasil Mereset Password.<br>
+                Berikut ada user untuk login ke Sistem SILAJU unifa <br>
+                <br>
+                User 	    : " . $email . "<br>
+                Pass 	    : " . $password1 . "<br>
+                <br>
+                Silahkan Login di " . $link . " <br>
+                Terima kasih";
+                $emailgo = \Config\Services::email();
+                $emailgo->setTo($email);
+                $emailgo->setFrom('rpl.unifa.2023@gmail.com', 'Admin Silaju Unifa');
+                $emailgo->setSubject('Silaju Unifa | Password Login');
+                $emailgo->setMessage($message); //your message here
+                $modelPengguna = new ModelPengguna();
+                $dataPengguna = $modelPengguna->findAll();
+
+                if (!$emailgo->send()) {
+                    $email_status = $emailgo->printDebugger(['headers']);
+                    $dataPengguna = $modelPengguna->findAll();
+                    $data = [
+                        'title_meta' => view('partials/rpl-title-meta', ['title' => 'Admin RPL']),
+                        'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
+                        'ta_akademik' => $this->getTa_akademik(),
+                        'dataPengguna' => $dataPengguna,
+                        'dataerror' => $email_status,
+                        'status' => false,
+
+                    ];
+
+                    return view('Admin/rpl-data-admin', $data);
+                    // Generate error
+                } else {
+
+                    $data = [
+                        'title_meta' => view('partials/rpl-title-meta', ['title' => 'Admin RPL']),
+                        'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
+                        'ta_akademik' => $this->getTa_akademik(),
+                        'dataPengguna' => $dataPengguna,
+                        'status' => true
+                    ];
+
+                    return view('Admin/rpl-data-admin', $data);
+                }
+            }
+        }
+    }
     public function pengguna()
     {
         if (session()->get('sttpengguna') != 1) {

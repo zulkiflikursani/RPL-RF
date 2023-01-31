@@ -28,7 +28,7 @@ class ModelPengguna extends Model
         "idpengguna" => 'required',
         "nmpengguna" => 'required',
         "sttpengguna" => 'required',
-        "email" => 'required|valid_email|is_unique[tb_pengguna.email]',
+        "email" => 'required|valid_email|is_unique[tb_pengguna.email]|is_unique[reg_peserta.email]',
         "ktkunci" => 'required',
         "kode_prodi" => 'required'
     ];
