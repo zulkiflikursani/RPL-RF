@@ -24,7 +24,7 @@ class ModelKlaimMkHeader extends Model
         "tglubah"
     ];
 
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'tglbuat';
     protected $updatedField  = 'tglubah';

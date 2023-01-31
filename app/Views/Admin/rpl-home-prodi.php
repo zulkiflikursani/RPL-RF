@@ -55,12 +55,12 @@
 
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-2">Data Asessor</h4>
+                                    <h4 class="card-title mb-2">Data Prodi</h4>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Data Mahasiswa Belum Diasesi</h4>
+                                    <h4 class="card-title mb-4">Data Mahasiswa Belum Divalidasi</h4>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <table class="table table-bordered">
@@ -86,7 +86,7 @@
                                                                     <td>$row->no_peserta</td>
                                                                     <td>$row->nama</td>
                                                                     <td>$row->kode_prodi</td>
-                                                                    <td><a href='" . base_url("tanggapanasessor/$row->no_peserta") . "'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
+                                                                    <td><a href='" . base_url("validprodi/$row->no_peserta") . "'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
                                                                 </tr>";
                                                             // echo $row->nama;
                                                         }
@@ -102,7 +102,7 @@
                             </div>
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Data Mahasiswa Sudah Diasesi</h4>
+                                    <h4 class="card-title mb-4">Data Mahasiswa Sudah Divalidasi</h4>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <table class="table table-bordered">
@@ -128,7 +128,7 @@
                                                                     <td>$row->no_peserta</td>
                                                                     <td>$row->nama</td>
                                                                     <td>$row->kode_prodi</td>
-                                                                    <td><a href='" . base_url("tanggapanasessor/$row->no_peserta") . "'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
+                                                                    <td><a href='" . base_url("validprodi/$row->no_peserta/4") . "'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
                                                                 </tr>";
                                                             // echo $row->nama;
                                                         }
@@ -144,7 +144,7 @@
                             </div>
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Data Mahasiswa Sudah Divalidasi Prodi</h4>
+                                    <h4 class="card-title mb-4">Data Mahasiswa Sudah Divalidasi Dekan</h4>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <table class="table table-bordered">
@@ -169,7 +169,7 @@
                                                                     <td>$row->no_peserta</td>
                                                                     <td>$row->nama</td>
                                                                     <td>$row->kode_prodi</td>
-                                                                    <td><a href='" . base_url("tanggapanasessor/$row->no_peserta") . "'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
+                                                                    <td><a href='" . base_url("validprodi/$row->no_peserta") . "'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
                                                                 </tr>";
                                                             // echo $row->nama;
                                                         }

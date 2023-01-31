@@ -6,6 +6,51 @@ use CodeIgniter\Model;
 
 class ModelKlaimAsessor extends Model
 {
+    protected $table      = 'mk_klaim_asessor';
+    protected $primaryKey = 'idklaim';
+
+    protected $returnType     = 'array';
+
+
+    protected $allowedFields = [
+        "idklaim",
+        "ta_akademik",
+        "no_peserta",
+        "idpengguna",
+        "kode_prodi",
+        "kode_matakuliah",
+        "nilai",
+        "tanggapan",
+        "ket_tanggapan",
+        "tglbuat",
+        "tglubah",
+
+    ];
+
+    protected $useTimestamps = true;
+    protected $dateFormat    = 'datetime';
+    protected $createdField  = 'tglbuat';
+    protected $updatedField  = 'tglubah';
+    protected $validationRules = [
+        "idklaim" => 'require|is_unique[mk_klaim_asessor.idklaim]',
+        "ta_akademik" => 'require',
+        "no_peserta" => 'require',
+        "idpengguna" => 'require',
+        "kode_prodi" => 'require',
+        "kode_matakuliah" => 'require',
+        "nilai" => 'require',
+        "tanggapan" => 'require',
+        "ket_tanggapan" => 'require',
+
+    ];
+    protected $validationMessages = [
+        'idklaim' => [
+            'is_unique' => 'Sorry id klaim sudah digunakan.Silahkan hubungi admin.',
+        ],
+    ];
+    protected $skipValidation       = false;
+    protected $cleanValidationRules = true;
+
     public function simpanklaimAsessor($formdata, $ta_akademik)
     {
 

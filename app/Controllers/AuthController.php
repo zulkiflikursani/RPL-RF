@@ -131,7 +131,7 @@ class AuthController extends BaseController
 				'username' => $user['nmpengguna'],
 				// 'noregis' => $user['no_registrasi'],
 				'sttpengguna' => $user['sttpengguna'],
-				'kode_prodi' => $user['sttpengguna'],
+				'kode_prodi' => $user['kode_prodi'],
 				'isLoggedIn' => true,
 			];
 		} else {

@@ -445,3 +445,607 @@ CRITICAL - 2023-01-31 06:26:28 --> You have an error in your SQL syntax; check t
 #8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
 #9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
 #10 {main}
+CRITICAL - 2023-01-31 07:22:51 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:22:51 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:23:27 --> Call to undefined method App\Models\ModelPesertaAsessor::getDataPesertaAsessorSudahValidProdi
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(53): CodeIgniter\Model->__call('getDataPesertaA...', Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-01-31 07:46:48 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(495): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 495, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:46:48 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(495): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 495, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:53:09 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:53:09 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:53:09 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:53:10 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:53:52 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:53:52 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:53:52 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:53:52 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:54:41 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(495): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 495, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:54:41 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(495): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 495, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:54:48 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(495): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 495, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:54:48 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(495): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 495, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:57:57 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(495): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 495, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 07:57:57 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(495): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 495, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 08:00:02 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 08:00:02 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 08:00:08 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(495): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 495, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 08:00:08 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(495): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 495, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:11:46 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:11:46 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:16:41 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:16:41 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:19:13 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:19:13 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:19:50 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:19:50 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:20:48 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:20:48 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:20:57 --> Call to undefined method App\Models\ModelKlaimProdi::validasiprodi
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(467): CodeIgniter\Model->__call('validasiprodi', Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validasiprodi()
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-01-31 10:22:37 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('insert into mk_...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('insert into mk_...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('insert into mk_...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelKlaimProdi.php(42): CodeIgniter\Database\BaseConnection->query('insert into mk_...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(467): App\Models\ModelKlaimProdi->validprodi('12023-0001', '5')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validasiprodi()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-01-31 10:26:42 --> Duplicate entry '1202312023-000110000ABU3' for key 'PRIMARY'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('insert into mk_...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('insert into mk_...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('insert into mk_...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelKlaimProdi.php(42): CodeIgniter\Database\BaseConnection->query('insert into mk_...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(467): App\Models\ModelKlaimProdi->validprodi('12023-0001', '5')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validasiprodi()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-01-31 10:27:08 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:27:08 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:28:33 --> Duplicate entry '1202312023-000110000ABU3' for key 'PRIMARY'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('insert into mk_...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('insert into mk_...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('insert into mk_...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelKlaimProdi.php(42): CodeIgniter\Database\BaseConnection->query('insert into mk_...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(467): App\Models\ModelKlaimProdi->validprodi('12023-0001', '5')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validasiprodi()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-01-31 10:28:43 --> syntax error, unexpected '}', expecting end of file
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-valid...', Array, true)
+#2 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(450): view('Admin/rpl-valid...', Array)
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(471): App\Controllers\Admin->validprodi('12023-0001', 2)
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validasiprodi()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#9 {main}
+CRITICAL - 2023-01-31 10:30:45 --> Undefined variable: status
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Views\Admin\rpl-validasi-prodi.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 40, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-valid...', Array, true)
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(450): view('Admin/rpl-valid...', Array)
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('12023-0001')
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-01-31 10:30:59 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:31:00 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:31:24 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:31:24 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:32:40 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:32:40 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 524, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:32:44 --> Duplicate entry '1202312023-000110000ABU3' for key 'PRIMARY'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('insert into mk_...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('insert into mk_...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('insert into mk_...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelKlaimProdi.php(42): CodeIgniter\Database\BaseConnection->query('insert into mk_...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(467): App\Models\ModelKlaimProdi->validprodi('12023-0001', '5')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validasiprodi()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-01-31 10:38:11 --> Duplicate entry '1202312023-000110000ABU3' for key 'PRIMARY'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('insert into mk_...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('insert into mk_...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('insert into mk_...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelKlaimProdi.php(42): CodeIgniter\Database\BaseConnection->query('insert into mk_...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(469): App\Models\ModelKlaimProdi->validprodi('12023-0001', '5')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validasiprodi()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-01-31 10:38:49 --> Duplicate entry '1202312023-000110000ABU3' for key 'PRIMARY'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('insert into mk_...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('insert into mk_...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('insert into mk_...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelKlaimProdi.php(42): CodeIgniter\Database\BaseConnection->query('insert into mk_...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(473): App\Models\ModelKlaimProdi->validprodi('12023-0001', '5')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validasiprodi()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-01-31 10:38:50 --> Duplicate entry '1202312023-000110000ABU3' for key 'PRIMARY'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('insert into mk_...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('insert into mk_...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('insert into mk_...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelKlaimProdi.php(42): CodeIgniter\Database\BaseConnection->query('insert into mk_...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(473): App\Models\ModelKlaimProdi->validprodi('12023-0001', '5')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validasiprodi()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-01-31 10:38:51 --> Duplicate entry '1202312023-000110000ABU3' for key 'PRIMARY'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('insert into mk_...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('insert into mk_...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('insert into mk_...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelKlaimProdi.php(42): CodeIgniter\Database\BaseConnection->query('insert into mk_...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(473): App\Models\ModelKlaimProdi->validprodi('12023-0001', '5')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validasiprodi()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-01-31 10:38:52 --> Duplicate entry '1202312023-000110000ABU3' for key 'PRIMARY'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('insert into mk_...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('insert into mk_...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('insert into mk_...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelKlaimProdi.php(42): CodeIgniter\Database\BaseConnection->query('insert into mk_...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(473): App\Models\ModelKlaimProdi->validprodi('12023-0001', '5')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validasiprodi()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-01-31 10:50:06 --> Undefined variable: status
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Views\Admin\rpl-validasi-prodi.php(237): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 237, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-valid...', Array, true)
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(458): view('Admin/rpl-valid...', Array)
+#5 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(501): App\Controllers\Admin->validprodi('12023-0001', 7)
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->unvalidasiprodi()
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#11 {main}
+CRITICAL - 2023-01-31 10:51:18 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(558): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 558, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:51:18 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(558): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 558, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 10:56:43 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'from mk_klaim_prodi where mid(idklaim,6,10)='12023-0001' and idpengguna='5'' at line 1
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('delete from idk...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('delete from idk...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('delete from idk...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelKlaimProdi.php(48): CodeIgniter\Database\BaseConnection->query('delete from idk...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(502): App\Models\ModelKlaimProdi->unvalidprodi('12023-0001', '5')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->unvalidasiprodi()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-01-31 11:08:56 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(558): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 558, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 11:08:56 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(558): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 558, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 11:10:31 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(558): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 558, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 11:10:31 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(558): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 558, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(424): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 11:13:51 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-01-31 11:13:51 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(378): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 378, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(388): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}

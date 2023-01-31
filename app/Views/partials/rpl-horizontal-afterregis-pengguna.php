@@ -121,7 +121,7 @@
                     </li>
                     <?php
                     };
-                    if (session()->get('sttpengguna') == 1 || session()->get('sttpengguna') == 3 || session()->get('sttpengguna') == 4 || session()->get('sttpengguna') == 5) {
+                    if (session()->get('sttpengguna') == 1) {
                     ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="<?= base_url('dataasessor') ?>" id="topnav-dashboard"

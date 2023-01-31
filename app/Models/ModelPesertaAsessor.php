@@ -168,7 +168,7 @@ class ModelPesertaAsessor extends Model
                                 ")->getResult();
         return $dataMahasiswa;
     }
-    public function getDataPesertaAsessorSudahValidProdi($id_asessor, $ta_akademik)
+    public function getDataPesertaAsessorSudahValidProdiByAsessor($id, $kode_prodi, $ta_akademik)
     {
         $db = \Config\Database::connect();
         $dataMahasiswa = $db->query("SELECT
@@ -193,12 +193,12 @@ class ModelPesertaAsessor extends Model
                                 LEFT JOIN mk_klaim_prodi ON mk_klaim_asessor.idklaim = mk_klaim_prodi.idklaim
                                 LEFT JOIN tb_peserta_asessor ON bio_peserta.no_peserta = tb_peserta_asessor.no_peserta
                                 WHERE
-                                bio_peserta.ta_akademik='$ta_akademik' and tb_peserta_asessor.no_asessor='$id_asessor' and mk_klaim_prodi.idklaim is not null
+                                bio_peserta.ta_akademik='$ta_akademik' and bio_peserta.kode_prodi='$kode_prodi' and tb_peserta_asessor.no_asessor='$id' and mk_klaim_prodi.idklaim is not null
                                 group by bio_peserta.no_peserta")->getResult();
         return $dataMahasiswa;
     }
 
-    public function getDataPesertaAsessroBelumValidProdi($id_asessor, $ta_akademik)
+    public function getDataPesertaBelumValidProdi($id, $kode_prodi, $ta_akademik)
     {
         $db = \Config\Database::connect();
         $dataMahasiswa = $db->query("SELECT
@@ -239,7 +239,7 @@ class ModelPesertaAsessor extends Model
                                         LEFT JOIN mk_klaim_header ON bio_peserta.no_peserta = mk_klaim_header.no_peserta
                                         WHERE
                                             bio_peserta.ta_akademik = '$ta_akademik'
-                                        AND tb_peserta_asessor.no_asessor = '$id_asessor'
+                                        and bio_peserta.kode_prodi='$kode_prodi'
                                         AND mk_klaim_header.idklaim IS NOT NULL
                                         AND status_klaim_nonvalid.idklaim IS NULL
                                         AND status_klaim_valid.idklaim is not null
@@ -248,7 +248,38 @@ class ModelPesertaAsessor extends Model
                                             bio_peserta.no_peserta")->getResult();
         return $dataMahasiswa;
     }
-    public function getDataPesertaAsessorSudahValidDekan($id_asessor, $ta_akademik)
+
+    public function getDataPesertaAsessorSudahValidProdi($id, $kode_prodi, $ta_akademik)
+    {
+        $db = \Config\Database::connect();
+        $dataMahasiswa = $db->query("SELECT
+                                bio_peserta.ta_akademik,
+                                bio_peserta.no_peserta,
+                                bio_peserta.nama,
+                                bio_peserta.alamat,
+                                bio_peserta.kotkab,
+                                bio_peserta.propinsi,
+                                bio_peserta.instansi_asal,
+                                bio_peserta.didikakhir,
+                                bio_peserta.nohape,
+                                bio_peserta.email,
+                                bio_peserta.jenis_rpl,
+                                bio_peserta.kode_prodi,
+                                mk_klaim_prodi.idklaim,
+                                mk_klaim_prodi.ta_akademik,
+                                mk_klaim_prodi.idasessor
+                                FROM
+                                bio_peserta
+                                LEFT JOIN mk_klaim_asessor ON bio_peserta.no_peserta = mk_klaim_asessor.no_peserta
+                                LEFT JOIN mk_klaim_prodi ON mk_klaim_asessor.idklaim = mk_klaim_prodi.idklaim
+                                LEFT JOIN tb_peserta_asessor ON bio_peserta.no_peserta = tb_peserta_asessor.no_peserta
+                                WHERE
+                                bio_peserta.ta_akademik='$ta_akademik' and bio_peserta.kode_prodi='$kode_prodi' and mk_klaim_prodi.idklaim is not null
+                                group by bio_peserta.no_peserta")->getResult();
+        return $dataMahasiswa;
+    }
+
+    public function getDataPesertaAsessorSudahValidDekanPerprodi($id, $kode_prodi, $ta_akademik)
     {
         $db = \Config\Database::connect();
         $dataMahasiswa = $db->query("SELECT
@@ -271,7 +302,9 @@ class ModelPesertaAsessor extends Model
                                 LEFT JOIN mk_klaim_dekan ON mk_klaim_asessor.idklaim = mk_klaim_dekan.idklaim
                                 LEFT JOIN tb_peserta_asessor ON bio_peserta.no_peserta = tb_peserta_asessor.no_peserta
                                 WHERE
-                                bio_peserta.ta_akademik='$ta_akademik' and tb_peserta_asessor.no_asessor='$id_asessor' and mk_klaim_dekan.idklaim is not null
+                                bio_peserta.ta_akademik='$ta_akademik' 
+                                and bio_peserta.kode_prodi='$kode_prodi'
+                                and tb_peserta_asessor.no_asessor='$id' and mk_klaim_dekan.idklaim is not null
                                 group by bio_peserta.no_peserta")->getResult();
         return $dataMahasiswa;
     }

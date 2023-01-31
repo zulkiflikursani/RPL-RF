@@ -67,6 +67,8 @@ $routes->get('/pengguna', 'Admin::pengguna');
 $routes->get('/asessor', 'Admin::Asessor');
 $routes->get('/dataasessor', 'Admin::dataAsessor');
 $routes->get('/tanggapanasessor/(:any)', 'Admin::tanggapanAsessor/$1');
+$routes->get('/validprodi/(:any)/(:any)', 'Admin::validprodi/$1/$2');
+$routes->get('/validprodi/(:any)', 'Admin::validprodi/$1');
 
 $routes->post('Admin/SimpanPengguna', 'Admin::SimpanPengguna');
 $routes->post('getDataMhsPerAsessor', 'Admin::getDataMhsPerAsessor');
@@ -74,6 +76,8 @@ $routes->post('getdatamhsblmpunyaassessor', 'Admin::getdatamahsiswaBelumPunyaAse
 $routes->post('klaimmkAsessor', 'Admin::KlaimmkAsessor');
 $routes->post('getDataKlaimAsessor', 'Admin::getDataKlaimasessor');
 $routes->post('simpanpesertaasessor', 'Admin::simpanpesertaasessor');
+$routes->post('setvalidprodi', 'Admin::validasiprodi');
+$routes->post('setunvalidprodi', 'Admin::unvalidasiprodi');
 
 
 
