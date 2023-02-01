@@ -699,8 +699,8 @@ class Admin extends BaseController
                 $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
                 $dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
                 $data = [
-                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
-                    'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                    'page_title' => view('partials/rpl-page-title', ['title' => 'Fakultas', 'pagetitle' => 'Dashboards']),
                     'nama_mhs' => $databio[0]['nama'],
                     'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                     'jenis_rpl' => $databio[0]['jenis_rpl'],
@@ -815,8 +815,8 @@ class Admin extends BaseController
                 $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
                 if ($cekpeserta != null) {
                     $data = [
-                        'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
-                        'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+                        'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                        'page_title' => view('partials/rpl-page-title', ['title' => 'Print Transkrip', 'pagetitle' => 'Dashboards']),
                         'nama_mhs' => $databio[0]['nama'],
                         'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                         'jenis_rpl' => $databio[0]['jenis_rpl'],

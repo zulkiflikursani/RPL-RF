@@ -10,6 +10,7 @@ return [
     'Welcome Back' => 'Willkommen zurück',
     'Dashboard' => 'Instrumententafel',
     'Dashboards' => 'Dashboards',
+    'Asessor' => 'Asessor',
     'Menu' => 'Speisekarte',
     'Search' => 'Suche',
     'Mega Menu' => 'Mega-Menü',

@@ -6,7 +6,17 @@
  */
 
 return [
-    'Skote' => 'Skote',
+    'SILAJU RPL' => 'SILAJU RPL',
+    'login SILAJU' => 'Login SILAJU',
+    'Biodata Peserta RPL' => 'Biodata Peserta RPL',
+    'Biodata' => 'Biodata',
+    'Pengumuman' => 'Pengumuman',
+    'Tanggapan Asessor' => 'Tanggapan Asessor',
+    'Upload Berkas' => 'Upload Berkas',
+    'Asessor' => 'Asessor',
+    'Prodi' => 'Prodi',
+    'Admin' => 'Admin',
+    'Asessor RPL' => 'Asessor RPL',
     'Welcome Back' => 'Welcome Back',
     'Dashboard' => 'Dashboard',
     'Dashboards' => 'Dashboards',

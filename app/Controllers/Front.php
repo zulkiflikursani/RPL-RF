@@ -74,7 +74,7 @@ class Front extends BaseController
 			'nohape' => $nohape,
 			'email' => $email,
 			'kode_prodi' => $prodi,
-			'validasi_keu' => 0,
+			'validasi_keu' => 1,
 			'ktkunci' => $password,
 		];
 
@@ -257,16 +257,30 @@ class Front extends BaseController
 		} else {
 			$databio = $datasave;
 		}
-		$data = [
-			'title_meta' => view('partials/rpl-title-meta', ['title' => 'Bidata Peserta RPL']),
-			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
-			'datasubmit' => $databio,
-			'databio' => $databio,
-			'prodi' => $prodi,
-			// 'test' => $datasave,
-			'ta_akademik' => $this->getTa_akademik()
-		];
-		return view('Front/rpl-mahasiswa', $data);
+
+		if ($datasave[0]['validasi_keu'] == 1) {
+			$data = [
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Biodata Peserta RPL']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Pengumuman']),
+				'datasubmit' => $databio,
+				'databio' => $databio,
+				'prodi' => $prodi,
+				// 'test' => $datasave,
+				'ta_akademik' => $this->getTa_akademik()
+			];
+			return view('Front/rpl-mahasiswa-belum-valid-keu', $data);
+		} else {
+			$data = [
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Biodata Peserta RPL']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
+				'datasubmit' => $databio,
+				'databio' => $databio,
+				'prodi' => $prodi,
+				// 'test' => $datasave,
+				'ta_akademik' => $this->getTa_akademik()
+			];
+			return view('Front/rpl-mahasiswa', $data);
+		}
 	}
 	public function Uploadberkas()
 	{

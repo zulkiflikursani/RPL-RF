@@ -34,7 +34,8 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title mb-4">Tanggapan Asessor RPL</h4>
+                                <h4 class="card-title mb-4 text-center">Transkrip Nilai Rekognisi Pembelajaran Lampau
+                                </h4>
                                 <div>
                                     <div class="mb-3">
                                         <label for="formrow-nama-input" class="form-label">Program Studi
@@ -218,6 +219,15 @@
 
                                                         <p class='text-center'>
                                                             <?= $dekan ?>
+                                                        </p>
+                                                        <p class='text-center'>
+                                                            <br>
+                                                        </p>
+                                                        <p class='text-center'>
+                                                            <br>
+                                                        </p>
+                                                        <p class='text-center'>
+                                                            <br>
                                                         </p>
                                                         <p class='text-center'>
                                                             <br>

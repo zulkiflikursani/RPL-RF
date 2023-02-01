@@ -252,15 +252,19 @@
                                             }
                                             ?>
                                         </div>
+                                        <?php if ($status == 4 || $status == 2) {
+                                        ?>
                                         <div class="d-print-none">
                                             <div class="float-end">
                                                 <a href="<?= base_url('print-transkrip/' . $noregis) ?>" target='_blank'
                                                     class="btn btn-success waves-effect waves-light me-1">PERISAPAN
                                                     CETAK TRANSKRIP <i class="fa fa-print"></i></a>
-                                                <a href="#"
-                                                    class="btn btn-primary w-md waves-effect waves-light">Send</a>
+
                                             </div>
                                         </div>
+                                        <?php
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
