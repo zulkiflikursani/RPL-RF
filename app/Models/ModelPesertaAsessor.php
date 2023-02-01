@@ -308,4 +308,79 @@ class ModelPesertaAsessor extends Model
                                 group by bio_peserta.no_peserta")->getResult();
         return $dataMahasiswa;
     }
+    public function getDataPesertaAsessorSudahValidProdiDekan($id, $kode_fakultas, $ta_akademik)
+    {
+        $db = \Config\Database::connect();
+        $dataMahasiswa = $db->query("SELECT
+                        bio_peserta.ta_akademik,
+                        bio_peserta.no_peserta,
+                        bio_peserta.nama,
+                        bio_peserta.alamat,
+                        bio_peserta.kotkab,
+                        bio_peserta.propinsi,
+                        bio_peserta.instansi_asal,
+                        bio_peserta.didikakhir,
+                        bio_peserta.nohape,
+                        bio_peserta.email,
+                        bio_peserta.jenis_rpl,
+                        bio_peserta.kode_prodi,
+                        prodi.kode_fakultas,
+                        mk_klaim_asessor.idklaim as klaim_asessor,
+                        mk_klaim_prodi.idklaim as klaim_prdodi,
+                        mk_klaim_dekan.idklaim as klaim_dekan
+                        FROM
+                        bio_peserta
+                        LEFT JOIN prodi ON prodi.kode_prodi = bio_peserta.kode_prodi
+                        LEFT JOIN fakultas ON fakultas.kode_fakultas = prodi.kode_fakultas
+                        LEFT JOIN mk_klaim_asessor ON bio_peserta.no_peserta = mk_klaim_asessor.no_peserta
+                        LEFT JOIN mk_klaim_prodi ON mk_klaim_prodi.idklaim = mk_klaim_asessor.idklaim
+                        LEFT JOIN mk_klaim_dekan ON mk_klaim_asessor.idklaim = mk_klaim_dekan.idklaim
+                        LEFT JOIN tb_peserta_asessor ON bio_peserta.no_peserta = tb_peserta_asessor.no_peserta
+                        WHERE
+                        bio_peserta.ta_akademik = '$ta_akademik' 
+                        AND fakultas.kode_fakultas='$kode_fakultas'
+                        AND mk_klaim_dekan.idklaim IS NULL
+                        AND mk_klaim_prodi.idklaim IS NOT NULL
+                        GROUP BY
+                        bio_peserta.no_peserta")->getResult();
+        return $dataMahasiswa;
+    }
+
+    public function getDataPesertaAsessorSudahValidDekan($id, $kode_fakultas, $ta_akademik)
+    {
+        $db = \Config\Database::connect();
+        $dataMahasiswa = $db->query("SELECT
+                        bio_peserta.ta_akademik,
+                        bio_peserta.no_peserta,
+                        bio_peserta.nama,
+                        bio_peserta.alamat,
+                        bio_peserta.kotkab,
+                        bio_peserta.propinsi,
+                        bio_peserta.instansi_asal,
+                        bio_peserta.didikakhir,
+                        bio_peserta.nohape,
+                        bio_peserta.email,
+                        bio_peserta.jenis_rpl,
+                        bio_peserta.kode_prodi,
+                        prodi.kode_fakultas,
+                        mk_klaim_asessor.idklaim as klaim_asessor,
+                        mk_klaim_prodi.idklaim as klaim_prdodi,
+                        mk_klaim_dekan.idklaim as klaim_dekan
+                        FROM
+                        bio_peserta
+                        LEFT JOIN prodi ON prodi.kode_prodi = bio_peserta.kode_prodi
+                        LEFT JOIN fakultas ON fakultas.kode_fakultas = prodi.kode_fakultas
+                        LEFT JOIN mk_klaim_asessor ON bio_peserta.no_peserta = mk_klaim_asessor.no_peserta
+                        LEFT JOIN mk_klaim_prodi ON mk_klaim_prodi.idklaim = mk_klaim_asessor.idklaim
+                        LEFT JOIN mk_klaim_dekan ON mk_klaim_asessor.idklaim = mk_klaim_dekan.idklaim
+                        LEFT JOIN tb_peserta_asessor ON bio_peserta.no_peserta = tb_peserta_asessor.no_peserta
+                        WHERE
+                        bio_peserta.ta_akademik = '$ta_akademik' 
+                        AND fakultas.kode_fakultas='$kode_fakultas'
+                        AND mk_klaim_dekan.idklaim IS NOT NULL
+                        AND mk_klaim_prodi.idklaim IS NOT NULL
+                        GROUP BY
+                        bio_peserta.no_peserta")->getResult();
+        return $dataMahasiswa;
+    }
 }

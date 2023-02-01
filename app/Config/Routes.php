@@ -70,6 +70,9 @@ $routes->get('/dataasessor', 'Admin::dataAsessor');
 $routes->get('/tanggapanasessor/(:any)', 'Admin::tanggapanAsessor/$1');
 $routes->get('/validprodi/(:any)/(:any)', 'Admin::validprodi/$1/$2');
 $routes->get('/validprodi/(:any)', 'Admin::validprodi/$1');
+$routes->get('/validdekan/(:any)/(:any)', 'Admin::validdekan/$1/$2');
+$routes->get('/validdekan/(:any)/', 'Admin::validdekan/$1');
+$routes->get('/print-transkrip/(:any)/', 'Admin::printTranskrip/$1');
 
 $routes->post('Admin/SimpanPengguna', 'Admin::SimpanPengguna');
 $routes->post('resetpassword', 'Admin::resetPassword');
@@ -80,7 +83,8 @@ $routes->post('getDataKlaimAsessor', 'Admin::getDataKlaimasessor');
 $routes->post('simpanpesertaasessor', 'Admin::simpanpesertaasessor');
 $routes->post('setvalidprodi', 'Admin::validasiprodi');
 $routes->post('setunvalidprodi', 'Admin::unvalidasiprodi');
-
+$routes->post('setvaliddekan', 'Admin::validasidekan');
+$routes->post('setunvaliddekan', 'Admin::unvalidasidekan');
 
 
 //Dashbboard section routing

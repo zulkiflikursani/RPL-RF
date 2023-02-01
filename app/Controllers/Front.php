@@ -390,11 +390,8 @@ class Front extends BaseController
 			// $noregis = session()->get("noregis");
 			$Modaldokumen = new ModelDokumen();
 			$ModalBiodata = new ModelBiodata();
-			$ModalAssesmentMandiri = new ModelKlaimAsessor();
-			$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
 			$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
 			$modelklaimasessor = new ModelKlaimAsessor();
-
 			$result = $modelklaimasessor->getDataResponAsessor($noregis);
 			// $dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
 			$data = [

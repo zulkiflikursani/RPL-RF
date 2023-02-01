@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\ModelBiodata;
 use App\Models\ModelDokumen;
 use App\Models\ModelKlaimAsessor;
+use App\Models\ModelKlaimDekan;
 use App\Models\ModelKlaimProdi;
 use App\Models\ModelPengguna;
 use App\Models\ModelPesertaAsessor;
@@ -62,6 +63,23 @@ class Admin extends BaseController
             ];
 
             return view('Admin/rpl-home-prodi', $data);
+        } else if (session()->get('sttpengguna') == 4) {
+            $modelPeserta = new ModelPesertaAsessor();
+            $ta_akademik = $this->getTa_akademik();
+            $kode_fakultas = $this->getKodeFakultasby(session()->get('kode_prodi'));
+            $databelumvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdiDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
+            $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
+
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Fakultas', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $this->getTa_akademik(),
+                'dataPesertaBelumValid' => $databelumvalid,
+                'dataPesertaSudahValid' => $datasudahvalid,
+
+            ];
+
+            return view('Admin/rpl-home-fakultas', $data);
         }
     }
     public function resetPassword()
@@ -77,7 +95,6 @@ class Admin extends BaseController
             $email = $db->escapeString($this->request->getPost("eemail"));
             $password1 =  random_string('alnum', 6);
             $password = password_hash($password1, PASSWORD_BCRYPT);
-
             $data1 = [
                 "ktkunci" => $password,
             ];
@@ -145,6 +162,7 @@ class Admin extends BaseController
             }
         }
     }
+
     public function pengguna()
     {
         if (session()->get('sttpengguna') != 1) {
@@ -567,6 +585,36 @@ class Admin extends BaseController
             }
         }
     }
+    public function validasidekan()
+    {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 4) {
+            return redirect()->to('/logout');
+        } else {
+            $db      = \Config\Database::connect();
+            $this->request = service('request');
+            $noregis = $db->escapeString($this->request->getPost("noregis"));
+
+            $modelMkDekan = new ModelKlaimDekan();
+            $cekpesertaasessor = $modelMkDekan->chekstauspesertaasessor($noregis);
+            $cekpesertaprodi = $modelMkDekan->chekstauspesertaprodi($noregis);
+            $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
+            if ($cekpesertaasessor != null && $cekpesertaprodi != null) {
+                if ($cekpeserta != null) {
+                    echo $this->validdekan($noregis, 4);
+                } else {
+                    $validprodi = $modelMkDekan->validdekan($noregis, session()->get("id"));
+                    if ($validprodi === false) {
+                        echo $this->validdekan($noregis, 3);
+                    } else {
+                        echo $this->validdekan($noregis, 2);
+                    }
+                }
+            } else {
+                // peserta belum valid asessor atau prodi
+                echo $this->validdekan($noregis, 5);
+            }
+        }
+    }
 
     public function unvalidasiprodi()
     {
@@ -591,7 +639,83 @@ class Admin extends BaseController
             }
         }
     }
+    public function unvalidasidekan()
+    {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 4) {
+            return redirect()->to('/logout');
+        } else {
+            $db      = \Config\Database::connect();
+            $this->request = service('request');
+            $noregis = $db->escapeString($this->request->getPost("noregis"));
 
+            $modelMkDekan = new ModelKlaimDekan();
+            $cekpesertaasessor = $modelMkDekan->chekstauspesertaasessor($noregis);
+            $cekpesertaprodi = $modelMkDekan->chekstauspesertaprodi($noregis);
+            $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
+            if ($cekpeserta != null) {
+                $unvalidprodi = $modelMkDekan->unvaliddekan($noregis, session()->get("id"));
+                if ($unvalidprodi === false) {
+                    echo $this->validdekan($noregis, 7);
+                } else {
+                    echo $this->validdekan($noregis, 6);
+                }
+            } else {
+                echo $this->validdekan($noregis, 8);
+            }
+        }
+    }
+
+    public function validdekan($noregis, $status = 1)
+    {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 4) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            $noregis = $db->escapeString($noregis);
+            $kode_prodi = $this->getKodeProdiBy($noregis);
+            $statusMessage = '';
+            if ($status == 2) {
+                $statusMessage = "Peserta Berhasil Divalidasi";
+            } else  if ($status == 3) {
+                $statusMessage = "Peserta Gagal Divalidasi";
+            } else  if ($status == 4) {
+                $statusMessage = "Peserta Sudah Divalidasi";
+            } else  if ($status == 5) {
+                $statusMessage = "Peserta Belum divalidasi prodi atau belum divalidasi Asessor";
+            } else if ($status == 6) {
+                $statusMessage = "Peserta Berhasil Diunvalidasi";
+            } else  if ($status == 7) {
+                $statusMessage = "Peserta Gagal Diunvalidasi";
+            } else  if ($status == 8) {
+                $statusMessage = "Peserta Sudah Diunvalidasi";
+            }
+            if ($kode_prodi == session()->get('kode_prodi')) {
+                // $noregis = session()->get("noregis");
+                $Modaldokumen = new ModelDokumen();
+                $ModalBiodata = new ModelBiodata();
+                $ModalAssesmentMandiri = new ModelKlaimAsessor();
+                $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+                $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+                $dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
+                $data = [
+                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
+                    'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+                    'nama_mhs' => $databio[0]['nama'],
+                    'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
+                    'jenis_rpl' => $databio[0]['jenis_rpl'],
+                    'noregis' => $noregis,
+                    'status' => $status,
+                    'dataKlaimMhs' => $dataassementmandiri,
+                    'validstatus' => $statusMessage
+
+                ];
+                return view('Admin/rpl-validasi-dekan', $data);
+            } else {
+                return redirect()->to(base_url('Admin'));
+            }
+        }
+    }
     public function klaimMkAsessor()
     {
         $formdata = $this->request->getPost();
@@ -608,6 +732,13 @@ class Admin extends BaseController
         $result = $db->query("select * from prodi where kode_prodi ='$kode_prodi'")->getRow();
 
         return $result->nama_prodi;
+    }
+    public function getKodeFakultasby($kode_prodi)
+    {
+        $db      = \Config\Database::connect();
+        $result = $db->query("select kode_fakultas from prodi where kode_prodi ='$kode_prodi' group by kode_prodi")->getRow();
+
+        return $result->kode_fakultas;
     }
     public function getDataMhsPerAsessor()
     {
@@ -653,6 +784,69 @@ class Admin extends BaseController
         return $ta_akademik;
     }
 
+    public function printTranskrip($noregis)
+    {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 4) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            $noregis = $db->escapeString($noregis);
+            $kode_prodi = $this->getKodeProdiBy($noregis);
+            if ($kode_prodi == session()->get('kode_prodi')) {
+                // $noregis = session()->get("noregis");
+                $Modaldokumen = new ModelDokumen();
+                $ModalBiodata = new ModelBiodata();
+                $modelMkDekan = new ModelKlaimDekan();
+                $ModalAssesmentMandiri = new ModelKlaimAsessor();
+                $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+                $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+                $modelklaimasessor = new ModelKlaimAsessor();
+                $result = $modelklaimasessor->getDataResponAsessor($noregis);
+                $kode_fakultas = $this->getKodeFakultasby(session()->get('kode_prodi'));
+                if ($kode_fakultas == '13123') {
+                    $fakultas = 'Teknik';
+                } else if ($kode_fakultas == '60001') {
+                    $fakultas = 'Ekonomi dan Ilmu-Ilmu Sosial';
+                } else if ($kode_fakultas == '11222') {
+                    $fakultas = 'Pascasarjana';
+                };
+                $dekan = $this->getNamadekan($kode_fakultas);
+                $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
+                if ($cekpeserta != null) {
+                    $data = [
+                        'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
+                        'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+                        'nama_mhs' => $databio[0]['nama'],
+                        'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
+                        'jenis_rpl' => $databio[0]['jenis_rpl'],
+                        'noregis' => $noregis,
+                        'dekan' => $dekan,
+                        'fakultas' => $fakultas,
+                        'dataKlaimAsessor' => $result,
+
+
+                    ];
+                    return view('Admin/rpl-print-transkrip', $data);
+                } else {
+                    return redirect()->to(base_url('Admin'));
+                }
+            } else {
+                return redirect()->to(base_url('Admin'));
+            }
+        }
+    }
+    public function getNamadekan($fakultas)
+    {
+        $db      = \Config\Database::connect();
+        $result = $db->query("select dekan from fakultas where kode_fakultas ='$fakultas'")->getRow();
+        if ($result != null) {
+            $dekan = $result->dekan;
+        } else {
+            return false;
+        }
+        return $dekan;
+    }
     public function logout()
     {
         session()->destroy();    //unet current user session 
