@@ -124,9 +124,34 @@
                     if (session()->get('sttpengguna') == 1) {
                     ?>
                     <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('resetpassmhs') ?>" id="topnav-dashboard"
+                            role="button">
+                            <i class="bx bx-home-circle me-2"></i><span
+                                key="t-dashboards"><?= 'Reset Akun Maba' ?></span>
+                            <div class="arrow-down"></div>
+                        </a>
+                    </li>
+                    <?php
+                    };
+
+                    if (session()->get('sttpengguna') == 1) {
+                    ?>
+                    <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="<?= base_url('dataasessor') ?>" id="topnav-dashboard"
                             role="button">
                             <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Data Asessor' ?></span>
+                            <div class="arrow-down"></div>
+                        </a>
+                    </li>
+                    <?php
+                    };
+                    if (session()->get('sttpengguna') == 1) {
+                    ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('cpmk') ?>" id="topnav-dashboard"
+                            role="button">
+                            <i class="bx bx-home-circle me-2"></i><span
+                                key="t-dashboards"><?= 'Data Matakuliah' ?></span>
                             <div class="arrow-down"></div>
                         </a>
                     </li>

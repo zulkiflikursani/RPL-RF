@@ -35,4 +35,53 @@ class ModelRegistrasi extends Model
     ];
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
+
+    public function getvalid()
+    {
+        $db = \Config\Database::connect();
+        $result = $db->query("SELECT
+                                tb_valid_keu.no_peserta,
+                                reg_peserta.ta_akademik,
+                                reg_peserta.no_registrasi,
+                                reg_peserta.nama,
+                                reg_peserta.alamat,
+                                reg_peserta.kotkab,
+                                reg_peserta.propinsi,
+                                reg_peserta.instansi_asal,
+                                reg_peserta.nohape,
+                                reg_peserta.email,
+                                reg_peserta.kode_prodi,
+                                reg_peserta.validasi_keu,
+                                reg_peserta.ktkunci
+                                FROM
+                                reg_peserta
+                                LEFT JOIN tb_valid_keu ON reg_peserta.no_registrasi = tb_valid_keu.no_peserta
+                                where 
+                                tb_valid_keu.no_peserta is not null ")->getResult();
+        return $result;
+    }
+    public function getnonvalid()
+    {
+        $db = \Config\Database::connect();
+        $result = $db->query("SELECT
+                                tb_valid_keu.no_peserta,
+                                reg_peserta.ta_akademik,
+                                reg_peserta.no_registrasi,
+                                reg_peserta.nama,
+                                reg_peserta.alamat,
+                                reg_peserta.kotkab,
+                                reg_peserta.propinsi,
+                                reg_peserta.instansi_asal,
+                                reg_peserta.nohape,
+                                reg_peserta.email,
+                                reg_peserta.kode_prodi,
+                                reg_peserta.validasi_keu,
+                                reg_peserta.ktkunci
+                                FROM
+                                reg_peserta
+                                LEFT JOIN tb_valid_keu ON reg_peserta.no_registrasi = tb_valid_keu.no_peserta
+                                where 
+                                tb_valid_keu.no_peserta is null ")->getResult();
+        return $result;
+    }
 }

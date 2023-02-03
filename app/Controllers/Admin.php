@@ -3,12 +3,15 @@
 namespace App\Controllers;
 
 use App\Models\ModelBiodata;
+use App\Models\ModelCpmk;
 use App\Models\ModelDokumen;
+use App\Models\ModelKeu;
 use App\Models\ModelKlaimAsessor;
 use App\Models\ModelKlaimDekan;
 use App\Models\ModelKlaimProdi;
 use App\Models\ModelPengguna;
 use App\Models\ModelPesertaAsessor;
+use App\Models\ModelRegistrasi;
 use App\Models\ModelTransactionKlaim;
 use App\Models\ModelTransactionKlaimAsessor;
 
@@ -80,6 +83,87 @@ class Admin extends BaseController
             ];
 
             return view('Admin/rpl-home-fakultas', $data);
+        } else if (session()->get('sttpengguna') == 5) {
+            $modelRegister = new ModelRegistrasi();
+            $ta_akademik = $this->getTa_akademik();
+            $databelumvalidasi = $modelRegister->getNonvalid();
+            $datasudahvalidasi = $modelRegister->getvalid();
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Keuangan', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $this->getTa_akademik(),
+                'dataPesertaBelumValid' => $databelumvalidasi,
+                'dataPesertaSudahValid' => $datasudahvalidasi,
+
+            ];
+
+            return view('Admin/rpl-home-keu', $data);
+        }
+    }
+
+    public function resetpassmhs()
+    {
+        if (session()->get('sttpengguna') != 1) {
+            return redirect()->to('/logout');
+        } else {
+            $modelRegister = new ModelRegistrasi();
+            $dataMhs = $modelRegister->findAll();
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
+                'dataMhs' => $dataMhs,
+                'ta_akademik' => $this->getTa_akademik()
+            ];
+            return view('Admin/rpl-data-reg-mhs', $data);
+        }
+    }
+    public function validKeu()
+    {
+        if (session()->get('sttpengguna') != 5) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            helper('text');
+
+            $modelKeu = new ModelKeu();
+            $noregis = $db->escapeString($this->request->getPost("noregis"));
+
+            $data = [
+                "ta_akademik" => $this->getTa_akademik(),
+                "no_peserta" => $noregis,
+                "id_pengguna" => session()->get('id')
+            ];
+
+            $result = $modelKeu->insert($data);
+            $result2 = $modelKeu->setvalid($noregis);
+            if ($result === false || $result2 === false) {
+                echo $modelKeu->errors();
+            } else {
+                echo "Berhasil Memvalidasi Calon Mahasiswa";
+            }
+        }
+    }
+    public function unvalidKeu()
+    {
+        if (session()->get('sttpengguna') != 5) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            helper('text');
+
+            $modelKeu = new ModelKeu();
+            $noregis = $db->escapeString($this->request->getPost("noregis"));
+
+            $result = $modelKeu->where("no_peserta", $noregis)->delete();
+            $result2 = $modelKeu->setunvalid($noregis);
+
+            if ($result === false || $result2 === false) {
+                echo $modelKeu->errors();
+            } else {
+                echo "Berhasil Membatalkan Validasi Calon Mahasiswa";
+            }
         }
     }
     public function resetPassword()
@@ -146,6 +230,84 @@ class Admin extends BaseController
                     ];
 
                     return view('Admin/rpl-data-admin', $data);
+                    // Generate error
+                } else {
+
+                    $data = [
+                        'title_meta' => view('partials/rpl-title-meta', ['title' => 'Admin RPL']),
+                        'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
+                        'ta_akademik' => $this->getTa_akademik(),
+                        'dataPengguna' => $dataPengguna,
+                        'status' => true
+                    ];
+
+                    return view('Admin/rpl-data-admin', $data);
+                }
+            }
+        }
+    }
+    public function resetPasswordMhs()
+    {
+        if (session()->get('sttpengguna') != 1) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            helper('text');
+
+            $modelPengguna = new ModelRegistrasi();
+            $email = $db->escapeString($this->request->getPost("eemail"));
+            $password1 =  random_string('alnum', 6);
+            $password = password_hash($password1, PASSWORD_BCRYPT);
+            $data1 = [
+                "ktkunci" => $password,
+            ];
+
+            $link = base_url("Login");
+            $result = $modelPengguna->update(['email' => $email], $data1);
+            if ($result === false) {
+                // $modelPengguna = new ModelPengguna();
+                $modelRegister = new ModelRegistrasi();
+                $dataMhs = $modelRegister->findAll();
+                $data = [
+                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                    'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
+                    'dataMhs' => $dataMhs,
+                    'dataerror' => $modelPengguna->errors(),
+                    'ta_akademik' => $this->getTa_akademik()
+                ];
+                return view('Admin/rpl-data-reg-mhs', $data);
+            } else {
+                $message = "Berhasil Mereset Password.<br>
+                Berikut ada user untuk login ke Sistem SILAJU unifa <br>
+                <br>
+                User 	    : " . $email . "<br>
+                Pass 	    : " . $password1 . "<br>
+                <br>
+                Silahkan Login di " . $link . " <br>
+                Terima kasih";
+                $emailgo = \Config\Services::email();
+                $emailgo->setTo($email);
+                $emailgo->setFrom('rpl.unifa.2023@gmail.com', 'Admin Silaju Unifa');
+                $emailgo->setSubject('Silaju Unifa | Password Login');
+                $emailgo->setMessage($message); //your message here
+                $modelPengguna = new ModelPengguna();
+                $dataPengguna = $modelPengguna->findAll();
+
+                if (!$emailgo->send()) {
+                    $email_status = $emailgo->printDebugger(['headers']);
+                    $modelRegister = new ModelRegistrasi();
+                    $dataMhs = $modelRegister->findAll();
+                    $data = [
+                        'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                        'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
+                        'dataMhs' => $dataMhs,
+                        'dataerror' => $modelPengguna->errors(),
+                        'ta_akademik' => $this->getTa_akademik(),
+                        'status' => false,
+                    ];
+                    return view('Admin/rpl-data-reg-mhs', $data);
+
                     // Generate error
                 } else {
 
@@ -361,6 +523,139 @@ class Admin extends BaseController
         ];
 
         return view('Admin/rpl-home-asessor', $data);
+    }
+    public function inputcpmk()
+    {
+        if (session()->get('sttpengguna') != 1) {
+            return redirect()->to('/logout');
+        } else {
+
+            $modelCpmk = new ModelCpmk();
+            $programstudi = $modelCpmk->getAllprodi();
+
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Matakuliah', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $this->getTa_akademik(),
+                'jenis_prodi' => $programstudi,
+                // 'datacpmk' => $dataAsessor,
+            ];
+
+            return view('Admin/rpl-input-cpmk', $data);
+        }
+    }
+    public function getcpmk()
+    {
+        if (!session()->get('sttpengguna')) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            $kode_prodi = $db->escapeString($this->request->getPost("prodi"));
+            $result = $db->query("SELECT
+								matakuliah.*,
+								mk_cpmk.idcpmk,
+									mk_cpmk.cpmk
+									
+								FROM
+									matakuliah
+								left JOIN
+									mk_cpmk
+								on matakuliah.kode_matakuliah= mk_cpmk.kode_matakuliah and mk_cpmk.kode_prodi='$kode_prodi'
+								WHERE
+									matakuliah.kode_prodi = '$kode_prodi'
+								order by matakuliah.kode_matakuliah")->getResult();
+
+            echo json_encode($result, false);
+        }
+    }
+    public function getMatakuliah()
+    {
+        if (!session()->get('sttpengguna')) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            $kode_prodi = $db->escapeString($this->request->getPost("prodi"));
+            $result = $db->query("SELECT * FROM
+									matakuliah where
+									matakuliah.kode_prodi = '$kode_prodi'
+								order by matakuliah.kode_matakuliah")->getResult();
+
+            echo json_encode($result, false);
+        }
+    }
+
+    public function simpanCpmk()
+    {
+        if (!session()->get('sttpengguna')) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            $kode_prodi = $db->escapeString($this->request->getPost("prodi"));
+            $kdmk = $db->escapeString($this->request->getPost("kdmk"));
+            $idcpmk = $db->escapeString($this->request->getPost("idcpmk"));
+            $cpmk = $db->escapeString($this->request->getPost("cpmk"));
+            $data = [
+                'kode_prodi' => $kode_prodi,
+                'kode_matakuliah' => $kdmk,
+                'idcpmk' => $idcpmk,
+                'cpmk' => $cpmk
+
+            ];
+
+            $modelCpmk = new ModelCpmk();
+            $simpan = $modelCpmk->insert($data);
+            if ($simpan === false) {
+                echo $modelCpmk->errors();
+            } else {
+                echo "Berhasil Menambahkan CPMK";
+            }
+        };
+    }
+
+    public function editCpmk()
+    {
+        if (!session()->get('sttpengguna')) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            $kode_prodi = $db->escapeString($this->request->getPost("prodi"));
+            $kdmk = $db->escapeString($this->request->getPost("kdmk"));
+            $idcpmk = $db->escapeString($this->request->getPost("idcpmk"));
+            $cpmk = $db->escapeString($this->request->getPost("cpmk"));
+
+            $modelCpmk = new ModelCpmk();
+            $simpan = $modelCpmk->editCpmk($idcpmk, $kode_prodi, $cpmk);
+            if ($simpan === false) {
+                echo $modelCpmk->errors();
+            } else {
+                echo "Berhasil Mengedit CPMK";
+            }
+        };
+    }
+    public function hapusCpmk()
+    {
+        if (!session()->get('sttpengguna')) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            $kode_prodi = $db->escapeString($this->request->getPost("prodi"));
+            $kdmk = $db->escapeString($this->request->getPost("kdmk"));
+            $idcpmk = $db->escapeString($this->request->getPost("idcpmk"));
+            $cpmk = $db->escapeString($this->request->getPost("cpmk"));
+
+            $modelCpmk = new ModelCpmk();
+            $simpan = $modelCpmk->hapusCpmk($idcpmk, $kode_prodi, $cpmk);
+            if ($simpan === false) {
+                echo $modelCpmk->errors();
+            } else {
+                echo "Berhasil MEnghapus CPMK";
+            }
+        };
     }
     public function dataAsessor()
     {
@@ -585,6 +880,7 @@ class Admin extends BaseController
             }
         }
     }
+
     public function validasidekan()
     {
         if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 4) {
@@ -801,8 +1097,8 @@ class Admin extends BaseController
                 $ModalAssesmentMandiri = new ModelKlaimAsessor();
                 $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
                 $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-                $modelklaimasessor = new ModelKlaimAsessor();
-                $result = $modelklaimasessor->getDataResponAsessor($noregis);
+                $modelklaimdekan = new ModelKlaimDekan();
+                $result = $modelMkDekan->getDatatoPrint($noregis);
                 $kode_fakultas = $this->getKodeFakultasby(session()->get('kode_prodi'));
                 if ($kode_fakultas == '13123') {
                     $fakultas = 'Teknik';

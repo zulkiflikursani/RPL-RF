@@ -1,3 +1,29 @@
+<style>
+#loading {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: #272e7e;
+    opacity: 0.3;
+    z-index: 10000;
+    display: none;
+}
+
+#loading>i {
+    top: 35%;
+    left: 50%;
+    color: #ffffff;
+    position: absolute;
+    font-size: 100px;
+    /* display: none; */
+}
+</style>
+<div id='loading'>
+    <i class="bx bx-loader bx-spin  align-middle me-2"></i>
+
+</div>
 <div class="container-fluid  text-white pt-3 pb-2" style="background-color:#272e7e !important">
     <div class="row">
         <div class="col-sm-3 ">

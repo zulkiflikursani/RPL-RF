@@ -16,6 +16,7 @@ return [
     'Asessor' => 'Asessor',
     'Prodi' => 'Prodi',
     'Admin' => 'Admin',
+    'Fakultas' => 'Fakultas',
     'Asessor RPL' => 'Asessor RPL',
     'Welcome Back' => 'Welcome Back',
     'Dashboard' => 'Dashboard',
