@@ -513,6 +513,8 @@ class Front extends BaseController
 			echo "Tidak bisa mengubah data karena sudah di ajukan";
 		} else if ($statusklaim == 1) {
 			$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+		} else {
+			$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
 		}
 	}
 
