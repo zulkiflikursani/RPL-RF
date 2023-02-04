@@ -111,7 +111,7 @@
                                                                         <option value='2'>Asessor</option>
                                                                         <option value='3'>Prodi</option>
                                                                         <option value='4'>Fakultas</option>
-                                                                        <option value='5'>Manajemen</option>
+                                                                        <option value='5'>Keuangan</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -204,7 +204,7 @@
                                                                         <option value='2'>Asessor</option>
                                                                         <option value='3'>Prodi</option>
                                                                         <option value='4'>Fakultas</option>
-                                                                        <option value='5'>Manajemen</option>
+                                                                        <option value='5'>Keuangan</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -275,7 +275,7 @@
                                                     } else if ($row['sttpengguna'] == 4) {
                                                         $statuspengguna = "Fakultas";
                                                     } else if ($row['sttpengguna'] == 5) {
-                                                        $statuspengguna = "Manajemen";
+                                                        $statuspengguna = "Keuangan";
                                                     }
 
                                                     echo "<tr idpengguna='" . $row['idpengguna'] . "'>

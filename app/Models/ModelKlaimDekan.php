@@ -63,4 +63,10 @@ class ModelKlaimDekan extends Model
         $result = $db->query("select idklaim from mk_klaim_prodi where mid(idklaim,6,10)='$noregis'")->getResult();
         return $result;
     }
+    public function getDatatoPrint($noregis)
+    {
+        $db = \Config\Database::connect();
+        $result = $db->query("select idklaim from mk_klaim_dekan wshere mid(mk_klaim_dekan.idklaim,6,10)='$noregis'")->getResult();
+        return $result;
+    }
 }
