@@ -171,7 +171,7 @@
                                                         <h5 class="modal-title" id="myLargeModalLabel">Prodi <span id='jprodi'></span>
                                                         </h5>
 
-                                                        <form method="POST" action="<?= base_url("Admin/SimpanPengguna") ?>" enctype="multipart/form-data">
+                                                        <form method="POST" action="" enctype="multipart/form-data">
                                                             <div class="row">
                                                                 <div class="col-md-6">
 
