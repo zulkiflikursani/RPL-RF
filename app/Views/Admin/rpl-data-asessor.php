@@ -5,6 +5,12 @@
 
     <?= $title_meta ?>
     <?= $this->include('partials/rpl-head-css') ?>
+    <link href="<?= base_url() ?>/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <style>
+    .choose-position .select2-container {
+        width: 100% !important;
+    }
+    </style>
 
 </head>
 
@@ -69,12 +75,16 @@
                                                 <div class="mb-3">
                                                     <label for="formrow-inputPendidikan" class="form-label">Nama
                                                         Mahasiswa</label>
-                                                    <input list="suggestionList" id="noregisInput" class='form-control'>
+                                                    <select name="noregis" id="mhsnoasessor"
+                                                        class="select2 form-control">
+                                                        <option value="">Pilih Mahasiswa</option>
+                                                    </select>
+                                                    <!-- <input list="suggestionList" id="noregisInput" class='form-control'>
                                                     <datalist id="suggestionList" class="col-md-12"
                                                         style="width: 100%;">
-                                                        <!-- <option data-value="45">1032 : 345sdfg</option> -->
+                                                       
                                                     </datalist>
-                                                    <input type="hidden" name="noregis" id="noregisInput-hidden">
+                                                    <input type="hidden" name="noregis" id="noregisInput-hidden">-->
                                                     <input type="hidden" name="noasessor" id="noasessorInput">
 
                                                 </div>
@@ -95,8 +105,7 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="mb-3">
-
-                                                <select name="nmasessor" id="nmasessor" class="form-select col-3"
+                                                <select name="nmasessor" id="nmasessor" class="select2 form-control"
                                                     onchange="getMahasiswa()">
                                                     <option value=''>Pilih Asessor</option>
                                                     <?php
@@ -176,35 +185,30 @@
 
     <!-- apexcharts -->
     <script src="<?= base_url() ?>/assets/libs/apexcharts/apexcharts.min.js"></script>
-
+    <script src="<?= base_url() ?>/assets/libs/select2/js/select2.min.js"></script>
     <!-- dashboard init -->
     <script src="<?= base_url() ?>/assets/js/pages/dashboard.init.js"></script>
 
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 
     <script>
-    $('document').ready(function() {
-
+    // $('.tambah-mahasiswa-modal select').css('width', '100%');
+    $('select').select2({
+        // matcher: matchStart
+    })
+    $('#mhsnoasessor').select2({
+        width: '100%',
+        dropdownParent: $('.tambah-mahasiswa-modal'),
 
     })
-    document.querySelector('input[list]').addEventListener('input', function(e) {
-        var input = e.target,
-            list = input.getAttribute('list'),
-            options = document.querySelectorAll('#' + list + ' option'),
-            hiddenInput = document.getElementById(input.getAttribute('id') + '-hidden'),
-            inputValue = input.value;
+    $('document').ready(function() {
+        // $("#mhsnoasessor").select2({
+        //     // tags: true,
+        //     dropdownParent: $('#myModal')
+        // });
 
-        hiddenInput.value = inputValue;
+    })
 
-        for (var i = 0; i < options.length; i++) {
-            var option = options[i];
-
-            if (option.innerText === inputValue) {
-                hiddenInput.value = option.getAttribute('data-value');
-                break;
-            }
-        }
-    });
 
     function getMahasiswa() {
         $('#bodytable').children().remove();
@@ -233,17 +237,20 @@
         url = '<?= base_url('getdatamhsblmpunyaassessor') ?>'
         $.post(url, {
             "kode_prodi": kode_prodi
-        }, function(data) {
+        }).done(function(data) {
             data = JSON.parse(data)
             // console.log(data);
             $.each(data, function(index, value) {
-                $('#suggestionList').append("<option data-value='" + value['no_peserta'] +
+                // $("#select_with_data").append('<option value="5">Twitter</option>');
+                $('#mhsnoasessor').append("<option value='" + value['no_peserta'] +
                     "'>" + value['no_peserta'] +
                     " : " + value['nama'] +
                     "</option>");
-
-
+                // $("#mhsnoasessor").val(value['no_peserta']);
+                // $("#mhsnoasessor").trigger('change');
             })
+
+
 
         })
     }

@@ -415,6 +415,7 @@ class Front extends BaseController
 				'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
 				'jenis_rpl' => $databio[0]['jenis_rpl'],
 				'databio' => $databio,
+
 				'noregis' => $noregis,
 				'dataKlaimAsessor' => $result,
 
@@ -431,18 +432,18 @@ class Front extends BaseController
 		$ModalAssesmentMandiri = new ModelTransactionKlaim();
 		$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
 		$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-		$dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa();
+		$dataassementmandiri = "";
 		$data = [
 			'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
 			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
 			'datadok' => $datadokumen,
 			'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
-			'getMatakuliah' => $this->getMatakuliah($databio[0]['kode_prodi']),
+			'getMatakuliah' => $this->getMatakuliahklaimperprodi($databio[0]['kode_prodi'], $noregis),
 			'dataKlaimMhs' => $dataassementmandiri,
 			'databio' => $databio,
 
 		];
-		return view('Front/rpl-assesment-mandiri', $data);
+		return view('Front/rpl-assesment-mandiri-ok', $data);
 	}
 	public function Logout()
 	{
@@ -481,11 +482,26 @@ class Front extends BaseController
 		$kodeprodi = $this->getkodeprodi($noregis);
 		$ta_akademik = $this->getTa_akademik();
 		$ModalTransactionKlaim = new ModelTransactionKlaim();
-		$dataassementmandiri = $ModalTransactionKlaim->getKlaimMk_mahasiswa();
-		if ($dataassementmandiri != null) {
-			echo "Klaim sedang diproses. Silahkan menunggu tanggapan Asessor di menu Respon Asessor";
-		} else {
-			$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+		$dataassementmandiri = $ModalTransactionKlaim->getKlaimMk_mahasiswaAll();
+
+		$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+	}
+	public function batalKlaimmk()
+	{
+		$this->request = service('request');
+		$db      = \Config\Database::connect();
+		$idklaim = $db->escapeString($this->request->getPost('idklaim'));
+		$noregis = session()->get("noregis");
+		$kodeprodi = $this->getkodeprodi($noregis);
+		$ta_akademik = $this->getTa_akademik();
+		$ModalTransactionKlaim = new ModelTransactionKlaim();
+		$statusmk = $ModalTransactionKlaim->cekstatusmk($idklaim);
+		if ($statusmk != null) {
+			if ($statusmk == 2) {
+				echo "Klaim sedang diproses. Silahkan menunggu tanggapan Asessor di menu Respon Asessor";
+			} else if ($statusmk == 1) {
+				$ModalTransactionKlaim->batalklaim($idklaim);
+			}
 		}
 	}
 
@@ -498,7 +514,7 @@ class Front extends BaseController
 
 		$ta_akademik = $this->getTa_akademik();
 		$ModalTransactionKlaim = new ModelTransactionKlaim();
-		$dataassementmandiri = $ModalTransactionKlaim->getKlaimMk_mahasiswa();
+		$dataassementmandiri = $ModalTransactionKlaim->getKlaimMk_mahasiswaAll();
 
 		$statusklaim = "";
 		if ($dataassementmandiri != null) {
@@ -537,6 +553,98 @@ class Front extends BaseController
 								left JOIN
 									mk_cpmk
 								on matakuliah.kode_matakuliah= mk_cpmk.kode_matakuliah and mk_cpmk.kode_prodi='$kode_prodi'
+								WHERE
+									matakuliah.kode_prodi = '$kode_prodi'
+								order by matakuliah.kode_matakuliah")->getResult();
+
+		return $result;
+	}
+	public function AssesmentMandiri_mk($kdmk)
+	{
+		$noregis = session()->get("noregis");
+		$Modaldokumen = new ModelDokumen();
+		$ModalBiodata = new ModelBiodata();
+		$ModalAssesmentMandiri = new ModelTransactionKlaim();
+		$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+		$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+		$dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($kdmk);
+		$datacpmk = $this->getcpmk($kdmk);
+		foreach ($datacpmk as $r) {
+			$nama_matakulah = $r->nama_matakuliah;
+			$sks = $r->sks;
+		}
+		$data = [
+			'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+			'page_title' => view('partials/rpl-page-title', ['title' => 'Form Klaim RPL', 'pagetitle' => 'Dashboards']),
+			'datadok' => $datadokumen,
+			'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
+			'kdmk' => $kdmk,
+			'sks' => $sks,
+			'nama_matakuliah' => $nama_matakulah,
+			// 'getMatakuliah' => $this->getMatakuliahklaimperprodi($databio[0]['kode_prodi'], $noregis),
+			'dataKlaimMhs' => $dataassementmandiri,
+			'dataCpmk' => $datacpmk,
+			'databio' => $databio,
+
+		];
+		return view('Front/rpl-form-klaim', $data);
+	}
+	public function getcpmk($kode_matakuliah)
+	{
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$db      = \Config\Database::connect();
+			$noregis = session()->get('noregis');
+
+			$kode_prodi = $this->getkodeprodi(session()->get('noregis'));
+			// $kode_matakuliah = $db->escapeString($this->request->getPost('kdmk'));
+			$result = $db->query("SELECT
+									matakuliah.id,
+									matakuliah.`status`,
+									matakuliah.kode_prodi,
+									matakuliah.kode_matakuliah,
+									matakuliah.nama_matakuliah,
+									matakuliah.sks,
+									matakuliah.id_kurikulum,
+									mk_cpmk.idcpmk,
+									mk_cpmk.cpmk,
+									ref_klaim.no_dokumen,
+									mk_klaim_detail.klaim,
+									mk_klaim_detail.statusklaim
+									FROM
+										matakuliah
+									LEFT JOIN mk_cpmk ON matakuliah.kode_matakuliah = mk_cpmk.kode_matakuliah
+									AND mk_cpmk.kode_prodi = '$kode_prodi'
+									LEFT JOIN mk_klaim_detail ON mk_cpmk.idcpmk = mk_klaim_detail.idcpmk
+									AND mid(
+										mk_klaim_detail.idklaim,
+										6,
+										10
+									) = '$noregis'
+									LEFT JOIN ref_klaim
+									on mk_klaim_detail.idklaim = ref_klaim.idklaim 
+									WHERE
+										matakuliah.kode_prodi = '$kode_prodi' and matakuliah.kode_matakuliah='$kode_matakuliah'
+									ORDER BY
+										matakuliah.kode_matakuliah, mk_cpmk.idcpmk
+									")->getResult();
+
+			return $result;
+		}
+	}
+	public function getMatakuliahklaimperprodi($kode_prodi, $noregis)
+	{
+		$db      = \Config\Database::connect();
+		$result = $db->query("SELECT
+								matakuliah.*,
+								mk_klaim_header.kode_matakuliah as kdmk_klaim,
+								mk_klaim_header.idklaim as idklaim
+								FROM
+									matakuliah
+								left join 
+								mk_klaim_header
+								on matakuliah.kode_matakuliah = mk_klaim_header.kode_matakuliah and mk_klaim_header.kode_prodi='$kode_prodi' and mk_klaim_header.no_peserta='$noregis'
 								WHERE
 									matakuliah.kode_prodi = '$kode_prodi'
 								order by matakuliah.kode_matakuliah")->getResult();

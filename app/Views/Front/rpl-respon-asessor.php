@@ -117,7 +117,9 @@
                                                                         $namamatakulia = $row->nama_matakuliah;
                                                                         $cpmk = $row->cpmk;
                                                                         $count = 1;
-                                                                        if ($row->tanggapan == 0) {
+                                                                        if ($row->tanggapan == null) {
+                                                                            $tanggapanassessor = "";
+                                                                        } else if ($row->tanggapan == 0) {
                                                                             $tanggapanassessor = 'Ok';
                                                                         } else  if ($row->tanggapan == 1) {
                                                                             $tanggapanassessor = 'Butuh Tindakan';
@@ -131,7 +133,7 @@
                                                                             "cpmk" => $row->cpmk,
                                                                             "idklaim" => $row->idklaim,
                                                                             "klaim" => $row->klaim,
-                                                                            "no_dokumen" => $row->no_dokumen,
+                                                                            "no_dokumen" => json_decode($row->no_dokumen),
                                                                             "nmfile_asli" => $row->nmfile_asli,
                                                                             "nmfile" => $row->nmfile,
                                                                             "kode_matakuliah" => $row->kode_matakuliah,
@@ -156,15 +158,27 @@
                                                                                 $html .=    "<td for='cpmk'>" . $row->cpmk . "</td>
                                                                                 <td>" . $row->klaim . "</td>";
                                                                             }
-                                                                            $html .= "<td for='ref' nodok='" . $row->no_dokumen . "'><a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $row->nmfile_asli . "' target='_blank'>" . $row->nmfile . "</a></td>
-                                                                                        </tr>";
+                                                                            // $html .= "<td for='ref' nodok='" . $row->no_dokumen . "'>";
+                                                                            // $dokaarray = json_decode($row->no_dokumen);
+                                                                            // foreach ($dokaarray as $a) {
+
+                                                                            //     $html .= "</br><a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $row->nmfile_asli . "' target='_blank'>" . $a . "</a>";
+                                                                            // }
+                                                                            $html .= "</tr>";
                                                                         } else {
+                                                                            $ref = "<td for='ref' nodok='" . $row->no_dokumen . "' rowspan='$count'>";
+                                                                            // $dokaarray = json_decode($html1['no_dokumen']);
+                                                                            foreach ($html1['no_dokumen'] as $a) {
+
+                                                                                $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $row->nmfile_asli . "' target='_blank'>" . $a . "</a><br>";
+                                                                            }
+                                                                            $ref .= "</td>";
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row->kode_prodi . "' >
                                                                                     <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                                     <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
-                                                                                    <td for='ref' nodok='" . $html1['no_dokumen'] . "'><a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $html1['nmfile_asli'] . "' target='_blank'>" . $html1['nmfile'] . "</a></td>
+                                                                                    <td for='ref' nodok='" . $html1['no_dokumen'] . "'>" . $ref . "</td>
                                                                                     <td for='tanggapan'  rowspan='$count'>" .
                                                                                 $html1['tanggapan'] . "</td><td for='nilaiAs'  rowspan='$count'>" . $html1['nilai'] . "</td>
                                                                                     <td for='kettanggapan' rowspan='$count'>" . $html1['ket_tanggapan'] . "
@@ -200,13 +214,18 @@
                                                                         }
 
                                                                         if ($hitdata == $jumlahdata) {
+                                                                            $ref = "<td for='ref' nodok='" . $row->no_dokumen . "' rowspan='$count'>";
+                                                                            // $dokaarray = json_decode($html1['no_dokumen']);
+                                                                            foreach ($html1['no_dokumen'] as $a) {
+
+                                                                                $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $row->nmfile_asli . "' target='_blank'>" . $a . "</a><br>";
+                                                                            }
+                                                                            $ref .= "</td>";
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row->kode_prodi . "' >
                                                                             <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                             <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
                                                                             <td for='cpmk' >" . $html1['cpmk'] . "</td>
-                                                                            <td for='nilai' >" . $html1['klaim'] . "</td>
-                                                                            <td for='ref' nodok='" . $html1['no_dokumen'] . "'><a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $html1['nmfile_asli'] . "' target='_blank'>" . $html1['nmfile'] . "</a></td>
-                                                                            <td for='tanggapan'  rowspan='$count'>" .
+                                                                            <td for='nilai' >" . $html1['klaim'] . "</td>" . $ref . "<td for='tanggapan'  rowspan='$count'>" .
                                                                                 $html1['tanggapan'] . "</td><td for='nilaiAs'  rowspan='$count'>" . $html1['nilai'] . "</td>
                                                                             <td for='kettanggapan' rowspan='$count'>" . $html1['ket_tanggapan'] . "
                                                                             </td>
@@ -277,12 +296,12 @@
 </html>
 
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
 
-})
+    })
 
 
-<?php
+    <?php
     function search($array, $key, $value)
     {
         $results = array();

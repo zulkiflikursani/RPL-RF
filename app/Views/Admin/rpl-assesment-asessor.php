@@ -125,9 +125,7 @@
                                                                             "cpmk" => $row['cpmk'],
                                                                             "idklaim" => $row['idklaim'],
                                                                             "klaim" => $row['klaim'],
-                                                                            "no_dokumen" => $row['no_dokumen'],
-                                                                            "nmfile_asli" => $row['nmfile_asli'],
-                                                                            "nmfile" => $row['nmfile'],
+                                                                            "no_dokumen" => json_decode($row['no_dokumen']),
                                                                             "kode_matakuliah" => $row['kode_matakuliah'],
                                                                             "sks" => $row['sks'],
                                                                         ];
@@ -147,16 +145,21 @@
                                                                                 $html .=    "<td for='cpmk'>" . $row['cpmk'] . "</td>
                                                                                 <td>" . $row['klaim'] . "</td>";
                                                                             }
-                                                                            $html .= "<td for='ref' nodok='" . $row['no_dokumen'] . "'><a href='" . base_url() . "/uploads/berkas/" . $row['no_peserta'] . "/" . $row['nmfile_asli'] . "' target='_blank'>" . $row['nmfile'] . "</a></td>
-                                                                                        </tr>";
+                                                                            $html .= "</tr>";
                                                                         } else {
+                                                                            $ref = "<td for='ref' nodok='" . $row['no_dokumen'] . "' rowspan='$count'>";
+                                                                            // $dokaarray = json_decode($html1['no_dokumen']);
+                                                                            foreach ($html1['no_dokumen'] as $a) {
+                                                                                $dataref = getnamafile($a);
+
+                                                                                $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row['no_peserta'] . "/" . $dataref->nmfile_asli . "' target='_blank'>" . $dataref->nmfile . "</a><br>";
+                                                                            }
+                                                                            $ref .= "</td>";
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row['kode_prodi'] . "' >
                                                                                     <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                                     <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
-                                                                                    <td for='nilai' >" . $html1['klaim'] . "</td>
-                                                                                    <td for='ref' nodok='" . $html1['no_dokumen'] . "'><a href='" . base_url() . "/uploads/berkas/" . $row['no_peserta'] . "/" . $html1['nmfile_asli'] . "' target='_blank'>" . $html1['nmfile'] . "</a></td>
-                                                                                    <td for='tanggapan'  rowspan='$count' kdmk='" . $html1['kode_matakuliah'] . "'>
+                                                                                    <td for='nilai' >" . $html1['klaim'] . "</td>$ref<td for='tanggapan'  rowspan='$count' kdmk='" . $html1['kode_matakuliah'] . "'>
                                                                                     <select class='form-select'>
                                                                                     <option value=''>Pilih</option>
                                                                                     <option value='0'>Ok</option>
@@ -182,21 +185,27 @@
                                                                                 "idcpmk" => $row['idcpmk'],
                                                                                 "cpmk" => $row['cpmk'],
                                                                                 "klaim" => $row['klaim'],
-                                                                                "no_dokumen" => $row['no_dokumen'],
-                                                                                "nmfile_asli" => $row['nmfile_asli'],
-                                                                                "nmfile" => $row['nmfile'],
+                                                                                "no_dokumen" => json_decode($row['no_dokumen']),
                                                                                 "kode_matakuliah" => $row['kode_matakuliah'],
                                                                                 "sks" => $row['sks'],
                                                                             ];
                                                                         }
 
                                                                         if ($hitdata == $jumlahdata) {
+                                                                            $ref = "<td for='ref' nodok='" . $row['no_dokumen'] . "' rowspan='$count'>";
+                                                                            // $dokaarray = json_decode($html1['no_dokumen']);
+                                                                            foreach ($html1['no_dokumen'] as $a) {
+                                                                                $dataref = getnamafile($a);
+
+                                                                                $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row['no_peserta'] . "/" . $dataref->nmfile_asli . "' target='_blank'>" . $dataref->nmfile . "</a><br>";
+                                                                            }
+                                                                            $ref .= "</td>";
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row['kode_prodi'] . "'>
                                                                             <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                                     <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
-                                                                                    <td for='ref' nodok='" . $html1['no_dokumen'] . "'><a href='" . base_url() . "/uploads/berkas/" . $row['no_peserta'] . "/" . $html1['nmfile_asli'] . "' target='_blank'>" . $html1['nmfile'] . "</a></td>
+                                                                                    $ref
                                                                                     <td for='tanggapan' rowspan='$count'>
                                                                                     <select class='form-select'>
                                                                                     <option value=''>Pilih</option>
@@ -229,8 +238,7 @@
 
 
                                         <div>
-                                            <button type="button" onclick="simpan_klaim_asessor()"
-                                                class="btn btn-primary w-md">Submit</button>
+                                            <button type="button" onclick="simpan_klaim_asessor()" class="btn btn-primary w-md">Submit</button>
                                         </div>
                                     </form>
                                 </div>
@@ -275,85 +283,92 @@
 </html>
 
 <script>
-$(document).ready(function() {
-    noregis = '<?= $noregis ?>'
-    url = '<?= base_url('getDataKlaimAsessor') ?>'
-    $.post(url, {
-        noregis: noregis
-    }, function(data) {
-        data = JSON.parse(data)
-        console.log(data);
-        $.each(data, function(index, value) {
-            $('#tbody-klaim-mk  > tr').each(function(i, tr) {
-                if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
-                    value['idklaim']) {
-                    // alert('jalan')
-                    $(this).find('td[for=tanggapan]').children().val(value[
-                        'tanggapan']);
-                    $(this).find('td[for=nilaiAs]').children().val(value[
-                        'nilai']);
-                    $(this).find('td[for=kettanggapan]').children()
-                        .val(value['ket_tanggapan']);
-
-                }
-            })
-
-        })
-    }).fail(function() {
-        alert("error");
-    });
-})
-
-function simpan_klaim_asessor() {
-    jsonObj = [];
-    statusdata = 0;
-    $('#tbody-klaim-mk  > tr').each(function(i, tr) {
-
-        if ($(this).attr('noregis') != undefined) {
-            idklaim = $(this).attr('idklaim')
-            no_peserta = $(this).attr('noregis')
-            kdprodi = $(this).attr('kdprodi')
-            kdmk = $(this).attr('noregis')
-            tanggapan = $(this).find('td[for=tanggapan]').children().val();
-            nilai = $(this).find('td[for=nilaiAs]').children().val();
-            kettanggapan = $(this).find('td[for=kettanggapan]').children().val();
-
-
-            if (idklaim != "" && no_peserta != "" && kdmk != "" && tanggapan != "" && nilai != "" &&
-                kettanggapan != "") {
-                item = {}
-                item["idklaim"] = idklaim;
-                item["noregis"] = no_peserta;
-                item["kdmk"] = kdmk;
-                item["kdprodi"] = kdprodi;
-                item["tanggapan"] = tanggapan;
-                item["nilai"] = nilai;
-                item["kettanggapan"] = kettanggapan;
-
-                jsonObj.push(item);
-
-            } else {
-                statusdata = 1
-            }
-        }
-
-    })
-    if (statusdata == 1) {
-        alert("Silahkan Lengkapi Tanggapan Anda !")
-    } else {
-        url = '<?= base_url('klaimmkAsessor') ?>'
+    $(document).ready(function() {
+        noregis = '<?= $noregis ?>'
+        url = '<?= base_url('getDataKlaimAsessor') ?>'
         $.post(url, {
-            jsonObj
+            noregis: noregis
         }, function(data) {
-            alert(data);
+            data = JSON.parse(data)
+            console.log(data);
+            $.each(data, function(index, value) {
+                $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+                    if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
+                        value['idklaim']) {
+                        // alert('jalan')
+                        $(this).find('td[for=tanggapan]').children().val(value[
+                            'tanggapan']);
+                        $(this).find('td[for=nilaiAs]').children().val(value[
+                            'nilai']);
+                        $(this).find('td[for=kettanggapan]').children()
+                            .val(value['ket_tanggapan']);
+
+                    }
+                })
+
+            })
         }).fail(function() {
             alert("error");
         });
-    }
+    })
 
-}
+    function simpan_klaim_asessor() {
+        jsonObj = [];
+        statusdata = 0;
+        $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+
+            if ($(this).attr('noregis') != undefined) {
+                idklaim = $(this).attr('idklaim')
+                no_peserta = $(this).attr('noregis')
+                kdprodi = $(this).attr('kdprodi')
+                kdmk = $(this).attr('noregis')
+                tanggapan = $(this).find('td[for=tanggapan]').children().val();
+                nilai = $(this).find('td[for=nilaiAs]').children().val();
+                kettanggapan = $(this).find('td[for=kettanggapan]').children().val();
+
+
+                if (idklaim != "" && no_peserta != "" && kdmk != "" && tanggapan != "" && nilai != "" &&
+                    kettanggapan != "") {
+                    item = {}
+                    item["idklaim"] = idklaim;
+                    item["noregis"] = no_peserta;
+                    item["kdmk"] = kdmk;
+                    item["kdprodi"] = kdprodi;
+                    item["tanggapan"] = tanggapan;
+                    item["nilai"] = nilai;
+                    item["kettanggapan"] = kettanggapan;
+
+                    jsonObj.push(item);
+
+                } else {
+                    statusdata = 1
+                }
+            }
+
+        })
+        if (statusdata == 1) {
+            alert("Silahkan Lengkapi Tanggapan Anda !")
+        } else {
+            url = '<?= base_url('klaimmkAsessor') ?>'
+            $.post(url, {
+                jsonObj
+            }, function(data) {
+                alert(data);
+            }).fail(function() {
+                alert("error");
+            });
+        }
+
+    }
 </script>
 <?php
+
+function getnamafile($no_dokumen)
+{
+    $db      = \Config\Database::connect();
+    $result = $db->query("select * from dok_portofolio where no_dokumen='$no_dokumen'")->getRow();
+    return $result;
+}
 function search($array, $key, $value)
 {
     $results = array();

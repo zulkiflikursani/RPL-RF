@@ -142,12 +142,26 @@ class ModelKlaimAsessor extends Model
     {
         $db      = \Config\Database::connect();
         $Result = $db->query("SELECT
-                                    *,(SELECT COUNT(*) FROM ref_klaim as it 
-                                WHERE it.idcpmk = mk_klaim_detail.idcpmk) as entry_count
+                                    mk_klaim_header.idklaim,
+                                    mk_klaim_header.ta_akademik,
+                                    mk_klaim_header.no_peserta,
+                                    mk_klaim_header.kode_prodi,
+                                    mk_klaim_header.kode_matakuliah,
+                                    mk_klaim_header.nama_matakuliah,
+                                    mk_klaim_header.desk,
+                                    mk_klaim_header.sks,
+                                    mk_klaim_header.tglbuat,
+                                    mk_klaim_header.tglubah,
+                                    mk_klaim_detail.idcpmk,
+                                    mk_klaim_detail.cpmk,
+                                    mk_klaim_detail.klaim,
+                                    mk_klaim_detail.statusklaim,
+                                    ref_klaim.no_dokumen,(SELECT COUNT(*) FROM ref_klaim as it 
+                                WHERE it.idklaim = mk_klaim_detail.idklaim) as entry_count
                                 FROM
                                     mk_klaim_header
                                 left join mk_klaim_detail on mk_klaim_header.idklaim=mk_klaim_detail.idklaim 
-                                LEFT JOIN ref_klaim on mk_klaim_header.idklaim=ref_klaim.idklaim  and mk_klaim_detail.idcpmk=ref_klaim.idcpmk 
+                                LEFT JOIN ref_klaim on mk_klaim_header.idklaim=ref_klaim.idklaim
                                 LEFT JOIN dok_portofolio on ref_klaim.no_dokumen= dok_portofolio.no_dokumen
                                 WHERE
                                     mk_klaim_header.no_peserta = '$noregis' order by mk_klaim_header.nama_matakuliah,mk_klaim_detail.idcpmk")->getResultArray();
@@ -206,11 +220,11 @@ class ModelKlaimAsessor extends Model
                         dok_portofolio.jenis_dokumen,
                         dok_portofolio.url,
                         (SELECT COUNT(*) FROM ref_klaim as it 
-                                WHERE it.idcpmk = mk_klaim_detail.idcpmk) as entry_count
+                                WHERE it.idklaim = mk_klaim_detail.idklaim) as entry_count
                         FROM
                         mk_klaim_header
                         LEFT JOIN mk_klaim_detail ON mk_klaim_header.idklaim = mk_klaim_detail.idklaim
-                        LEFT JOIN ref_klaim ON mk_klaim_detail.idklaim = ref_klaim.idklaim AND mk_klaim_detail.idcpmk = ref_klaim.idcpmk
+                        LEFT JOIN ref_klaim ON mk_klaim_detail.idklaim = ref_klaim.idklaim 
                         LEFT JOIN mk_klaim_asessor ON ref_klaim.idklaim = mk_klaim_asessor.idklaim
                         LEFT JOIN dok_portofolio ON ref_klaim.no_dokumen = dok_portofolio.no_dokumen
                         where mk_klaim_header.no_peserta='$noregis'
