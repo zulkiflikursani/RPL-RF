@@ -54,7 +54,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">Tanggapan Asessor RPL</h4>
-                                    <form method="POST" action="<?= base_url("Front/Insertbiodata") ?>">
+                                    <div>
                                         <div class="mb-3">
                                             <label for="formrow-nama-input" class="form-label">Program Studi
                                                 <?= (isset($nm_prodi) ? $nm_prodi : '') ?>
@@ -173,14 +173,20 @@
                                                                                 $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $row->nmfile_asli . "' target='_blank'>" . $a . "</a><br>";
                                                                             }
                                                                             $ref .= "</td>";
+                                                                            if ($html1['tanggapan'] == "Butuh Tindakan") {
+                                                                                $linktanggapan = base_url() . "/form-tanggapan/" . $html1['kd_mk'];
+                                                                                $buttontanggapan = "<a href='$linktanggapan'><button class='btn btn-sm btn-success' >Berikan Tanggapan</button></a>";
+                                                                            } else {
+                                                                                $buttontanggapan = "";
+                                                                            }
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row->kode_prodi . "' >
                                                                                     <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                                     <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
-                                                                                    <td for='ref' nodok='" . $html1['no_dokumen'] . "'>" . $ref . "</td>
+                                                                                    " . $ref . "
                                                                                     <td for='tanggapan'  rowspan='$count'>" .
-                                                                                $html1['tanggapan'] . "</td><td for='nilaiAs'  rowspan='$count'>" . $html1['nilai'] . "</td>
+                                                                                $html1['tanggapan'] . "<br>" . $buttontanggapan . " </td><td for='nilaiAs'  rowspan='$count'>" . $html1['nilai'] . "</td>
                                                                                     <td for='kettanggapan' rowspan='$count'>" . $html1['ket_tanggapan'] . "
                                                                                     </td>
                                                                                     </tr>" . $html;
@@ -202,7 +208,7 @@
                                                                                 "idcpmk" => $row->idcpmk,
                                                                                 "cpmk" => $row->cpmk,
                                                                                 "klaim" => $row->klaim,
-                                                                                "no_dokumen" => $row->no_dokumen,
+                                                                                "no_dokumen" => json_decode($row->no_dokumen),
                                                                                 "nmfile_asli" => $row->nmfile_asli,
                                                                                 "nmfile" => $row->nmfile,
                                                                                 "kode_matakuliah" => $row->kode_matakuliah,
@@ -215,18 +221,23 @@
 
                                                                         if ($hitdata == $jumlahdata) {
                                                                             $ref = "<td for='ref' nodok='" . $row->no_dokumen . "' rowspan='$count'>";
-                                                                            // $dokaarray = json_decode($html1['no_dokumen']);
                                                                             foreach ($html1['no_dokumen'] as $a) {
-
                                                                                 $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $row->nmfile_asli . "' target='_blank'>" . $a . "</a><br>";
                                                                             }
                                                                             $ref .= "</td>";
+
+                                                                            $linktanggapan = base_url() . "/form-tanggapan/" . $html1['kd_mk'];
+                                                                            if ($html1['tanggapan'] == "Butuh Tindakan") {
+                                                                                $buttontanggapan = "<a href='$linktanggapan'><button class='btn btn-sm btn-success' >Berikan Tanggapan</button></a>";
+                                                                            } else {
+                                                                                $buttontanggapan = "";
+                                                                            }
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row->kode_prodi . "' >
                                                                             <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                             <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
                                                                             <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                             <td for='nilai' >" . $html1['klaim'] . "</td>" . $ref . "<td for='tanggapan'  rowspan='$count'>" .
-                                                                                $html1['tanggapan'] . "</td><td for='nilaiAs'  rowspan='$count'>" . $html1['nilai'] . "</td>
+                                                                                $html1['tanggapan'] . "<br>" . $buttontanggapan . "</td><td for='nilaiAs'  rowspan='$count'>" . $html1['nilai'] . "</td>
                                                                             <td for='kettanggapan' rowspan='$count'>" . $html1['ket_tanggapan'] . "
                                                                             </td>
                                                                             </tr>" . $html;
@@ -253,7 +264,7 @@
                                             <button type="button" onclick="simpan_klaim_asessor()"
                                                 class="btn btn-primary w-md">Submit</button>
                                         </div> -->
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

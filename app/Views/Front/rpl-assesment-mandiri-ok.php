@@ -81,13 +81,15 @@
                                                 <div>
 
                                                 </div>
-                                                <div class="modal fade klaim-mahasiswa-modal" role="dialog" z-index=-1 aria-labelledby="mytambah-mahasiswa-modal" aria-hidden="true">
+                                                <div class="modal fade klaim-mahasiswa-modal" role="dialog" z-index=-1
+                                                    aria-labelledby="mytambah-mahasiswa-modal" aria-hidden="true">
                                                     <div class="modal-dialog modal-xl">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title" id="myLargeModalLabel">Klaim
                                                                     Matakuliah</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
                                                                 <!-- content -->
@@ -95,7 +97,8 @@
                                                                     <div class="mb-3">
                                                                         <label for="" id='label-kd-mk'></label>:
                                                                         <label for="" id='label-nm-mk'></label>
-                                                                        <table class="table table-bordered" id='table-cpmk'>
+                                                                        <table class="table table-bordered"
+                                                                            id='table-cpmk'>
                                                                             <thead>
                                                                                 <tr>
                                                                                     <th style="width: 15%">No</th>
@@ -118,7 +121,8 @@
                                                                         <?= getRefmhs($datadok, "") ?>
                                                                     </div>
                                                                     <div cla ss="mb-3">
-                                                                        <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
+                                                                        <select class="js-example-basic-multiple"
+                                                                            name="states[]" multiple="multiple">
                                                                             <option value="AL">Alabama</option>
 
                                                                             <option value="WY">Wyoming</option>
@@ -126,7 +130,8 @@
                                                                     </div>
 
                                                                     <div>
-                                                                        <button type="submit" class="btn btn-primary w-md">Simpan</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-primary w-md">Simpan</button>
 
                                                                     </div>
                                                                 </form>
@@ -182,7 +187,8 @@
 
 
                                         <div>
-                                            <button type="button" onclick="pengajuan_klaim()" class="btn btn-primary w-md mx-2">Pengajuan</button>
+                                            <button type="button" onclick="pengajuan_klaim()"
+                                                class="btn btn-primary w-md mx-2">Pengajuan</button>
                                         </div>
 
                                     </div>
@@ -229,59 +235,68 @@
 </html>
 
 <script>
-    $(document).ready(function() {
-        $('.select2').select2({
-            dropdownParent: $('.klaim-mahasiswa-modal')
-        });
-        $('.js-example-basic-multiple').select2();
-        <?php if (isset($dataKlaimMhs[0]['statusklaim'])) {
+$(document).ready(function() {
+    $('.select2').select2({
+        dropdownParent: $('.klaim-mahasiswa-modal')
+    });
+    $('.js-example-basic-multiple').select2();
+    <?php if (isset($dataKlaimMhs[0]['statusklaim'])) {
             if ($dataKlaimMhs[0]['statusklaim'] == 2) {
         ?>
-                $('select').attr("disabled", true);
-                // alert(git'd')
-        <?php
+    $('select').attr("disabled", true);
+    // alert(git'd')
+    <?php
             }
         }
 
         ?>
 
+})
+
+function batalklaim(ini) {
+    $('#loading').show();
+    idklaim = ini.attr("idklaim");
+    // nmmk = ini.parent().parent().find("td[for=nmmk]").html();
+    url = '<?= base_url('batalklaimmk') ?>'
+    $.post(url, {
+        idklaim: idklaim
+    }, function(data) {
+        // alert(data);
+        $('#loading').hide();
+        window.scrollTo(0, 0);
+        $('#alert').children().remove();
+        if (data == "Sukses Membatalkan Klaim Matakuliah") {
+            $('#alert').append(
+                '<div class="alert alert-primary alert-dismissible fade show" role="alert">' + data +
+                '<a href="<?= base_url('assesment-mandiri') ?> "><button type="button" class="btn btn-primary btn-sm mx-3">Refresh</button></a><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+            );
+
+        } else {
+            $('#alert').append(
+                '<div class="alert alert-primary alert-dismissible fade show" role="alert">' + data +
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+            );
+        }
+    }).fail(function() {
+        $('#loading').hide();
+
+        alert("error");
+    });
+
+}
+
+function pengajuan_klaim() {
+    url = '<?= base_url('klaimmk') ?>'
+    noregis = '<?= session()->get('noregis') ?>'
+    $.post(url, {
+        noregis: noregis
+    }).done(function(data) {
+        alert(data)
+
+    }).fail(function() {
+
     })
-
-    function batalklaim(ini) {
-        $('#loading').show();
-        idklaim = ini.attr("idklaim");
-        // nmmk = ini.parent().parent().find("td[for=nmmk]").html();
-        url = '<?= base_url('batalklaimmk') ?>'
-        $.post(url, {
-            idklaim: idklaim
-        }, function(data) {
-            // alert(data);
-            $('#loading').hide();
-            window.scrollTo(0, 0);
-            $('#alert').children().remove();
-            if (data == "Sukses Membatalkan Klaim Matakuliah") {
-                $('#alert').append(
-                    '<div class="alert alert-primary alert-dismissible fade show" role="alert">' + data +
-                    '<a href="<?= base_url('assesment-mandiri') ?> "><button type="button" class="btn btn-primary btn-sm mx-3">Refresh</button></a><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
-                );
-
-            } else {
-                $('#alert').append(
-                    '<div class="alert alert-primary alert-dismissible fade show" role="alert">' + data +
-                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
-                );
-            }
-        }).fail(function() {
-            $('#loading').hide();
-
-            alert("error");
-        });
-
-    }
-
-    function pengajuan_klaim() {
-
-    }
+}
 </script>
 <?php
 function search($array, $key, $value)

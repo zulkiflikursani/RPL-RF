@@ -6,6 +6,126 @@ use CodeIgniter\Model;
 
 class ModelTransactionKlaim extends Model
 {
+    public function ajukantanggapanklaim($formdata, $status, $kodeprodi, $ta_akademik)
+    {
+        $db      = \Config\Database::connect();
+        $noregis = session()->get("noregis");
+        // $kodeprodi = $this->getkodeprodi($noregis);
+        // $db      = \Config\Database::connect();
+        $BuilderMkHeader = $db->table("mk_klaim_header");
+        $BuilderMkDetail = $db->table("mk_klaim_detail");
+        $BuilderRefKlaim = $db->table("ref_klaim");
+        // $ta_akademik = $this->getTa_akademik();
+        $db->transStart();
+        $idklaim1 = "";
+        $klaimstatus = true;
+        foreach ($formdata['jsonObj'] as $a) {
+            $idklaim = $ta_akademik . $noregis . $a['kdmk'];
+            if ($a['nilai'] == "" || empty($a['ref']) || $a['desk'] == "") {
+                $db->transRollback();
+                echo "Data Tidak Lengkap";
+                $klaimstatus = false;
+                break;
+            }
+            // $kdmk = $a['kdmk'];
+
+            $cekstatus2 = $db->query("select statusklaim from mk_klaim_detail where idklaim = '$idklaim' and idcpmk='" . $a['idcpmk'] . "'")->getResult();
+
+            if ($cekstatus2 != null) {
+                foreach ($cekstatus2 as $row) {
+
+                    $statuspengajuan = $row->statusklaim;
+                }
+            }
+
+            // return json_encode($result2->getResult());
+
+            $cekmk = $this->CekMatakuliah($a['kdmk']);
+            if ($cekmk != null) {
+                if ($statuspengajuan == 3) {
+                    $dataMKHeader = [
+                        "idklaim" => $idklaim,
+                        "ta_akademik" => $ta_akademik,
+                        "no_peserta" => $noregis,
+                        "kode_prodi" => $kodeprodi,
+                        "kode_matakuliah" => $a['kdmk'],
+                        "nama_matakuliah" => $a['nmmk'],
+                        "desk" => $a['desk'],
+                        "sks" => $a['sks'],
+                    ];
+                    $dataMKdetail = [
+                        "idklaim" => $idklaim,
+                        "idcpmk" => $a['idcpmk'],
+                        "cpmk" => $a['cpmk'],
+                        "klaim" => $a['nilai'],
+                        "statusklaim" => $status,
+                    ];
+                    if ($idklaim1 != $idklaim) {
+                        $hapusMkheader = $BuilderMkHeader->where("idklaim", $idklaim)->delete();
+                        $hapusRefKlaim = $BuilderRefKlaim->where("idklaim", $idklaim)->delete();
+                        $hapusMkhdetail = $BuilderMkDetail->where("idklaim", $idklaim)->delete();
+
+                        $insertMkheader = $BuilderMkHeader->insert($dataMKHeader);
+                        $idklaim1 = $idklaim;
+                        // foreach ($a['ref'] as $ref) {
+                        $dataRef = [
+                            "idklaim" => $idklaim,
+                            // "idcpmk" => $a['idcpmk'],
+                            // "kode_matakuliah" => $a['kdmk'],
+                            "no_dokumen" => json_encode($a['ref']),
+
+                        ];
+                        $insertRefKlaim = $BuilderRefKlaim->insert($dataRef);
+                    }
+                    $insertMkhdetail = $BuilderMkDetail->insert($dataMKdetail);
+                    $builderKlaimAsessro = $db->table("mk_klaim_asessor");
+                    $unpdateKlaimAsessor = $builderKlaimAsessro->where('idklaim', $idklaim)
+                        ->set('tanggapan', 2)
+                        ->update();
+                } else {
+                    echo "Klaim sedang diproses. Silahkan menunggu tanggapan Asessor di menu Respon Asessor " . $statuspengajuan;
+                    $klaimstatus = false;
+                    break;
+                }
+            } else {
+                echo "Klaim tidak ditemukan";
+                $klaimstatus = false;
+                break;
+            }
+        }
+
+        if ($klaimstatus == true) {
+            if ($db->transStatus() === false) {
+                $db->transRollback();
+                echo "Gagal Mengklaim Matakuliah";
+            } else {
+                $db->transCommit();
+                echo "Sukses Mengklaim Matakuliah";
+            }
+        }
+    }
+    public function ajukanklaim($noregis)
+    {
+        $db      = \Config\Database::connect();
+        $sessionnoregis = session()->get("noregis");
+        $BuilderMkDetail = $db->table("mk_klaim_detail");
+
+        $cekstatus = $this->cekstatusklaim($sessionnoregis);
+        if ($noregis == $sessionnoregis) {
+            if ($cekstatus == 2) {
+                echo "Klaim Matakuliah Sudah Diajukan Silahkan Menunggu Respon Asessor di menu Respon Asessor";
+            } else {
+                $BuilderMkDetail->set('statusklaim', 2)->where('mid(idklaim,6,10)', $sessionnoregis)->update();
+                if ($BuilderMkDetail === false) {
+                    echo "Gagal Mengajukan Klaim RPL. ";
+                } else {
+                    echo "Berhasil Mengajukan Klaim RPL. ";
+                }
+            }
+        } else {
+            echo "Ingat mati Ingat mati !!!!";
+        }
+    }
     public function simpanklaim($formdata, $status, $kodeprodi, $ta_akademik)
     {
         $db      = \Config\Database::connect();
@@ -18,11 +138,13 @@ class ModelTransactionKlaim extends Model
         // $ta_akademik = $this->getTa_akademik();
         $db->transStart();
         $idklaim1 = "";
+        $klaimstatus = true;
         foreach ($formdata['jsonObj'] as $a) {
             $idklaim = $ta_akademik . $noregis . $a['kdmk'];
             if ($a['nilai'] == "" || empty($a['ref']) || $a['desk'] == "") {
                 $db->transRollback();
                 echo "Data Tidak Lengkap";
+                $klaimstatus = false;
                 break;
             }
             // $kdmk = $a['kdmk'];
@@ -70,49 +192,60 @@ class ModelTransactionKlaim extends Model
                     echo "Klaim sedang diproses. Silahkan menunggu tanggapan Asessor di menu Respon Asessor";
                 }
             } else {
-                $dataMKHeader = [
-                    "idklaim" => $idklaim,
-                    "ta_akademik" => $ta_akademik,
-                    "no_peserta" => $noregis,
-                    "kode_prodi" => $kodeprodi,
-                    "desk" => $a['desk'],
-                    "kode_matakuliah" => $a['kdmk'],
-                    "nama_matakuliah" => $a['nmmk'],
-                    "sks" => $a['sks'],
-                ];
-                $dataMKdetail = [
-                    "idklaim" => $idklaim,
-                    "idcpmk" => $a['idcpmk'],
-                    "cpmk" => $a['cpmk'],
-                    "klaim" => $a['nilai'],
-                    "statusklaim" => $status,
-                ];
-                $insertMkhdetail = $BuilderMkDetail->insert($dataMKdetail);
-
-                if ($idklaim1 != $idklaim) {
-                    $insertMkheader = $BuilderMkHeader->insert($dataMKHeader);
-                    $idklaim1 = $idklaim;
-
-                    // $object = $a['ref'];
-                    // $output = array_map(function ($object) {
-                    //     return $object->name;
-                    // }, $input);
-                    $dataRef = [
+                $cekstatuspengajuan = $this->cekstatusklaim($noregis);
+                if ($cekstatuspengajuan == null) {
+                    $dataMKHeader = [
                         "idklaim" => $idklaim,
-                        // "idcpmk" => $a['idcpmk'],
-                        // "kode_matakuliah" => $a['kdmk'],
-                        "no_dokumen" => json_encode($a['ref']),
+                        "ta_akademik" => $ta_akademik,
+                        "no_peserta" => $noregis,
+                        "kode_prodi" => $kodeprodi,
+                        "desk" => $a['desk'],
+                        "kode_matakuliah" => $a['kdmk'],
+                        "nama_matakuliah" => $a['nmmk'],
+                        "sks" => $a['sks'],
                     ];
-                    $insertRefKlaim = $BuilderRefKlaim->insert($dataRef);
+                    $dataMKdetail = [
+                        "idklaim" => $idklaim,
+                        "idcpmk" => $a['idcpmk'],
+                        "cpmk" => $a['cpmk'],
+                        "klaim" => $a['nilai'],
+                        "statusklaim" => $status,
+                    ];
+                    $insertMkhdetail = $BuilderMkDetail->insert($dataMKdetail);
+
+                    if ($idklaim1 != $idklaim) {
+                        $insertMkheader = $BuilderMkHeader->insert($dataMKHeader);
+                        $idklaim1 = $idklaim;
+
+                        // $object = $a['ref'];
+                        // $output = array_map(function ($object) {
+                        //     return $object->name;
+                        // }, $input);
+                        $dataRef = [
+                            "idklaim" => $idklaim,
+                            // "idcpmk" => $a['idcpmk'],
+                            // "kode_matakuliah" => $a['kdmk'],
+                            "no_dokumen" => json_encode($a['ref']),
+                        ];
+                        $insertRefKlaim = $BuilderRefKlaim->insert($dataRef);
+                    }
+                } else {
+                    echo "Setelah Melakukan Pengajuan anda tidak bisa menambah klaim matakuliah lagi.";
+                    $db->transRollback();
+                    $klaimstatus = false;
+                    break;
                 }
             }
         }
-        if ($db->transStatus() === false) {
-            $db->transRollback();
-            echo "Gagal Mengklaim Matakuliah";
-        } else {
-            $db->transCommit();
-            echo "Sukses Mengklaim Matakuliah";
+
+        if ($klaimstatus == true) {
+            if ($db->transStatus() === false) {
+                $db->transRollback();
+                echo "Gagal Mengklaim Matakuliah";
+            } else {
+                $db->transCommit();
+                echo "Sukses Mengklaim Matakuliah";
+            }
         }
     }
 
@@ -137,6 +270,17 @@ class ModelTransactionKlaim extends Model
         }
     }
 
+    public function cekstatuspengajuan($noregis)
+    {
+        $db      = \Config\Database::connect();
+        $noregis = session()->get("noregis");
+        $Result = $db->query("SELECT
+                                    * from  mk_klaim_detail 
+                                WHERE
+                                    mid(mk_klaim_detail.idklaim,6,10) = '$noregis' and mk_klaim_detail.statusklaim='2'")->getResultArray();
+
+        return $Result;
+    }
     public function getKlaimMk_mahasiswaAll()
     {
         $db      = \Config\Database::connect();
@@ -240,6 +384,20 @@ class ModelTransactionKlaim extends Model
         if ($result != null) {
             foreach ($result as $a) {
                 if ($a['statusklaim'] == 2) {
+                    $status = 2;
+                }
+            }
+        }
+        return $status;
+    }
+    public function cekstatusklaim($noregis)
+    {
+        $db      = \Config\Database::connect();
+        $result = $db->query("select * from mk_klaim_detail where mid(idklaim,6,10) = '$noregis' group by mk_klaim_detail.idklaim")->getResult();
+        $status = 1;
+        if ($result != null) {
+            foreach ($result as $a) {
+                if ($a->statusklaim == 2) {
                     $status = 2;
                 }
             }

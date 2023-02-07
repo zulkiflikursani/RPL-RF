@@ -97,6 +97,10 @@ class ModelKlaimAsessor extends Model
                         "tglubah" => $now,
                     ];
 
+                    if ($tanggapan == 1) {
+                        $BuilderMkDetail = $db->table("mk_klaim_detail");
+                        $BuilderMkDetail->set('statusklaim', 3)->where('idklaim', $idklaim)->update();
+                    }
                     $updatemkKlaim = $BuilderMkKlaim->where("idklaim", $idklaim)->update($dataMK);
                 } else {
                     $dataMK = [
@@ -112,6 +116,10 @@ class ModelKlaimAsessor extends Model
                         "tglbuat" => $now,
                         "tglubah" => $now,
                     ];
+                    if ($tanggapan == 1) {
+                        $BuilderMkDetail = $db->table("mk_klaim_detail");
+                        $BuilderMkDetail->set('statusklaim', 3)->where('idklaim', $idklaim)->update();
+                    }
                     $insertMkhdetail = $BuilderMkKlaim->insert($dataMK);
                 }
             }

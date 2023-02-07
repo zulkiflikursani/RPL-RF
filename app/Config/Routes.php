@@ -47,11 +47,13 @@ $routes->get('/upload', 'Front::Uploadberkas');
 $routes->get('/assesment-mandiri', 'Front::AssesmentMandiri');
 $routes->get('/respon-asessor', 'Front::AsessmentRespon');
 $routes->get('/form-assesment/(:any)', 'Front::AssesmentMandiri_mk/$1');
+$routes->get('/form-tanggapan/(:any)', 'Front::tanggapanAsessmentMhs/$1');
 
 // FRONT POST
 $routes->post('Front/Registrasi', 'Front::Registrasi');
 $routes->post('Simpanberkas', 'Front::Simpanberkas');
 $routes->post('klaimmk', 'Front::Klaimmk');
+$routes->post('ajukantanggapan', 'Front::ajukanKlaimmk');
 $routes->post('batalklaimmk', 'Front::batalKlaimmk');
 $routes->post('simpanklaimmk', 'Front::SimpanKlaimmk');
 $routes->post('getCpmk', 'Front::getcpmk');
