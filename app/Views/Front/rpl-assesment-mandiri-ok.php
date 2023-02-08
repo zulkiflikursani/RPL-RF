@@ -65,6 +65,38 @@
                         <div class="col-xl-12">
 
                             <div class="card">
+                                <div class="modal fade confirmasi-modal" tabindex="-1" role="dialog"
+                                    aria-labelledby="mytambah-modal" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="myLargeModalLabel">Konfirmasi
+                                                </h5>
+
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!-- content -->
+                                                <h5 class="modal-title" id="myLargeModalLabel">Apakah anda yakin ingin
+                                                    melakukan pengajuan ? Data tidak bisa lagi diganti setelah klaim
+                                                    matakuliah diajukan !
+                                                </h5>
+
+
+
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" onclick='pengajuan_klaim()'
+                                                    class="btn btn-primary w-md">YA</button>
+                                                <button type="button" class="btn btn-primary w-md"
+                                                    data-bs-dismiss="modal" aria-label="Close">TIDAK</button>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">Form Assesment Mandiri RPL</h4>
                                     <div>
@@ -187,7 +219,8 @@
 
 
                                         <div>
-                                            <button type="button" onclick="pengajuan_klaim()"
+                                            <button type="button" data-bs-toggle="modal" id='bt-tambah-cpmk'
+                                                data-bs-target='.confirmasi-modal'
                                                 class="btn btn-primary w-md mx-2">Pengajuan</button>
                                         </div>
 
@@ -286,11 +319,15 @@ function batalklaim(ini) {
 }
 
 function pengajuan_klaim() {
+    $('#loading').show()
+    $('.confirmasi-modal').modal('hide')
     url = '<?= base_url('klaimmk') ?>'
     noregis = '<?= session()->get('noregis') ?>'
     $.post(url, {
         noregis: noregis
     }).done(function(data) {
+        $('#loading').hide();
+
         alert(data)
 
     }).fail(function() {
@@ -326,6 +363,7 @@ function inputnilai($idcpmk, $nilai = "")
             <option selected >B</option>    
             <option >C</option>    
             <option >K</option>    
+            <option>T</option>    
             </select></td>";
         } else if ($nilai == "C") {
             return "<td for='nilai'>
@@ -334,6 +372,7 @@ function inputnilai($idcpmk, $nilai = "")
             <option >B</option>    
             <option selected >C</option>    
             <option >K</option>    
+            <option>T</option>    
             </select></td>";
         } else if ($nilai == "K") {
             return "<td for='nilai'>
@@ -341,7 +380,17 @@ function inputnilai($idcpmk, $nilai = "")
             <option value='' >Pilih</option>    
             <option >B</option>    
             <option >C</option>    
-            <option selected >K</option>    
+            <option selected >K</option>   
+            <option>T</option>    
+            </select></td>";
+        } else if ($nilai == "T") {
+            return "<td for='nilai'>
+            <select class='form-select'>
+            <option value='' >Pilih</option>    
+            <option >B</option>    
+            <option >C</option>    
+            <option >K</option>    
+            <option selected >T</option>    
             </select></td>";
         } else {
             return "<td for='nilai'>
@@ -349,11 +398,12 @@ function inputnilai($idcpmk, $nilai = "")
             <option value='' selected>Pilih</option>    
             <option >B</option>    
             <option >C</option>    
-            <option >K</option>    
+            <option >K</option> 
+            <option>T</option>    
             </select></td>";
         }
     } else {
-        return "<td for='nilai'><select class='form-select'><option value='' selected>Pilih</option><option >B</option><option >C</option><option >K</option></select></td>";
+        return "<td for='nilai'><select class='form-select'><option value='' selected>Pilih</option><option >B</option><option >C</option><option >K</option><option>T</option></select></td>";
     }
 }
 

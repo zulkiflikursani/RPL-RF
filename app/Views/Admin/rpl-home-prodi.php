@@ -34,15 +34,23 @@
                             echo $error . "</br>";
                         };
                         echo '<button type="button" class="btn-close" data-bs-dismiss="alert"
-                            aria-label="Close"></button></div>';
+        aria-label="Close"></button></div>';
                     }
 
-                    if (isset($status)) {
-                        if ($status == true) {
-                            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert"> Anda Berhasil Melakukan Registrasi. Silahkan cek Email anda dan login.<button type="button" class="btn-close" data-bs-dismiss="alert"
-                        aria-label="Close"></button></div>';
+                    if (isset($validstatus)) {
+                        if ($validstatus != "") {
+                            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' . $validstatus . '<button type="button" class="btn-close" data-bs-dismiss="alert"
+        aria-label="Close"></button></div>';
                         }
                     }
+
+
+                    // if (isset($status)) {
+                    //     if ($status == true) {
+                    //         echo '<div class="alert alert-primary alert-dismissible fade show" role="alert"> Anda Berhasil Melakukan Registrasi. Silahkan cek Email anda dan login.<button type="button" class="btn-close" data-bs-dismiss="alert"
+                    //     aria-label="Close"></button></div>';
+                    //     }
+                    // }
 
                     // if (isset($emailstatus)) {
                     //     echo $emailstatus;

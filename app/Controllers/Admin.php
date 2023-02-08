@@ -522,18 +522,23 @@ class Admin extends BaseController
 
     public function Asessor()
     {
-        $modelPengguna = new ModelPengguna();
+        if (!session()->get('sttpengguna')) {
+            return redirect()->to('/logout');
+        } else {
 
-        $dataAsessor = $modelPengguna->where("sttpengguna", 2)->findAll();
+            $modelPengguna = new ModelPengguna();
 
-        $data = [
-            'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
-            'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
-            'ta_akademik' => $this->getTa_akademik(),
-            'dataAsessor' => $dataAsessor,
-        ];
+            $dataAsessor = $modelPengguna->where("sttpengguna", 2)->findAll();
 
-        return view('Admin/rpl-home-asessor', $data);
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $this->getTa_akademik(),
+                'dataAsessor' => $dataAsessor,
+            ];
+
+            return view('Admin/rpl-home-asessor', $data);
+        }
     }
     public function inputcpmk()
     {
@@ -880,15 +885,33 @@ class Admin extends BaseController
             $modelMkProdi = new ModelKlaimProdi();
             $cekpeserta = $modelMkProdi->chekstauspeserta($noregis);
             if ($cekpeserta != null) {
-                echo $this->validprodi($noregis, 4);
+                $statusMessage = "Peserta Sudah Divalidasi";
             } else {
                 $validprodi = $modelMkProdi->validprodi($noregis, session()->get("id"));
                 if ($validprodi === false) {
-                    echo $this->validprodi($noregis, 3);
+                    // echo $this->validprodi($noregis, 3);
+                    $statusMessage = "Peserta Gagal Divalidasi";
                 } else {
-                    echo $this->validprodi($noregis, 2);
+                    $statusMessage = "Peserta Berhasil Divalidasi";
+                    // echo $this->validprodi($noregis, 2);
                 }
             }
+            $modelPeserta = new ModelPesertaAsessor();
+            $ta_akademik = $this->getTa_akademik();
+
+            $databelumvalidprodi = $modelPeserta->getDataPesertaBelumValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
+            $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
+            $datasudahvaliddekan = $modelPeserta->getDataPesertaAsessorSudahValidDekanPerprodi(session()->get('id'), session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Prodi', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $this->getTa_akademik(),
+                'dataPesertaBelumValid' => $databelumvalidprodi,
+                'dataPesertaSudahValid' => $datasudahvalid,
+                'dataPesertaSudahValidDekan' => $datasudahvaliddekan,
+                'validstatus' => $statusMessage,
+            ];
+            return view('Admin/rpl-home-prodi', $data);
         }
     }
 
@@ -907,19 +930,41 @@ class Admin extends BaseController
             $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
             if ($cekpesertaasessor != null && $cekpesertaprodi != null) {
                 if ($cekpeserta != null) {
-                    echo $this->validdekan($noregis, 4);
+                    // echo $this->validdekan($noregis, 4);
+                    $statusMessage = "Peserta Sudah Divalidasi";
                 } else {
                     $validprodi = $modelMkDekan->validdekan($noregis, session()->get("id"));
                     if ($validprodi === false) {
-                        echo $this->validdekan($noregis, 3);
+                        // echo $this->validdekan($noregis, 3);\
+                        $statusMessage = "Peserta Gagal Divalidasi";
                     } else {
-                        echo $this->validdekan($noregis, 2);
+                        // echo $this->validdekan($noregis, 2);
+                        $statusMessage = "Peserta Berhasil Divalidasi";
                     }
                 }
             } else {
                 // peserta belum valid asessor atau prodi
-                echo $this->validdekan($noregis, 5);
+                // echo $this->validdekan($noregis, 5);
+                $statusMessage = "Peserta Belum divalidasi prodi atau belum divalidasi Asessor";
             }
+            $modelPeserta = new ModelPesertaAsessor();
+            $ta_akademik = $this->getTa_akademik();
+            $kode_fakultas = $this->getKodeFakultasby(session()->get('kode_prodi'));
+            $databelumvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdiDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
+            $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
+
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Fakultas', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $this->getTa_akademik(),
+                'dataPesertaBelumValid' => $databelumvalid,
+                'dataPesertaSudahValid' => $datasudahvalid,
+                'validstatus' => $statusMessage,
+
+
+            ];
+
+            return view('Admin/rpl-home-fakultas', $data);
         }
     }
 
@@ -937,13 +982,32 @@ class Admin extends BaseController
             if ($cekpeserta != null) {
                 $unvalidprodi = $modelMkProdi->unvalidprodi($noregis, session()->get("id"));
                 if ($unvalidprodi === false) {
-                    echo $this->validprodi($noregis, 6);
+                    // echo $this->validprodi($noregis, 6);
+                    $statusMessage = "Peserta Gagal Diunvalidasi";
                 } else {
-                    echo $this->validprodi($noregis, 5);
+                    // echo $this->validprodi($noregis, 5);
+                    $statusMessage = "Peserta Berhasil Diunvalidasi";
                 }
             } else {
-                echo $this->validprodi($noregis, 7);
+                // echo $this->validprodi($noregis, 7);
+                $statusMessage = "Peserta Sudah Diunvalidasi";
             }
+            $modelPeserta = new ModelPesertaAsessor();
+            $ta_akademik = $this->getTa_akademik();
+
+            $databelumvalidprodi = $modelPeserta->getDataPesertaBelumValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
+            $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
+            $datasudahvaliddekan = $modelPeserta->getDataPesertaAsessorSudahValidDekanPerprodi(session()->get('id'), session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Prodi', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $this->getTa_akademik(),
+                'dataPesertaBelumValid' => $databelumvalidprodi,
+                'dataPesertaSudahValid' => $datasudahvalid,
+                'dataPesertaSudahValidDekan' => $datasudahvaliddekan,
+                'validstatus' => $statusMessage,
+            ];
+            return view('Admin/rpl-home-prodi', $data);
         }
     }
     public function unvalidasidekan()
@@ -962,13 +1026,34 @@ class Admin extends BaseController
             if ($cekpeserta != null) {
                 $unvalidprodi = $modelMkDekan->unvaliddekan($noregis, session()->get("id"));
                 if ($unvalidprodi === false) {
-                    echo $this->validdekan($noregis, 7);
+                    // echo $this->validdekan($noregis, 7);
+                    $statusMessage = "Peserta Gagal Diunvalidasi";
                 } else {
-                    echo $this->validdekan($noregis, 6);
+                    // echo $this->validdekan($noregis, 6);
+                    $statusMessage = "Peserta Berhasil Diunvalidasi";
                 }
             } else {
-                echo $this->validdekan($noregis, 8);
+                // echo $this->validdekan($noregis, 8);
+                $statusMessage = "Peserta Sudah Diunvalidasi";
             }
+            $modelPeserta = new ModelPesertaAsessor();
+            $ta_akademik = $this->getTa_akademik();
+            $kode_fakultas = $this->getKodeFakultasby(session()->get('kode_prodi'));
+            $databelumvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdiDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
+            $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
+
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Fakultas', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $this->getTa_akademik(),
+                'dataPesertaBelumValid' => $databelumvalid,
+                'dataPesertaSudahValid' => $datasudahvalid,
+                'validstatus' => $statusMessage,
+
+
+            ];
+
+            return view('Admin/rpl-home-fakultas', $data);
         }
     }
 
@@ -1025,12 +1110,16 @@ class Admin extends BaseController
     }
     public function klaimMkAsessor()
     {
-        $formdata = $this->request->getPost();
-        $lastdata = array();
-        $noregis = session()->get("noregis");
-        $ta_akademik = $this->getTa_akademik();
-        $ModalTransactionKlaim = new ModelKlaimAsessor();
-        $simpanklaim = $ModalTransactionKlaim->simpanklaimAsessor($formdata, $ta_akademik);
+        if (!session()->get('sttpengguna')) {
+            return redirect()->to('/logout');
+        } else {
+            $formdata = $this->request->getPost();
+            $lastdata = array();
+            $noregis = session()->get("noregis");
+            $ta_akademik = $this->getTa_akademik();
+            $ModalTransactionKlaim = new ModelKlaimAsessor();
+            $simpanklaim = $ModalTransactionKlaim->simpanklaimAsessor($formdata, $ta_akademik);
+        }
     }
 
     public function getNamaProdi($kode_prodi)

@@ -103,6 +103,7 @@
 
                                                         <tbody id='tbody-klaim-mk'>
                                                             <?php
+
                                                             if (isset($dataKlaimAsessor)) {
                                                                 $namamatakulia = "";
                                                                 $idcpmk = "";
@@ -135,8 +136,6 @@
                                                                             "idklaim" => $row->idklaim,
                                                                             "klaim" => $row->klaim,
                                                                             "no_dokumen" => json_decode($row->no_dokumen),
-                                                                            "nmfile_asli" => $row->nmfile_asli,
-                                                                            "nmfile" => $row->nmfile,
                                                                             "kode_matakuliah" => $row->kode_matakuliah,
                                                                             "nilai" => $row->nilai,
                                                                             "tanggapan" => $tanggapanassessor,
@@ -161,7 +160,7 @@
                                                                             }
                                                                             $html .= "</tr>";
                                                                         } else {
-                                                                            $ref = "<td for='ref' nodok='" . $row->no_dokumen . "' rowspan='$count'>";
+                                                                            $ref = "<td for='ref' nodok='' rowspan='$count'>";
                                                                             // $dokaarray = json_decode($html1['no_dokumen']);
                                                                             foreach ($html1['no_dokumen'] as $a) {
                                                                                 $dataref = getnamafile($a);
@@ -333,46 +332,53 @@
     {
         if ($nilai != "") {
             if ($nilai == "B") {
-                return "<td for='nilai'>
-            <select class='form-select'>
-            <option value='' >Pilih</option>    
-            <option selected >B</option>    
-            <option >C</option>    
-            <option >K</option>    
-            </select></td>";
+                return "<td for='nilai' idcmk='$idcpmk'>
+                <select class='form-select' required>
+                <option value='' >Pilih</option>    
+                <option selected >B</option>    
+                <option >C</option>    
+                <option >K</option>    
+                <option >T</option>    
+                </select></td>";
             } else if ($nilai == "C") {
-                return "<td for='nilai'>
-            <select class='form-select'>
-            <option value='' >Pilih</option>    
-            <option >B</option>    
-            <option selected >C</option>    
-            <option >K</option>    
-            </select></td>";
+                return "<td for='nilai' idcmk='$idcpmk'>
+                <select class='form-select' required>
+                <option value='' >Pilih</option>    
+                <option >B</option>    
+                <option selected >C</option>    
+                <option >K</option>
+                <option >T</option>    
+                </select></td>";
             } else if ($nilai == "K") {
-                return "<td for='nilai'>
-            <select class='form-select'>
-            <option value='' >Pilih</option>    
-            <option >B</option>    
-            <option >C</option>    
-            <option selected >K</option>    
-            </select></td>";
+                return "<td for='nilai' idcmk='$idcpmk'>
+                <select class='form-select' required>
+                <option value='' >Pilih</option>    
+                <option >B</option>    
+                <option >C</option>    
+                <option selected >K</option>
+                <option >T</option>    
+                </select></td>";
+            } else if ($nilai == "T") {
+                return "<td for='nilai' idcmk='$idcpmk'>
+                <select class='form-select' required>
+                <option value='' >Pilih</option>    
+                <option >B</option>    
+                <option >C</option>    
+                <option >K</option>
+                <option selected >T</option>    
+                </select></td>";
             } else {
-                return "<td for='nilai'>
-            <select class='form-select'>
-            <option value='' selected>Pilih</option>    
-            <option >B</option>    
-            <option >C</option>    
-            <option >K</option>    
-            </select></td>";
+                return "<td for='nilai' idcmk='$idcpmk'>
+                <select class='form-select' required>
+                <option value='' selected>Pilih</option>    
+                <option >B</option>    
+                <option >C</option>    
+                <option >K</option>    
+                <option >T</option>    
+                </select></td>";
             }
         } else {
-            return "<td for='nilai'>
-            <select class='form-select'>
-            <option value='' selected>Pilih</option>    
-            <option >B</option>    
-            <option >C</option>    
-            <option >K</option>    
-            </select></td>";
+            return "<td for='nilai' idcmk='$idcpmk'><select class='form-select' required><option value='' selected>Pilih</option><option >B</option><option >C</option><option >K</option><option >T</option>  </select></td>";
         }
     }
 

@@ -37,13 +37,12 @@
                             aria-label="Close"></button></div>';
                     }
 
-                    if (isset($status)) {
-                        if ($status == true) {
-                            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert"> Anda Berhasil Melakukan Registrasi. Silahkan cek Email anda dan login.<button type="button" class="btn-close" data-bs-dismiss="alert"
-                        aria-label="Close"></button></div>';
+                    if (isset($validstatus)) {
+                        if ($validstatus != "") {
+                            echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">' . $validstatus . '<button type="button" class="btn-close" data-bs-dismiss="alert"
+        aria-label="Close"></button></div>';
                         }
                     }
-
                     // if (isset($emailstatus)) {
                     //     echo $emailstatus;
                     // }
@@ -180,10 +179,10 @@
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 
     <script>
-    function getMahasiswa() {
+        function getMahasiswa() {
 
 
-    }
+        }
     </script>
 </body>
 

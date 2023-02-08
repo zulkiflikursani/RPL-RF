@@ -38,6 +38,12 @@ class ModelKeu extends Model
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
 
+    public function cekvalidasi($noregis)
+    {
+        $db = \Config\Database::connect();
+        $result = $db->query("select * from tb_valid_keu where no_peserta='$noregis'")->getResult();
+        return $result;
+    }
     public function setvalid($noregis)
     {
         $db = \Config\Database::connect();

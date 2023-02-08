@@ -57,6 +57,7 @@ $routes->post('ajukantanggapan', 'Front::ajukanKlaimmk');
 $routes->post('batalklaimmk', 'Front::batalKlaimmk');
 $routes->post('simpanklaimmk', 'Front::SimpanKlaimmk');
 $routes->post('getCpmk', 'Front::getcpmk');
+$routes->post('deldok', 'Front::deleteDokumen');
 
 
 

@@ -19,6 +19,9 @@ class ModelTransactionKlaim extends Model
         $db->transStart();
         $idklaim1 = "";
         $klaimstatus = true;
+
+        date_default_timezone_set('Asia/Makassar');
+        $now = date('Y-m-d H:i:s');
         foreach ($formdata['jsonObj'] as $a) {
             $idklaim = $ta_akademik . $noregis . $a['kdmk'];
             if ($a['nilai'] == "" || empty($a['ref']) || $a['desk'] == "") {
@@ -52,6 +55,11 @@ class ModelTransactionKlaim extends Model
                         "nama_matakuliah" => $a['nmmk'],
                         "desk" => $a['desk'],
                         "sks" => $a['sks'],
+                        "tglubah" => $now,
+                    ];
+                    $wheredetail = [
+                        "idklaim" => $idklaim,
+                        "idcpmk" => $a['idcpmk']
                     ];
                     $dataMKdetail = [
                         "idklaim" => $idklaim,
@@ -59,13 +67,10 @@ class ModelTransactionKlaim extends Model
                         "cpmk" => $a['cpmk'],
                         "klaim" => $a['nilai'],
                         "statusklaim" => $status,
+                        "tglubah" => $now,
                     ];
                     if ($idklaim1 != $idklaim) {
-                        $hapusMkheader = $BuilderMkHeader->where("idklaim", $idklaim)->delete();
-                        $hapusRefKlaim = $BuilderRefKlaim->where("idklaim", $idklaim)->delete();
-                        $hapusMkhdetail = $BuilderMkDetail->where("idklaim", $idklaim)->delete();
-
-                        $insertMkheader = $BuilderMkHeader->insert($dataMKHeader);
+                        $updateMkheader = $BuilderMkHeader->where("idklaim", $idklaim)->update($dataMKHeader);
                         $idklaim1 = $idklaim;
                         // foreach ($a['ref'] as $ref) {
                         $dataRef = [
@@ -73,11 +78,13 @@ class ModelTransactionKlaim extends Model
                             // "idcpmk" => $a['idcpmk'],
                             // "kode_matakuliah" => $a['kdmk'],
                             "no_dokumen" => json_encode($a['ref']),
+                            "tglubah" => $now,
 
                         ];
-                        $insertRefKlaim = $BuilderRefKlaim->insert($dataRef);
+                        $updateRefKlaim = $BuilderRefKlaim->where("idklaim", $idklaim)->update($dataRef);
                     }
-                    $insertMkhdetail = $BuilderMkDetail->insert($dataMKdetail);
+                    $updateMkhdetail = $BuilderMkDetail->where($wheredetail)->update($dataMKdetail);
+
                     $builderKlaimAsessro = $db->table("mk_klaim_asessor");
                     $unpdateKlaimAsessor = $builderKlaimAsessro->where('idklaim', $idklaim)
                         ->set('tanggapan', 2)
@@ -110,7 +117,7 @@ class ModelTransactionKlaim extends Model
         $sessionnoregis = session()->get("noregis");
         $BuilderMkDetail = $db->table("mk_klaim_detail");
 
-        $cekstatus = $this->cekstatusklaim($sessionnoregis);
+        $cekstatus = $this->Cekpengajuanall($sessionnoregis);
         if ($noregis == $sessionnoregis) {
             if ($cekstatus == 2) {
                 echo "Klaim Matakuliah Sudah Diajukan Silahkan Menunggu Respon Asessor di menu Respon Asessor";
@@ -139,6 +146,9 @@ class ModelTransactionKlaim extends Model
         $db->transStart();
         $idklaim1 = "";
         $klaimstatus = true;
+
+        date_default_timezone_set('Asia/Makassar');
+        $now = date('Y-m-d H:i:s');
         foreach ($formdata['jsonObj'] as $a) {
             $idklaim = $ta_akademik . $noregis . $a['kdmk'];
             if ($a['nilai'] == "" || empty($a['ref']) || $a['desk'] == "") {
@@ -150,9 +160,17 @@ class ModelTransactionKlaim extends Model
             // $kdmk = $a['kdmk'];
 
             $cekstatus = $this->cekstatusmk($idklaim);
-            $cekmk = $this->CekMatakuliah($a['kdmk']);
-            if ($cekmk != null) {
-                if ($cekstatus == 1) {
+            $cekstatus2 = $db->query("select statusklaim from mk_klaim_detail where idklaim = '$idklaim' and idcpmk='" . $a['idcpmk'] . "'")->getResult();
+
+            if ($cekstatus2 != null) {
+                foreach ($cekstatus2 as $row) {
+
+                    $statuspengajuan = $row->statusklaim;
+                }
+            }
+
+            if ($cekstatus2 != null) {
+                if ($statuspengajuan == 1) {
                     $dataMKHeader = [
                         "idklaim" => $idklaim,
                         "ta_akademik" => $ta_akademik,
@@ -162,6 +180,11 @@ class ModelTransactionKlaim extends Model
                         "nama_matakuliah" => $a['nmmk'],
                         "desk" => $a['desk'],
                         "sks" => $a['sks'],
+                        "tglubah" => $now,
+                    ];
+                    $wheredetail = [
+                        "idklaim" => $idklaim,
+                        "idcpmk" => $a['idcpmk']
                     ];
                     $dataMKdetail = [
                         "idklaim" => $idklaim,
@@ -169,13 +192,12 @@ class ModelTransactionKlaim extends Model
                         "cpmk" => $a['cpmk'],
                         "klaim" => $a['nilai'],
                         "statusklaim" => $status,
+                        "tglubah" => $now,
                     ];
                     if ($idklaim1 != $idklaim) {
-                        $hapusMkheader = $BuilderMkHeader->where("idklaim", $idklaim)->delete();
-                        $hapusMkhdetail = $BuilderMkDetail->where("idklaim", $idklaim)->delete();
-                        $hapusRefKlaim = $BuilderRefKlaim->where("idklaim", $idklaim)->delete();
+                        $updateMkheader = $BuilderMkHeader->where("idklaim", $idklaim)->update($dataMKHeader);
 
-                        $insertMkheader = $BuilderMkHeader->insert($dataMKHeader);
+                        // $insertMkheader = $BuilderMkHeader->insert($dataMKHeader);
                         $idklaim1 = $idklaim;
                         // foreach ($a['ref'] as $ref) {
                         $dataRef = [
@@ -183,25 +205,30 @@ class ModelTransactionKlaim extends Model
                             // "idcpmk" => $a['idcpmk'],
                             // "kode_matakuliah" => $a['kdmk'],
                             "no_dokumen" => json_encode($a['ref']),
+                            "tglubah" => $now,
+
 
                         ];
-                        $insertRefKlaim = $BuilderRefKlaim->insert($dataRef);
+                        $updateRefKlaim = $BuilderRefKlaim->where("idklaim", $idklaim)->update($dataRef);
+                        // $insertRefKlaim = $BuilderRefKlaim->insert($dataRef);
                     }
-                    $insertMkhdetail = $BuilderMkDetail->insert($dataMKdetail);
+                    $updateMkhdetail = $BuilderMkDetail->where($wheredetail)->update($dataMKdetail);
+                    // $insertMkhdetail = $BuilderMkDetail->insert($dataMKdetail);
                 } else {
                     echo "Klaim sedang diproses. Silahkan menunggu tanggapan Asessor di menu Respon Asessor";
                 }
             } else {
                 $cekstatus2 = $db->query("select statusklaim from mk_klaim_detail where idklaim = '$idklaim' and idcpmk='" . $a['idcpmk'] . "'")->getResult();
-                $statuspengajuan = null;
+                $statuspengajuan = "";
                 if ($cekstatus2 != null) {
                     foreach ($cekstatus2 as $row) {
 
                         $statuspengajuan = $row->statusklaim;
                     }
                 }
+
                 // $cekstatuspengajuan = $this->cekstatusklaim($idklaim);
-                if ($statuspengajuan == null) {
+                if ($cekstatus2 != 2) {
                     $dataMKHeader = [
                         "idklaim" => $idklaim,
                         "ta_akademik" => $ta_akademik,
@@ -211,6 +238,8 @@ class ModelTransactionKlaim extends Model
                         "kode_matakuliah" => $a['kdmk'],
                         "nama_matakuliah" => $a['nmmk'],
                         "sks" => $a['sks'],
+                        "tglbuat" => $now,
+
                     ];
                     $dataMKdetail = [
                         "idklaim" => $idklaim,
@@ -218,6 +247,7 @@ class ModelTransactionKlaim extends Model
                         "cpmk" => $a['cpmk'],
                         "klaim" => $a['nilai'],
                         "statusklaim" => $status,
+                        "tglbuat" => $now,
                     ];
                     $insertMkhdetail = $BuilderMkDetail->insert($dataMKdetail);
 
@@ -230,6 +260,8 @@ class ModelTransactionKlaim extends Model
                             // "idcpmk" => $a['idcpmk'],
                             // "kode_matakuliah" => $a['kdmk'],
                             "no_dokumen" => json_encode($a['ref']),
+                            "tglbuat" => $now,
+
                         ];
                         $insertRefKlaim = $BuilderRefKlaim->insert($dataRef);
                     }
@@ -398,6 +430,20 @@ class ModelTransactionKlaim extends Model
     {
         $db      = \Config\Database::connect();
         $result = $db->query("select * from mk_klaim_detail where idklaim = '$idklaim' group by mk_klaim_detail.idklaim")->getResult();
+        $status = 1;
+        if ($result != null) {
+            foreach ($result as $a) {
+                if ($a->statusklaim == 2) {
+                    $status = 2;
+                }
+            }
+        }
+        return $status;
+    }
+    public function Cekpengajuanall($noregis)
+    {
+        $db      = \Config\Database::connect();
+        $result = $db->query("select * from mk_klaim_detail where mid(idklaim,6,10) = '$noregis' group by mk_klaim_detail.idklaim")->getResult();
         $status = 1;
         if ($result != null) {
             foreach ($result as $a) {

@@ -71,10 +71,10 @@
                                         <div class="col-md-12">
                                             <table class="col-md-12 " style="font-size: 10px;">
                                                 <tr>
-                                                    <td style='width:20%; ;'>Nama Calan Mahasiswa</td>
-                                                    <td style='width:20%; '>: <?= $nama_mhs; ?></td>
-                                                    <td style='width:20%; '>Fakultas</td>
-                                                    <td style='width:20%; '>: <?= $fakultas; ?></td>
+                                                    <td style='width:17%; ;'>Nama Calan Mahasiswa</td>
+                                                    <td style='width:23%; '>: <?= $nama_mhs; ?></td>
+                                                    <td style='width:15%; '>Fakultas</td>
+                                                    <td style='width:25%; '>: <?= $fakultas; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Nomor Peserta</td>

@@ -14,7 +14,7 @@ class ModelDokumen extends Model
 
     protected $allowedFields = ['ta_akademik', 'no_peserta', 'jenis_dokumen', 'no_dokumen', 'nmfile', 'nmfile_asli', 'lokasi_file', 'url', 'tglbuat', 'tglubah'];
 
-    protected $useTimestamps = false;
+    protected $useTimestamps = TRUE;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'tglbuat';
     protected $updatedField  = 'tglubah';
@@ -43,4 +43,29 @@ class ModelDokumen extends Model
     //     // $Modal = new ModelBiodata();
 
     // }
+    public function getDataBynoregis()
+    {
+        $noregis = session()->get('noregis');
+        $db      = \Config\Database::connect();
+        $noregis = session()->get("noregis");
+        $Result = $db->query("SELECT
+        dok_portofolio.ta_akademik,
+        dok_portofolio.no_peserta,
+        dok_portofolio.jenis_dokumen,
+        dok_portofolio.no_dokumen,
+        dok_portofolio.nmfile,
+        dok_portofolio.lokasi_file,
+        dok_portofolio.nmfile_asli,
+        dok_portofolio.url,
+        dok_portofolio.tglbuat,
+        dok_portofolio.tglubah,
+        tb_jenis_file.nama_jenis
+        FROM
+        dok_portofolio
+        LEFT JOIN tb_jenis_file ON dok_portofolio.jenis_dokumen = tb_jenis_file.kd_jenis
+        
+        where no_peserta = '$noregis'")->getResultArray();
+
+        return $Result;
+    }
 }

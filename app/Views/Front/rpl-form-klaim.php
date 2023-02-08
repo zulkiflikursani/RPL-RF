@@ -161,20 +161,15 @@
 
                                                             </div>
                                                             <div class="mb-3">
-                                                                <label for="formrow-nama-input"
-                                                                    class="form-label">Desrkipsi</label>
-                                                                <textarea class="form-control" id="desk"
-                                                                    name="deskripsi" placeholder="Deskripsi"
-                                                                    required><?= (isset($deksripsi) ? $deksripsi : '') ?></textarea>
+                                                                <label for="formrow-nama-input" class="form-label">Desrkipsi</label>
+                                                                <textarea class="form-control" id="desk" name="deskripsi" placeholder="Deskripsi" required><?= (isset($deksripsi) ? $deksripsi : '') ?></textarea>
                                                             </div>
                                                             <div class="mb-3 col-md-12">
-                                                                <label for="formrow-nama-input"
-                                                                    class="form-label">Dokumen Referensi</label>
+                                                                <label for="formrow-nama-input" class="form-label">Dokumen Referensi</label>
                                                                 <?= getRefmhs($datadok, "") ?>
                                                             </div>
                                                             <div>
-                                                                <button type="submit"
-                                                                    class="btn btn-primary w-md">Simpan</button>
+                                                                <button type="submit" class="btn btn-primary w-md">Simpan</button>
 
                                                             </div>
                                                         </form>
@@ -236,76 +231,76 @@
 </html>
 
 <script>
-$(document).ready(function() {
-    $('.select2').select2();
+    $(document).ready(function() {
+        $('.select2').select2();
 
-    $('.js-example-basic-multiple').select2();
-    <?php if (isset($ref)) {
+        $('.js-example-basic-multiple').select2();
+        <?php if (isset($ref)) {
         ?>
-    $('.select2').val(<?= $ref ?>).change();;
-    <?php
+            $('.select2').val(<?= $ref ?>).change();;
+            <?php
         }
         if (isset($dataKlaimMhs[0]['statusklaim'])) {
 
 
             if ($dataKlaimMhs[0]['statusklaim'] == 2) {
             ?>
-    $('select').attr("disabled", true);
-    // alert(git'd')
-    <?php
+                $('select').attr("disabled", true);
+                // alert(git'd')
+        <?php
             }
         }
 
         ?>
 
-    $('form').on('submit', function(e) {
-        pengajuan_klaim()
-        return false
+        $('form').on('submit', function(e) {
+            pengajuan_klaim()
+            return false
+        })
     })
-})
 
 
-function pengajuan_klaim() {
-    $('#loading').show()
-    jsonObj = [];
-    $('#tbody-cpmk  > tr').each(function(i, tr) {
-        if ($(this).find("td[for=nilai]").find(":selected").val() != "") {
-            var kdmk = '<?= (isset($kdmk) ? $kdmk : '') ?>';
-            var nmmk = '<?= (isset($nama_matakuliah) ? $nama_matakuliah : '') ?>';
-            var sks = '<?= (isset($sks) ? $sks : '') ?>'
-            var idcmpk = $(this).find("td[for=idcpmk]").html()
-            var cpmk = $(this).find("td[for=cpmk]").html();
-            var nilai = $(this).find("td[for=nilai]").find(":selected").val();
-            var desk = $('textarea#desk').val();
-            var ref = $('#ref_klaim').val();
+    function pengajuan_klaim() {
+        $('#loading').show()
+        jsonObj = [];
+        $('#tbody-cpmk  > tr').each(function(i, tr) {
+            if ($(this).find("td[for=nilai]").find(":selected").val() != "") {
+                var kdmk = '<?= (isset($kdmk) ? $kdmk : '') ?>';
+                var nmmk = '<?= (isset($nama_matakuliah) ? $nama_matakuliah : '') ?>';
+                var sks = '<?= (isset($sks) ? $sks : '') ?>'
+                var idcmpk = $(this).find("td[for=idcpmk]").html()
+                var cpmk = $(this).find("td[for=cpmk]").html();
+                var nilai = $(this).find("td[for=nilai]").find(":selected").val();
+                var desk = $('textarea#desk').val();
+                var ref = $('#ref_klaim').val();
 
-            item = {}
-            item["kdmk"] = kdmk;
-            item["nmmk"] = nmmk;
-            item["idcpmk"] = idcmpk;
-            item["sks"] = sks;
-            item["cpmk"] = cpmk;
-            item["nilai"] = nilai;
-            item["desk"] = desk;
-            item["ref"] = ref;
+                item = {}
+                item["kdmk"] = kdmk;
+                item["nmmk"] = nmmk;
+                item["idcpmk"] = idcmpk;
+                item["sks"] = sks;
+                item["cpmk"] = cpmk;
+                item["nilai"] = nilai;
+                item["desk"] = desk;
+                item["ref"] = ref;
 
-            jsonObj.push(item);
-            // alert(desk);
-        }
-    });
-    url = '<?= base_url('simpanklaimmk') ?>'
-    $.post(url, {
-        jsonObj
-    }).done(function(data) {
-        $('#loading').hide()
-        if (alert(data)) {} else {
-            window.location.replace('<?= base_url('assesment-mandiri') ?>')
-        };
-    }).fail(function() {
-        $('#loading').hide()
-        alert("error");
-    })
-}
+                jsonObj.push(item);
+                // alert(desk);
+            }
+        });
+        url = '<?= base_url('simpanklaimmk') ?>'
+        $.post(url, {
+            jsonObj
+        }).done(function(data) {
+            $('#loading').hide()
+            if (alert(data)) {} else {
+                window.location.replace('<?= base_url('assesment-mandiri') ?>')
+            };
+        }).fail(function() {
+            $('#loading').hide()
+            alert("error");
+        })
+    }
 </script>
 <?php
 function search($array, $key, $value)
@@ -375,7 +370,7 @@ function inputnilai($idcpmk, $nilai = "")
             </select></td>";
         }
     } else {
-        return "<td for='nilai' idcmk='$idcpmk'><select class='form-select' required><option value='' selected>Pilih</option><option >B</option><option >C</option><option >K</option></select></td>";
+        return "<td for='nilai' idcmk='$idcpmk'><select class='form-select' required><option value='' selected>Pilih</option><option >B</option><option >C</option><option >K</option><option >T</option>  </select></td>";
     }
 }
 

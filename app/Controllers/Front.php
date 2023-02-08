@@ -4,13 +4,10 @@ namespace App\Controllers;
 
 use App\Models\ModelBiodata;
 use App\Models\ModelDokumen;
+use App\Models\ModelKeu;
 use App\Models\ModelKlaimAsessor;
-use App\Models\ModelKlaimMkDetail;
-use App\Models\ModelKlaimMkHeader;
-use App\Models\ModelRefKlaim;
 use App\Models\ModelRegistrasi;
 use App\Models\ModelTransactionKlaim;
-use CodeIgniter\Files\File;
 
 class Front extends BaseController
 {
@@ -130,85 +127,89 @@ class Front extends BaseController
 
 	public function insertbiodata()
 	{
-		$this->request = service('request');
-		$db      = \Config\Database::connect();
-		$ModalBiodata = new ModelBiodata();
-
-		$ta = $this->getTa_akademik();
-		$noregis = session()->get("noregis");
-		$nama = $db->escapeString($this->request->getPost("nama"));
-		$alamat = $db->escapeString($this->request->getPost("alamat"));
-		$kab = $db->escapeString($this->request->getPost("kab"));
-		$provinsi = $db->escapeString($this->request->getPost("provinsi"));
-		$email = $db->escapeString($this->request->getPost("email"));
-		$instansi = $db->escapeString($this->request->getPost("instansi"));
-		$nohape = $db->escapeString($this->request->getPost("nohp"));
-		$prodi = $db->escapeString($this->request->getPost("prodi"));
-		$didakhir = $db->escapeString($this->request->getPost("didakhir"));
-		$jenisrpl = $db->escapeString($this->request->getPost("jenis_rpl"));
-		$data1 = [
-			'ta_akademik' => $ta,
-			'no_peserta' => $noregis,
-			'nama' => $nama,
-			'alamat' => $alamat,
-			'kotkab' => $kab,
-			'propinsi' => $provinsi,
-			'instansi_asal' => $instansi,
-			'nohape' => $nohape,
-			'email' => $email,
-			'kode_prodi' => $prodi,
-			'jenis_rpl' => $jenisrpl,
-			'didikakhir' => $didakhir,
-		];
-		$data2 = [
-			'ta_akademik' => $ta,
-			'no_peserta' => $noregis,
-			'nama' => $nama,
-			'alamat' => $alamat,
-			'kotkab' => $kab,
-			'propinsi' => $provinsi,
-			'instansi_asal' => $instansi,
-			'nohape' => $nohape,
-			// 'email' => $email,
-			'kode_prodi' => $prodi,
-			'jenis_rpl' => $jenisrpl,
-			'didikakhir' => $didakhir,
-		];
-
-
-		$datasave = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-		if ($datasave) {
-			$result = $ModalBiodata->update(['no_peserta' => $noregis], $data2);
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
 		} else {
-			$result = $ModalBiodata->insert($data1);
-		}
+			$this->request = service('request');
+			$db      = \Config\Database::connect();
+			$ModalBiodata = new ModelBiodata();
 
-		// print_r($result);
-		if ($result === false) {
-			$datasave = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-			$data = [
-				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
-				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-				'datasubmit' => $data1,
-				'databio' => $datasave,
-
-				'dataerror' => $ModalBiodata->errors(),
+			$ta = $this->getTa_akademik();
+			$noregis = session()->get("noregis");
+			$nama = $db->escapeString($this->request->getPost("nama"));
+			$alamat = $db->escapeString($this->request->getPost("alamat"));
+			$kab = $db->escapeString($this->request->getPost("kab"));
+			$provinsi = $db->escapeString($this->request->getPost("provinsi"));
+			$email = $db->escapeString($this->request->getPost("email"));
+			$instansi = $db->escapeString($this->request->getPost("instansi"));
+			$nohape = $db->escapeString($this->request->getPost("nohp"));
+			$prodi = $db->escapeString($this->request->getPost("prodi"));
+			$didakhir = $db->escapeString($this->request->getPost("didakhir"));
+			$jenisrpl = $db->escapeString($this->request->getPost("jenis_rpl"));
+			$data1 = [
+				'ta_akademik' => $ta,
+				'no_peserta' => $noregis,
+				'nama' => $nama,
+				'alamat' => $alamat,
+				'kotkab' => $kab,
+				'propinsi' => $provinsi,
+				'instansi_asal' => $instansi,
+				'nohape' => $nohape,
+				'email' => $email,
+				'kode_prodi' => $prodi,
+				'jenis_rpl' => $jenisrpl,
+				'didikakhir' => $didakhir,
+			];
+			$data2 = [
+				'ta_akademik' => $ta,
+				'no_peserta' => $noregis,
+				'nama' => $nama,
+				'alamat' => $alamat,
+				'kotkab' => $kab,
+				'propinsi' => $provinsi,
+				'instansi_asal' => $instansi,
+				'nohape' => $nohape,
+				// 'email' => $email,
+				'kode_prodi' => $prodi,
+				'jenis_rpl' => $jenisrpl,
+				'didikakhir' => $didakhir,
 			];
 
-			return view('Front/rpl-mahasiswa', $data);
-		} else {
+
 			$datasave = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-			$data = [
-				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
-				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-				'datasubmit' => $datasave,
-				'databio' => $datasave,
-				'status' => true,
+			if ($datasave) {
+				$result = $ModalBiodata->update(['no_peserta' => $noregis], $data2);
+			} else {
+				$result = $ModalBiodata->insert($data1);
+			}
+
+			// print_r($result);
+			if ($result === false) {
+				$datasave = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+				$data = [
+					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
+					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+					'datasubmit' => $data1,
+					'databio' => $datasave,
+
+					'dataerror' => $ModalBiodata->errors(),
+				];
+
+				return view('Front/rpl-mahasiswa', $data);
+			} else {
+				$datasave = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+				$data = [
+					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
+					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+					'datasubmit' => $datasave,
+					'databio' => $datasave,
+					'status' => true,
 
 
 
-			];
-			return view('Front/rpl-mahasiswa', $data);
+				];
+				return view('Front/rpl-mahasiswa', $data);
+			}
 		}
 	}
 
@@ -246,148 +247,201 @@ class Front extends BaseController
 
 	public function Pendaftar()
 	{
-		$ModalRegisrasi = new ModelRegistrasi();
-		$ModalBiodata = new ModelBiodata();
-		$noregisrasi = session()->get("noregis");
-		$datasave = $ModalRegisrasi->where('no_registrasi', $noregisrasi)->findAll();
-		$datasavebio = $ModalBiodata->where('no_peserta', $noregisrasi)->findAll();
-		$prodi = $this->getNamaProdi($this->getNamaProdiFromRegis());
-		if ($datasavebio != null) {
-			$databio = $datasavebio;
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
 		} else {
-			$databio = $datasave;
-		}
+			$ModalRegisrasi = new ModelRegistrasi();
+			$ModalBiodata = new ModelBiodata();
+			$noregisrasi = session()->get("noregis");
+			$datasave = $ModalRegisrasi->where('no_registrasi', $noregisrasi)->findAll();
+			$datasavebio = $ModalBiodata->where('no_peserta', $noregisrasi)->findAll();
+			$prodi = $this->getNamaProdi($this->getNamaProdiFromRegis());
+			if ($datasavebio != null) {
+				$databio = $datasavebio;
+			} else {
+				$databio = $datasave;
+			}
+			$modelKeu = new ModelKeu();
+			$validasikeu = $modelKeu->cekvalidasi($noregisrasi);
 
-		if ($datasave[0]['validasi_keu'] == 1) {
-			$data = [
-				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Biodata Peserta RPL']),
-				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Pengumuman']),
-				'datasubmit' => $databio,
-				'databio' => $databio,
-				'prodi' => $prodi,
-				// 'test' => $datasave,
-				'ta_akademik' => $this->getTa_akademik()
-			];
-			return view('Front/rpl-mahasiswa-belum-valid-keu', $data);
-		} else {
-			$data = [
-				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Biodata Peserta RPL']),
-				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
-				'datasubmit' => $databio,
-				'databio' => $databio,
-				'prodi' => $prodi,
-				// 'test' => $datasave,
-				'ta_akademik' => $this->getTa_akademik()
-			];
-			return view('Front/rpl-mahasiswa', $data);
+			if ($validasikeu == null) {
+				$data = [
+					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Biodata Peserta RPL']),
+					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Pengumuman']),
+					'datasubmit' => $databio,
+					'databio' => $databio,
+					'prodi' => $prodi,
+					// 'test' => $datasave,
+					'ta_akademik' => $this->getTa_akademik()
+				];
+				return view('Front/rpl-mahasiswa-belum-valid-keu', $data);
+			} else {
+				$data = [
+					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Biodata Peserta RPL']),
+					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
+					'datasubmit' => $databio,
+					'databio' => $databio,
+					'prodi' => $prodi,
+					// 'test' => $datasave,
+					'ta_akademik' => $this->getTa_akademik()
+				];
+				return view('Front/rpl-mahasiswa', $data);
+			}
 		}
 	}
 	public function Uploadberkas()
 	{
-		$ModalBiodata = new ModelBiodata();
-		$Modaldokumen = new ModelDokumen();
-		$noregisrasi = session()->get("noregis");
-		$datasavebio = $ModalBiodata->where('no_peserta', $noregisrasi)->findAll();
-		$datadokumen = $Modaldokumen->where('no_peserta', $noregisrasi)->findAll();
-		$data = [
-			'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
-			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
-			'datasubmit' => $datasavebio,
-			'datadok' => $datadokumen,
-			'databio' => $datasavebio,
-			// 'test' => $datasave,
-			'ta_akademik' => $this->getTa_akademik()
-		];
-		return view('Front/rpl-mahasiswa-upload', $data);
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$ModalBiodata = new ModelBiodata();
+			$Modaldokumen = new ModelDokumen();
+			$noregisrasi = session()->get("noregis");
+			$datasavebio = $ModalBiodata->where('no_peserta', $noregisrasi)->findAll();
+			$datadokumen = $Modaldokumen->getDataBynoregis();
+			$data = [
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
+				'datasubmit' => $datasavebio,
+				'datadok' => $datadokumen,
+				'databio' => $datasavebio,
+				// 'test' => $datasave,
+				'ta_akademik' => $this->getTa_akademik()
+			];
+			return view('Front/rpl-mahasiswa-upload', $data);
+		}
+	}
+	public function deleteDokumen()
+	{
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$db      = \Config\Database::connect();
+			$noregis = session()->get('noregis');
+			$nodokumen = $nmfile = $db->escapeString($this->request->getPost('nodokumen'));
+			$cekstatuskalim = $db->query("select * from mk_klaim_header where no_peserta= '$noregis'")->getResult();
+			$modelDokumen = new ModelDokumen();
+			$data = $modelDokumen->where('no_dokumen', $nodokumen)->findAll();
+			foreach ($data as $row) {
+				$nmfile = $row['nmfile_asli'];
+			}
+			$path = $row['lokasi_file'] . "/" . $nmfile;
+			if ($cekstatuskalim != null) {
+				echo "Anda sudah melakukan klaim matakuliah. silahkan batalkan semua klaim untuk menghapus dokumen";
+			} else {
+				$modelDokumen = new ModelDokumen();
+				$deletedok = $modelDokumen->where('no_dokumen', $nodokumen)->delete();
+				if ($deletedok === false) {
+					echo "Gagal Menghapus Dokumen";
+				} else {
+					$a = unlink($path);
+					if ($a) {
+						echo "Berhasil Menghapus Dokumen";
+					} else {
+						echo "Gagal Menghapus Dokumen";
+					}
+				}
+			}
+		}
 	}
 	public function Simpanberkas()
 	{
-		$db      = \Config\Database::connect();
 
-		$jenis_file = $db->escapeString($this->request->getPost('jenis_file'));
-		$nmfile = $db->escapeString($this->request->getPost('nmfile'));
-		$userFile = $this->request->getFile('userFile');
-		$url = $db->escapeString($this->request->getPost('url'));
-		$noregis = session()->get('noregis');
-
-		if (empty($nmfile)) {
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
 		} else {
-			$url = '-';
-		}
-		$fileNameRandom = $userFile->getRandomName();
+			$db      = \Config\Database::connect();
+
+			$jenis_file = $db->escapeString($this->request->getPost('jenis_file'));
+			$nmfile = $db->escapeString($this->request->getPost('nmfile'));
+			$userFile = $this->request->getFile('userFile');
+			$url = $db->escapeString($this->request->getPost('url'));
+			$noregis = session()->get('noregis');
+
+			if (empty($nmfile)) {
+			} else {
+				$url = '-';
+			}
+			$fileNameRandom = $userFile->getRandomName();
 
 
-		$Modaldokumen = new ModelDokumen();
-		$id_dokumen = rand(100000, 999999);
-		$data = [
-			"ta_akademik" => $this->getTa_akademik(),
-			"no_peserta" => $noregis,
-			"jenis_dokumen" => $jenis_file,
-			"no_dokumen" => $id_dokumen,
-			"nmfile" => $nmfile,
-			"lokasi_file" => "uploads/berkas/$noregis",
-			"nmfile_asli" => $fileNameRandom,
-			"url" => $url,
+			$Modaldokumen = new ModelDokumen();
+			$id_dokumen = rand(100000, 999999);
+			$data = [
+				"ta_akademik" => $this->getTa_akademik(),
+				"no_peserta" => $noregis,
+				"jenis_dokumen" => $jenis_file,
+				"no_dokumen" => $id_dokumen,
+				"nmfile" => $nmfile,
+				"lokasi_file" => "uploads/berkas/$noregis",
+				"nmfile_asli" => $fileNameRandom,
+				"url" => $url,
 
-		];
+			];
 
-		$validationRule = [
-			'userfile' => [
-				'label' => 'Dokumen',
-				'rules' => [
-					'uploaded[userfile]',
-					'max_size[userfile,5000]',
-					'mime_in[userfile,aplication/pdf]',
+			$validationRule = [
+				'userfile' => [
+					'label' => 'Dokumen',
+					'rules' => [
+						'uploaded[userfile]',
+						'max_size[userfile,5000]',
+						'mime_in[userfile,aplication/pdf]',
 
+					],
 				],
-			],
-		];
+			];
 
 
-		$validation = \Config\Services::validation();
-		$validation->setRules($validationRule);
+			$validation = \Config\Services::validation();
+			$validation->setRules($validationRule);
 
-		$fileName = $userFile->getName();
+			$fileName = $userFile->getName();
 
-		if ($validation->hasError('userFile')) {
-			$data['error'] = $validation->getError('userFile');
-		} else {
-			$userFile->move("uploads/berkas/$noregis", $fileNameRandom);
-			$path_to_file = "uploads/berkas/$noregis/$fileNameRandom";
-			if ($userFile->hasMoved()) {
-				$result1 = $Modaldokumen->insert($data);
-				if ($result1 === false) {
-					unlink($path_to_file);
+			if ($validation->hasError('userFile')) {
+				$data['error'] = $validation->getError('userFile');
+			} else {
+				$userFile->move("uploads/berkas/$noregis", $fileNameRandom);
+				$path_to_file = "uploads/berkas/$noregis/$fileNameRandom";
+				if ($userFile->hasMoved()) {
+					$result1 = $Modaldokumen->insert($data);
+					if ($result1 === false) {
+						unlink($path_to_file);
+						$ModalBiodata = new ModelBiodata();
+						$datadokumen = $Modaldokumen->getDataBynoregis();
+						// $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+						$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+						$data = [
+							'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
+							'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+							'datasubmit' => $data,
+							'dataerror' => $Modaldokumen->errors()
+						];
+						return view('Front/rpl-mahasiswa-upload', $data);
+					} else {
+						$ModalBiodata = new ModelBiodata();
+						$datadokumen = $Modaldokumen->getDataBynoregis();
+						// $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+						$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+						$data = [
+							'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen']),
+							'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+							'datadok' => $datadokumen,
+							'databio' => $databio,
+							'datasubmit' => $data,
+							'status' => true
+						];
+						return view('Front/rpl-mahasiswa-upload', $data);
+					}
+				} else {
+
 					$data = [
 						'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
 						'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
 						'datasubmit' => $data,
-						'dataerror' => $Modaldokumen->errors()
-					];
-					return view('Front/rpl-mahasiswa-upload', $data);
-				} else {
-					$ModalBiodata = new ModelBiodata();
-					$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
-					$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-					$data = [
-						'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
-						'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-						'datadok' => $datadokumen,
-						'databio' => $databio,
-						'datasubmit' => $data,
-						'status' => true
+						'dataerror' => $userFile->getErrorString()
 					];
 					return view('Front/rpl-mahasiswa-upload', $data);
 				}
-			} else {
-
-				$data = [
-					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
-					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-					'datasubmit' => $data,
-					'dataerror' => $userFile->getErrorString()
-				];
-				return view('Front/rpl-mahasiswa-upload', $data);
 			}
 		}
 	}
@@ -426,24 +480,29 @@ class Front extends BaseController
 	}
 	public function AssesmentMandiri()
 	{
-		$noregis = session()->get("noregis");
-		$Modaldokumen = new ModelDokumen();
-		$ModalBiodata = new ModelBiodata();
-		$ModalAssesmentMandiri = new ModelTransactionKlaim();
-		$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
-		$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-		$dataassementmandiri = "";
-		$data = [
-			'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
-			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-			'datadok' => $datadokumen,
-			'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
-			'getMatakuliah' => $this->getMatakuliahklaimperprodi($databio[0]['kode_prodi'], $noregis),
-			'dataKlaimMhs' => $dataassementmandiri,
-			'databio' => $databio,
 
-		];
-		return view('Front/rpl-assesment-mandiri-ok', $data);
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$noregis = session()->get("noregis");
+			$Modaldokumen = new ModelDokumen();
+			$ModalBiodata = new ModelBiodata();
+			$ModalAssesmentMandiri = new ModelTransactionKlaim();
+			$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+			$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+			$dataassementmandiri = "";
+			$data = [
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+				'datadok' => $datadokumen,
+				'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
+				'getMatakuliah' => $this->getMatakuliahklaimperprodi($databio[0]['kode_prodi'], $noregis),
+				'dataKlaimMhs' => $dataassementmandiri,
+				'databio' => $databio,
+
+			];
+			return view('Front/rpl-assesment-mandiri-ok', $data);
+		}
 	}
 	public function Logout()
 	{
@@ -488,77 +547,78 @@ class Front extends BaseController
 	public function ajukanKlaimmk()
 	{
 
-		$formdata = $this->request->getPost();
-		$status = 2;
-		$noregis = session()->get("noregis");
-		$kodeprodi = $this->getkodeprodi($noregis);
-
-		$ta_akademik = $this->getTa_akademik();
-		$ModalTransactionKlaim = new ModelTransactionKlaim();
-		$dataassementmandiri = $ModalTransactionKlaim->getKlaimMk_mahasiswaAll();
-
-		$statusklaim = "";
-		if ($dataassementmandiri != null) {
-			// print_r($dataassementmandiri);
-			foreach ($dataassementmandiri as $a) {
-				$statusklaim = $a['statusklaim'];
-			};
-
-			// $simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
-		}
-		if ($statusklaim == 2) {
-			echo "Tidak bisa mengubah data karena sudah di ajukan";
-		} else if ($statusklaim == 1) {
-			$simpanklaim = $ModalTransactionKlaim->ajukantanggapanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
 		} else {
+
+			$formdata = $this->request->getPost();
+			$status = 2;
+			$noregis = session()->get("noregis");
+			$kodeprodi = $this->getkodeprodi($noregis);
+
+			$ta_akademik = $this->getTa_akademik();
+			$ModalTransactionKlaim = new ModelTransactionKlaim();
+			$dataassementmandiri = $ModalTransactionKlaim->getKlaimMk_mahasiswaAll();
+
+			$statusklaim = "";
 			$simpanklaim = $ModalTransactionKlaim->ajukantanggapanklaim($formdata, $status, $kodeprodi, $ta_akademik);
 		}
 	}
 	public function batalKlaimmk()
 	{
-		$this->request = service('request');
-		$db      = \Config\Database::connect();
-		$idklaim = $db->escapeString($this->request->getPost('idklaim'));
-		$noregis = session()->get("noregis");
-		$kodeprodi = $this->getkodeprodi($noregis);
-		$ta_akademik = $this->getTa_akademik();
-		$ModalTransactionKlaim = new ModelTransactionKlaim();
-		$statusmk = $ModalTransactionKlaim->cekstatusmk($idklaim);
-		if ($statusmk != null) {
-			if ($statusmk == 2) {
-				echo "Klaim sedang diproses. Silahkan menunggu tanggapan Asessor di menu Respon Asessor";
-			} else if ($statusmk == 1) {
-				$ModalTransactionKlaim->batalklaim($idklaim);
+
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$this->request = service('request');
+			$db      = \Config\Database::connect();
+			$idklaim = $db->escapeString($this->request->getPost('idklaim'));
+			$noregis = session()->get("noregis");
+			$kodeprodi = $this->getkodeprodi($noregis);
+			$ta_akademik = $this->getTa_akademik();
+			$ModalTransactionKlaim = new ModelTransactionKlaim();
+			$statusmk = $ModalTransactionKlaim->cekstatusmk($idklaim);
+			if ($statusmk != null) {
+				if ($statusmk == 2) {
+					echo "Klaim sedang diproses. Silahkan menunggu tanggapan Asessor di menu Respon Asessor";
+				} else if ($statusmk == 1) {
+					$ModalTransactionKlaim->batalklaim($idklaim);
+				}
 			}
 		}
 	}
 
 	public function SimpanKlaimmk()
 	{
-		$formdata = $this->request->getPost();
-		$status = 1;
-		$noregis = session()->get("noregis");
-		$kodeprodi = $this->getkodeprodi($noregis);
 
-		$ta_akademik = $this->getTa_akademik();
-		$ModalTransactionKlaim = new ModelTransactionKlaim();
-		$dataassementmandiri = $ModalTransactionKlaim->getKlaimMk_mahasiswaAll();
-
-		$statusklaim = "";
-		if ($dataassementmandiri != null) {
-			// print_r($dataassementmandiri);
-			foreach ($dataassementmandiri as $a) {
-				$statusklaim = $a['statusklaim'];
-			};
-
-			// $simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
-		}
-		if ($statusklaim == 2) {
-			echo "Tidak bisa mengubah data karena sudah di ajukan";
-		} else if ($statusklaim == 1) {
-			$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
 		} else {
-			$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+			$formdata = $this->request->getPost();
+			$status = 1;
+			$noregis = session()->get("noregis");
+			$kodeprodi = $this->getkodeprodi($noregis);
+
+			$ta_akademik = $this->getTa_akademik();
+			$ModalTransactionKlaim = new ModelTransactionKlaim();
+			$dataassementmandiri = $ModalTransactionKlaim->getKlaimMk_mahasiswaAll();
+
+			$statusklaim = "";
+			if ($dataassementmandiri != null) {
+				// print_r($dataassementmandiri);
+				foreach ($dataassementmandiri as $a) {
+					$statusklaim = $a['statusklaim'];
+				};
+
+				// $simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+			}
+			if ($statusklaim == 2) {
+				echo "Tidak bisa mengubah data karena sudah di ajukan";
+			} else if ($statusklaim == 1) {
+				$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+			} else {
+				$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
+			}
 		}
 	}
 
@@ -570,8 +630,12 @@ class Front extends BaseController
 	}
 	public function getMatakuliah($kode_prodi)
 	{
-		$db      = \Config\Database::connect();
-		$result = $db->query("SELECT
+
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$db      = \Config\Database::connect();
+			$result = $db->query("SELECT
 								matakuliah.*,
 								mk_cpmk.idcpmk,
 									mk_cpmk.cpmk
@@ -585,74 +649,85 @@ class Front extends BaseController
 									matakuliah.kode_prodi = '$kode_prodi'
 								order by matakuliah.kode_matakuliah")->getResult();
 
-		return $result;
+			return $result;
+		}
 	}
 	public function AssesmentMandiri_mk($kdmk)
 	{
-		$noregis = session()->get("noregis");
-		$Modaldokumen = new ModelDokumen();
-		$ModalBiodata = new ModelBiodata();
-		$ModalAssesmentMandiri = new ModelTransactionKlaim();
-		$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
-		$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-		$dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($kdmk);
-		$datacpmk = $this->getcpmk($kdmk);
-		foreach ($datacpmk as $r) {
-			$nama_matakulah = $r->nama_matakuliah;
-			$sks = $r->sks;
-		}
-		$data = [
-			'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
-			'page_title' => view('partials/rpl-page-title', ['title' => 'Form Klaim RPL', 'pagetitle' => 'Dashboards']),
-			'datadok' => $datadokumen,
-			'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
-			'kdmk' => $kdmk,
-			'sks' => $sks,
-			'nama_matakuliah' => $nama_matakulah,
-			// 'getMatakuliah' => $this->getMatakuliahklaimperprodi($databio[0]['kode_prodi'], $noregis),
-			'dataKlaimMhs' => $dataassementmandiri,
-			'dataCpmk' => $datacpmk,
-			'databio' => $databio,
 
-		];
-		return view('Front/rpl-form-klaim', $data);
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$noregis = session()->get("noregis");
+			$Modaldokumen = new ModelDokumen();
+			$ModalBiodata = new ModelBiodata();
+			$ModalAssesmentMandiri = new ModelTransactionKlaim();
+			$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+			$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+			$dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($kdmk);
+			$datacpmk = $this->getcpmk($kdmk);
+			foreach ($datacpmk as $r) {
+				$nama_matakulah = $r->nama_matakuliah;
+				$sks = $r->sks;
+			}
+			$data = [
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'Form Klaim RPL', 'pagetitle' => 'Dashboards']),
+				'datadok' => $datadokumen,
+				'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
+				'kdmk' => $kdmk,
+				'sks' => $sks,
+				'nama_matakuliah' => $nama_matakulah,
+				// 'getMatakuliah' => $this->getMatakuliahklaimperprodi($databio[0]['kode_prodi'], $noregis),
+				'dataKlaimMhs' => $dataassementmandiri,
+				'dataCpmk' => $datacpmk,
+				'databio' => $databio,
+
+			];
+			return view('Front/rpl-form-klaim', $data);
+		}
 	}
 	public function tanggapanAsessmentMhs($kdmk)
 	{
-		$noregis = session()->get("noregis");
-		$Modaldokumen = new ModelDokumen();
-		$ModalBiodata = new ModelBiodata();
-		$modelklaimasessor = new ModelKlaimAsessor();
-		$where = [
-			"kode_matakuliah" => $kdmk,
-			"no_peserta" => $noregis
-		];
-		$klaimAsessor = $modelklaimasessor->where($where)->findAll();
-		$ModalAssesmentMandiri = new ModelTransactionKlaim();
-		$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
-		$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-		$dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($kdmk);
-		$datacpmk = $this->getcpmk($kdmk);
-		foreach ($datacpmk as $r) {
-			$nama_matakulah = $r->nama_matakuliah;
-			$sks = $r->sks;
-		}
-		$data = [
-			'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
-			'page_title' => view('partials/rpl-page-title', ['title' => 'Form Klaim RPL', 'pagetitle' => 'Dashboards']),
-			'datadok' => $datadokumen,
-			'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
-			'kdmk' => $kdmk,
-			'sks' => $sks,
-			'klaimAsessor' => $klaimAsessor,
-			'nama_matakuliah' => $nama_matakulah,
-			// 'getMatakuliah' => $this->getMatakuliahklaimperprodi($databio[0]['kode_prodi'], $noregis),
-			'dataKlaimMhs' => $dataassementmandiri,
-			'dataCpmk' => $datacpmk,
-			'databio' => $databio,
 
-		];
-		return view('Front/rpl-form-tanggapan-mhs', $data);
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$noregis = session()->get("noregis");
+			$Modaldokumen = new ModelDokumen();
+			$ModalBiodata = new ModelBiodata();
+			$modelklaimasessor = new ModelKlaimAsessor();
+			$where = [
+				"kode_matakuliah" => $kdmk,
+				"no_peserta" => $noregis
+			];
+			$klaimAsessor = $modelklaimasessor->where($where)->findAll();
+			$ModalAssesmentMandiri = new ModelTransactionKlaim();
+			$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+			$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+			$dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($kdmk);
+			$datacpmk = $this->getcpmk($kdmk);
+			foreach ($datacpmk as $r) {
+				$nama_matakulah = $r->nama_matakuliah;
+				$sks = $r->sks;
+			}
+			$data = [
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'Form Klaim RPL', 'pagetitle' => 'Dashboards']),
+				'datadok' => $datadokumen,
+				'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
+				'kdmk' => $kdmk,
+				'sks' => $sks,
+				'klaimAsessor' => $klaimAsessor,
+				'nama_matakuliah' => $nama_matakulah,
+				// 'getMatakuliah' => $this->getMatakuliahklaimperprodi($databio[0]['kode_prodi'], $noregis),
+				'dataKlaimMhs' => $dataassementmandiri,
+				'dataCpmk' => $datacpmk,
+				'databio' => $databio,
+
+			];
+			return view('Front/rpl-form-tanggapan-mhs', $data);
+		}
 	}
 	public function getcpmk($kode_matakuliah)
 	{
@@ -700,8 +775,12 @@ class Front extends BaseController
 	}
 	public function getMatakuliahklaimperprodi($kode_prodi, $noregis)
 	{
-		$db      = \Config\Database::connect();
-		$result = $db->query("SELECT
+
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$db      = \Config\Database::connect();
+			$result = $db->query("SELECT
 								matakuliah.*,
 								mk_klaim_header.kode_matakuliah as kdmk_klaim,
 								mk_klaim_header.idklaim as idklaim
@@ -714,7 +793,8 @@ class Front extends BaseController
 									matakuliah.kode_prodi = '$kode_prodi'
 								order by matakuliah.kode_matakuliah")->getResult();
 
-		return $result;
+			return $result;
+		}
 	}
 	//--------------------------------------------------------------------
 
