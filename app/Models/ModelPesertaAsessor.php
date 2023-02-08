@@ -117,14 +117,17 @@ class ModelPesertaAsessor extends Model
                                 mk_klaim_asessor.ket_tanggapan,
                                 mk_klaim_asessor.no_peserta,
                                 tb_peserta_asessor.no_peserta,
-                                tb_peserta_asessor.no_asessor
+                                tb_peserta_asessor.no_asessor,
+                                mk_klaim_detail.statusklaim,
+                                (select tanggapan from mk_klaim_asessor where mk_klaim_asessor.idklaim=mk_klaim_detail.idklaim and mk_klaim_asessor.tanggapan != 0) as tanggapan_asessor
                                 FROM
                                 bio_peserta
-                                LEFT JOIN mk_klaim_asessor ON bio_peserta.no_peserta = mk_klaim_asessor.no_peserta
+                                LEFT JOIN mk_klaim_asessor ON bio_peserta.no_peserta = mk_klaim_asessor.no_peserta 
                                 LEFT JOIN tb_peserta_asessor ON bio_peserta.no_peserta = tb_peserta_asessor.no_peserta
                                 LEFT JOIN mk_klaim_header on bio_peserta.no_peserta= mk_klaim_header.no_peserta
+                                left join mk_klaim_detail on mk_klaim_detail.idklaim= mk_klaim_header.idklaim and (mk_klaim_detail.statusklaim != 0)
                                 WHERE
-                                bio_peserta.ta_akademik='$ta_akademik' and tb_peserta_asessor.no_asessor='$id_asessor' and  mk_klaim_header.idklaim is not null and (mk_klaim_asessor.idklaim is null or mk_klaim_asessor.tanggapan != 0)
+                                bio_peserta.ta_akademik='$ta_akademik' and tb_peserta_asessor.no_asessor='$id_asessor' and  mk_klaim_header.idklaim is not null and (mk_klaim_asessor.idklaim is null) and mk_klaim_detail.statusklaim is not null
                                 group by bio_peserta.no_peserta
                                 ")->getResult();
         return $dataMahasiswa;
@@ -165,7 +168,7 @@ class ModelPesertaAsessor extends Model
                                 left join 
                                 (select no_peserta,tanggapan from mk_klaim_asessor where tanggapan != 0) as st on st.no_peserta = bio_peserta.no_peserta
                                 WHERE
-                                bio_peserta.ta_akademik='$ta_akademik' and tb_peserta_asessor.no_asessor=$id_asessor and mk_klaim_prodi.idklaim is null and mk_klaim_asessor.idklaim is not null and st.tanggapan is null
+                                bio_peserta.ta_akademik='$ta_akademik' and tb_peserta_asessor.no_asessor='$id_asessor' and mk_klaim_prodi.idklaim is null and mk_klaim_asessor.idklaim is not null and st.tanggapan is null
                                 group by bio_peserta.no_peserta
                                 ")->getResult();
         return $dataMahasiswa;

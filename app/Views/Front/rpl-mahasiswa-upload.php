@@ -76,29 +76,23 @@
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">Form Upload Dokumen RPL</h4>
 
-                                    <button type="button" class="btn btn-primary " data-bs-toggle="modal"
-                                        data-bs-target=".tambah-upload-modal">Upload</button>
+                                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target=".tambah-upload-modal">Upload</button>
 
                                     <!-- Modal upload -->
-                                    <div class="modal fade tambah-upload-modal" tabindex="-1" role="dialog"
-                                        aria-labelledby="mytambah-upload-modal" aria-hidden="true">
+                                    <div class="modal fade tambah-upload-modal" tabindex="-1" role="dialog" aria-labelledby="mytambah-upload-modal" aria-hidden="true">
                                         <div class="modal-dialog modal-xl">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="myLargeModalLabel">Upload Berkas
                                                         <?= $nm_rpl ?></h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
                                                     <!-- content -->
-                                                    <form method="POST" action="<?= base_url("Front/Simpanberkas") ?>"
-                                                        enctype="multipart/form-data">
+                                                    <form method="POST" action="<?= base_url("Front/Simpanberkas") ?>" enctype="multipart/form-data">
                                                         <div class="mb-3">
-                                                            <label for="formrow-inputPendidikan"
-                                                                class="form-label">Jenis Dokumen</label>
-                                                            <select class="form-select" id="autoSizingSelect"
-                                                                name='jenis_file'>
+                                                            <label for="formrow-inputPendidikan" class="form-label">Jenis Dokumen</label>
+                                                            <select class="form-select" id="autoSizingSelect" name='jenis_file'>
                                                                 <option value=''>
                                                                     Pilih...</option>
                                                                 "<option value='02'>Ijazah dan atau transkip nilai bagi
@@ -120,47 +114,36 @@
                                                         <div class="mb-3">
                                                             <label for="formrow-inputProvinsi" class="form-label">Nama
                                                                 Dokumen</label>
-                                                            <input type="text" class="form-control"
-                                                                id="formrow-inputProvinsi" name="nmfile"
-                                                                placeholder="Masukkan Nama Dokumen" value="">
+                                                            <input type="text" class="form-control" id="formrow-inputProvinsi" name="nmfile" placeholder="Masukkan Nama Dokumen" value="">
                                                         </div>
                                                         <div class="mb-3  text-left">
                                                             <div class="input-group">
 
                                                                 <div class="form-check ">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        name="formRadios" id="formRadios1" checked>
+                                                                    <input class="form-check-input" type="radio" name="formRadios" id="formRadios1" checked>
                                                                     <label class="form-check-label" for="formRadios1">
                                                                         Upload File
                                                                     </label>
                                                                 </div>
                                                                 <div class="form-check mx-3">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        name="formRadios" id="formRadios2">
+                                                                    <input class="form-check-input" type="radio" name="formRadios" id="formRadios2">
                                                                     <label class="form-check-label" for="formRadios2">
                                                                         Link File
                                                                     </label>
                                                                 </div>
                                                             </div>
                                                             <div class="input-group mt-3" id='input-upload'>
-                                                                <input type="file" class="form-control" name='userFile'
-                                                                    id="inputGroupFile04"
-                                                                    aria-describedby="inputGroupFileAddon04"
-                                                                    accept="application/pdf" aria-label="Upload">
+                                                                <input type="file" class="form-control" name='userFile' id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" accept="application/pdf" aria-label="Upload">
                                                             </div>
                                                             <div class="mb-3 mt-3" id='input-url' style='display:none'>
-                                                                <label for="formrow-inputProvinsi"
-                                                                    class="form-label">Url Dokumen
+                                                                <label for="formrow-inputProvinsi" class="form-label">Url Dokumen
                                                                 </label>
-                                                                <input type="text" class="form-control"
-                                                                    id="formrow-inputProvinsi" name="url"
-                                                                    placeholder="Masukkan URL Dokumen" value="">
+                                                                <input type="text" class="form-control" id="formrow-inputProvinsi" name="url" placeholder="Masukkan URL Dokumen" value="">
                                                             </div>
 
                                                         </div>
                                                         <div>
-                                                            <button type="submit"
-                                                                class="btn btn-primary w-md">Simpan</button>
+                                                            <button type="submit" class="btn btn-primary w-md">Simpan</button>
 
                                                         </div>
                                                     </form>
@@ -202,7 +185,6 @@
                                                 ?>
                                             </tbody>
                                         </table>
-                                        <button type="submit" class="btn btn-primary w-md">Pengajuan</button>
                                     </div>
 
                                 </div>
@@ -247,15 +229,15 @@
 </html>
 
 <script>
-$(document).ready(function() {
-    $('#formRadios1').click(function() {
-        $('#input-url').hide()
-        $('#input-upload').show()
-    })
-    $('#formRadios2').click(function() {
-        $('#input-url').show()
-        $('#input-upload').hide()
-    })
+    $(document).ready(function() {
+        $('#formRadios1').click(function() {
+            $('#input-url').hide()
+            $('#input-upload').show()
+        })
+        $('#formRadios2').click(function() {
+            $('#input-url').show()
+            $('#input-upload').hide()
+        })
 
-})
+    })
 </script>

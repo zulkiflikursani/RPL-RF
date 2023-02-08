@@ -192,8 +192,16 @@ class ModelTransactionKlaim extends Model
                     echo "Klaim sedang diproses. Silahkan menunggu tanggapan Asessor di menu Respon Asessor";
                 }
             } else {
-                $cekstatuspengajuan = $this->cekstatusklaim($noregis);
-                if ($cekstatuspengajuan == null) {
+                $cekstatus2 = $db->query("select statusklaim from mk_klaim_detail where idklaim = '$idklaim' and idcpmk='" . $a['idcpmk'] . "'")->getResult();
+                $statuspengajuan = null;
+                if ($cekstatus2 != null) {
+                    foreach ($cekstatus2 as $row) {
+
+                        $statuspengajuan = $row->statusklaim;
+                    }
+                }
+                // $cekstatuspengajuan = $this->cekstatusklaim($idklaim);
+                if ($statuspengajuan == null) {
                     $dataMKHeader = [
                         "idklaim" => $idklaim,
                         "ta_akademik" => $ta_akademik,
@@ -217,10 +225,6 @@ class ModelTransactionKlaim extends Model
                         $insertMkheader = $BuilderMkHeader->insert($dataMKHeader);
                         $idklaim1 = $idklaim;
 
-                        // $object = $a['ref'];
-                        // $output = array_map(function ($object) {
-                        //     return $object->name;
-                        // }, $input);
                         $dataRef = [
                             "idklaim" => $idklaim,
                             // "idcpmk" => $a['idcpmk'],
@@ -390,10 +394,10 @@ class ModelTransactionKlaim extends Model
         }
         return $status;
     }
-    public function cekstatusklaim($noregis)
+    public function cekstatusklaim($idklaim)
     {
         $db      = \Config\Database::connect();
-        $result = $db->query("select * from mk_klaim_detail where mid(idklaim,6,10) = '$noregis' group by mk_klaim_detail.idklaim")->getResult();
+        $result = $db->query("select * from mk_klaim_detail where idklaim = '$idklaim' group by mk_klaim_detail.idklaim")->getResult();
         $status = 1;
         if ($result != null) {
             foreach ($result as $a) {

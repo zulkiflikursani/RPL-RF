@@ -1,0 +1,533 @@
+CRITICAL - 2023-02-08 00:06:40 --> Trying to get property 'nmfile_asli' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Views\Admin\rpl-assesment-asessor.php(157): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 157, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-asses...', Array, true)
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(814): view('Admin/rpl-asses...', Array)
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('12023-0001')
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:07:36 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM
+                                bio_peserta
+                          ...' at line 24
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(128): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:07:47 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM
+                                bio_peserta
+                          ...' at line 24
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(128): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:09:55 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM
+                                bio_peserta
+                          ...' at line 24
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(128): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:16:17 --> Table 'rpl-uf.mk_kliam_detail' doesn't exist
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(129): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:16:52 --> Unknown column 'mk_klaim_detail.idkalim' in 'on clause'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(129): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:17:03 --> Unknown column 'mk_klaim_detail' in 'on clause'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(129): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:20:04 --> Unknown column 'mk_klaim_detail' in 'on clause'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(129): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:20:08 --> Unknown column 'mk_klaim_detail' in 'on clause'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(129): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:20:09 --> Unknown column 'mk_klaim_detail' in 'on clause'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(129): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:20:33 --> Unknown column 'mk_klaim_detail' in 'on clause'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(129): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:20:37 --> Unknown column 'mk_klaim_detail' in 'on clause'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(129): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:21:22 --> Unknown column 'mk_klaim_detail' in 'on clause'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(129): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:25:35 --> Trying to get property 'nmfile_asli' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Views\Admin\rpl-assesment-asessor.php(157): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 157, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-asses...', Array, true)
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(814): view('Admin/rpl-asses...', Array)
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('12023-0001')
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:26:01 --> Trying to get property 'nmfile_asli' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Views\Admin\rpl-assesment-asessor.php(157): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 157, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-asses...', Array, true)
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(814): view('Admin/rpl-asses...', Array)
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('12023-0001')
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:26:03 --> Trying to get property 'nmfile_asli' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Views\Admin\rpl-assesment-asessor.php(157): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 157, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-asses...', Array, true)
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(814): view('Admin/rpl-asses...', Array)
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('12023-0001')
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:26:24 --> Trying to access array offset on value of type null
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Views\Admin\rpl-assesment-asessor.php(157): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'G:\\PROJECT\\UNIF...', 157, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-asses...', Array, true)
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(814): view('Admin/rpl-asses...', Array)
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('12023-0001')
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:26:51 --> Trying to get property 'nmfile_asli' of non-object
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Views\Admin\rpl-assesment-asessor.php(157): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 157, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-asses...', Array, true)
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(814): view('Admin/rpl-asses...', Array)
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('12023-0001')
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:28:52 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo-dark.png')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:28:52 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo.svg')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:30:24 --> Trying to access array offset on value of type null
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Views\Admin\rpl-assesment-asessor.php(206): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'G:\\PROJECT\\UNIF...', 206, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-asses...', Array, true)
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(814): view('Admin/rpl-asses...', Array)
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('12023-0001')
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 00:30:37 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 00:30:37 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 00:33:37 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo.svg')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:33:37 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo-dark.png')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:34:07 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo.svg')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:34:07 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo-dark.png')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:43:42 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo.svg')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:43:42 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo-dark.png')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:46:34 --> Undefined variable: statuspengajuan
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelTransactionKlaim.php(204): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 204, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(559): App\Models\ModelTransactionKlaim->simpanklaim(Array, 1, '62201', '12023')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->SimpanKlaimmk()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 00:46:42 --> Undefined variable: statuspengajuan
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelTransactionKlaim.php(204): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 204, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(559): App\Models\ModelTransactionKlaim->simpanklaim(Array, 1, '62201', '12023')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->SimpanKlaimmk()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 00:46:44 --> Undefined property: CodeIgniter\HTTP\ContentSecurityPolicy::$nama_matakuliah
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(601): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\PROJECT\\UNIF...', 601, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('10000AHI3')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:48:59 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo.svg')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:48:59 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo-dark.png')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:49:17 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo.svg')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:49:17 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo-dark.png')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:49:37 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo.svg')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:49:37 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(610): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 610, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo-dark.png')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-02-08 00:53:37 --> Unknown column 'mk_klaim_detail.statuskalim' in 'where clause'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(129): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 01:04:12 --> Unknown column 'mk_klaim_asessor.tangapan' in 'where clause'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelPesertaAsessor.php(130): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(39): App\Models\ModelPesertaAsessor->getDataPesertaAsessroBelumValid('P-0002', '12023')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-08 01:08:54 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 01:08:55 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 01:09:55 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 01:09:55 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 01:09:58 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 01:09:58 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 01:10:27 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 01:10:27 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 01:12:28 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 01:12:28 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 01:13:49 --> Cannot use object of type stdClass as array
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(230): include()
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-asses...', Array, true)
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(814): view('Admin/rpl-asses...', Array)
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('12023-0001')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#9 {main}
+CRITICAL - 2023-02-08 01:14:11 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-08 01:14:11 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(783): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 783, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(793): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}

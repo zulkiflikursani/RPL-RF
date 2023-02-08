@@ -360,12 +360,23 @@ class Admin extends BaseController
             $kode_prodi = $db->escapeString($this->request->getPost("kode_prodi"));
             $password1 =  random_string('alnum', 6);
             $password = password_hash($password1, PASSWORD_BCRYPT);
-            $lastidpengguna = $db->query('select idpengguna from tb_pengguna order by idpengguna Desc limit 1')->getRow();
-            if ($lastidpengguna == null) {
-                $idpengguna = 1;
+            $lastidpengguna = $db->query('select max(right(idpengguna,4)) as idpengguna from tb_pengguna')->getRow();
+
+            if ($lastidpengguna->idpengguna != null) {
+                $urutan = floatval($lastidpengguna->idpengguna) + 1;
+                if ($urutan < 10) {
+                    $nolari = "000" . $urutan;
+                } else if ($urutan < 100) {
+                    $nolari = "00" . $urutan;
+                } else if ($urutan < 1000) {
+                    $nolari = "0" . $urutan;
+                } else if ($urutan < 10000) {
+                    $nolari = $urutan;
+                }
             } else {
-                $idpengguna = floatval($lastidpengguna->idpengguna) + 1;
+                $nolari = "0001	";
             }
+            $idpengguna = "P-" . $nolari;
             if ($status == 1) {
                 $statusPengguna = "Admin";
             } else if ($status == 2) {

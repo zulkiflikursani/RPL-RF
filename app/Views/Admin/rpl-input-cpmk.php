@@ -344,7 +344,11 @@
                 idcpmk: idcpmk,
                 cpmk: cpmk
             }, function(data) {
-                alert(data);
+                if (alert(data)) {} else {
+                    getMatakuliah()
+                    $('.tambah-cpmk-modal').modal('hide');
+
+                };
             })
 
         }
@@ -362,7 +366,11 @@
                 idcpmk: idcpmk,
                 cpmk: cpmk
             }, function(data) {
-                alert(data);
+                if (alert(data)) {} else {
+                    getMatakuliah()
+                    $('.tambah-cpmk-modal').modal('hide');
+
+                };
             })
 
 

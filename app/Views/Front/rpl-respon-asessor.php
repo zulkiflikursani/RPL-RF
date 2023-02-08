@@ -117,7 +117,8 @@
                                                                         $namamatakulia = $row->nama_matakuliah;
                                                                         $cpmk = $row->cpmk;
                                                                         $count = 1;
-                                                                        if ($row->tanggapan == null) {
+                                                                        $tanggapanassessor = '';
+                                                                        if ($row->tanggapan == null || $row->tanggapan == "") {
                                                                             $tanggapanassessor = "";
                                                                         } else if ($row->tanggapan == 0) {
                                                                             $tanggapanassessor = 'Ok';
@@ -158,19 +159,13 @@
                                                                                 $html .=    "<td for='cpmk'>" . $row->cpmk . "</td>
                                                                                 <td>" . $row->klaim . "</td>";
                                                                             }
-                                                                            // $html .= "<td for='ref' nodok='" . $row->no_dokumen . "'>";
-                                                                            // $dokaarray = json_decode($row->no_dokumen);
-                                                                            // foreach ($dokaarray as $a) {
-
-                                                                            //     $html .= "</br><a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $row->nmfile_asli . "' target='_blank'>" . $a . "</a>";
-                                                                            // }
                                                                             $html .= "</tr>";
                                                                         } else {
                                                                             $ref = "<td for='ref' nodok='" . $row->no_dokumen . "' rowspan='$count'>";
                                                                             // $dokaarray = json_decode($html1['no_dokumen']);
                                                                             foreach ($html1['no_dokumen'] as $a) {
-
-                                                                                $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $row->nmfile_asli . "' target='_blank'>" . $a . "</a><br>";
+                                                                                $dataref = getnamafile($a);
+                                                                                $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $dataref->nmfile_asli . "' target='_blank'><button class='btn btn-sm btn-warning mb-2'>" . $dataref->nmfile . "</button></a><br>";
                                                                             }
                                                                             $ref .= "</td>";
                                                                             if ($html1['tanggapan'] == "Butuh Tindakan") {
@@ -194,7 +189,10 @@
                                                                             $html = "";
                                                                             $count = 1;
                                                                             $namamatakulia = $row->nama_matakuliah;
-                                                                            if ($row->tanggapan == 0) {
+                                                                            $tanggapanassessor = '';
+                                                                            if ($row->tanggapan == null || $row->tanggapan == "") {
+                                                                                $tanggapanassessor = '';
+                                                                            } else if ($row->tanggapan == 0) {
                                                                                 $tanggapanassessor = 'Ok';
                                                                             } else  if ($row->tanggapan == 1) {
                                                                                 $tanggapanassessor = 'Butuh Tindakan';
@@ -222,7 +220,8 @@
                                                                         if ($hitdata == $jumlahdata) {
                                                                             $ref = "<td for='ref' nodok='" . $row->no_dokumen . "' rowspan='$count'>";
                                                                             foreach ($html1['no_dokumen'] as $a) {
-                                                                                $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $row->nmfile_asli . "' target='_blank'>" . $a . "</a><br>";
+                                                                                $dataref = getnamafile($a);
+                                                                                $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $dataref->nmfile_asli . "' target='_blank'><button class='btn btn-sm btn-warning mb-2'>" . $dataref->nmfile . "</button></a><br>";
                                                                             }
                                                                             $ref .= "</td>";
 
@@ -377,6 +376,14 @@
         }
     }
 
+    function getnamafile($no_dokumen)
+    {
+        if (session()->get('noregis')) {
+            $db      = \Config\Database::connect();
+            $result = $db->query("select * from dok_portofolio where no_dokumen='$no_dokumen'")->getRow();
+            return $result;
+        }
+    }
     function getRefmhs($datadok, $refMhs)
     {
         if (!empty($refMhs)) {
