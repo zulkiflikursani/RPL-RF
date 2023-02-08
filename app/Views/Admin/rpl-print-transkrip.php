@@ -27,6 +27,36 @@
 
                 <?php
                 // echo $page_title 
+                if (isset($dataKlaimAsessor[0])) {
+                    foreach ($dataKlaimAsessor as $row) {
+                        if ($row->didikakhir == 1) {
+                            $pendidikanakhir = 'SD';
+                        } else if ($row->didikakhir == 2) {
+                            $pendidikanakhir = 'SLPT';
+                        } else if ($row->didikakhir == 3) {
+                            $pendidikanakhir = 'SLTA';
+                        } else if ($row->didikakhir == 4) {
+                            $pendidikanakhir = 'D3';
+                        } else if ($row->didikakhir == 5) {
+                            $pendidikanakhir = 'S1';
+                        }
+
+                        if ($row->id_jenjang == 'S1-R') {
+                            $jenjang = 'Sarjana (S1)';
+                        } else if ($row->id_jenjang == 'S2-R') {
+                            $jenjang = 'Magister (S2)';
+                        }
+                        $nama_mhs = $nama_mhs;
+                        $noregis = $row->no_peserta;
+                        $instansi_asal = $row->instansi_asal;
+                        $didikakhir = $pendidikanakhir;
+                        $jenis_rpl = $row->jenis_rpl;
+                        $prodi = $row->nama_prodi;
+                        $fakultas = $row->nama_fakultas;
+                        $progpendidikan = $jenjang;
+                    };
+                }
+
                 ?>
 
                 <div class="row">
@@ -34,160 +64,75 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title mb-4 text-center">Transkrip Nilai Rekognisi Pembelajaran Lampau
+                                <h4 class="card-title mb-4 text-center">TRANSKRIP NILAI REKOGNISI
                                 </h4>
                                 <div>
-                                    <div class="mb-3">
-                                        <label for="formrow-nama-input" class="form-label">Program Studi
-                                            <?= (isset($nm_prodi) ? $nm_prodi : '') ?>
-                                        </label>
-
-                                    </div>
-
                                     <div class="row">
                                         <div class="col-md-12">
+                                            <table class="col-md-12 " style="font-size: 10px;">
+                                                <tr>
+                                                    <td style='width:20%; ;'>Nama Calan Mahasiswa</td>
+                                                    <td style='width:20%; '>: <?= $nama_mhs; ?></td>
+                                                    <td style='width:20%; '>Fakultas</td>
+                                                    <td style='width:20%; '>: <?= $fakultas; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Nomor Peserta</td>
+                                                    <td>: <?= $noregis; ?></td>
+                                                    <td>Program Studi</td>
+                                                    <td>: <?= $nm_prodi; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Instansi Asal</td>
+                                                    <td>: <?= $instansi_asal ?></td>
+                                                    <td>Program Pendidikan</td>
+                                                    <td>: <?= $progpendidikan; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Jenis RPL</td>
+                                                    <td>: <?= "A" . $jenis_rpl; ?></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
 
-                                            <?php
-                                            ?>
-                                            <div class="row">
-                                                <div class="col-md-2">Nama</div>
-                                                <div class="col-md-2">: <?= $nama_mhs; ?></div>
-                                            </div>
-                                            <div class="row">
 
-                                                <div class="col-md-2">Program Studi</div>
-                                                <div class="col-md-2">: <?= $nm_prodi; ?></div>
-                                            </div>
-                                            <div class="row">
-
-                                                <div class="col-md-2">Jenis RPL</div>
-                                                <div class="col-md-2">: <?= "A" . $jenis_rpl; ?></div>
-                                            </div>
-
-                                            <table class='table table-bordered'>
+                                            </table>
+                                            <table class='table table-bordered table-responsive table-sm border-dark'>
                                                 <thead class="">
                                                     <tr>
-                                                        <th>No</th>
+                                                        <th width='5%'>No</th>
                                                         <th>Nama Matakuliah</th>
-                                                        <th>Kredt</th>
-                                                        <th>Nilai</th>
+                                                        <th width='7%'>Kredit</th>
+                                                        <th width='7%'>Nilai</th>
                                                     </tr>
 
                                                 </thead>
                                                 <tbody id='tbody-klaim-mk'>
                                                     <?php
                                                     if (isset($dataKlaimAsessor)) {
-                                                        $namamatakulia = "";
-                                                        $idcpmk = "";
                                                         $i = 0;
-                                                        $jumlahdata = count($dataKlaimAsessor);
-                                                        $hitdata = 0;
+                                                        $countdata = count($dataKlaimAsessor);
+                                                        $jumlahsks = 0;
                                                         foreach ($dataKlaimAsessor as $row) {
-                                                            $hitdata++;
-                                                            if ($namamatakulia == "") {
-                                                                $i++;
-                                                                $html = "";
-                                                                $namamatakulia = $row->nama_matakuliah;
-                                                                $cpmk = $row->cpmk;
-                                                                $count = 1;
-                                                                if ($row->tanggapan == 0) {
-                                                                    $tanggapanassessor = 'Ok';
-                                                                } else  if ($row->tanggapan == 1) {
-                                                                    $tanggapanassessor = 'Butuh Tindakan';
-                                                                } else {
-                                                                    $tanggapanassessor = '';
-                                                                }
-                                                                $html1 = [
-                                                                    "kd_mk" => $row->kode_matakuliah,
-                                                                    "nama_matakuliah" => $row->nama_matakuliah,
-                                                                    "idcpmk" => $row->idcpmk,
-                                                                    "cpmk" => $row->cpmk,
-                                                                    "idklaim" => $row->idklaim,
-                                                                    "klaim" => $row->klaim,
-                                                                    "no_dokumen" => $row->no_dokumen,
-                                                                    "nmfile_asli" => $row->nmfile_asli,
-                                                                    "nmfile" => $row->nmfile,
-                                                                    "kode_matakuliah" => $row->kode_matakuliah,
-                                                                    "nilai" => $row->nilai,
-                                                                    "tanggapan" => $tanggapanassessor,
-                                                                    "ket_tanggapan" => $row->ket_tanggapan,
-                                                                    "sks" => $row->sks,
-                                                                ];
-                                                            } else {
-                                                                if ($namamatakulia == $row->nama_matakuliah) {
-                                                                    $count++;
-                                                                    $html .= "<tr idcpmk='" . $row->idcpmk . "' kdmk='" . $row->kode_matakuliah . "' namamk='" . $row->nama_matakuliah . "' 
-                                                                            sks='" . $row->sks . "'>";
-                                                                    if ($row->entry_count > 1) {
-                                                                        if ($idcpmk != $row->idcpmk) {
+                                                            $i++;
+                                                            echo "<tr>
+                                                            <td>$i</td>        
+                                                            <td>$row->nama_matakuliah</td>        
+                                                            <td class='text-center'>$row->sks</td>        
+                                                            <td class='text-center'>$row->nilai</td>          
+                                                        </tr>";
+                                                            $jumlahsks = floatval($jumlahsks) + floatval($row->sks);
 
-                                                                            $idcpmk = $row->idcpmk;
-                                                                            $html .=    "<td for='cpmk' rowspan='" . $row->entry_count . "'>" . $row->cpmk . "</td>
-                                                                                    <td rowspan='" . $row->entry_count . "'>" . $row->klaim . "</td>";
-                                                                        }
-                                                                    } else {
-                                                                        $html .=    "<td for='cpmk'>" . $row->cpmk . "</td>
-                                                                                <td>" . $row->klaim . "</td>";
-                                                                    }
-                                                                    $html .= "<td for='ref' nodok='" . $row->no_dokumen . "'><a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $row->nmfile_asli . "' target='_blank'>" . $row->nmfile . "</a></td>
-                                                                                        </tr>";
-                                                                } else {
-                                                                    echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row->kode_prodi . "' >
-                                                                                    <td for='namamk' rowspan='$count'>" . $i . "</td>
-                                                                                    <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
-                                                                                    <td for='cpmk' >" . $html1['cpmk'] . "</td>
-                                                                                    <td for='nilai' >" . $html1['klaim'] . "</td>
-                                                                                    <td for='ref' nodok='" . $html1['no_dokumen'] . "'><a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $html1['nmfile_asli'] . "' target='_blank'>" . $html1['nmfile'] . "</a></td>
-                                                                                    <td for='tanggapan'  rowspan='$count'>" .
-                                                                        $html1['tanggapan'] . "</td><td for='nilaiAs'  rowspan='$count'>" . $html1['nilai'] . "</td>
-                                                                                    <td for='kettanggapan' rowspan='$count'>" . $html1['ket_tanggapan'] . "
-                                                                                    </td>
-                                                                                    </tr>" . $html;
-                                                                    $i++;
-                                                                    $html = "";
-                                                                    $count = 1;
-                                                                    $namamatakulia = $row->nama_matakuliah;
-                                                                    if ($row->tanggapan == 0) {
-                                                                        $tanggapanassessor = 'Ok';
-                                                                    } else  if ($row->tanggapan == 1) {
-                                                                        $tanggapanassessor = 'Butuh Tindakan';
-                                                                    } else {
-                                                                        $tanggapanassessor = '';
-                                                                    }
-                                                                    $html1 = [
-                                                                        "kd_mk" => $row->kode_matakuliah,
-                                                                        "nama_matakuliah" => $row->nama_matakuliah,
-                                                                        "idklaim" => $row->idklaim,
-                                                                        "idcpmk" => $row->idcpmk,
-                                                                        "cpmk" => $row->cpmk,
-                                                                        "klaim" => $row->klaim,
-                                                                        "no_dokumen" => $row->no_dokumen,
-                                                                        "nmfile_asli" => $row->nmfile_asli,
-                                                                        "nmfile" => $row->nmfile,
-                                                                        "kode_matakuliah" => $row->kode_matakuliah,
-                                                                        "nilai" => $row->nilai,
-                                                                        "tanggapan" => $tanggapanassessor,
-                                                                        "ket_tanggapan" => $row->ket_tanggapan,
-                                                                        "sks" => $row->sks,
-                                                                    ];
-                                                                }
-
-                                                                if ($hitdata == $jumlahdata) {
-                                                                    echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row->kode_prodi . "' >
-                                                                            <td for='namamk' rowspan='$count'>" . $i . "</td>
-                                                                            <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
-                                                                            <td for='cpmk' >" . $html1['cpmk'] . "</td>
-                                                                            <td for='nilai' >" . $html1['klaim'] . "</td>
-                                                                            <td for='ref' nodok='" . $html1['no_dokumen'] . "'><a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $html1['nmfile_asli'] . "' target='_blank'>" . $html1['nmfile'] . "</a></td>
-                                                                            <td for='tanggapan'  rowspan='$count'>" .
-                                                                        $html1['tanggapan'] . "</td><td for='nilaiAs'  rowspan='$count'>" . $html1['nilai'] . "</td>
-                                                                            <td for='kettanggapan' rowspan='$count'>" . $html1['ket_tanggapan'] . "
-                                                                            </td>
-                                                                            </tr>" . $html;
-                                                                }
+                                                            if ($i == $countdata) {
+                                                                echo "<tr>
+                                                                        <td colspan='2' class='text-center'> Jumlah</td>        
+                                                                        <td class='text-center' >$jumlahsks</td>        
+                                                                        <td></td>          
+                                                                    </tr>";
                                                             }
                                                         }
                                                     }
+
 
                                                     ?>
 
@@ -204,8 +149,8 @@
 
                                                         $now = date('Y-m-d');
                                                         ?>
-                                                        <p class='text-center'>Tanggal, <?= tgl_indo($now) ?> </p>
-                                                        <p class='text-center'>Dekan Fakultas <?= $fakultas ?> </p>
+                                                        <p class='text-center'>Makassar, <?= tgl_indo($now) ?> </p>
+                                                        <p class='text-center'>Dekan </p>
                                                         <p class='text-center'>
                                                             <br>
                                                         </p>

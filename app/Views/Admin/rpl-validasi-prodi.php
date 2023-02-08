@@ -90,6 +90,7 @@
                                                                 <th>Nama Matakuliah</th>
                                                                 <th>CPMK</th>
                                                                 <th>Penguasaan</th>
+                                                                <th>Deskripsi</th>
                                                                 <th>Ref</th>
                                                                 <th>Tanggapan</th>
                                                                 <th>Nilai</th>
@@ -122,9 +123,8 @@
                                                                             "cpmk" => $row['cpmk'],
                                                                             "idklaim" => $row['idklaim'],
                                                                             "klaim" => $row['klaim'],
-                                                                            "no_dokumen" => $row['no_dokumen'],
-                                                                            "nmfile_asli" => $row['nmfile_asli'],
-                                                                            "nmfile" => $row['nmfile'],
+                                                                            "desk" => $row['desk'],
+                                                                            "no_dokumen" => json_decode($row['no_dokumen']),
                                                                             "kode_matakuliah" => $row['kode_matakuliah'],
                                                                             "sks" => $row['sks'],
                                                                         ];
@@ -144,28 +144,35 @@
                                                                                 $html .=    "<td for='cpmk'>" . $row['cpmk'] . "</td>
                                                                                 <td>" . $row['klaim'] . "</td>";
                                                                             }
-                                                                            $html .= "<td for='ref' nodok='" . $row['no_dokumen'] . "'><a href='" . base_url() . "/uploads/berkas/" . $row['no_peserta'] . "/" . $row['nmfile_asli'] . "' target='_blank'>" . $row['nmfile'] . "</a></td>
-                                                                                        </tr>";
+                                                                            $html .= "</tr>";
                                                                         } else {
+                                                                            $ref = "<td for='ref' nodok='" . $row['no_dokumen'] . "' rowspan='$count'>";
+                                                                            // $dokaarray = json_decode($html1['no_dokumen']);
+                                                                            foreach ($html1['no_dokumen'] as $a) {
+                                                                                $dataref = getnamafile($a);
+                                                                                // print_r($dataref);
+                                                                                $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row['no_peserta'] . "/" . $dataref->nmfile_asli . "' target='_blank'><button class='btn btn-sm btn-warning mb-2'>" . $dataref->nmfile . "</button></a><br>";
+                                                                            }
+                                                                            $ref .= "</td>";
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row['kode_prodi'] . "' >
                                                                                     <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                                     <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
-                                                                                    <td for='ref' nodok='" . $html1['no_dokumen'] . "'><a href='" . base_url() . "/uploads/berkas/" . $row['no_peserta'] . "/" . $html1['nmfile_asli'] . "' target='_blank'>" . $html1['nmfile'] . "</a></td>
-                                                                                    <td for='tanggapan'  rowspan='$count' kdmk='" . $html1['kode_matakuliah'] . "'>
-                                                                                    <select class='form-select'>
+                                                                                    <td for='desk' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' readonly> " . $html1['desk'] . "</textarea>
+                                                                                    </td>$ref<td for='tanggapan'  rowspan='$count' kdmk='" . $html1['kode_matakuliah'] . "'>
+                                                                                    <select class='form-select' onchange='setnilaiAsFromStatus($(this))' requaired>
                                                                                     <option value=''>Pilih</option>
                                                                                     <option value='0'>Ok</option>
                                                                                     <option value='1'>Butuh Tindakan</option>
                                                                                     </select></td><td for='nilaiAs'  rowspan='$count'>
-                                                                                    <select class='form-select'>
+                                                                                    <select class='form-select' required>
                                                                                     <option value='' selected>Pilih</option>    
-                                                                                    <option value='B'>B</option>    
-                                                                                    <option value='C' >C</option>    
-                                                                                    <option value='K'>K</option>  
+                                                                                    <option value='A'>A</option>    
+                                                                                    <option value='B' >B</option>    
+                                                                                    <option value='E'>E</option>  
                                                                                     </select></td>
-                                                                                    <td for='kettanggapan' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;'> </textarea>
+                                                                                    <td for='kettanggapan' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' required> </textarea>
                                                                                     </td>
                                                                                     </tr>" . $html;
                                                                             $i++;
@@ -178,35 +185,45 @@
                                                                                 "idklaim" => $row['idklaim'],
                                                                                 "idcpmk" => $row['idcpmk'],
                                                                                 "cpmk" => $row['cpmk'],
+                                                                                "desk" => $row['desk'],
+
                                                                                 "klaim" => $row['klaim'],
-                                                                                "no_dokumen" => $row['no_dokumen'],
-                                                                                "nmfile_asli" => $row['nmfile_asli'],
-                                                                                "nmfile" => $row['nmfile'],
+                                                                                "no_dokumen" => json_decode($row['no_dokumen']),
                                                                                 "kode_matakuliah" => $row['kode_matakuliah'],
                                                                                 "sks" => $row['sks'],
                                                                             ];
                                                                         }
 
                                                                         if ($hitdata == $jumlahdata) {
+                                                                            $ref = "<td for='ref' nodok='" . $row['no_dokumen'] . "' rowspan='$count'>";
+                                                                            // $dokaarray = json_decode($html1['no_dokumen']);
+                                                                            foreach ($html1['no_dokumen'] as $a) {
+                                                                                $dataref = getnamafile($a);
+
+                                                                                $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row['no_peserta'] . "/" . $dataref->nmfile_asli . "' target='_blank'><button class='btn btn-sm btn-warning mb-2'>" . $dataref->nmfile . "</button></a><br>";
+                                                                            }
+                                                                            $ref .= "</td>";
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row['kode_prodi'] . "'>
                                                                             <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                                     <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
-                                                                                    <td for='ref' nodok='" . $html1['no_dokumen'] . "'><a href='" . base_url() . "/uploads/berkas/" . $row['no_peserta'] . "/" . $html1['nmfile_asli'] . "' target='_blank'>" . $html1['nmfile'] . "</a></td>
-                                                                                    <td for='tanggapan' rowspan='$count'>
-                                                                                    <select class='form-select'>
-                                                                                    <option value=''>Pilih</option>
+                                                                                    <td for='desk' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' readonly>" . $html1['desk'] . "
+                                                                                    </textarea>
+                                                                                    </td>$ref
+                                                                                    <td for='tanggapan' rowspan='$count' >
+                                                                                    <select class='form-select' onchange='setnilaiAsFromStatus($(this))'>
+                                                                                    <option value=''>Pilih</option required>
                                                                                     <option value='0'>Ok</option>
                                                                                     <option value='1'>Butuh Tindakan</option>
                                                                                     </select></td><td for='nilaiAs'  rowspan='$count'>
-                                                                                    <select class='form-select'>
+                                                                                    <select class='form-select' required>
                                                                                     <option value='' selected>Pilih</option>    
-                                                                                    <option value='B'>B</option>    
-                                                                                    <option value='C' >C</option>    
-                                                                                    <option value='K'>K</option>    
+                                                                                    <option value='A'>A</option>    
+                                                                                    <option value='B' >B</option>    
+                                                                                    <option value='E'>E</option>    
                                                                                     </select></td>
-                                                                                    <td for='kettanggapan' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;'> </textarea>
+                                                                                    <td for='kettanggapan' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' required> </textarea>
                                                                                     </td>
                                                                                     </tr>" . $html;
                                                                         }
@@ -337,6 +354,14 @@ function unvalidprodi() {
 }
 </script>
 <?php
+function getnamafile($no_dokumen)
+{
+    if (session()->get('id')) {
+        $db      = \Config\Database::connect();
+        $result = $db->query("select * from dok_portofolio where no_dokumen='$no_dokumen'")->getRow();
+        return $result;
+    }
+}
 function search($array, $key, $value)
 {
     $results = array();

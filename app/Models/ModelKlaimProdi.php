@@ -39,7 +39,7 @@ class ModelKlaimProdi extends Model
     public function validprodi($noregis, $idpengguna)
     {
         $db = \Config\Database::connect();
-        $result = $db->query("insert into mk_klaim_prodi select idklaim,ta_akademik,kode_prodi,idpengguna as idasessor,now() as tglbuat,$idpengguna as idpengguna from mk_klaim_asessor where no_peserta='$noregis'");
+        $result = $db->query("insert into mk_klaim_prodi select idklaim,ta_akademik,kode_prodi,idpengguna as idasessor,now() as tglbuat,'$idpengguna' as idpengguna from mk_klaim_asessor where no_peserta='$noregis'");
         return $result;
     }
     public function unvalidprodi($noregis, $idpengguna)
