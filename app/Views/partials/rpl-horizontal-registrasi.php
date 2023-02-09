@@ -23,8 +23,7 @@
                 </a>
             </div>
 
-            <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light"
-                data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+            <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
                 <i class="fa fa-fw fa-bars"></i>
             </button>
 
@@ -91,9 +90,9 @@
             </div>
 
             <div class="dropdown d-inline-block">
-                <!-- <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                    <i class="bx bx-cog bx-spin"></i>
-                </button> -->
+                <a href='<?= base_url('login') ?>'><button type="button" class="btn btn-primary mx-3">
+                        LOG IN
+                    </button></a>
             </div>
 
         </div>
@@ -109,18 +108,17 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-dashboard" role="button">
-                            <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= lang('Files.Dashboards') ?></span>
-                            <div class="arrow-down"></div>
+                            <!-- <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"></span> -->
+                            <a class="" style="color:#ffffff">x</a>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
+                        <!-- <div class="dropdown-menu" aria-labelledby="topnav-dashboard"> -->
 
-                            <a href="/" class="dropdown-item" key="t-default"><?= lang('Files.Dashboard') ?></a>
-                            <!-- <a href="dashboard-saas" class="dropdown-item" key="t-saas"><?= lang('Files.Saas') ?></a>
+                        <!-- <a href="/" class="dropdown-item" key="t-default"><?= lang('Files.Dashboard') ?></a> -->
+                        <!-- <a href="dashboard-saas" class="dropdown-item" key="t-saas"><?= lang('Files.Saas') ?></a>
                             <a href="dashboard-crypto" class="dropdown-item"
                                 key="t-crypto"><?= lang('Files.Crypto') ?></a>
                             <a href="dashboard-blog" class="dropdown-item" key="t-blog"><?= lang('Files.Blog') ?></a> -->
-                        </div>
+                        <!-- </div> -->
                     </li>
 
 

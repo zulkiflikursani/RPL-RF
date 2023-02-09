@@ -10,6 +10,7 @@ return [
     'login SILAJU' => 'Login SILAJU',
     'Biodata Peserta RPL' => 'Biodata Peserta RPL',
     'Biodata' => 'Biodata',
+    'Registrasi' => 'Registrasi',
     'Pengumuman' => 'Pengumuman',
     'Tanggapan Asessor' => 'Tanggapan Asessor',
     'Upload Berkas' => 'Upload Berkas',

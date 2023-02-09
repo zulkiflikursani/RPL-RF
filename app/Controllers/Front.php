@@ -17,7 +17,7 @@ class Front extends BaseController
 
 		$data = [
 			'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
-			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Registrasi']),
 			'ta_akademik' => $this->getTa_akademik()
 		];
 		return view('Front/rpl-layouts-horizontal', $data);

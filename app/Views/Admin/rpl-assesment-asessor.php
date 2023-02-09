@@ -314,11 +314,9 @@
                             .val(value['ket_tanggapan']);
 
                     }
-                    $('#loading').hide()
-
                 })
-
             })
+            $('#loading').hide()
         }).fail(function() {
             alert("error");
         });
