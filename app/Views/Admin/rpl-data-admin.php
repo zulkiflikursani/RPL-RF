@@ -104,8 +104,8 @@
                                                                 <div class="mb-3">
                                                                     <label for="formrow-inputPendidikan"
                                                                         class="form-label">Status Pengguna</label>
-                                                                    <select class="form-select" id="autoSizingSelect"
-                                                                        name='status' required>
+                                                                    <select class="form-select" id="level" name='status'
+                                                                        onchange="gantistatus()" required>
                                                                         <option value=''>Pilih</option>
                                                                         <option value='1'>Admin</option>
                                                                         <option value='2'>Asessor</option>
@@ -120,12 +120,10 @@
                                                             <div class="col-lg-4">
                                                                 <div class="mb-3">
                                                                     <label for="formrow-inputPendidikan"
-                                                                        class="form-label">Program
-                                                                        Studi</label>
-                                                                    <select class="form-select" id="autoSizingSelect"
+                                                                        class="form-label">Program Studi</label>
+                                                                    <select class="form-select" id="kode_prodi"
                                                                         name='kode_prodi'>
-                                                                        <option value=''
-                                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "" ? 'selected="selected"' : '') ?>>
+                                                                        <option value='-' selected>
                                                                             Pilih...</option>
                                                                         <?php
                                                                         $db      = \Config\Database::connect();
@@ -133,8 +131,7 @@
                                                                         if ($result != null) {
                                                                             foreach ($result as $row) {
                                                                         ?>
-                                                                        <option value="<?= $row->kode_prodi ?>"
-                                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == $row->kode_prodi ? 'selected="selected"' : '') ?>>
+                                                                        <option value="<?= $row->kode_prodi ?>">
                                                                             <?= $row->nama_prodi ?></option>
                                                                         <?php
                                                                             }
@@ -144,6 +141,32 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class=" row">
+                                                            <div class="col-lg-4">
+                                                                <div class="mb-3">
+                                                                    <label for="formrow-inputPendidikan"
+                                                                        class="form-label">Fakultas</label>
+                                                                    <select class="form-select" id="kode_fakultas"
+                                                                        name='kode_fakultas'>
+                                                                        <option value='-' selected>
+                                                                            Pilih...</option>
+                                                                        <?php
+                                                                        $db      = \Config\Database::connect();
+                                                                        $result = $db->query("select * from fakultas")->getResult();
+                                                                        if ($result != null) {
+                                                                            foreach ($result as $row) {
+                                                                        ?>
+                                                                        <option value="<?= $row->kode_fakultas ?>">
+                                                                            <?= $row->nama_fakultas ?></option>
+                                                                        <?php
+                                                                            }
+                                                                        }
+                                                                        ?>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
                                                         <div>
                                                             <button type="submit"
                                                                 class="btn btn-primary w-md">Simpan</button>
@@ -198,7 +221,8 @@
                                                                     <label for="formrow-inputPendidikan"
                                                                         class="form-label">Status Pengguna</label>
                                                                     <select class="form-select" id="estatus"
-                                                                        name='estatus' required>
+                                                                        onchange="egantistatus()" name='estatus'
+                                                                        required>
                                                                         <option value=''>Pilih</option>
                                                                         <option value='1'>Admin</option>
                                                                         <option value='2'>Asessor</option>
@@ -217,8 +241,7 @@
                                                                         Studi</label>
                                                                     <select class="form-select" id="ekode_prodi"
                                                                         name='ekode_prodi'>
-                                                                        <option value=''
-                                                                            <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == "" ? 'selected="selected"' : '') ?>>
+                                                                        <option value='-' selected>
                                                                             Pilih...</option>
                                                                         <?php
                                                                         $db      = \Config\Database::connect();
@@ -229,6 +252,31 @@
                                                                         <option value="<?= $row->kode_prodi ?>"
                                                                             <?= (isset($datasubmit["kode_prodi"]) && $datasubmit["kode_prodi"] == $row->kode_prodi ? 'selected="selected"' : '') ?>>
                                                                             <?= $row->nama_prodi ?></option>
+                                                                        <?php
+                                                                            }
+                                                                        }
+                                                                        ?>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class=" row">
+                                                            <div class="col-lg-4">
+                                                                <div class="mb-3">
+                                                                    <label for="formrow-inputPendidikan"
+                                                                        class="form-label">Fakultas</label>
+                                                                    <select class="form-select" id="ekode_fakultas"
+                                                                        name='ekode_fakultas'>
+                                                                        <option value='-' selected>
+                                                                            Pilih...</option>
+                                                                        <?php
+                                                                        $db      = \Config\Database::connect();
+                                                                        $result = $db->query("select * from fakultas")->getResult();
+                                                                        if ($result != null) {
+                                                                            foreach ($result as $row) {
+                                                                        ?>
+                                                                        <option value="<?= $row->kode_fakultas ?>">
+                                                                            <?= $row->nama_fakultas ?></option>
                                                                         <?php
                                                                             }
                                                                         }
@@ -256,6 +304,7 @@
                                                 <th class="col-3">Email</th>
                                                 <th class="col-1">Status</th>
                                                 <th class="col-1">Prodi</th>
+                                                <th class="col-1">fakultas</th>
                                                 <th class="col-3">Aksi</th>
                                             </tr>
                                         </thead>
@@ -278,12 +327,14 @@
                                                         $statuspengguna = "Keuangan";
                                                     }
 
+
                                                     echo "<tr idpengguna='" . $row['idpengguna'] . "'>
                                                         <td >$i</td>
                                                         <td for='nmpengguna'>" . $row['nmpengguna'] . "</td>
                                                         <td for='email'>" . $row['email'] . "</td>
                                                         <td for='status' sts='" . $row['sttpengguna'] . "'>" . $statuspengguna . "</td>
                                                         <td for='prodi'>" . $row['kode_prodi'] . "</td>
+                                                        <td for='fakultas'>" . $row['kode_fakultas'] . "</td>
                                                         <td>
                                                         <button class='button btn-primary btn-sm' onClick='getData($(this))' >Edit</button>
                                                         <button class='button btn-primary btn-sm mx-2' onClick='getDataHapus($(this))'>Hapus</button>
@@ -370,17 +421,100 @@
 
     }
 
+    function gantistatus() {
+        $level = $('#level').val()
+        if ($level == 1 || $level == 5) {
+            $('#kode_prodi').parent().hide();
+            $('#kode_fakultas').parent().hide();
+            $('#kode_fakultas').val("-");
+            $('#kode_prodi').val("-");
+
+        } else if ($level == 2 || $level == 3) {
+            $('#kode_prodi').parent().show();
+            $('#kode_fakultas').parent().hide();
+            $('#kode_fakultas').val("-");
+            $('#kode_prodi').val("");
+        } else if ($level == 4) {
+            $('#kode_prodi').parent().hide();
+            $('#kode_fakultas').parent().show();
+            $('#kode_prodi').val("-");
+            $('#kode_fakultas').val("");
+
+        } else {
+            $('#kode_prodi').parent().hide();
+            $('#kode_fakultas').parent().hide();
+            $('#kode_prodi').val("-");
+            $('#kode_fakultas').val("-");
+
+        }
+
+    }
+
+    function egantistatus() {
+        $level = $('#estatus').val()
+        if ($level == 1 || $level == 5) {
+            $('#ekode_prodi').parent().hide();
+            $('#ekode_fakultas').parent().hide();
+            $('#ekode_prodi').val("-").change();
+            $('#ekode_fakultas').val("-").change();
+        } else if ($level == 2 || $level == 3) {
+            $('#ekode_prodi').parent().show();
+            $('#ekode_fakultas').parent().hide();
+            $('#ekode_fakultas').val("-").change();
+            $('#ekode_prodi').val("").change();
+        } else if ($level == 4) {
+            $('#ekode_prodi').parent().hide();
+            $('#ekode_fakultas').parent().show();
+            $('#ekode_prodi').val("-").change();
+            $('#ekode_fakultas').val("").change();
+
+        } else {
+            $('#ekode_prodi').parent().hide();
+            $('#ekode_fakultas').parent().hide();
+            $('#ekode_prodi').val("-").change();
+            $('#ekode_fakultas').val("-").change();
+
+        }
+
+    }
+
+
     function getData(ini) {
         idpengguna = ini.parent().parent().attr('idpengguna')
         nm = ini.parent().parent().find('td[for=nmpengguna]').html();
         email = ini.parent().parent().find('td[for=email]').html();
         prodi = ini.parent().parent().find('td[for=prodi]').html();
+        fakutlas = ini.parent().parent().find('td[for=fakultas]').html();
         status = ini.parent().parent().find('td[for=status]').attr('sts');
-        // alert(prodi)
+        // alert(proedi)
+        if (status == 1 || status == 5) {
+            $('#ekode_prodi').parent().hide();
+            $('#ekode_fakultas').parent().hide();
+            $('#ekode_fakultas').val("-").change();
+            $('#ekode_prodi').val("-").change();
+        } else if (status == 2 || status == 3) {
+            $('#ekode_prodi').parent().show();
+            $('#ekode_fakultas').parent().hide();
+            $('#ekode_fakultas').val("-").change();
+            $('#ekode_prodi').val("-").change();
+        } else if (status == 4) {
+            $('#ekode_prodi').parent().hide();
+            $('#ekode_fakultas').parent().show();
+            $('#ekode_prodi').val("-").change();
+            $('#ekode_fakultas').val("");
+        } else {
+            $('#ekode_prodi').parent().hide();
+            $('#ekode_fakultas').parent().hide();
+            $('#ekode_prodi').val("-").change();
+            $('#ekode_fakultas').val("-").change();
+
+        }
+
         $("#enama").val(nm);
         $("#eemail").val(email);
-        $("#ekode_prodi").val(prodi).change();
         $("#estatus").val(status);
+        $("#ekode_prodi").val(prodi);
+        $("#ekode_fakultas").val(fakutlas);
         $(".edit-asessor-modal").modal('show');
     }
     </script>

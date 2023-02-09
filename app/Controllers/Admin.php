@@ -69,7 +69,7 @@ class Admin extends BaseController
         } else if (session()->get('sttpengguna') == 4) {
             $modelPeserta = new ModelPesertaAsessor();
             $ta_akademik = $this->getTa_akademik();
-            $kode_fakultas = $this->getKodeFakultasby(session()->get('kode_prodi'));
+            $kode_fakultas = session()->get('kode_fakultas');
             $databelumvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdiDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
             $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
 
@@ -330,14 +330,18 @@ class Admin extends BaseController
         if (session()->get('sttpengguna') != 1) {
             return redirect()->to('/logout');
         } else {
+            $db      = \Config\Database::connect();
             $modelPengguna = new ModelPengguna();
             $dataPengguna = $modelPengguna->findAll();
+            $datafakultas = $db->table('fakultas')->select();
+
 
             $data = [
                 'title_meta' => view('partials/rpl-title-meta', ['title' => 'User RPL']),
                 'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
                 'ta_akademik' => $this->getTa_akademik(),
                 'dataPengguna' => $dataPengguna,
+                'dataFakultas' => $datafakultas,
             ];
 
             return view('Admin/rpl-data-admin', $data);
@@ -358,6 +362,7 @@ class Admin extends BaseController
             $email = $db->escapeString($this->request->getPost("email"));
             $status = $db->escapeString($this->request->getPost("status"));
             $kode_prodi = $db->escapeString($this->request->getPost("kode_prodi"));
+            $kode_fakultas = $db->escapeString($this->request->getPost("kode_fakultas"));
             $password1 =  random_string('alnum', 6);
             $password = password_hash($password1, PASSWORD_BCRYPT);
             $lastidpengguna = $db->query('select max(right(idpengguna,4)) as idpengguna from tb_pengguna')->getRow();
@@ -396,6 +401,7 @@ class Admin extends BaseController
                 "email" => $email,
                 "ktkunci" => $password,
                 "kode_prodi" => $kode_prodi,
+                "kode_fakultas" => $kode_fakultas,
             ];
 
             $link = base_url("Login");
@@ -465,6 +471,7 @@ class Admin extends BaseController
         }
     }
 
+    //update pengguna ok
     public function UpdatePengguna()
     {
         if (session()->get('sttpengguna') != 1) {
@@ -479,11 +486,13 @@ class Admin extends BaseController
             $email = $db->escapeString($this->request->getPost("eemail"));
             $status = $db->escapeString($this->request->getPost("estatus"));
             $kode_prodi = $db->escapeString($this->request->getPost("ekode_prodi"));
+            $kode_fakultas = $db->escapeString($this->request->getPost("ekode_fakultas"));
 
 
             $data1 = [
                 "sttpengguna" => $status,
                 "kode_prodi" => $kode_prodi,
+                "kode_fakultas" => $kode_fakultas,
             ];
 
             $link = base_url("Login");
@@ -1199,7 +1208,7 @@ class Admin extends BaseController
                 $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
                 $modelklaimdekan = new ModelKlaimDekan();
                 $result = $modelMkDekan->getDatatoPrint($noregis);
-                $kode_fakultas = $this->getKodeFakultasby(session()->get('kode_prodi'));
+                $kode_fakultas = session()->get('kode_fakultas');
                 if ($kode_fakultas == '13123') {
                     $fakultas = 'Teknik';
                 } else if ($kode_fakultas == '60001') {
