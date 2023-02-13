@@ -133,6 +133,18 @@
                     </li>
                     <?php
                     };
+                    if (session()->get('sttpengguna') == 3) {
+                    ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('data-mhs-per-prodi') ?>"
+                            id="topnav-dashboard" role="button" target="_blank">
+                            <i class="bx bx-home-circle me-2"></i><span
+                                key="t-dashboards"><?= 'Data Klaim Mahasiswa' ?></span>
+                            <div class="arrow-down"></div>
+                        </a>
+                    </li>
+                    <?php
+                    };
 
                     if (session()->get('sttpengguna') == 1) {
                     ?>

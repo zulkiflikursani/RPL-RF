@@ -283,9 +283,11 @@ class ModelPesertaAsessor extends Model
                                 bio_peserta
                                 LEFT JOIN mk_klaim_asessor ON bio_peserta.no_peserta = mk_klaim_asessor.no_peserta
                                 LEFT JOIN mk_klaim_prodi ON mk_klaim_asessor.idklaim = mk_klaim_prodi.idklaim
+                                left join mk_klaim_dekan on mk_klaim_dekan.idklaim= mk_klaim_asessor.idklaim
+                                
                                 LEFT JOIN tb_peserta_asessor ON bio_peserta.no_peserta = tb_peserta_asessor.no_peserta
                                 WHERE
-                                bio_peserta.ta_akademik='$ta_akademik' and bio_peserta.kode_prodi='$kode_prodi' and mk_klaim_prodi.idklaim is not null
+                                bio_peserta.ta_akademik='$ta_akademik' and bio_peserta.kode_prodi='$kode_prodi' and mk_klaim_prodi.idklaim is not null and mk_klaim_dekan.idklaim is null
                                 group by bio_peserta.no_peserta")->getResult();
         return $dataMahasiswa;
     }
@@ -315,7 +317,7 @@ class ModelPesertaAsessor extends Model
                                 WHERE
                                 bio_peserta.ta_akademik='$ta_akademik' 
                                 and bio_peserta.kode_prodi='$kode_prodi'
-                                and tb_peserta_asessor.no_asessor='$id' and mk_klaim_dekan.idklaim is not null
+                                and mk_klaim_dekan.idklaim is not null
                                 group by bio_peserta.no_peserta")->getResult();
         return $dataMahasiswa;
     }

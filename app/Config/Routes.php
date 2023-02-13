@@ -80,7 +80,11 @@ $routes->get('/validprodi/(:any)/(:any)', 'Admin::validprodi/$1/$2');
 $routes->get('/validprodi/(:any)', 'Admin::validprodi/$1');
 $routes->get('/validdekan/(:any)/(:any)', 'Admin::validdekan/$1/$2');
 $routes->get('/validdekan/(:any)/', 'Admin::validdekan/$1');
+//report
 $routes->get('/print-transkrip/(:any)/', 'Admin::printTranskrip/$1');
+$routes->get('/data-mhs-per-prodi', 'Admin::dataMhsPerpodiOk');
+
+
 
 $routes->post('Admin/SimpanPengguna', 'Admin::SimpanPengguna');
 $routes->post('getmatakuliah', 'Admin::getMatakuliah');

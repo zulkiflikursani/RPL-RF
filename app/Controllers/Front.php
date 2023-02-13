@@ -89,8 +89,8 @@ class Front extends BaseController
 			];
 			return view('Front/rpl-layouts-horizontal', $data);
 		} else {
-			$message = "Terima Kasih telah melakukan pendaftarn pada Program RPL Unifa  <br>
-						Berikut ada user untuk login ke Sistem RPL unifa <br>
+			$message = "Terima Kasih telah melakukan pendaftaran pada Program RPL Unifa  <br>
+						Berikut ini user untuk login ke Sistem RPL unifa <br>
 						No. Reg	: " . $noregis . "<br>
 						User 	: " . $email . "<br>
 						Pass 	: " . $password1 . "<br>
@@ -613,7 +613,7 @@ class Front extends BaseController
 				// $simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
 			}
 			if ($statusklaim == 2) {
-				echo "Tidak bisa mengubah data karena sudah di ajukan";
+				echo "Tidak bisa mengubah data karena sudah diajukan";
 			} else if ($statusklaim == 1) {
 				$simpanklaim = $ModalTransactionKlaim->simpanklaim($formdata, $status, $kodeprodi, $ta_akademik);
 			} else {

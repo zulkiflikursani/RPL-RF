@@ -55,7 +55,7 @@ class Admin extends BaseController
 
             $databelumvalidprodi = $modelPeserta->getDataPesertaBelumValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
             $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
-            $datasudahvaliddekan = $modelPeserta->getDataPesertaAsessorSudahValidDekanPerprodi(session()->get('id'), session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
+            $datasudahvaliddekan = $modelPeserta->getDataPesertaAsessorSudahValidDekanPerprodi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
             $data = [
                 'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                 'page_title' => view('partials/rpl-page-title', ['title' => 'Prodi', 'pagetitle' => 'Dashboards']),
@@ -201,7 +201,7 @@ class Admin extends BaseController
                 return view('Admin/rpl-data-admin', $data);
             } else {
                 $message = "Berhasil Mereset Password.<br>
-                Berikut ada user untuk login ke Sistem SILAJU unifa <br>
+                Berikut ini user untuk login ke Sistem RPL Unifa <br>
                 <br>
                 User 	    : " . $email . "<br>
                 Pass 	    : " . $password1 . "<br>
@@ -279,7 +279,7 @@ class Admin extends BaseController
                 return view('Admin/rpl-data-reg-mhs', $data);
             } else {
                 $message = "Berhasil Mereset Password.<br>
-                Berikut ada user untuk login ke Sistem SILAJU unifa <br>
+                Berikut ini user untuk login ke Sistem RPL Unifa <br>
                 <br>
                 User 	    : " . $email . "<br>
                 Pass 	    : " . $password1 . "<br>
@@ -425,7 +425,7 @@ class Admin extends BaseController
                 return view('Admin/rpl-data-admin', $data);
             } else {
                 $message = "Anda terdafrar sebagai " . $statusPengguna . "  <br>
-            			Berikut ada user untuk login ke Sistem SILAJU unifa <br>
+            			Berikut ini user untuk login ke Sistem RPL unifa <br>
                         <br>
             			User 	    : " . $email . "<br>
             			Pass 	    : " . $password1 . "<br>
@@ -910,7 +910,7 @@ class Admin extends BaseController
 
             $databelumvalidprodi = $modelPeserta->getDataPesertaBelumValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
             $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
-            $datasudahvaliddekan = $modelPeserta->getDataPesertaAsessorSudahValidDekanPerprodi(session()->get('id'), session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
+            $datasudahvaliddekan = $modelPeserta->getDataPesertaAsessorSudahValidDekanPerprodi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
             $data = [
                 'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                 'page_title' => view('partials/rpl-page-title', ['title' => 'Prodi', 'pagetitle' => 'Dashboards']),
@@ -958,7 +958,7 @@ class Admin extends BaseController
             }
             $modelPeserta = new ModelPesertaAsessor();
             $ta_akademik = $this->getTa_akademik();
-            $kode_fakultas = $this->getKodeFakultasby(session()->get('kode_prodi'));
+            $kode_fakultas = session()->get('kode_fakultas');
             $databelumvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdiDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
             $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
 
@@ -1047,7 +1047,7 @@ class Admin extends BaseController
             }
             $modelPeserta = new ModelPesertaAsessor();
             $ta_akademik = $this->getTa_akademik();
-            $kode_fakultas = $this->getKodeFakultasby(session()->get('kode_prodi'));
+            $kode_fakultas = session()->get('kode_fakultas');
             $databelumvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdiDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
             $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
 
@@ -1075,6 +1075,7 @@ class Admin extends BaseController
             $db      = \Config\Database::connect();
             $noregis = $db->escapeString($noregis);
             $kode_prodi = $this->getKodeProdiBy($noregis);
+            $kode_fakultas = $this->getKodeFakultasby($kode_prodi);
             $statusMessage = '';
             if ($status == 2) {
                 $statusMessage = "Peserta Berhasil Divalidasi";
@@ -1090,8 +1091,8 @@ class Admin extends BaseController
                 $statusMessage = "Peserta Gagal Diunvalidasi";
             } else  if ($status == 8) {
                 $statusMessage = "Peserta Sudah Diunvalidasi";
-            }
-            if ($kode_prodi == session()->get('kode_prodi')) {
+            };
+            if ($kode_fakultas == session()->get('kode_fakultas')) {
                 // $noregis = session()->get("noregis");
                 $Modaldokumen = new ModelDokumen();
                 $ModalBiodata = new ModelBiodata();
@@ -1141,9 +1142,9 @@ class Admin extends BaseController
     public function getKodeFakultasby($kode_prodi)
     {
         $db      = \Config\Database::connect();
-        $result = $db->query("select kode_fakultas from prodi where kode_prodi ='$kode_prodi' group by kode_prodi")->getRow();
+        $result1 = $db->query("select kode_fakultas from prodi where kode_prodi ='$kode_prodi' group by kode_prodi")->getRow();
 
-        return $result->kode_fakultas;
+        return $result1->kode_fakultas;
     }
     public function getDataMhsPerAsessor()
     {
@@ -1189,6 +1190,48 @@ class Admin extends BaseController
         return $ta_akademik;
     }
 
+    public function dataMhsPerpodiOk()
+    {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            $kode_prodi = session()->get('kode_prodi');
+            $ta_akademik = $this->getTa_akademik();
+            $kode_fakultas = $this->getKodeFakultasby($kode_prodi);
+            if ($kode_fakultas) {
+                $modalProdi = new ModelKlaimProdi();
+                $result = $modalProdi->getDataMahasiswaOkper($ta_akademik, $kode_prodi);
+                // $kode_fakultas = session()->get('kode_fakultas');
+                if ($kode_fakultas == '13123') {
+                    $fakultas = 'Teknik';
+                } else if ($kode_fakultas == '60001') {
+                    $fakultas = 'Ekonomi dan Ilmu-Ilmu Sosial';
+                } else if ($kode_fakultas == '11222') {
+                    $fakultas = 'Pascasarjana';
+                };
+                $dekan = $this->getNamadekan($kode_fakultas);
+                // $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
+
+                $data = [
+                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                    'page_title' => view('partials/rpl-page-title', ['title' => 'Print Transkrip', 'pagetitle' => 'Dashboards']),
+                    'dekan' => $dekan,
+                    'fakultas' => $fakultas,
+                    'dataKlaimAsessor' => $result,
+
+
+                ];
+                return view('Admin/rpl-data-mahasiswa-per-prodi', $data);
+                // } else {
+                //     return redirect()->to(base_url('Admin'));
+                // }
+            } else {
+                return redirect()->to(base_url('Admin'));
+            }
+        }
+    }
     public function printTranskrip($noregis)
     {
         if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 4) {
@@ -1198,7 +1241,8 @@ class Admin extends BaseController
             $db      = \Config\Database::connect();
             $noregis = $db->escapeString($noregis);
             $kode_prodi = $this->getKodeProdiBy($noregis);
-            if ($kode_prodi == session()->get('kode_prodi')) {
+            $kode_fakultas = $this->getKodeFakultasby($kode_prodi);
+            if ($kode_fakultas == session()->get('kode_fakultas')) {
                 // $noregis = session()->get("noregis");
                 $Modaldokumen = new ModelDokumen();
                 $ModalBiodata = new ModelBiodata();
