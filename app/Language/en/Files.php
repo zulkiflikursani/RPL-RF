@@ -18,6 +18,7 @@ return [
     'Prodi' => 'Prodi',
     'Admin' => 'Admin',
     'Fakultas' => 'Fakultas',
+    'Keuangan' => 'Keuangan',
     'Asessor RPL' => 'Asessor RPL',
     'Welcome Back' => 'Welcome Back',
     'Dashboard' => 'Dashboard',

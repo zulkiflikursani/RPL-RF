@@ -55,7 +55,7 @@
 
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-2">Data Fakultas</h4>
+                                    <h4 class="card-title mb-2">Data Keuangan</h4>
                                 </div>
                             </div>
                             <div class="card">
@@ -114,6 +114,7 @@
                                                         <th>No Registrasi</th>
                                                         <th>Nama Mahasiswa</th>
                                                         <th>Program Studi</th>
+                                                        <th>Bukti Pembayaran</th>
                                                         <th>Aksi</th>
 
                                                     </tr>
@@ -130,6 +131,7 @@
                                                                     <td for='noregis'>$row->no_registrasi</td>
                                                                     <td>$row->nama</td>
                                                                     <td>$row->kode_prodi</td>
+                                                                    <td><a href='" . base_url("uploads/berkas/$row->no_registrasi/bb$row->no_registrasi.pdf") . "' target='_blank'><button class='btn btn-sm btn-primary'>Bukti Bayar</button></a></td>
                                                                     <td><button class='btn btn-sm btn-primary' onclick='unvalidasi($(this))'>Unvalidasi</button></td>
                                                                 </tr>";
                                                             // echo $row->nama;
