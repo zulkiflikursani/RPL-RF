@@ -76,7 +76,7 @@ class ModelKlaimProdi extends Model
         fakultas.nama_fakultas,
         fakultas.kode_fakultas,
         (SELECT COUNT(*) FROM mk_klaim_asessor as it 
-                                WHERE mid(it.idklaim,6,10) = mid(mk_klaim_asessor.idklaim,6,10)) as jbaris
+                                WHERE mid(it.idklaim,6,10) = mid(mk_klaim_asessor.idklaim,6,10)  and it.nilai !='E') as jbaris
         FROM
         mk_klaim_dekan
         LEFT JOIN mk_klaim_asessor ON mk_klaim_dekan.idklaim = mk_klaim_asessor.idklaim
@@ -84,7 +84,7 @@ class ModelKlaimProdi extends Model
         LEFT JOIN matakuliah ON mk_klaim_asessor.kode_matakuliah = matakuliah.kode_matakuliah AND mk_klaim_asessor.kode_prodi = matakuliah.kode_prodi
         LEFT JOIN prodi ON mk_klaim_asessor.kode_prodi = prodi.kode_prodi
         LEFT JOIN fakultas ON prodi.kode_fakultas = fakultas.kode_fakultas       
-        where mk_klaim_asessor.kode_prodi='$kode_prodi' and mk_klaim_asessor.idklaim is not null and mk_klaim_asessor.ta_akademik ='$ta_akademik'
+        where mk_klaim_asessor.kode_prodi='$kode_prodi' and mk_klaim_asessor.idklaim is not null and mk_klaim_asessor.ta_akademik ='$ta_akademik' and mk_klaim_asessor.nilai != 'E'
         order by mk_klaim_dekan.idklaim
         ")->getResult();
         return $result;

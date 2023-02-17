@@ -119,6 +119,14 @@
                                                         $noregis2 = "";
                                                         foreach ($dataKlaimAsessor as $row) {
                                                             $i++;
+
+                                                            if ($row->jenis_rpl == 1) {
+                                                                $statusrpl = "Konversi";
+                                                            } else if ($row->jenis_rpl == 2) {
+                                                                $statusrpl = "Rekognisi";
+                                                            } else if ($row->jenis_rpl == 3) {
+                                                                $statusrpl = "Rekognisi";
+                                                            }
                                                             if ($row->no_peserta != $noregis2) {
                                                                 $ii++;
                                                                 echo "<tr>
@@ -128,7 +136,7 @@
                                                                 <td>$row->kode_matakuliah</td>        
                                                                 <td>$row->nama_matakuliah</td>        
                                                                 <td class='text-center'>$row->nilai</td>          
-                                                                <td class='text-center'>status rekognisi</td>          
+                                                                <td class='text-center'>$statusrpl</td>          
                                                                 </tr>";
                                                                 $noregis2 = $row->no_peserta;
                                                             } else {
@@ -136,7 +144,7 @@
                                                                 <td>$row->kode_matakuliah</td>        
                                                                 <td>$row->nama_matakuliah</td>        
                                                                 <td class='text-center'>$row->nilai</td>          
-                                                                <td class='text-center'>status rekognisi</td>          
+                                                                <td class='text-center'>$statusrpl</td>          
                                                                 </tr>";
                                                             }
                                                         }

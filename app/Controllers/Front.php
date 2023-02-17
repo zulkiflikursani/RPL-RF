@@ -29,6 +29,7 @@ class Front extends BaseController
 		$db      = \Config\Database::connect();
 		$ModalRegisrasi = new ModelRegistrasi();
 		helper('text');
+		helper('File');
 
 
 		$ta = $this->getTa_akademik();
@@ -57,8 +58,29 @@ class Front extends BaseController
 		$instansi = $db->escapeString($this->request->getPost("instansi"));
 		$nohape = $db->escapeString($this->request->getPost("nohp"));
 		$prodi = $db->escapeString($this->request->getPost("prodi"));
+
+		$buktibayar = $this->request->getFile('buktiBayar');
 		$password1 =  random_string('alnum', 6);
 		// $password1 =  "5465465465d";
+		$validationRule = [
+			'buktiBayar' =>  [
+				'label' => "Bukti Pembayaran",
+				'rules' => [
+					'uploaded[buktiBayar]',
+					'max_size[buktiBayar,1024]',
+					'mime_in[buktiBayar,application/pdf]',
+				]
+			],
+
+		];
+
+
+		$messages = [
+			'buktiBayar' =>  [
+				'mime_in' => 'File harus berformat PDF.',
+				'max_size' => 'Ukuran File maksimal  1024.',
+			]
+		];
 		$password = password_hash($password1, PASSWORD_BCRYPT);
 		$data = [
 			'ta_akademik' => $ta,
@@ -77,50 +99,70 @@ class Front extends BaseController
 
 
 		$link = base_url("Login");
-
-		$result = $ModalRegisrasi->insert($data);
-		if ($result === false) {
+		$validation = \Config\Services::validation();
+		$validation->setRules($validationRule, $messages);
+		if (!$validation->run()) {
+			// print_r($validation = $validation->getErrors());
 			$datasave = $ModalRegisrasi->where('no_registrasi', $noregis)->findAll();
 			$data = [
 				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
 				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
 				'datasubmit' => $data,
-				'dataerror' => $ModalRegisrasi->errors()
+				'dataerror' => $validation->getErrors()
 			];
 			return view('Front/rpl-layouts-horizontal', $data);
 		} else {
-			$message = "Terima Kasih telah melakukan pendaftaran pada Program RPL Unifa  <br>
+			$path_to_file = "uploads/berkas/$noregis/" . "bb" . $noregis . ".pdf";
+			if (file_exists($path_to_file)) {
+				unlink($path_to_file);
+			}
+			$buktibayar->move("uploads/berkas/$noregis", "bb" . $noregis . ".pdf");
+
+			$result = $ModalRegisrasi->insert($data);
+			if ($result === false) {
+				unlink($path_to_file);
+				$datasave = $ModalRegisrasi->where('no_registrasi', $noregis)->findAll();
+				$data = [
+					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
+					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+					'datasubmit' => $data,
+					'dataerror' => $ModalRegisrasi->errors()
+				];
+				return view('Front/rpl-layouts-horizontal', $data);
+			} else {
+				$message = "Terima Kasih telah melakukan pendaftaran pada Program RPL Unifa  <br>
 						Berikut ini user untuk login ke Sistem RPL unifa <br>
 						No. Reg	: " . $noregis . "<br>
 						User 	: " . $email . "<br>
 						Pass 	: " . $password1 . "<br>
 						Silahkan Login di " . $link . " <br>
 						Terima kasih";
-			$emailgo = \Config\Services::email();
-			$emailgo->setTo($email);
-			$emailgo->setFrom('rpl.unifa.2023@gmail.com', 'Admin Program RPL Unifa');
-			$emailgo->setSubject('Registrasi RPL Unifa | Password Login');
-			$emailgo->setMessage($message); //your message here
-			if (!$emailgo->send()) {
-				$data = [
-					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
-					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-					'datasubmit' => $data,
-					'dataerror' => $emailgo->printDebugger(['headers']),
-				];
-				return view('Front/rpl-layouts-horizontal', $data);
-				// Generate error
-			} else {
-				$datasave = $ModalRegisrasi->where('no_registrasi', $noregis)->findAll();
-				$data = [
-					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
-					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-					'datasubmit' => $datasave,
-					'emailstatus' => $emailgo->printDebugger(['headers']),
-					'status' => true,
+				$emailgo = \Config\Services::email();
+				$emailgo->setTo($email);
+				$emailgo->setFrom('rpl.unifa.2023@gmail.com', 'Admin Program RPL Unifa');
+				$emailgo->setSubject('Registrasi RPL Unifa | Password Login');
+				$emailgo->setMessage($message); //your message here
+				if (!$emailgo->send()) {
+					$data = [
+						'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
+						'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+						'datasubmit' => $data,
+						'dataerror' => $emailgo->printDebugger(['headers']),
+					];
+					return view('Front/rpl-layouts-horizontal', $data);
+					// Generate error
+				} else {
+					$datasave = $ModalRegisrasi->where('no_registrasi', $noregis)->findAll();
+					$data = [
+						'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
+						'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+						'datasubmit' => $datasave,
+						'emailstatus' => $emailgo->printDebugger(['headers']),
+						'status' => true,
 
-				];
-				return view('Front/rpl-layouts-horizontal', $data);
+					];
+					return view('Front/rpl-layouts-horizontal', $data);
+				}
 			}
 		}
 	}
@@ -380,25 +422,42 @@ class Front extends BaseController
 			];
 
 			$validationRule = [
-				'userfile' => [
+				'userFile' => [
 					'label' => 'Dokumen',
 					'rules' => [
-						'uploaded[userfile]',
-						'max_size[userfile,5000]',
-						'mime_in[userfile,aplication/pdf]',
+						'uploaded[userFile]',
+						'max_size[userFile,5000]',
+						'mime_in[userFile,application/pdf]',
 
 					],
 				],
 			];
-
+			$messages = [
+				'userFile' =>  [
+					'mime_in' => 'File harus berformat PDF.',
+					'max_size' => 'Ukuran File maksimal  1024.',
+				]
+			];
 
 			$validation = \Config\Services::validation();
-			$validation->setRules($validationRule);
+			$validation->setRules($validationRule, $messages);
 
 			$fileName = $userFile->getName();
 
-			if ($validation->hasError('userFile')) {
+			if (!$validation->run()) {
 				$data['error'] = $validation->getError('userFile');
+				$ModalBiodata = new ModelBiodata();
+				$datadokumen = $Modaldokumen->getDataBynoregis();
+				// $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+				$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+				$data = [
+					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
+					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+					'datasubmit' => $data,
+					'databio' => $databio,
+					'dataerror' => $validation->getErrors()
+				];
+				return view('Front/rpl-mahasiswa-upload', $data);
 			} else {
 				$userFile->move("uploads/berkas/$noregis", $fileNameRandom);
 				$path_to_file = "uploads/berkas/$noregis/$fileNameRandom";
@@ -413,6 +472,7 @@ class Front extends BaseController
 						$data = [
 							'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
 							'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+							'databio' => $databio,
 							'datasubmit' => $data,
 							'dataerror' => $Modaldokumen->errors()
 						];
@@ -433,11 +493,14 @@ class Front extends BaseController
 						return view('Front/rpl-mahasiswa-upload', $data);
 					}
 				} else {
+					$ModalBiodata = new ModelBiodata();
+					$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
 
 					$data = [
 						'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
 						'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
 						'datasubmit' => $data,
+						'databio' => $databio,
 						'dataerror' => $userFile->getErrorString()
 					];
 					return view('Front/rpl-mahasiswa-upload', $data);

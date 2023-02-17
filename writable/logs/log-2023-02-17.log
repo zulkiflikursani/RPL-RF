@@ -1,0 +1,90 @@
+CRITICAL - 2023-02-17 00:49:14 --> Call to a member function move() on null
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->registrasi()
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#5 {main}
+CRITICAL - 2023-02-17 01:01:52 --> Call to a member function move() on null
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->registrasi()
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#5 {main}
+CRITICAL - 2023-02-17 01:10:43 --> unlink(uploads/berkas/20231-0005/20231-0005.pdf): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(uploads/...', 'G:\\PROJECT\\UNIF...', 106, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(106): unlink('uploads/berkas/...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->registrasi()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-02-17 01:39:16 --> Call to undefined method CodeIgniter\Validation\Validation::errors()
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->registrasi()
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#5 {main}
+CRITICAL - 2023-02-17 01:44:38 --> Call to a member function setRules() on null
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->registrasi()
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#5 {main}
+CRITICAL - 2023-02-17 01:54:38 --> Call to a member function getErrors() on null
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->registrasi()
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#5 {main}
+CRITICAL - 2023-02-17 02:10:10 --> Invalid argument supplied for foreach()
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Views\Front\rpl-layouts-horizontal.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'G:\\PROJECT\\UNIF...', 32, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Front/rpl-layou...', Array, true)
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(109): view('Front/rpl-layou...', Array)
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->registrasi()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-17 02:12:07 --> Bukti Pembayaran is not a valid rule.
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Validation\Validation.php(321): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('Bukti Pembayara...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Validation\Validation.php(159): CodeIgniter\Validation\Validation->processRules('buktiBayar', 'Bukti Pembayara...', NULL, Array, Array)
+#2 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(102): CodeIgniter\Validation\Validation->run()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->registrasi()
+#4 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#8 {main}
+CRITICAL - 2023-02-17 02:19:58 --> Undefined variable: nm_rpl
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Views\Front\rpl-mahasiswa-upload.php(120): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 120, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Front/rpl-mahas...', Array, true)
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Front.php(459): view('Front/rpl-mahas...', Array)
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-17 02:33:52 --> Undefined property: stdClass::$noregistrasi
+#0 G:\PROJECT\UNIFA\RPL-UF\app\Views\Admin\rpl-home-keu.php(90): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\PROJECT\\UNIF...', 90, Array)
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-home-...', Array, true)
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(100): view('Admin/rpl-home-...', Array)
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}

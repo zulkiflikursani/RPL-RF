@@ -162,3 +162,30 @@ CRITICAL - 2023-02-13 02:31:15 --> Trying to get property 'kode_prodi' of non-ob
 #5 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
 #6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
 #7 {main}
+CRITICAL - 2023-02-13 13:20:34 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and mk_klaim_asessor !='E'
+        FROM
+        mk_klaim_dekan
+        LEF...' at line 18
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelKlaimProdi.php(87): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(1205): App\Models\ModelKlaimProdi->getDataMahasiswaOkper('20231', '62201')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->dataMhsPerpodiOk()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-02-13 13:21:07 --> Unknown column 'mk_klaim_asessor' in 'where clause'
+#0 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\RPL-UF\app\Models\ModelKlaimProdi.php(87): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\RPL-UF\app\Controllers\Admin.php(1205): App\Models\ModelKlaimProdi->getDataMahasiswaOkper('20231', '62201')
+#5 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->dataMhsPerpodiOk()
+#6 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\RPL-UF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\RPL-UF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
