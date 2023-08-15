@@ -123,7 +123,7 @@
                                                                 } else {
                                                                     $selected = "";
                                                                 }
-                                                                echo "<option kdprov='$a->KDPROTBPRO' $selected>$a->NMPROTBPRO</option>";
+                                                                echo "<option kdprov='".$a->KDPROTBPRO."' $selected>".$a->NMPROTBPRO."</option>";
                                                             }
                                                         }
                                                         ?>
