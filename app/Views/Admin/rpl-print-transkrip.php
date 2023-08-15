@@ -39,6 +39,8 @@
                             $pendidikanakhir = 'D3';
                         } else if ($row->didikakhir == 5) {
                             $pendidikanakhir = 'S1';
+                        } else {
+                            $pendidikanakhir = '';
                         }
 
                         if ($row->id_jenjang == 'S1-R') {
@@ -97,7 +99,8 @@
 
 
                                             </table>
-                                            <table class='table table-bordered table-responsive table-sm border-dark'>
+                                            <table class='table table-bordered table-responsive table-sm border-dark'
+                                                style="font-size: 10px;">
                                                 <thead class="">
                                                     <tr>
                                                         <th width='5%'>No</th>
@@ -139,7 +142,39 @@
                                                 </tbody>
 
                                             </table>
-                                            <div class="col-12 ">
+                                            <div class='col-12' style="font-size: 10px;">
+                                                <div class="row">
+                                                    <div class="col-5">
+                                                        Total SKS yang wajib dilulus untuk program studi yang terpilih
+                                                    </div>
+                                                    <div class="col-6">
+                                                        : <?= $maxsks ?>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-5">
+                                                        Total SKS yang dilulusi melalui program rekognisi:
+
+                                                    </div>
+                                                    <div class="col-6">
+                                                        : <?= $jumlahsks ?>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-5">
+                                                        Sisa SKS yang harus ditempuh:
+
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <?php
+                                                        $sisasks = floatval($maxsks) - floatval($jumlahsks);
+                                                        ?>
+                                                        : <?= $sisasks ?>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-12 " style="font-size: 10px;">
                                                 <div class="row">
                                                     <div class="col-6">
                                                     </div>
@@ -184,8 +219,15 @@
 
                                         </div>
                                         <div class="d-print-none">
+                                            <div class="float-end" title="Convert Excel">
+                                                <a href="<?= base_url('convert-excel/' . $noregis) ?>"
+                                                    class="btn btn-success waves-effect waves-light me-1"><i
+                                                        class="fa fa-file-excel"></i></a>
+                                            </div>
                                             <div class="float-end">
-                                                <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-print"></i></a>
+                                                <a href="javascript:window.print()"
+                                                    class="btn btn-success waves-effect waves-light me-1"><i
+                                                        class="fa fa-print"></i></a>
                                             </div>
                                         </div>
 
@@ -234,14 +276,14 @@
 </html>
 
 <script>
-    function validprodi() {
-        $('#validasi-form').submit()
-    }
+function validprodi() {
+    $('#validasi-form').submit()
+}
 
-    function unvalidprodi() {
-        $('#unvalidasi-form').submit()
+function unvalidprodi() {
+    $('#unvalidasi-form').submit()
 
-    }
+}
 </script>
 <?php
 function tgl_indo($tanggal)

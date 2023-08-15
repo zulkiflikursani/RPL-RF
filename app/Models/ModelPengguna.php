@@ -36,7 +36,7 @@ class ModelPengguna extends Model
     ];
     protected $validationMessages = [
         'email' => [
-            'is_unique' => 'Sorry. Email sudah digunakan. Silahkan gunakan email yang lain.',
+            'is_unique' => 'Email sudah digunakan. Silahkan gunakan email yang lain.',
         ],
     ];
     protected $skipValidation       = false;

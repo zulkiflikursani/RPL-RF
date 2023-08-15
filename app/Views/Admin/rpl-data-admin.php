@@ -112,6 +112,7 @@
                                                                         <option value='3'>Prodi</option>
                                                                         <option value='4'>Fakultas</option>
                                                                         <option value='5'>Keuangan</option>
+                                                                        <option value='6'>Akademik</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -229,6 +230,7 @@
                                                                         <option value='3'>Prodi</option>
                                                                         <option value='4'>Fakultas</option>
                                                                         <option value='5'>Keuangan</option>
+                                                                        <option value='6'>Akademik</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -325,6 +327,8 @@
                                                         $statuspengguna = "Fakultas";
                                                     } else if ($row['sttpengguna'] == 5) {
                                                         $statuspengguna = "Keuangan";
+                                                    } else if ($row['sttpengguna'] == 6) {
+                                                        $statuspengguna = "Akademik";
                                                     }
 
 
@@ -381,21 +385,56 @@
                                             </div><!-- /.modal-content -->
                                         </div><!-- /.modal-dialog -->
                                     </div>
+                                    <div class="modal fade hapus-admin-modal" tabindex="-1" role="dialog"
+                                        aria-labelledby="mytambah-modal" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class=" modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="myLargeModalLabel">Perhatian !</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label for="formrow-nama-input"
+                                                                        class="form-label">Yakin
+                                                                        akan Menghapus Pengguna <span id='email'></span>
+                                                                        ?</label>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" idpengguna='' id='btidpengguna'
+                                                                onclick='yeshapus($(this))'
+                                                                class="btn btn-primary w-md">
+                                                                Ya</button> <button type="button" class="btn btn-light"
+                                                                data-bs-dismiss="modal">Batal</button>
+                                                        </div>
+                                                        </form>
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
+                    <!-- end row -->
 
-                </div>
-                <!-- end row -->
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
 
-            </div> <!-- container-fluid -->
+            <?= $this->include('partials/rpl-footer') ?>
         </div>
-        <!-- End Page-content -->
-
-        <?= $this->include('partials/rpl-footer') ?>
-    </div>
-    <!-- end main content-->
+        <!-- end main content-->
 
     </div>
     <!-- END layout-wrapper -->
@@ -478,6 +517,34 @@
 
     }
 
+    function getDataHapus(ini) {
+        idpengguna = ini.parent().parent().attr("idpengguna");
+        $('#btidpengguna').attr("idpengguna", idpengguna);
+        $('.hapus-admin-modal').modal('show')
+
+    }
+
+    function yeshapus(ini) {
+        idpengguna = ini.attr("idpengguna");
+
+        if (idpengguna != "") {
+            url = '<?= base_url("hapuspengguna") ?>'
+
+            $.post(url, {
+                idpengguna: idpengguna
+            }, function(data) {
+                if (alert(data)) {} else {
+                    window.location.replace('<?= base_url('pengguna') ?>')
+
+                };
+            })
+        } else {
+            if (alert("Data pengguna tidak ditemukan")) {} else {
+                window.location.replace('<?= base_url('pengguna') ?>')
+
+            };
+        }
+    }
 
     function getData(ini) {
         idpengguna = ini.parent().parent().attr('idpengguna')

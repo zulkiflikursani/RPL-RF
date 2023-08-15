@@ -44,6 +44,8 @@ $routes->get('/home', 'Front::index');
 $routes->get('/Biodata', 'Front::Pendaftar');
 $routes->get('/logout', 'Front::Logout');
 $routes->get('/upload', 'Front::Uploadberkas');
+$routes->get('/importmka1', 'Front::importMkA1');
+$routes->get('/uploada1', 'Front::Uploadberkasa1');
 $routes->get('/assesment-mandiri', 'Front::AssesmentMandiri');
 $routes->get('/respon-asessor', 'Front::AsessmentRespon');
 $routes->get('/form-assesment/(:any)', 'Front::AssesmentMandiri_mk/$1');
@@ -51,6 +53,12 @@ $routes->get('/form-tanggapan/(:any)', 'Front::tanggapanAsessmentMhs/$1');
 
 // FRONT POST
 $routes->post('Front/Registrasi', 'Front::Registrasi');
+$routes->post('/getProdiByRpl', 'Front::getProdiByRpl');
+$routes->post('Front/SimpanMatakuliahA1', 'Front::SimpanMatakuliahA1');
+$routes->post('Front/HapusMatakuliahA1', 'Front::HapusMatakuliahA1');
+$routes->post('Front/SubmitMatakuliahA1', 'Front::SubmitMatakuliahA1');
+$routes->post('generatemka1', 'Front::generateMkA1');
+$routes->post('simpanklaimimport', 'Front::SimpanMatakuliahA1import');
 $routes->post('Simpanberkas', 'Front::Simpanberkas');
 $routes->post('klaimmk', 'Front::Klaimmk');
 $routes->post('ajukantanggapan', 'Front::ajukanKlaimmk');
@@ -58,6 +66,9 @@ $routes->post('batalklaimmk', 'Front::batalKlaimmk');
 $routes->post('simpanklaimmk', 'Front::SimpanKlaimmk');
 $routes->post('getCpmk', 'Front::getcpmk');
 $routes->post('deldok', 'Front::deleteDokumen');
+$routes->post('getKab', 'Front::getKab');
+$routes->post('searchtpasal', 'Front::searchtpasal');
+$routes->post('konsentrasi-by-prodi', 'Front::getKonsentrasiByProdi');
 
 
 
@@ -73,38 +84,93 @@ $routes->get('/Admin', 'Admin::index');
 $routes->get('/pengguna', 'Admin::pengguna');
 $routes->get('/asessor', 'Admin::Asessor');
 $routes->get('/dataasessor', 'Admin::dataAsessor');
+$routes->get('/data-peserta', 'Admin::dataPeserta');
+$routes->get('/statusklaim', 'Admin::datastatusklaim');
 $routes->get('/cpmk', 'Admin::inputcpmk');
+$routes->get('/cpmk-prodi', 'Admin::inputcpmk_prodi');
+$routes->get('/mk-prodi', 'Admin::inputmk_prodi');
+$routes->get('/mk-admin', 'Admin::inputmk_admin');
 $routes->get('/resetpassmhs', 'Admin::resetpassmhs');
 $routes->get('/tanggapanasessor/(:any)', 'Admin::tanggapanAsessor/$1');
+$routes->get('/unvalidasessor/(:any)', 'Admin::batalklaimasessor/$1');
+$routes->get('/tanggapanasessora1/(:any)', 'Admin::tanggapanAsessorA1/$1');
 $routes->get('/validprodi/(:any)/(:any)', 'Admin::validprodi/$1/$2');
+$routes->get('/validprodia1/(:any)/(:any)', 'Admin::validprodia1/$1/$2');
+$routes->get('/validprodia1/(:any)', 'Admin::validprodia1/$1');
 $routes->get('/validprodi/(:any)', 'Admin::validprodi/$1');
 $routes->get('/validdekan/(:any)/(:any)', 'Admin::validdekan/$1/$2');
+$routes->get('/validdekana1/(:any)/(:any)', 'Admin::validdekana1/$1/$2');
 $routes->get('/validdekan/(:any)/', 'Admin::validdekan/$1');
+$routes->get('/validdekana1/(:any)/', 'Admin::validdekana1/$1');
+$routes->get('/bamahasiswaa1/(:any)/', 'Admin::beritaAcaraPerMahasiswaa1/$1');
+$routes->get('/bamahasiswa/(:any)/', 'Admin::beritaAcaraPerMahasiswa/$1');
+$routes->get('/data-asessor-prodi', 'Admin::data_asessor_prodi');
+$routes->get('/data-keuangan', 'Admin::dataKeuangan');
+$routes->get('/setup-tarif', 'Admin::setupTarif');
+$routes->get('/asessia1', 'Admin::asessiA1');
+$routes->get('/daftar-mk-rpl-prodi', 'Admin::daftarMkRplProdi');
+$routes->get('/daftar-mk-rpl-admin', 'Admin::daftarMkRplAdmin');
 //report
 $routes->get('/print-transkrip/(:any)/', 'Admin::printTranskrip/$1');
-$routes->get('/data-mhs-per-prodi', 'Admin::dataMhsPerpodiOk');
+$routes->get('/print-tagihan/(:any)/', 'Admin::printTagihan/$1');
+$routes->get('/print-klaim-a1/(:any)/', 'Admin::printKlaimMk/$1');
+
+$routes->get('/convert-excel/(:any)/', 'Admin::exportexcel/$1');
+$routes->get('/data-mhs-per-prodi/(:any)', 'Admin::dataMhsPerpodiOk/$1');
+$routes->get('/menu-data-mhs-per-prodi', 'Admin::menuDataMhsPerpodi');
+$routes->get('/data-asessi-prodi', 'Admin::data_asessi_prodi');
+$routes->get('/adminklaim', 'Admin::adminklaimmhs');
+$routes->get('/setup-taakademik', 'Admin::setupTaakademik');
+$routes->get('/setup-konsentrasi', 'Admin::setupKonsentrasi');
+$routes->get('/setup-rpl', 'Admin::setupRpl');
+$routes->get('/biodata-mahasiswa/(:any)', 'Admin::updateBiodataMahasiswa/$1');
+
 
 
 
 $routes->post('Admin/SimpanPengguna', 'Admin::SimpanPengguna');
+$routes->post('hapuspengguna', 'Admin::HapusPengguna');
+$routes->post('batalklaimmhs', 'Admin::batalKlaimMhs');
+$routes->post('batalklaimdokA1', 'Admin::batalKlaimdokA1');
+$routes->post('setBiodata', 'Admin::setBiodata');
+
 $routes->post('getmatakuliah', 'Admin::getMatakuliah');
 $routes->post('getcpmk', 'Admin::getcpmk');
+$routes->post('getcpmk-admin', 'Admin::getcpmkAdmin');
 $routes->post('simpancpmk', 'Admin::simpanCpmk');
+$routes->post('simpanmk', 'Admin::simpanMk');
+$routes->post('simpanmk-admin', 'Admin::simpanMkAdmin');
 $routes->post('editcpmk', 'Admin::editCpmk');
+$routes->post('editmk', 'Admin::editMk');
 $routes->post('hapuscpmk', 'Admin::hapusCpmk');
+$routes->post('hapusmk', 'Admin::hapusMk');
 $routes->post('validasikeu', 'Admin::validKeu');
 $routes->post('unvalidasikeu', 'Admin::unvalidKeu');
+$routes->post('validasibayar', 'Admin::validbayarKeu');
+$routes->post('unvalidasibayar', 'Admin::unvalidbayarKeu');
 $routes->post('resetpassword', 'Admin::resetPassword');
+$routes->post('resetpasswordprodi', 'Admin::resetPasswordProdi');
 $routes->post('resetmhs', 'Admin::resetPasswordMhs');
 $routes->post('getDataMhsPerAsessor', 'Admin::getDataMhsPerAsessor');
 $routes->post('getdatamhsblmpunyaassessor', 'Admin::getdatamahsiswaBelumPunyaAsessor');
 $routes->post('klaimmkAsessor', 'Admin::KlaimmkAsessor');
+$routes->post('klaimmkAsessorA1', 'Admin::KlaimmkAsessorA1');
+$routes->post('batalklaimmkAsessorA1', 'Admin::batalKlaimmkA1');
 $routes->post('getDataKlaimAsessor', 'Admin::getDataKlaimasessor');
 $routes->post('simpanpesertaasessor', 'Admin::simpanpesertaasessor');
+$routes->post('simpanpesertaasessorprodi', 'Admin::simpanpesertaasessor_prodi');
 $routes->post('setvalidprodi', 'Admin::validasiprodi');
 $routes->post('setunvalidprodi', 'Admin::unvalidasiprodi');
 $routes->post('setvaliddekan', 'Admin::validasidekan');
 $routes->post('setunvaliddekan', 'Admin::unvalidasidekan');
+$routes->post('updatetarif', 'Admin::updateTarif');
+$routes->post('udpate-taakademik', 'Admin::updateTaAkademik');
+$routes->post('simpan-konsentrasi', 'Admin::simpankons');
+$routes->post('update-konsentrasi', 'Admin::udpatekons');
+$routes->post('delete-konsentrasi', 'Admin::deletekons');
+$routes->post('update-mk-rpl', 'Admin::updateMkRpl');
+$routes->post('update-mk-rpl-admin', 'Admin::updateMkRplAdmin');
+$routes->post('update-jenisrpl', 'Admin::updatejenisrpl');
 
 
 

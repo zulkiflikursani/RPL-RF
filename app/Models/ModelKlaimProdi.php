@@ -66,11 +66,10 @@ class ModelKlaimProdi extends Model
         bio_peserta.nama,
         mk_klaim_asessor.kode_matakuliah,
         mk_klaim_asessor.nilai,
-        matakuliah.nama_matakuliah,
+        mk_klaim_header.nama_matakuliah,
         mk_klaim_asessor.kode_prodi,
         bio_peserta.jenis_rpl,
         bio_peserta.instansi_asal,
-        bio_peserta.didikakhir,
         prodi.nama_prodi,
         prodi.id_jenjang,
         fakultas.nama_fakultas,
@@ -84,6 +83,7 @@ class ModelKlaimProdi extends Model
         LEFT JOIN matakuliah ON mk_klaim_asessor.kode_matakuliah = matakuliah.kode_matakuliah AND mk_klaim_asessor.kode_prodi = matakuliah.kode_prodi
         LEFT JOIN prodi ON mk_klaim_asessor.kode_prodi = prodi.kode_prodi
         LEFT JOIN fakultas ON prodi.kode_fakultas = fakultas.kode_fakultas       
+        left join mk_klaim_header on mk_klaim_asessor.idklaim= mk_klaim_header.idklaim
         where mk_klaim_asessor.kode_prodi='$kode_prodi' and mk_klaim_asessor.idklaim is not null and mk_klaim_asessor.ta_akademik ='$ta_akademik' and mk_klaim_asessor.nilai != 'E'
         order by mk_klaim_dekan.idklaim
         ")->getResult();

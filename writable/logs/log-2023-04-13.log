@@ -1,0 +1,120 @@
+CRITICAL - 2023-04-13 01:16:52 --> Trying to get property 'kode_prodi' of non-object
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(2330): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1698): App\Controllers\Admin->getKodeProdiBy()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->validprodi()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-13 01:16:52 --> Trying to get property 'kode_prodi' of non-object
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(2330): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1698): App\Controllers\Admin->getKodeProdiBy()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->validprodi()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-13 17:52:52 --> syntax error, unexpected 'E' (T_STRING), expecting ')'
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(282): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(247): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(83): spl_autoload_call()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#5 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-04-13 17:53:17 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(88): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValidKeu()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-04-13 17:53:19 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(88): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValidKeu()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-04-13 17:53:41 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(88): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValidKeu()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-04-13 17:54:06 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(88): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValidKeu()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-04-13 17:55:23 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(88): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValidKeu()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-04-13 17:55:45 --> syntax error, unexpected 'E' (T_STRING), expecting ')'
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(282): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(247): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(83): spl_autoload_call()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#5 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-04-13 18:00:40 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(88): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValidKeu()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-04-13 18:00:55 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(88): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValidKeu()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-04-13 18:00:57 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(88): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValidKeu()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-04-13 18:01:10 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(88): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValidKeu()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-04-13 18:05:18 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(88): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValidKeu()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-04-13 18:06:22 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(88): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValidKeu()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-04-13 18:06:55 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(88): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValidKeu()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

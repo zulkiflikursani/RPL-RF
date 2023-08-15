@@ -1,0 +1,36 @@
+CRITICAL - 2023-07-10 23:29:57 --> Class 'App\Models\ModelMasterCpmk' not found
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->simpanCpmk()
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#5 {main}
+CRITICAL - 2023-07-10 23:30:41 --> Class 'App\Models\ModelMasterCpmk' not found
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->simpanCpmk()
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#5 {main}
+CRITICAL - 2023-07-10 23:39:40 --> Class 'App\Models\ModelMasterCpmk' not found
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->simpanCpmk()
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#5 {main}
+CRITICAL - 2023-07-10 23:51:36 --> Class 'App\Models\ModelMasterCpmk' not found
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->simpanCpmk()
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#5 {main}
+CRITICAL - 2023-07-10 23:53:40 --> Array to string conversion
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1359): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'G:\\PROJECT\\UNIF...', 1359, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->simpanCpmk()
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}

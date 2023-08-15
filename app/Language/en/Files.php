@@ -7,6 +7,7 @@
 
 return [
     'SILAJU RPL' => 'SILAJU RPL',
+    'SILAJU' => 'SILAJU',
     'login SILAJU' => 'Login SILAJU',
     'Biodata Peserta RPL' => 'Biodata Peserta RPL',
     'Biodata' => 'Biodata',
@@ -14,12 +15,18 @@ return [
     'Pengumuman' => 'Pengumuman',
     'Tanggapan Asessor' => 'Tanggapan Asessor',
     'Upload Berkas' => 'Upload Berkas',
+    'Data RPL' => 'Data RPL',
+    'Rekap Peserta RPL' => 'Rekap Peserta RPL',
     'Asessor' => 'Asessor',
     'Prodi' => 'Prodi',
     'Admin' => 'Admin',
     'Fakultas' => 'Fakultas',
     'Keuangan' => 'Keuangan',
+    'Akademik' => 'Akademik',
     'Asessor RPL' => 'Asessor RPL',
+    'Setup RPL' => 'Setup RPL',
+    'Setup Tarif' => 'Setup Tarif',
+    'Setup Tahun Akademik' => 'Setup Tahun Akademik',
     'Welcome Back' => 'Welcome Back',
     'Dashboard' => 'Dashboard',
     'Dashboards' => 'Dashboards',
@@ -257,5 +264,8 @@ return [
     'Placeholders' => 'Placeholders',
     'Toasts' => 'Toasts',
     'Registrasi RPL' => 'Registrasi RPL',
-    'RPL' => 'RPL'
+    'RPL' => 'RPL',
+    'Matakuliah' => 'Matakuliah',
+    'login RPL' => 'login RPL',
+    'Admin RPL' => 'Admin RPL'
 ];

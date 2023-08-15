@@ -106,17 +106,18 @@
                         <a class="nav-link arrow-none" href="<?= base_url('Admin') ?>" id="topnav-dashboard"
                             role="button">
                             <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Dashboard' ?></span>
-                            <div class="arrow-down"></div>
+
                         </a>
                     </li>
                     <?php
+
                     if (session()->get('sttpengguna') == 1) {
                     ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="<?= base_url('pengguna') ?>" id="topnav-dashboard"
                             role="button">
-                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Data Pengguna' ?></span>
-                            <div class="arrow-down"></div>
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Pengguna' ?></span>
+
                         </a>
                     </li>
                     <?php
@@ -124,23 +125,39 @@
                     if (session()->get('sttpengguna') == 1) {
                     ?>
                     <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('resetpassmhs') ?>" id="topnav-dashboard"
-                            role="button">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-dashboard" role="button">
                             <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= 'Reset Akun Maba' ?></span>
+                                key="t-dashboards"><?= "Mahasiswa" ?></span>
                             <div class="arrow-down"></div>
                         </a>
+                        <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
+
+                            <a href="<?= base_url('resetpassmhs') ?>" class="dropdown-item"
+                                key="t-default"><?= "Password & Biodata" ?></a>
+                            <a href="<?= base_url('adminklaim') ?>" class="dropdown-item"
+                                key="t-default"><?= "Klaim Mandiri" ?></a>
+
+
+                        </div>
                     </li>
+
                     <?php
                     };
                     if (session()->get('sttpengguna') == 3) {
                     ?>
                     <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('data-mhs-per-prodi') ?>"
-                            id="topnav-dashboard" role="button" target="_blank">
+                        <a class="nav-link arrow-none" href="<?= base_url('statusklaim') ?>" id="topnav-dashboard"
+                            role="button">
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Status Klaim' ?></span>
+
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('menu-data-mhs-per-prodi') ?>"
+                            id="topnav-dashboard" role="button">
                             <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= 'Data Klaim Mahasiswa' ?></span>
-                            <div class="arrow-down"></div>
+                                key="t-dashboards"><?= 'Daftar Peserta' ?></span>
+
                         </a>
                     </li>
                     <?php
@@ -151,26 +168,138 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="<?= base_url('dataasessor') ?>" id="topnav-dashboard"
                             role="button">
-                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Data Asessor' ?></span>
-                            <div class="arrow-down"></div>
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Asessor' ?></span>
+
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('data-peserta') ?>" id="topnav-dashboard"
+                            role="button">
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Rekapitulasi Peserta' ?></span>
+
                         </a>
                     </li>
                     <?php
                     };
                     if (session()->get('sttpengguna') == 1) {
                     ?>
+
                     <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('cpmk') ?>" id="topnav-dashboard"
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-dashboard" role="button">
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= "Kurikulum" ?></span>
+                            <div class="arrow-down"></div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
+                            <a href="<?= base_url('cpmk') ?>" class="dropdown-item"
+                                key="t-default"><?= "Matakuliah Umum & CPMK" ?></a>
+                            <a href="<?= base_url('daftar-mk-rpl-admin') ?>" class="dropdown-item"
+                                key="t-default"><?= "Penyajian Matakuliah RPL" ?></a>
+
+                        </div>
+                    </li>
+                    <?php
+                    };
+                    if (session()->get('sttpengguna') == 3) {
+                    ?>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-dashboard" role="button">
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= "Kurikulum" ?></span>
+                            <div class="arrow-down"></div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
+                            <a href="<?= base_url('cpmk-prodi') ?>" class="dropdown-item"
+                                key="t-default"><?= "Matakuliah & CPMK" ?></a>
+                            <a href="<?= base_url('daftar-mk-rpl-prodi') ?>" class="dropdown-item"
+                                key="t-default"><?= "Penyajian Matakuliah RPL" ?></a>
+
+                        </div>
+                    </li>
+
+                    <?php
+                    };
+                    if (session()->get('sttpengguna') == 3) {
+                    ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('data-asessi-prodi') ?>" id="topnav-dashboard"
                             role="button">
                             <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= 'Data Matakuliah' ?></span>
+                                key="t-dashboards"><?= 'Asessor' ?></span>
+
+                        </a>
+                    </li>
+                    <?php
+                    };
+                    if (session()->get('sttpengguna') == 3) {
+                    ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('data-asessor-prodi') ?>"
+                            id="topnav-dashboard" role="button">
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Asessi' ?></span>
+
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('setup-konsentrasi') ?>" id="topnav-dashboard"
+                            role="button">
+                            <i class="bx bx-home-circle me-2"></i><span
+                                key="t-dashboards"><?= 'Konsentrasi' ?></span>
+
+                        </a>
+                    </li>
+                    <?php
+                    };
+                    if (session()->get('sttpengguna') == 1) {
+                    ?>
+
+                    <?php
+                    };
+                    if (session()->get('sttpengguna') == 1) {
+                    ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-dashboard" role="button">
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= "Setup" ?></span>
                             <div class="arrow-down"></div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
+
+                            <a href="<?= base_url('setup-tarif') ?>" class="dropdown-item"
+                                key="t-default"><?= "Tarif Program Rekognisi" ?></a>
+                            <a href="<?= base_url('setup-taakademik') ?>" class="dropdown-item"
+                                key="t-default"><?= "Aktivasi Tahun Akademik" ?></a>
+                            <a href="<?= base_url('setup-rpl') ?>" class="dropdown-item"
+                                key="t-default"><?= "Prodi Penyelenggara RPL" ?></a>
+
+
+                        </div>
+                    </li>
+
+                    <?php
+
+                    };
+                    if (session()->get('sttpengguna') == 5) {
+                    ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('data-keuangan') ?>" id="topnav-dashboard"
+                            role="button">
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Data Keuangan' ?></span>
+
                         </a>
                     </li>
                     <?php
                     };
                     ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none"
+                            href="<?= base_url('/template/Manual-Book-Pengguna-SILAJU.pdf') ?>" id="topnav-dashboard"
+                            role="button" target='_blank'>
+                            <i class="bx bx-home-circle me-2"></i><span
+                                key="t-dashboards"><?= 'Panduan Silaju' ?></span>
 
+                        </a>
+
+
+                    </li>
 
                 </ul>
             </div>

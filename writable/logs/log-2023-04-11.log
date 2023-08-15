@@ -1,0 +1,302 @@
+CRITICAL - 2023-04-11 00:04:22 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:04:22 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:04:45 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:04:45 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:05:13 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:05:13 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:06:00 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:06:00 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:06:33 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:06:33 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:07:05 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:07:05 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:07:30 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:07:30 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:08:04 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:08:04 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:08:26 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:08:26 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:08:48 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:08:48 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:09:05 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:09:05 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:09:42 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:09:42 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:10:16 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:10:16 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:12:20 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:12:20 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:12:31 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:12:31 --> Undefined offset: 0
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1589): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1635): App\Controllers\Admin->getasessorbynoregis()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:55:11 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:56:41 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:56:42 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 00:57:50 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 01:01:02 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 01:02:17 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-04-11 05:06:09 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(68): App\Models\ModelPesertaAsessor->getDataPesertaBelumValidProdi()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-04-11 05:06:11 --> Call to a member function getResult() on bool
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(68): App\Models\ModelPesertaAsessor->getDataPesertaBelumValidProdi()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

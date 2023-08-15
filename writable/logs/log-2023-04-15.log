@@ -1,0 +1,61 @@
+CRITICAL - 2023-04-15 01:46:38 --> Call to a member function getKlaimMhs() on null
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->batalKlaimMhs()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-04-15 01:46:43 --> Call to a member function getKlaimMhs() on null
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->batalKlaimMhs()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-04-15 01:46:52 --> Call to a member function getKlaimMhs() on null
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->batalKlaimMhs()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-04-15 01:47:36 --> Call to a member function getKlaimMhs() on null
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->batalKlaimMhs()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-04-15 01:53:23 --> Call to a member function getKlaimMhs() on null
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->batalKlaimMhs()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-04-15 02:08:18 --> Call to a member function getKlaimMhs() on null
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->batalKlaimMhs()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-04-15 02:10:13 --> Undefined variable: modelBiodata
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(621): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->batalKlaimMhs()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-04-15 02:11:37 --> Call to a member function getKlaimMhs() on null
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->batalKlaimMhs()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-04-15 02:11:52 --> Call to a member function getKlaimMhs() on null
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->batalKlaimMhs()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-04-15 02:12:07 --> Call to a member function getKlaimMhs() on null
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->batalKlaimMhs()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}

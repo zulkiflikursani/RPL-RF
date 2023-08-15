@@ -93,7 +93,7 @@
                                                                 <th>Deskripsi</th>
                                                                 <th>Ref</th>
                                                                 <th>Tanggapan</th>
-                                                                <th>Nilai</th>
+                                                                <th style="width:100px">Nilai</th>
                                                                 <th>Keterangan Tanggapan</th>
                                                             </tr>
 

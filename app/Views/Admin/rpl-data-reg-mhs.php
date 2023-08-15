@@ -28,14 +28,20 @@
                     <?php
 
                     if (isset($dataerror)) {
-                        // print_r($dataerror);
-                        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
-                        foreach ($dataerror as $error) {
-
-                            echo $error . "</br>";
-                        };
-                        echo '<button type="button" class="btn-close" data-bs-dismiss="alert"
+                        if (count($dataerror) == 0) {
+                            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
+                            echo 'Data tidak ditemukan';
+                            echo '<button type="button" class="btn-close" data-bs-dismiss="alert"
                             aria-label="Close"></button></div>';
+                        } else {
+                            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
+                            foreach ($dataerror as $error) {
+
+                                echo $error . "</br>";
+                            };
+                            echo '<button type="button" class="btn-close" data-bs-dismiss="alert"
+                            aria-label="Close"></button></div>';
+                        }
                     }
 
                     if (isset($status)) {
@@ -65,12 +71,12 @@
                                                 <div class="mb-3">
                                                     <label for="formrow-nama-input" class="form-label">No
                                                         Registrasi/Nama Mahasiswa </label>
-                                                    <input list="suggestionList" id="mkInput" class='form-control'>
+                                                    <input list="suggestionList" id="mkInput" class='form-control' autocomplete="off">
                                                     <datalist id="suggestionList" class="col-md-12" style="width: 100%;">
                                                         <?php
                                                         if (isset($dataMhs)) {
                                                             foreach ($dataMhs as $row) {
-                                                                echo "<option data-value='" . $row['no_registrasi'] . "' email='" . $row['email'] . "' >" . $row['no_registrasi'] . " : " . $row['nama'] . "</option>";
+                                                                echo "<option data-value='" . $row['no_peserta'] . "' email='" . $row['email'] . "' >" . $row['no_peserta'] . " : " . $row['nama'] . "</option>";
                                                             }
                                                         }
                                                         ?>
@@ -90,7 +96,10 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <button class="btn btn-primary mb-3">Reset Password</button>
+                                                    <a class="btn btn-primary mb-3" onclick="editbiodate()">Edit
+                                                        Biodata</a>
                                                 </div>
+
                                             </form>
                                         </div>
 
@@ -139,6 +148,10 @@
 
             noregis.value = inputValue;
             email.value = inputValue;
+            if (noregis.value == email.value) {
+                noregis.value = "";
+                email.value = "";
+            }
 
 
             for (var i = 0; i < options.length; i++) {
@@ -147,10 +160,27 @@
                 if (option.innerText === inputValue) {
                     noregis.value = option.getAttribute('data-value');
                     email.value = option.getAttribute('email');
+                    if (noregis.value == email.value) {
+                        alert("Silahkan klik opsi mahasiswa.! data tidak ditemukan")
+                        noregis.value = "";
+                        email.value = "";
+                    }
                     break;
                 }
             }
+
+
         });
+
+        function editbiodate() {
+            nopeserta = $('#mkInput-noregis').val()
+            if (nopeserta == "") {
+                alert("Silahkan Pilih Mahasiswa terlebih dahulu !")
+            } else {
+                window.location.href = '<?= base_url("biodata-mahasiswa") ?>/' + nopeserta;
+            }
+
+        }
     </script>
 </body>
 

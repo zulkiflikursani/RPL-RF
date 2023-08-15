@@ -90,7 +90,7 @@ class ModelKlaimDekan extends Model
                                 LEFT JOIN mk_klaim_header ON mk_klaim_asessor.idklaim = mk_klaim_header.idklaim
                                 LEFT JOIN prodi ON mk_klaim_header.kode_prodi = prodi.kode_prodi
                                 LEFT JOIN fakultas ON prodi.kode_fakultas = fakultas.kode_fakultas
-                                LEFT JOIN bio_peserta ON bio_peserta.no_peserta = mk_klaim_asessor.no_peserta where mid(mk_klaim_dekan.idklaim,6,10)='$noregis' and mk_klaim_prodi.idklaim is not null  and mk_klaim_asessor.idklaim is not null  and mk_klaim_dekan.idklaim is not null
+                                LEFT JOIN bio_peserta ON bio_peserta.no_peserta = mk_klaim_asessor.no_peserta where mid(mk_klaim_dekan.idklaim,6,10)='$noregis' and mk_klaim_prodi.idklaim is not null  and mk_klaim_asessor.idklaim is not null and mk_klaim_asessor.nilai != 'E' and mk_klaim_dekan.idklaim is not null
                                 ")->getResult();
         return $result;
     }

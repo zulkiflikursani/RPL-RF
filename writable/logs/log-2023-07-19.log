@@ -1,0 +1,64 @@
+CRITICAL - 2023-07-19 00:36:07 --> Invalid argument supplied for foreach()
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1581): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'G:\\PROJECT\\UNIF...', 1581, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->updateMkRpl()
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-07-19 00:38:41 --> Invalid argument supplied for foreach()
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1581): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'G:\\PROJECT\\UNIF...', 1581, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->updateMkRpl()
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-07-19 00:44:46 --> count(): Parameter must be an array or an object that implements Countable
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parame...', 'G:\\PROJECT\\UNIF...', 1585, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1585): count(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->updateMkRpl()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-19 01:01:43 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 1429
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString(NULL)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1473): CodeIgniter\Database\BaseConnection->escapeString(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->hapusCpmk()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-19 01:09:05 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 1429
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString(NULL)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1423): CodeIgniter\Database\BaseConnection->escapeString(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->editCpmk()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-19 01:25:16 --> Trying to get property 'kode_fakultas' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2567): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2567, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2717): App\Controllers\Admin->getKodeFakultasby(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0177')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-19 01:26:53 --> Undefined property: stdClass::$didikakhir
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Views\Admin\rpl-print-transkrip.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\PROJECT\\UNIF...', 32, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-print...', Array, true)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2758): view('Admin/rpl-print...', Array)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0318')
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}

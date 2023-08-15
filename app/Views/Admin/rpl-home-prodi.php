@@ -5,6 +5,11 @@
 
     <?= $title_meta ?>
     <?= $this->include('partials/rpl-head-css') ?>
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Responsive datatable examples -->
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -68,11 +73,54 @@
                             </div>
                             <div class="card">
                                 <div class="card-body">
+                                    <h4 class="card-title mb-4">Data Mahasiswa Belum Punya Asessor</h4>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <table class="table table-bordered">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>No Registrasi</th>
+                                                        <th>Nama Mahasiswa</th>
+                                                        <th>Program Studi</th>
+
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody id='bodytable'>
+                                                    <?php
+                                                    // print_r($dataPesertaAsessor);
+                                                    if ($dataMhsbelumpunyaasessor) {
+                                                        $i = 0;
+                                                        foreach ($dataMhsbelumpunyaasessor as $row) {
+                                                            $i++;
+                                                            echo "<tr>
+                                                                    <td>$i</td>
+                                                                    <td>$row->no_peserta</td>
+                                                                    <td>$row->nama</td>
+                                                                    <td>$row->nama_prodi</td>
+                                                                    
+                                                                </tr>";
+                                                            // echo $row->nama;
+                                                        }
+                                                    }
+                                                    ?>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="card">
+                                <div class="card-body">
                                     <h4 class="card-title mb-4">Data Mahasiswa Belum Divalidasi</h4>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <table class="table table-bordered">
-                                                <thead>
+                                                <thead class="table-light">
                                                     <tr>
                                                         <th>No</th>
                                                         <th>No Registrasi</th>
@@ -89,12 +137,18 @@
                                                         $i = 0;
                                                         foreach ($dataPesertaBelumValid as $row) {
                                                             $i++;
+
+                                                            if ($row->jenis_rpl == 1) {
+                                                                $url = base_url("validprodia1/$row->no_peserta");
+                                                            } else {
+                                                                $url = base_url("validprodi/$row->no_peserta");
+                                                            }
                                                             echo "<tr>
                                                                     <td>$i</td>
                                                                     <td>$row->no_peserta</td>
                                                                     <td>$row->nama</td>
-                                                                    <td>$row->kode_prodi</td>
-                                                                    <td><a href='" . base_url("validprodi/$row->no_peserta") . "'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
+                                                                    <td>$row->nama_prodi</td>
+                                                                    <td><a href='$url'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
                                                                 </tr>";
                                                             // echo $row->nama;
                                                         }
@@ -114,7 +168,7 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <table class="table table-bordered">
-                                                <thead>
+                                                <thead class="table-light">
                                                     <tr>
                                                         <th>No</th>
                                                         <th>No Registrasi</th>
@@ -131,12 +185,18 @@
                                                         $i = 0;
                                                         foreach ($dataPesertaSudahValid as $row) {
                                                             $i++;
+
+                                                            if ($row->jenis_rpl == 1) {
+                                                                $url = base_url("validprodia1/$row->no_peserta/4");
+                                                            } else {
+                                                                $url = base_url("validprodi/$row->no_peserta/4");
+                                                            }
                                                             echo "<tr>
                                                                     <td>$i</td>
                                                                     <td>$row->no_peserta</td>
                                                                     <td>$row->nama</td>
-                                                                    <td>$row->kode_prodi</td>
-                                                                    <td><a href='" . base_url("validprodi/$row->no_peserta/4") . "'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
+                                                                    <td>$row->nama_prodi</td>
+                                                                    <td><a href='$url'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
                                                                 </tr>";
                                                             // echo $row->nama;
                                                         }
@@ -156,12 +216,13 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <table class="table table-bordered">
-                                                <thead>
+                                                <thead class="table-light">
                                                     <tr>
                                                         <th>No</th>
                                                         <th>No Registrasi</th>
                                                         <th>Nama Mahasiswa</th>
                                                         <th>Program Studi</th>
+                                                        <th>No Hape</th>
                                                         <th>Aksi</th>
                                                     </tr>
                                                 </thead>
@@ -172,12 +233,19 @@
                                                         $i = 0;
                                                         foreach ($dataPesertaSudahValidDekan as $row) {
                                                             $i++;
+                                                            if ($row->jenis_rpl == 1) {
+                                                                $url = base_url("bamahasiswaa1/$row->no_peserta");
+                                                            } else {
+                                                                $url = base_url("bamahasiswa/$row->no_peserta");
+                                                            }
+
                                                             echo "<tr>
                                                                     <td>$i</td>
                                                                     <td>$row->no_peserta</td>
                                                                     <td>$row->nama</td>
-                                                                    <td>$row->kode_prodi</td>
-                                                                    <td><a href='" . base_url("validprodi/$row->no_peserta") . "'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
+                                                                    <td>$row->nama_prodi</td>
+                                                                    <td>$row->nohape</td>
+                                                                    <td><a href='$url' target='_blank'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
                                                                 </tr>";
                                                             // echo $row->nama;
                                                         }
@@ -218,6 +286,22 @@
 
 
     <?= $this->include('partials/vendor-scripts') ?>
+    <!-- data-table -->
+    <script src="<?= base_url() ?>/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url() ?>/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="<?= base_url() ?>/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="<?= base_url() ?>/assets/libs/jszip/jszip.min.js"></script>
+    <script src="<?= base_url() ?>/assets/libs/pdfmake/build/pdfmake.min.js"></script>
+    <script src="<?= base_url() ?>/assets/libs/pdfmake/build/vfs_fonts.js"></script>
+    <script src="<?= base_url() ?>/assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="<?= base_url() ?>/assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="<?= base_url() ?>/assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+
+    <!-- Responsive examples -->
+    <script src="<?= base_url() ?>/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 
     <!-- apexcharts -->
     <script src="<?= base_url() ?>/assets/libs/apexcharts/apexcharts.min.js"></script>
@@ -228,10 +312,15 @@
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 
     <script>
-    function getMahasiswa() {
+        $('document').ready(function() {
+
+            $(".table").DataTable()
+        })
+
+        function getMahasiswa() {
 
 
-    }
+        }
     </script>
 </body>
 

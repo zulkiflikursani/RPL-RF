@@ -23,8 +23,6 @@
             <div class="page-content">
                 <div class="container-fluid">
 
-                    <?= $page_title ?>
-
                     <?php
                     if (isset($dataerror)) {
                         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
@@ -61,7 +59,7 @@
 
                             <div class="card">
                                 <div class="card-body">
-                                    <h2 class="mb-4 text-center">Informasi RPL</h2>
+                                    <h2 class="mb-4 text-center">Informasi Registrasi</h2>
                                     <div class="row">
                                         <div class='col-md-12'>
                                             <div class="row">
@@ -76,8 +74,8 @@
                                                     </h3>
                                                 </div>
                                                 <div class="mb-3 col-8">
-                                                    <h3 for="formrow-nama-input" class="form-label">:
-                                                        <?= (isset($biodata["no_peserta"]) ? $biodata["no_peserta"] : '') ?>
+                                                    <h3 for="formrow-nama-input" class="form-label">:                                                    
+                                                        <?= (session()->get('noregis') ? session()->get('noregis') : '') ?>
                                                     </h3>
                                                     <h3 class=''>:
                                                         <?= (isset($biodata["nama"]) ? $biodata["nama"] : '') ?>
@@ -89,13 +87,13 @@
                                             </div>
 
                                             <div class="mb-3">
-                                                <h3 class='text-center mb-4'>Silahkan Kirim Bukti Pembayaran Ke bagaian
-                                                    Keuangan untuk
-                                                    mendapatkan validasi atas pembayaran Program Rekognisi Pembelajaran
-                                                    Lampau Universitas Fajar</h3>
-
-                                                <h3 class='text-center mb-5'>Nomor Konfirmasi WA : 08123456789156</h3>
-                                                <h3 class='text-center mb-2'>Bagian Keuangan Universitas Fajar</h3>
+                                                <h4 class='text-center mb-4'>Silahkan kirim bukti pembayaran Ke Biro
+                                                    Keuangan UNIFA untuk
+                                                    mendapatkan validasi atas pembayaran Biaya Registrasi pada Program Rekognisi Pembelajaran
+                                                    Lampau Universitas Fajar</h4>
+                                                <p class='text-center mb-5'>Noted: Jika bukti telah diupload pada proses registrasi, silahkan lakukan konfirmasi untuk validasi pembayaran pada nomor Whatsapp tertera pada halaman ini</p>
+                                                <h3 class='text-center mb-5'>Nomor Konfirmasi WA :  0822-3399-9389</h3>
+                                                <h3 class='text-center mb-2'>Biro Keuangan Universitas Fajar</h3>
 
                                             </div>
 

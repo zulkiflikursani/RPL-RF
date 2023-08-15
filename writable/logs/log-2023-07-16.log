@@ -1,0 +1,117 @@
+CRITICAL - 2023-07-16 04:34:17 --> Undefined property: stdClass::$no_registrasi
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Views\Admin\rpl-home-akademik.php(96): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\PROJECT\\UNIF...', 96, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-home-...', Array, true)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(134): view('Admin/rpl-home-...', Array)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-07-16 04:35:18 --> Table 'rpl.uf.reg_peserta' doesn't exist
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('select kode_pro...')
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('select kode_pro...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('select kode_pro...')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2615): CodeIgniter\Database\BaseConnection->query('select kode_pro...')
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2684): App\Controllers\Admin->getKodeProdiBy('20222-0177')
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0177')
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-07-16 04:37:46 --> Trying to get property 'kode_fakultas' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2561): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2561, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2685): App\Controllers\Admin->getKodeFakultasby(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0177')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-16 04:38:35 --> Trying to access array offset on value of type null
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2561): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'G:\\PROJECT\\UNIF...', 2561, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2685): App\Controllers\Admin->getKodeFakultasby(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0177')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-16 04:40:36 --> Trying to get property 'kode_fakultas' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2561): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2561, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2685): App\Controllers\Admin->getKodeFakultasby(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0177')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-16 04:40:38 --> Trying to get property 'kode_fakultas' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2561): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2561, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2685): App\Controllers\Admin->getKodeFakultasby(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0177')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-16 04:43:25 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2561): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 2561, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2685): App\Controllers\Admin->getKodeFakultasby(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0177')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-16 04:43:33 --> Trying to get property 'kode_fakultas' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2561): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2561, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2685): App\Controllers\Admin->getKodeFakultasby(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0177')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-16 04:43:59 --> Unknown column 'bio_peserta.didikakhir' in 'field list'
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Models\ModelKlaimDekan.php(93): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2696): App\Models\ModelKlaimDekan->getDatatoPrint('20222-0177')
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0177')
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-07-16 04:46:46 --> Trying to get property 'sks' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2949): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2949, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2702): App\Controllers\Admin->getmaxsks(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0177')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-16 04:47:46 --> Trying to get property 'kode_fakultas' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2561): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2561, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2685): App\Controllers\Admin->getKodeFakultasby(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0177')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-16 04:47:48 --> Trying to get property 'kode_fakultas' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2561): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2561, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2685): App\Controllers\Admin->getKodeFakultasby(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0177')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}

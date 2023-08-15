@@ -239,6 +239,7 @@ class ModelTransactionKlaim extends Model
                         "nama_matakuliah" => $a['nmmk'],
                         "sks" => $a['sks'],
                         "tglbuat" => $now,
+                        "tglubah" => $now,
 
                     ];
                     $dataMKdetail = [
@@ -248,6 +249,8 @@ class ModelTransactionKlaim extends Model
                         "klaim" => $a['nilai'],
                         "statusklaim" => $status,
                         "tglbuat" => $now,
+                        "tglubah" => $now,
+
                     ];
                     $insertMkhdetail = $BuilderMkDetail->insert($dataMKdetail);
 
@@ -261,6 +264,8 @@ class ModelTransactionKlaim extends Model
                             // "kode_matakuliah" => $a['kdmk'],
                             "no_dokumen" => json_encode($a['ref']),
                             "tglbuat" => $now,
+                            "tglubah" => $now,
+
 
                         ];
                         $insertRefKlaim = $BuilderRefKlaim->insert($dataRef);
@@ -284,6 +289,8 @@ class ModelTransactionKlaim extends Model
             }
         }
     }
+
+
 
     public function batalklaim($idklaim)
     {

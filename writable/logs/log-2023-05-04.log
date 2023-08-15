@@ -1,0 +1,7 @@
+CRITICAL - 2023-05-04 07:38:12 --> Call to undefined method App\Models\ModelRegistrasi::getDataPerFakultas
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(245): CodeIgniter\Model->__call()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->dataPeserta()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

@@ -39,11 +39,11 @@ class Autoload extends AutoloadConfig
 	 *
 	 * @var array
 	 */
+
 	public $psr4 = [
 		APP_NAMESPACE => APPPATH, // For custom app namespace
 		'Config'      => APPPATH . 'Config',
 	];
-
 	/**
 	 * -------------------------------------------------------------------
 	 * Class Map
@@ -56,11 +56,13 @@ class Autoload extends AutoloadConfig
 	 *
 	 * Prototype:
 	 *
-	 *   $classmap = [
+	 *$classmap = [
 	 *       'MyClass'   => '/path/to/class/file.php'
 	 *   ];
 	 *
 	 * @var array
 	 */
-	public $classmap = [];
+	public $classmap = [
+		'PHPExcel' => APPPATH . 'ThirdParty/PHPExcel/PHPExcel.php'
+	];
 }

@@ -43,6 +43,12 @@
                         }
                     }
 
+                    if (isset($basenilai)) {
+                        $oknilai = "";
+                        foreach ($basenilai as $row) {
+                            $oknilai .= "<option value='" . $row['kode_nilai'] . "'>" . $row['kode_nilai'] . "</option>";
+                        }
+                    }
 
 
                     ?>
@@ -73,21 +79,21 @@
                                                     ?>
                                                     <div class="row">
                                                         <div class="col-md-2">Nama</div>
-                                                        <div class="col-md-2">: <?= $nama_mhs; ?></div>
+                                                        <div class="col-md-5">: <?= $nama_mhs; ?></div>
                                                     </div>
                                                     <div class="row">
 
                                                         <div class="col-md-2">Program Studi</div>
-                                                        <div class="col-md-2">: <?= $nm_prodi; ?></div>
+                                                        <div class="col-md-5">: <?= $nm_prodi; ?></div>
                                                     </div>
                                                     <div class="row">
 
                                                         <div class="col-md-2">Jenis RPL</div>
-                                                        <div class="col-md-2">: <?= "A" . $jenis_rpl; ?></div>
+                                                        <div class="col-md-5">: <?= "A" . $jenis_rpl; ?></div>
                                                     </div>
 
                                                     <table class='table table-bordered'>
-                                                        <thead class="table-light">
+                                                        <thead class=" table-light">
                                                             <tr>
                                                                 <th>No</th>
                                                                 <th>Nama Matakuliah</th>
@@ -96,7 +102,7 @@
                                                                 <th>Deskripsi</th>
                                                                 <th>Ref</th>
                                                                 <th>Tanggapan</th>
-                                                                <th>Nilai</th>
+                                                                <th style="width:100px">Nilai</th>
                                                                 <th>Keterangan Tanggapan</th>
                                                             </tr>
 
@@ -159,7 +165,7 @@
                                                                             $ref .= "</td>";
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row['kode_prodi'] . "' >
                                                                                     <td for='namamk' rowspan='$count'>" . $i . "</td>
-                                                                                    <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
+                                                                                    <td rowspan='$count'>" . $html1['nama_matakuliah'] . "(" . $html1['sks'] . " sks)</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
                                                                                     <td for='desk' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' readonly> " . $html1['desk'] . "</textarea>
@@ -169,11 +175,9 @@
                                                                                     <option value='0'>Ok</option>
                                                                                     <option value='1'>Butuh Tindakan</option>
                                                                                     </select></td><td for='nilaiAs'  rowspan='$count'>
-                                                                                    <select class='form-select' required>
-                                                                                    <option value='' selected>Pilih</option>    
-                                                                                    <option value='A'>A</option>    
-                                                                                    <option value='B' >B</option>    
-                                                                                    <option value='E'>E</option>  
+                                                                                    <select class='form-select' onChange='gantinilai()' required>
+                                                                                    <option value='' selected >Pilih</option>    
+                                                                                    $oknilai  
                                                                                     </select></td>
                                                                                     <td for='kettanggapan' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' required> </textarea>
                                                                                     </td>
@@ -208,7 +212,7 @@
                                                                             $ref .= "</td>";
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row['kode_prodi'] . "'>
                                                                             <td for='namamk' rowspan='$count'>" . $i . "</td>
-                                                                                    <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
+                                                                                    <td rowspan='$count'>" . $html1['nama_matakuliah'] . "(" . $html1['sks'] . " sks)</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
                                                                                     <td for='desk' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' readonly>" . $html1['desk'] . "
@@ -220,11 +224,9 @@
                                                                                     <option value='0'>Ok</option>
                                                                                     <option value='1'>Butuh Tindakan</option>
                                                                                     </select></td><td for='nilaiAs'  rowspan='$count'>
-                                                                                    <select class='form-select' required>
-                                                                                    <option value='' selected>Pilih</option>    
-                                                                                    <option value='A'>A</option>    
-                                                                                    <option value='B' >B</option>    
-                                                                                    <option value='E'>E</option>    
+                                                                                    <select class='form-select' onchange='gantinilai()' required>
+                                                                                    <option value='' selected >Pilih</option>    
+                                                                                    $oknilai    
                                                                                     </select></td>
                                                                                     <td for='kettanggapan' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' required> </textarea>
                                                                                     </td>
@@ -243,7 +245,11 @@
 
                                         </div>
 
+                                        <div>
+                                            <p class='bold' id=''>Jumlah SKS yang di klaim : <span id='sks-klaim' class="bold"></span> SKS dari <?= $maxsksrekognisi ?> maksimum SKS
+                                                Rekognisi</p>
 
+                                        </div>
 
                                         <div>
                                             <button type="button" onclick="simpan_klaim_asessor()" class="btn btn-primary w-md">Submit</button>
@@ -281,10 +287,10 @@
     <?= $this->include('partials/vendor-scripts') ?>
 
     <!-- apexcharts -->
-    <script src="<?= base_url() ?>/assets/libs/apexcharts/apexcharts.min.js"></script>
+    <!-- <script src="<?= base_url() ?>/assets/libs/apexcharts/apexcharts.min.js"></script> -->
 
     <!-- dashboard init -->
-    <script src="<?= base_url() ?>/assets/js/pages/dashboard.init.js"></script>
+    <!-- <script src="<?= base_url() ?>/assets/js/pages/dashboard.init.js"></script> -->
 
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 </body>
@@ -300,7 +306,8 @@
             noregis: noregis
         }, function(data) {
             data = JSON.parse(data)
-            console.log(data);
+            // console.log(data);
+
             $.each(data, function(index, value) {
                 $('#tbody-klaim-mk  > tr').each(function(i, tr) {
                     if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
@@ -316,14 +323,40 @@
                     }
                 })
             })
+
+
             $('#loading').hide()
+            klaimsksass();
+
         }).fail(function() {
             alert("error");
         });
     })
 
+
+    function klaimsksass() {
+        klaimsks = 0;
+        $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+            tanggapan = $(this).find('td[for=tanggapan]').children().val();
+            nilai = $(this).find('td[for=nilaiAs]').children().val();
+            sks = $(this).attr('sks');
+            if (tanggapan == 0 && tanggapan != '' && nilai != "E") {
+                klaimsks = parseFloat(klaimsks) + parseFloat(sks)
+            }
+        })
+        $('#sks-klaim').html(klaimsks)
+        // return klaimsks;
+    }
+
+    function gantinilai() {
+        // alert('gantinilai')
+        klaimsksass();
+    }
+
     function simpan_klaim_asessor() {
         $('#loading').show()
+        sksklaim = $('#sks-klaim').html();
+        klaimsksmax = '<?= $maxsksrekognisi ?>'
 
         jsonObj = [];
         statusdata = 0;
@@ -365,6 +398,9 @@
         if (statusdata == 1) {
             alert("Silahkan Lengkapi Tanggapan Anda !")
             $('#loading').hide()
+        } else if (sksklaim > parseFloat(klaimsksmax)) {
+            alert("Klaim Matakuliah Melebihi batas maksimum sks rekognisi Program Studi")
+            $('#loading').hide()
         } else {
             url = '<?= base_url('klaimmkAsessor') ?>'
             $.post(url, {
@@ -395,9 +431,10 @@
         } else if (statustanggapan == 0) {
             ini.parent().parent().find('td[for=nilaiAs]').html("");
             ini.parent().parent().find('td[for=nilaiAs]').append(
-                "<select class='form-select'><option value='' selected>Pilih</option><option value='A'>A</option><option value='B' >B</option><option value='E'>E</option></select>"
+                "<select class='form-select' onchange='gantinilai()'><option value='' selected>Pilih</option><option value='A'>A</option><option value='B' >B</option><option value='E'>E</option></select>"
             );
         }
+        klaimsksass();
 
 
     }

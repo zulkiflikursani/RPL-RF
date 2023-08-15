@@ -1,0 +1,801 @@
+CRITICAL - 2023-03-17 00:32:48 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 00:32:49 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 00:43:47 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 00:43:51 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 00:43:55 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 00:43:55 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 00:43:56 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 01:13:51 --> Invalid argument supplied for foreach()
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Views/Front/rpl-respon-asessor.php(164): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/si...')
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render()
+#4 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(1166): view()
+#5 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->AsessmentRespon()
+#6 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-17 01:45:56 --> Invalid argument supplied for foreach()
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Views/Front/rpl-respon-asessor.php(164): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/si...')
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render()
+#4 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(1166): view()
+#5 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->AsessmentRespon()
+#6 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-17 02:30:17 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:31:24 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:31:26 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:31:30 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:31:31 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:31:34 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:31:40 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:31:41 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:31:41 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:31:44 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:31:45 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:31:46 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:31:47 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:33:43 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:33:47 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:33:50 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:36:25 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:36:32 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:39:30 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:39:30 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:39:31 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:39:33 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:52:24 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:52:31 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(937): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:52:31 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:52:35 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(937): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:52:39 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(937): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:52:46 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(937): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 02:54:02 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 03:00:01 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(937): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 03:21:32 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 03:21:38 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(937): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 03:21:43 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(937): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 03:33:01 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 04:23:16 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 04:23:19 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 04:23:21 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 04:31:34 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 04:46:28 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 04:52:04 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 04:52:05 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 04:52:05 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 05:36:19 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 05:36:24 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 05:47:49 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 06:08:58 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 06:28:29 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 06:28:31 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 06:33:27 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 06:33:35 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 06:33:42 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 06:33:51 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 06:33:53 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 06:34:04 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 06:34:08 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 10:05:48 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 10:10:10 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 10:18:26 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 10:21:22 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 10:43:58 --> Invalid argument supplied for foreach()
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Views/Admin/rpl-assesment-asessor.php(154): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/si...')
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render()
+#4 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(1533): view()
+#5 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor()
+#6 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-17 22:36:32 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 22:55:40 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 22:55:46 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 22:55:48 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 22:55:54 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 22:55:57 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 22:56:00 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 22:56:29 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:00:48 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:00:51 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:01:06 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:01:13 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:01:16 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:01:23 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:01:25 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:01:28 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:01:32 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:02:42 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:02:46 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:09:18 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:09:39 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:09:46 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:16:50 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:16:52 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:32:51 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:35:12 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:35:13 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:35:20 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:35:25 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-17 23:35:26 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 1429
+#0 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Front.php(940): CodeIgniter\Database\BaseConnection->escapeString()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}

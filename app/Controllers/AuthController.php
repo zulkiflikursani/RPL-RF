@@ -107,7 +107,7 @@ class AuthController extends BaseController
 				$user = $model2->check_login($this->request->getVar('username'), $this->request->getVar('userpassword'));
 				if ($user) {
 					$this->setUserSession($user);
-					if (isset($user["no_registrasi"])) {
+					if (isset($user["no_peserta"])) {
 						return redirect()->to('/Biodata');
 					} else {
 
@@ -129,7 +129,7 @@ class AuthController extends BaseController
 				'id' => $user['idpengguna'],
 				'email' => $user['email'],
 				'username' => $user['nmpengguna'],
-				// 'noregis' => $user['no_registrasi'],
+				// 'noregis' => $user['no_peserta'],
 				'sttpengguna' => $user['sttpengguna'],
 				'kode_prodi' => $user['kode_prodi'],
 				'kode_fakultas' => $user['kode_fakultas'],
@@ -137,10 +137,10 @@ class AuthController extends BaseController
 			];
 		} else {
 			$data = [
-				'id' => $user['no_registrasi'],
+				'id' => $user['no_peserta'],
 				'email' => $user['email'],
 				'username' => $user['nama'],
-				'noregis' => $user['no_registrasi'],
+				'noregis' => $user['no_peserta'],
 				'isLoggedIn' => true,
 			];
 		}

@@ -29,17 +29,17 @@
                 // echo $page_title 
                 if (isset($dataKlaimAsessor[0])) {
                     foreach ($dataKlaimAsessor as $row) {
-                        if ($row->didikakhir == 1) {
-                            $pendidikanakhir = 'SD';
-                        } else if ($row->didikakhir == 2) {
-                            $pendidikanakhir = 'SLPT';
-                        } else if ($row->didikakhir == 3) {
-                            $pendidikanakhir = 'SLTA';
-                        } else if ($row->didikakhir == 4) {
-                            $pendidikanakhir = 'D3';
-                        } else if ($row->didikakhir == 5) {
-                            $pendidikanakhir = 'S1';
-                        }
+                        // if ($row->didikakhir == 1) {
+                        //     $pendidikanakhir = 'SD';
+                        // } else if ($row->didikakhir == 2) {
+                        //     $pendidikanakhir = 'SLPT';
+                        // } else if ($row->didikakhir == 3) {
+                        //     $pendidikanakhir = 'SLTA';
+                        // } else if ($row->didikakhir == 4) {
+                        //     $pendidikanakhir = 'D3';
+                        // } else if ($row->didikakhir == 5) {
+                        //     $pendidikanakhir = 'S1';
+                        // }
 
                         if ($row->id_jenjang == 'S1-R') {
                             $jenjang = 'Sarjana (S1)';
@@ -51,7 +51,7 @@
                         $ta_akademik = $row->ta_akademik;
                         $noregis = $row->no_peserta;
                         $instansi_asal = $row->instansi_asal;
-                        $didikakhir = $pendidikanakhir;
+                        // $didikakhir = $pendidikanakhir;
                         $jenis_rpl = $row->jenis_rpl;
                         $prodi = $row->nama_prodi;
                         $fakultas = $row->nama_fakultas;
@@ -67,11 +67,21 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title mb-4 text-center">DAFTAR PESERTA REKOGNISI PRODI
-                                    <?= strtoupper($nama_prodi) ?>
+                                    <?= (isset($nama_prodi) ? strtoupper($nama_prodi) : '') ?>
                                 </h4>
                                 <div>
                                     <div class="row">
+                                        <div class="d-print-none">
+                                            <div class="float-end">
+                                                <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-print"></i></a>
+                                            </div>
+                                        </div>
                                         <div class="col-md-12">
+                                            <?php
+                                            date_default_timezone_set('Asia/Makassar');
+                                            $now = date('Y-m-d');
+                                            ?>
+
                                             <table class="col-md-12 " style="font-size: 12px;">
                                                 <tr>
                                                     <td style='width:2% ; vertical-align: top ;'>Nomor</td>
@@ -82,7 +92,7 @@
                                                 <tr>
                                                     <td style='width:2% ; vertical-align: top ;'>Tanggal</td>
                                                     <td>: </td>
-                                                    <td></td>
+                                                    <td><?= tgl_indo($now) ?></td>
 
 
                                                 </tr>
@@ -91,7 +101,8 @@
                                                     <td style="vertical-align: top ">:</td>
                                                     <td>Pengakuan Kelulusan Matakuliah pada Proses Asesment Program
                                                         Rekognisi Pembelajaran Lampau (RPL) Program Studi
-                                                        <?= $nama_prodi ?> Tahun Akademik <?= $ta_akademik ?></td>
+                                                        <?= (isset($nama_prodi) ? strtoupper($nama_prodi) : '') ?> Tahun
+                                                        Akademik <?= (isset($ta_akademik) ? $ta_akademik : '') ?></td>
                                                 </tr>
 
 
@@ -193,6 +204,13 @@
                                                         <p class='text-center'>
                                                             <br>
                                                         </p>
+                                                        <?php
+                                                        for ($x = 0; $x <= $i / 5; $x++) {
+                                                            echo " <p class='text-center'>
+                                                            <br>
+                                                        </p>";
+                                                        }
+                                                        ?>
 
                                                     </div>
 
@@ -200,11 +218,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="d-print-none">
-                                            <div class="float-end">
-                                                <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-print"></i></a>
-                                            </div>
-                                        </div>
+
 
                                     </div>
                                 </div>

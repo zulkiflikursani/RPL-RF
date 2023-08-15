@@ -19,7 +19,7 @@
                             <div class="row">
                                 <div class="col-7">
                                     <div class="text-primary p-4">
-                                        <h5 class="text-primary">Welcome !</h5>
+                                        <h5 class="text-primary">Selamat Datang !</h5>
                                         <p>Sign in SILAJU UNIFA </p>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                     <div class="mb-3">
                                         <label for="username" class="form-label">Email</label>
                                         <input type="text" class="form-control" id="username"
-                                            placeholder="Enter email address" name="username"
+                                            placeholder="Masukkan alamat email" name="username"
                                             value="<?= set_value('username') ?>">
                                     </div>
                                     <?php if (isset($validation) && $validation->hasError('username')) { ?>
@@ -66,7 +66,7 @@
                                     <div class="mb-3">
                                         <label class="form-label">Password</label>
                                         <div class="input-group auth-pass-inputgroup">
-                                            <input type="password" class="form-control" placeholder="Enter password"
+                                            <input type="password" class="form-control" placeholder="Masukkan password"
                                                 aria-label="Password" aria-describedby="password-addon"
                                                 name="userpassword" value="">
                                             <button class="btn btn-light " type="button" id="password-addon"><i
@@ -82,7 +82,7 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="remember-check">
                                         <label class="form-check-label" for="remember-check">
-                                            Remember me
+                                            Ingat saya
                                         </label>
                                     </div>
 
@@ -117,8 +117,8 @@
                                     </div> -->
 
                                     <div class="mt-4 text-center">
-                                        <a href="auth-recoverpw" class="text-muted"><i class="mdi mdi-lock me-1"></i>
-                                            Forgot your password?</a>
+                                        <a class="text-muted"><i class="mdi mdi-lock me-1"></i>
+                                            Anda Lupa Password? Hubungi Admin</a>
                                     </div>
                                 </form>
                             </div>
@@ -128,12 +128,12 @@
                     <div class="mt-5 text-center">
 
                         <div>
-                            <p>Don't have an account ? <a href="<?= base_url() ?>" class="fw-medium text-primary">
-                                    Signup
-                                    now </a> </p>
+                            <p>Belum punya Akun ? <a href="<?= base_url() ?>" class="fw-medium text-primary">
+                                    Register
+                                    Sekarang </a> </p>
                             <p>© <script>
                                 document.write(new Date().getFullYear())
-                                </script> UNIFA Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                </script> Lempusdatik - UNIFA <i class="mdi mdi-heart text-danger"></i>
                             </p>
                         </div>
                     </div>

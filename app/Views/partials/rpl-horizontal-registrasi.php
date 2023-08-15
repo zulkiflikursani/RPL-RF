@@ -90,6 +90,7 @@
             </div>
 
             <div class="dropdown d-inline-block">
+               
                 <a href='<?= base_url('login') ?>'><button type="button" class="btn btn-primary mx-3">
                         LOG IN
                     </button></a>
@@ -102,7 +103,9 @@
 <div class="topnav">
     <div class="container-fluid">
         <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
-
+            <div class="desc">
+                <h4 style="color:#1C1265;">REKOGNISI PEMBELAJARAN LAMPAU</h4>
+            </div>
             <div class="collapse navbar-collapse" id="topnav-menu-content">
                 <ul class="navbar-nav">
 
@@ -120,6 +123,7 @@
                             <a href="dashboard-blog" class="dropdown-item" key="t-blog"><?= lang('Files.Blog') ?></a> -->
                         <!-- </div> -->
                     </li>
+
 
 
 

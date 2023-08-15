@@ -1,0 +1,291 @@
+CRITICAL - 2023-07-21 01:12:05 --> Undefined variable: datasubmit
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Views\Front\rpl-layouts-horizontal.php(227): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 227, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Front/rpl-layou...', Array, true)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Front.php(48): view('Front/rpl-layou...', Array)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->index()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-07-21 01:15:57 --> Undefined variable: isset
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Views\Front\rpl-layouts-horizontal.php(239): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 239, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Front/rpl-layou...', Array, true)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Front.php(48): view('Front/rpl-layou...', Array)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->index()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-07-21 01:21:37 --> Undefined property: stdClass::$didikakhir
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Views\Admin\rpl-print-transkrip.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\PROJECT\\UNIF...', 32, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-print...', Array, true)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2758): view('Admin/rpl-print...', Array)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0221')
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-07-21 01:22:12 --> Undefined property: stdClass::$didikakhir
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Views\Admin\rpl-print-transkrip.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\PROJECT\\UNIF...', 32, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-print...', Array, true)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2758): view('Admin/rpl-print...', Array)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0221')
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-07-21 01:22:16 --> Undefined property: stdClass::$didikakhir
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Views\Admin\rpl-print-transkrip.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\PROJECT\\UNIF...', 32, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-print...', Array, true)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2758): view('Admin/rpl-print...', Array)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0221')
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-07-21 01:22:30 --> Undefined property: stdClass::$didikakhir
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Views\Admin\rpl-print-transkrip.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\PROJECT\\UNIF...', 32, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-print...', Array, true)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2758): view('Admin/rpl-print...', Array)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0221')
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-07-21 01:24:29 --> Trying to get property 'kode_fakultas' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2567): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2567, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2717): App\Controllers\Admin->getKodeFakultasby(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0177')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:35:34 --> Trying to get property 'nama_prodi' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Front.php(1368): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 1368, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Front.php(918): App\Controllers\Front->getNamaProdi(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->Pendaftar()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:37:18 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1855): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1855, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1906): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:37:18 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1855): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1855, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1906): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:52:58 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1855): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1855, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1906): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:52:58 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1855): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1855, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1906): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:53:18 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1855): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1855, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1865): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:53:18 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1855): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1855, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1865): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:54:24 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1855): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1855, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1865): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:54:25 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1855): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1855, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1865): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:55:25 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2623): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2623, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1991): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:55:25 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2623): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2623, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(1991): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodi('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:55:43 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2623): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2623, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2315): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validdekan('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:55:43 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2623): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2623, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2315): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validdekan('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:55:45 --> Undefined variable: dataPesertaSudahValidkeu
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Views\Admin\rpl-home-fakultas.php(182): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 182, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-home-...', Array, true)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2183): view('Admin/rpl-home-...', Array)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validasidekan()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-07-21 01:56:12 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2623): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2623, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2315): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validdekan('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:56:12 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2623): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2623, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2315): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validdekan('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 01:56:32 --> Undefined variable: dataPesertaSudahValidkeu
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Views\Admin\rpl-home-fakultas.php(182): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 182, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-home-...', Array, true)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2303): view('Admin/rpl-home-...', Array)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->unvalidasidekan()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-07-21 02:01:49 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2625): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2625, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2317): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validdekan('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 02:01:49 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2625): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2625, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2317): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validdekan('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-07-21 02:02:03 --> Undefined variable: pendidikanakhir
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Views\Admin\rpl-print-transkrip.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 52, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-print...', Array, true)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2760): view('Admin/rpl-print...', Array)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTranskrip('20222-0332')
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-07-21 02:05:18 --> Undefined variable: pendidikanakhir
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Views\Admin\rpl-print-tagihan.php(71): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 71, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-print...', Array, true)
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2911): view('Admin/rpl-print...', Array)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTagihan('20222-0332')
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-07-21 02:05:56 --> Trying to get property 'kode_fakultas' of non-object
+#0 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2569): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 2569, Array)
+#1 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\app\Controllers\Admin.php(2864): App\Controllers\Admin->getKodeFakultasby(NULL)
+#2 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->printTagihan('20222-0330')
+#3 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\12-6-23-silajux.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}

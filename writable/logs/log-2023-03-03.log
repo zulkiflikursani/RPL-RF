@@ -1,0 +1,599 @@
+CRITICAL - 2023-03-03 10:46:03 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Front.php(1085): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 1085, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo.svg')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-03-03 10:46:03 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Front.php(1085): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 1085, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo-dark.png')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-03-03 10:46:22 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Front.php(1085): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 1085, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo.svg')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-03-03 10:46:23 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Front.php(1085): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 1085, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo-dark.png')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-03-03 11:08:26 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'st.tanggapan
+                                FROM
+                         ...' at line 26
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Models\ModelPesertaAsessor.php(201): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(45): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValid('P-0002', '20222')
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-03-03 11:08:40 --> Unknown column 'mk_klaim_header.tglubah' in 'field list'
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Models\ModelPesertaAsessor.php(201): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(45): App\Models\ModelPesertaAsessor->getDataPesertaAsessorSudahValid('P-0002', '20222')
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-03-03 11:10:22 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1307): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:10:22 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1307): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:10:40 --> Undefined property: stdClass::$tglvalid
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Views\Admin\rpl-home-asessor.php(227): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\PROJECT\\UNIF...', 227, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-home-...', Array, true)
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(58): view('Admin/rpl-home-...', Array)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-03-03 11:11:13 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1307): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:11:13 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1307): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:12:41 --> Undefined property: stdClass::$tglubah
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Views\Admin\rpl-home-asessor.php(128): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\PROJECT\\UNIF...', 128, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-home-...', Array, true)
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(58): view('Admin/rpl-home-...', Array)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-03-03 11:13:58 --> Unknown column 'mk_kalim_header.tglubah' in 'field list'
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Models\ModelMkA1.php(165): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(43): App\Models\ModelMkA1->dataMhsBelumAsesiA1('20222')
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-03-03 11:14:56 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1307): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:14:56 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1307): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:15:14 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:15:14 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:15:25 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:15:25 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:15:46 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:15:46 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:15:58 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:15:58 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:17:10 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:17:10 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:17:10 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:17:10 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:17:12 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:17:13 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:17:41 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:17:41 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:17:57 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:17:57 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:18:11 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:18:11 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:18:15 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:18:15 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:20:19 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:20:19 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:21:24 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:21:24 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:21:55 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('20222-0005')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('20222-0005')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:22:28 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:22:28 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:22:54 --> Unknown column 'mk_klaim_asessor.idklaim' in 'where clause'
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Models\ModelMkA1.php(196): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1353): App\Models\ModelMkA1->getDataKlaimAsessorA1('20222-0005')
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('20222-0005')
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-03-03 11:24:03 --> Unknown column 'mk_klaim_asessor.idklaim' in 'where clause'
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Models\ModelMkA1.php(196): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1353): App\Models\ModelMkA1->getDataKlaimAsessorA1('20222-0005')
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('20222-0005')
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-03-03 11:24:04 --> Unknown column 'mk_klaim_asessor.idklaim' in 'where clause'
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT\r\n       ...')
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Models\ModelMkA1.php(196): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1353): App\Models\ModelMkA1->getDataKlaimAsessorA1('20222-0005')
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('20222-0005')
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-03-03 11:24:26 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:24:26 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:26:06 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:26:06 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:26:28 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:26:28 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:27:02 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:27:02 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:27:53 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:27:53 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:28:44 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:28:44 --> Undefined offset: 0
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1297): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\UNIF...', 1297, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1343): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:31:13 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1899): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 1899, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1457): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodia1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:31:13 --> Trying to get property 'kode_prodi' of non-object
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1899): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\UNIF...', 1899, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Admin.php(1457): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->validprodia1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#7 {main}
+CRITICAL - 2023-03-03 11:41:19 --> Invalid argument supplied for foreach()
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Views\Front\rpl-mahasiswa-upload.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'G:\\PROJECT\\UNIF...', 30, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(230): include('G:\\PROJECT\\UNIF...')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('Front/rpl-mahas...', Array, true)
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Front.php(865): view('Front/rpl-mahas...', Array)
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->Simpanberkas()
+#6 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#7 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#10 {main}
+CRITICAL - 2023-03-03 11:46:16 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Front.php(1117): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 1117, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo-dark.png')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}
+CRITICAL - 2023-03-03 11:46:17 --> Undefined variable: sks
+#0 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\app\Controllers\Front.php(1117): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\PROJECT\\UNIF...', 1117, Array)
+#1 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->AssesmentMandiri_mk('assets', 'images', 'logo.svg')
+#2 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\UNIFA\silaju.unifa.ac.id\silaju.unifa.ac.id\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\UNIF...')
+#6 {main}

@@ -23,7 +23,6 @@
             <div class="page-content">
                 <div class="container-fluid">
 
-                    <?= $page_title ?>
 
                     <?php
                     if (isset($dataerror)) {
@@ -178,7 +177,11 @@
                                                                     id="inputGroupFile04"
                                                                     aria-describedby="inputGroupFileAddon04"
                                                                     accept="application/pdf" aria-label="Upload">
+
                                                             </div>
+                                                            <span class="text-danger">Note: File PDF dengan ukuran
+                                                                maksimal 1
+                                                                Mb</span>
                                                             <div class="mb-3 mt-3" id='input-url' style='display:none'>
                                                                 <label for="formrow-inputProvinsi"
                                                                     class="form-label">Url Dokumen

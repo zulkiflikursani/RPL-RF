@@ -121,7 +121,7 @@
                                         <div class="col-lg-4">
                                             <div class="mb-3">
                                                 <button class="btn btn-primary" data-bs-toggle="modal"
-                                                    data-bs-target='.tambah-mahasiswa-modal'>Tambah Mahasiswa</button>
+                                                    data-bs-target='.tambah-mahasiswa-modal'>Pilih Mahasiswa</button>
                                             </div>
                                         </div>
                                     </div>

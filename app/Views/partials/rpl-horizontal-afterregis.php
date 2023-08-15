@@ -24,8 +24,7 @@
                 </a>
             </div>
 
-            <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light"
-                data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+            <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
                 <i class="fa fa-fw fa-bars"></i>
             </button>
 
@@ -65,8 +64,7 @@
             </div>
 
             <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <!-- <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
                         alt="Header Avatar"> -->
                     <span class="d-none d-xl-inline-block ms-1" key="t-henry"><?= session()->get("username") ?></span>
@@ -74,14 +72,11 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="<?= base_url('Biodata') ?>"><i
-                            class="bx bx-user font-size-16 align-middle me-1"></i>
+                    <a class="dropdown-item" href="<?= base_url('Biodata') ?>"><i class="bx bx-user font-size-16 align-middle me-1"></i>
                         <span key="t-profile">Profile</span></a>
 
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="<?= base_url('logout') ?>"><i
-                            class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
-                            key="t-logout">Logout</span></a>
+                    <a class="dropdown-item text-danger" href="<?= base_url('logout') ?>"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
                 </div>
             </div>
 
@@ -104,8 +99,7 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-dashboard" role="button">
-                            <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= lang('Files.Dashboards') ?></span>
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= lang('Files.Dashboards') ?></span>
                             <div class="arrow-down"></div>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
@@ -119,8 +113,7 @@
                         <a>
                             <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
 
-                                <a href="/Biodata" class="dropdown-item"
-                                    key="t-default"><?= lang('Files.Dashboard') ?></a>
+                                <a href="/Biodata" class="dropdown-item" key="t-default"><?= lang('Files.Dashboard') ?></a>
                                 <!-- <a href="dashboard-saas" class="dropdown-item" key="t-saas"><?= lang('Files.Saas') ?></a>
                             <a href="dashboard-crypto" class="dropdown-item"
                                 key="t-crypto"><?= lang('Files.Crypto') ?></a>
@@ -129,6 +122,9 @@
                     </li>
 
                     <?php
+
+                    use App\Models\ModelKlaimDekan;
+
                     if (isset($databio)) {
                         if ($databio != null) {
 
@@ -143,41 +139,69 @@
                                 }
                             }
                             if ($jenis_rpl != null) {
+                                if ($jenis_rpl == 1) {
                     ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('upload') ?>" id="topnav-dashboard"
-                            role="button">
-                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Upload Berkas' ?></span>
-                            <div class="arrow-down"></div>
-                        </a>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link arrow-none" href="<?= base_url('uploada1') ?>" id="topnav-dashboard" role="button">
+                                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Upload Berkas' ?></span>
+                                            <div class="arrow-down"></div>
+                                        </a>
+                                    </li>
+                                <?php
+                                } else {
+
+                                ?>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link arrow-none" href="<?= base_url('upload') ?>" id="topnav-dashboard" role="button">
+                                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Upload Berkas' ?></span>
+                                            <div class="arrow-down"></div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link arrow-none" href="<?= base_url('assesment-mandiri') ?>" id="topnav-dashboard" role="button">
+                                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Assesment Mandiri' ?></span>
+                                            <div class="arrow-down"></div>
+                                        </a>
 
 
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('assesment-mandiri') ?>" id="topnav-dashboard"
-                            role="button">
-                            <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= 'Assesment Mandiri' ?></span>
-                            <div class="arrow-down"></div>
-                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link arrow-none" href="<?= base_url('respon-asessor') ?>" id="topnav-dashboard" role="button">
+                                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Respon Asessor' ?></span>
+                                            <div class="arrow-down"></div>
+                                        </a>
 
 
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('respon-asessor') ?>" id="topnav-dashboard"
-                            role="button">
-                            <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= 'Respon Asessor' ?></span>
-                            <div class="arrow-down"></div>
-                        </a>
-
-
-                    </li>
-                    <?php
+                                    </li>
+                        <?php
+                                }
                             }
                         }
                     }
+                    $noregis = session()->get("noregis");
+                    $cekvaliddekan  = cekvaliddekan(session()->get('noregis'));
+
+                    if ($cekvaliddekan == true) {
+                        ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link arrow-none" href="<?= base_url('print-tagihan/' . $noregis) ?>" id="topnav-dashboard" role="button" target='_blank'>
+                                <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Tagihan' ?></span>
+                                <div class="arrow-down"></div>
+                            </a>
+
+
+                        </li>
+                    <?php
+                    }
                     ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('template/Manual-Book-Mahasiswa-SILAJU.pdf') ?>" id="topnav-dashboard" role="button" target='_blank'>
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Panduan Silaju' ?></span>
+                            <div class="arrow-down"></div>
+                        </a>
+
+
+                    </li>
 
 
 
@@ -187,3 +211,16 @@
         </nav>
     </div>
 </div>
+
+<?php
+function cekvaliddekan($noregis)
+{
+    $modelMkDekan = new ModelKlaimDekan();
+    $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
+    if ($cekpeserta != null) {
+        return true;
+    } else {
+        return false;
+    }
+}
+?>

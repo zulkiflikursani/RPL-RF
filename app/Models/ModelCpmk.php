@@ -13,6 +13,7 @@ class ModelCpmk extends Model
 
 
     protected $allowedFields = [
+        "ta_akademik",
         "kode_prodi",
         "kode_matakuliah",
         "idcpmk",
@@ -24,6 +25,7 @@ class ModelCpmk extends Model
     // protected $createdField  = 'tglbuat';
     // protected $updatedField  = 'tglubah';
     protected $validationRules = [
+        "ta_akademik" => 'required',
         "kode_prodi" => 'required',
         "kode_matakuliah" => 'required',
         "idcpmk" => 'required|is_unique[mk_cpmk.idcpmk]',

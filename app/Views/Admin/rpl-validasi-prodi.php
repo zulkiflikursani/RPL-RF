@@ -82,6 +82,12 @@
                                                         <div class="col-md-2">Jenis RPL</div>
                                                         <div class="col-md-2">: <?= "A" . $jenis_rpl; ?></div>
                                                     </div>
+                                                     <div class="row">
+
+                                                        <div class="col-md-2">Asessor</div>
+                                                        <div class="col-md-2">: <?= $nm_asessor; ?></div>
+                                                    </div>
+
 
                                                     <table class='table table-bordered'>
                                                         <thead class="table-light">
@@ -93,7 +99,7 @@
                                                                 <th>Deskripsi</th>
                                                                 <th>Ref</th>
                                                                 <th>Tanggapan</th>
-                                                                <th>Nilai</th>
+                                                                <th style="width:100px">Nilai</th>
                                                                 <th>Keterangan Tanggapan</th>
                                                             </tr>
 

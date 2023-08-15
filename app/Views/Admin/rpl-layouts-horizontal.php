@@ -77,7 +77,7 @@
                                                             <td>$i</td>
                                                             <td>$row->no_peserta</td>
                                                             <td>$row->nama</td>
-                                                            <td>$row->kode_prodi</td>
+                                                            <td>$row->nama_prodi</td>
                                                             <td>$row->jenis_rpl</td>
                                                         </tr>";
                                                 }

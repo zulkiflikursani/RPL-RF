@@ -1,0 +1,8 @@
+CRITICAL - 2023-05-16 13:37:50 --> Invalid argument supplied for foreach()
+#0 /www/wwwroot/silajux.unifa.ac.id/app/Models/ModelKlaimAsessor.php(154): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/silajux.unifa.ac.id/app/Controllers/Admin.php(2338): App\Models\ModelKlaimAsessor->simpanklaimAsessorA1()
+#2 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->klaimMkAsessorA1()
+#3 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/silajux.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/silajux.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}

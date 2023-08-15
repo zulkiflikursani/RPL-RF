@@ -23,7 +23,6 @@
             <div class="page-content">
                 <div class="container-fluid">
 
-                    <?= $page_title ?>
 
                     <?php
                     if (isset($datasubmit)) {
@@ -117,19 +116,19 @@
                                                     <select class="form-select" id="autoSizingSelect" name='pendidikan'>
                                                         <option selected>Pilih...</option>
                                                         <option value="1"
-                                                            <?php ($datasubmit["pendidikan"] == "1" ? 'selected="selected"' : '') ?>>
+                                                            <?= ($datasubmit["didikakhir"] == "1" ? 'selected="selected"' : '') ?>>
                                                             SD</option>
                                                         <option value="2"
-                                                            <?php ($datasubmit["pendidikan"] == "2" ? 'selected="selected"' : '') ?>>
+                                                            <?= ($datasubmit["didikakhir"] == "2" ? 'selected="selected"' : '') ?>>
                                                             SLTP</option>
                                                         <option value="3"
-                                                            <?php ($datasubmit["pendidikan"] == "3" ? 'selected="selected"' : '') ?>>
+                                                            <?= ($datasubmit["didikakhir"] == "3" ? 'selected="selected"' : '') ?>>
                                                             SLTA</option>
                                                         <option value="4"
-                                                            <?php ($datasubmit["pendidikan"] == "4" ? 'selected="selected"' : '') ?>>
+                                                            <?= ($datasubmit["didikakhir"] == "4" ? 'selected="selected"' : '') ?>>
                                                             D3</option>
                                                         <option value="5"
-                                                            <?php ($datasubmit["pendidikan"] == "5" ? 'selected="selected"' : '') ?>>
+                                                            <?= ($datasubmit["didikakhir"] == "5" ? 'selected="selected"' : '') ?>>
                                                             S1</option>
                                                     </select>
                                                 </div>

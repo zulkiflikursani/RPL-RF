@@ -18,7 +18,12 @@ File: Main Css File
   -webkit-box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
   box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
 }
-
+.desc {
+  text-align: center;
+  color:#1C1265;
+  width: 100%;
+  padding: 0 0 0 calc(24px / 2);
+}
 .navbar-header {
   display: -webkit-box;
   display: -ms-flexbox;

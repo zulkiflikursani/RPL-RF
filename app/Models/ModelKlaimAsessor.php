@@ -137,6 +137,150 @@ class ModelKlaimAsessor extends Model
         }
     }
 
+    public function simpanklaimAsessorA1($formdata,  $kodeprodi, $ta_akademik)
+    {
+        $db      = \Config\Database::connect();
+        $noregis = session()->get("noregis");
+        // $kodeprodi = $this->getkodeprodi($noregis);
+        // $db      = \Config\Database::connect();
+        $BuilderMkHeader = $db->table("mk_klaim_header");
+        $BuilderMkA1 = $db->table("mk_klaim_a1");
+        $db->transStart();
+        $idklaim1 = "";
+        $klaimstatus = true;
+
+        date_default_timezone_set('Asia/Makassar');
+        $now = date('Y-m-d H:i:s');
+        foreach ($formdata as $a) {
+            $noregis = $a['noregis'];
+            $idklaim = $ta_akademik . $noregis . $a['kdmk'];
+            if ($a['kdmk'] == "" || $a['nmmk'] == "" || $a['sks'] == "" || $a['nilai'] == "" || $a['kdmka'] == "" || $a['nmmka'] == "" || $a['sksa'] == "" || $a['nilaia'] == "") {
+                $db->transRollback();
+                echo "Data Tidak Lengkap";
+                $klaimstatus = false;
+                break;
+            }
+            // $kdmk = $a['kdmk'];
+            $dataMKHeader = [
+                "idklaim" => $idklaim,
+                "ta_akademik" => $ta_akademik,
+                "no_peserta" => $noregis,
+                "kode_prodi" => $kodeprodi,
+                "desk" => "",
+                "kode_matakuliah" => $a['kdmk'],
+                "nama_matakuliah" => $a['nmmk'],
+                "sks" => $a['sks'],
+                "tglbuat" => $now,
+                "tglubah" => $now,
+
+            ];
+            $dataMksA1 = [
+                "ta_akademik" => $idklaim,
+                "no_registrasi" => $noregis,
+                "kode_matakuliah_asal" => $a['kdmka'],
+                "kode_matakuliah" => $a['kdmk'],
+                "nilai" => $a['nilai'],
+                "tglklaim" => $now,
+
+            ];
+            $BuilderMkA1->insert($dataMksA1);
+            if ($idklaim1 != $idklaim) {
+                $BuilderMkHeader->insert($dataMKHeader);
+                $idklaim1 = $idklaim;
+            }
+        }
+
+        if ($klaimstatus == true) {
+            if ($db->transStatus() === false) {
+                $db->transRollback();
+                echo "Gagal Mengklaim Matakuliah";
+            } else {
+                $db->transCommit();
+                echo "Sukses Mengklaim Matakuliah";
+            }
+        }
+    }
+    public function batalklaimA1($idklaim)
+    {
+        $db      = \Config\Database::connect();
+        $BuilderMkHeader = $db->table("mk_klaim_header");
+        $BuilderMkA1 = $db->table("mk_klaim_a1");
+        // $ta_akademik = $this->getTa_akademik();
+        $db->transStart();
+
+        $whereA1 = [
+            "no_registrasi" => substr($idklaim, 5, 10),
+            "kode_matakuliah" => substr($idklaim, 15, 9)
+        ];
+        $hapusMkheader = $BuilderMkHeader->where("idklaim", $idklaim)->delete();
+        $hapusMkhdetail = $BuilderMkA1->where($whereA1)->delete();
+        if ($db->transStatus() === false) {
+            $db->transRollback();
+            echo "Gagal Membatalkan Klaim Matakuliah";
+        } else {
+            $db->transCommit();
+            echo "Sukses Membatalkan Klaim Matakuliah";
+        }
+    }
+    public function cekValidProdiA1($noregis)
+    {
+        $ModelKlaimProdi = new ModelKlaimProdi();
+
+        $db      = \Config\Database::connect();
+        $data = $db->query("select * from mk_klaim_prodi where mid(mk_klaim_prodi.idklaim,6,10)='$noregis'")->getResult();
+
+        return $data;
+    }
+    public function batalklaimdokA1($noregis)
+    {
+        $db      = \Config\Database::connect();
+        $BuilderMkHeader = $db->table("mk_klaim_header");
+        $BuilderMkklaimprodi = new ModelKlaimProdi();
+        $BuilderdokA1 = $db->table("dok_a1");
+        // $ta_akademik = $this->getTa_akademik();
+        $db->transStart();
+
+        $update = [
+            "status" => 1,
+        ];
+        $cekklaimass = $db->query("delete from mk_klaim_a1 where no_registrasi = '$noregis'");
+        $cekklaimass = $db->query("delete from mk_klaim_header where no_peserta = '$noregis'");
+        $udpatedoka1 = $BuilderdokA1->set($update)->where('no_registrasi', $noregis)->update();
+        if ($db->transStatus() === false) {
+            $db->transRollback();
+            echo "Gagal Membatalkan Klaim Matakuliah";
+        } else {
+            $db->transCommit();
+            echo "Sukses Membatalkan Klaim Matakuliah";
+        }
+    }
+    public function batalklaimasessor($noregis)
+    {
+        $db      = \Config\Database::connect();
+
+        // $db->transStart();
+        $idpengguna = session()->get('id');
+        $cekvalidprodi = $this->cekValidProdibatalklaim($noregis);
+        if ($cekvalidprodi == null) {
+            $hapusklaim =  $db->query("delete from mk_klaim_asessor where no_peserta='$noregis' and idpengguna='$idpengguna'");
+            if ($hapusklaim === false) {
+                // $db->transRollback();
+                return "Gagal Membatalkan Klaim Matakuliah";
+            } else {
+                // $db->transCommit();
+                return "Sukses Membatalkan Klaim Matakuliah";
+            }
+        } else {
+            return "Tidak bisa diunvalidasi karena sudah divalidasi prodi";
+        }
+    }
+    public function cekValidProdibatalklaim($noregis)
+    {
+        $db      = \Config\Database::connect();
+        $data = $db->query("select idklaim from mk_klaim_prodi where mid(idklaim,6,10) ='$noregis'")->getResult();
+
+        return $data;
+    }
     public function cekValidProdi($idklaim)
     {
         $ModelKlaimProdi = new ModelKlaimProdi();
@@ -211,6 +355,7 @@ class ModelKlaimAsessor extends Model
                         mk_klaim_header.kode_prodi,
                         mk_klaim_header.kode_matakuliah,
                         mk_klaim_header.nama_matakuliah,
+                        mk_klaim_header.desk,
                         mk_klaim_header.sks,
                         mk_klaim_detail.idcpmk,
                         mk_klaim_detail.cpmk,
