@@ -23,7 +23,7 @@ class ModelProv extends Model
 
     public function getProv()
     {
-        return $this->select('*')
+        return $this->select('KDPROTBPRO,NMPROTBPRO,KDKABTBPRO')
             ->groupBy("KDPROTBPRO")
             ->get()
             ->getResult();

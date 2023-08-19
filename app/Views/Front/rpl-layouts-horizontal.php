@@ -233,11 +233,18 @@
                                                                 <?php (isset($datasubmit["pendidikan"]) && $datasubmit["pendidikan"] == "3" ? 'selected="selected"' : '') ?>>
                                                                 SLTA</option>
                                                             <option value="4"
+                                                                <?php (isset($datasubmit["pendidikan"]) && $datasubmit["pendidikan"] == "6" ? 'selected="selected"' : '') ?>>
+                                                                D1</option>
+                                                            <option value="5"
+                                                                <?php (isset($datasubmit["pendidikan"]) && $datasubmit["pendidikan"] == "7" ? 'selected="selected"' : '') ?>>
+                                                                D2</option>
+                                                            <option value="4"
                                                                 <?php (isset($datasubmit["pendidikan"]) && $datasubmit["pendidikan"] == "4" ? 'selected="selected"' : '') ?>>
                                                                 D3</option>
                                                             <option value="5"
                                                                 <?php (isset($datasubmit["pendidikan"]) && $datasubmit["pendidikan"] == "5" ? 'selected="selected"' : '') ?>>
                                                                 S1</option>
+
                                                         </select>
                                                     </div>
                                                 </div>

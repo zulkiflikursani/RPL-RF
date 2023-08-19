@@ -14,6 +14,7 @@ use App\Models\ModelProv;
 use App\Models\ModelPtIndo;
 use App\Models\ModelRegistrasi;
 use App\Models\ModelTransactionKlaim;
+use App\Models\ModelNilai;
 
 use PHPExcel;
 use PHPExcel_IOFactory;
@@ -960,13 +961,16 @@ class Front extends BaseController
 			$noregisrasi = session()->get("noregis");
 			$datasavebio = $ModalBiodata->where('no_peserta', $noregisrasi)->findAll();
 			$datadokumen = $Modaldokumen->getDataBynoregis();
+			$ModalNilai  = new ModelNilai();
+
+			$nilai = $ModalNilai->findAll();
 			$data = [
 				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
 				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
 				'datasubmit' => $datasavebio,
 				'datadok' => $datadokumen,
 				'databio' => $datasavebio,
-				// 'test' => $datasave,
+				'nilai' => $nilai,
 				'ta_akademik' => $this->getTa_akademik()
 			];
 			return view('Front/rpl-mahasiswa-upload', $data);
@@ -985,6 +989,8 @@ class Front extends BaseController
 			$datasavebio = $ModalBiodata->where('no_peserta', $noregisrasi)->findAll();
 			$datadokumen = $Modaldokumen->getDataBynoregis();
 			$ptindo = "";
+			$ModalNilai = new ModelNilai();
+			$nilai = $ModalNilai->findAll();
 
 			$carikdptasal = $modelMkA1->where('no_registrasi', $noregisrasi)->findAll();
 
@@ -1006,6 +1012,7 @@ class Front extends BaseController
 				'nmptasal' => $nmptasal,
 				'dataMkA1' => $carikdptasal,
 				// 'test' => $datasave,
+				'nilai' => $nilai,
 				'ta_akademik' => $this->getTa_akademik()
 			];
 			return view('Front/rpl-mahasiswa-upload-a1', $data);
