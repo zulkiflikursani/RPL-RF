@@ -3397,6 +3397,30 @@ class Admin extends BaseController
             echo json_encode($result, false);
         }
     }
+    public function form_nilai($noregis)
+    {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 6)) {
+            // return redirect()->to('/logout');
+        } else {
+            // $ta_akademik = $this->getTa_akademik();
+            $modelBiodata = new ModelBiodata();
+            $modelProv = new ModelProv();
+            $dataProv = $modelProv->getProv();
+            $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+            $modelmkheader = new ModelKlaimMkHeader();
+
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $this->getTa_akademik(),
+                'datasubmit' => $databio,
+                'dataprov' => $dataProv,
+
+            ];
+
+            return view('Admin/rpl-biodata-mahasiswa', $data);
+        }
+    }
     public function logout()
     {
         session()->destroy();    //unet current user session 

@@ -246,13 +246,15 @@
                                         </div>
 
                                         <div>
-                                            <p class='bold' id=''>Jumlah SKS yang di klaim : <span id='sks-klaim' class="bold"></span> SKS dari <?= $maxsksrekognisi ?> maksimum SKS
+                                            <p class='bold' id=''>Jumlah SKS yang di klaim : <span id='sks-klaim'
+                                                    class="bold"></span> SKS dari <?= $maxsksrekognisi ?> maksimum SKS
                                                 Rekognisi</p>
 
                                         </div>
 
                                         <div>
-                                            <button type="button" onclick="simpan_klaim_asessor()" class="btn btn-primary w-md">Submit</button>
+                                            <button type="button" onclick="simpan_klaim_asessor()"
+                                                class="btn btn-primary w-md">Submit</button>
 
                                         </div>
                                     </div>
@@ -298,146 +300,148 @@
 </html>
 
 <script>
-    $(document).ready(function() {
-        $('#loading').show()
-        noregis = '<?= $noregis ?>'
-        url = '<?= base_url('getDataKlaimAsessor') ?>'
-        $.post(url, {
-            noregis: noregis
-        }, function(data) {
-            data = JSON.parse(data)
-            // console.log(data);
+$(document).ready(function() {
+    $('#loading').show()
+    noregis = '<?= $noregis ?>'
+    url = '<?= base_url('getDataKlaimAsessor') ?>'
+    $.post(url, {
+        noregis: noregis
+    }, function(data) {
+        data = JSON.parse(data)
+        // console.log(data);
 
-            $.each(data, function(index, value) {
-                $('#tbody-klaim-mk  > tr').each(function(i, tr) {
-                    if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
-                        value['idklaim']) {
-                        // alert('jalan')
-                        $(this).find('td[for=tanggapan]').children().val(value[
-                            'tanggapan']);
-                        $(this).find('td[for=nilaiAs]').children().val(value[
-                            'nilai']);
-                        $(this).find('td[for=kettanggapan]').children()
-                            .val(value['ket_tanggapan']);
+        $.each(data, function(index, value) {
+            $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+                if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
+                    value['idklaim']) {
+                    // alert('jalan')
+                    $(this).find('td[for=tanggapan]').children().val(value[
+                        'tanggapan']);
+                    $(this).find('td[for=nilaiAs]').children().val(value[
+                        'nilai']);
+                    $(this).find('td[for=kettanggapan]').children()
+                        .val(value['ket_tanggapan']);
 
-                    }
-                })
+                }
             })
+        })
 
 
-            $('#loading').hide()
-            klaimsksass();
+        $('#loading').hide()
+        klaimsksass();
 
-        }).fail(function() {
-            alert("error");
-        });
+    }).fail(function() {
+        alert("error");
+    });
+})
+
+
+function klaimsksass() {
+    klaimsks = 0;
+    $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+        tanggapan = $(this).find('td[for=tanggapan]').children().val();
+        nilai = $(this).find('td[for=nilaiAs]').children().val();
+        sks = $(this).attr('sks');
+        if (tanggapan == 0 && tanggapan != '' && nilai != "E") {
+            klaimsks = parseFloat(klaimsks) + parseFloat(sks)
+        }
     })
+    $('#sks-klaim').html(klaimsks)
+    // return klaimsks;
+}
 
+function gantinilai() {
+    // alert('gantinilai')
+    klaimsksass();
+}
 
-    function klaimsksass() {
-        klaimsks = 0;
-        $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+function simpan_klaim_asessor() {
+    $('#loading').show()
+    sksklaim = $('#sks-klaim').html();
+    klaimsksmax = '<?= $maxsksrekognisi ?>'
+
+    jsonObj = [];
+    statusdata = 0;
+    $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+
+        if ($(this).attr('noregis') != undefined) {
+            idklaim = $(this).attr('idklaim')
+            no_peserta = $(this).attr('noregis')
+            kdprodi = $(this).attr('kdprodi')
+            kdmk = $(this).attr('kdmk')
             tanggapan = $(this).find('td[for=tanggapan]').children().val();
-            nilai = $(this).find('td[for=nilaiAs]').children().val();
-            sks = $(this).attr('sks');
-            if (tanggapan == 0 && tanggapan != '' && nilai != "E") {
-                klaimsks = parseFloat(klaimsks) + parseFloat(sks)
+            if (tanggapan == 1) {
+                nilai = $(this).find('td[for=nilaiAs]').html();
+            } else if (tanggapan == 0) {
+                nilai = $(this).find('td[for=nilaiAs]').children().val();
             }
-        })
-        $('#sks-klaim').html(klaimsks)
-        // return klaimsks;
-    }
-
-    function gantinilai() {
-        // alert('gantinilai')
-        klaimsksass();
-    }
-
-    function simpan_klaim_asessor() {
-        $('#loading').show()
-        sksklaim = $('#sks-klaim').html();
-        klaimsksmax = '<?= $maxsksrekognisi ?>'
-
-        jsonObj = [];
-        statusdata = 0;
-        $('#tbody-klaim-mk  > tr').each(function(i, tr) {
-
-            if ($(this).attr('noregis') != undefined) {
-                idklaim = $(this).attr('idklaim')
-                no_peserta = $(this).attr('noregis')
-                kdprodi = $(this).attr('kdprodi')
-                kdmk = $(this).attr('kdmk')
-                tanggapan = $(this).find('td[for=tanggapan]').children().val();
-                if (tanggapan == 1) {
-                    nilai = $(this).find('td[for=nilaiAs]').html();
-                } else if (tanggapan == 0) {
-                    nilai = $(this).find('td[for=nilaiAs]').children().val();
-                }
-                kettanggapan = $(this).find('td[for=kettanggapan]').children().val();
+            kettanggapan = $(this).find('td[for=kettanggapan]').children().val();
 
 
-                if (idklaim != "" && no_peserta != "" && kdmk != "" && tanggapan != "" && nilai != "" &&
-                    kettanggapan != "") {
-                    item = {}
-                    item["idklaim"] = idklaim;
-                    item["noregis"] = no_peserta;
-                    item["kdmk"] = kdmk;
-                    item["kdprodi"] = kdprodi;
-                    item["tanggapan"] = tanggapan;
-                    item["nilai"] = nilai;
-                    item["kettanggapan"] = kettanggapan;
+            if (idklaim != "" && no_peserta != "" && kdmk != "" && tanggapan != "" && nilai != "" &&
+                kettanggapan != "") {
+                item = {}
+                item["idklaim"] = idklaim;
+                item["noregis"] = no_peserta;
+                item["kdmk"] = kdmk;
+                item["kdprodi"] = kdprodi;
+                item["tanggapan"] = tanggapan;
+                item["nilai"] = nilai;
+                item["kettanggapan"] = kettanggapan;
 
-                    jsonObj.push(item);
+                jsonObj.push(item);
 
-                } else {
-                    statusdata = 1
-                }
+            } else {
+                statusdata = 1
             }
-
-        })
-        if (statusdata == 1) {
-            alert("Silahkan Lengkapi Tanggapan Anda !")
-            $('#loading').hide()
-        } else if (sksklaim > parseFloat(klaimsksmax)) {
-            alert("Klaim Matakuliah Melebihi batas maksimum sks rekognisi Program Studi")
-            $('#loading').hide()
-        } else {
-            url = '<?= base_url('klaimmkAsessor') ?>'
-            $.post(url, {
-                jsonObj
-            }, function(data) {
-                $('#loading').hide()
-                if (alert("Berhasil melakukan submit")) {} else {
-                    window.location.replace('<?= base_url('Admin') ?>')
-                };
-            }).fail(function() {
-                $('#loading').hide()
-                if (alert("error")) {} else {
-                    window.location.replace('<?= base_url('Admin') ?>')
-                };
-            });
         }
 
+    })
+    if (statusdata == 1) {
+        alert("Silahkan Lengkapi Tanggapan Anda !")
+        $('#loading').hide()
+    } else if (sksklaim > parseFloat(klaimsksmax)) {
+        alert("Klaim Matakuliah Melebihi batas maksimum sks rekognisi Program Studi")
+        $('#loading').hide()
+    } else {
+        url = '<?= base_url('klaimmkAsessor') ?>'
+        $.post(url, {
+            jsonObj
+        }, function(data) {
+            $('#loading').hide()
+            if (alert("Berhasil melakukan submit")) {} else {
+                window.location.replace('<?= base_url('Admin') ?>')
+            };
+        }).fail(function() {
+            $('#loading').hide()
+            if (alert("error")) {} else {
+                window.location.replace('<?= base_url('Admin') ?>')
+            };
+        });
     }
 
-    function setnilaiAsFromStatus(ini) {
-        statustanggapan = ini.val()
-        select = ini.parent().parent().find('td[for=nilaiAs]').html()
+}
 
-        if (statustanggapan == 1) {
-            ini.parent().parent().find('td[for=nilaiAs]').children().remove();
-            ini.parent().parent().find('td[for=nilaiAs]').append("Tunda");
+function setnilaiAsFromStatus(ini) {
+    statustanggapan = ini.val()
+    select = ini.parent().parent().find('td[for=nilaiAs]').html()
+    nilai = "<?php echo $oknilai ?>"
+    // alert(nilai)
 
-        } else if (statustanggapan == 0) {
-            ini.parent().parent().find('td[for=nilaiAs]').html("");
-            ini.parent().parent().find('td[for=nilaiAs]').append(
-                "<select class='form-select' onchange='gantinilai()'><option value='' selected>Pilih</option><option value='A'>A</option><option value='B' >B</option><option value='E'>E</option></select>"
-            );
-        }
-        klaimsksass();
+    if (statustanggapan == 1) {
+        ini.parent().parent().find('td[for=nilaiAs]').children().remove();
+        ini.parent().parent().find('td[for=nilaiAs]').append("Tunda");
 
-
+    } else if (statustanggapan == 0) {
+        ini.parent().parent().find('td[for=nilaiAs]').html("");
+        ini.parent().parent().find('td[for=nilaiAs]').append(
+            "<select class='form-select' onchange='gantinilai()'>" + nilai + "</select>"
+        );
     }
+    klaimsksass();
+
+
+}
 </script>
 <?php
 

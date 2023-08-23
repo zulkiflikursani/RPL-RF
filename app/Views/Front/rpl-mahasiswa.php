@@ -145,24 +145,30 @@
                                             <div class="col-lg-4">
                                                 <div class="mb-3">
                                                     <label for="formrow-inputProvinsi" class="form-label">Pendidikan
-                                                        Terakhir</label>
+                                                        Terakhir </label>
                                                     <select class="form-select" id="autoSizingSelect" name='didakhir'
                                                         disabled>
                                                         <option value="1"
-                                                            <?= (isset($datasubmit["didikakhir"]) && $datasubmit["didikakhir"] == "1" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["didikakhir"]) && $biodata["didikakhir"] == "1" ? 'selected="selected"' : '') ?>>
                                                             SD</option>
                                                         <option value="2"
-                                                            <?= (isset($datasubmit["didikakhir"]) && $datasubmit["didikakhir"] == "2" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["didikakhir"]) && $biodata["didikakhir"] == "2" ? 'selected="selected"' : '') ?>>
                                                             SLTP</option>
                                                         <option value="3"
-                                                            <?= (isset($datasubmit["didikakhir"]) && $datasubmit["didikakhir"] == "3" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["didikakhir"]) && $biodata["didikakhir"] == "3" ? 'selected="selected"' : '') ?>>
                                                             SLTA</option>
                                                         <option value="4"
-                                                            <?= (isset($datasubmit["didikakhir"]) && $datasubmit["didikakhir"] == "4" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["didikakhir"]) && $biodata["didikakhir"] == "4" ? 'selected="selected"' : '') ?>>
                                                             D3</option>
                                                         <option value="5"
-                                                            <?= (isset($datasubmit["didikakhir"]) && $datasubmit["didikakhir"] == "5" ? 'selected="selected"' : '') ?>>
+                                                            <?= (isset($biodata["didikakhir"]) && $biodata["didikakhir"] == "5" ? 'selected="selected"' : '') ?>>
                                                             S1</option>
+                                                        <option value="6"
+                                                            <?= (isset($biodata["didikakhir"]) && $biodata["didikakhir"] == "6" ? 'selected="selected"' : '') ?>>
+                                                            D2</option>
+                                                        <option value="7"
+                                                            <?= (isset($biodata["didikakhir"]) && $biodata["didikakhir"] == "7" ? 'selected="selected"' : '') ?>>
+                                                            D3</option>
 
                                                     </select>
                                                 </div>
@@ -278,6 +284,21 @@
                                                 </div>
 
 
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="mb-3">
+                                                    <label for="formrow-inputPendidikan"
+                                                        class="form-label">Konsentrasi</label>
+                                                    <input type="text" class="form-control" id="formrow-inputProvinsi"
+                                                        name="prodi" placeholder="Masukkan Prodi"
+                                                        value="<?= (isset($biodata["kode_konsentrasi"]) ? $biodata["kode_konsentrasi"] : '') ?>"
+                                                        hidden>
+                                                    <input type="text" class="form-control" id="formrow-inputProvinsi"
+                                                        name="nmnohp" placeholder="Tidak ada konsentrasi"
+                                                        value="<?= (isset($konsentrasi) ? $konsentrasi : '') ?>"
+                                                        disabled>
+
+                                                </div>
                                             </div>
 
 

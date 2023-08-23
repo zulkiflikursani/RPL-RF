@@ -95,7 +95,7 @@ class ModelPesertaAsessor extends Model
         bio_peserta.nama,
         tb_peserta_asessor.no_asessor,
         bio_peserta.jenis_rpl,
-        bio_peserta.kode_prodi,prodi.kode_prodi from bio_peserta
+        bio_peserta.kode_prodi,prodi.nama_prodi from bio_peserta
         left join tb_peserta_asessor on bio_peserta.no_peserta=tb_peserta_asessor.no_peserta
         left join dok_a1 on bio_peserta.no_peserta=dok_a1.no_registrasi and dok_a1.status=0
         left join prodi on

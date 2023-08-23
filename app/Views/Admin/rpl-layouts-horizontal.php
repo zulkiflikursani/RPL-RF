@@ -78,7 +78,7 @@
                                                             <td>$row->no_peserta</td>
                                                             <td>$row->nama</td>
                                                             <td>$row->nama_prodi</td>
-                                                            <td>$row->jenis_rpl</td>
+                                                            <td>A$row->jenis_rpl</td>
                                                         </tr>";
                                                 }
                                             }

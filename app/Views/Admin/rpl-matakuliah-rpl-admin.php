@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en">
 <style>
-thead input {
-    width: 100%;
-}
+    thead input {
+        width: 100%;
+    }
 </style>
 
 <head>
@@ -11,25 +11,22 @@ thead input {
     <?= $title_meta ?>
 
     <!-- DataTables -->
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet"
-        type="text/css" />
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css"
-        rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Responsive datatable examples -->
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css"
-        rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="<?= base_url() ?>/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 
     <style>
-    .select2-container--default .select2-selection--single .select2-selection__arrow {
-        right: 10px !important;
-        left: auto !important;
-    }
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            right: 10px !important;
+            left: auto !important;
+        }
 
-    .select2 {
-        width: 100% !important;
-    }
+        .select2 {
+            width: 100% !important;
+        }
     </style>
 
     <?= $this->include('partials/rpl-head-css') ?>
@@ -99,8 +96,7 @@ thead input {
                                                 <th>Prodi</th>
                                                 <th>Jumlah SKS</th>
                                                 <th>Id Kurikulum</th>
-                                                <th class="text-center">Status </br> <input type='checkbox'
-                                                        id='checkall' class="form-check-input mx-2" />Pilih Semua</th>
+                                                <th class="text-center">Status </br> <input type='checkbox' id='checkall' class="form-check-input mx-2" />Pilih Semua</th>
                                             </tr>
                                         </thead>
                                         <tbody id='bodymk'>
@@ -195,47 +191,47 @@ thead input {
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 
     <script>
-    $(".checkitem").change(function() {
-        if ($(this).prop("checked") == false) {
-            $("#checkall").prop("checked", false)
-        }
-        // saat beberapa item terpilih dan hampir semua maka akan pada checkbox yang memiliki id CHECKALL terchecklist
-        if ($(".checkitem:checked").length == $(".checkitem").length) {
-            $("#checkall").prop("checked", true)
-        }
-    })
-
-    $("#checkall").change(function() {
-        $(".checkitem").prop("checked", $(this).prop("checked"))
-    })
-
-    function updateMkRpl() {
-        $("#loading").show();
-        var data = []
-        url = '<?= base_url('update-mk-rpl-admin') ?>'
-        $('#bodymk > tr').each(function() {
-            if ($(this).find('td[for=status]').children().is(':checked')) {
-                data.push($(this).find('td[for=kdmk]').html())
+        $(".checkitem").change(function() {
+            if ($(this).prop("checked") == false) {
+                $("#checkall").prop("checked", false)
+            }
+            // saat beberapa item terpilih dan hampir semua maka akan pada checkbox yang memiliki id CHECKALL terchecklist
+            if ($(".checkitem:checked").length == $(".checkitem").length) {
+                $("#checkall").prop("checked", true)
             }
         })
-        // console.log(data);
-        $.post(url, {
-            data: data
-        }, function(data) {
-            $("#loading").hide();
-            alert(data);
 
+        $("#checkall").change(function() {
+            $(".checkitem").prop("checked", $(this).prop("checked"))
         })
-    }
+
+        function updateMkRpl() {
+            $("#loading").show();
+            var data = []
+            url = '<?= base_url('update-mk-rpl-admin') ?>'
+            $('#bodymk > tr').each(function() {
+                if ($(this).find('td[for=status]').children().is(':checked')) {
+                    data.push($(this).find('td[for=kdmk]').html())
+                }
+            })
+            // console.log(data);
+            $.post(url, {
+                data: data
+            }, function(data) {
+                $("#loading").hide();
+                alert(data);
+
+            })
+        }
 
 
-    function kosongkan() {
-        // $('#prodi').val("");
-        $('#kdmk').val("");
-        $('#nmmk').val("");
-        $('#sks').val("");
-        $('#idkur').val("");
-    }
+        function kosongkan() {
+            // $('#prodi').val("");
+            $('#kdmk').val("");
+            $('#nmmk').val("");
+            $('#sks').val("");
+            $('#idkur').val("");
+        }
     </script>
 </body>
 

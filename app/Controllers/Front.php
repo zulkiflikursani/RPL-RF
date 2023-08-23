@@ -392,23 +392,30 @@ class Front extends BaseController
 				// print_r($result);
 				if ($result === false) {
 					$datasave = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+					$modelKonsentrasi = new ModelKonsentrasi();
+					$getkonsentrasi = $modelKonsentrasi->where(['kode_konsentrasi' => $datasave['kode_konsentrasi'], "kode_prodi" => $datasave['kode_prodi']])->findAll();
+					$konsentrasi = $getkonsentrasi['nama_konsentrasi'];
 					$data = [
 						'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
 						'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
 						'datasubmit' => $data1,
 						'databio' => $datasave,
-
+						'konsentrasi' => $datasave['kode_konsentrasi'],
 						'dataerror' => $ModalBiodata->errors(),
 					];
 
 					return view('Front/rpl-mahasiswa', $data);
 				} else {
 					$datasave = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+					$modelKonsentrasi = new ModelKonsentrasi();
+					$getkonsentrasi = $modelKonsentrasi->where(['kode_konsentrasi' => $datasave['kode_konsentrasi'], "kode_prodi" => $datasave['kode_prodi']])->findAll();
+					$konsentrasi = $getkonsentrasi['nama_konsentrasi'];
 					$data = [
 						'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
 						'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
 						'datasubmit' => $datasave,
 						'databio' => $datasave,
+						'konsentrasi' => $konsentrasi,
 						'status' => true,
 
 
@@ -793,6 +800,10 @@ class Front extends BaseController
 			return view('Front/rpl-mahasiswa-import-a1', $data);
 		}
 	}
+	function __construct()
+	{
+		require_once APPPATH . "/ThirdParty/PHPExcel/PHPExcel.php";
+	}
 
 	public function generateMkA1()
 	{
@@ -813,7 +824,7 @@ class Front extends BaseController
 			$fileupload = $this->request->getFile("datamka1");
 			$html = "";
 			if (file_exists($fileupload)) {
-
+				// require_once(APPPATH . 'third_party/PHPExcel/PHPExcel.php');
 				$fileLocation = $fileupload->getTempName();
 				$excelReader  = new PHPExcel();
 
@@ -925,6 +936,14 @@ class Front extends BaseController
 			}
 			$modelKeu = new ModelKeu();
 			$validasikeu = $modelKeu->cekvalidasi($noregisrasi);
+			$modelKonsentrasi = new ModelKonsentrasi();
+			$wherekons = [
+				"kode_konsentrasi" => $databio[0]['kode_konsentrasi'],
+				"prodi" => $databio[0]['kode_prodi']
+			];
+			$getkonsentrasi = $modelKonsentrasi->where($wherekons)->findAll();
+			$konsentrasi = $getkonsentrasi[0]['konsentrasi'];
+
 
 			if ($validasikeu == null) {
 				$data = [
@@ -944,6 +963,7 @@ class Front extends BaseController
 					'datasubmit' => $databio,
 					'databio' => $databio,
 					'prodi' => $prodi,
+					'konsentrasi' => $konsentrasi,
 					// 'test' => $datasave,
 					'ta_akademik' => $this->getTa_akademik()
 				];
@@ -962,7 +982,6 @@ class Front extends BaseController
 			$datasavebio = $ModalBiodata->where('no_peserta', $noregisrasi)->findAll();
 			$datadokumen = $Modaldokumen->getDataBynoregis();
 			$ModalNilai  = new ModelNilai();
-
 			$nilai = $ModalNilai->findAll();
 			$data = [
 				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
@@ -1071,6 +1090,9 @@ class Front extends BaseController
 			$datasavebio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
 			$datadokumen = $Modaldokumen->getDataBynoregis();
 			$ptindo = "";
+			$ModalNilai = new ModelNilai();
+			$nilai = $ModalNilai->findAll();
+
 
 			$carikdptasal = $modelMkA1->where('no_registrasi', $noregis)->findAll();
 
@@ -1162,6 +1184,7 @@ class Front extends BaseController
 						'kdptasal' => $kdptasal,
 						'nmptasal' => $nmptasal,
 						'dataMkA1' => $carikdptasal,
+						'nilai' => $nilai,
 						// 'test' => $datasave,
 						'ta_akademik' => $this->getTa_akademik(),
 						'dataerror' => $validation->getErrors(),
@@ -1190,6 +1213,8 @@ class Front extends BaseController
 									'kdptasal' => $kdptasal,
 									'nmptasal' => $nmptasal,
 									'dataMkA1' => $carikdptasal,
+									'nilai' => $nilai,
+
 									// 'test' => $datasave,
 									'ta_akademik' => $this->getTa_akademik(),
 									'dataerror' => $Modaldokumen->errors()
@@ -1210,6 +1235,8 @@ class Front extends BaseController
 									'kdptasal' => $kdptasal,
 									'nmptasal' => $nmptasal,
 									'dataMkA1' => $carikdptasal,
+									'nilai' => $nilai,
+
 									// 'test' => $datasave,
 									'ta_akademik' => $this->getTa_akademik(),
 									'status' => true
@@ -1229,6 +1256,8 @@ class Front extends BaseController
 								'kdptasal' => $kdptasal,
 								'nmptasal' => $nmptasal,
 								'dataMkA1' => $carikdptasal,
+								'nilai' => $nilai,
+
 								// 'test' => $datasave,
 								'ta_akademik' => $this->getTa_akademik(),
 								'dataerror' => $userFile->getErrorString()
@@ -1247,6 +1276,8 @@ class Front extends BaseController
 							'kdptasal' => $kdptasal,
 							'nmptasal' => $nmptasal,
 							'dataMkA1' => $carikdptasal,
+							'nilai' => $nilai,
+
 							// 'test' => $datasave,
 							'ta_akademik' => $this->getTa_akademik(),
 							'dataerror' => $error
@@ -1272,6 +1303,8 @@ class Front extends BaseController
 					'kdptasal' => $kdptasal,
 					'nmptasal' => $nmptasal,
 					'dataMkA1' => $carikdptasal,
+					'nilai' => $nilai,
+
 					// 'test' => $datasave,
 					'ta_akademik' => $this->getTa_akademik()
 				];
@@ -1663,6 +1696,17 @@ class Front extends BaseController
 			return $result;
 		}
 	}
+
+	public function getJenjang($kode_prodi)
+	{
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$db = \Config\Database::connect();
+			$result = $db->query("select id_jenjang from prodi where kode_prodi ='$kode_prodi'")->getRow();
+			return $result->id_jenjang;
+		}
+	}
 	public function getMatakuliahklaimperprodi($kode_prodi, $noregis, $kode_konsentrasi)
 	{
 
@@ -1671,6 +1715,29 @@ class Front extends BaseController
 		} else {
 			$db      = \Config\Database::connect();
 			$ta_akademik = $this->getTa_akademik();
+			$id_jenjang = $this->getJenjang($kode_prodi);
+			$mku = "";
+			if ($id_jenjang == "S2-R") {
+			} else {
+				$mku = "(
+					SELECT
+						matakuliah.kode_matakuliah,
+						matakuliah.nama_matakuliah,
+						matakuliah.kode_prodi,
+						matakuliah.sks			
+						FROM
+					matakuliah
+				LEFT JOIN mk_cpmk ON (
+					
+					matakuliah.kode_matakuliah = mk_cpmk.kode_matakuliah and mk_cpmk.ta_akademik='$ta_akademik'
+				)
+				WHERE
+					 matakuliah.kode_prodi='' and (matakuliah.jenis_matakuliah='1' or matakuliah.jenis_matakuliah='2')
+				AND mk_cpmk.kode_matakuliah IS NOT NULL 
+				)
+				union";
+			};
+
 			$result = $db->query("SELECT
 									mm.kode_matakuliah,
 									mm.nama_matakuliah,
@@ -1681,6 +1748,7 @@ class Front extends BaseController
 									mk_klaim_header.idklaim AS idklaim
 								FROM
 									(
+										$mku
 										(
 											SELECT
 												matakuliah.kode_matakuliah,
@@ -1694,24 +1762,7 @@ class Front extends BaseController
 											AND matakuliah.kode_matakuliah = mk_cpmk.kode_matakuliah and mk_cpmk.ta_akademik='$ta_akademik'
 										)
 										WHERE
-											 matakuliah.kode_prodi='' and (matakuliah.jenis_matakuliah='1' or matakuliah.jenis_matakuliah='2')
-										AND mk_cpmk.kode_matakuliah IS NOT NULL 
-										)
-										union
-										(
-											SELECT
-												matakuliah.kode_matakuliah,
-												matakuliah.nama_matakuliah,
-												matakuliah.kode_prodi,
-												matakuliah.sks			
-												FROM
-											matakuliah
-										LEFT JOIN mk_cpmk ON (
-											matakuliah.kode_prodi = mk_cpmk.kode_prodi
-											AND matakuliah.kode_matakuliah = mk_cpmk.kode_matakuliah and mk_cpmk.ta_akademik='$ta_akademik'
-										)
-										WHERE
-										matakuliah.kode_prodi = '$kode_prodi' and (matakuliah.kode_konsentrasi='$kode_konsentrasi' or matakuliah.kode_konsentrasi='') and matakuliah.jenis_matakuliah='3'
+										matakuliah.kode_prodi = '$kode_prodi' and (matakuliah.kode_konsentrasi='$kode_konsentrasi' or matakuliah.kode_konsentrasi='' or matakuliah.kode_konsentrasi IS NULL) and matakuliah.jenis_matakuliah='3'
 										AND mk_cpmk.kode_matakuliah IS NOT NULL
 										)
 										UNION

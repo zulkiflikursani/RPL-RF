@@ -251,6 +251,7 @@
                                         <thead class="table-light">
                                             <tr>
                                                 <th>No</th>
+                                                <th>Id Kurikulum</th>
                                                 <th>Kode Matakuliah</th>
                                                 <th width='30%'>Nama Matakuliah</th>
                                                 <th>Id Cpmk</th>
@@ -352,7 +353,7 @@
                 // $("#loading").show();
 
                 var cari2 = cari.val()
-                var idcpmk = data[3];
+                var idcpmk = data[4];
                 // alert(idcmk)
                 if (
                     cari2 == 1
@@ -378,10 +379,10 @@
             })
             $('.table-matakuliah tbody').on('click', 'button', function() {
                 var data = table.row($(this).parents('tr')).data();
-                $('#ekdmk').val(data[1]);
-                $('#enmmk').val(data[2]);
-                $('#eidcpmk').val(data[3]);
-                $('#ecpmk').val(data[4]);
+                $('#ekdmk').val(data[2]);
+                $('#enmmk').val(data[3]);
+                $('#eidcpmk').val(data[4]);
+                $('#ecpmk').val(data[5]);
 
                 $('.edit-cpmk-modal').modal('show')
 
@@ -510,11 +511,13 @@
             $.post(url, {
 
             }).done(function(data) {
+                console.log(data)
                 data = JSON.parse(data)
                 c = []
                 $.each(data, function(i, v) {
                     no = parseFloat(i) + 1;
                     var id = no;
+                    var idkur = v['id_kurikulum'];
                     var kdmk = v['kode_matakuliah'];
                     var nmmk = v['nama_matakuliah'];
                     var idcpmk = v['idcpmk'];
@@ -522,11 +525,12 @@
                     var btn = "<button class='btn btn-primary btn-sm' >Edit</button>";
                     item = {}
                     item[0] = id;
-                    item[1] = kdmk;
-                    item[2] = nmmk;
-                    item[3] = idcpmk;
-                    item[4] = cpmk;
-                    item[5] = btn;
+                    item[1] = idkur;
+                    item[2] = kdmk;
+                    item[3] = nmmk;
+                    item[4] = idcpmk;
+                    item[5] = cpmk;
+                    item[6] = btn;
 
                     c.push(item);
                     // table.row.add([no, v['kode_matakuliah'], v['nama_matakuliah'], v[

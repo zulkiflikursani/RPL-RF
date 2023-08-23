@@ -262,6 +262,12 @@
                                                             <option value="5"
                                                                 <?= (isset($datasubmit["didikakhir"]) && $datasubmit["didikakhir"] == "5" ? 'selected="selected"' : '') ?>>
                                                                 S1</option>
+                                                            <option value="6"
+                                                                <?= (isset($datasubmit["didikakhir"]) && $datasubmit["didikakhir"] == "6" ? 'selected="selected"' : '') ?>>
+                                                                D2</option>
+                                                            <option value="7"
+                                                                <?= (isset($datasubmit["didikakhir"]) && $datasubmit["didikakhir"] == "7" ? 'selected="selected"' : '') ?>>
+                                                                D3</option>
                                                         </select>
                                                     </div>
                                                 </div>

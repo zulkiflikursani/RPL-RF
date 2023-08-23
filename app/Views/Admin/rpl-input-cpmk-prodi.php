@@ -265,6 +265,7 @@
                                         <thead class="table-light">
                                             <tr>
                                                 <th>No</th>
+                                                <th>Id Kurikulum</th>
                                                 <th>Kode Matakuliah</th>
                                                 <th>Nama Matakuliah</th>
                                                 <th>Id Cpmk</th>
@@ -345,7 +346,7 @@
             // $("#loading").show();
 
             var cari2 = cari.val()
-            var idcpmk = data[3];
+            var idcpmk = data[4];
             // alert(idcmk)
             if (
                 cari2 == 1
@@ -371,9 +372,9 @@
         })
         $('.table-matakuliah tbody').on('click', 'button', function() {
             var data = table.row($(this).parents('tr')).data();
-            $('#enmmk').val(data[2]);
-            $('#eidcpmk').val(data[3]);
-            $('#ecpmk').val(data[4]);
+            $('#enmmk').val(data[3]);
+            $('#eidcpmk').val(data[4]);
+            $('#ecpmk').val(data[5]);
 
             $('.edit-cpmk-modal').modal('show')
 
@@ -504,7 +505,7 @@
 
             $.each(data, function(i, v) {
                 no = parseFloat(i) + 1;
-                table.row.add([no, v['kode_matakuliah'], v['nama_matakuliah'], v[
+                table.row.add([no, v['id_kurikulum'], v['kode_matakuliah'], v['nama_matakuliah'], v[
                         'idcpmk'], v['cpmk'],
                     "<button class='btn btn-primary btn-sm' >Edit</button>"
                 ]).draw()

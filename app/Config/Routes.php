@@ -124,6 +124,7 @@ $routes->get('/setup-taakademik', 'Admin::setupTaakademik');
 $routes->get('/setup-konsentrasi', 'Admin::setupKonsentrasi');
 $routes->get('/setup-rpl', 'Admin::setupRpl');
 $routes->get('/biodata-mahasiswa/(:any)', 'Admin::updateBiodataMahasiswa/$1');
+$routes->get('/form-nilai-mahasiswa/(:any)', 'Admin::form_nilai/$1');
 
 
 
