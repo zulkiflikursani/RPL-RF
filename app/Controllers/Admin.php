@@ -3405,20 +3405,21 @@ class Admin extends BaseController
             // $ta_akademik = $this->getTa_akademik();
             $modelBiodata = new ModelBiodata();
             $modelProv = new ModelProv();
+            $modelMkDekan = new ModelKlaimDekan();
             $dataProv = $modelProv->getProv();
             $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
-            $modelmkheader = new ModelKlaimMkHeader();
-
+            $result = $modelMkDekan->getDatatoPrint($noregis);
             $data = [
                 'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                 'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
                 'ta_akademik' => $this->getTa_akademik(),
                 'datasubmit' => $databio,
                 'dataprov' => $dataProv,
+                'dataKlaimAsessor' => $result
 
             ];
 
-            return view('Admin/rpl-biodata-mahasiswa', $data);
+            return view('Admin/rpl-nilai-mahasiswa', $data);
         }
     }
     public function logout()
