@@ -55,12 +55,11 @@
                         aria-label="Close"></button></div>';
                         }
                     }
-
-                    // if (isset($emailstatus)) {
-                    //     echo $emailstatus;
-                    // }
                     ?>
 
+                    <div class="notif">
+
+                    </div>
 
                     <div class="row">
                         <div class="col-xl-12">
@@ -151,6 +150,7 @@
                                                         <th>Nama Mahasiswa</th>
                                                         <th>Program Studi</th>
                                                         <th>Jenis RPL</th>
+                                                        <th>Aksi</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id='bodytable'>
@@ -273,10 +273,41 @@
                 "<tr><td>" + i + "</td><td for='noreg'>" + value['no_peserta'] +
                 "</td><td for='nmmhs'>" + value['nama'] + "</td><td for='prodi'>" + value[
                     'kode_prodi'] + "</td></td><td for='prodi'>A" + value[
-                    'jenis_rpl'] + "</td></tr>"
+                    'jenis_rpl'] +
+                "</td><td><button class='button btn btn-sm btn-primary' noregis='" + value['no_peserta'] +
+                "' onclick='batalini($(this))'>Batal</button></td></tr>"
             )
         })
         // return kode_prodi;
+    }
+
+    function batalini(ini) {
+        url = '<?= base_url('batalasesi') ?>'
+        idasessor = $("#nmasessor").val();
+        noregis = ini.attr('noregis');
+        $.post(url, {
+            "noregis": noregis,
+            "asessor": idasessor
+        }).done(function(data) {
+            data = JSON.parse(data)
+            if (data['status'] == 'sukses') {
+                $('.notif').append(
+                    '<div class="alert alert-primary alert-dismissible fade show" role="alert">' + data[
+                        'message'] +
+                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+                );
+                ini.parent().parent().remove();
+            } else if (data['status'] == 'gagal') {
+                $('.notif').append(
+                    '<div class="alert alert-danger alert-dismissible fade show" role="alert">Gagal :' +
+                    data[
+                        'message'] +
+                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+                );
+            }
+            window.scrollTo(0, 0);
+
+        })
     }
     </script>
 </body>

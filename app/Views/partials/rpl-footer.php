@@ -20,6 +20,12 @@
     /* display: none; */
 }
 </style>
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+
+
 <div id='loading'>
     <i class="bx bx-loader bx-spin  align-middle me-2"></i>
 

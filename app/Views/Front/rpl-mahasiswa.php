@@ -218,7 +218,7 @@
                                                         value="<?= (isset($biodata["kode_prodi"]) ? $biodata["kode_prodi"] : '') ?>"
                                                         hidden>
                                                     <input type="text" class="form-control" id="formrow-inputProvinsi"
-                                                        name="nmnohp" placeholder="Masukkan No. HP"
+                                                        name="nmnohp" placeholder=""
                                                         value="<?= (isset($prodi) ? $prodi : '') ?>" disabled>
 
                                                 </div>

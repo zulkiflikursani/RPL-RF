@@ -82,7 +82,7 @@
                                                         <div class="col-md-2">Jenis RPL</div>
                                                         <div class="col-md-2">: <?= "A" . $jenis_rpl; ?></div>
                                                     </div>
-                                                     <div class="row">
+                                                    <div class="row">
 
                                                         <div class="col-md-2">Asessor</div>
                                                         <div class="col-md-2">: <?= $nm_asessor; ?></div>
@@ -175,8 +175,14 @@
                                                                                     <select class='form-select' required>
                                                                                     <option value='' selected>Pilih</option>    
                                                                                     <option value='A'>A</option>    
+                                                                                    <option value='A-'>A-</option>    
+                                                                                    <option value='B+' >B+</option>    
                                                                                     <option value='B' >B</option>    
-                                                                                    <option value='E'>E</option>  
+                                                                                    <option value='B-' >B-</option>    
+                                                                                    <option value='C+' >C+</option>    
+                                                                                    <option value='C' >C</option>    
+                                                                                    <option value='D' >D</option>    
+                                                                                    <option value='E'>E</option>   
                                                                                     </select></td>
                                                                                     <td for='kettanggapan' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' required> </textarea>
                                                                                     </td>
@@ -226,7 +232,13 @@
                                                                                     <select class='form-select' required>
                                                                                     <option value='' selected>Pilih</option>    
                                                                                     <option value='A'>A</option>    
+                                                                                    <option value='A-'>A-</option>    
+                                                                                    <option value='B+' >B+</option>    
                                                                                     <option value='B' >B</option>    
+                                                                                    <option value='B-' >B-</option>    
+                                                                                    <option value='C+' >C+</option>    
+                                                                                    <option value='C' >C</option>    
+                                                                                    <option value='D' >D</option>    
                                                                                     <option value='E'>E</option>    
                                                                                     </select></td>
                                                                                     <td for='kettanggapan' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' required> </textarea>
@@ -249,10 +261,12 @@
 
 
                                         <div>
-                                            <form action="<?= base_url('setvalidprodi') ?>" method="post" id='validasi-form' target="">
+                                            <form action="<?= base_url('setvalidprodi') ?>" method="post"
+                                                id='validasi-form' target="">
                                                 <input type="hidden" name="noregis" value='<?= $noregis ?>'>
                                             </form>
-                                            <form action="<?= base_url('setunvalidprodi') ?>" method="post" id='unvalidasi-form' target="">
+                                            <form action="<?= base_url('setunvalidprodi') ?>" method="post"
+                                                id='unvalidasi-form' target="">
                                                 <input type="hidden" name="noregis" value='<?= $noregis ?>'>
                                             </form>
                                             <?php if ($status == 1) {
@@ -315,51 +329,51 @@
 </html>
 
 <script>
-    $(document).ready(function() {
-        $('#loading').show()
-        noregis = '<?= $noregis ?>'
-        url = '<?= base_url('getDataKlaimAsessor') ?>'
-        $.post(url, {
-            noregis: noregis
-        }, function(data) {
-            data = JSON.parse(data)
-            console.log(data);
-            $.each(data, function(index, value) {
-                $('#tbody-klaim-mk  > tr').each(function(i, tr) {
-                    if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
-                        value['idklaim']) {
-                        // alert('jalan')
-                        $(this).find('td[for=tanggapan]').children().val(value[
-                            'tanggapan']);
-                        $(this).find('td[for=nilaiAs]').children().val(value[
-                            'nilai']);
-                        $(this).find('td[for=kettanggapan]').children()
-                            .val(value['ket_tanggapan']);
+$(document).ready(function() {
+    $('#loading').show()
+    noregis = '<?= $noregis ?>'
+    url = '<?= base_url('getDataKlaimAsessor') ?>'
+    $.post(url, {
+        noregis: noregis
+    }, function(data) {
+        data = JSON.parse(data)
+        console.log(data);
+        $.each(data, function(index, value) {
+            $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+                if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
+                    value['idklaim']) {
+                    // alert('jalan')
+                    $(this).find('td[for=tanggapan]').children().val(value[
+                        'tanggapan']);
+                    $(this).find('td[for=nilaiAs]').children().val(value[
+                        'nilai']);
+                    $(this).find('td[for=kettanggapan]').children()
+                        .val(value['ket_tanggapan']);
 
 
 
 
-                    }
-                })
-                $('textarea').attr('readonly', 'readonly');
-                $('select').attr('disabled', 'disabled');
-                $('#loading').hide()
-
+                }
             })
-        }).fail(function() {
-            alert("error");
+            $('textarea').attr('readonly', 'readonly');
+            $('select').attr('disabled', 'disabled');
             $('#loading').hide()
-        });
-    })
 
-    function validprodi() {
-        $('#validasi-form').submit()
-    }
+        })
+    }).fail(function() {
+        alert("error");
+        $('#loading').hide()
+    });
+})
 
-    function unvalidprodi() {
-        $('#unvalidasi-form').submit()
+function validprodi() {
+    $('#validasi-form').submit()
+}
 
-    }
+function unvalidprodi() {
+    $('#unvalidasi-form').submit()
+
+}
 </script>
 <?php
 function getnamafile($no_dokumen)

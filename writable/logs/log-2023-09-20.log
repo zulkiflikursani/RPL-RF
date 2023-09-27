@@ -1,0 +1,36 @@
+CRITICAL - 2023-09-20 22:04:17 --> Undefined variable: jmlhsks
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Views/Admin/rpl-data-mahasiswa-per-prodi.php(148): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 148, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-data-...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(2950): view('Admin/rpl-data-...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->dataMhsPerpodiOk('20222')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2023-09-20 22:04:33 --> Undefined variable: jmlhsks
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Views/Admin/rpl-data-mahasiswa-per-prodi.php(146): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 146, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-data-...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(2950): view('Admin/rpl-data-...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->dataMhsPerpodiOk('20222')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2023-09-20 22:04:42 --> Undefined variable: jmlhsks
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Views/Admin/rpl-data-mahasiswa-per-prodi.php(148): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 148, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-data-...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(2950): view('Admin/rpl-data-...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->dataMhsPerpodiOk('20222')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}

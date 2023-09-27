@@ -306,9 +306,7 @@
                                     </div>
                                     <div class="d-print-none">
                                         <div class="float-end">
-                                            <a href="javascript:window.print()"
-                                                class="btn btn-success waves-effect waves-light me-1"><i
-                                                    class="fa fa-print"></i></a>
+                                            <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-print"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -338,14 +336,14 @@
 </html>
 
 <script>
-function validprodi() {
-    $('#validasi-form').submit()
-}
+    function validprodi() {
+        $('#validasi-form').submit()
+    }
 
-function unvalidprodi() {
-    $('#unvalidasi-form').submit()
+    function unvalidprodi() {
+        $('#unvalidasi-form').submit()
 
-}
+    }
 </script>
 <?php
 function tgl_indo($tanggal)

@@ -126,8 +126,7 @@
                     ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-dashboard" role="button">
-                            <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= "Mahasiswa" ?></span>
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= "Mahasiswa" ?></span>
                             <div class="arrow-down"></div>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
@@ -175,7 +174,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="<?= base_url('data-peserta') ?>" id="topnav-dashboard"
                             role="button">
-                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Rekapitulasi Peserta' ?></span>
+                            <i class="bx bx-home-circle me-2"></i><span
+                                key="t-dashboards"><?= 'Rekapitulasi Peserta' ?></span>
 
                         </a>
                     </li>
@@ -223,8 +223,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="<?= base_url('data-asessi-prodi') ?>" id="topnav-dashboard"
                             role="button">
-                            <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= 'Asessor' ?></span>
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Asessor' ?></span>
 
                         </a>
                     </li>
@@ -242,8 +241,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="<?= base_url('setup-konsentrasi') ?>" id="topnav-dashboard"
                             role="button">
-                            <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= 'Konsentrasi' ?></span>
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Konsentrasi' ?></span>
 
                         </a>
                     </li>
@@ -288,6 +286,19 @@
                     </li>
                     <?php
                     };
+
+                    if (session()->get('sttpengguna') == 6) {
+                    ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('home-akademik-2') ?>" id="topnav-dashboard"
+                            role="button">
+                            <i class="bx bx-home-circle me-2"></i><span
+                                key="t-dashboards"><?= 'Data Singkron Siska' ?></span>
+
+                        </a>
+                    </li>
+                    <?php
+                    };
                     ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link arrow-none"
@@ -300,6 +311,8 @@
 
 
                     </li>
+
+
 
                 </ul>
             </div>

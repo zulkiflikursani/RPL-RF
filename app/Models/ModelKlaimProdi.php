@@ -66,6 +66,7 @@ class ModelKlaimProdi extends Model
         bio_peserta.nama,
         mk_klaim_asessor.kode_matakuliah,
         mk_klaim_asessor.nilai,
+        matakuliah.sks,
         mk_klaim_header.nama_matakuliah,
         mk_klaim_asessor.kode_prodi,
         bio_peserta.jenis_rpl,

@@ -7,6 +7,7 @@ use App\Models\ModelCpmk;
 use App\Models\ModelDokumen;
 use App\Models\ModelDosen;
 use App\Models\ModelKeu;
+use App\Models\ModelKlaimA1;
 use App\Models\ModelKlaimAsessor;
 use App\Models\ModelKlaimDekan;
 use App\Models\ModelKlaimMkHeader;
@@ -139,6 +140,7 @@ class Admin extends BaseController
         }
     }
 
+
     public function updateBiodataMahasiswa($noregis)
     {
         if (session()->get('sttpengguna') != 1) {
@@ -237,6 +239,330 @@ class Admin extends BaseController
                 ];
             }
             return view('Admin/rpl-biodata-mahasiswa', $data);
+        }
+    }
+
+    public function updataBuktiBayar()
+    {
+        if (session()->get('sttpengguna') != 1) {
+            return redirect()->to('/logout');
+        } else {
+            helper('File');
+
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            // $ta = $this->getTa_akademik();
+            $noregis = $db->escapeString($this->request->getPost("noregis"));
+            $bukti = $this->request->getFile('buktiBayar');
+            $validationRule = [
+                'buktiBayar' =>  [
+                    'label' => "Bukti Pembayaran",
+                    'rules' => [
+                        'uploaded[buktiBayar]',
+                        'max_size[buktiBayar,1024]',
+                        'mime_in[buktiBayar,application/pdf]',
+                    ]
+                ],
+            ];
+            $messages = [
+                'buktiBayar' =>  [
+                    'mime_in' => 'File harus berformat PDF.',
+                    'max_size' => 'Ukuran File Bukti Pembayaran maksimal  1 MB.',
+                ],
+
+            ];
+
+            $validation = \Config\Services::validation();
+            $validation->setRules($validationRule, $messages);
+            if (!$validation->run()) {
+
+                $modelBiodata = new ModelBiodata();
+                $modelProv = new ModelProv();
+                $dataProv = $modelProv->getProv();
+                $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+                $data = [
+                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                    'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+                    'ta_akademik' => $this->getTa_akademik(),
+                    'datasubmit' => $databio,
+                    'uploaderror' => $validation->getError(),
+                    'dataprov' => $dataProv,
+
+                ];
+
+                return view('Admin/rpl-biodata-mahasiswa', $data);
+            } else {
+                $modelKeu = new ModelKeu();
+                $validasikeu = $modelKeu->cekvalidasi($noregis);
+                if ($validasikeu == null) {
+                    $path_to_file = "uploads/berkas/$noregis/" . "bb" . trim($noregis) . ".pdf";
+                    if (file_exists($path_to_file)) {
+                        unlink($path_to_file);
+                    }
+                    $upload = $bukti->move("uploads/berkas/$noregis", "bb" . trim($noregis) . ".pdf");
+                    if ($upload) {
+                        $modelBiodata = new ModelBiodata();
+                        $modelProv = new ModelProv();
+                        $dataProv = $modelProv->getProv();
+                        $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+                        $data = [
+                            'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                            'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+                            'ta_akademik' => $this->getTa_akademik(),
+                            'datasubmit' => $databio,
+                            'statusupload' => 'sukses',
+                            'dataprov' => $dataProv,
+
+                        ];
+                    } else {
+                        $modelBiodata = new ModelBiodata();
+                        $modelProv = new ModelProv();
+                        $dataProv = $modelProv->getProv();
+                        $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+                        $data = [
+                            'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                            'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+                            'ta_akademik' => $this->getTa_akademik(),
+                            'datasubmit' => $databio,
+                            'uploaderror' => 'Gagal mengupload file',
+                            'dataprov' => $dataProv,
+                        ];
+                    }
+                    return view('Admin/rpl-biodata-mahasiswa', $data);
+                } else {
+                    $modelBiodata = new ModelBiodata();
+                    $modelProv = new ModelProv();
+                    $dataProv = $modelProv->getProv();
+                    $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+                    $data = [
+                        'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                        'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+                        'ta_akademik' => $this->getTa_akademik(),
+                        'datasubmit' => $databio,
+                        'uploaderror' => 'Gagal mengupload karena sudah divalidasi oleh keuangan',
+                        'dataprov' => $dataProv,
+                    ];
+                    return view('Admin/rpl-biodata-mahasiswa', $data);
+                }
+            }
+        }
+    }
+    public function updateIjazah()
+    {
+        if (session()->get('sttpengguna') != 1) {
+            return redirect()->to('/logout');
+        } else {
+            helper('File');
+
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            // $ta = $this->getTa_akademik();
+            $noregis = $db->escapeString($this->request->getPost("noregis"));
+            $ijazah = $this->request->getFile('ijazah');
+            $validationRule = [
+                'ijazah' =>  [
+                    'label' => "ijazah",
+                    'rules' => [
+                        'uploaded[ijazah]',
+                        'max_size[ijazah,1024]',
+                        'mime_in[ijazah,application/pdf]',
+                    ]
+                ],
+            ];
+            $messages = [
+                'ijazah' =>  [
+                    'mime_in' => 'File harus berformat PDF.',
+                    'max_size' => 'Ukuran File Bukti Pembayaran maksimal  1 MB.',
+                ],
+
+            ];
+
+            $validation = \Config\Services::validation();
+            $validation->setRules($validationRule, $messages);
+            if (!$validation->run()) {
+
+                $modelBiodata = new ModelBiodata();
+                $modelProv = new ModelProv();
+                $dataProv = $modelProv->getProv();
+                $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+                $data = [
+                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                    'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+                    'ta_akademik' => $this->getTa_akademik(),
+                    'datasubmit' => $databio,
+                    'uploaderror' => $validation->getError(),
+                    'dataprov' => $dataProv,
+
+                ];
+
+                return view('Admin/rpl-biodata-mahasiswa', $data);
+            } else {
+
+                $validnim = $this->data_mhs_siska($noregis);
+                $data = json_decode($validnim, false);
+                $result = json_encode($data->result);
+
+                // echo $result . " atau \"not found\"";
+                if ($result == "\"not found\"") {
+                    $path_to_file = "uploads/berkas/$noregis/" . "i" . trim($noregis) . ".pdf";
+                    if (file_exists($path_to_file)) {
+                        unlink($path_to_file);
+                    }
+                    $upload = $ijazah->move("uploads/berkas/$noregis", "i" . trim($noregis) . ".pdf");
+                    if ($upload) {
+                        $modelBiodata = new ModelBiodata();
+                        $modelProv = new ModelProv();
+                        $dataProv = $modelProv->getProv();
+                        $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+                        $data = [
+                            'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                            'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+                            'ta_akademik' => $this->getTa_akademik(),
+                            'datasubmit' => $databio,
+                            'statusupload' => 'sukses',
+                            'dataprov' => $dataProv,
+
+                        ];
+                    } else {
+                        $modelBiodata = new ModelBiodata();
+                        $modelProv = new ModelProv();
+                        $dataProv = $modelProv->getProv();
+                        $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+                        $data = [
+                            'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                            'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+                            'ta_akademik' => $this->getTa_akademik(),
+                            'datasubmit' => $databio,
+                            'uploaderror' => 'Gagal mengupload file',
+                            'dataprov' => $dataProv,
+                        ];
+                    }
+                    return view('Admin/rpl-biodata-mahasiswa', $data);
+                } else {
+                    $modelBiodata = new ModelBiodata();
+                    $modelProv = new ModelProv();
+                    $dataProv = $modelProv->getProv();
+                    $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+                    $data = [
+                        'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                        'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+                        'ta_akademik' => $this->getTa_akademik(),
+                        'datasubmit' => $databio,
+                        'uploaderror' => 'Gagal mengupload karena sudah memiliki nim',
+                        'dataprov' => $dataProv,
+                    ];
+                    return view('Admin/rpl-biodata-mahasiswa', $data);
+                }
+            }
+        }
+    }
+    public function updateIdentitas()
+    {
+        if (session()->get('sttpengguna') != 1) {
+            return redirect()->to('/logout');
+        } else {
+            helper('File');
+
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+            // $ta = $this->getTa_akademik();
+            $noregis = $db->escapeString($this->request->getPost("noregis"));
+            $identitas = $this->request->getFile('identitas');
+            $validationRule = [
+                'identitas' =>  [
+                    'label' => "ijazah",
+                    'rules' => [
+                        'uploaded[identitas]',
+                        'max_size[identitas,1024]',
+                        'mime_in[identitas,application/pdf]',
+                    ]
+                ],
+            ];
+            $messages = [
+                'identitas' =>  [
+                    'mime_in' => 'File harus berformat PDF.',
+                    'max_size' => 'Ukuran File Bukti Pembayaran maksimal  1 MB.',
+                ],
+
+            ];
+
+            $validation = \Config\Services::validation();
+            $validation->setRules($validationRule, $messages);
+            if (!$validation->run()) {
+
+                $modelBiodata = new ModelBiodata();
+                $modelProv = new ModelProv();
+                $dataProv = $modelProv->getProv();
+                $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+                $data = [
+                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                    'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+                    'ta_akademik' => $this->getTa_akademik(),
+                    'datasubmit' => $databio,
+                    'uploaderror' => $validation->getError(),
+                    'dataprov' => $dataProv,
+
+                ];
+
+                return view('Admin/rpl-biodata-mahasiswa', $data);
+            } else {
+
+                $validnim = $this->data_mhs_siska($noregis);
+                $data = json_decode($validnim, false);
+                $result = json_encode($data->result);
+
+                // echo $result . " atau \"not found\"";
+                if ($result == "\"not found\"") {
+                    $path_to_file = "uploads/berkas/$noregis/" . "ii" . trim($noregis) . ".pdf";
+                    if (file_exists($path_to_file)) {
+                        unlink($path_to_file);
+                    }
+                    $upload = $identitas->move("uploads/berkas/$noregis", "ii" . trim($noregis) . ".pdf");
+                    if ($upload) {
+                        $modelBiodata = new ModelBiodata();
+                        $modelProv = new ModelProv();
+                        $dataProv = $modelProv->getProv();
+                        $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+                        $data = [
+                            'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                            'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+                            'ta_akademik' => $this->getTa_akademik(),
+                            'datasubmit' => $databio,
+                            'statusupload' => 'sukses',
+                            'dataprov' => $dataProv,
+
+                        ];
+                    } else {
+                        $modelBiodata = new ModelBiodata();
+                        $modelProv = new ModelProv();
+                        $dataProv = $modelProv->getProv();
+                        $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+                        $data = [
+                            'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                            'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+                            'ta_akademik' => $this->getTa_akademik(),
+                            'datasubmit' => $databio,
+                            'uploaderror' => 'Gagal mengupload file',
+                            'dataprov' => $dataProv,
+                        ];
+                    }
+                    return view('Admin/rpl-biodata-mahasiswa', $data);
+                } else {
+                    $modelBiodata = new ModelBiodata();
+                    $modelProv = new ModelProv();
+                    $dataProv = $modelProv->getProv();
+                    $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+                    $data = [
+                        'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                        'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+                        'ta_akademik' => $this->getTa_akademik(),
+                        'datasubmit' => $databio,
+                        'uploaderror' => 'Gagal mengupload karena sudah memiliki nim',
+                        'dataprov' => $dataProv,
+                    ];
+                    return view('Admin/rpl-biodata-mahasiswa', $data);
+                }
+            }
         }
     }
     public function resetPasswordProdi()
@@ -364,6 +690,28 @@ class Admin extends BaseController
             return view('Admin/rpl-rekapitulasi-peserta', $data);
         }
     }
+    public function dataPeserta1($ta_akademik)
+    {
+        if (session()->get('sttpengguna') != 1) {
+            return redirect()->to('/logout');
+        } else {
+
+            $modalPeserta = new ModelRegistrasi();
+
+            $dataPesertaFakultas = $modalPeserta->getDataPerFakultas($ta_akademik);
+            $dataPesertaProdi = $modalPeserta->getDataPerProdi($ta_akademik);
+
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Rekap Peserta RPL', 'pagetitle' => 'Rekap Peserta RPL']),
+                'ta_akademik' => $ta_akademik,
+                'dataPesertaFakultas' => $dataPesertaFakultas,
+                'dataPesertaProdi' => $dataPesertaProdi,
+            ];
+
+            return view('Admin/rpl-rekapitulasi-peserta', $data);
+        }
+    }
     public function datastatusklaim()
     {
         if (session()->get('sttpengguna') != 3) {
@@ -446,7 +794,7 @@ class Admin extends BaseController
                 "valid" => "1",
                 "tglubah" => $now,
             ];
-            if ($cekvaliddekan == null) {
+            if ($cekvaliddekan == NULL) {
                 echo "Gagal Melakukan Validasi ! Mahasiswa belum memiliki tagihan karena Belum divalidasi dekan ";
             } else {
                 $result = $modelKeu->where("no_peserta", $noregis)->set($set)->update();
@@ -472,7 +820,7 @@ class Admin extends BaseController
             $cekasessor = $db->query("select idklaim from mk_klaim_asessor where mid(idklaim,6,10) ='$noregis'");
             $result = $cekasessor->getRow();
             if (isset($result)) {
-                if ($result->idklaim != null) {
+                if ($result->idklaim != NULL) {
                     echo "Gagal Mengunvalidasi karena sudah dinilai oleh asessor.";
                 }
             } else {
@@ -619,6 +967,7 @@ class Admin extends BaseController
         }
     }
 
+
     public function asessiA1()
     {
         if (session()->get('sttpengguna') != 2) {
@@ -667,6 +1016,31 @@ class Admin extends BaseController
             ];
 
             return view('Admin/rpl-data-admin-prodi', $data);
+        }
+    }
+    public function batalAsesi()
+    {
+        if (session()->get('sttpengguna') != 3) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service("request");
+            $db = \Config\Database::connect();
+            $noregis = $db->escapeString($this->request->getPost('noregis'));
+            $asessor = $db->escapeString($this->request->getPost('asessor'));
+
+            $cekasessor = $db->query("select no_peserta from mk_klaim_asessor where no_peserta='$noregis' and idpengguna='$asessor'")->getResult();
+            if ($cekasessor != null) {
+                $respons = ['status' => 'gagal', 'message' => 'Asessor sudah melakukan validasi'];
+            } else {
+                $deletefromasessor = $db->query("delete from tb_peserta_asessor where no_peserta='$noregis' and no_asessor ='$asessor'");
+                if ($deletefromasessor == true) {
+                    $respons = [
+                        'status' => 'sukses',
+                        'message' => 'Berhasil Membagatalkan Asesi',
+                    ];
+                };
+            }
+            echo json_encode($respons);
         }
     }
     public function resetPasswordMhs()
@@ -775,50 +1149,100 @@ class Admin extends BaseController
             $modelBiodata = new ModelBiodata();
             $noregis = $db->escapeString($this->request->getPost("noregis"));
             $ta_akademik = $this->getTa_akademik();
+            $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+            if (isset($databio[0])) {
 
-            $getMhs = $modelBiodata->getKlaimMhs($ta_akademik);
-            $statusklaim = $db->query("select idklaim from mk_klaim_asessor where no_peserta='$noregis'")->getResult();
-            if ($statusklaim != null) {
-                $modelBiodata = new ModelBiodata();
-                $getMhs = $modelBiodata->getKlaimMhs($ta_akademik);
-                $data = [
-                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
-                    'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
-                    'ta_akademik' => $this->getTa_akademik(),
-                    'dataMhs' => $getMhs,
-                    'status' => false
-                ];
-                return view('Admin/rpl-data-klaim-mahasiswa', $data);
-            } else {
-                $batalkalim = $db->query("update mk_klaim_detail set statusklaim=1 where mid(idklaim,6,10)='$noregis'");
-                if ($batalkalim === FALSE) {
-                    $modelBiodata = new ModelBiodata();
+                if ($databio[0]['jenis_rpl'] == 1) {
+                    // JENIS RPL A1
+                    $modelklaimA1 = new ModelKlaimA1();
+                    $cekvalidasessor = $modelklaimA1->where('no_registrasi', $noregis)->findAll();
+                    if ($cekvalidasessor != null) {
+                        $modelBiodata = new ModelBiodata();
+                        $getMhs = $modelBiodata->getKlaimMhs($ta_akademik);
+                        $data = [
+                            'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                            'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
+                            'ta_akademik' => $this->getTa_akademik(),
+                            'dataMhs' => $getMhs,
+                            'status' => false
+                        ];
+                        return view('Admin/rpl-data-klaim-mahasiswa', $data);
+                    } else {
+                        $batalkalim = $db->query("update dok_a1 set status=1 where no_registrasi='$noregis'");
+                        if ($batalkalim === FALSE) {
+                            $modelBiodata = new ModelBiodata();
+                            $getMhs = $modelBiodata->getKlaimMhs($ta_akademik);
+                            $data = [
+                                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                                'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
+                                'ta_akademik' => $this->getTa_akademik(),
+                                'dataMhs' => $getMhs,
+                                'status' => false
+                            ];
+                            return view('Admin/rpl-data-klaim-mahasiswa', $data);
+                        } else {
+                            $modelBiodata = new ModelBiodata();
+                            $getMhs = $modelBiodata->getKlaimMhs($ta_akademik);
+                            $data = [
+                                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                                'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
+                                'ta_akademik' => $this->getTa_akademik(),
+                                'dataMhs' => $getMhs,
+                                'status' => true
+                            ];
+
+                            return view('Admin/rpl-data-klaim-mahasiswa', $data);
+                        }
+                    }
+                } else if ($databio[0]['jenis_rpl'] == 2 || $databio[0]['jenis_rpl'] == 3) {
+
+                    //JENIS RPL A2 ATAU A3";
                     $getMhs = $modelBiodata->getKlaimMhs($ta_akademik);
-                    $data = [
-                        'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
-                        'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
-                        'ta_akademik' => $this->getTa_akademik(),
-                        'dataMhs' => $getMhs,
-                        'status' => false,
+                    $statusklaim = $db->query("select idklaim from mk_klaim_asessor where no_peserta='$noregis'")->getResult();
+                    if ($statusklaim != NULL) {
+                        $modelBiodata = new ModelBiodata();
+                        $getMhs = $modelBiodata->getKlaimMhs($ta_akademik);
+                        $data = [
+                            'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                            'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
+                            'ta_akademik' => $this->getTa_akademik(),
+                            'dataMhs' => $getMhs,
+                            'status' => false
+                        ];
+                        return view('Admin/rpl-data-klaim-mahasiswa', $data);
+                    } else {
+                        $batalkalim = $db->query("update mk_klaim_detail set statusklaim=1 where mid(idklaim,6,10)='$noregis'");
+                        if ($batalkalim === FALSE) {
+                            $modelBiodata = new ModelBiodata();
+                            $getMhs = $modelBiodata->getKlaimMhs($ta_akademik);
+                            $data = [
+                                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                                'page_title' => view('partials/rpl-page-title', ['title' => 'Admin', 'pagetitle' => 'Dashboards']),
+                                'ta_akademik' => $this->getTa_akademik(),
+                                'dataMhs' => $getMhs,
+                                'status' => false,
 
-                    ];
+                            ];
 
-                    return view('Admin/rpl-data-klaim-mahasiswa', $data);
-                } else {
-                    $modelBiodata = new ModelBiodata();
-                    $getMhs = $modelBiodata->getKlaimMhs($ta_akademik);
-                    $data = [
-                        'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
-                        'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
-                        'ta_akademik' => $this->getTa_akademik(),
-                        'dataMhs' => $getMhs,
-                        'status' => true
+                            return view('Admin/rpl-data-klaim-mahasiswa', $data);
+                        } else {
+                            $modelBiodata = new ModelBiodata();
+                            $getMhs = $modelBiodata->getKlaimMhs($ta_akademik);
+                            $data = [
+                                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                                'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
+                                'ta_akademik' => $this->getTa_akademik(),
+                                'dataMhs' => $getMhs,
+                                'status' => true
 
 
-                    ];
+                            ];
 
-                    return view('Admin/rpl-data-klaim-mahasiswa', $data);
+                            return view('Admin/rpl-data-klaim-mahasiswa', $data);
+                        }
+                    }
                 }
+            } else {
             }
         }
     }
@@ -871,7 +1295,7 @@ class Admin extends BaseController
                 'kode_prodi' => session()->get('kode_prodi')
             ];
             $dataPengguna = $modelPengguna->where($where)->findAll();
-            if ($lastidpengguna->idpengguna != null) {
+            if ($lastidpengguna->idpengguna != NULL) {
                 $urutan = floatval($lastidpengguna->idpengguna) + 1;
                 if ($urutan < 10) {
                     $nolari = "000" . $urutan;
@@ -1008,7 +1432,7 @@ class Admin extends BaseController
             $password = password_hash($password1, PASSWORD_BCRYPT);
             $lastidpengguna = $db->query('select max(right(idpengguna,4)) as idpengguna from tb_pengguna')->getRow();
 
-            if ($lastidpengguna->idpengguna != null) {
+            if ($lastidpengguna->idpengguna != NULL) {
                 $urutan = floatval($lastidpengguna->idpengguna) + 1;
                 if ($urutan < 10) {
                     $nolari = "000" . $urutan;
@@ -1208,7 +1632,7 @@ class Admin extends BaseController
                 "idpengguna" => $idpengguna,
             ];
             $datapengguna = $modelPengguna->where('idpengguna', $idpengguna)->findAll();
-            if ($datapengguna != null) {
+            if ($datapengguna != NULL) {
                 foreach ($datapengguna as $row) {
                     $sttpengguna = $row['sttpengguna'];
                 }
@@ -1243,25 +1667,25 @@ class Admin extends BaseController
         } else if ($sttpengguna == 2) {
             $modal = new ModelKlaimAsessor();
             $data = $modal->where('idpengguna', $idpengguna)->findAll();
-            if ($data != null) {
+            if ($data != NULL) {
                 $status = 0;
             }
         } else if ($sttpengguna == 3) {
             $modal = new ModelKlaimProdi();
             $data = $modal->where('idpengguna', $idpengguna)->findAll();
-            if ($data != null) {
+            if ($data != NULL) {
                 $status = 0;
             }
         } else if ($sttpengguna == 4) {
             $modal = new ModelKlaimDekan();
             $data = $modal->where('idpengguna', $idpengguna)->findAll();
-            if ($data != null) {
+            if ($data != NULL) {
                 $status = 0;
             }
         } else if ($sttpengguna == 5) {
             $modal = new ModelKeu();
             $data = $modal->where('id_pengguna', $idpengguna)->findAll();
-            if ($data != null) {
+            if ($data != NULL) {
                 $status = 0;
             }
         }
@@ -1504,7 +1928,7 @@ class Admin extends BaseController
             ];
 
             $cekduplikat = $modelMk->checkduplikat($kdmk, $kode_prodi);
-            if ($cekduplikat == null) {
+            if ($cekduplikat == NULL) {
                 $simpan = $modelMk->insert($data);
                 if ($simpan === false) {
                     print_r($modelMk->errors());
@@ -1602,7 +2026,7 @@ class Admin extends BaseController
 
             $modelCpmk = new ModelMatakuliah();
             $cekcpmk = $modelCpmk->cekcpmk($kdmk, $kode_prodi);
-            if ($cekcpmk == null) {
+            if ($cekcpmk == NULL) {
                 $simpan = $modelCpmk->hapusMk($kdmk, $kode_prodi);
                 if ($simpan === false) {
                     echo $modelCpmk->errors();
@@ -2021,7 +2445,7 @@ class Admin extends BaseController
                 $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
                 $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
                 $datamatakuliah = $ModalMkA1->where('no_registrasi', $noregis)->findAll();
-                $mkrplprodi = $this->getMatakuliahklaimperprodi($databio[0]['kode_prodi'], $noregis);
+                $mkrplprodi = $this->getMatakuliahklaimperprodi1($databio[0]['kode_prodi'], $noregis, $databio[0]['kode_konsentrasi']);
                 $dataklaimAsessorA1 = $ModalMkA1->getDataKlaimAsessorA1($noregis);
                 $maxsksrekognisi = $ModalMkA1->maxsksrekognisi($databio[0]['kode_prodi']);
 
@@ -2057,7 +2481,7 @@ class Admin extends BaseController
             $idklaim = $db->escapeString($this->request->getPost('idklaim'));
             $modelklaimasessor = new ModelKlaimAsessor();
             $statusmk = $modelklaimasessor->cekValidProdi($idklaim);
-            if ($statusmk == null) {
+            if ($statusmk == NULL) {
                 $modelklaimasessor->batalklaimA1($idklaim);
             } else {
                 echo "Tidak Bisa Membatalkan Klaim karena sudah divalidasi oleh Prodi";
@@ -2076,7 +2500,7 @@ class Admin extends BaseController
             $noregis = $db->escapeString($this->request->getPost('noregis'));
             $modelklaimasessor = new ModelKlaimAsessor();
             $statusmk = $modelklaimasessor->cekValidProdiA1($noregis);
-            if ($statusmk == null) {
+            if ($statusmk == NULL) {
                 $modelklaimasessor->batalklaimdokA1($noregis);
             } else {
                 echo "Tidak Bisa Membatalkan Klaim karena sudah divalidasi oleh Prodi";
@@ -2208,7 +2632,7 @@ class Admin extends BaseController
 
             $modelMkProdi = new ModelKlaimProdi();
             $cekpeserta = $modelMkProdi->chekstauspeserta($noregis);
-            if ($cekpeserta != null) {
+            if ($cekpeserta != NULL) {
                 $statusMessage = "Peserta Sudah Divalidasi";
             } else {
                 $validprodi = $modelMkProdi->validprodi($noregis, session()->get("id"));
@@ -2253,8 +2677,8 @@ class Admin extends BaseController
             $cekpesertaasessor = $modelMkDekan->chekstauspesertaasessor($noregis);
             $cekpesertaprodi = $modelMkDekan->chekstauspesertaprodi($noregis);
             $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
-            if ($cekpesertaasessor != null && $cekpesertaprodi != null) {
-                if ($cekpeserta != null) {
+            if ($cekpesertaasessor != NULL && $cekpesertaprodi != NULL) {
+                if ($cekpeserta != NULL) {
                     // echo $this->validdekan($noregis, 4);
                     $statusMessage = "Peserta Sudah Divalidasi";
                 } else {
@@ -2335,7 +2759,7 @@ class Admin extends BaseController
 
             $modelMkProdi = new ModelKlaimProdi();
             $cekpeserta = $modelMkProdi->chekstauspeserta($noregis);
-            if ($cekpeserta != null) {
+            if ($cekpeserta != NULL) {
                 $unvalidprodi = $modelMkProdi->unvalidprodi($noregis, session()->get("id"));
                 if ($unvalidprodi === false) {
                     // echo $this->validprodi($noregis, 6);
@@ -2380,7 +2804,7 @@ class Admin extends BaseController
             $cekpesertaasessor = $modelMkDekan->chekstauspesertaasessor($noregis);
             $cekpesertaprodi = $modelMkDekan->chekstauspesertaprodi($noregis);
             $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
-            if ($cekpeserta != null) {
+            if ($cekpeserta != NULL) {
                 $unvalidprodi = $modelMkDekan->unvaliddekan($noregis, session()->get("id"));
                 if ($unvalidprodi === false) {
                     // echo $this->validdekan($noregis, 7);
@@ -2551,7 +2975,7 @@ class Admin extends BaseController
         };
         $dekan = $this->getNamaKaprodi($kode_prodi);
 
-        if ($cekpeserta == null) {
+        if ($cekpeserta == NULL) {
             echo "Peserta Belum divalidasi dekan";
         } else {
             $Modaldokumen = new ModelDokumen();
@@ -2607,7 +3031,7 @@ class Admin extends BaseController
         $modelMkDekan = new ModelKlaimDekan();
         $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
 
-        if ($cekpeserta == null) {
+        if ($cekpeserta == NULL) {
             echo "Peserta Belum divalidasi dekan";
         } else {
             $Modaldokumen = new ModelDokumen();
@@ -2719,6 +3143,99 @@ class Admin extends BaseController
             return $result;
         }
     }
+    public function getJenjang($kode_prodi)
+    {
+        if (!session()->get('noregis')) {
+            return redirect()->to('/logout');
+        } else {
+            $db = \Config\Database::connect();
+            $result = $db->query("select id_jenjang from prodi where kode_prodi ='$kode_prodi'")->getRow();
+            return $result->id_jenjang;
+        }
+    }
+    public function getMatakuliahklaimperprodi1($kode_prodi, $noregis, $kode_konsentrasi)
+    {
+
+        if (!session()->get('sttpengguna')) {
+            return redirect()->to('/logout');
+        } else {
+            $db      = \Config\Database::connect();
+            $ta_akademik = $this->getTa_akademik();
+            $id_jenjang = $this->getJenjang($kode_prodi);
+            $mku = "";
+            if ($id_jenjang == "S2-R") {
+            } else {
+                $mku = "(
+					SELECT
+						matakuliah.kode_matakuliah,
+						matakuliah.nama_matakuliah,
+						matakuliah.kode_prodi,
+						matakuliah.sks			
+						FROM
+					matakuliah
+				LEFT JOIN mk_cpmk ON (
+					
+					matakuliah.kode_matakuliah = mk_cpmk.kode_matakuliah and mk_cpmk.ta_akademik='$ta_akademik'
+				)
+				WHERE
+					 matakuliah.kode_prodi='' and (matakuliah.jenis_matakuliah='1' or matakuliah.jenis_matakuliah='2')
+				AND mk_cpmk.kode_matakuliah IS NOT NULL 
+				)
+				union";
+            };
+
+            $result = $db->query("SELECT
+									mm.kode_matakuliah,
+									mm.nama_matakuliah,
+									mm.sks,
+									mm.kode_prodi,
+									-- mk_cpmk.kode_prodi AS prodi,
+									mm.kode_matakuliah AS kdmk_klaim,
+									mk_klaim_header.idklaim AS idklaim
+								FROM
+									(
+										$mku
+										(
+											SELECT
+												matakuliah.kode_matakuliah,
+												matakuliah.nama_matakuliah,
+												matakuliah.kode_prodi,
+												matakuliah.sks			
+												FROM
+											matakuliah
+										LEFT JOIN mk_cpmk ON (
+											matakuliah.kode_prodi = mk_cpmk.kode_prodi
+											AND matakuliah.kode_matakuliah = mk_cpmk.kode_matakuliah and mk_cpmk.ta_akademik='$ta_akademik'
+										)
+										WHERE
+										matakuliah.kode_prodi = '$kode_prodi' and (matakuliah.kode_konsentrasi='$kode_konsentrasi' or matakuliah.kode_konsentrasi='' or matakuliah.kode_konsentrasi IS NULL) and matakuliah.jenis_matakuliah='3'
+										AND mk_cpmk.kode_matakuliah IS NOT NULL
+										)
+										UNION
+											(
+												SELECT
+													mk_klaim_header.kode_matakuliah,
+													mk_klaim_header.nama_matakuliah,
+													mk_klaim_header.kode_prodi,
+													mk_klaim_header.sks
+												FROM
+													mk_klaim_header
+												WHERE
+													mk_klaim_header.no_peserta = '$noregis'
+											)
+										) mm
+										
+										LEFT JOIN mk_klaim_header ON mm.kode_matakuliah = mk_klaim_header.kode_matakuliah
+										AND mk_klaim_header.kode_prodi = '$kode_prodi'
+										AND mk_klaim_header.no_peserta = '$noregis'
+										GROUP BY
+											mm.kode_matakuliah
+										ORDER BY
+											mm.kode_matakuliah")->getResult();
+
+            return $result;
+        }
+    }
     public function getNamaProdiByKode($kode_prodi)
     {
         $db      = \Config\Database::connect();
@@ -2738,7 +3255,7 @@ class Admin extends BaseController
     {
         $db      = \Config\Database::connect();
         $result = $db->query("select * from tb_ta_akademik");
-        if ($result->getResult() != null) {
+        if ($result->getResult() != NULL) {
             foreach ($result->getResult() as $a) {
                 $ta_akademik = $a->ta_akademik;
             }
@@ -2814,6 +3331,28 @@ class Admin extends BaseController
             }
         }
     }
+    public function menuRekapMhsPerperiode()
+    {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 1) {
+            return redirect()->to('/logout');
+        } else {
+            $this->request = service('request');
+            $db      = \Config\Database::connect();
+
+            $ta_akademik = $this->getTa_akademik();
+
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Rekap Mahasiswa RPL', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $ta_akademik,
+            ];
+            return view('Admin/rpl-menu-rekap-mahasiswa-per-periode', $data);
+            // } else {
+            //     return redirect()->to(base_url('Admin'));
+            // }
+
+        }
+    }
     public function printTranskrip($noregis)
     {
         if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 4 || session()->get('sttpengguna') != 6)) {
@@ -2851,7 +3390,7 @@ class Admin extends BaseController
                 };
                 $dekan = $this->getNamadekan($kode_fakultas);
                 $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
-                if ($cekpeserta != null) {
+                if ($cekpeserta != NULL) {
                     $data = [
                         'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                         'page_title' => view('partials/rpl-page-title', ['title' => 'Print Transkrip', 'pagetitle' => 'Dashboards']),
@@ -2890,7 +3429,7 @@ class Admin extends BaseController
 
             $dataKlaimA1 = $modelMkA1->where('no_registrasi', $noregis)->findAll();
 
-            if ($dataKlaimA1 != null) {
+            if ($dataKlaimA1 != NULL) {
                 $data = [
                     'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                     'page_title' => view('partials/rpl-page-title', ['title' => 'Print Transkrip', 'pagetitle' => 'Dashboards']),
@@ -2938,7 +3477,7 @@ class Admin extends BaseController
                 };
                 $dekan = $this->getNamadekan($kode_fakultas);
                 $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
-                if ($cekpeserta != null) {
+                if ($cekpeserta != NULL) {
                     $data = [
                         'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                         'page_title' => view('partials/rpl-page-title', ['title' => 'Print Transkrip', 'pagetitle' => 'Dashboards']),
@@ -2997,7 +3536,7 @@ class Admin extends BaseController
                 $dekan = $this->getNamadekan($kode_fakultas);
                 $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
 
-                if ($cekpeserta != null) {
+                if ($cekpeserta != NULL) {
                     $data = [
                         'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                         'page_title' => view('partials/rpl-page-title', ['title' => 'Print Transkrip', 'pagetitle' => 'Dashboards']),
@@ -3057,7 +3596,7 @@ class Admin extends BaseController
             $dekan = $this->getNamadekan($kode_fakultas);
             $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
 
-            if ($cekpeserta != null) {
+            if ($cekpeserta != NULL) {
                 $data = [
                     'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                     'page_title' => view('partials/rpl-page-title', ['title' => 'Print Transkrip', 'pagetitle' => 'Dashboards']),
@@ -3130,7 +3669,7 @@ class Admin extends BaseController
     {
         $db      = \Config\Database::connect();
         $result = $db->query("select dekan from fakultas where kode_fakultas ='$fakultas'")->getRow();
-        if ($result != null) {
+        if ($result != NULL) {
             $dekan = $result->dekan;
         } else {
             return false;
@@ -3142,7 +3681,7 @@ class Admin extends BaseController
     {
         $db      = \Config\Database::connect();
         $result = $db->query("select ka_prodi from prodi where kode_prodi ='$kode_prodi'")->getRow();
-        if ($result != null) {
+        if ($result != NULL) {
             $prodi = $result->ka_prodi;
         } else {
             return false;
@@ -3400,7 +3939,7 @@ class Admin extends BaseController
     public function form_nilai($noregis)
     {
         if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 6)) {
-            // return redirect()->to('/logout');
+            return redirect()->to('/logout');
         } else {
             // $ta_akademik = $this->getTa_akademik();
             $modelBiodata = new ModelBiodata();
@@ -3408,14 +3947,18 @@ class Admin extends BaseController
             $modelMkDekan = new ModelKlaimDekan();
             $dataProv = $modelProv->getProv();
             $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
-            $result = $modelMkDekan->getDatatoPrint($noregis);
+            $result = $modelMkDekan->getDatatoSiska($noregis);
+            $namaprodi = $this->getNamaProdi($databio[0]['kode_prodi']);
+            $getdatasiska = $this->data_mhs_siska($noregis);
             $data = [
                 'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                 'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
                 'ta_akademik' => $this->getTa_akademik(),
                 'datasubmit' => $databio,
                 'dataprov' => $dataProv,
-                'dataKlaimAsessor' => $result
+                'namaprodi' => $namaprodi,
+                'dataKlaimAsessor' => $result,
+                'datasiska' => $getdatasiska,
 
             ];
 
@@ -3433,5 +3976,218 @@ class Admin extends BaseController
             'ta_akademik' => $this->getTa_akademik()
         ];
         return view('auth/rpl-auth-login', $data);
+    }
+
+    public function data_mhs_siska($noregis)
+    {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 6)) {
+            return redirect()->to('/logout');
+        } else {
+            $client = \Config\Services::curlrequest();
+
+            $response = $client->request('GET', "http://silaju-api.unifa.ac.id/api/readbynoregis.php?noregis=$noregis", [
+                'auth' => ['user', 'pass'],
+                'headers' => ['KEY' => '16f4d6ae06b2655897f7e8fe0e4df9b0'],
+
+            ]);
+            // $response = $client->request('GET', "http://localhost:8000/apisiska/api/readbynoregis.php?noregis=$noregis", [
+            //     'auth' => ['user', 'pass'],
+            //     'headers' => ['KEY' => '16f4d6ae06b2655897f7e8fe0e4df9b0'],
+
+            // ]);
+
+            // $response = $client->request('GET', "https://siska.unifa.ac.id/api-siska/api/readbynoregis.php?noregis=$noregis", [
+            //     'auth' => ['user', 'pass'],
+            //     'headers' => ['KEY' => '16f4d6ae06b2655897f7e8fe0e4df9b0']
+            // ]);
+            // https: //siska.unifa.ac.id/api-siska/api/readbynoregis.php?noregis=1
+
+            // echo $response->getStatusCode();
+            return $response->getBody();
+        }
+    }
+
+    public function get_data_bynim($nim)
+    {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 6)) {
+            return redirect()->to('/logout');
+        } else {
+
+            $client = \Config\Services::curlrequest();
+            // $nim = $db->escapeString($this->request->getPost('nim'));
+
+            $response = $client->request('GET', "http://localhost:8000/apisiska/api/readbynim.php?nim=$nim", [
+                'auth' => ['user', 'pass'],
+                'headers' => ['key' => '16f4d6ae06b2655897f7e8fe0e4df9b0'],
+
+            ]);
+            // echo $nim;
+            return $response->getBody();
+        }
+    }
+    public function data_mhs_siska_nim()
+    {
+        $db = \Config\Database::connect();
+        $this->request = service('request');
+
+        $nim = $db->escapeString($this->request->getPost('nim'));
+        $result = $this->get_data_bynim($nim);
+        echo $result;
+    }
+
+    public function push_siska()
+    {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 6)) {
+            return redirect()->to('/logout');
+        } else {
+            $db = \Config\Database::connect();
+            $this->request = service('request');
+            $noregis = $db->escapeString($this->request->getPost('noregis'));
+            $nim = $db->escapeString($this->request->getPost('nim'));
+            if ($nim == "" || $noregis == "") {
+                echo "Gagal. Pastikan mengisi nim dan no registrasi ";
+            } else {
+                $this->push_nilai_sika($noregis, $nim);
+            }
+        }
+    }
+    public function push_nilai_sika($noregis, $nim)
+    {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 6)) {
+            return redirect()->to('/logout');
+        } else {
+            $db = \Config\Database::connect();
+            $this->request = service('request');
+            $result = $db->query("SELECT
+            mk_klaim_dekan.kode_prodi,
+            CONCAT(
+                mk_klaim_dekan.kode_prodi,
+                '|',
+                SUBSTR( mk_klaim_dekan.idklaim, 1, 5 ),
+                '|',
+            SUBSTR( mk_klaim_dekan.idklaim, 16 )) AS kode_krs,
+            NULL AS id_jadwal,
+            'N' AS mbkm,
+            NULL AS mbkm_kategori,
+            '$nim' AS nim,
+            NULL AS pindahan,
+            SUBSTR( mk_klaim_dekan.idklaim, 16 ) AS kode_matakuliah,
+        IF
+            ( bio_peserta.jenis_rpl = 1, mk_klaim_a1.kode_matakuliah_asal, SUBSTR( mk_klaim_dekan.idklaim, 16 ) ) AS kode_mk_pindahan,
+        IF
+            (
+                bio_peserta.jenis_rpl = 1,
+                dok_a1.nama_matakuliah,
+            mk_klaim_header.nama_matakuliah) AS nama_mk_pindahan,
+        IF
+            ( bio_peserta.jenis_rpl = 1, dok_a1.jumlah_sks, mk_klaim_header.sks ) AS sks_mk_pindahan,
+            NULL AS nama_kelas,
+            SUBSTR( mk_klaim_dekan.idklaim, 1, 5 ) AS periode_krs,
+            NULL AS tanggal_krs,
+            NULL AS waktu_krs,
+            'L' AS status_krs,
+            mk_klaim_asessor.nilai AS kode_nilai,
+            nilai.bobot AS nilai_angka,
+        IF
+            ( bio_peserta.jenis_rpl = 1, m_nilai_asal.bobot, nilai.bobot ) AS nilai_angka_pindahan,
+        IF
+            ( bio_peserta.jenis_rpl = 1, dok_a1.nilai, nilai.kode_nilai ) AS kode_nilai_pindahan,
+            NULL AS tanggal_nilai,
+            NULL AS waktu_nilai,
+            'L' AS status_nilai,
+            'L' AS transkrip_baru,
+            NULL AS penilaian,
+            NULL AS id_kelas_dikti,
+            NULL AS id_prodi_dikti 
+        FROM
+            mk_klaim_dekan
+            LEFT JOIN prodi ON mk_klaim_dekan.kode_prodi = prodi.kode_prodi
+            LEFT JOIN mk_klaim_a1 ON mk_klaim_a1.kode_matakuliah = SUBSTR( mk_klaim_dekan.idklaim, 16 ) and mk_klaim_a1.no_registrasi= SUBSTR(mk_klaim_dekan.idklaim,6,10)
+            LEFT JOIN bio_peserta ON bio_peserta.no_peserta = SUBSTR( mk_klaim_dekan.idklaim, 6, 10 )
+            LEFT JOIN dok_a1 ON bio_peserta.no_peserta = dok_a1.no_registrasi 
+            AND mk_klaim_a1.kode_matakuliah_asal = dok_a1.kode_matakuliah
+            LEFT JOIN mk_klaim_asessor ON mk_klaim_dekan.idklaim = mk_klaim_asessor.idklaim
+            LEFT JOIN nilai ON mk_klaim_asessor.nilai = nilai.kode_nilai
+            LEFT JOIN mk_klaim_prodi ON mk_klaim_asessor.idklaim = mk_klaim_prodi.idklaim
+            LEFT JOIN ( SELECT * FROM nilai ) m_nilai_asal ON dok_a1.nilai = TRIM( m_nilai_asal.kode_nilai )
+            LEFT JOIN mk_klaim_header ON mk_klaim_dekan.idklaim = mk_klaim_header.idklaim 
+        WHERE
+            bio_peserta.no_peserta = '$noregis' 
+            AND mk_klaim_prodi.idklaim IS NOT NULL 
+            AND mk_klaim_asessor.idklaim IS NOT NULL 
+            AND mk_klaim_asessor.nilai != 'E' 
+            AND mk_klaim_dekan.idklaim IS NOT NULL
+            GROUP BY mk_klaim_dekan.idklaim")->getResult();
+
+            $data = json_encode($result, false);
+            $this->push_data_to_siska($data);
+        }
+    }
+
+    private function push_data_to_siska($data)
+    {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 6)) {
+            return redirect()->to('/logout');
+        } else {
+            $client = \Config\Services::curlrequest();
+
+            $response = $client->request('POST', "http://localhost:8000/apisiska/api/push_nilai.php", [
+                'auth' => ['user', 'pass'],
+                'headers' => ["key" => "16f4d6ae06b2655897f7e8fe0e4df9b0"],
+                'form_params' => ['data' => $data],
+            ]);
+
+            // echo $response->getStatusCode();
+            echo $response->getBody();
+        }
+    }
+
+    public function home_akademik_2($ta_akademik)
+    {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 6)) {
+            return redirect()->to('/logout');
+        } else {
+            if (isset($ta_akademik)) {
+                $ta = $ta_akademik;
+            } else {
+                $ta = $this->getTa_akademik();
+            }
+            $modelKeuangan = new ModelKeu();
+            // $ta_akademik = $this->getTa_akademik();
+            $datasudahvalidasi = $modelKeuangan->getvalidbayar($ta);
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Akademik', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $ta,
+                'dataPesertaValid' => $datasudahvalidasi,
+
+            ];
+
+            return view('Admin/rpl-home-akademik-tosiska', $data);
+        }
+    }
+    public function home_akademik_2_nofilter()
+    {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 6)) {
+            return redirect()->to('/logout');
+        } else {
+            if (isset($ta_akademik)) {
+                $ta = $ta_akademik;
+            } else {
+                $ta = $this->getTa_akademik();
+            }
+            $modelKeuangan = new ModelKeu();
+            $ta_akademik = $this->getTa_akademik();
+            $datasudahvalidasi = $modelKeuangan->getvalidbayar($ta_akademik);
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Akademik', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $this->getTa_akademik(),
+                'dataPesertaValid' => $datasudahvalidasi,
+
+            ];
+
+            return view('Admin/rpl-home-akademik-tosiska', $data);
+        }
     }
 }

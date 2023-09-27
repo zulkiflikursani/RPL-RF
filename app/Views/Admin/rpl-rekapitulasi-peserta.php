@@ -5,6 +5,7 @@
 
     <?= $title_meta ?>
     <?= $this->include('partials/rpl-head-css') ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </head>
 
@@ -51,7 +52,7 @@
                     ?>
 
 
-                    <div class="row">
+                    <div class="row" id='body-print'>
                         <div class="col-xl-12">
 
                             <div class="card">
@@ -161,6 +162,24 @@
                                             ?>
                                         </tbody>
                                     </table>
+                                    <style type="text/css" media="print">
+                                        .no-print {
+                                            display: none;
+                                        }
+
+                                        table,
+                                        td,
+                                        th {
+                                            border: 1px solid;
+                                        }
+
+                                        table {
+                                            width: 100%;
+                                            border-collapse: collapse;
+                                        }
+                                    </style>
+                                    <button class="btn btn-sm btn-primary no-print" onclick="simpan_pdf()">
+                                        Print</button>
 
                                 </div>
                             </div>
@@ -193,7 +212,16 @@
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 
     <script>
-
+        function simpan_pdf() {
+            var divContents = document.getElementById("body-print").innerHTML;
+            var a = window.open('', '', 'height=500, width=500');
+            a.document.write('<html>');
+            a.document.write('<body > <h1>Rekapitulasi Peserta RPL <br>');
+            a.document.write(divContents);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
+        }
     </script>
 </body>
 

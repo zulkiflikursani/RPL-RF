@@ -73,7 +73,9 @@
                                     <div class="row">
                                         <div class="d-print-none">
                                             <div class="float-end">
-                                                <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-print"></i></a>
+                                                <a href="javascript:window.print()"
+                                                    class="btn btn-success waves-effect waves-light me-1"><i
+                                                        class="fa fa-print"></i></a>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -82,7 +84,7 @@
                                             $now = date('Y-m-d');
                                             ?>
 
-                                            <table class="col-md-12 " style="font-size: 12px;">
+                                            <table class="col-md-12 mb-2" style="font-size: 12px;">
                                                 <tr>
                                                     <td style='width:2% ; vertical-align: top ;'>Nomor</td>
                                                     <td style='width:1%; ;'>:</td>
@@ -107,15 +109,20 @@
 
 
                                             </table>
+                                            <span class="text-primary">Note : Klik Nama atau Nomor Peserta untuk
+                                                meilihat
+                                                Berita
+                                                Acara</span>
                                             <table class='table table-bordered table-responsive table-sm border-dark'>
                                                 <thead class="">
                                                     <tr>
                                                         <th width='5%'>No</th>
                                                         <th>Nama</th>
-                                                        <th>No Pemohon</th>
+                                                        <th>No Peserta</th>
                                                         <th>Kode Matakuliah</th>
                                                         <th>Nama Matakuliah</th>
                                                         <th width='7%'>Nilai</th>
+                                                        <th width='7%'>SKS</th>
                                                         <th width='7%'>Status Rekognisi</th>
                                                     </tr>
 
@@ -125,6 +132,7 @@
                                                     if (isset($dataKlaimAsessor)) {
                                                         $i = 0;
                                                         $ii = 0;
+                                                        $iii = 0;
                                                         $countdata = count($dataKlaimAsessor);
                                                         $jumlahsks = 0;
                                                         $noregis2 = "";
@@ -140,23 +148,46 @@
                                                             }
                                                             if ($row->no_peserta != $noregis2) {
                                                                 $ii++;
+                                                                $iii = 1;
+
+                                                                if ($row->jenis_rpl == 1) {
+                                                                    $urlberitaacara = base_url('bamahasiswaa1/' . $row->no_peserta);
+                                                                } else {
+                                                                    $urlberitaacara = base_url('bamahasiswa/' . $row->no_peserta);
+                                                                }
+
+
                                                                 echo "<tr>
                                                                 <td rowspan='$row->jbaris'>$ii</td>        
-                                                                <td rowspan='$row->jbaris'>$row->nama</td>        
-                                                                <td rowspan='$row->jbaris'>$row->no_peserta</td>        
+                                                                <td rowspan='$row->jbaris'><a href='$urlberitaacara' target='_blank'>$row->nama</a></td>        
+                                                                <td rowspan='$row->jbaris'><a href='$urlberitaacara' target='_blank'>$row->no_peserta</a> </td>        
                                                                 <td>$row->kode_matakuliah</td>        
                                                                 <td>$row->nama_matakuliah</td>        
                                                                 <td class='text-center'>$row->nilai</td>          
+                                                                <td class='text-center'>$row->sks</td>          
                                                                 <td class='text-center'>$statusrpl</td>          
                                                                 </tr>";
                                                                 $noregis2 = $row->no_peserta;
+                                                                $jumlahsks = 0;
+                                                                $jumlahsks = $jumlahsks + floatval($row->sks);
                                                             } else {
+                                                                $iii++;
+
+                                                                // $ii++;
                                                                 echo "<tr>      
                                                                 <td>$row->kode_matakuliah</td>        
                                                                 <td>$row->nama_matakuliah</td>        
-                                                                <td class='text-center'>$row->nilai</td>          
+                                                                <td class='text-center'>$row->nilai</td>  
+                                                                <td class='text-center'>$row->sks</td>          
                                                                 <td class='text-center'>$statusrpl</td>          
                                                                 </tr>";
+                                                                $jumlahsks = $jumlahsks + floatval($row->sks);
+                                                                if ($iii == $row->jbaris) {
+                                                                    echo "<tr>
+                                                                    <td colspan='6' class='text-center'>Jumlah SKS</td>
+                                                                    <td class='text-center'>$jumlahsks</td>
+                                                                    </tr>";
+                                                                }
                                                             }
                                                         }
                                                     }
@@ -265,14 +296,14 @@
 </html>
 
 <script>
-    function validprodi() {
-        $('#validasi-form').submit()
-    }
+function validprodi() {
+    $('#validasi-form').submit()
+}
 
-    function unvalidprodi() {
-        $('#unvalidasi-form').submit()
+function unvalidprodi() {
+    $('#unvalidasi-form').submit()
 
-    }
+}
 </script>
 <?php
 function tgl_indo($tanggal)

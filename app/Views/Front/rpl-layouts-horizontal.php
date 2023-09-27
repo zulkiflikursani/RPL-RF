@@ -116,14 +116,14 @@
                                                             foreach ($dataprov as $a) {
                                                                 if (isset($datasubmit["propinsi"])) {
                                                                     if ($datasubmit["propinsi"] == $a->NMPROTBPRO) {
-                                                                        $selected = "selected";
+                                                                        $selected = "";
                                                                     } else {
                                                                         $selected = "";
                                                                     };
                                                                 } else {
                                                                     $selected = "";
                                                                 }
-                                                                echo "<option kdprov='".$a->KDPROTBPRO."' $selected>".$a->NMPROTBPRO."</option>";
+                                                                echo "<option kdprov='" . $a->KDPROTBPRO . "' $selected>" . $a->NMPROTBPRO . "</option>";
                                                             }
                                                         }
                                                         ?>
@@ -371,6 +371,8 @@
         $('.select2').select2({
             placeholder: 'Select an option'
         });
+
+
     })
 
     function findkonsentrasi() {

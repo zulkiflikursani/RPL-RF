@@ -148,6 +148,7 @@
 
             noregis.value = inputValue;
             email.value = inputValue;
+            // alert(inputValue)
             if (noregis.value == email.value) {
                 noregis.value = "";
                 email.value = "";

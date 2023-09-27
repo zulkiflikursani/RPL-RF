@@ -39,7 +39,9 @@ $routes->setAutoRoute(true);
 // $routes->match(['get', 'post'], 'auth-updatepw', 'AuthController::updatepw');
 // $routes->get('auth-logout', 'AuthController::logout');
 
-$routes->get('/', 'Front::index');
+$routes->get('/', 'Front::rpl_index');
+$routes->get('/registrasi', 'Front::index');
+$routes->get('/index', 'Front::rpl_index');
 $routes->get('/home', 'Front::index');
 $routes->get('/Biodata', 'Front::Pendaftar');
 $routes->get('/logout', 'Front::Logout');
@@ -85,6 +87,7 @@ $routes->get('/pengguna', 'Admin::pengguna');
 $routes->get('/asessor', 'Admin::Asessor');
 $routes->get('/dataasessor', 'Admin::dataAsessor');
 $routes->get('/data-peserta', 'Admin::dataPeserta');
+$routes->get('/data-peserta/(:any)', 'Admin::dataPeserta1/$1');
 $routes->get('/statusklaim', 'Admin::datastatusklaim');
 $routes->get('/cpmk', 'Admin::inputcpmk');
 $routes->get('/cpmk-prodi', 'Admin::inputcpmk_prodi');
@@ -118,6 +121,7 @@ $routes->get('/print-klaim-a1/(:any)/', 'Admin::printKlaimMk/$1');
 $routes->get('/convert-excel/(:any)/', 'Admin::exportexcel/$1');
 $routes->get('/data-mhs-per-prodi/(:any)', 'Admin::dataMhsPerpodiOk/$1');
 $routes->get('/menu-data-mhs-per-prodi', 'Admin::menuDataMhsPerpodi');
+$routes->get('/menu-rekap-mhs-per-periode', 'Admin::menuRekapMhsPerperiode');
 $routes->get('/data-asessi-prodi', 'Admin::data_asessi_prodi');
 $routes->get('/adminklaim', 'Admin::adminklaimmhs');
 $routes->get('/setup-taakademik', 'Admin::setupTaakademik');
@@ -125,6 +129,9 @@ $routes->get('/setup-konsentrasi', 'Admin::setupKonsentrasi');
 $routes->get('/setup-rpl', 'Admin::setupRpl');
 $routes->get('/biodata-mahasiswa/(:any)', 'Admin::updateBiodataMahasiswa/$1');
 $routes->get('/form-nilai-mahasiswa/(:any)', 'Admin::form_nilai/$1');
+$routes->get('/data-mahasiswa-siska/(:any)', 'Admin::data_mhs_siska/$1');
+$routes->get('/home-akademik-2', 'Admin::home_akademik_2_nofilter');
+$routes->get('/home-akademik-2/(:any)', 'Admin::home_akademik_2/$1');
 
 
 
@@ -134,6 +141,11 @@ $routes->post('hapuspengguna', 'Admin::HapusPengguna');
 $routes->post('batalklaimmhs', 'Admin::batalKlaimMhs');
 $routes->post('batalklaimdokA1', 'Admin::batalKlaimdokA1');
 $routes->post('setBiodata', 'Admin::setBiodata');
+$routes->post('updatebuktibayar', 'Admin::updataBuktiBayar');
+$routes->post('updateidentitas', 'Admin::updateIdentitas');
+$routes->post('updateijazah', 'Admin::updateIjazah');
+$routes->post('batalasesi', 'Admin::batalAsesi');
+
 
 $routes->post('getmatakuliah', 'Admin::getMatakuliah');
 $routes->post('getcpmk', 'Admin::getcpmk');
@@ -172,6 +184,8 @@ $routes->post('delete-konsentrasi', 'Admin::deletekons');
 $routes->post('update-mk-rpl', 'Admin::updateMkRpl');
 $routes->post('update-mk-rpl-admin', 'Admin::updateMkRplAdmin');
 $routes->post('update-jenisrpl', 'Admin::updatejenisrpl');
+$routes->post('data-mahasiswa-siska-nim', 'Admin::data_mhs_siska_nim');
+$routes->post('push-siska', 'Admin::push_siska');
 
 
 

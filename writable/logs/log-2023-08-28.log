@@ -1,0 +1,135 @@
+CRITICAL - 2023-08-28 05:06:51 --> second is not a valid database connection group.
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Common.php(370): CodeIgniter\Database\Config::connect('second', true)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3441): db_connect('second')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2023-08-28 05:13:53 --> Table 'bv4yes5gbuhpqn8gsc3z.products' doesn't exist
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('select * from p...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('select * from p...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('select * from p...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3443): CodeIgniter\Database\BaseConnection->query('select * from p...')
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska()
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#9 {main}
+CRITICAL - 2023-08-28 05:22:23 --> Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3443): CodeIgniter\Database\BaseConnection->query('select * from b...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2023-08-28 05:22:46 --> Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3443): CodeIgniter\Database\BaseConnection->query('select * from b...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2023-08-28 05:25:29 --> Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3443): CodeIgniter\Database\BaseConnection->query('select * from b...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2023-08-28 05:25:37 --> Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3443): CodeIgniter\Database\BaseConnection->query('select * from b...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2023-08-28 05:25:38 --> Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3443): CodeIgniter\Database\BaseConnection->query('select * from b...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2023-08-28 05:25:41 --> Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3443): CodeIgniter\Database\BaseConnection->query('select * from b...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2023-08-28 05:25:42 --> Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3443): CodeIgniter\Database\BaseConnection->query('select * from b...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2023-08-28 05:28:49 --> Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3443): CodeIgniter\Database\BaseConnection->query('select * from b...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2023-08-28 23:01:01 --> 22 : The requested URL returned error: 404
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(795): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested U...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(408): CodeIgniter\HTTP\CURLRequest->sendRequest(Array)
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(125): CodeIgniter\HTTP\CURLRequest->send('GET', 'http://localhos...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3444): CodeIgniter\HTTP\CURLRequest->request('GET', 'http://localhos...', Array)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska()
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#9 {main}
+CRITICAL - 2023-08-28 23:23:43 --> Argument 2 passed to CodeIgniter\HTTP\CURLRequest::request() must be of the type string, null given, called in /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php on line 3444
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3444): CodeIgniter\HTTP\CURLRequest->request('GET', NULL, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska('0048-2022')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#6 {main}
+CRITICAL - 2023-08-28 23:24:36 --> Argument 2 passed to CodeIgniter\HTTP\CURLRequest::request() must be of the type string, null given, called in /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php on line 3444
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3444): CodeIgniter\HTTP\CURLRequest->request('GET', NULL, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska('0048-2022')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#6 {main}
+CRITICAL - 2023-08-28 23:26:34 --> Array to string conversion
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(3448): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', '/Users/macbookp...', 3448, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->data_mhs_siska('0048-2022')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#6 {main}

@@ -223,7 +223,9 @@
 
                                                                         <?php
                                                                         if (isset($mkrplprodi)) {
+
                                                                             foreach ($mkrplprodi as $row) {
+
                                                                                 echo "<option value ='$row->kode_matakuliah' nmmk='$row->nama_matakuliah' sks='$row->sks' >$row->kode_matakuliah : $row->nama_matakuliah</option>";
                                                                             }
                                                                         }
@@ -239,6 +241,7 @@
                                                                         id="nmmk" />
 
                                                                 </div>
+
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 row mt-2 mb-2">

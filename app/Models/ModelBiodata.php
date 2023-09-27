@@ -47,7 +47,43 @@ class ModelBiodata extends Model
     {
         if (session()->get('sttpengguna') == 1) {
             $db = \Config\Database::connect();
-            $dataMahasiswa = $db->query("SELECT mk_klaim_detailx.idklaim, bio_peserta.no_peserta, bio_peserta.nama, prodi.nama_prodi FROM (SELECT mk_klaim_detail.idklaim,mk_klaim_detail.statusklaim from mk_klaim_detail where (LEFT(mk_klaim_detail.idklaim,5)='$ta_akademik') and (mk_klaim_detail.statusklaim=2)) mk_klaim_detailx left JOIN mk_klaim_asessor ON mid(mk_klaim_detailx.idklaim,6,10)  = mk_klaim_asessor.no_peserta left JOIN bio_peserta ON mid(mk_klaim_detailx.idklaim,6,10)  = bio_peserta.no_peserta left JOIN prodi on bio_peserta.kode_prodi=prodi.kode_prodi where mk_klaim_detailx.statusklaim is not null and mk_klaim_asessor.idklaim is null group by mid(mk_klaim_detailx.idklaim,6,10)")->getResult();
+            $dataMahasiswa = $db->query("SELECT 
+            mk_klaim_detailx.idklaim,
+            bio_peserta.no_peserta,
+            bio_peserta.nama,
+            prodi.nama_prodi
+        FROM
+            (
+            (SELECT 
+                mk_klaim_detail.idklaim, mk_klaim_detail.statusklaim
+            FROM
+                mk_klaim_detail
+            WHERE
+                (LEFT(mk_klaim_detail.idklaim, 5) = '$ta_akademik')
+                    AND (mk_klaim_detail.statusklaim = 2)
+            ) 
+            UNION 
+            (
+            SELECT 
+                CONCAT(dok_a1.ta_akademik, dok_a1.no_registrasi) AS idklaim,
+                    dok_a1.status
+            FROM
+                dok_a1
+            WHERE
+                dok_a1.ta_akademik = '$ta_akademik'
+                    AND dok_a1.status = 0
+            )
+            ) mk_klaim_detailx
+                LEFT JOIN
+            mk_klaim_asessor ON MID(mk_klaim_detailx.idklaim, 6, 10) = mk_klaim_asessor.no_peserta
+                LEFT JOIN
+            bio_peserta ON MID(mk_klaim_detailx.idklaim, 6, 10) = bio_peserta.no_peserta
+                LEFT JOIN
+            prodi ON bio_peserta.kode_prodi = prodi.kode_prodi
+        WHERE
+            mk_klaim_detailx.statusklaim IS NOT NULL
+                AND mk_klaim_asessor.idklaim IS NULL
+        GROUP BY MID(mk_klaim_detailx.idklaim, 6, 10)")->getResult();
 
             return $dataMahasiswa;
         }

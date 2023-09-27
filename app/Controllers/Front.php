@@ -50,6 +50,17 @@ class Front extends BaseController
 		}
 	}
 
+	public function rpl_index()
+	{
+		$data = [
+			'title_meta' => view('partials/rpl-title-meta', ['title' => 'RPL']),
+			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Registrasi']),
+			'ta_akademik' => $this->getTa_akademik(),
+			// 'dataprov' => $dataProv,
+		];
+
+		return view('Front/rpl-index', $data);
+	}
 	public function registrasi()
 	{
 		$this->request = service('request');
@@ -451,6 +462,9 @@ class Front extends BaseController
 			$Modaldokumen = new ModelDokumen();
 			$ModalPtIndo = new ModelPtIndo();
 			$noregis = session()->get("noregis");
+			$ModalNilai  = new ModelNilai();
+			$masternilai = $ModalNilai->findAll();
+
 			$datasavebio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
 			$datadokumen = $Modaldokumen->getDataBynoregis();
 			$ptindo = "";
@@ -501,6 +515,7 @@ class Front extends BaseController
 						'nmptasal' => $nmptasal,
 						'dataerror' => $modelMkA1->errors(),
 						'dataMkA1' => $carikdptasal,
+						'nilai' => $masternilai,
 						// 'test' => $datasave,
 						'ta_akademik' => $this->getTa_akademik()
 					];
@@ -517,6 +532,7 @@ class Front extends BaseController
 						'kdptasal' => $kdptasal,
 						'status' => true,
 						'dataMkA1' => $carikdptasal,
+						'nilai' => $masternilai,
 
 						// 'test' => $datasave,
 						'ta_akademik' => $this->getTa_akademik()
@@ -536,6 +552,7 @@ class Front extends BaseController
 					$kdptasal = "";
 					$nmptasal = "";
 				}
+
 				$data = [
 					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
 					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
@@ -547,6 +564,7 @@ class Front extends BaseController
 					'nmptasal' => $nmptasal,
 					'dataerror' => $error,
 					'dataMkA1' => $carikdptasal,
+					'nilai' => $masternilai,
 					// 'test' => $datasave,
 					'ta_akademik' => $this->getTa_akademik()
 				];
@@ -586,6 +604,9 @@ class Front extends BaseController
 			$modelMkA1 = new ModelMkA1();
 			$ModalBiodata = new ModelBiodata();
 			$Modaldokumen = new ModelDokumen();
+			$ModalNilai  = new ModelNilai();
+			$masternilai = $ModalNilai->findAll();
+
 			$ModalPtIndo = new ModelPtIndo();
 			$noregis = session()->get("noregis");
 			$datasavebio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
@@ -636,6 +657,7 @@ class Front extends BaseController
 						'nmptasal' => $nmptasal,
 						'dataerror' => $modelMkA1->errors(),
 						'dataMkA1' => $dataMkA1,
+						'nilai' => $masternilai,
 						// 'test' => $datasave,
 						'ta_akademik' => $this->getTa_akademik()
 					];
@@ -652,7 +674,7 @@ class Front extends BaseController
 						'nmptasal' => $nmptasal,
 						'statushapus' => true,
 						'dataMkA1' => $dataMkA1,
-
+						'nilai' => $masternilai,
 						// 'test' => $datasave,
 						'ta_akademik' => $this->getTa_akademik()
 					];
@@ -672,6 +694,7 @@ class Front extends BaseController
 					'dataerror' => $error,
 					'dataMkA1' => $dataMkA1,
 					// 'test' => $datasave,
+					'nilai' => $masternilai,
 					'ta_akademik' => $this->getTa_akademik()
 				];
 				return view('Front/rpl-mahasiswa-upload-a1', $data);
@@ -693,6 +716,8 @@ class Front extends BaseController
 			$datasavebio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
 			$datadokumen = $Modaldokumen->getDataBynoregis();
 			$ptindo = "";
+			$ModalNilai  = new ModelNilai();
+			$masternilai = $ModalNilai->findAll();
 
 
 			$dataMkA1 = $modelMkA1->where('no_registrasi', $noregis)->findAll();
@@ -721,6 +746,7 @@ class Front extends BaseController
 					'nmptasal' => $nmptasal,
 					'dataerror' => $modelMkA1->errors(),
 					'dataMkA1' => $dataMkA1,
+					'nilai' => $masternilai,
 					// 'test' => $datasave,
 					'ta_akademik' => $this->getTa_akademik()
 				];
@@ -736,6 +762,7 @@ class Front extends BaseController
 					'kdptasal' => $kdptasal,
 					'status' => true,
 					'dataMkA1' => $dataMkA1,
+					'nilai' => $masternilai,
 
 					// 'test' => $datasave,
 					'ta_akademik' => $this->getTa_akademik()
@@ -942,7 +969,7 @@ class Front extends BaseController
 				"prodi" => $databio[0]['kode_prodi']
 			];
 			$getkonsentrasi = $modelKonsentrasi->where($wherekons)->findAll();
-			$konsentrasi = $getkonsentrasi[0]['konsentrasi'];
+			$konsentrasi = (isset($getkonsentrasi[0]['konsentrasi']) ? $getkonsentrasi[0]['konsentrasi'] : '');
 
 
 			if ($validasikeu == null) {
