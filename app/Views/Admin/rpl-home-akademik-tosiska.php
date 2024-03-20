@@ -75,20 +75,34 @@
                                             <div class="col-lg-2">
                                                 <label for="" class="">Tahun Akademik</label>
                                             </div>
+                                            <?php
+                                            $tahunnow = date('Y');
+                                            $tahunmulai = 2022;
+
+                                            $option = '';
+                                            for ($x = $tahunmulai; $x <= $tahunnow; $x++) {
+                                                $selected = '';
+                                                $gentaakademik  = $x . "1";
+                                                if ($ta_akademik == $gentaakademik) {
+                                                    $selected = 'selected';
+                                                }
+                                                $option .=  "<option value='$gentaakademik' $selected >$gentaakademik
+                                                </option>";
+                                                $gentaakademik  = $x . "2";
+                                                $selected = '';
+
+                                                if ($ta_akademik == $gentaakademik) {
+                                                    $selected = 'selected';
+                                                }
+                                                $option .=  "<option value='$gentaakademik' $selected >$gentaakademik
+                                                </option>";
+                                            }
+
+
+                                            ?>
                                             <div class="col-lg-3">
                                                 <select name="" id="takademik" class="col-lg-3 mb-3 form-select">
-                                                    <option value="20221"
-                                                        <?= ($ta_akademik == '20221' ? "selected" : "") ?>>20221
-                                                    </option>
-                                                    <option value="20222"
-                                                        <?= ($ta_akademik == '20222' ? "selected" : "") ?>>20222
-                                                    </option>
-                                                    <option value="20231"
-                                                        <?= ($ta_akademik == '20231' ? "selected" : "") ?>>20231
-                                                    </option>
-                                                    <option value="20232"
-                                                        <?= ($ta_akademik == '20232' ? "selected" : "") ?>>20232
-                                                    </option>
+                                                    <?= $option ?>
                                                 </select>
                                             </div>
                                             <div class="col-lg-2">
@@ -106,6 +120,8 @@
                                                         <th>No Peserta</th>
                                                         <th>Nama</th>
                                                         <th>No Hp</th>
+                                                        <th>Identitas</th>
+                                                        <th>Ijazah</th>
                                                         <th>Transkrip</th>
 
                                                     </tr>
@@ -123,6 +139,10 @@
                                                                     <td for='noregis'>$row->no_peserta</td>
                                                                     <td>$row->nama</td>
                                                                     <td>$row->nohape</td>
+                                                                    <td>
+                                                                    <a class='btn btn-warning btn-sm' target='_blank' href='" . base_url() . "/uploads/berkas/$row->no_peserta/" . "ii" . trim($row->no_peserta) . ".pdf" . "'>Identitas</a>
+                                                                    </td>
+                                                                    <td><a class='btn btn-warning btn-sm' target='_blank' href='" . base_url() . "/uploads/berkas/$row->no_peserta/" . "i" . trim($row->no_peserta) . ".pdf" . "'>Ijazah</a></td>
                                                                     <td><a class='btn btn-sm btn-primary' href='" . base_url() . "/form-nilai-mahasiswa/" . $row->no_peserta . "' target='_blank'>Singkronkan</a></td>
                                                                 </tr>";
                                                             // echo $row->nama;

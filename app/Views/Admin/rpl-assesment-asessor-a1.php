@@ -14,6 +14,14 @@
     }
     </style>
 </head>
+<?php
+if (isset($basenilai)) {
+    $oknilai = "";
+    foreach ($basenilai as $row) {
+        $oknilai .= "<option value='" . $row['kode_nilai'] . "'>" . $row['kode_nilai'] . "</option>";
+    }
+}
+?>
 
 <body data-topbar="dark" data-layout="horizontal">
 
@@ -121,6 +129,11 @@
                                                     </div>
                                                     <div class="row">
 
+                                                        <div class="col-md-2">Konsentrasi</div>
+                                                        <div class="col-md-2">: <?= $konsentrasi; ?></div>
+                                                    </div>
+                                                    <div class="row">
+
                                                         <div class="col-md-2">Jenis RPL</div>
                                                         <div class="col-md-2">: <?= "A" . $jenis_rpl; ?></div>
                                                     </div>
@@ -157,7 +170,8 @@
                                                     <div class="row col-md-12 mb-3">
                                                         <div class="col-md-2">
                                                             <label for="">Kode Matakuliah</label>
-                                                            <select for="" id='kdmka' class="form-select select2">
+                                                            <select for="" id='kdmka' class="form-select select2"
+                                                                onchange="cekMkAsal()">
                                                                 <option value=''>Pilih Matakuliah Asal</option>
                                                                 <?php
 
@@ -218,7 +232,7 @@
                                                                     Matakuliah</label>
                                                                 <div class="col-md-8">
                                                                     <select for="" id='kdmk'
-                                                                        class="form-select select2 col-3">
+                                                                        class="form-select select2 col-3" onchange="">
                                                                         <option value=''>Pilih Matakuliah </option>
 
                                                                         <?php
@@ -259,8 +273,11 @@
 
                                                                 <label for="" class="col-md-2">Nilai</label>
                                                                 <div class="col-md-6">
-                                                                    <input type="text" name="nilai" id="nilai"
-                                                                        class="form-control">
+                                                                    <select name="nilai" id="nilai" class="form-select">
+                                                                        <option value="">Pilih Nilai</option>
+                                                                        <?= $oknilai ?>
+                                                                    </select>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -390,9 +407,40 @@ $(document).on('select2:open', () => {
     document.querySelector('.select2-search__field').focus();
 });
 
+function cekMkAsal() {
+    kode_mk = $("#kdmka").val()
+    noregis = '<?= $noregis ?>';
+    url = '<?= base_url('cekstatusmka1') ?>';
+    $.post(url, {
+        kdmka: kode_mk,
+        noregis: noregis
+    }, function(data) {
+        data = JSON.parse(data);
+        if (data == '') {} else {
+            alert('Info : Matakuliah Asal Sudah Digunakan sebelumnya Untuk mengklaim Matakuliah Asal')
+
+        }
+        return true
+    })
+
+
+}
+
 function showmodal() {
     // alert('s')
     $('.batal-klaim-modal').modal("show");
+}
+
+function checkMkUnifa() {
+
+    kode_mk = $('#kdmk').val()
+    $('#tbody-klaim-mk > tr').each(function(i, tr) {
+        kdmk_tabel = $(this).attr('kdmk');
+        if (kode_mk == kdmk_tabel) {
+            alert('Info : Matakuliah Unifa Sudah Digunakan sebelumnya Untuk mengklaim Matakuliah Unifa')
+
+        }
+    })
 }
 $(document).ready(function() {
 
@@ -405,8 +453,12 @@ $(document).ready(function() {
         nmmk = $(this).find('option:selected').attr('nmmk');
         sks = $(this).find('option:selected').attr('sks');
 
+        var hasil_check = checkMkUnifa();
+        console.log(hasil_check)
+        // if (hasil_check == true) {
         $('#nmmk').val(nmmk)
         $('#sks').val(sks)
+        // }
     });
     $('#kdmka').on("change", function(e) {
         nmmk = $(this).find('option:selected').attr('nmmk');
@@ -497,30 +549,38 @@ function tambahkan() {
     sks = $('#sksa').val()
     nilai = $('#nilaia').val()
     no = $('#tbody-mk-asal tr').length + 1;
-    flag = 0;
-    $('#tbody-mk-asal tr').each(function() {
-        a = $(this).find("td[for='kdmk']").html()
-        // alert(a + ":" + kdmk);
-        if (a == kdmk) {
-            flag = 1;
-        }
-    })
-    if (flag == 0) {
-        $('#tbody-mk-asal').append("<tr><td for=''>" + no + "</td><td for='kdmk'>" + kdmk +
-            "</td><td for='nmmk'>" +
-            nmmk +
-            "</td><td for='sks'>" + sks + "</td><td for='nilai'>" + nilai +
-            "</td><td><button onclick='remove($(this))' class='btn btn-sm btn-warning'>Hapus</button></a></td></tr>"
-        )
-        $('#kdmka').val(null).trigger("change");
-        $('#nmmka').val("")
-        $('#sksa').val("")
-        $('#nilaia').val("")
+    if (no > 1) {
+        alert(
+            "Hanya bisa memilih satu matakuliah asal ! Untuk menambahkan hapus matakuliah asal yang sebelumnya terlebih dahulu")
         $('#loading').hide()
-
     } else {
-        alert("Kode Matakuliah yang anda pilih sudah ditambahkan")
-        $('#loading').hide()
+
+        flag = 0;
+        $('#tbody-mk-asal tr').each(function() {
+            a = $(this).find("td[for='kdmk']").html()
+            // alert(a + ":" + kdmk);
+            if (a == kdmk) {
+                flag = 1;
+            }
+        })
+        if (flag == 0) {
+            $('#tbody-mk-asal').append("<tr><td for=''>" + no + "</td><td for='kdmk'>" + kdmk +
+                "</td><td for='nmmk'>" +
+                nmmk +
+                "</td><td for='sks'>" + sks + "</td><td for='nilai'>" + nilai +
+                "</td><td><button onclick='remove($(this))' class='btn btn-sm btn-warning'>Hapus</button></a></td></tr>"
+            )
+            $('#kdmka').val(null).trigger("change");
+            $('#nmmka').val("")
+            $('#sksa').val("")
+            $('#nilaia').val("")
+            $('#loading').hide()
+
+        } else {
+            alert("Kode Matakuliah yang anda pilih sudah ditambahkan")
+            $('#loading').hide()
+
+        }
 
     }
 }
@@ -549,11 +609,11 @@ function simpan_klaim_asessor() {
             nmmka != "" && sksa != "" && nilaia != "") {
             item = {}
             item["noregis"] = '<?= $noregis ?>';
-            item["kdmk"] = kdmk;
+            item["kdmk"] = kdmk.trim();
             item["nmmk"] = nmmk;
             item["sks"] = sks;
             item["nilai"] = nilai.toUpperCase();
-            item["kdmka"] = kdmka;
+            item["kdmka"] = kdmka.trim();
             item["nmmka"] = nmmka;
             item["sksa"] = sksa;
             item["nilaia"] = nilaia;

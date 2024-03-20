@@ -13,7 +13,7 @@
 <body>
     <div class="container-fluid">
         <section class="banner min-h d-flex justify-content-center  ">
-            <video autoplay muted loop id="video">
+            <video autoplay muted loop id="video" preload="auto">
                 <source src="<?= base_url() ?>/assets/video/web-banner.webm" type="video/webm">
                 <p>Your browser cannot play the provided video file.</p>
             </video>
@@ -41,11 +41,18 @@
                                 <a class="nav-link" target="_blank" href="https://simba.unifa.ac.id"> Pendaftaran Maba
                                     Reguler</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href="<?= base_url('login'); ?>"> Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href="<?= base_url('registrasi'); ?>">
+                                    Registrasi</a>
+                            </li>
 
                         </ul>
                     </div>
                 </nav>
-                <div class="page-content ">
+                <!-- <div class="page-content ">
                     <div class="row hero col-lg-12 mt-5 justify-content-center text-center">
                         <div class="d-flex text-content">
                             <div class="d-flex flex-column text-column">
@@ -63,7 +70,7 @@
                             <img src="assets/images/img-unifa-index.png" alt="">
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
 

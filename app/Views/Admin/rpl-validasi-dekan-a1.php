@@ -79,6 +79,11 @@
                                                     </div>
                                                     <div class="row">
 
+                                                        <div class="col-md-2">Konsentrasi</div>
+                                                        <div class="col-md-2">: <?= $konsentrasi; ?></div>
+                                                    </div>
+                                                    <div class="row">
+
                                                         <div class="col-md-2">Jenis RPL</div>
                                                         <div class="col-md-2">: <?= "A" . $jenis_rpl; ?></div>
                                                     </div>

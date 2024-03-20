@@ -66,7 +66,7 @@ class ModelKlaimProdi extends Model
         bio_peserta.nama,
         mk_klaim_asessor.kode_matakuliah,
         mk_klaim_asessor.nilai,
-        matakuliah.sks,
+        mk_klaim_header.sks,
         mk_klaim_header.nama_matakuliah,
         mk_klaim_asessor.kode_prodi,
         bio_peserta.jenis_rpl,
@@ -81,7 +81,7 @@ class ModelKlaimProdi extends Model
         mk_klaim_dekan
         LEFT JOIN mk_klaim_asessor ON mk_klaim_dekan.idklaim = mk_klaim_asessor.idklaim
         LEFT JOIN bio_peserta ON mid(mk_klaim_dekan.idklaim,6,10)= bio_peserta.no_peserta
-        LEFT JOIN matakuliah ON mk_klaim_asessor.kode_matakuliah = matakuliah.kode_matakuliah AND mk_klaim_asessor.kode_prodi = matakuliah.kode_prodi
+        LEFT JOIN matakuliah ON TRIM(REPLACE(mk_klaim_asessor.kode_matakuliah,CHAR(9),'')) = TRIM(REPLACE(matakuliah.kode_matakuliah,CHAR(9),'')) AND mk_klaim_asessor.kode_prodi = matakuliah.kode_prodi
         LEFT JOIN prodi ON mk_klaim_asessor.kode_prodi = prodi.kode_prodi
         LEFT JOIN fakultas ON prodi.kode_fakultas = fakultas.kode_fakultas       
         left join mk_klaim_header on mk_klaim_asessor.idklaim= mk_klaim_header.idklaim

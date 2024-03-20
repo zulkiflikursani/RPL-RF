@@ -5,14 +5,11 @@
 
     <?= $title_meta ?>
     <?= $this->include('partials/rpl-head-css') ?>
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet"
-        type="text/css" />
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css"
-        rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Responsive datatable examples -->
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css"
-        rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -67,14 +64,12 @@
                                 </div>
                             </div>
                             <div class="card">
-                                <div class="modal fade batal-bayar-modal" tabindex="-1" role="dialog"
-                                    aria-labelledby="mytambah-modal" aria-hidden="true">
+                                <div class="modal fade batal-bayar-modal" tabindex="-1" role="dialog" aria-labelledby="mytambah-modal" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
                                         <div class=" modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="myLargeModalLabel">Perhatian !</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                                 <div>
@@ -84,17 +79,14 @@
                                                                 <label for="formrow-nama-input" class="form-label">Yakin
                                                                     akan membatalkan validasi pembayaran</label>
                                                                 ?</label>
-                                                                <input type="hidden" class="form-control"
-                                                                    id="confnoregis" name="norgis" placeholder=""
-                                                                    value="" required readonly>
+                                                                <input type="hidden" class="form-control" id="confnoregis" name="norgis" placeholder="" value="" required readonly>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="modal-footer">
                                                         <button onclick="unvalidbayar()" class="btn btn-primary w-md">
-                                                            Ya</button> <button type="button" class="btn btn-light"
-                                                            data-bs-dismiss="modal">Batal</button>
+                                                            Ya</button> <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -102,11 +94,50 @@
                                     </div><!-- /.modal-dialog -->
                                 </div>
                                 <div class="card-body">
+                                    <div class="row col-lg-12">
+                                        <div class="col-lg-2">
+                                            <label for="" class="">Tahun Akademik</label>
+                                        </div>
+                                        <?php
+                                        $tahunnow = date('Y');
+                                        $tahunmulai = 2022;
+
+                                        $option = '';
+                                        for ($x = $tahunmulai; $x <= $tahunnow; $x++) {
+                                            $selected = '';
+                                            $gentaakademik  = $x . "1";
+                                            if ($ta_akademik == $gentaakademik) {
+                                                $selected = 'selected';
+                                            }
+                                            $option .=  "<option value='$gentaakademik' $selected >$gentaakademik
+                                                </option>";
+                                            $gentaakademik  = $x . "2";
+                                            $selected = '';
+
+                                            if ($ta_akademik == $gentaakademik) {
+                                                $selected = 'selected';
+                                            }
+                                            $option .=  "<option value='$gentaakademik' $selected >$gentaakademik
+                                                </option>";
+                                        }
+
+
+                                        ?>
+                                        <div class="col-lg-3">
+                                            <select name="" id="takademik" class="col-lg-3 mb-3 form-select">
+                                                <?= $option ?>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <button class="btn btn-primary" onclick="tampilkan()">Tampilkan
+                                            </button>
+                                        </div>
+
+                                    </div>
                                     <h4 class="card-title mb-4">Data Mahasiswa Belum Divalidasi</h4>
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <table class="table table1 table-bordered"
-                                                title='DATA MAHASISWA BELUM DIVALIDASI REGISTRASI'>
+                                            <table class="table table1 table-bordered" title='DATA MAHASISWA BELUM DIVALIDASI REGISTRASI'>
                                                 <thead class="table-light">
                                                     <tr>
                                                         <th>No</th>
@@ -152,8 +183,7 @@
                                     <h4 class="card-title mb-4">Data Mahasiswa Sudah Divalidasi</h4>
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <table class="table table2 table-bordered "
-                                                title='DATA MAHASISWA SUDAH DIVALIDASI REGISTRASI'>
+                                            <table class="table table2 table-bordered " title='DATA MAHASISWA SUDAH DIVALIDASI REGISTRASI'>
                                                 <thead class="table-light">
                                                     <tr>
                                                         <th>No</th>
@@ -257,134 +287,138 @@
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 
     <script>
-    $('document').ready(function() {
+        function tampilkan() {
+            taakademik = $('#takademik').val();
+            location.href = '<?= base_url('keuangan/') ?>/' + taakademik;
+        }
+        $('document').ready(function() {
 
-        judul1 = $('.table1').attr('title')
-        judul2 = $('.table2').attr('title')
+            judul1 = $('.table1').attr('title')
+            judul2 = $('.table2').attr('title')
 
-        $(".table1").DataTable({
-            dom: 'Bfrtip',
-            buttons: [
-                // 'copy', 'csv', 'excel', 'pdf', 'print'
-                {
-                    extend: 'excelHtml5',
-                    title: judul1
-                },
-                {
-                    extend: 'pdfHtml5',
-                    title: judul1
-                },
-                {
-                    extend: 'print',
-                    title: judul1
+            $(".table1").DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    // 'copy', 'csv', 'excel', 'pdf', 'print'
+                    {
+                        extend: 'excelHtml5',
+                        title: judul1
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        title: judul1
+                    },
+                    {
+                        extend: 'print',
+                        title: judul1
+                    }
+                ]
+            })
+            $(".table2").DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    // 'copy', 'csv', 'excel', 'pdf', 'print'
+                    {
+                        extend: 'excelHtml5',
+                        title: judul2
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        title: judul2
+                    },
+                    {
+                        extend: 'print',
+                        title: judul2
+                    }
+                ]
+            })
+
+        })
+
+        function validasi(ini) {
+            noregis = ini.parent().parent().find('td[for=noregis]').html()
+
+            url = '<?= base_url('validasikeu') ?>'
+
+            $.post(url, {
+                noregis: noregis
+            }, function(data) {
+                let confirmAction = confirm(data);
+
+                if (confirmAction) {
+                    location.reload();
+                } else {
+                    location.reload();
                 }
-            ]
-        })
-        $(".table2").DataTable({
-            dom: 'Bfrtip',
-            buttons: [
-                // 'copy', 'csv', 'excel', 'pdf', 'print'
-                {
-                    extend: 'excelHtml5',
-                    title: judul2
-                },
-                {
-                    extend: 'pdfHtml5',
-                    title: judul2
-                },
-                {
-                    extend: 'print',
-                    title: judul2
+            })
+
+        }
+
+        function validbayar(ini) {
+            noregis = ini.parent().parent().find('td[for=noregis]').html()
+
+            url = '<?= base_url('validasibayar') ?>'
+
+            $.post(url, {
+                noregis: noregis
+            }, function(data) {
+                let confirmAction = confirm(data);
+
+                if (confirmAction) {
+                    location.reload();
+                } else {
+                    location.reload();
                 }
-            ]
-        })
+            })
 
-    })
+        }
 
-    function validasi(ini) {
-        noregis = ini.parent().parent().find('td[for=noregis]').html()
+        function confunvalidbayar(ini) {
+            noregis = ini.parent().parent().find('td[for=noregis]').html()
+            $('#confnoregis').val(noregis)
+            $('.batal-bayar-modal').modal('show');
+        }
 
-        url = '<?= base_url('validasikeu') ?>'
+        function unvalidbayar() {
+            $('#loading').show()
+            $('.batal-bayar-modal').modal('hide');
+            noregis = $('#confnoregis').val()
+            url = '<?= base_url('unvalidasibayar') ?>'
 
-        $.post(url, {
-            noregis: noregis
-        }, function(data) {
-            let confirmAction = confirm(data);
+            $.post(url, {
+                noregis: noregis
+            }, function(data) {
+                $('#loading').hide()
 
-            if (confirmAction) {
-                location.reload();
-            } else {
-                location.reload();
-            }
-        })
+                let confirmAction = confirm(data);
 
-    }
+                if (confirmAction) {
+                    location.reload();
+                } else {
+                    location.reload();
+                }
+            })
 
-    function validbayar(ini) {
-        noregis = ini.parent().parent().find('td[for=noregis]').html()
+        }
 
-        url = '<?= base_url('validasibayar') ?>'
+        function unvalidasi(ini) {
+            noregis = ini.parent().parent().find('td[for=noregis]').html()
 
-        $.post(url, {
-            noregis: noregis
-        }, function(data) {
-            let confirmAction = confirm(data);
+            url = '<?= base_url('unvalidasikeu') ?>'
 
-            if (confirmAction) {
-                location.reload();
-            } else {
-                location.reload();
-            }
-        })
+            $.post(url, {
+                noregis: noregis
+            }, function(data) {
+                let confirmAction = confirm(data);
 
-    }
+                if (confirmAction) {
+                    location.reload();
+                } else {
+                    location.reload();
+                }
+            })
 
-    function confunvalidbayar(ini) {
-        noregis = ini.parent().parent().find('td[for=noregis]').html()
-        $('#confnoregis').val(noregis)
-        $('.batal-bayar-modal').modal('show');
-    }
-
-    function unvalidbayar() {
-        $('#loading').show()
-        $('.batal-bayar-modal').modal('hide');
-        noregis = $('#confnoregis').val()
-        url = '<?= base_url('unvalidasibayar') ?>'
-
-        $.post(url, {
-            noregis: noregis
-        }, function(data) {
-            $('#loading').hide()
-
-            let confirmAction = confirm(data);
-
-            if (confirmAction) {
-                location.reload();
-            } else {
-                location.reload();
-            }
-        })
-
-    }
-
-    function unvalidasi(ini) {
-        noregis = ini.parent().parent().find('td[for=noregis]').html()
-
-        url = '<?= base_url('unvalidasikeu') ?>'
-
-        $.post(url, {
-            noregis: noregis
-        }, function(data) {
-            let confirmAction = confirm(data);
-
-            if (confirmAction) {
-                location.reload();
-            } else {
-                location.reload();
-            }
-        })
-
-    }
+        }
     </script>
 </body>
 

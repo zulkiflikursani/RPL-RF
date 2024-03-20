@@ -25,6 +25,12 @@
 
 <!-- Modal -->
 
+<script>
+$(document).on('select2:open', () => {
+    document.querySelector('.select2-search__field').focus();
+});
+</script>
+
 
 <div id='loading'>
     <i class="bx bx-loader bx-spin  align-middle me-2"></i>

@@ -79,6 +79,11 @@
                                                     </div>
                                                     <div class="row">
 
+                                                        <div class="col-md-2">Konsentrasi</div>
+                                                        <div class="col-md-2">: <?= $konsentrasi; ?></div>
+                                                    </div>
+                                                    <div class="row">
+
                                                         <div class="col-md-2">Jenis RPL</div>
                                                         <div class="col-md-2">: <?= "A" . $jenis_rpl; ?></div>
                                                     </div>
@@ -94,6 +99,7 @@
                                                             <tr>
                                                                 <th>No</th>
                                                                 <th>Nama Matakuliah</th>
+                                                                <th>SKS</th>
                                                                 <th>CPMK</th>
                                                                 <th>Penguasaan</th>
                                                                 <th>Deskripsi</th>
@@ -108,6 +114,8 @@
                                                         <tbody id='tbody-klaim-mk'>
                                                             <?php
                                                             // print_r($dataKlaimMhs);
+
+                                                            $jumlahklaimsks = 0;
                                                             if (isset($dataKlaimMhs)) {
                                                                 $namamatakulia = "";
                                                                 $idcpmk = "";
@@ -116,6 +124,7 @@
                                                                 $hitdata = 0;
                                                                 foreach ($dataKlaimMhs as $row) {
                                                                     $hitdata++;
+
                                                                     if ($namamatakulia == "") {
                                                                         $i++;
                                                                         $html = "";
@@ -152,6 +161,7 @@
                                                                             }
                                                                             $html .= "</tr>";
                                                                         } else {
+                                                                            $jumlahklaimsks = floatval($jumlahklaimsks) + floatval($html1['sks']);
                                                                             $ref = "<td for='ref' nodok='" . $row['no_dokumen'] . "' rowspan='$count'>";
                                                                             // $dokaarray = json_decode($html1['no_dokumen']);
                                                                             foreach ($html1['no_dokumen'] as $a) {
@@ -163,6 +173,7 @@
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row['kode_prodi'] . "' >
                                                                                     <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                                     <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
+                                                                                    <td rowspan='$count'>" . $html1['sks'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
                                                                                     <td for='desk' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' readonly> " . $html1['desk'] . "</textarea>
@@ -207,6 +218,8 @@
                                                                         }
 
                                                                         if ($hitdata == $jumlahdata) {
+                                                                            $jumlahklaimsks = floatval($jumlahklaimsks) + floatval($html1['sks']);
+
                                                                             $ref = "<td for='ref' nodok='" . $row['no_dokumen'] . "' rowspan='$count'>";
                                                                             // $dokaarray = json_decode($html1['no_dokumen']);
                                                                             foreach ($html1['no_dokumen'] as $a) {
@@ -218,6 +231,7 @@
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row['kode_prodi'] . "'>
                                                                             <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                                     <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
+                                                                                    <td rowspan='$count'>" . $html1['sks'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
                                                                                     <td for='desk' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' readonly>" . $html1['desk'] . "
@@ -252,7 +266,14 @@
 
                                                             ?>
                                                         </tbody>
+
                                                     </table>
+                                                    <?php
+                                                    echo "Jumlah Klaim Matakuliah : <span id='julmahSksValid'></span> SKS dari $maxsksrekognisi maksimum SKS Rekognisi";
+                                                    echo "<p  class='text-danger bold statusSks'></p>";
+
+                                                    ?>
+
                                                 </div>
                                             </div>
 
@@ -261,12 +282,10 @@
 
 
                                         <div>
-                                            <form action="<?= base_url('setvalidprodi') ?>" method="post"
-                                                id='validasi-form' target="">
+                                            <form action="<?= base_url('setvalidprodi') ?>" method="post" id='validasi-form' target="">
                                                 <input type="hidden" name="noregis" value='<?= $noregis ?>'>
                                             </form>
-                                            <form action="<?= base_url('setunvalidprodi') ?>" method="post"
-                                                id='unvalidasi-form' target="">
+                                            <form action="<?= base_url('setunvalidprodi') ?>" method="post" id='unvalidasi-form' target="">
                                                 <input type="hidden" name="noregis" value='<?= $noregis ?>'>
                                             </form>
                                             <?php if ($status == 1) {
@@ -329,51 +348,76 @@
 </html>
 
 <script>
-$(document).ready(function() {
-    $('#loading').show()
-    noregis = '<?= $noregis ?>'
-    url = '<?= base_url('getDataKlaimAsessor') ?>'
-    $.post(url, {
-        noregis: noregis
-    }, function(data) {
-        data = JSON.parse(data)
-        console.log(data);
-        $.each(data, function(index, value) {
-            $('#tbody-klaim-mk  > tr').each(function(i, tr) {
-                if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
-                    value['idklaim']) {
-                    // alert('jalan')
-                    $(this).find('td[for=tanggapan]').children().val(value[
-                        'tanggapan']);
-                    $(this).find('td[for=nilaiAs]').children().val(value[
-                        'nilai']);
-                    $(this).find('td[for=kettanggapan]').children()
-                        .val(value['ket_tanggapan']);
+    $(document).ready(function() {
+        $('#loading').show()
+        noregis = '<?= $noregis ?>'
+        url = '<?= base_url('getDataKlaimAsessor') ?>'
+        $.post(url, {
+            noregis: noregis
+        }, function(data) {
+            data = JSON.parse(data)
+            // console.log(data);
+            count = data.length;
+            // alert(count)
+            $.each(data, function(index, value) {
+                $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+                    if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
+                        value['idklaim']) {
+                        // alert('jalan')
+                        $(this).find('td[for=tanggapan]').children().val(value[
+                            'tanggapan']);
+                        $(this).find('td[for=nilaiAs]').children().val(value[
+                            'nilai']);
+                        $(this).find('td[for=kettanggapan]').children()
+                            .val(value['ket_tanggapan']);
 
 
+                        if (count === index + 1) {
+                            klaimsksass()
+                        }
 
 
-                }
+                    }
+                })
+                $('textarea').attr('readonly', 'readonly');
+                $('select').attr('disabled', 'disabled');
+                $('#loading').hide()
+
             })
-            $('textarea').attr('readonly', 'readonly');
-            $('select').attr('disabled', 'disabled');
+        }).fail(function() {
+            alert("error");
             $('#loading').hide()
+        });
 
+    })
+
+
+    function klaimsksass() {
+        klaimsks = 0;
+        $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+            tanggapan = $(this).find('td[for=tanggapan]').children().val();
+            nilai = $(this).find('td[for=nilaiAs]').children().val();
+            sks = $(this).attr('sks');
+            if (tanggapan == 0 && tanggapan != '' && nilai != "E") {
+                klaimsks = parseFloat(klaimsks) + parseFloat(sks)
+            }
         })
-    }).fail(function() {
-        alert("error");
-        $('#loading').hide()
-    });
-})
+        // alert(klaimsks)
+        $('#julmahSksValid').html(klaimsks)
+        if (klaimsks > <?= $maxsksrekognisi ?>) {
+            $(".statusSks").html("Jumlah SKS Melebihi Batas Rekognisi")
+        }
+        // return klaimsks;
+    }
 
-function validprodi() {
-    $('#validasi-form').submit()
-}
+    function validprodi() {
+        $('#validasi-form').submit()
+    }
 
-function unvalidprodi() {
-    $('#unvalidasi-form').submit()
+    function unvalidprodi() {
+        $('#unvalidasi-form').submit()
 
-}
+    }
 </script>
 <?php
 function getnamafile($no_dokumen)

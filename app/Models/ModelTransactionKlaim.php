@@ -428,6 +428,8 @@ class ModelTransactionKlaim extends Model
             foreach ($result as $a) {
                 if ($a['statusklaim'] == 2) {
                     $status = 2;
+                } else if ($a['statusklaim'] == 3) {
+                    $status = 3;
                 }
             }
         }
@@ -442,6 +444,8 @@ class ModelTransactionKlaim extends Model
             foreach ($result as $a) {
                 if ($a->statusklaim == 2) {
                     $status = 2;
+                } else if ($a->statusklaim == 3) {
+                    $status = 3;
                 }
             }
         }
@@ -456,6 +460,8 @@ class ModelTransactionKlaim extends Model
             foreach ($result as $a) {
                 if ($a->statusklaim == 2) {
                     $status = 2;
+                } else if ($a->statusklaim == 3) {
+                    $status = 3;
                 }
             }
         }

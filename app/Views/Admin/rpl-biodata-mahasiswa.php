@@ -620,7 +620,7 @@
                 data = JSON.parse(data)
                 // console.log(data);
                 setkab(data)
-                $('#loading').hide();
+                // $('#loading').hide();
 
 
             })
@@ -632,9 +632,14 @@
         }
 
         function setkab(data) {
-            $.each(data, function(index, row) {
-                $('#kab').append("<option>" + row['NMKABTBPRO'] + "</option>")
+            var kotkab = '<?= (isset($datasubmit["kotkab"]) ? $datasubmit["kotkab"] : '') ?>'
+            $.each(data, async function(index, row) {
+                await $('#kab').append("<option value='" + row['nama_wilayah'] + "' >" + row['nama_wilayah'] +
+                    "</option>")
             })
+            $('#kab').val(kotkab).trigger('change')
+            // alert(kotkab)
+            $('#loading').hide();
 
         }
     </script>

@@ -93,7 +93,7 @@ class ModelMkA1 extends Model
                     "no_registrasi" => $noregis,
                     "kode_perguruan_tinggi" => $kdpt,
                     "nama_perguruan_tinggi" => $nmpt,
-                    "kode_matakuliah" => $kdmk,
+                    "kode_matakuliah" => trim($kdmk),
                     "nama_matakuliah" => $nmmk,
                     "jumlah_sks" => $sks,
                     "status" => 1,
@@ -185,29 +185,29 @@ class ModelMkA1 extends Model
         $db      = \Config\Database::connect();
         $idpengguna = session()->get("id");
         $result = $db->query("SELECT
-                    mk_klaim_header.idklaim,
-                    mk_klaim_header.ta_akademik,
-                    mk_klaim_header.no_peserta,
-                    mk_klaim_header.kode_prodi,
-                    mk_klaim_header.kode_matakuliah,
-                    mk_klaim_header.nama_matakuliah,
-                    mk_klaim_header.sks,
-                    mk_klaim_header.tglubah,
-                    mk_klaim_a1.kode_matakuliah_asal,
-                    mk_klaim_a1.nilai,
-                    dok_a1.nama_matakuliah AS nama_matakuliah_asal,
-                    dok_a1.nilai AS nilai_asal,
-                    dok_a1.jumlah_sks,
-                    (SELECT COUNT(*) FROM mk_klaim_a1 as it 
-                                WHERE it.kode_matakuliah = mk_klaim_a1.kode_matakuliah and it.no_registrasi=mk_klaim_a1.no_registrasi) as entry_count
-                    FROM
-                    mk_klaim_header
-                    -- left join mk_klaim_asessor on mk_klaim_header.idklaim=mk_klaim_asessor.idklaim
-                    LEFT JOIN mk_klaim_a1 ON mk_klaim_header.no_peserta = mk_klaim_a1.no_registrasi AND mk_klaim_header.kode_matakuliah = mk_klaim_a1.kode_matakuliah
-                    LEFT JOIN dok_a1 ON mk_klaim_a1.kode_matakuliah_asal = dok_a1.kode_matakuliah and mk_klaim_a1.no_registrasi=dok_a1.no_registrasi
-                    where mk_klaim_header.no_peserta='$noregis'
-                    -- and mk_klaim_asessor.idklaim is not null
-                    order by mk_klaim_a1.tglklaim asc, mk_klaim_header.kode_matakuliah")->getResult();
+        mk_klaim_header.idklaim,
+        mk_klaim_header.ta_akademik,
+        mk_klaim_header.no_peserta,
+        mk_klaim_header.kode_prodi,
+        mk_klaim_header.kode_matakuliah,
+        mk_klaim_header.nama_matakuliah,
+        mk_klaim_header.sks,
+        mk_klaim_header.tglubah,
+        mk_klaim_a1.kode_matakuliah_asal,
+        mk_klaim_a1.nilai,
+        dok_a1.nama_matakuliah AS nama_matakuliah_asal,
+        dok_a1.nilai AS nilai_asal,
+        dok_a1.jumlah_sks,
+        (SELECT COUNT(*) FROM mk_klaim_a1 as it 
+                    WHERE it.kode_matakuliah = mk_klaim_a1.kode_matakuliah and it.no_registrasi=mk_klaim_a1.no_registrasi) as entry_count
+        FROM
+        mk_klaim_header
+        -- left join mk_klaim_asessor on mk_klaim_header.idklaim=mk_klaim_asessor.idklaim
+        LEFT JOIN mk_klaim_a1 ON mk_klaim_header.no_peserta = mk_klaim_a1.no_registrasi AND TRIM(REPLACE(mk_klaim_header.kode_matakuliah,CHAR(9),'')) = TRIM(REPLACE(mk_klaim_a1.kode_matakuliah,CHAR(9),''))
+        LEFT JOIN dok_a1 ON TRIM(REPLACE(mk_klaim_a1.kode_matakuliah_asal,CHAR(9),'')) = TRIM(REPLACE(dok_a1.kode_matakuliah,CHAR(9),'')) and mk_klaim_a1.no_registrasi=dok_a1.no_registrasi
+        where mk_klaim_header.no_peserta='$noregis'
+        -- and mk_klaim_asessor.idklaim is not null
+        order by mk_klaim_a1.tglklaim asc, mk_klaim_header.kode_matakuliah")->getResult();
         return $result;
     }
     public function getDataKlaimAsessorA1up($noregis)
@@ -234,7 +234,7 @@ class ModelMkA1 extends Model
                     mk_klaim_header
                     left join mk_klaim_asessor on mk_klaim_header.idklaim=mk_klaim_asessor.idklaim
                     LEFT JOIN mk_klaim_a1 ON mk_klaim_header.no_peserta = mk_klaim_a1.no_registrasi AND mk_klaim_header.kode_matakuliah = mk_klaim_a1.kode_matakuliah
-                    LEFT JOIN dok_a1 ON mk_klaim_a1.kode_matakuliah_asal = dok_a1.kode_matakuliah and mk_klaim_a1.no_registrasi = dok_a1.no_registrasi
+                    LEFT JOIN dok_a1 ON TRIM(REPLACE(mk_klaim_a1.kode_matakuliah_asal,CHAR(9),''))= TRIM(REPLACE(dok_a1.kode_matakuliah,CHAR(9),'')) and mk_klaim_a1.no_registrasi = dok_a1.no_registrasi
                     where mk_klaim_header.no_peserta='$noregis'
                     and mk_klaim_asessor.idklaim is not null
                     order by mk_klaim_header.kode_matakuliah")->getResult();
@@ -246,13 +246,7 @@ class ModelMkA1 extends Model
         $idpengguna = session()->get("id");
         $result = $db->query("SELECT
 
-        IF (
-            prodi.id_jenjang = 'S1-R',
-            floor(
-                prodi.sks * prodi.sks_max_rekognisi / 100
-            ),
-            prodi.sks_max_rekognisi
-        ) AS sksmax
+       prodi.sks_max_rekognisi AS sksmax
         FROM
             prodi
         WHERE

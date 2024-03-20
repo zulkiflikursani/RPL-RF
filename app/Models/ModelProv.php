@@ -6,25 +6,26 @@ use CodeIgniter\Model;
 
 class ModelProv extends Model
 {
-    protected $table      = 'dikti_tb_tbpro';
+    protected $table      = 'wilayah';
     protected $primaryKey = 'id';
 
     protected $returnType     = 'array';
     protected $allowedFields = [
-        "ID",
-        "KDPROTBPRO",
-        "NMPROTBPRO",
-        "KDKABTBPRO",
-        "NMKABTBPRO",
-        "LUASSTBPRO",
-        "JMDUKTBPRO",
-        "JMDPTTBPRO",
+        "id",
+        "idprov",
+        "idkot",
+        "idkec",
+        "idkel",
+        "kode_wilayah",
+        "nama_wilayah",
+        "tingkat",
+        "kode_propinsi_dikti"
     ];
 
     public function getProv()
     {
-        return $this->select('KDPROTBPRO,NMPROTBPRO,KDKABTBPRO')
-            ->groupBy("KDPROTBPRO")
+        return $this->select('idprov as KDPROTBPRO,nama_wilayah as NMPROTBPRO, idkot as KDKABTBPRO')
+            ->where('tingkat', '1')
             ->get()
             ->getResult();
     }

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use PSpell\Config;
 
 class ModelMatakuliah extends Model
 {
@@ -44,8 +45,10 @@ class ModelMatakuliah extends Model
 
     public function getMatakuliahByprodi($kode_prodi)
     {
+        // kode_prodi,kode_matakuliah,kode_konsentrasi,konsentrasi,nama_matakuliah,sks,id_kurikulum
+
         $db = \Config\Database::connect();
-        $result = $db->query("select matakuliah.kode_prodi,matakuliah.kode_matakuliah,matakuliah.kode_konsentrasi,tb_konsentrasi.konsentrasi,matakuliah.nama_matakuliah, matakuliah.sks, matakuliah.id_kurikulum from  matakuliah left join tb_konsentrasi on matakuliah.kode_konsentrasi=tb_konsentrasi.kode_konsentrasi where kode_prodi = '$kode_prodi' and jenis_matakuliah='3'")->getResult();
+        $result = $db->query("select matakuliah.kode_prodi,matakuliah.kode_matakuliah,matakuliah.kode_konsentrasi,tb_konsentrasi.konsentrasi,matakuliah.nama_matakuliah, matakuliah.sks, matakuliah.id_kurikulum,matakuliah.jenis_matakuliah from  matakuliah left join tb_konsentrasi on matakuliah.kode_konsentrasi=tb_konsentrasi.kode_konsentrasi where kode_prodi = '$kode_prodi'")->getResult();
         return $result;
     }
 
@@ -55,6 +58,7 @@ class ModelMatakuliah extends Model
         $result = $db->query("select matakuliah.kode_prodi,matakuliah.jenis_matakuliah,matakuliah.kode_matakuliah,matakuliah.kode_konsentrasi,tb_konsentrasi.konsentrasi,matakuliah.nama_matakuliah, matakuliah.sks, matakuliah.id_kurikulum from  matakuliah left join tb_konsentrasi on matakuliah.kode_konsentrasi=tb_konsentrasi.kode_konsentrasi where jenis_matakuliah='1' or jenis_matakuliah = '2'")->getResult();
         return $result;
     }
+
     public function getMatakuliahRplByprodi($kode_prodi, $ta_akademik)
     {
         $db = \Config\Database::connect();
@@ -81,7 +85,7 @@ class ModelMatakuliah extends Model
                                     on matakuliah.kode_matakuliah = rplcpmk.kode_matakuliah and rplcpmk.ta_akademik='" . $ta_akademik . "'
                                     WHERE
                                         matakuliah.kode_prodi = '" . $kode_prodi . "'
-                                    AND jenis_matakuliah = '3' and mcpmk.kode_matakuliah is not null
+                                    AND jenis_matakuliah > 2 and mcpmk.kode_matakuliah is not null
                                     group by matakuliah.kode_matakuliah")->getResult();
         return $result;
     }
@@ -135,7 +139,7 @@ class ModelMatakuliah extends Model
     public function editmk($kdmk, $kd_prodi, $nmmk, $kdkons, $sks,  $idkur, $jenis_mk)
     {
         $db = \Config\Database::connect();
-        $result = $db->query("update matakuliah set nama_matakuliah='$nmmk', sks='$sks',kode_konsentrasi='$kdkons', id_kurikulum='$idkur',jenis_matakuliah='$jenis_mk' where kode_prodi='$kd_prodi' and kode_matakuliah='$kdmk'");
+        $result = $db->query("update matakuliah set kode_konsentrasi='$kdkons',jenis_matakuliah='$jenis_mk' where kode_prodi='$kd_prodi' and kode_matakuliah='$kdmk'");
         return $result;
     }
     public function hapusmk($kdmk, $kd_prodi)

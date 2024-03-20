@@ -76,6 +76,9 @@
                                                         <th>No Registrasi</th>
                                                         <th>Nama Mahasiswa</th>
                                                         <th>Program Studi</th>
+                                                        <th>Instansi Asal</th>
+                                                        <th>Kabupaten</th>
+                                                        <th>Provinsi</th>
                                                         <th>Aksi</th>
 
                                                     </tr>
@@ -97,6 +100,9 @@
                                                                     <td>$row->no_peserta</td>
                                                                     <td>$row->nama</td>
                                                                     <td>$row->nama_prodi</td>
+                                                                    <td>$row->instansi_asal</td>
+                                                                    <td>$row->kotkab</td>
+                                                                    <td>$row->propinsi</td>
                                                                     <td><a href='$url'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
                                                                 </tr>";
                                                             // echo $row->nama;
@@ -123,6 +129,9 @@
                                                         <th>No Registrasi</th>
                                                         <th>Nama Mahasiswa</th>
                                                         <th>Program Studi</th>
+                                                        <th>Instansi Asal</th>
+                                                        <th>Kabupaten</th>
+                                                        <th>Provinsi</th>
                                                         <th>Aksi</th>
 
                                                     </tr>
@@ -145,6 +154,9 @@
                                                                     <td>$row->no_peserta</td>
                                                                     <td>$row->nama</td>
                                                                     <td>$row->nama_prodi</td>
+                                                                    <td>$row->instansi_asal</td>
+                                                                    <td>$row->kotkab</td>
+                                                                    <td>$row->propinsi</td>
                                                                     <td><a href='$url'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
                                                                 </tr>";
                                                             // echo $row->nama;
@@ -171,6 +183,9 @@
                                                         <th>No Registrasi</th>
                                                         <th>Nama Mahasiswa</th>
                                                         <th>Program Studi</th>
+                                                        <th>Instansi Asal</th>
+                                                        <th>Kabupaten</th>
+                                                        <th>Provinsi</th>
                                                         <th>Jumlah SKS</th>
                                                         <th>Kontak</th>
 
@@ -191,6 +206,9 @@
                                                                     <td>$row->nama</td>
                                                                     <td>$row->nama_prodi</td>
                                                                     <td>$row->Jumlah_SKS</td>
+                                                                    <td>$row->instansi_asal</td>
+                                                                    <td>$row->kotkab</td>
+                                                                    <td>$row->propinsi</td>
                                                                     <td>$row->kontak</td>
                                                                   
                                                                 </tr>";

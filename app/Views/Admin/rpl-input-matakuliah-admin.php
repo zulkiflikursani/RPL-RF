@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en">
 <style>
-thead input {
-    width: 100%;
-}
+    thead input {
+        width: 100%;
+    }
 </style>
 
 <head>
@@ -11,25 +11,22 @@ thead input {
     <?= $title_meta ?>
 
     <!-- DataTables -->
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet"
-        type="text/css" />
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css"
-        rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Responsive datatable examples -->
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css"
-        rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="<?= base_url() ?>/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 
     <style>
-    .select2-container--default .select2-selection--single .select2-selection__arrow {
-        right: 10px !important;
-        left: auto !important;
-    }
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            right: 10px !important;
+            left: auto !important;
+        }
 
-    .select2 {
-        width: 100% !important;
-    }
+        .select2 {
+            width: 100% !important;
+        }
     </style>
 
     <?= $this->include('partials/rpl-head-css') ?>
@@ -84,107 +81,54 @@ thead input {
 
                             <div class="card">
                                 <div class="card-body">
+                                    <button class="btn btn-primary" data-bs-toggle="modal" id='bt-tambah-matakuliah' data-bs-target='.conf-modal'>Sinkron data
+                                        Matakuliah Dari
+                                        Siska </button>
                                     <h4 class="card-title mb-4">Data Matakuliah</h4>
                                     <div class="">
 
                                         <!-- modal tambah asessor -->
-                                        <div class="modal fade tambah-matakuliah-modal" tabindex="-1" role="dialog"
-                                            aria-labelledby="mytambah-modal" aria-hidden="true">
+                                        <div class="modal fade tambah-matakuliah-modal" tabindex="-1" role="dialog" aria-labelledby="mytambah-modal" aria-hidden="true">
                                             <div class="modal-dialog modal-xl">
                                                 <div class="modal-content" id='modal-content'>
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="myLargeModalLabel">Tambah
-                                                            Matakuliah
+                                                        <h5 class="modal-title" id="myLargeModalLabel">Daftar Matakuliah
                                                         </h5>
 
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <!-- content -->
+                                                        <div><span>Note: Pilih matakuliah umum dan universitas</span>
+                                                        </div>
+                                                        <div>
+                                                            <table class="table table-bordered">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>No</th>
+                                                                        <th>Kode Matakulaih</th>
+                                                                        <th>Nama Matakuliah</th>
+                                                                        <th>SKS</th>
+                                                                        <th>Aksi</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id='table-matakuliah'>
 
-                                                        <form method="POST">
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="mb-2">
-                                                                        <label for="formrow-nama-input"
-                                                                            class="form-label">Kode Matakuliah</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="mb-3">
-                                                                        <input type="text" class="form-control"
-                                                                            id="kdmk"
-                                                                            placeholder="Masukkan Kode Matakuliah"
-                                                                            value="" required>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="formrow-email-input"
-                                                                            class="form-label">Nama Matakuliah</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="nmmk" placeholder="Masukkan No CPMK"
-                                                                            value="" required>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="formrow-email-input"
-                                                                            class="form-label">Jenis Matakuliah</label>
-                                                                        <select class="form-select" id='jenis_mk'>
-                                                                            <option value="1">Umum</option>
-                                                                            <option value="2">Universitas</option>
-                                                                        </select>
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="formrow-email-input"
-                                                                            class="form-label">Jumlah SKS</label>
-                                                                        <input type="text" class="form-control" id="sks"
-                                                                            placeholder="Masukkan Jumlah SKS" value=""
-                                                                            required>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="formrow-email-input"
-                                                                            class="form-label">id kurikulum</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="idkur"
-                                                                            placeholder="Masukkan Id Kurikulum" value=""
-                                                                            required>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
 
 
-                                                            <div>
-                                                                <button type="button" onclick='simpancpmk()'
-                                                                    class="btn btn-primary w-md">Simpan</button>
-
-                                                            </div>
+                                                        <div>
+                                                            <button type="button" onclick='simpanmatakuliah()' class="btn btn-primary w-md">Simpan</button>
+                                                        </div>
                                                         </form>
                                                     </div>
                                                 </div><!-- /.modal-content -->
                                             </div><!-- /.modal-dialog -->
                                         </div><!-- /.modal -->
 
-                                        <div class="modal fade edit-matakuliah-modal" tabindex="-1" role="dialog"
-                                            aria-labelledby="mytambah-modal" aria-hidden="true">
+                                        <div class="modal fade edit-matakuliah-modal" tabindex="-1" role="dialog" aria-labelledby="mytambah-modal" aria-hidden="true">
                                             <div class="modal-dialog modal-xl">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -192,8 +136,7 @@ thead input {
                                                             Matakuliah
                                                         </h5>
 
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <!-- content -->
@@ -204,8 +147,7 @@ thead input {
                                                                 <div class="col-md-6">
 
                                                                     <div class="mb-3">
-                                                                        <label for="formrow-nama-input"
-                                                                            class="form-label">Kode Matakuliah</label>
+                                                                        <label for="formrow-nama-input" class="form-label">Kode Matakuliah</label>
 
                                                                     </div>
                                                                 </div>
@@ -214,10 +156,7 @@ thead input {
                                                                 <div class="col-md-6">
 
                                                                     <div class="mb-3">
-                                                                        <input type="text" class="form-control"
-                                                                            id="ekdmk"
-                                                                            placeholder="Masukkan Kode Matakuliah"
-                                                                            value="" required readonly>
+                                                                        <input type="text" class="form-control" id="ekdmk" placeholder="Masukkan Kode Matakuliah" value="" required readonly>
 
                                                                     </div>
                                                                 </div>
@@ -225,20 +164,15 @@ thead input {
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="mb-3">
-                                                                        <label for="formrow-email-input"
-                                                                            class="form-label">Nama Matakuliah</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="enmmk"
-                                                                            placeholder="Masukkan Nama Matakuliah"
-                                                                            value="" required>
+                                                                        <label for="formrow-email-input" class="form-label">Nama Matakuliah</label>
+                                                                        <input type="text" class="form-control" id="enmmk" placeholder="Masukkan Nama Matakuliah" value="" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="mb-3">
-                                                                        <label for="formrow-email-input"
-                                                                            class="form-label">Jenis Matakuliah</label>
+                                                                        <label for="formrow-email-input" class="form-label">Jenis Matakuliah</label>
                                                                         <select class="form-select" id='ejenis_mk'>
                                                                             <option value="1">Umum</option>
                                                                             <option value="2">Universitas</option>
@@ -251,71 +185,82 @@ thead input {
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="mb-3">
-                                                                        <label for="formrow-email-input"
-                                                                            class="form-label">Jumlah SKS</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="esks" placeholder="Masukkan Jumlah SKS"
-                                                                            value="" required>
+                                                                        <label for="formrow-email-input" class="form-label">Jumlah SKS</label>
+                                                                        <input type="text" class="form-control" id="esks" placeholder="Masukkan Jumlah SKS" value="" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="mb-3">
-                                                                        <label for="formrow-email-input"
-                                                                            class="form-label">id kurikulum</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="eidkur"
-                                                                            placeholder="Masukkan Id Kuriulum" value=""
-                                                                            required>
+                                                                        <label for="formrow-email-input" class="form-label">id kurikulum</label>
+                                                                        <input type="text" class="form-control" id="eidkur" placeholder="Masukkan Id Kuriulum" value="" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
 
                                                             <div>
-                                                                <button type="button" onclick='editmk()'
-                                                                    class="btn btn-primary w-md">Simpan</button>
-                                                                <button type="button" onclick='confirmhapus()'
-                                                                    class="btn btn-primary w-md mx-2">Hapus</button>
+                                                                <button type="button" onclick='editmk()' class="btn btn-primary w-md">Simpan</button>
+                                                                <button type="button" onclick='confirmhapus()' class="btn btn-primary w-md mx-2">Hapus</button>
                                                             </div>
                                                         </form>
                                                     </div>
                                                 </div><!-- /.modal-content -->
                                             </div><!-- /.modal-dialog -->
                                         </div><!-- /.modal -->
-                                        <div class="modal fade hapus-modal" tabindex="-1" role="dialog"
-                                            aria-labelledby="mytambah-modal" aria-hidden="true">
+                                        <div class="modal fade hapus-modal" tabindex="-1" role="dialog" aria-labelledby="mytambah-modal" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class=" modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="myLargeModalLabel">Perhatian !</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <div>
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="mb-12">
-                                                                        <label for="formrow-nama-input"
-                                                                            class="form-label">Menghapus Matakuliah akan
+                                                                        <label for="formrow-nama-input" class="form-label">Menghapus Matakuliah akan
                                                                             menghapus CPMK Matakuliah tersebut </br>
                                                                             Yakin akan Menghapus Matakuliah ?</label>
-                                                                        <input type="hidden" class="form-control"
-                                                                            id="hkdmk" name="hkdmk"
-                                                                            placeholder="Masukkan Nama" value=""
-                                                                            required readonly>
+                                                                        <input type="hidden" class="form-control" id="hkdmk" name="hkdmk" placeholder="Masukkan Nama" value="" required readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
                                                             <div class="modal-footer">
-                                                                <button onclick="hapusmk()"
-                                                                    class="btn btn-primary w-md">
-                                                                    Ya</button> <button type="button"
-                                                                    class="btn btn-light"
-                                                                    data-bs-dismiss="modal">Batal</button>
+                                                                <button onclick="hapusmk()" class="btn btn-primary w-md">
+                                                                    Ya</button> <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div>
+                                        <div class="modal fade conf-modal" tabindex="-1" role="dialog" aria-labelledby="mytambah-modal" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class=" modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="myLargeModalLabel">Perhatian !</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="mb-12">
+                                                                        <label for="formrow-nama-input" class="form-label">Mensingkron matakuliah
+                                                                            akan menghapus matakuliah sebelumnya
+                                                                            !</label>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="modal-footer">
+                                                                <button onclick="sinkron()" class="btn btn-primary w-md">
+                                                                    Ya</button> <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -329,13 +274,11 @@ thead input {
                                     <h3 class="text-center">UMUM DAN UNIVERSITAS </h3>
                                     <div class="col-lg-12">
                                         <div class="mb-3">
-                                            <button class="btn btn-primary" data-bs-toggle="modal"
-                                                id='bt-tambah-matakuliah'
-                                                data-bs-target='.tambah-matakuliah-modal'>Tambah Matakuliah</button>
                                             <a href='<?= base_url('cpmk') ?> ' class="btn btn-primary">Daftar
                                                 CPMK</a>
                                         </div>
-                                        <div class="mb-3 row">
+
+                                        <!-- <div class="mb-3 row">
                                             <label for="" class="col-lg-1">Kurikulum:</label>
                                             <div class="col-lg-5">
                                                 <select name="" class="form-select " id="filter">
@@ -345,7 +288,7 @@ thead input {
                                                     <option value="3">3</option>
                                                 </select>
                                             </div>
-                                        </div>
+                                        </div> -->
 
 
                                     </div>
@@ -358,8 +301,7 @@ thead input {
 
                                                 <th>Jenis Matakuliah</th>
                                                 <th>Sks</th>
-                                                <th>Id Kurikulum</th>
-                                                <th>Aksi</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -379,10 +321,7 @@ thead input {
                                                     <td for='nmmk'>" . $row->nama_matakuliah . "</td>
                                                     <td for='kons' >" . $jenis_mk . "</td>
                                                     <td for='idkur'>" . $row->sks . "</td>
-                                                    <td for='idkur'>" . $row->id_kurikulum . "</td>
-                                                  <td><button class='btn btn-sm btn-primary bt-edit-matakuliah' data-bs-toggle='modal'
-                                                  id='bt-edit-matakuliah'
-                                                  data-bs-target='.edit-matakuliah-modal' >Edit</button></td>
+                                                    
                                                     </tr>";
                                                 }
                                             }
@@ -446,172 +385,217 @@ thead input {
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 
     <script>
-    $('document').ready(function() {
-        // alert('s')
-        var cari = $('#filter');
+        function sinkron() {
+            $('#loading').show()
+            url = '<?= base_url('singkron-mk-siska-mku') ?>'
 
-        $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
-            // $("#loading").show();
+            $.post(url, function(data) {
+                var jsonData = JSON.parse(data)
+                data = JSON.parse(jsonData);
 
-            var cari2 = cari.val()
-            var kurikulum = data[5];
-            // alert(idcmk)
-            if (cari2 == kurikulum) {
-                return true;
-            } else if (cari2 == "") {
-                return true
+                if (data && data.result) {
+                    // Loop through the "result" array
+
+                    data.result.forEach(function(item, index) {
+                        // Access properties of each item
+
+                        var status = item.status;
+                        var namaMatakuliah = item.nama_matakuliah;
+                        var matakuliahId = item.kode_matakuliah;
+                        var jenismk = item.kdwpltbkmk;
+                        var sks = item.sks;
+                        var no = index + 1;
+                        $('#table-matakuliah').append("<tr status='" + status + "' jenismk='" + jenismk +
+                            "'><td>" + no +
+                            "</td><td for='kdmk'>" +
+                            matakuliahId +
+                            "</td><td for='nmmk'>" + namaMatakuliah + "</td><td for='sks'>" + sks +
+                            "</td> <td for='ceklis'><input type='checkbox'/></td></tr>")
+
+                    });
+                } else {
+                    console.log("Invalid JSON format ");
+                }
+                $('.conf-modal').modal('hide');
+                $('#loading').hide();
+                $('.tambah-matakuliah-modal').modal('show');
+
+            })
+        }
+        $('document').ready(function() {
+            // alert('s')
+            var cari = $('#filter');
+
+            // $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+            //     // $("#loading").show();
+
+            //     var cari2 = cari.val()
+            //     var kurikulum = data[5];
+            //     // alert(idcmk)
+            //     if (cari2 == kurikulum) {
+            //         return true;
+            //     } else if (cari2 == "") {
+            //         return true
+            //     }
+
+            //     return false;
+            // });
+
+            // $('.table-matakuliah thead tr')
+            //     .clone(true)
+            //     .addClass('filters')
+            //     .appendTo('.table-matakuliah thead');
+            var table = $('.table-matakuliah').DataTable()
+            cari.on('change', function() {
+                // alert(cari.val())
+
+                table.draw();
+                $("#loading").hide();
+
+
+            })
+
+            $('.table-matakuliah tbody').on('click', '.bt-edit-matakuliah', function() {
+                var data = table.row($(this).parents('tr')).data();
+                var data2 = table.row($(this).parents('tr')).nodes()[0];
+                data3 = data2.getAttribute("kdkons");
+                data4 = data2.getAttribute("kdprodi");
+                if (data[3] == "Umum") {
+                    jenismk = '1';
+                } else if (data[3] == "Universitas") {
+                    jenismk = '2';
+                }
+                $('#ekdmk').val(data[1]);
+                $('#enmmk').val(data[2]);
+                $('#esks').val(data[4]);
+                $('#ejenis_mk').val(jenismk);
+                $('#ekdprodi').val(data4);
+                $('#ekdkons').val(data3);
+                $('#eidkur').val(data[5]);
+            });
+        })
+
+
+        function kosongkan() {
+            // $('#prodi').val("");
+            $('#kdmk').val("");
+            $('#nmmk').val("");
+            $('#sks').val("");
+            $('#idkur').val("");
+        }
+
+        function simpancpmk() {
+            $("#loading").show();
+            prodi = ""
+            kdmk = $('#kdmk').val();
+            nmmk = $('#nmmk').val();
+            sks = $('#sks').val();
+            idkur = $('#idkur').val();
+            jenis_matakuliah = $('#jenis_mk').val();
+            url = '<?= base_url('simpanmk') ?>'
+            $.post(url, {
+                prodi: prodi,
+                kdmk: kdmk,
+                nmmk: nmmk,
+                sks: sks,
+                idkur: idkur,
+                jenis_mk: jenis_matakuliah
+            }, function(data) {
+                if (alert(data)) {} else {
+                    // getMatakuliah()
+                    window.location.reload()
+                    kosongkan();
+                    $("#loading").hide();
+                };
+            })
+        }
+
+        function editmk() {
+            $("#loading").show();
+
+            prodi = '';
+            kdmk = $('#ekdmk').val();
+            nmmk = $('#enmmk').val();
+            kdkons = $('#ekdkons').val();
+            sks = $('#esks').val();
+            idkur = $('#eidkur').val();
+            jenismk = $('#ejenis_mk').val();
+            url = '<?= base_url('editmk') ?>'
+
+            $.post(url, {
+                prodi: prodi,
+                kdmk: kdmk,
+                nmmk: nmmk,
+                kdkons: kdkons,
+                sks: sks,
+                idkur: idkur,
+                jenismk: jenismk
+            }, function(data) {
+                if (alert(data)) {} else {
+                    window.location.reload()
+                    $("#loading").hide();
+                };
+            })
+        }
+
+        function simpanmatakuliah() {
+            var myArray = []
+            $("#loading").show();
+            url = '<?= base_url('simpanmk') ?>'
+            $('#table-matakuliah tr').each(function(index, row) {
+                var rowData = {}
+                kdmk = $(row).find('td[for=kdmk]').html();
+                nmmk = $(row).find('td[for=nmmk]').html();
+                sks = $(row).find('td[for=sks]').html();
+                status = $(row).attr('status');
+                jenismk = $(row).attr('jenismk');
+                if ($(row).find("td[for=ceklis]").children().is(':checked')) {
+                    rowData.kdmk = kdmk;
+                    rowData.nmmk = nmmk;
+                    rowData.sks = sks;
+                    rowData.status = status;
+                    rowData.jenis_mk = jenismk;
+                    myArray.push(rowData);
+                }
+            });
+            if (myArray.length === 0) {
+                alert('Anda Belum memilih matakuliah');
+                $("#loading").hide();
+
+            } else {
+                // console.log(myArray);
+                $.post(url, {
+                        data: myArray
+                    },
+                    function(response) {
+                        if (alert(response)) {} else {
+                            window.location.reload()
+                            $("#loading").hide();
+                        };
+                    })
             }
+        }
 
-            return false;
-        });
+        function confirmhapus() {
+            kdmk = $('#ekdmk').val();
+            $('#hkdmk').val(kdmk);
+            $('.edit-matakuliah-modal').modal('hide')
+            $('.hapus-modal').modal('show')
+        }
 
-        // $('.table-matakuliah thead tr')
-        //     .clone(true)
-        //     .addClass('filters')
-        //     .appendTo('.table-matakuliah thead');
-        var table = $('.table-matakuliah').DataTable()
-        cari.on('change', function() {
-            // alert(cari.val())
-
-            table.draw();
-            $("#loading").hide();
-
-
-        })
-
-        $('.table-matakuliah tbody').on('click', '.bt-edit-matakuliah', function() {
-            var data = table.row($(this).parents('tr')).data();
-            var data2 = table.row($(this).parents('tr')).nodes()[0];
-            data3 = data2.getAttribute("kdkons");
-            data4 = data2.getAttribute("kdprodi");
-            if (data[3] == "Umum") {
-                jenismk = '1';
-            } else if (data[3] == "Universitas") {
-                jenismk = '2';
-            }
-            $('#ekdmk').val(data[1]);
-            $('#enmmk').val(data[2]);
-            $('#esks').val(data[4]);
-            $('#ejenis_mk').val(jenismk);
-            $('#ekdprodi').val(data4);
-            $('#ekdkons').val(data3);
-            $('#eidkur').val(data[5]);
-
-        });
-
-
-
-
-    })
-
-
-    function kosongkan() {
-        // $('#prodi').val("");
-        $('#kdmk').val("");
-        $('#nmmk').val("");
-        $('#sks').val("");
-        $('#idkur').val("");
-    }
-
-    function simpancpmk() {
-        $("#loading").show();
-        prodi = ""
-        kdmk = $('#kdmk').val();
-        nmmk = $('#nmmk').val();
-        sks = $('#sks').val();
-        idkur = $('#idkur').val();
-        jenis_matakuliah = $('#jenis_mk').val();
-
-        url = '<?= base_url('simpanmk') ?>'
-
-        $.post(url, {
-            prodi: prodi,
-            kdmk: kdmk,
-            nmmk: nmmk,
-            sks: sks,
-            idkur: idkur,
-            jenis_mk: jenis_matakuliah
-        }, function(data) {
-            if (alert(data)) {} else {
-                // getMatakuliah()
-                window.location.reload()
-                kosongkan();
-                $("#loading").hide();
-
-            };
-        })
-
-    }
-
-    function editmk() {
-        $("#loading").show();
-
-        prodi = '';
-        kdmk = $('#ekdmk').val();
-        nmmk = $('#enmmk').val();
-        kdkons = $('#ekdkons').val();
-        sks = $('#esks').val();
-        idkur = $('#eidkur').val();
-        jenismk = $('#ejenis_mk').val();
-        url = '<?= base_url('editmk') ?>'
-
-        $.post(url, {
-            prodi: prodi,
-            kdmk: kdmk,
-            nmmk: nmmk,
-            kdkons: kdkons,
-            sks: sks,
-            idkur: idkur,
-            jenismk: jenismk
-        }, function(data) {
-            if (alert(data)) {} else {
-                window.location.reload()
-                $("#loading").hide();
-
-
-            };
-        })
-
-
-    }
-
-    function confirmhapus() {
-        kdmk = $('#ekdmk').val();
-        $('#hkdmk').val(kdmk);
-        $('.edit-matakuliah-modal').modal('hide')
-        $('.hapus-modal').modal('show')
-
-
-
-    }
-
-    function hapusmk() {
-
-        // Save it!
-        // prodi = $('#prodi').val();
-        kdmk = $('#hkdmk').val();
-        // nmmk = $('#enmmk').val();
-
-        url = '<?= base_url('hapusmk') ?>'
-
-        $.post(url, {
-            prodi: "",
-            kdmk: kdmk
-
-        }, function(data) {
-            if (alert(data)) {} else {
-                window.location.reload()
-                $("#loading").hide();
-
-
-            };
-
-        })
-
-
-
-
-    }
+        function hapusmk() {
+            kdmk = $('#hkdmk').val();
+            url = '<?= base_url('hapusmk') ?>'
+            $.post(url, {
+                prodi: "",
+                kdmk: kdmk
+            }, function(data) {
+                if (alert(data)) {} else {
+                    window.location.reload()
+                    $("#loading").hide();
+                };
+            })
+        }
     </script>
 </body>
 

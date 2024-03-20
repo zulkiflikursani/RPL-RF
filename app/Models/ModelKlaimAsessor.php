@@ -51,6 +51,7 @@ class ModelKlaimAsessor extends Model
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
 
+
     public function simpanklaimAsessor($formdata, $ta_akademik)
     {
 
@@ -76,9 +77,14 @@ class ModelKlaimAsessor extends Model
             $kdprodi = $a['kdprodi'];
             $kettanggapan = $a['kettanggapan'];
             $cekmk = $this->CekMatakuliahAsessor($a['idklaim']);
+            $cekstatusTanggapanMhs = $this->cekstatuTanggapanMhs($noregis);
             // print_r($cekmk);
             $cekvalidprodi = $this->cekValidProdi($idklaim);
-            if ($cekvalidprodi != null) {
+            if ($cekstatusTanggapanMhs != null) {
+                echo "Belum ditanggapi";
+                $status = 'break';
+                break;
+            } else if ($cekvalidprodi != null) {
                 echo "Tidak bisa diganti karena sudah divalidasi oleh prodi";
                 $status = 'break';
                 break;
@@ -135,6 +141,15 @@ class ModelKlaimAsessor extends Model
                 echo "sukses";
             }
         }
+    }
+
+    public function cekstatuTanggapanMhs($noregis)
+    {
+        $modelKlaimAsessos = new ModelKlaimAsessor();
+        $status = $modelKlaimAsessos->where('no_peserta', $noregis)
+            ->where('tanggapan', 1)->findAll();
+
+        return $status;
     }
 
     public function simpanklaimAsessorA1($formdata,  $kodeprodi, $ta_akademik)
@@ -262,12 +277,15 @@ class ModelKlaimAsessor extends Model
         $idpengguna = session()->get('id');
         $cekvalidprodi = $this->cekValidProdibatalklaim($noregis);
         if ($cekvalidprodi == null) {
+            $db->transStart();
+            $db->query("update mk_klaim_detail set statusklaim='2' where mid(mk_klaim_detail.idklaim,6,10)='$noregis'");
             $hapusklaim =  $db->query("delete from mk_klaim_asessor where no_peserta='$noregis' and idpengguna='$idpengguna'");
+            $db->transComplete();
             if ($hapusklaim === false) {
-                // $db->transRollback();
+                $db->transRollback();
                 return "Gagal Membatalkan Klaim Matakuliah";
             } else {
-                // $db->transCommit();
+                $db->transCommit();
                 return "Sukses Membatalkan Klaim Matakuliah";
             }
         } else {

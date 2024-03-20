@@ -1,0 +1,11 @@
+CRITICAL - 2024-02-05 09:02:26 --> Constant FILTER_SANITIZE_STRING is deprecated
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/HTTP/CLIRequest.php(205): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Constant FILTER...', '/Users/macbookp...', 205)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/HTTP/CLIRequest.php(70): CodeIgniter\HTTP\CLIRequest->parseCommand()
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Config/Services.php(133): CodeIgniter\HTTP\CLIRequest->__construct(Object(Config\App))
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Config/BaseService.php(192): CodeIgniter\Config\Services::clirequest(Object(Config\App), false)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Config/Services.php(128): CodeIgniter\Config\BaseService::getSharedInstance('clirequest', Object(Config\App))
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(589): CodeIgniter\Config\Services::clirequest(Object(Config\App))
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->getRequestObject()
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CLI/Console.php(61): CodeIgniter\CodeIgniter->run()
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/spark(57): CodeIgniter\CLI\Console->run()
+#9 {main}

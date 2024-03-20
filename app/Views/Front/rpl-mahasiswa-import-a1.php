@@ -302,12 +302,12 @@ function simpandata() {
             var nilai = $(this).find("td[for=d]").html();
 
             item = {}
-            item["kdpt"] = kdpt;
-            item["nmpt"] = nmpt;
-            item["kdmk"] = kdmk;
-            item["nmmk"] = nmmk;
-            item["sks"] = sks;
-            item["nilai"] = nilai;
+            item["kdpt"] = kdpt.trim();
+            item["nmpt"] = nmpt.trim();
+            item["kdmk"] = kdmk.trim();
+            item["nmmk"] = nmmk.trim();
+            item["sks"] = sks.trim();
+            item["nilai"] = nilai.trim();
 
             jsonObj.push(item);
             // alert(desk);

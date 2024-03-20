@@ -94,6 +94,11 @@
                                                 </div>
                                                 <div class="row">
 
+                                                    <div class="col-md-2">Konsentrasi</div>
+                                                    <div class="col-md-2">: <?= $konsentrasi; ?></div>
+                                                </div>
+                                                <div class="row">
+
                                                     <div class="col-md-2">Jenis RPL</div>
                                                     <div class="col-md-2">: <?= "A" . $jenis_rpl; ?></div>
                                                 </div>
@@ -126,9 +131,13 @@
                                                         if (isset($dataKlaimAsessorA1)) {
                                                             $kdmk = "";
                                                             $no = 0;
+                                                            $totsksvalid = 0;
+                                                            $totsksawal = 0;
                                                             foreach ($dataKlaimAsessorA1 as $row) {
                                                                 if ($kdmk != $row->kode_matakuliah) {
                                                                     $no++;
+                                                                    $totsksvalid = $totsksvalid + floatval($row->sks);
+                                                                    $totsksawal = $totsksawal + floatval($row->jumlah_sks);
                                                                     echo "<tr noregis='$row->no_peserta' idklaim='$row->idklaim'
                                                                         kdmk='$row->kode_matakuliah'
                                                                         kdprodi='$row->kode_prodi'
@@ -136,7 +145,7 @@
                                                                         sks='$row->sks'
                                                                         nilai='$row->nilai'><td rowspan='$row->entry_count'>$no</td><td rowspan='$row->entry_count'>$row->kode_matakuliah</td>
                                                                         <td rowspan='$row->entry_count'>$row->nama_matakuliah</td>
-                                                                        <td rowspan='$row->entry_count'>$row->sks</td><td rowspan='$row->entry_count'>$row->nilai</td><td >$row->nama_matakuliah_asal</td><td>$row->jumlah_sks</td><td>$row->nilai_asal</td><td rowspan='$row->entry_count'></td></tr>";
+                                                                        <td rowspan='$row->entry_count'>$row->sks</td><td rowspan='$row->entry_count'>$row->nilai</td><td>$row->nama_matakuliah_asal</td><td>$row->jumlah_sks</td><td>$row->nilai_asal</td></tr>";
                                                                     $kdmk = $row->kode_matakuliah;
                                                                 } else {
 
@@ -146,10 +155,12 @@
                                                                         sks='$row->sks'
                                                                         kdprodi='$row->kode_prodi'
                                                                         nilai='$row->nilai'>
-                                                                        <td>$row->nama_matakuliah_asal</td><td>$row->jumlah_sks</td><td>$row->nilai_asal</td></tr>";
+                                                                        <td>$row->nama_matakuliah_asal</td><td>$row->jumlah_sks</td><td>$row->nilai_asal</td>
+                                                                        </tr>";
                                                                 }
                                                             }
                                                         }
+                                                        echo "<tr><td colspan='3'>Jumlah SKS tervalidasi</td><td>$totsksvalid</td><td colspan='2'>Jumlah SKS Matakuliah asal</td><td>$totsksawal</td></tr>"
 
                                                         ?>
                                                     </tbody>
@@ -216,9 +227,7 @@
                                 </div>
                                 <div class="d-print-none">
                                     <div class="float-end">
-                                        <a href="javascript:window.print()"
-                                            class="btn btn-success waves-effect waves-light me-1"><i
-                                                class="fa fa-print"></i></a>
+                                        <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-print"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -248,14 +257,14 @@
 </html>
 
 <script>
-function validprodi() {
-    $('#validasi-form').submit()
-}
+    function validprodi() {
+        $('#validasi-form').submit()
+    }
 
-function unvalidprodi() {
-    $('#unvalidasi-form').submit()
+    function unvalidprodi() {
+        $('#unvalidasi-form').submit()
 
-}
+    }
 </script>
 <?php
 function tgl_indo($tanggal)

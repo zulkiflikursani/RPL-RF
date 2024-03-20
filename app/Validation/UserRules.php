@@ -6,6 +6,7 @@ use App\Models\ModelPengguna;
 use App\Models\ModelRegistrasi;
 use App\Models\UserModel;
 
+
 class UserRules
 {
     public function validateUser(string $str, string $fields, array $data)

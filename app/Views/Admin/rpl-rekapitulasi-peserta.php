@@ -124,11 +124,12 @@
                                                 <th rowspan="2" class="align-middle">No</th>
                                                 <th rowspan="2" class="align-middle">Program Studi</th>
                                                 <th rowspan="2" class="align-middle">Fakultas</th>
-                                                <th colspan="2" class="align-middle">Jumlah</th>
+                                                <th colspan="3" class="align-middle">Jumlah</th>
                                             </tr>
                                             <tr>
                                                 <th>Pendaftar</th>
                                                 <th>Tervalidasi</th>
+                                                <th>Valid Pembayaran</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -138,6 +139,7 @@
                                                 $i = 0;
                                                 $jumlahdaftar = 0;
                                                 $jumlahlulus = 0;
+                                                $jumlahvalidkeu = 0;
 
                                                 foreach ($dataPesertaProdi as $row) {
                                                     $i++;
@@ -149,14 +151,17 @@
                                                         <td >$row->nama_fakultas</td>
                                                         <td >$row->JumlahDaftar</td>
                                                         <td >$row->JumlahLulus</td>
+                                                        <td >$row->JumlahValidKeu</td>
                                                         </tr>";
                                                     $jumlahdaftar = $jumlahdaftar + floatval($row->JumlahDaftar);
                                                     $jumlahlulus = $jumlahlulus + floatval($row->JumlahLulus);
+                                                    $jumlahvalidkeu = $jumlahvalidkeu + floatval($row->JumlahValidKeu);
                                                 }
                                                 echo "<tr class='fw-bold'>
                                                 <td colspan='3' >TOTAL</td>
                                                 <td>$jumlahdaftar</td>
                                                 <td>$jumlahlulus</td>
+                                                <td>$jumlahvalidkeu</td>
                                                 </tr>";
                                             }
                                             ?>

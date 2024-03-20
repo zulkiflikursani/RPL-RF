@@ -58,6 +58,7 @@ class ModelKeu extends Model
         return $result;
     }
 
+
     public function getvalidbayar($ta_akademik)
     {
         $db = \Config\Database::connect();
@@ -80,6 +81,25 @@ class ModelKeu extends Model
         return $result;
     }
 
+    public function getDataStatusMhs($ta_akademik)
+    {
+        $db = \Config\Database::connect();
+        $result = $db->query("SELECT
+                        tb_valid_keu.ta_akademik,
+                        bio_peserta.no_peserta,
+                        tb_valid_keu.tglubah,
+                        bio_peserta.nama,
+                        bio_peserta.nohape,
+                        bio_peserta.kode_prodi,
+                        prodi.nama_prodi,
+                        IF(tb_valid_keu.no_peserta is null,'Belum Valid Registrasi',if(tb_valid_keu.valid = 1, 'Sudah Melakukan Pelunasan','Sudah Divalidasi')) as status_valid
+                        FROM
+                        bio_peserta
+                        LEFT JOIN tb_valid_keu ON tb_valid_keu.no_peserta = bio_peserta.no_peserta
+                        LEFT JOIN prodi on bio_peserta.kode_prodi=prodi.kode_prodi
+                        where bio_peserta.ta_akademik = '$ta_akademik'")->getResult();
+        return $result;
+    }
     public function getDataLulus($ta_akademik)
     {
         $db = \Config\Database::connect();

@@ -531,7 +531,6 @@ class ModelPesertaAsessor extends Model
                                 bio_peserta.kotkab,
                                 bio_peserta.propinsi,
                                 bio_peserta.instansi_asal,
-                          
                                 bio_peserta.nohape,
                                 bio_peserta.email,
                                 bio_peserta.jenis_rpl,
@@ -635,6 +634,9 @@ class ModelPesertaAsessor extends Model
         $dataMahasiswa = $db->query("SELECT
         bio_peserta.no_peserta,
         bio_peserta.nama,
+        bio_peserta.instansi_asal,
+        bio_peserta.kotkab,
+        bio_peserta.propinsi,
         ifnull(sum(mk_klaim_header.sks), 0) AS Jumlah_SKS,
         bio_peserta.nohape AS kontak,
         prodi.nama_prodi
@@ -650,13 +652,15 @@ class ModelPesertaAsessor extends Model
         mk_klaim_header.no_peserta = bio_peserta.no_peserta
     )
     LEFT JOIN mk_klaim_asessor ON (
-        mk_klaim_asessor.idklaim = mk_klaim_header.idklaim and mk_klaim_asessor.nilai !='E'
+        mk_klaim_asessor.idklaim = mk_klaim_header.idklaim and (mk_klaim_asessor.nilai !='E' and mk_klaim_asessor.tanggapan =0)
     )
     WHERE
         tb_valid_keu.no_peserta IS NOT NULL
     AND mk_klaim_asessor.no_peserta IS NOT NULL
     AND prodi.kode_fakultas = '$kode_fakultas'
     AND bio_peserta.ta_akademik = '$ta_akademik'
+    and tb_valid_keu.valid=1
+   
     
     GROUP BY
         bio_peserta.no_peserta

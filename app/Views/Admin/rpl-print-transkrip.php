@@ -96,11 +96,17 @@
                                                     <td></td>
                                                     <td></td>
                                                 </tr>
+                                                <tr>
+                                                    <td>Konsentrasi</td>
+                                                    <td>: <?= $konsentrasi ?></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+
 
 
                                             </table>
-                                            <table class='table table-bordered table-responsive table-sm border-dark'
-                                                style="font-size: 10px;">
+                                            <table class='table table-bordered table-responsive table-sm border-dark' style="font-size: 10px;">
                                                 <thead class="">
                                                     <tr>
                                                         <th width='5%'>No</th>
@@ -220,14 +226,10 @@
                                         </div>
                                         <div class="d-print-none">
                                             <div class="float-end" title="Convert Excel">
-                                                <a href="<?= base_url('convert-excel/' . $noregis) ?>"
-                                                    class="btn btn-success waves-effect waves-light me-1"><i
-                                                        class="fa fa-file-excel"></i></a>
+                                                <a href="<?= base_url('convert-excel/' . $noregis) ?>" class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-file-excel"></i></a>
                                             </div>
                                             <div class="float-end">
-                                                <a href="javascript:window.print()"
-                                                    class="btn btn-success waves-effect waves-light me-1"><i
-                                                        class="fa fa-print"></i></a>
+                                                <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-print"></i></a>
                                             </div>
                                         </div>
 
@@ -276,14 +278,14 @@
 </html>
 
 <script>
-function validprodi() {
-    $('#validasi-form').submit()
-}
+    function validprodi() {
+        $('#validasi-form').submit()
+    }
 
-function unvalidprodi() {
-    $('#unvalidasi-form').submit()
+    function unvalidprodi() {
+        $('#unvalidasi-form').submit()
 
-}
+    }
 </script>
 <?php
 function tgl_indo($tanggal)

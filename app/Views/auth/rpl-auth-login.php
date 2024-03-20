@@ -33,8 +33,7 @@
                                 <a href="/" class="auth-logo-light">
                                     <div class="avatar-md profile-user-wid mb-4">
                                         <span class="avatar-title rounded-circle bg-light">
-                                            <img src="assets/images/logo-light.png" alt="" class="rounded-circle"
-                                                height="34">
+                                            <img src="assets/images/logo-light.png" alt="" class="rounded-circle" height="34">
                                         </span>
                                     </div>
                                 </a>
@@ -42,8 +41,7 @@
                                 <a href="/" class="auth-logo-dark">
                                     <div class="avatar-md profile-user-wid mb-4">
                                         <span class="avatar-title rounded-circle bg-light">
-                                            <img src="assets/images/logo-light.png" alt="" class="rounded-circle"
-                                                height="34">
+                                            <img src="assets/images/logo-light.png" alt="" class="rounded-circle" height="34">
                                         </span>
                                     </div>
                                 </a>
@@ -53,30 +51,25 @@
 
                                     <div class="mb-3">
                                         <label for="username" class="form-label">Email</label>
-                                        <input type="text" class="form-control" id="username"
-                                            placeholder="Masukkan alamat email" name="username"
-                                            value="<?= set_value('username') ?>">
+                                        <input type="text" class="form-control" id="username" placeholder="Masukkan alamat email" name="username" value="<?= set_value('username') ?>">
                                     </div>
                                     <?php if (isset($validation) && $validation->hasError('username')) { ?>
-                                    <div class="alert alert-danger" role="alert">
-                                        <?= $validation->getError('username'); ?>
-                                    </div>
+                                        <div class="alert alert-danger" role="alert">
+                                            <?= $validation->getError('username'); ?>
+                                        </div>
                                     <?php } ?>
 
                                     <div class="mb-3">
                                         <label class="form-label">Password</label>
                                         <div class="input-group auth-pass-inputgroup">
-                                            <input type="password" class="form-control" placeholder="Masukkan password"
-                                                aria-label="Password" aria-describedby="password-addon"
-                                                name="userpassword" value="">
-                                            <button class="btn btn-light " type="button" id="password-addon"><i
-                                                    class="mdi mdi-eye-outline"></i></button>
+                                            <input type="password" class="form-control" placeholder="Masukkan password" aria-label="Password" aria-describedby="password-addon" name="userpassword" value="">
+                                            <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                                         </div>
                                     </div>
                                     <?php if (isset($validation) && $validation->hasError('userpassword')) { ?>
-                                    <div class="alert alert-danger" role="alert">
-                                        <?= $validation->getError('userpassword'); ?>
-                                    </div>
+                                        <div class="alert alert-danger" role="alert">
+                                            <?= $validation->getError('userpassword'); ?>
+                                        </div>
                                     <?php } ?>
 
                                     <div class="form-check">
@@ -132,7 +125,7 @@
                                     Register
                                     Sekarang </a> </p>
                             <p>© <script>
-                                document.write(new Date().getFullYear())
+                                    document.write(new Date().getFullYear())
                                 </script> Lempusdatik - UNIFA <i class="mdi mdi-heart text-danger"></i>
                             </p>
                         </div>

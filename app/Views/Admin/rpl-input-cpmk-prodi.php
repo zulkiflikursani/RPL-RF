@@ -6,25 +6,22 @@
     <?= $title_meta ?>
 
     <!-- DataTables -->
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet"
-        type="text/css" />
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css"
-        rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Responsive datatable examples -->
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css"
-        rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="<?= base_url() ?>/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 
     <style>
-    .select2-container--default .select2-selection--single .select2-selection__arrow {
-        right: 10px !important;
-        left: auto !important;
-    }
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            right: 10px !important;
+            left: auto !important;
+        }
 
-    .select2 {
-        width: 100% !important;
-    }
+        .select2 {
+            width: 100% !important;
+        }
     </style>
 
     <?= $this->include('partials/rpl-head-css') ?>
@@ -83,8 +80,7 @@
                                     <div class="">
 
                                         <!-- modal tambah asessor -->
-                                        <div class="modal fade tambah-cpmk-modal" tabindex="-1" role="dialog"
-                                            aria-labelledby="mytambah-modal" aria-hidden="true">
+                                        <div class="modal fade tambah-cpmk-modal" tabindex="-1" role="dialog" aria-labelledby="mytambah-modal" aria-hidden="true">
                                             <div class="modal-dialog modal-xl">
                                                 <div class="modal-content" id='modal-content'>
                                                     <div class="modal-header">
@@ -92,23 +88,19 @@
                                                             Capaian Pembelajaran Matakuliah
                                                         </h5>
 
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <!-- content -->
-                                                        <h5 class="modal-title" id="myLargeModalLabel">Prodi <span
-                                                                id='jprodi'></span>
+                                                        <h5 class="modal-title" id="myLargeModalLabel">Prodi <span id='jprodi'></span>
                                                         </h5>
 
                                                         <form method="POST">
-                                                            <div class="row">
+                                                            <!-- <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="mb-3">
-                                                                        <label for="formrow-nama-input"
-                                                                            class="form-label">Pilih Kurikulum</label>
-                                                                        <select name="mkinput"
-                                                                            class="form-select select2" id="kurinput">
+                                                                        <label for="formrow-nama-input" class="form-label">Pilih Kurikulum</label>
+                                                                        <select name="mkinput" class="form-select select2" id="kurinput">
                                                                             <option value="">Pilih Kurikulum</option>
                                                                             <option value="1">1</option>
                                                                             <option value="2">2</option>
@@ -117,16 +109,14 @@
 
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
                                                             <div class="row">
                                                                 <div class="col-md-6">
 
                                                                     <div class="mb-1">
-                                                                        <label for="formrow-nama-input"
-                                                                            class="form-label">Nama Matakuliah</label>
+                                                                        <label for="formrow-nama-input" class="form-label">Nama Matakuliah</label>
 
-                                                                        <select name="mkinput"
-                                                                            class="form-select select2" id="mkinput">
+                                                                        <select name="mkinput" class="form-select select2" id="mkinput">
                                                                             <option value="">Pilih Matakuliah</option>
                                                                         </select>
 
@@ -138,30 +128,23 @@
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="mb-3">
-                                                                        <label for="formrow-email-input"
-                                                                            class="form-label">Kode CPMK</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="idcpmk" placeholder="Masukkan No CPMK"
-                                                                            value="" required>
+                                                                        <label for="formrow-email-input" class="form-label">Kode CPMK</label>
+                                                                        <input type="text" class="form-control" id="idcpmk" placeholder="Masukkan No CPMK" value="" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="mb-3">
-                                                                        <label for="formrow-email-input"
-                                                                            class="form-label">Nama CPMK</label>
-                                                                        <textarea type="text" class="form-control"
-                                                                            id="cpmk" placeholder="Masukkan Nama CPMK"
-                                                                            value="" required></textarea>
+                                                                        <label for="formrow-email-input" class="form-label">Nama CPMK</label>
+                                                                        <textarea type="text" class="form-control" id="cpmk" placeholder="Masukkan Nama CPMK" value="" required></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
 
                                                             <div>
-                                                                <button type="button" onclick='simpancpmk()'
-                                                                    class="btn btn-primary w-md">Simpan</button>
+                                                                <button type="button" onclick='simpancpmk()' class="btn btn-primary w-md">Simpan</button>
 
                                                             </div>
                                                         </form>
@@ -170,8 +153,7 @@
                                             </div><!-- /.modal-dialog -->
                                         </div><!-- /.modal -->
 
-                                        <div class="modal fade edit-cpmk-modal" tabindex="-1" role="dialog"
-                                            aria-labelledby="mytambah-modal" aria-hidden="true">
+                                        <div class="modal fade edit-cpmk-modal" tabindex="-1" role="dialog" aria-labelledby="mytambah-modal" aria-hidden="true">
                                             <div class="modal-dialog modal-xl">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -179,13 +161,11 @@
                                                             Capaian Pembelajaran Matakuliah
                                                         </h5>
 
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <!-- content -->
-                                                        <h5 class="modal-title" id="myLargeModalLabel">Prodi <span
-                                                                id='jprodi'></span>
+                                                        <h5 class="modal-title" id="myLargeModalLabel">Prodi <span id='jprodi'></span>
                                                         </h5>
 
                                                         <form method="POST" action="" enctype="multipart/form-data">
@@ -193,43 +173,32 @@
                                                                 <div class="col-md-6">
 
                                                                     <div class="mb-3">
-                                                                        <label for="formrow-nama-input"
-                                                                            class="form-label">Nama Matakuliah</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="enmmk" placeholder="Masukkan No CPMK"
-                                                                            value="" readonly>
+                                                                        <label for="formrow-nama-input" class="form-label">Nama Matakuliah</label>
+                                                                        <input type="text" class="form-control" id="enmmk" placeholder="Masukkan No CPMK" value="" readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="mb-3">
-                                                                        <label for="formrow-email-input"
-                                                                            class="form-label">Kode CPMK</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="eidcpmk" placeholder="Masukkan No CPMK"
-                                                                            value="" readonly>
+                                                                        <label for="formrow-email-input" class="form-label">Kode CPMK</label>
+                                                                        <input type="text" class="form-control" id="eidcpmk" placeholder="Masukkan No CPMK" value="" readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="mb-3">
-                                                                        <label for="formrow-email-input"
-                                                                            class="form-label">Nama CPMK</label>
-                                                                        <textarea type="text" class="form-control"
-                                                                            id="ecpmk" placeholder="Masukkan Nama CPMK"
-                                                                            value="" required></textarea>
+                                                                        <label for="formrow-email-input" class="form-label">Nama CPMK</label>
+                                                                        <textarea type="text" class="form-control" id="ecpmk" placeholder="Masukkan Nama CPMK" value="" required></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
 
                                                             <div>
-                                                                <button type="button" onclick='editcpmk()'
-                                                                    class="btn btn-primary w-md">Simpan</button>
-                                                                <button type="button" onclick='hapuscpmk()'
-                                                                    class="btn btn-primary w-md mx-2">Hapus</button>
+                                                                <button type="button" onclick='editcpmk()' class="btn btn-primary w-md">Simpan</button>
+                                                                <button type="button" onclick='hapuscpmk()' class="btn btn-primary w-md mx-2">Hapus</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -240,12 +209,10 @@
                                     </div>
 
                                     <h3 class="text-center">DAFTAR MATAKULIAH DAN CPMK</h3>
-                                    <h3 class="text-center">PRODI <span
-                                            id='jprodi'><?= strtoupper($nama_prodi) ?></span></h3>
+                                    <h3 class="text-center">PRODI <span id='jprodi'><?= strtoupper($nama_prodi) ?></span></h3>
                                     <div class="col-lg-12">
                                         <div class="mb-3">
-                                            <button class="btn btn-primary" data-bs-toggle="modal" id='bt-tambah-cpmk'
-                                                data-bs-target='.tambah-cpmk-modal'>Tambah Cpmk</button>
+                                            <button class="btn btn-primary" data-bs-toggle="modal" id='bt-tambah-cpmk' data-bs-target='.tambah-cpmk-modal'>Tambah Cpmk</button>
                                             <a href='<?= base_url('mk-prodi') ?>' class="btn btn-primary">Daftar
                                                 Matakuliah</a>
                                         </div>
@@ -319,7 +286,7 @@
     <script src="<?= base_url() ?>/assets/libs/select2/js/select2.min.js"></script>
 
     <!-- Datatable init js -->
-    <script src="<?= base_url() ?>assets/js/pages/datatables.init.js"></script>
+    <script src="<?= base_url() ?>/assets/js/pages/datatables.init.js"></script>
 
     <!-- apexcharts -->
     <script src="<?= base_url() ?>/assets/libs/apexcharts/apexcharts.min.js"></script>
@@ -330,211 +297,183 @@
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 
     <script>
-    $(document).on('select2:open', () => {
-        document.querySelector('.select2-search__field').focus();
-    });
-    $('document').ready(function() {
-        $('#prodi > option').hide()
-        $('.select2').select2({
-            dropdownParent: $('#modal-content')
-        })
-
-        var cari = $('#filter');
-        // $('#bt-tambah-cpmk').hide();
-        getMatakuliah()
-        $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
-            // $("#loading").show();
-
-            var cari2 = cari.val()
-            var idcpmk = data[4];
-            // alert(idcmk)
-            if (
-                cari2 == 1
-            ) {
-                return true;
-            } else if (cari2 == 2 && idcpmk != "") {
-                return true
-            } else if (cari2 == 3 && idcpmk == "") {
-                return true
-            }
-
-            return false;
+        $(document).on('select2:open', () => {
+            document.querySelector('.select2-search__field').focus();
         });
-        var table = $('.table-matakuliah').DataTable()
-
-        cari.on('change', function() {
-            // alert(cari.val())
-
-            table.draw();
-            $("#loading").hide();
-
-
-        })
-        $('.table-matakuliah tbody').on('click', 'button', function() {
-            var data = table.row($(this).parents('tr')).data();
-            $('#enmmk').val(data[3]);
-            $('#eidcpmk').val(data[4]);
-            $('#ecpmk').val(data[5]);
-
-            $('.edit-cpmk-modal').modal('show')
-
-
-
-
-            // alert(data[0] + "'s salary is: " + data[5]);
-        });
-
-        $('#kurinput').on('change', function() {
-            idkur = $('#kurinput').val()
-            $('#mkinput').html("<option value=''>Pilih Matakuliah</option");
-            // i = 1;
-            $('#mkinput-source option').each(function() {
-                kur = $(this).attr('id_kurikulum')
-
-
-                if ($(this).attr('id_kurikulum') == idkur) {
-                    let option = $(this).clone();
-                    $('#mkinput').append(option[0]);
-                }
+        $('document').ready(function() {
+            $('#prodi > option').hide()
+            $('.select2').select2({
+                dropdownParent: $('#modal-content')
             })
-
-        });
-
-    })
-
-
-    function kosongkan() {
-        $('#prodi').val("");
-        $('#mkInput').val("").trigger('change');
-        $('#idcpmk').val("");
-        $('#cpmk').val("");
-    }
-
-    function simpancpmk() {
-        $("#loading").show();
-        prodi = '<?= $jenis_prodi ?>'
-        kdmk = $('#mkinput').val();
-        idcpmk = $('#idcpmk').val();
-        cpmk = $('#cpmk').val();
-        url = '<?= base_url('simpancpmk') ?>'
-
-        $.post(url, {
-            prodi: prodi,
-            kdmk: kdmk,
-            idcpmk: idcpmk,
-            cpmk: cpmk
-        }, function(data) {
-            if (alert(data)) {} else {
-                getMatakuliah()
-                $('.tambah-cpmk-modal').modal('hide');
-                kosongkan();
-                $("#loading").hide();
-
-            };
-        })
-
-    }
-
-    function editcpmk() {
-        $("#loading").show();
-
-        prodi = $('#prodi').val();
-        kdmk = $('#enmmk').val();
-        idcpmk = $('#eidcpmk').val();
-        cpmk = $('#ecpmk').val();
-        url = '<?= base_url('editcpmk') ?>'
-
-        $.post(url, {
-            prodi: '<?= $jenis_prodi ?>',
-            kdmk: kdmk,
-            idcpmk: idcpmk,
-            cpmk: cpmk
-        }, function(data) {
-            if (alert(data)) {} else {
-                getMatakuliah()
-                $('.edit-cpmk-modal').modal('hide');
-                $("#loading").hide();
-
-
-            };
-        })
-
-
-    }
-
-    function hapuscpmk() {
-        $("#loading").show();
-
-        prodi = $('#prodi').val();
-        kdmk = $('#enmmk').val();
-        idcpmk = $('#eidcpmk').val();
-        cpmk = $('#ecpmk').val();
-        url = '<?= base_url('hapuscpmk') ?>'
-
-        $.post(url, {
-            prodi: '<?= $jenis_prodi ?>',
-            kdmk: kdmk,
-            idcpmk: idcpmk,
-            cpmk: cpmk
-        }, function(data) {
-            alert(data);
-            $('.edit-cpmk-modal').modal('hide');
+            var cari = $('#filter');
             getMatakuliah()
+            $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+                var cari2 = cari.val()
+                var idcpmk = data[4];
+                // alert(idcmk)
+                if (
+                    cari2 == 1
+                ) {
+                    return true;
+                } else if (cari2 == 2 && idcpmk != "") {
+                    return true
+                } else if (cari2 == 3 && idcpmk == "") {
+                    return true
+                }
 
-            $("#loading").hide();
+                return false;
+            });
+            var table = $('.table-matakuliah').DataTable()
 
+            cari.on('change', function() {
+                table.draw();
+                $("#loading").hide();
+
+
+            })
+            $('.table-matakuliah tbody').on('click', 'button', function() {
+                var data = table.row($(this).parents('tr')).data();
+                $('#enmmk').val(data[3]);
+                $('#eidcpmk').val(data[4]);
+                $('#ecpmk').val(data[5]);
+
+                $('.edit-cpmk-modal').modal('show')
+            });
         })
 
-    }
 
-    function getMatakuliah() {
-        $('#loading').show();
+        function kosongkan() {
+            $('#prodi').val("");
+            $('#mkInput').val("").trigger('change');
+            $('#idcpmk').val("");
+            $('#cpmk').val("");
+        }
 
-        $('#bt-tambah-cpmk').show();
-        table = $('.table-matakuliah').DataTable()
-        table.clear().draw();
-        url = '<?= base_url('getcpmk') ?>'
-        prodi = $('#prodi').val();
-        namaprodi = $('#prodi option:selected').text().toUpperCase();
-        value = '';
-        $('#jprodi').html(namaprodi)
-        $.post(url, {
-            prodi: '<?= $jenis_prodi ?>'
-        }).done(function(data) {
-            data = JSON.parse(data)
+        function simpancpmk() {
+            $("#loading").show();
+            prodi = '<?= $jenis_prodi ?>'
+            kdmk = $('#mkinput').val();
+            idcpmk = $('#idcpmk').val();
+            cpmk = $('#cpmk').val();
+            url = '<?= base_url('simpancpmk') ?>'
 
-            $.each(data, function(i, v) {
-                no = parseFloat(i) + 1;
-                table.row.add([no, v['id_kurikulum'], v['kode_matakuliah'], v['nama_matakuliah'], v[
-                        'idcpmk'], v['cpmk'],
-                    "<button class='btn btn-primary btn-sm' >Edit</button>"
-                ]).draw()
+            $.post(url, {
+                prodi: prodi,
+                kdmk: kdmk,
+                idcpmk: idcpmk,
+                cpmk: cpmk
+            }, function(data) {
+                if (alert(data)) {} else {
+                    getMatakuliah()
+                    $('.tambah-cpmk-modal').modal('hide');
+                    kosongkan();
+                    $("#loading").hide();
 
-                if (value != v['kode_matakuliah']) {
-                    text = v['kode_matakuliah'] + " : " + v['nama_matakuliah']
-                    value = v['kode_matakuliah']
-                    kurikulum = v['id_kurikulum']
-                    // rowOption = new Option(text, value, true, true);
+                };
+            })
+
+        }
+
+        function editcpmk() {
+            $("#loading").show();
+
+            prodi = $('#prodi').val();
+            kdmk = $('#enmmk').val();
+            idcpmk = $('#eidcpmk').val();
+            cpmk = $('#ecpmk').val();
+            url = '<?= base_url('editcpmk') ?>'
+
+            $.post(url, {
+                prodi: '<?= $jenis_prodi ?>',
+                kdmk: kdmk,
+                idcpmk: idcpmk,
+                cpmk: cpmk
+            }, function(data) {
+                if (alert(data)) {} else {
+                    getMatakuliah()
+                    $('.edit-cpmk-modal').modal('hide');
+                    $("#loading").hide();
 
 
-                    // $('#mkinput').append(rowOption);
-                    $('#mkinput-source').append($('<option />').val(value).text(text)
-                        .attr({
-                            'id_kurikulum': kurikulum
+                };
+            })
 
-                        })
-                    );
-                }
+
+        }
+
+        function hapuscpmk() {
+            $("#loading").show();
+
+            prodi = $('#prodi').val();
+            kdmk = $('#enmmk').val();
+            idcpmk = $('#eidcpmk').val();
+            cpmk = $('#ecpmk').val();
+            url = '<?= base_url('hapuscpmk') ?>'
+
+            $.post(url, {
+                prodi: '<?= $jenis_prodi ?>',
+                kdmk: kdmk,
+                idcpmk: idcpmk,
+                cpmk: cpmk
+            }, function(data) {
+                alert(data);
+                $('.edit-cpmk-modal').modal('hide');
+                getMatakuliah()
+
+                $("#loading").hide();
 
             })
 
-            $('#mkinput').val("").trigger('change');
-            $('#mkinput > option').hide();
-            $('#loading').hide();
+        }
 
-        }).fail(function(xhr, status, error) {});
+        function getMatakuliah() {
+            $('#loading').show();
 
-    }
+            $('#bt-tambah-cpmk').show();
+            table = $('.table-matakuliah').DataTable()
+            table.clear().draw();
+            url = '<?= base_url('getcpmk') ?>'
+            prodi = $('#prodi').val();
+            namaprodi = $('#prodi option:selected').text().toUpperCase();
+            value = '';
+            $('#jprodi').html(namaprodi)
+            $.post(url, {
+                prodi: '<?= $jenis_prodi ?>'
+            }).done(function(data) {
+                data = JSON.parse(data)
+
+                $.each(data, function(i, v) {
+                    no = parseFloat(i) + 1;
+                    table.row.add([no, v['id_kurikulum'], v['kode_matakuliah'], v['nama_matakuliah'], v[
+                            'idcpmk'], v['cpmk'],
+                        "<button class='btn btn-primary btn-sm' >Edit</button>"
+                    ]).draw()
+
+                    if (value != v['kode_matakuliah']) {
+                        text = v['kode_matakuliah'] + " : " + v['nama_matakuliah']
+                        value = v['kode_matakuliah']
+                        kurikulum = v['id_kurikulum']
+                        // rowOption = new Option(text, value, true, true);
+
+
+                        // $('#mkinput').append(rowOption);
+                        $('#mkinput').append($('<option />').val(value).text(text)
+                            .attr({
+                                'id_kurikulum': kurikulum
+
+                            })
+                        );
+                    }
+
+                })
+
+                $('#mkinput').val("").trigger('change');
+                $('#mkinput > option').hide();
+                $('#loading').hide();
+
+            }).fail(function(xhr, status, error) {});
+
+        }
     </script>
 </body>
 

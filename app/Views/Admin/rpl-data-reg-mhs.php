@@ -158,7 +158,7 @@
             for (var i = 0; i < options.length; i++) {
                 var option = options[i];
 
-                if (option.innerText === inputValue) {
+                if (option.innerText.trim() === inputValue.trim()) {
                     noregis.value = option.getAttribute('data-value');
                     email.value = option.getAttribute('email');
                     if (noregis.value == email.value) {

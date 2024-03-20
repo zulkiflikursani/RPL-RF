@@ -117,6 +117,7 @@ $routes->get('/daftar-mk-rpl-admin', 'Admin::daftarMkRplAdmin');
 $routes->get('/print-transkrip/(:any)/', 'Admin::printTranskrip/$1');
 $routes->get('/print-tagihan/(:any)/', 'Admin::printTagihan/$1');
 $routes->get('/print-klaim-a1/(:any)/', 'Admin::printKlaimMk/$1');
+$routes->get('/data-status-mhs/(:any)/', 'Admin::statusMhsKeu/$1');
 
 $routes->get('/convert-excel/(:any)/', 'Admin::exportexcel/$1');
 $routes->get('/data-mhs-per-prodi/(:any)', 'Admin::dataMhsPerpodiOk/$1');
@@ -132,7 +133,7 @@ $routes->get('/form-nilai-mahasiswa/(:any)', 'Admin::form_nilai/$1');
 $routes->get('/data-mahasiswa-siska/(:any)', 'Admin::data_mhs_siska/$1');
 $routes->get('/home-akademik-2', 'Admin::home_akademik_2_nofilter');
 $routes->get('/home-akademik-2/(:any)', 'Admin::home_akademik_2/$1');
-
+$routes->get('/keuangan/(:any)', 'Admin::keuangan/$1');
 
 
 
@@ -145,6 +146,9 @@ $routes->post('updatebuktibayar', 'Admin::updataBuktiBayar');
 $routes->post('updateidentitas', 'Admin::updateIdentitas');
 $routes->post('updateijazah', 'Admin::updateIjazah');
 $routes->post('batalasesi', 'Admin::batalAsesi');
+$routes->post('getStatusMhsRpl', 'Admin::getDataStatusMhsPerProdi');
+$routes->post('cekstatusmka1', 'Admin::cekStatusMkA1');
+
 
 
 $routes->post('getmatakuliah', 'Admin::getMatakuliah');
@@ -186,6 +190,9 @@ $routes->post('update-mk-rpl-admin', 'Admin::updateMkRplAdmin');
 $routes->post('update-jenisrpl', 'Admin::updatejenisrpl');
 $routes->post('data-mahasiswa-siska-nim', 'Admin::data_mhs_siska_nim');
 $routes->post('push-siska', 'Admin::push_siska');
+$routes->post('singkron-mk-siska', 'Admin::sinkronmksiska');
+$routes->post('singkron-mk-siska-mku', 'Admin::sinkronMkformku');
+// $routes->post('singkron-mk-siska-mku', 'Admin::sinkronmksiskamku');
 
 
 

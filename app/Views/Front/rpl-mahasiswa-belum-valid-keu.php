@@ -74,7 +74,7 @@
                                                     </h3>
                                                 </div>
                                                 <div class="mb-3 col-8">
-                                                    <h3 for="formrow-nama-input" class="form-label">:                                                    
+                                                    <h3 for="formrow-nama-input" class="form-label">:
                                                         <?= (session()->get('noregis') ? session()->get('noregis') : '') ?>
                                                     </h3>
                                                     <h3 class=''>:
@@ -89,10 +89,13 @@
                                             <div class="mb-3">
                                                 <h4 class='text-center mb-4'>Silahkan kirim bukti pembayaran Ke Biro
                                                     Keuangan UNIFA untuk
-                                                    mendapatkan validasi atas pembayaran Biaya Registrasi pada Program Rekognisi Pembelajaran
+                                                    mendapatkan validasi atas pembayaran Biaya Registrasi pada Program
+                                                    Rekognisi Pembelajaran
                                                     Lampau Universitas Fajar</h4>
-                                                <p class='text-center mb-5'>Noted: Jika bukti telah diupload pada proses registrasi, silahkan lakukan konfirmasi untuk validasi pembayaran pada nomor Whatsapp tertera pada halaman ini</p>
-                                                <h3 class='text-center mb-5'>Nomor Konfirmasi WA :  0822-3399-9389</h3>
+                                                <p class='text-center mb-5'>Noted: Jika bukti telah diupload pada proses
+                                                    registrasi, silahkan lakukan konfirmasi untuk validasi pembayaran
+                                                    pada nomor Whatsapp tertera pada halaman ini</p>
+                                                <h3 class='text-center mb-5'>Nomor Konfirmasi WA : 0853-3333-4681</h3>
                                                 <h3 class='text-center mb-2'>Biro Keuangan Universitas Fajar</h3>
 
                                             </div>

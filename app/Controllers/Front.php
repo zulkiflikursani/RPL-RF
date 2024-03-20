@@ -87,7 +87,7 @@ class Front extends BaseController
 			$nolari = "0001";
 		};
 		$noregis = $ta . "-" . $nolari;
-		$nama = $db->escapeString($this->request->getPost("nama"));
+		$nama = trim($db->escapeString($this->request->getPost("nama")));
 		$alamat = $db->escapeString($this->request->getPost("alamat"));
 		$kab = $db->escapeString($this->request->getPost("kab"));
 		$provinsi = $db->escapeString($this->request->getPost("provinsi"));
@@ -230,6 +230,7 @@ class Front extends BaseController
 						User 	: " . $email . "<br>
 						Pass 	: " . $password1 . "<br>
 						Silahkan Login di " . $link . " <br>
+						Kontak Keuangan 0853-3333-4681 <br>
 						Terima kasih";
 				$emailgo = \Config\Services::email();
 				$emailgo->setTo($email);
@@ -281,8 +282,13 @@ class Front extends BaseController
 		$a = $db->escapeString($this->request->getPost("a"));
 
 		$modelProv = new ModelProv();
-		$dataKab = $modelProv->where("KDPROTBPRO", $a)->findAll();
+		$where = [
+			"tingkat" => 2,
+			"idprov" => $a
 
+		];
+		$dataKab = $modelProv->where($where)->findAll();
+		// SELECT idprov,nama_wilayah from wilayah where wilayah.tingkat=2 and wilayah.idprov=95 ORDER BY nama_wilayah?
 
 		echo json_encode($dataKab, false);
 	}
@@ -498,7 +504,7 @@ class Front extends BaseController
 
 				if (isset($carikdptasal[0]['no_registrasi'])) {
 					$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
-					$nmptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+					$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
 				} else {
 					$kdptasal = "";
 					$nmptasal = "";
@@ -1419,13 +1425,27 @@ class Front extends BaseController
 	{
 		session()->destroy();	//unet current user session 
 
-		helper(['form']);
-		$data = [
-			'title_meta' => view('partials/rpl-title-meta', ['title' => 'login SILAJU']),
-			'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Login']),
-			'ta_akademik' => $this->getTa_akademik()
-		];
-		return view('auth/rpl-auth-login', $data);
+		$modelMaintenence = new ModalMaintenence();
+		$status1 = $modelMaintenence->findAll();
+		$status = $status1[0]['status'];
+
+		if ($status == 1) {
+			$data = [
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Registrasi RPL']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Registrasi']),
+				'ta_akademik' => $this->getTa_akademik(),
+				// 'dataprov' => $dataProv,
+			];
+			return view('Front/rpl-pages-maintenance', $data);
+		} else {
+			helper(['form']);
+			$data = [
+				'title_meta' => view('partials/rpl-title-meta', ['title' => 'login SILAJU']),
+				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Login']),
+				'ta_akademik' => $this->getTa_akademik()
+			];
+			return view('auth/rpl-auth-login', $data);
+		}
 	}
 
 	public function getNamaProdi($kode_prodi)
@@ -1493,10 +1513,14 @@ class Front extends BaseController
 			$statusmk = $ModalTransactionKlaim->cekstatusmk($idklaim);
 			if ($statusmk != null) {
 				if ($statusmk == 2) {
-					echo "Klaim sedang diproses. Silahkan menunggu tanggapan Asessor di menu Respon Asessor";
+					echo "Klaim sedang diproses. Silahkan menunggu tanggapan Asessor di menu Respon Asessor ";
 				} else if ($statusmk == 1) {
 					$ModalTransactionKlaim->batalklaim($idklaim);
+				} else if ($statusmk == 3) {
+					echo "Klaim anda membutuhkan tanggapan. Silahkan melakukan tanggapan di menu Respon Asessor";
 				}
+			} else {
+				echo $statusmk;
 			}
 		}
 	}
@@ -1678,7 +1702,7 @@ class Front extends BaseController
 									FROM
 										matakuliah
 									LEFT JOIN mk_cpmk ON matakuliah.kode_matakuliah = mk_cpmk.kode_matakuliah
-									AND (mk_cpmk.kode_prodi = '$kode_prodi' or (mk_cpmk.kode_prodi='' and matakuliah.jenis_matakuliah != 3))
+									AND (mk_cpmk.kode_prodi = '$kode_prodi' or (mk_cpmk.kode_prodi='0' and matakuliah.jenis_matakuliah < 3))
 									LEFT JOIN mk_klaim_detail ON mk_cpmk.idcpmk = mk_klaim_detail.idcpmk
 									AND mid(
 										mk_klaim_detail.idklaim,
@@ -1688,9 +1712,9 @@ class Front extends BaseController
 									LEFT JOIN ref_klaim
 									on mk_klaim_detail.idklaim = ref_klaim.idklaim 
 									WHERE
-										(matakuliah.kode_prodi = '$kode_prodi'  or (mk_cpmk.kode_prodi='' and matakuliah.jenis_matakuliah != 3)) and matakuliah.kode_matakuliah='$kode_matakuliah'
+										((matakuliah.kode_prodi = '$kode_prodi' and matakuliah.jenis_matakuliah > 2)  or (mk_cpmk.kode_prodi='0' and matakuliah.jenis_matakuliah < 3)) and matakuliah.kode_matakuliah='$kode_matakuliah' and mk_cpmk.idcpmk is not null
 									ORDER BY
-										matakuliah.kode_matakuliah, mk_cpmk.idcpmk
+										matakuliah.kode_matakuliah, mk_cpmk.idcpmk 
 									")->getResult();
 
 			return $result;
@@ -1759,7 +1783,7 @@ class Front extends BaseController
 					matakuliah.kode_matakuliah = mk_cpmk.kode_matakuliah and mk_cpmk.ta_akademik='$ta_akademik'
 				)
 				WHERE
-					 matakuliah.kode_prodi='' and (matakuliah.jenis_matakuliah='1' or matakuliah.jenis_matakuliah='2')
+					 matakuliah.kode_prodi='0' and (matakuliah.jenis_matakuliah='1' or matakuliah.jenis_matakuliah='2')
 				AND mk_cpmk.kode_matakuliah IS NOT NULL 
 				)
 				union";
@@ -1789,7 +1813,7 @@ class Front extends BaseController
 											AND matakuliah.kode_matakuliah = mk_cpmk.kode_matakuliah and mk_cpmk.ta_akademik='$ta_akademik'
 										)
 										WHERE
-										matakuliah.kode_prodi = '$kode_prodi' and (matakuliah.kode_konsentrasi='$kode_konsentrasi' or matakuliah.kode_konsentrasi='' or matakuliah.kode_konsentrasi IS NULL) and matakuliah.jenis_matakuliah='3'
+										matakuliah.kode_prodi = '$kode_prodi' and (matakuliah.kode_konsentrasi='$kode_konsentrasi' or matakuliah.kode_konsentrasi='' or matakuliah.kode_konsentrasi IS NULL) and matakuliah.jenis_matakuliah>'2'
 										AND mk_cpmk.kode_matakuliah IS NOT NULL
 										)
 										UNION

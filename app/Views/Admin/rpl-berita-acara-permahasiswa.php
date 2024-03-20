@@ -91,6 +91,13 @@
                                                     <div class="col-md-2">Program Studi</div>
                                                     <div class="col-md-2">: <?= $nm_prodi; ?></div>
                                                 </div>
+
+                                                <div class="row">
+
+                                                    <div class="col-md-2">Konsentrasi</div>
+                                                    <div class="col-md-2">: <?= $konsentrasi; ?></div>
+                                                </div>
+
                                                 <div class="row">
 
                                                     <div class="col-md-2">Jenis RPL</div>
@@ -99,7 +106,7 @@
                                                 <div class="row">
 
                                                     <div class="col-md-2">Asessor</div>
-                                                    <div class="col-md-2">: <?= $nm_asessor; ?></div>
+                                                    <div class="col-md-5">: <?= $nm_asessor; ?></div>
                                                 </div>
 
                                                 <table class='table table-bordered'>
@@ -107,6 +114,7 @@
                                                         <tr>
                                                             <th>No</th>
                                                             <th>Nama Matakuliah</th>
+                                                            <th>SKS</th>
                                                             <th>CPMK</th>
                                                             <th>Penguasaan</th>
                                                             <th>Deskripsi</th>
@@ -127,6 +135,8 @@
                                                             $i = 0;
                                                             $jumlahdata = count($dataKlaimMhs);
                                                             $hitdata = 0;
+                                                            $totsks = 0;
+                                                            $totsksvalid = 0;
                                                             foreach ($dataKlaimMhs as $row) {
                                                                 $hitdata++;
                                                                 if ($namamatakulia == "") {
@@ -173,6 +183,10 @@
                                                                         }
                                                                         $html .= "</tr>";
                                                                     } else {
+                                                                        $totsks = $totsks + floatval($html1['sks']);
+                                                                        if ($html1['nilai'] != "E") {
+                                                                            $totsksvalid = $totsksvalid + floatval($html1['sks']);
+                                                                        }
                                                                         $ref = "<td for='ref' nodok='" . $row->no_dokumen . "' rowspan='$count'>";
                                                                         // $dokaarray = json_decode($html1['no_dokumen']);
                                                                         foreach ($html1['no_dokumen'] as $a) {
@@ -180,10 +194,12 @@
                                                                             // print_r($dataref);
                                                                             $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $dataref->nmfile_asli . "' target='_blank'><button class='btn btn-sm btn-warning mb-2'>" . $dataref->nmfile . "</button></a><br>";
                                                                         }
+
                                                                         $ref .= "</td>";
                                                                         echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row->kode_prodi . "' >
                                                                                     <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                                     <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
+                                                                                    <td rowspan='$count'>" . $html1['sks'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
                                                                                     <td for='desk' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' readonly> " . $html1['desk'] . "</textarea>
@@ -202,6 +218,7 @@
                                                                         } else {
                                                                             $tanggapan = "OK";
                                                                         }
+
                                                                         $html1 = [
                                                                             "kd_mk" => $row->kode_matakuliah,
                                                                             "nama_matakuliah" => $row->nama_matakuliah,
@@ -227,10 +244,15 @@
 
                                                                             $ref .= "<a href='" . base_url() . "/uploads/berkas/" . $row->no_peserta . "/" . $dataref->nmfile_asli . "' target='_blank'><button class='btn btn-sm btn-warning mb-2'>" . $dataref->nmfile . "</button></a><br>";
                                                                         }
+                                                                        $totsks = $totsks + floatval($html1['sks']);
+                                                                        if ($html1['nilai'] != "E") {
+                                                                            $totsksvalid = $totsksvalid + floatval($html1['sks']);
+                                                                        }
                                                                         $ref .= "</td>";
                                                                         echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row->kode_prodi . "' >
                                                                                     <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                                     <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
+                                                                                    <td rowspan='$count'>" . $html1['sks'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
                                                                                     <td for='desk' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' readonly> " . $html1['desk'] . "</textarea>
@@ -240,6 +262,9 @@
                                                                                     <td for='kettanggapan' rowspan='$count'>" . $html1['ket_tanggapan'] . "
                                                                                     </td>
                                                                                     </tr>" . $html;
+
+                                                                        echo "<tr><td colspan='2'>Jumlah SKS Klaim</td><td>$totsks</td></tr>";
+                                                                        echo "<tr><td colspan='2'>Jumlah SKS Validasi</td><td>$totsksvalid</td></tr>";
                                                                     }
                                                                 }
                                                             }
@@ -249,6 +274,7 @@
                                                         ?>
                                                     </tbody>
                                                 </table>
+
                                             </div>
                                             <div class="col-12 ">
                                                 <div class="row">
@@ -306,7 +332,9 @@
                                     </div>
                                     <div class="d-print-none">
                                         <div class="float-end">
-                                            <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-print"></i></a>
+                                            <a href="javascript:window.print()"
+                                                class="btn btn-success waves-effect waves-light me-1"><i
+                                                    class="fa fa-print"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -336,14 +364,14 @@
 </html>
 
 <script>
-    function validprodi() {
-        $('#validasi-form').submit()
-    }
+function validprodi() {
+    $('#validasi-form').submit()
+}
 
-    function unvalidprodi() {
-        $('#unvalidasi-form').submit()
+function unvalidprodi() {
+    $('#unvalidasi-form').submit()
 
-    }
+}
 </script>
 <?php
 function tgl_indo($tanggal)

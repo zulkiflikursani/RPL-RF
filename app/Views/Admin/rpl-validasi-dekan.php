@@ -79,6 +79,11 @@
                                                     </div>
                                                     <div class="row">
 
+                                                        <div class="col-md-2">Konsentrasi</div>
+                                                        <div class="col-md-2">: <?= $konsentrasi; ?></div>
+                                                    </div>
+                                                    <div class="row">
+
                                                         <div class="col-md-2">Jenis RPL</div>
                                                         <div class="col-md-2">: <?= "A" . $jenis_rpl; ?></div>
                                                     </div>
@@ -108,6 +113,7 @@
                                                                 $i = 0;
                                                                 $jumlahdata = count($dataKlaimMhs);
                                                                 $hitdata = 0;
+                                                                $jumlahklaimsks = 0;
                                                                 foreach ($dataKlaimMhs as $row) {
                                                                     $hitdata++;
                                                                     if ($namamatakulia == "") {
@@ -146,6 +152,7 @@
                                                                             }
                                                                             $html .= "</tr>";
                                                                         } else {
+                                                                            $jumlahklaimsks = floatval($jumlahklaimsks) + floatval($html1['sks']);
                                                                             $ref = "<td for='ref' nodok='" . $row['no_dokumen'] . "' rowspan='$count'>";
                                                                             // $dokaarray = json_decode($html1['no_dokumen']);
                                                                             foreach ($html1['no_dokumen'] as $a) {
@@ -157,6 +164,7 @@
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row['kode_prodi'] . "' >
                                                                                     <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                                     <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
+                                                                                    <td rowspan='$count'>" . $html1['sks'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
                                                                                     <td for='desk' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' readonly> " . $html1['desk'] . "</textarea>
@@ -165,12 +173,17 @@
                                                                                     <option value=''>Pilih</option>
                                                                                     <option value='0'>Ok</option>
                                                                                     <option value='1'>Butuh Tindakan</option>
-                                                                                    </select></td><td for='nilaiAs'  rowspan='$count'>
                                                                                     <select class='form-select' required>
                                                                                     <option value='' selected>Pilih</option>    
                                                                                     <option value='A'>A</option>    
+                                                                                    <option value='A-'>A-</option>    
+                                                                                    <option value='B+' >B+</option>    
                                                                                     <option value='B' >B</option>    
-                                                                                    <option value='E'>E</option>  
+                                                                                    <option value='B-' >B-</option>    
+                                                                                    <option value='C+' >C+</option>    
+                                                                                    <option value='C' >C</option>    
+                                                                                    <option value='D' >D</option>    
+                                                                                    <option value='E'>E</option>   
                                                                                     </select></td>
                                                                                     <td for='kettanggapan' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' required> </textarea>
                                                                                     </td>
@@ -195,6 +208,7 @@
                                                                         }
 
                                                                         if ($hitdata == $jumlahdata) {
+                                                                            $jumlahklaimsks = floatval($jumlahklaimsks) + floatval($html1['sks']);
                                                                             $ref = "<td for='ref' nodok='" . $row['no_dokumen'] . "' rowspan='$count'>";
                                                                             // $dokaarray = json_decode($html1['no_dokumen']);
                                                                             foreach ($html1['no_dokumen'] as $a) {
@@ -206,6 +220,7 @@
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row['kode_prodi'] . "'>
                                                                             <td for='namamk' rowspan='$count'>" . $i . "</td>
                                                                                     <td rowspan='$count'>" . $html1['nama_matakuliah'] . "</td>
+                                                                                    <td rowspan='$count'>" . $html1['sks'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
                                                                                     <td for='desk' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' readonly>" . $html1['desk'] . "
@@ -220,8 +235,14 @@
                                                                                     <select class='form-select' required>
                                                                                     <option value='' selected>Pilih</option>    
                                                                                     <option value='A'>A</option>    
+                                                                                    <option value='A-'>A-</option>    
+                                                                                    <option value='B+' >B+</option>    
                                                                                     <option value='B' >B</option>    
-                                                                                    <option value='E'>E</option>    
+                                                                                    <option value='B-' >B-</option>    
+                                                                                    <option value='C+' >C+</option>    
+                                                                                    <option value='C' >C</option>    
+                                                                                    <option value='D' >D</option>    
+                                                                                    <option value='E'>E</option>   
                                                                                     </select></td>
                                                                                     <td for='kettanggapan' rowspan='$count'><textarea style='border: none; width: 100%;  height: 100%;resize: vertical;min-height:200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;' required> </textarea>
                                                                                     </td>
@@ -235,6 +256,12 @@
                                                             ?>
                                                         </tbody>
                                                     </table>
+                                                    <?php
+                                                    echo "Jumlah Klaim Matakuliah : <span id='julmahSksValid'></span> SKS dari $maxsksrekognisi maksimum SKS Rekognisi";
+                                                    echo "<p  class='text-danger bold statusSks'></p>";
+
+                                                    ?>
+
                                                 </div>
                                             </div>
 
@@ -333,6 +360,8 @@ $(document).ready(function() {
     }, function(data) {
         data = JSON.parse(data)
         console.log(data);
+        count = data.length;
+
         $.each(data, function(index, value) {
             $('#tbody-klaim-mk  > tr').each(function(i, tr) {
                 if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
@@ -345,6 +374,9 @@ $(document).ready(function() {
                     $(this).find('td[for=kettanggapan]').children()
                         .val(value['ket_tanggapan']);
 
+                    if (count === index + 1) {
+                        klaimsksass()
+                    }
 
 
                 }
@@ -357,6 +389,24 @@ $(document).ready(function() {
         alert("error");
     });
 })
+
+function klaimsksass() {
+    klaimsks = 0;
+    $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+        tanggapan = $(this).find('td[for=tanggapan]').children().val();
+        nilai = $(this).find('td[for=nilaiAs]').children().val();
+        sks = $(this).attr('sks');
+        if (tanggapan == 0 && tanggapan != '' && nilai != "E") {
+            klaimsks = parseFloat(klaimsks) + parseFloat(sks)
+        }
+    })
+    // alert(klaimsks)
+    $('#julmahSksValid').html(klaimsks)
+    if (klaimsks > <?= $maxsksrekognisi ?>) {
+        $(".statusSks").html("Jumlah SKS Melebihi Batas Rekognisi")
+    }
+    // return klaimsks;
+}
 
 function validprodi() {
     $('#validasi-form').submit()
@@ -477,4 +527,6 @@ function getRefmhs($datadok, $refMhs)
 
 }
 
-?>
+
+
+?

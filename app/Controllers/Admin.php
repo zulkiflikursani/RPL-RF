@@ -692,7 +692,7 @@ class Admin extends BaseController
     }
     public function dataPeserta1($ta_akademik)
     {
-        if (session()->get('sttpengguna') != 1) {
+        if (session()->get('sttpengguna') != 1 and session()->get('sttpengguna') != 5) {
             return redirect()->to('/logout');
         } else {
 
@@ -774,6 +774,46 @@ class Admin extends BaseController
             } else {
                 echo "Berhasil Memvalidasi Calon Mahasiswa";
             }
+        }
+    }
+    public function keuangan($ta_akademik)
+    {
+        if (session()->get('sttpengguna') != 5) {
+            return redirect()->to('/logout');
+        } else {
+            $modelRegister = new ModelRegistrasi();
+            $databelumvalidasi = $modelRegister->getNonvalid($ta_akademik);
+            $datasudahvalidasi = $modelRegister->getvalid($ta_akademik);
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Keuangan', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $ta_akademik,
+                'dataPesertaBelumValid' => $databelumvalidasi,
+                'dataPesertaSudahValid' => $datasudahvalidasi,
+            ];
+
+            return view('Admin/rpl-home-keu', $data);
+        }
+    }
+    public function statusMhsKeu($ta_akademik)
+    {
+        if (session()->get('sttpengguna') != 5) {
+            return redirect()->to('/logout');
+        } else {
+            $modelKeu = new ModelKeu();
+            // $ta_akademik = $this->getTa_akademik();
+            $dataStatusMahasiswa = $modelKeu->getDataStatusMhs($ta_akademik);
+
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Keuangan', 'pagetitle' => 'Dashboards']),
+                'ta_akademik' => $ta_akademik,
+                'dataStatusMahasiswa' => $dataStatusMahasiswa,
+
+
+            ];
+
+            return view('Admin/rpl-data-status-keu-mhs', $data);
         }
     }
     public function validbayarKeu()
@@ -1810,7 +1850,7 @@ class Admin extends BaseController
 									master_cpmk
 								on matakuliah.kode_matakuliah= master_cpmk.kode_matakuliah and master_cpmk.kode_prodi='$kode_prodi' 
 								WHERE
-									matakuliah.kode_prodi = '$kode_prodi' and matakuliah.jenis_matakuliah='3' 
+									matakuliah.kode_prodi = '$kode_prodi' and matakuliah.jenis_matakuliah > '2' 
 								order by matakuliah.kode_matakuliah")->getResult();
 
             echo json_encode($result, false);
@@ -1832,7 +1872,7 @@ class Admin extends BaseController
 									matakuliah
 								left JOIN
 									master_cpmk
-								on matakuliah.kode_matakuliah= master_cpmk.kode_matakuliah and matakuliah.kode_prodi=master_cpmk.kode_prodi
+								on matakuliah.kode_matakuliah= master_cpmk.kode_matakuliah
 								WHERE
 									(matakuliah.jenis_matakuliah='1' or matakuliah.jenis_matakuliah ='2') 
 								order by matakuliah.kode_matakuliah")->getResult();
@@ -1899,44 +1939,54 @@ class Admin extends BaseController
         } else {
             $this->request = service('request');
             $db      = \Config\Database::connect();
-            if (session()->get("sttpengguna") == 3) {
-                $kode_prodi = session()->get('kode_prodi');
-                $jenis_matakuliah = '3';
-            } else if (session()->get("sttpengguna") == 1) {
-                $kode_prodi = $db->escapeString($this->request->getPost("prodi"));
-                $jenis_matakuliah = $db->escapeString($this->request->getPost('jenis_mk'));
-            }
-            $kdmk = $db->escapeString($this->request->getPost("kdmk"));
-            $nmmk = $db->escapeString($this->request->getPost("nmmk"));
-            $sks = $db->escapeString($this->request->getPost("sks"));
-            $idkur = $db->escapeString($this->request->getPost("idkur"));
+            $data = $this->request->getPost('data');
+
+            $dataparse = $data;
+
             $modelMk = new ModelMatakuliah();
-            if ($kode_prodi == "") {
-                $status = '';
-            } else {
-                $status = $modelMk->getJejang($kode_prodi);
-            }
-            $data = [
-                'status' => $status,
-                'kode_prodi' => $kode_prodi,
-                'kode_matakuliah' => $kdmk,
-                'nama_matakuliah' => $nmmk,
-                'jenis_matakuliah' => $jenis_matakuliah,
-                'sks' => $sks,
-                'id_kurikulum' => $idkur,
-
-            ];
-
-            $cekduplikat = $modelMk->checkduplikat($kdmk, $kode_prodi);
-            if ($cekduplikat == NULL) {
-                $simpan = $modelMk->insert($data);
-                if ($simpan === false) {
-                    print_r($modelMk->errors());
-                } else {
-                    echo "Berhasil Menambahkan Matakuliah";
+            $kdmk = '';
+            $arraydata = [];
+            foreach ($dataparse as $row) {
+                if ($row['jenis_mk'] == 'W') {
+                    $jenismk = 1;
+                } else if ($row['jenis_mk'] == 'A') {
+                    $jenismk = 2;
                 }
-            } else {
-                echo "Kode Matakuliah sudah digunakan";
+                $data = [
+                    'status' => $row['status'],
+                    'kode_prodi' => 0,
+                    'kode_matakuliah' => $row['kdmk'],
+                    'kode_konsentrasi' => NULL,
+                    'nama_matakuliah' => $row['nmmk'],
+                    'jenis_matakuliah' => $jenismk,
+                    'sks' => $row['sks'],
+                    'id_kurikulum' => 0,
+
+                ];
+                array_push($arraydata, $data);
+            }
+
+            $array_data =  json_encode($arraydata);
+            $array_decode = json_decode($array_data, false);
+
+            $db->transBegin();
+            try {
+                $delete = $modelMk->whereIn('jenis_matakuliah', [1, 2])->delete();
+                $simpan = $modelMk->insertBatch($array_decode);
+                // $simpan = true;
+                if ($delete && $simpan) {
+                    $db->transCommit();
+                    echo "Sukses Mensingkron data Matakuliah";
+                } else {
+                    $db->transRollback();
+                    $error = json_encode($modelMk->error());
+                    print_r($error);
+                }
+            } catch (\Throwable $e) {
+                $db->transRollback();
+                log_message('error', 'Transaction failed: ' . $e->getMessage());
+                // Set an error response message
+                echo  'Gagal Mensingkron data : ' . $e->getMessage();   //throw $th;
             }
         };
     }
@@ -1974,11 +2024,14 @@ class Admin extends BaseController
             $kdmk = $db->escapeString($this->request->getPost("kdmk"));
             $nmmk = $db->escapeString($this->request->getPost("nmmk"));
             $sks = $db->escapeString($this->request->getPost("sks"));
-
             $idkur = $db->escapeString($this->request->getPost("idkur"));
             if (session()->get('sttpengguna') == 3) {
-                $jenis_mk = 3;
-                $kdkons = $db->escapeString($this->request->getPost("kdkons"));
+                $jenis_mk = $db->escapeString($this->request->getPost("jenismk"));
+                if ($jenis_mk == '4') {
+                    $kdkons = $db->escapeString($this->request->getPost("kdkons"));
+                } else {
+                    $kdkons = "";
+                }
             } else if (session()->get('sttpengguna') == 1) {
                 $kdkons = "";
                 $jenis_mk = $db->escapeString($this->request->getPost("jenismk"));
@@ -2107,7 +2160,7 @@ class Admin extends BaseController
             $data = $this->request->getPost("data");
             $ta_akademik = $this->getTa_akademik();
             $tempWhere = "";
-            $querydel = "delete C from mk_cpmk C left join matakuliah M  on C.kode_matakuliah = M.kode_matakuliah where M.jenis_matakuliah='3' and C.kode_prodi= '" . session()->get('kode_prodi') . "'";
+            $querydel = "delete C from mk_cpmk C left join matakuliah M  on C.kode_matakuliah = M.kode_matakuliah where M.jenis_matakuliah  > 2 and C.kode_prodi= '" . session()->get('kode_prodi') . "'";
             $db->transStart();
             $db->query($querydel);
 
@@ -2164,7 +2217,7 @@ class Admin extends BaseController
                         master_cpmk.cpmk
                         FROM
                         matakuliah
-                        left join master_cpmk on master_cpmk.kode_matakuliah=matakuliah.kode_matakuliah and master_cpmk.kode_prodi=matakuliah.kode_prodi
+                        left join master_cpmk on master_cpmk.kode_matakuliah=matakuliah.kode_matakuliah
                         where " . $where;
 
                 $db->query($query);
@@ -2401,6 +2454,7 @@ class Admin extends BaseController
                 $ModalAssesmentMandiri = new ModelKlaimAsessor();
                 $ModalMkA1 = new ModelMkA1();
                 $ModalNilai = new ModelNilai();
+                $modelKonsentrasi = new ModelKonsentrasi();
 
 
                 $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
@@ -2408,7 +2462,11 @@ class Admin extends BaseController
                 $dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
                 $maxsksrekognisi = $ModalMkA1->maxsksrekognisi($databio[0]['kode_prodi']);
                 $nilai = $ModalNilai->findAll();
-
+                $wherekonsen = [
+                    "prodi" => $databio[0]['kode_prodi'],
+                    "kode_konsentrasi" => $databio[0]['kode_konsentrasi']
+                ];
+                $konsentrasi = $modelKonsentrasi->where($wherekonsen)->findAll();
                 $data = [
                     'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
                     'page_title' => view('partials/rpl-page-title', ['title' => 'Asessor', 'pagetitle' => 'Dashboards']),
@@ -2416,6 +2474,8 @@ class Admin extends BaseController
                     'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                     'jenis_rpl' => $databio[0]['jenis_rpl'],
                     'noregis' => $noregis,
+                    'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
+                    'konsentrasi' => $konsentrasi[0]['konsentrasi'],
                     'maxsksrekognisi' => $maxsksrekognisi->sksmax,
                     'dataKlaimMhs' => $dataassementmandiri,
                     'basenilai' => $nilai
@@ -2441,6 +2501,9 @@ class Admin extends BaseController
                 $Modaldokumen = new ModelDokumen();
                 $ModalBiodata = new ModelBiodata();
                 $ModalMkA1 = new ModelMkA1();
+                $ModalNilai = new ModelNilai();
+                $modelKonsentrasi = new ModelKonsentrasi();
+
                 $ModalAssesmentMandiri = new ModelKlaimAsessor();
                 $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
                 $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
@@ -2448,6 +2511,13 @@ class Admin extends BaseController
                 $mkrplprodi = $this->getMatakuliahklaimperprodi1($databio[0]['kode_prodi'], $noregis, $databio[0]['kode_konsentrasi']);
                 $dataklaimAsessorA1 = $ModalMkA1->getDataKlaimAsessorA1($noregis);
                 $maxsksrekognisi = $ModalMkA1->maxsksrekognisi($databio[0]['kode_prodi']);
+                $wherekonsen = [
+                    "prodi" => $databio[0]['kode_prodi'],
+                    "kode_konsentrasi" => $databio[0]['kode_konsentrasi']
+                ];
+                $konsentrasi = $modelKonsentrasi->where($wherekonsen)->findAll();
+
+                $nilai = $ModalNilai->findAll();
 
                 $data = [
                     'title_meta' => view('partials/rpl-title-meta', ['title' => 'Asessor RPL']),
@@ -2455,12 +2525,15 @@ class Admin extends BaseController
                     'nama_mhs' => $databio[0]['nama'],
                     'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                     'jenis_rpl' => $databio[0]['jenis_rpl'],
+                    'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
+                    'konsentrasi' => $konsentrasi[0]['konsentrasi'],
                     'noregis' => $noregis,
                     'datamatakuliah' => $datamatakuliah,
                     'data_dok' => $datadokumen,
                     'maxsksrekognisi' => $maxsksrekognisi->sksmax,
                     'mkrplprodi' => $mkrplprodi,
-                    'dataKlaimAsessorA1' => $dataklaimAsessorA1
+                    'dataKlaimAsessorA1' => $dataklaimAsessorA1,
+                    'basenilai' => $nilai
 
                 ];
                 return view('Admin/rpl-assesment-asessor-a1', $data);
@@ -2507,6 +2580,22 @@ class Admin extends BaseController
             }
         }
     }
+
+    public function cekStatusMkA1()
+    {
+        $this->request = service('request');
+        $db      = \Config\Database::connect();
+        $noregis = $db->escapeString($this->request->getPost('noregis'));
+        $kodeMkAsal = $db->escapeString($this->request->getPost('kdmka'));
+        $modelMkA1  = new ModelKlaimA1();
+        $where = [
+            "no_registrasi" => $noregis,
+            "kode_matakuliah_asal" => $kodeMkAsal
+        ];
+        $result = $modelMkA1->where($where)->findAll();
+
+        echo json_encode($result, true);
+    }
     public function getkodeprodi($noregis)
     {
         $db      = \Config\Database::connect();
@@ -2542,18 +2631,29 @@ class Admin extends BaseController
                 $ModalBiodata = new ModelBiodata();
                 $ModalAssesmentMandiri = new ModelKlaimAsessor();
                 $modelPeserta = new ModelPesertaAsessor();
+                $modelKonsentrasi = new ModelKonsentrasi();
+
                 $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
                 $namaasessor = $modelPeserta->getnamaasessor($noregis);
                 $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
                 $dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
+                $wherekonsen = [
+                    "prodi" => $databio[0]['kode_prodi'],
+                    "kode_konsentrasi" => $databio[0]['kode_konsentrasi']
+                ];
+                $konsentrasi = $modelKonsentrasi->where($wherekonsen)->findAll();
                 $data = [
                     'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                     'page_title' => view('partials/rpl-page-title', ['title' => 'Prodi', 'pagetitle' => 'Dashboards']),
                     'nama_mhs' => $databio[0]['nama'],
                     'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                     'jenis_rpl' => $databio[0]['jenis_rpl'],
+                    'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
+                    'konsentrasi' => $konsentrasi[0]['konsentrasi'],
+
                     'noregis' => $noregis,
                     'status' => $status,
+                    'maxsksrekognisi' => $this->getmaxsksrekognisi(session()->get('kode_prodi')),
                     'dataKlaimMhs' => $dataassementmandiri,
                     'validstatus' => $statusMessage,
                     'nm_asessor' => $namaasessor
@@ -2595,18 +2695,27 @@ class Admin extends BaseController
                 $ModalAssesmentMandiri = new ModelKlaimAsessor();
                 $modelPeserta = new ModelPesertaAsessor();
                 $ModalMkA1 = new ModelMkA1();
+                $modelKonsentrasi = new ModelKonsentrasi();
+
 
                 $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
                 $namaasessor = $modelPeserta->getnamaasessor($noregis);
                 $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
                 $dataklaimAsessorA1 = $ModalMkA1->getDataKlaimAsessorA1up($noregis);
                 $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
+                $wherekonsen = [
+                    "prodi" => $databio[0]['kode_prodi'],
+                    "kode_konsentrasi" => $databio[0]['kode_konsentrasi']
+                ];
+                $konsentrasi = $modelKonsentrasi->where($wherekonsen)->findAll();
                 $data = [
                     'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                     'page_title' => view('partials/rpl-page-title', ['title' => 'Prodi', 'pagetitle' => 'Dashboards']),
                     'nama_mhs' => $databio[0]['nama'],
                     'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                     'jenis_rpl' => $databio[0]['jenis_rpl'],
+                    'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
+                    'konsentrasi' => $konsentrasi[0]['konsentrasi'],
                     'noregis' => $noregis,
                     'status' => $status,
                     'dataKlaimAsessorA1' => $dataklaimAsessorA1,
@@ -2645,11 +2754,13 @@ class Admin extends BaseController
                 }
             }
             $modelPeserta = new ModelPesertaAsessor();
+
             $ta_akademik = $this->getTa_akademik();
             $datamahasiswabelumpunyaasessro = $modelPeserta->getdataPesertaBelumPunyaAsessorByProdi(session()->get('kode_prodi'), $ta_akademik);
             $databelumvalidprodi = $modelPeserta->getDataPesertaBelumValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
             $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
             $datasudahvaliddekan = $modelPeserta->getDataPesertaAsessorSudahValidDekanPerprodi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
+
             $data = [
                 'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                 'page_title' => view('partials/rpl-page-title', ['title' => 'Prodi', 'pagetitle' => 'Dashboards']),
@@ -2657,6 +2768,7 @@ class Admin extends BaseController
                 'dataPesertaBelumValid' => $databelumvalidprodi,
                 'dataPesertaSudahValid' => $datasudahvalid,
                 'dataPesertaSudahValidDekan' => $datasudahvaliddekan,
+                'maxsksrekognisi' => $this->getmaxsksrekognisi(session()->get('kode_prodi')),
                 'validstatus' => $statusMessage,
                 'dataMhsbelumpunyaasessor' => $datamahasiswabelumpunyaasessro
             ];
@@ -2870,17 +2982,27 @@ class Admin extends BaseController
                 $Modaldokumen = new ModelDokumen();
                 $ModalBiodata = new ModelBiodata();
                 $ModalAssesmentMandiri = new ModelKlaimAsessor();
+                $modelKonsentrasi = new ModelKonsentrasi();
+
                 $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
                 $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
                 $dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
+                $wherekonsen = [
+                    "prodi" => $databio[0]['kode_prodi'],
+                    "kode_konsentrasi" => $databio[0]['kode_konsentrasi']
+                ];
+                $konsentrasi = $modelKonsentrasi->where($wherekonsen)->findAll();
                 $data = [
                     'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                     'page_title' => view('partials/rpl-page-title', ['title' => 'Fakultas', 'pagetitle' => 'Dashboards']),
                     'nama_mhs' => $databio[0]['nama'],
                     'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
+                    'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
+                    'konsentrasi' => $konsentrasi[0]['konsentrasi'],
                     'jenis_rpl' => $databio[0]['jenis_rpl'],
                     'noregis' => $noregis,
                     'status' => $status,
+                    'maxsksrekognisi' => $this->getmaxsksrekognisi($databio[0]['kode_prodi']),
                     'dataKlaimMhs' => $dataassementmandiri,
                     'validstatus' => $statusMessage
 
@@ -2925,6 +3047,7 @@ class Admin extends BaseController
                 $ModalBiodata = new ModelBiodata();
                 $ModalAssesmentMandiri = new ModelKlaimAsessor();
                 $modelPeserta = new ModelPesertaAsessor();
+                $modelKonsentrasi = new ModelKonsentrasi();
 
                 $ModalMkA1 = new ModelMkA1();
                 $namaasessor = $modelPeserta->getnamaasessor($noregis);
@@ -2933,12 +3056,19 @@ class Admin extends BaseController
                 $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
                 $dataklaimAsessorA1 = $ModalMkA1->getDataKlaimAsessorA1up($noregis);
                 $dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
+                $wherekonsen = [
+                    "prodi" => $databio[0]['kode_prodi'],
+                    "kode_konsentrasi" => $databio[0]['kode_konsentrasi']
+                ];
+                $konsentrasi = $modelKonsentrasi->where($wherekonsen)->findAll();
                 $data = [
                     'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                     'page_title' => view('partials/rpl-page-title', ['title' => 'Fakultas', 'pagetitle' => 'Dashboards']),
                     'nama_mhs' => $databio[0]['nama'],
                     'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                     'jenis_rpl' => $databio[0]['jenis_rpl'],
+                    'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
+                    'konsentrasi' => $konsentrasi[0]['konsentrasi'],
                     'noregis' => $noregis,
                     'status' => $status,
                     'dataKlaimAsessorA1' => $dataklaimAsessorA1,
@@ -2962,6 +3092,7 @@ class Admin extends BaseController
         $modelMkDekan = new ModelKlaimDekan();
         $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
         $modelPeserta = new ModelPesertaAsessor();
+        $modelKonsentrasi = new ModelKonsentrasi();
 
         $namaasessor = $modelPeserta->getnamaasessor($noregis);
 
@@ -2984,12 +3115,19 @@ class Admin extends BaseController
             $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
             $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
             $dataKlaimMhs = $ModalAssesmentMandiri->getDataResponAsessor($noregis);
+            $wherekonsen = [
+                "prodi" => $databio[0]['kode_prodi'],
+                "kode_konsentrasi" => $databio[0]['kode_konsentrasi']
+            ];
+            $konsentrasi = $modelKonsentrasi->where($wherekonsen)->findAll();
             $data = [
                 'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                 'page_title' => view('partials/rpl-page-title', ['title' => 'Fakultas', 'pagetitle' => 'Dashboards']),
                 'nama_mhs' => $databio[0]['nama'],
                 'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                 'jenis_rpl' => $databio[0]['jenis_rpl'],
+                'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
+                'konsentrasi' => $konsentrasi[0]['konsentrasi'],
                 'noregis' => $noregis,
                 'dekan' => $dekan,
                 'fakultas' => $fakultas,
@@ -3009,6 +3147,7 @@ class Admin extends BaseController
         $ModalBiodata = new ModelBiodata();
         $ModalAssesmentMandiri = new ModelKlaimAsessor();
         $modelPeserta = new ModelPesertaAsessor();
+        $modelKonsentrasi = new ModelKonsentrasi();
 
         $ModalMkA1 = new ModelMkA1();
         $namaasessor = $modelPeserta->getnamaasessor($noregis);
@@ -3030,7 +3169,11 @@ class Admin extends BaseController
         $dekan = $this->getNamaKaprodi($kode_prodi);
         $modelMkDekan = new ModelKlaimDekan();
         $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
-
+        $wherekonsen = [
+            "prodi" => $databio[0]['kode_prodi'],
+            "kode_konsentrasi" => $databio[0]['kode_konsentrasi']
+        ];
+        $konsentrasi = $modelKonsentrasi->where($wherekonsen)->findAll();
         if ($cekpeserta == NULL) {
             echo "Peserta Belum divalidasi dekan";
         } else {
@@ -3045,6 +3188,8 @@ class Admin extends BaseController
                 'page_title' => view('partials/rpl-page-title', ['title' => 'Fakultas', 'pagetitle' => 'Dashboards']),
                 'nama_mhs' => $databio[0]['nama'],
                 'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
+                'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
+                'konsentrasi' => $konsentrasi[0]['konsentrasi'],
                 'jenis_rpl' => $databio[0]['jenis_rpl'],
                 'noregis' => $noregis,
                 'dekan' => $dekan,
@@ -3178,7 +3323,7 @@ class Admin extends BaseController
 					matakuliah.kode_matakuliah = mk_cpmk.kode_matakuliah and mk_cpmk.ta_akademik='$ta_akademik'
 				)
 				WHERE
-					 matakuliah.kode_prodi='' and (matakuliah.jenis_matakuliah='1' or matakuliah.jenis_matakuliah='2')
+					 matakuliah.kode_prodi='0' and (matakuliah.jenis_matakuliah='1' or matakuliah.jenis_matakuliah='2')
 				AND mk_cpmk.kode_matakuliah IS NOT NULL 
 				)
 				union";
@@ -3208,7 +3353,7 @@ class Admin extends BaseController
 											AND matakuliah.kode_matakuliah = mk_cpmk.kode_matakuliah and mk_cpmk.ta_akademik='$ta_akademik'
 										)
 										WHERE
-										matakuliah.kode_prodi = '$kode_prodi' and (matakuliah.kode_konsentrasi='$kode_konsentrasi' or matakuliah.kode_konsentrasi='' or matakuliah.kode_konsentrasi IS NULL) and matakuliah.jenis_matakuliah='3'
+										matakuliah.kode_prodi = '$kode_prodi' and (matakuliah.kode_konsentrasi='$kode_konsentrasi' or matakuliah.kode_konsentrasi='' or matakuliah.kode_konsentrasi IS NULL) and matakuliah.jenis_matakuliah > 2
 										AND mk_cpmk.kode_matakuliah IS NOT NULL
 										)
 										UNION
@@ -3296,6 +3441,7 @@ class Admin extends BaseController
                     'dataKlaimAsessor' => $result,
 
 
+
                 ];
                 return view('Admin/rpl-data-mahasiswa-per-prodi', $data);
                 // } else {
@@ -3304,6 +3450,22 @@ class Admin extends BaseController
             } else {
                 return redirect()->to(base_url('Admin'));
             }
+        }
+    }
+    public function getDataStatusMhsPerProdi()
+    {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3) {
+            return redirect()->to('/logout');
+        } else {
+            $db = \Config\Database::connect();
+            $this->request = service('request');
+            $ta_akademik = $db->escapeString($this->request->getPost('ta_akademik'));
+            $kode_prodi = $db->escapeString($this->request->getPost("kode_prodi"));
+
+            $modelPeserta = new ModelRegistrasi();
+            $dataStatusMhs = $modelPeserta->getDataStatusMahasiswaRPL($ta_akademik, $kode_prodi);
+
+            echo json_encode($dataStatusMhs);
         }
     }
     public function menuDataMhsPerpodi()
@@ -3370,6 +3532,8 @@ class Admin extends BaseController
                 $Modaldokumen = new ModelDokumen();
                 $ModalBiodata = new ModelBiodata();
                 $modelMkDekan = new ModelKlaimDekan();
+                $modelKonsentrasi = new ModelKonsentrasi();
+
                 $ModalAssesmentMandiri = new ModelKlaimAsessor();
                 $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
                 $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
@@ -3390,6 +3554,11 @@ class Admin extends BaseController
                 };
                 $dekan = $this->getNamadekan($kode_fakultas);
                 $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
+                $wherekonsen = [
+                    "prodi" => $databio[0]['kode_prodi'],
+                    "kode_konsentrasi" => $databio[0]['kode_konsentrasi']
+                ];
+                $konsentrasi = $modelKonsentrasi->where($wherekonsen)->findAll();
                 if ($cekpeserta != NULL) {
                     $data = [
                         'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
@@ -3397,6 +3566,8 @@ class Admin extends BaseController
                         'nama_mhs' => $databio[0]['nama'],
                         'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                         'jenis_rpl' => $databio[0]['jenis_rpl'],
+                        'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
+                        'konsentrasi' => $konsentrasi[0]['konsentrasi'],
                         'noregis' => $noregis,
                         'dekan' => $dekan,
                         'fakultas' => $fakultas,
@@ -3457,10 +3628,8 @@ class Admin extends BaseController
                 $Modaldokumen = new ModelDokumen();
                 $ModalBiodata = new ModelBiodata();
                 $modelMkDekan = new ModelKlaimDekan();
-                $ModalAssesmentMandiri = new ModelKlaimAsessor();
-                $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
                 $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-                $modelklaimdekan = new ModelKlaimDekan();
+
                 $result = $modelMkDekan->getDatatoPrint($noregis);
                 if (session()->get('sttpengguna') == 6) {
                     $kode_fakultas = $kode_fakultas;
@@ -3477,12 +3646,15 @@ class Admin extends BaseController
                 };
                 $dekan = $this->getNamadekan($kode_fakultas);
                 $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
+
+
                 if ($cekpeserta != NULL) {
                     $data = [
                         'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                         'page_title' => view('partials/rpl-page-title', ['title' => 'Print Transkrip', 'pagetitle' => 'Dashboards']),
                         'nama_mhs' => $databio[0]['nama'],
                         'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
+                        'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
                         'jenis_rpl' => $databio[0]['jenis_rpl'],
                         'noregis' => $noregis,
                         'dekan' => $dekan,
@@ -3515,6 +3687,7 @@ class Admin extends BaseController
                 $ModalBiodata = new ModelBiodata();
                 $modelMkDekan = new ModelKlaimDekan();
                 $ModalAssesmentMandiri = new ModelKlaimAsessor();
+                $modelKonsentrasi = new ModelKonsentrasi();
                 $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
                 $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
                 $modelklaimdekan = new ModelKlaimDekan();
@@ -3535,6 +3708,11 @@ class Admin extends BaseController
                 };
                 $dekan = $this->getNamadekan($kode_fakultas);
                 $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
+                $wherekonsen = [
+                    "prodi" => $databio[0]['kode_prodi'],
+                    "kode_konsentrasi" => $databio[0]['kode_konsentrasi']
+                ];
+                $konsentrasi = $modelKonsentrasi->where($wherekonsen)->findAll();
 
                 if ($cekpeserta != NULL) {
                     $data = [
@@ -3543,6 +3721,8 @@ class Admin extends BaseController
                         'nama_mhs' => $databio[0]['nama'],
                         'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                         'jenis_rpl' => $databio[0]['jenis_rpl'],
+                        'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
+                        'konsentrasi' => $konsentrasi[0]['konsentrasi'],
                         'noregis' => $noregis,
                         'dekan' => $dekan,
                         'fakultas' => $fakultas,
@@ -3572,6 +3752,7 @@ class Admin extends BaseController
             $Modaldokumen = new ModelDokumen();
             $ModalBiodata = new ModelBiodata();
             $modelMkDekan = new ModelKlaimDekan();
+            $modelKonsentrasi = new ModelKonsentrasi();
             $ModalAssesmentMandiri = new ModelKlaimAsessor();
             $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
             $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
@@ -3595,6 +3776,12 @@ class Admin extends BaseController
             };
             $dekan = $this->getNamadekan($kode_fakultas);
             $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
+            $wherekonsen = [
+                "prodi" => $databio[0]['kode_prodi'],
+                "kode_konsentrasi" => $databio[0]['kode_konsentrasi']
+            ];
+            $konsentrasi = $modelKonsentrasi->where($wherekonsen)->findAll();
+
 
             if ($cekpeserta != NULL) {
                 $data = [
@@ -4142,6 +4329,114 @@ class Admin extends BaseController
         }
     }
 
+    public function sinkronmksiska()
+    {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 3)) {
+            return redirect()->to('/logout');
+        } else {
+            $prodi = session()->get('kode_prodi');
+            $client = \Config\Services::curlrequest();
+            $data = [
+                'prodi' => $prodi,
+            ];
+
+            $response = $client->request('POST', "http://silaju-api.unifa.ac.id/api/getMatakuliah.php", [
+                'auth' => ['user', 'pass'],
+                'headers' => [
+                    "key" => "16f4d6ae06b2655897f7e8fe0e4df9b0",
+                    'Content-Type' => 'application/json',
+                ], // Set the Content-Type header],
+                'form_params' => $data,
+            ]);
+
+            // echo $response->getStatusCode();
+
+            $jsonData = $response->getBody();
+            $modelMatakuliah = new ModelMatakuliah();
+            $dataArray = json_decode($jsonData, true);
+            $dataInsert = [];
+
+            foreach ($dataArray['result'] as $row) {
+                if ($row['kdwpltbkmk'] == 'W' && $row['mku'] == 'N') {
+                } else {
+                    $jenismk = 3;
+                    $tempdata = [
+                        'status' => $row['status'],
+                        'kode_prodi' => $row['kode_prodi'],
+                        'kode_matakuliah' => $row['kode_matakuliah'],
+                        'nama_matakuliah' => $row['nama_matakuliah'],
+                        'jenis_matakuliah' => $jenismk,
+                        'sks' => $row['sks'],
+                        'id_kurikulum' => $row['matkul_kurikulum_id']
+                    ];
+                    array_push($dataInsert, $tempdata);
+                }
+            }
+            $modelMatakuliah->transStart();
+            $mku = $modelMatakuliah->where('jenis_matakuliah <', '3')->findAll();
+            $datamku = [];
+            foreach ($mku as $row) {
+                $datamku[] = $row['kode_matakuliah'];
+            };
+
+            // print_r($datamku);
+
+            $datainsertfilter = array_filter($dataInsert, function ($item) use ($datamku) {
+                return !in_array($item['kode_matakuliah'], $datamku);
+            });
+
+            try {
+                $delete = $modelMatakuliah->where('kode_prodi', $prodi)->delete();
+                $insert = $modelMatakuliah->insertBatch($datainsertfilter);
+                if ($delete && $insert) {
+                    $modelMatakuliah->transCommit();
+                    echo "Sukses Mensingkron data Matakuliah";
+                } else {
+                    $modelMatakuliah->transRollback();
+                    $error = json_encode($modelMatakuliah->error());
+                    echo $error['message'];
+                }
+            } catch (\Throwable $e) {
+                $modelMatakuliah->transRollback();
+                log_message('error', 'Transaction failed: ' . $e->getMessage());
+
+                // Set an error response message
+                echo  'Gagal Mensingkron data : ' . $e->getMessage();
+
+                //throw $th;
+            }
+        }
+    }
+
+    public function sinkronMkformku()
+    {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 1)) {
+            return redirect()->to('/logout');
+        } else {
+            $prodi = session()->get('kode_prodi');
+            $client = \Config\Services::curlrequest();
+            $data = [
+                'prodi' => $prodi,
+            ];
+
+            $response = $client->request('POST', "http://silaju-api.unifa.ac.id/api/getMatakuliah.php", [
+                'auth' => ['user', 'pass'],
+                'headers' => [
+                    "key" => "16f4d6ae06b2655897f7e8fe0e4df9b0",
+                    'Content-Type' => 'application/json',
+                ], // Set the Content-Type header],
+                'form_params' => $data,
+            ]);
+
+            // echo $response->getStatusCode();
+
+            $jsonData = $response->getBody();
+            // echo $prodi;
+            echo json_encode($jsonData);
+        }
+    }
+
+
     public function home_akademik_2($ta_akademik)
     {
         if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 6)) {
@@ -4184,9 +4479,7 @@ class Admin extends BaseController
                 'page_title' => view('partials/rpl-page-title', ['title' => 'Akademik', 'pagetitle' => 'Dashboards']),
                 'ta_akademik' => $this->getTa_akademik(),
                 'dataPesertaValid' => $datasudahvalidasi,
-
             ];
-
             return view('Admin/rpl-home-akademik-tosiska', $data);
         }
     }
