@@ -478,8 +478,8 @@ class Front extends BaseController
 			// $noregis = session()->get("noregis");
 
 			$ta_akademik = $this->getTa_akademik();
-			$kode_matakuliah = $db->escapeString($this->request->getPost("kode_matakuliah"));
-			$nama_matakuliah = $db->escapeString($this->request->getPost("nama_matakuliah"));
+			$kode_matakuliah = trim($db->escapeString($this->request->getPost("kode_matakuliah")));
+			$nama_matakuliah = trim($db->escapeString($this->request->getPost("nama_matakuliah")));
 			$sks = $db->escapeString($this->request->getPost("sks"));
 			$nilai = $db->escapeString($this->request->getPost("Nilai"));
 			$kodept = $db->escapeString($this->request->getPost("kodept"));
@@ -499,34 +499,69 @@ class Front extends BaseController
 
 			$validatemka1 = $this->validatemka1($ta_akademik, $noregis, $kode_matakuliah);
 			if ($validatemka1 == null) {
-				$insert = $modelMkA1->insert($data1);
-				$carikdptasal = $modelMkA1->where('no_registrasi', $noregis)->findAll();
+				$validateStatusMkA1 = $modelMkA1->where('status', 0)
+					->where('no_registrasi', $noregis)->findAll();
+				if ($validateStatusMkA1 == null) {
+					$insert = $modelMkA1->insert($data1);
+					$carikdptasal = $modelMkA1->where('no_registrasi', $noregis)->findAll();
 
-				if (isset($carikdptasal[0]['no_registrasi'])) {
-					$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
-					$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+					if (isset($carikdptasal[0]['no_registrasi'])) {
+						$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+						$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+					} else {
+						$kdptasal = "";
+						$nmptasal = "";
+					}
+					if ($insert === false) {
+						$data = [
+							'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
+							'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
+							'datasubmit' => $datasavebio,
+							'datadok' => $datadokumen,
+							'databio' => $datasavebio,
+							'ptasal' => $ptindo,
+							'kdptasal' => $kdptasal,
+							'nmptasal' => $nmptasal,
+							'dataerror' => $modelMkA1->errors(),
+							'dataMkA1' => $carikdptasal,
+							'nilai' => $masternilai,
+							// 'test' => $datasave,
+							'ta_akademik' => $this->getTa_akademik()
+						];
+						return view('Front/rpl-mahasiswa-upload-a1', $data);
+					} else {
+						$data = [
+							'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
+							'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
+							'datasubmit' => $datasavebio,
+							'datadok' => $datadokumen,
+							'databio' => $datasavebio,
+							'ptasal' => $ptindo,
+							'nmptasal' => $nmptasal,
+							'kdptasal' => $kdptasal,
+							'status' => true,
+							'dataMkA1' => $carikdptasal,
+							'nilai' => $masternilai,
+
+							// 'test' => $datasave,
+							'ta_akademik' => $this->getTa_akademik()
+						];
+						return view('Front/rpl-mahasiswa-upload-a1', $data);
+					}
 				} else {
-					$kdptasal = "";
-					$nmptasal = "";
-				}
-				if ($insert === false) {
-					$data = [
-						'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
-						'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
-						'datasubmit' => $datasavebio,
-						'datadok' => $datadokumen,
-						'databio' => $datasavebio,
-						'ptasal' => $ptindo,
-						'kdptasal' => $kdptasal,
-						'nmptasal' => $nmptasal,
-						'dataerror' => $modelMkA1->errors(),
-						'dataMkA1' => $carikdptasal,
-						'nilai' => $masternilai,
-						// 'test' => $datasave,
-						'ta_akademik' => $this->getTa_akademik()
+					$error = [
+						"error " => "Matakuliah sudah diajukan dan tidak bisa ditambahkan lagi !",
 					];
-					return view('Front/rpl-mahasiswa-upload-a1', $data);
-				} else {
+					$carikdptasal = $modelMkA1->where('no_registrasi', $noregis)->findAll();
+
+					if (isset($carikdptasal[0]['no_registrasi'])) {
+						$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+						$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+					} else {
+						$kdptasal = "";
+						$nmptasal = "";
+					}
+
 					$data = [
 						'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
 						'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
@@ -534,12 +569,11 @@ class Front extends BaseController
 						'datadok' => $datadokumen,
 						'databio' => $datasavebio,
 						'ptasal' => $ptindo,
-						'nmptasal' => $nmptasal,
 						'kdptasal' => $kdptasal,
-						'status' => true,
+						'nmptasal' => $nmptasal,
+						'dataerror' => $error,
 						'dataMkA1' => $carikdptasal,
 						'nilai' => $masternilai,
-
 						// 'test' => $datasave,
 						'ta_akademik' => $this->getTa_akademik()
 					];
@@ -597,7 +631,15 @@ class Front extends BaseController
 			$formdata = $this->request->getPost();
 			$ta_akademik = $this->getTa_akademik();
 			$ModalKlamMkAi = new ModelMkA1();
-			$simpanmk = $ModalKlamMkAi->insertdata($formdata, $ta_akademik);
+			$modelMkA1 = new ModelMkA1();
+			$noregis = session()->get("noregis");
+			$validateStatusMkA1 = $modelMkA1->where('status', 0)
+				->where('no_registrasi', $noregis)->findAll();
+			if ($validateStatusMkA1 == null) {
+				$simpanmk = $ModalKlamMkAi->insertdata($formdata, $ta_akademik);
+			} else {
+				echo "Matakuliah sudah diajukan dan tidak bisa ditambahkan lagi!";
+			}
 		}
 	}
 	public function HapusMatakuliahA1()

@@ -2553,7 +2553,12 @@ class Admin extends BaseController
             $db      = \Config\Database::connect();
             $idklaim = $db->escapeString($this->request->getPost('idklaim'));
             $modelklaimasessor = new ModelKlaimAsessor();
+
+            $cekstatusklaimasessor = $modelklaimasessor->cekStatusKlaimAsessor($idklaim);
             $statusmk = $modelklaimasessor->cekValidProdi($idklaim);
+            if ($cekstatusklaimasessor != NUll) {
+                echo "Tidak Bisa Membatalkan Klaim karena sudah malakukan submit";
+            } else 
             if ($statusmk == NULL) {
                 $modelklaimasessor->batalklaimA1($idklaim);
             } else {
@@ -2572,11 +2577,17 @@ class Admin extends BaseController
             $db      = \Config\Database::connect();
             $noregis = $db->escapeString($this->request->getPost('noregis'));
             $modelklaimasessor = new ModelKlaimAsessor();
-            $statusmk = $modelklaimasessor->cekValidProdiA1($noregis);
-            if ($statusmk == NULL) {
+            
+            $cekstatusklaimasessor = $modelklaimasessor->cekStatusKlaimAsessorBynoregis($noregis);
+            $statusmk = $modelklaimasessor->cekValidProdi($noregis);
+            // print_r($cekstatusklaimasessor);
+            if ($cekstatusklaimasessor != NUll) {
+                echo "gagalvalidasessor";
+            }
+            else if ($statusmk == NULL) {
                 $modelklaimasessor->batalklaimdokA1($noregis);
             } else {
-                echo "Tidak Bisa Membatalkan Klaim karena sudah divalidasi oleh Prodi";
+                echo "gagalvalidprodi";
             }
         }
     }
@@ -3229,7 +3240,21 @@ class Admin extends BaseController
             $kode_prodi = session()->get('kode_prodi');
             $ta_akademik = $this->getTa_akademik();
             $ModalTransactionKlaim = new ModelKlaimAsessor();
-            $simpanklaim = $ModalTransactionKlaim->simpanklaimAsessorA1($formdata, $kode_prodi, $ta_akademik);
+            $modelklaimasessor = new ModelKlaimAsessor();
+
+            $noregis = $formdata[0]['noregis'];
+            // print_r($noregis);
+            $cekstatusklaimasessor = $modelklaimasessor->cekStatusKlaimAsessorBynoregis($noregis);
+            $statusmk = $modelklaimasessor->cekValidProdi($noregis);
+            // print_r($cekstatusklaimasessor);
+            if ($cekstatusklaimasessor != NUll) {
+                echo "gagalvalidasessor";
+            }
+            else if ($statusmk == NULL) {
+                $simpanklaim = $ModalTransactionKlaim->simpanklaimAsessorA1($formdata, $kode_prodi, $ta_akademik);
+            } else {
+                echo "gagalvalidprodi";
+            }
         }
     }
     public function getNamaProdi($kode_prodi)
@@ -4304,6 +4329,7 @@ class Admin extends BaseController
             AND mk_klaim_asessor.idklaim IS NOT NULL 
             AND mk_klaim_asessor.nilai != 'E' 
             AND mk_klaim_dekan.idklaim IS NOT NULL
+            and mk_klaim_a1.idklaim IS NOT NULL
             GROUP BY mk_klaim_dekan.idklaim")->getResult();
 
             $data = json_encode($result, false);

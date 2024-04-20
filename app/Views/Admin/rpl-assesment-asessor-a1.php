@@ -8,10 +8,10 @@
     <link href="<?= base_url() ?>/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 
     <style>
-    .select2-container--default .select2-selection--single .select2-selection__arrow {
-        right: 10px;
-        left: auto;
-    }
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            right: 10px;
+            left: auto;
+        }
     </style>
 </head>
 <?php
@@ -58,19 +58,15 @@ if (isset($basenilai)) {
                         }
                     }
 
-
-
                     ?>
 
-                    <div class="modal fade batal-klaim-modal" tabindex="-1" role="dialog"
-                        aria-labelledby="batal-klaim-modal" aria-hidden="true">
+                    <div class="modal fade batal-klaim-modal" tabindex="-1" role="dialog" aria-labelledby="batal-klaim-modal" aria-hidden="true">
                         <div class="modal-dialog modal-xl">
                             <div class="modal-content col-12">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="myLargeModalLabel">Konfirmasi
                                     </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <!-- content -->
@@ -79,13 +75,10 @@ if (isset($basenilai)) {
                                             <label for="">Pembatalan ajuan peserta RPL akan menyebabkan klaim asessor
                                                 yang sudah dilakukan sebelum TERHAPUS, lanjut batalkan ajuan?</label>
                                         </div>
-                                        <input type="hidden" id='enoregis' name='noregis' value='<?= $noregis ?>'
-                                            readonly>
+                                        <input type="hidden" id='enoregis' name='noregis' value='<?= $noregis ?>' readonly>
                                         <div>
-                                            <button type="button" onclick="batalklaimdoka1()"
-                                                class="btn btn-primary w-md">Ya</button>
-                                            <button type="button" class="btn btn-primary w-md" data-bs-dismiss="modal"
-                                                aria-label="Close"> Tidak</button>
+                                            <button type="button" onclick="batalklaimdoka1()" class="btn btn-primary w-md">Ya</button>
+                                            <button type="button" class="btn btn-primary w-md" data-bs-dismiss="modal" aria-label="Close"> Tidak</button>
 
                                         </div>
                                     </div>
@@ -150,8 +143,7 @@ if (isset($basenilai)) {
                                                         <div class="col-md-2">:
                                                             <?= $noregis ?
                                                                 "<a class='btn btn-sm btn-primary' href='" . base_url() . "/print-klaim-a1/$noregis' target='_blank'>Lihat</a>" :  'Tidak ada Dokumen Referensi'; ?>
-                                                            <button class="btn btn-danger btn-sm "
-                                                                onclick="showmodal()">Batal Klaim</button>
+                                                            <button class="btn btn-danger btn-sm " onclick="showmodal()">Batal Klaim</button>
                                                         </div>
 
 
@@ -170,8 +162,7 @@ if (isset($basenilai)) {
                                                     <div class="row col-md-12 mb-3">
                                                         <div class="col-md-2">
                                                             <label for="">Kode Matakuliah</label>
-                                                            <select for="" id='kdmka' class="form-select select2"
-                                                                onchange="cekMkAsal()">
+                                                            <select for="" id='kdmka' class="form-select select2" onchange="cekMkAsal()">
                                                                 <option value=''>Pilih Matakuliah Asal</option>
                                                                 <?php
 
@@ -199,8 +190,7 @@ if (isset($basenilai)) {
                                                         </div>
                                                         <div class="col-md-2">
                                                             <label for="" class="col-md-2"></label>
-                                                            <button onclick='tambahkan()'
-                                                                class="btn btn-primary col-md-12 mt-2">Tambahakan</button>
+                                                            <button onclick='tambahkan()' class="btn btn-primary col-md-12 mt-2">Tambahakan</button>
                                                         </div>
                                                     </div>
                                                     <table class='table table-bordered'>
@@ -231,8 +221,7 @@ if (isset($basenilai)) {
                                                                 <label for="" class="label form-label col-md-4">Kode
                                                                     Matakuliah</label>
                                                                 <div class="col-md-8">
-                                                                    <select for="" id='kdmk'
-                                                                        class="form-select select2 col-3" onchange="">
+                                                                    <select for="" id='kdmk' class="form-select select2 col-3" onchange="">
                                                                         <option value=''>Pilih Matakuliah </option>
 
                                                                         <?php
@@ -251,8 +240,7 @@ if (isset($basenilai)) {
                                                                 <label for="" class="label form-label col-md-4">Nama
                                                                     Matakuliah</label>
                                                                 <div class="col-md-8">
-                                                                    <input for="" class="form-control" readonly
-                                                                        id="nmmk" />
+                                                                    <input for="" class="form-control" readonly id="nmmk" />
 
                                                                 </div>
 
@@ -264,8 +252,7 @@ if (isset($basenilai)) {
 
                                                                 <label for="" class="col-md-2">Jumlah SKS</label>
                                                                 <div class="col-md-6">
-                                                                    <input for="" class="form-control" readonly
-                                                                        id="sks" />
+                                                                    <input for="" class="form-control" readonly id="sks" />
 
                                                                 </div>
                                                             </div>
@@ -283,8 +270,7 @@ if (isset($basenilai)) {
                                                         </div>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <button type="button" onclick="simpan_klaim_asessor()"
-                                                            class="btn btn-primary w-md">Klaim Matakuliah</button>
+                                                        <button type="button" onclick="simpan_klaim_asessor()" class="btn btn-primary w-md">Klaim Matakuliah</button>
 
                                                     </div>
                                                     <table class='table table-bordered'>
@@ -355,8 +341,7 @@ if (isset($basenilai)) {
 
 
                                         <div>
-                                            <button type="button" onclick="submit_klaim_asessor()"
-                                                class="btn btn-primary w-md">Submit</button>
+                                            <button type="button" onclick="submit_klaim_asessor()" class="btn btn-primary w-md">Submit</button>
 
                                         </div>
                                     </div>
@@ -403,303 +388,324 @@ if (isset($basenilai)) {
 </html>
 
 <script>
-$(document).on('select2:open', () => {
-    document.querySelector('.select2-search__field').focus();
-});
-
-function cekMkAsal() {
-    kode_mk = $("#kdmka").val()
-    noregis = '<?= $noregis ?>';
-    url = '<?= base_url('cekstatusmka1') ?>';
-    $.post(url, {
-        kdmka: kode_mk,
-        noregis: noregis
-    }, function(data) {
-        data = JSON.parse(data);
-        if (data == '') {} else {
-            alert('Info : Matakuliah Asal Sudah Digunakan sebelumnya Untuk mengklaim Matakuliah Asal')
-
-        }
-        return true
-    })
-
-
-}
-
-function showmodal() {
-    // alert('s')
-    $('.batal-klaim-modal').modal("show");
-}
-
-function checkMkUnifa() {
-
-    kode_mk = $('#kdmk').val()
-    $('#tbody-klaim-mk > tr').each(function(i, tr) {
-        kdmk_tabel = $(this).attr('kdmk');
-        if (kode_mk == kdmk_tabel) {
-            alert('Info : Matakuliah Unifa Sudah Digunakan sebelumnya Untuk mengklaim Matakuliah Unifa')
-
-        }
-    })
-}
-$(document).ready(function() {
-
-    $('.select2').select2({
-        placeholder: "Pilih Kode Matakuliah",
-
-    })
-
-    $('#kdmk').on("change", function(e) {
-        nmmk = $(this).find('option:selected').attr('nmmk');
-        sks = $(this).find('option:selected').attr('sks');
-
-        var hasil_check = checkMkUnifa();
-        console.log(hasil_check)
-        // if (hasil_check == true) {
-        $('#nmmk').val(nmmk)
-        $('#sks').val(sks)
-        // }
-    });
-    $('#kdmka').on("change", function(e) {
-        nmmk = $(this).find('option:selected').attr('nmmk');
-        sks = $(this).find('option:selected').attr('sks');
-        nilai = $(this).find('option:selected').attr('nilai');
-
-        $('#nmmka').val(nmmk)
-        $('#sksa').val(sks)
-        $('#nilaia').val(nilai)
+    $(document).on('select2:open', () => {
+        document.querySelector('.select2-search__field').focus();
     });
 
-    // $('#loading').show()
-    // noregis = '<?= $noregis ?>'
-    // url = '<?= base_url('getDataKlaimAsessor') ?>'
-    // $.post(url, {
-    //     noregis: noregis
-    // }, function(data) {
-    //     data = JSON.parse(data)
-    //     console.log(data);
-    //     $.each(data, function(index, value) {
-    //         $('#tbody-klaim-mk  > tr').each(function(i, tr) {
-    //             if ($(this).attr('noregis') == noregis && $(this).attr(
-    //                     'idklaim') ==
-    //                 value['idklaim']) {
-    //                 // alert('jalan')
-    //                 $(this).find('td[for=tanggapan]').children().val(value[
-    //                     'tanggapan']);
-    //                 $(this).find('td[for=nilaiAs]').children().val(value[
-    //                     'nilai']);
-    //                 $(this).find('td[for=kettanggapan]').children()
-    //                     .val(value['ket_tanggapan']);
+    function cekMkAsal() {
+        kode_mk = $("#kdmka").val()
+        noregis = '<?= $noregis ?>';
+        url = '<?= base_url('cekstatusmka1') ?>';
+        $.post(url, {
+            kdmka: kode_mk,
+            noregis: noregis
+        }, function(data) {
+            data = JSON.parse(data);
+            if (data == '') {} else {
+                alert('Info : Matakuliah Asal Sudah Digunakan sebelumnya Untuk mengklaim Matakuliah Asal')
 
-    //             }
-    //         })
-    //     })
-    //     $('#loading').hide()
-    // }).fail(function() {
-    //     alert("error");
-    // });
-})
-
-function batalklaimdoka1() {
-    noregis = $('#enoregis').val();
-    url = '<?= base_url('batalklaimdokA1') ?>'
-    $.post(url, {
-        noregis: noregis
-    }, function(data) {
-        $('#loading').hide()
-        if (alert(data)) {} else {
-            window.location.reload()
-        };
-    }).fail(function() {
-        $('#loading').hide()
-        if (alert("Gagal Membatalkan Klaim")) {} else {
-            window.location.reload()
-        };
-    });
-}
-
-function batalklaima1(a) {
-    idklaim = a.attr('idklaim')
-
-    url = '<?= base_url('batalklaimmkAsessorA1') ?>'
-    $.post(url, {
-        idklaim: idklaim
-    }, function(data) {
-        $('#loading').hide()
-        if (alert(data)) {} else {
-            window.location.reload()
-        };
-    }).fail(function() {
-        $('#loading').hide()
-        if (alert("Gagal Melakukan Klaim")) {} else {
-            window.location.reload()
-        };
-    });
-}
-
-function remove(ini) {
-    ini.parent().parent().remove();
-}
-
-function tambahkan() {
-    $('#loading').show()
-
-    kdmk = $('#kdmka').val()
-    nmmk = $('#nmmka').val()
-    sks = $('#sksa').val()
-    nilai = $('#nilaia').val()
-    no = $('#tbody-mk-asal tr').length + 1;
-    if (no > 1) {
-        alert(
-            "Hanya bisa memilih satu matakuliah asal ! Untuk menambahkan hapus matakuliah asal yang sebelumnya terlebih dahulu")
-        $('#loading').hide()
-    } else {
-
-        flag = 0;
-        $('#tbody-mk-asal tr').each(function() {
-            a = $(this).find("td[for='kdmk']").html()
-            // alert(a + ":" + kdmk);
-            if (a == kdmk) {
-                flag = 1;
             }
+            return true
         })
-        if (flag == 0) {
-            $('#tbody-mk-asal').append("<tr><td for=''>" + no + "</td><td for='kdmk'>" + kdmk +
-                "</td><td for='nmmk'>" +
-                nmmk +
-                "</td><td for='sks'>" + sks + "</td><td for='nilai'>" + nilai +
-                "</td><td><button onclick='remove($(this))' class='btn btn-sm btn-warning'>Hapus</button></a></td></tr>"
-            )
-            $('#kdmka').val(null).trigger("change");
-            $('#nmmka').val("")
-            $('#sksa').val("")
-            $('#nilaia').val("")
-            $('#loading').hide()
 
-        } else {
-            alert("Kode Matakuliah yang anda pilih sudah ditambahkan")
-            $('#loading').hide()
-
-        }
 
     }
-}
 
-function simpan_klaim_asessor() {
-    $('#loading').show()
-    kdmk = $('#kdmk').val()
-    nmmk = $('#nmmk').val()
-    sks = $('#sks').val()
-    nilai = $('#nilai').val()
+    function showmodal() {
+        // alert('s')
+        $('.batal-klaim-modal').modal("show");
+    }
 
-    klaimsks = '<?= $jumlahklaimsks ?>'
-    klaimsksmax = '<?= $maxsksrekognisi ?>'
+    function checkMkUnifa() {
 
-    sksakandiklaim = parseFloat(klaimsks) + parseFloat(sks);
+        kode_mk = $('#kdmk').val()
+        $('#tbody-klaim-mk > tr').each(function(i, tr) {
+            kdmk_tabel = $(this).attr('kdmk');
+            if (kode_mk == kdmk_tabel) {
+                alert('Info : Matakuliah Unifa Sudah Digunakan sebelumnya Untuk mengklaim Matakuliah Unifa')
 
+            }
+        })
+    }
+    $(document).ready(function() {
 
-    jsonObj = [];
-    statusdata = 0;
-    $('#tbody-mk-asal > tr').each(function(i, tr) {
-        kdmka = $(this).find('td[for=kdmk]').html();
-        nmmka = $(this).find('td[for=nmmk]').html();
-        sksa = $(this).find('td[for=sks]').html();
-        nilaia = $(this).find('td[for=nilai]').html();
-        if (kdmk != "" && nmmk != "" && sks != "" && nilai != "" && kdmka != "" &&
-            nmmka != "" && sksa != "" && nilaia != "") {
-            item = {}
-            item["noregis"] = '<?= $noregis ?>';
-            item["kdmk"] = kdmk.trim();
-            item["nmmk"] = nmmk;
-            item["sks"] = sks;
-            item["nilai"] = nilai.toUpperCase();
-            item["kdmka"] = kdmka.trim();
-            item["nmmka"] = nmmka;
-            item["sksa"] = sksa;
-            item["nilaia"] = nilaia;
+        $('.select2').select2({
+            placeholder: "Pilih Kode Matakuliah",
 
-            jsonObj.push(item);
+        })
 
-        } else {
-            statusdata = 1
-        }
+        $('#kdmk').on("change", function(e) {
+            nmmk = $(this).find('option:selected').attr('nmmk');
+            sks = $(this).find('option:selected').attr('sks');
+
+            var hasil_check = checkMkUnifa();
+            console.log(hasil_check)
+            // if (hasil_check == true) {
+            $('#nmmk').val(nmmk)
+            $('#sks').val(sks)
+            // }
+        });
+        $('#kdmka').on("change", function(e) {
+            nmmk = $(this).find('option:selected').attr('nmmk');
+            sks = $(this).find('option:selected').attr('sks');
+            nilai = $(this).find('option:selected').attr('nilai');
+
+            $('#nmmka').val(nmmk)
+            $('#sksa').val(sks)
+            $('#nilaia').val(nilai)
+        });
+
+        // $('#loading').show()
+        // noregis = '<?= $noregis ?>'
+        // url = '<?= base_url('getDataKlaimAsessor') ?>'
+        // $.post(url, {
+        //     noregis: noregis
+        // }, function(data) {
+        //     data = JSON.parse(data)
+        //     console.log(data);
+        //     $.each(data, function(index, value) {
+        //         $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+        //             if ($(this).attr('noregis') == noregis && $(this).attr(
+        //                     'idklaim') ==
+        //                 value['idklaim']) {
+        //                 // alert('jalan')
+        //                 $(this).find('td[for=tanggapan]').children().val(value[
+        //                     'tanggapan']);
+        //                 $(this).find('td[for=nilaiAs]').children().val(value[
+        //                     'nilai']);
+        //                 $(this).find('td[for=kettanggapan]').children()
+        //                     .val(value['ket_tanggapan']);
+
+        //             }
+        //         })
+        //     })
+        //     $('#loading').hide()
+        // }).fail(function() {
+        //     alert("error");
+        // });
     })
-    if (statusdata == 1) {
-        alert("Silahkan Lengkapi Tanggapan Anda !")
-        $('#loading').hide()
-    } else if (sksakandiklaim > parseFloat(klaimsksmax)) {
-        alert("Klaim Matakuliah Melebihi batas maksimum sks rekognisi Prodi")
-        $('#loading').hide()
-    } else {
-        // console.log(jsonObj)
-        url = '<?= base_url('klaimmkAsessorA1') ?>'
+
+    function batalklaimdoka1() {
+        noregis = $('#enoregis').val();
+        url = '<?= base_url('batalklaimdokA1') ?>'
         $.post(url, {
-            jsonObj: jsonObj
+            noregis: noregis
         }, function(data) {
             $('#loading').hide()
-            if (alert("Berhasil Melakukan Klaim")) {} else {
-                window.location.reload()
-            };
+            if (data == 'gagalvalidasessor') {
+                if (alert("Tidak bisa membatalkan klaim karena sudah melakukan submit")) {} else {
+                    // window.location.reload()
+                };
+            } else if (data == 'gagalvalidprodi') {
+                if (alert("Tidak bisa membatalkan klaim karena sudah divalidasi prodi")) {} else {
+                    // window.location.reload()
+                }
+            } else {
+                if (alert(data)) {} else {
+                    window.location.reload()
+                };
+            }
         }).fail(function() {
             $('#loading').hide()
-            if (alert("Gagal Melakukan Klaim. Data matakuliah asal belum ditambahkan")) {} else {
+            if (alert("Gagal Membatalkan Klaim")) {} else {
                 window.location.reload()
             };
         });
     }
-}
 
-function submit_klaim_asessor() {
-    $('#loading').show()
-    jsonObj = [];
-    statusdata = 0;
-    $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+    function batalklaima1(a) {
+        idklaim = a.attr('idklaim')
 
-        if ($(this).attr('noregis') != undefined) {
-            idklaim = $(this).attr('idklaim')
-            no_peserta = $(this).attr('noregis')
-            kdprodi = $(this).attr('kdprodi')
-            kdmk = $(this).attr('kdmk')
-            nilai = $(this).attr('nilai')
-            tanggapan = "0"
-            kettanggapan = "ok";
-            if (idklaim != "" && no_peserta != "" && kdmk != "" && tanggapan != "" && nilai != "" &&
-                kettanggapan != "") {
+        url = '<?= base_url('batalklaimmkAsessorA1') ?>'
+        $.post(url, {
+            idklaim: idklaim
+        }, function(data) {
+            $('#loading').hide()
+            if (alert(data)) {} else {
+                window.location.reload()
+            };
+        }).fail(function(error) {
+            $('#loading').hide()
+            if (alert("Gagal Melakukan Klaim")) {} else {
+                window.location.reload()
+            };
+        });
+    }
+
+    function remove(ini) {
+        ini.parent().parent().remove();
+    }
+
+    function tambahkan() {
+        $('#loading').show()
+
+        kdmk = $('#kdmka').val()
+        nmmk = $('#nmmka').val()
+        sks = $('#sksa').val()
+        nilai = $('#nilaia').val()
+        no = $('#tbody-mk-asal tr').length + 1;
+        if (no > 1) {
+            alert(
+                "Hanya bisa memilih satu matakuliah asal ! Untuk menambahkan hapus matakuliah asal yang sebelumnya terlebih dahulu"
+            )
+            $('#loading').hide()
+        } else {
+
+            flag = 0;
+            $('#tbody-mk-asal tr').each(function() {
+                a = $(this).find("td[for='kdmk']").html()
+                // alert(a + ":" + kdmk);
+                if (a == kdmk) {
+                    flag = 1;
+                }
+            })
+            if (flag == 0) {
+                $('#tbody-mk-asal').append("<tr><td for=''>" + no + "</td><td for='kdmk'>" + kdmk +
+                    "</td><td for='nmmk'>" +
+                    nmmk +
+                    "</td><td for='sks'>" + sks + "</td><td for='nilai'>" + nilai +
+                    "</td><td><button onclick='remove($(this))' class='btn btn-sm btn-warning'>Hapus</button></a></td></tr>"
+                )
+                $('#kdmka').val(null).trigger("change");
+                $('#nmmka').val("")
+                $('#sksa').val("")
+                $('#nilaia').val("")
+                $('#loading').hide()
+
+            } else {
+                alert("Kode Matakuliah yang anda pilih sudah ditambahkan")
+                $('#loading').hide()
+
+            }
+
+        }
+    }
+
+    function simpan_klaim_asessor() {
+        $('#loading').show()
+        kdmk = $('#kdmk').val()
+        nmmk = $('#nmmk').val()
+        sks = $('#sks').val()
+        nilai = $('#nilai').val()
+
+        klaimsks = '<?= $jumlahklaimsks ?>'
+        klaimsksmax = '<?= $maxsksrekognisi ?>'
+
+        sksakandiklaim = parseFloat(klaimsks) + parseFloat(sks);
+
+
+        jsonObj = [];
+        statusdata = 0;
+        $('#tbody-mk-asal > tr').each(function(i, tr) {
+            kdmka = $(this).find('td[for=kdmk]').html();
+            nmmka = $(this).find('td[for=nmmk]').html();
+            sksa = $(this).find('td[for=sks]').html();
+            nilaia = $(this).find('td[for=nilai]').html();
+            if (kdmk != "" && nmmk != "" && sks != "" && nilai != "" && kdmka != "" &&
+                nmmka != "" && sksa != "" && nilaia != "") {
                 item = {}
-                item["idklaim"] = idklaim;
-                item["noregis"] = no_peserta;
-                item["kdmk"] = kdmk;
-                item["kdprodi"] = kdprodi;
-                item["tanggapan"] = tanggapan;
-                item["nilai"] = nilai;
-                item["kettanggapan"] = kettanggapan;
+                item["noregis"] = '<?= $noregis ?>';
+                item["kdmk"] = kdmk.trim();
+                item["nmmk"] = nmmk;
+                item["sks"] = sks;
+                item["nilai"] = nilai.toUpperCase();
+                item["kdmka"] = kdmka.trim();
+                item["nmmka"] = nmmka;
+                item["sksa"] = sksa;
+                item["nilaia"] = nilaia;
 
                 jsonObj.push(item);
 
             } else {
                 statusdata = 1
             }
+        })
+        if (statusdata == 1) {
+            alert("Silahkan Lengkapi Tanggapan Anda !")
+            $('#loading').hide()
+        } else if (sksakandiklaim > parseFloat(klaimsksmax)) {
+            alert("Klaim Matakuliah Melebihi batas maksimum sks rekognisi Prodi")
+            $('#loading').hide()
+        } else {
+            // console.log(jsonObj)
+            url = '<?= base_url('klaimmkAsessorA1') ?>'
+            $.post(url, {
+                jsonObj: jsonObj
+            }, function(data) {
+                $('#loading').hide()
+                if (data == 'gagalvalidasessor') {
+                    if (alert("Tidak bisa melakukan klaim karena sudah melakukan submit")) {} else {
+                        // window.location.reload()
+                    };
+                } else if (data == 'gagalvalidprodi') {
+                    if (alert("Tidak bisa melakukan klaim karena sudah divalidasi prodi")) {} else {
+                        // window.location.reload()
+                    }
+                } else {
+                    if (alert("Berhasil Melakukan Klaim")) {} else {
+                        window.location.reload()
+                    };
+                }
+            }).fail(function() {
+                $('#loading').hide()
+                if (alert("Gagal Melakukan Klaim. Data matakuliah asal belum ditambahkan")) {} else {
+                    window.location.reload()
+                };
+            });
         }
-
-    })
-    if (statusdata == 1) {
-        alert("Silahkan Lengkapi Tanggapan Anda !")
-        $('#loading').hide()
-    } else {
-        url = '<?= base_url('klaimmkAsessor') ?>'
-        $.post(url, {
-            jsonObj
-        }, function(data) {
-            $('#loading').hide()
-            if (alert("Berhasil melakukan submit")) {} else {
-                window.location.replace('<?= base_url('Admin') ?>')
-            };
-        }).fail(function() {
-            $('#loading').hide()
-            if (alert("error")) {} else {
-                window.location.replace('<?= base_url('Admin') ?>')
-            };
-        });
     }
-}
+
+    function submit_klaim_asessor() {
+        $('#loading').show()
+        jsonObj = [];
+        statusdata = 0;
+        $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+
+            if ($(this).attr('noregis') != undefined) {
+                idklaim = $(this).attr('idklaim')
+                no_peserta = $(this).attr('noregis')
+                kdprodi = $(this).attr('kdprodi')
+                kdmk = $(this).attr('kdmk')
+                nilai = $(this).attr('nilai')
+                tanggapan = "0"
+                kettanggapan = "ok";
+                if (idklaim != "" && no_peserta != "" && kdmk != "" && tanggapan != "" && nilai != "" &&
+                    kettanggapan != "") {
+                    item = {}
+                    item["idklaim"] = idklaim;
+                    item["noregis"] = no_peserta;
+                    item["kdmk"] = kdmk;
+                    item["kdprodi"] = kdprodi;
+                    item["tanggapan"] = tanggapan;
+                    item["nilai"] = nilai;
+                    item["kettanggapan"] = kettanggapan;
+
+                    jsonObj.push(item);
+
+                } else {
+                    statusdata = 1
+                }
+            }
+
+        })
+        if (statusdata == 1) {
+            alert("Silahkan Lengkapi Tanggapan Anda !")
+            $('#loading').hide()
+        } else {
+            url = '<?= base_url('klaimmkAsessor') ?>'
+            $.post(url, {
+                jsonObj
+            }, function(data) {
+                $('#loading').hide()
+                if (alert("Berhasil melakukan submit")) {} else {
+                    window.location.replace('<?= base_url('Admin') ?>')
+                };
+            }).fail(function() {
+                $('#loading').hide()
+                if (alert("error")) {} else {
+                    window.location.replace('<?= base_url('Admin') ?>')
+                };
+            });
+        }
+    }
 </script>

@@ -299,12 +299,34 @@ class ModelKlaimAsessor extends Model
 
         return $data;
     }
+
     public function cekValidProdi($idklaim)
     {
         $ModelKlaimProdi = new ModelKlaimProdi();
 
         $data = $ModelKlaimProdi->where('idklaim', $idklaim)->findAll();
 
+        return $data;
+    }
+
+    public function cekStatusKlaimAsessor($idklaim)
+    {
+        $db      = \Config\Database::connect();
+        $data = $db->query("select idklaim from mk_klaim_asessor where mk_klaim_asessor.idklaim ='$idklaim'")->getResult();
+        return $data;
+    }
+    public function cekValidProdiByNoregis($noregis)
+    {
+        $ModelKlaimProdi = new ModelKlaimProdi();
+
+        $data = $ModelKlaimProdi->where('mid(idklaim,6,10)', $noregis)->findAll();
+
+        return $data;
+    }
+    public function cekStatusKlaimAsessorBynoregis($noregis)
+    {
+        $db      = \Config\Database::connect();
+        $data = $db->query("select idklaim from mk_klaim_asessor where mid(mk_klaim_asessor.idklaim,6,10) ='$noregis'")->getResult();
         return $data;
     }
 

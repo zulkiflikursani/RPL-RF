@@ -935,7 +935,8 @@ class Admin extends BaseController
         }
     }
 
-    public function hapuspengguna(){
+    public function hapuspengguna()
+    {
         if (session()->get('sttpengguna') != 1) {
             return redirect()->to('/logout');
         } else {
@@ -946,73 +947,72 @@ class Admin extends BaseController
             $modelPengguna = new ModelPengguna();
             $idpengguna = $db->escapeString($this->request->getPost("idpengguna"));
 
-            
+
             $data1 = [
                 "idpengguna" => $idpengguna,
             ];
-            $datapengguna = $modelPengguna->where('idpengguna',$idpengguna)->findAll();
-            if($datapengguna !=null){
-                foreach($datapengguna as $row){
+            $datapengguna = $modelPengguna->where('idpengguna', $idpengguna)->findAll();
+            if ($datapengguna != null) {
+                foreach ($datapengguna as $row) {
                     $sttpengguna = $row['sttpengguna'];
                 }
             }
-            $cekhistory = $this->cekhistorypengguna($sttpengguna,$idpengguna);
+            $cekhistory = $this->cekhistorypengguna($sttpengguna, $idpengguna);
 
-            
-        if($cekhistory== true){
-            $delete = $modelPengguna->where($data1)->delete();
-            if ($delete === false) {
-                // $modelPengguna = new ModelPengguna();
-               echo "Gagal Menghapus Pengguna";
+
+            if ($cekhistory == true) {
+                $delete = $modelPengguna->where($data1)->delete();
+                if ($delete === false) {
+                    // $modelPengguna = new ModelPengguna();
+                    echo "Gagal Menghapus Pengguna";
                 } else {
-                  echo "Berhasil Menghapus Pengguna";
+                    echo "Berhasil Menghapus Pengguna";
                 }
-        
-            }else{
+            } else {
                 // $modelPengguna = new ModelPengguna();
-               echo "Tidak bisa Menghapus Pengguna";
+                echo "Tidak bisa Menghapus Pengguna";
             }
-        } 
+        }
     }
 
-    public function cekhistorypengguna($sttpengguna,$idpengguna){
-        $status=1;
-        if($sttpengguna == 1){
+    public function cekhistorypengguna($sttpengguna, $idpengguna)
+    {
+        $status = 1;
+        if ($sttpengguna == 1) {
             $modal = new ModelPengguna();
-            $countuseradmin = $modal->where('sttpengguna',1)->get()->getNumRows();
-            if($countuseradmin == 1){
-                $status=0;
+            $countuseradmin = $modal->where('sttpengguna', 1)->get()->getNumRows();
+            if ($countuseradmin == 1) {
+                $status = 0;
             }
-        }else if($sttpengguna ==2){
+        } else if ($sttpengguna == 2) {
             $modal = new ModelKlaimAsessor();
-            $data = $modal->where('idpengguna',$idpengguna)->findAll();
-            if($data != null){
-                $status= 0;
+            $data = $modal->where('idpengguna', $idpengguna)->findAll();
+            if ($data != null) {
+                $status = 0;
             }
-        }else if($sttpengguna ==3){
+        } else if ($sttpengguna == 3) {
             $modal = new ModelKlaimProdi();
-            $data = $modal->where('idpengguna',$idpengguna)->findAll();
-            if($data != null){
-                $status= 0;
+            $data = $modal->where('idpengguna', $idpengguna)->findAll();
+            if ($data != null) {
+                $status = 0;
             }
-        }else if($sttpengguna ==4){
+        } else if ($sttpengguna == 4) {
             $modal = new ModelKlaimDekan();
-            $data = $modal->where('idpengguna',$idpengguna)->findAll();
-            if($data != null){
-                $status= 0;
+            $data = $modal->where('idpengguna', $idpengguna)->findAll();
+            if ($data != null) {
+                $status = 0;
             }
-        }else if($sttpengguna ==5){
+        } else if ($sttpengguna == 5) {
             $modal = new ModelKeu();
-            $data = $modal->where('id_pengguna',$idpengguna)->findAll();
-            if($data != null){
-                $status= 0;
-
+            $data = $modal->where('id_pengguna', $idpengguna)->findAll();
+            if ($data != null) {
+                $status = 0;
             }
         }
 
-        if($status == 0){
+        if ($status == 0) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
@@ -2203,57 +2203,57 @@ class Admin extends BaseController
     }
     public function printTagihan($noregis)
     {
-        if (!session()->get('noregis') ) {
-            if(session()->get("sttpengguna")==5){
+        if (!session()->get('noregis')) {
+            if (session()->get("sttpengguna") == 5) {
                 $this->request = service('request');
-            $db      = \Config\Database::connect();
-            // $noregis = session()->get("noregis");
-            $kode_prodi = $this->getKodeProdiBy($noregis);
-            $kode_fakultas = $this->getKodeFakultasby($kode_prodi);
+                $db      = \Config\Database::connect();
+                // $noregis = session()->get("noregis");
+                $kode_prodi = $this->getKodeProdiBy($noregis);
+                $kode_fakultas = $this->getKodeFakultasby($kode_prodi);
 
-            $Modaldokumen = new ModelDokumen();
-            $ModalBiodata = new ModelBiodata();
-            $modelMkDekan = new ModelKlaimDekan();
-            $ModalAssesmentMandiri = new ModelKlaimAsessor();
-            $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
-            $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-            $modelklaimdekan = new ModelKlaimDekan();
-            $result = $modelMkDekan->getDatatoPrint($noregis);
-            // $kode_fakultas = session()->get('kode_fakultas');
-            $makssks = $this->getmaxsks($kode_prodi);
-            $tarifrpl = $this->gettarif($kode_prodi);
-            if ($kode_fakultas == '13123') {
-                $fakultas = 'Teknik';
-            } else if ($kode_fakultas == '60001') {
-                $fakultas = 'Ekonomi dan Ilmu-Ilmu Sosial';
-            } else if ($kode_fakultas == '11222') {
-                $fakultas = 'Pascasarjana';
-            };
-            $dekan = $this->getNamadekan($kode_fakultas);
-            $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
+                $Modaldokumen = new ModelDokumen();
+                $ModalBiodata = new ModelBiodata();
+                $modelMkDekan = new ModelKlaimDekan();
+                $ModalAssesmentMandiri = new ModelKlaimAsessor();
+                $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+                $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+                $modelklaimdekan = new ModelKlaimDekan();
+                $result = $modelMkDekan->getDatatoPrint($noregis);
+                // $kode_fakultas = session()->get('kode_fakultas');
+                $makssks = $this->getmaxsks($kode_prodi);
+                $tarifrpl = $this->gettarif($kode_prodi);
+                if ($kode_fakultas == '13123') {
+                    $fakultas = 'Teknik';
+                } else if ($kode_fakultas == '60001') {
+                    $fakultas = 'Ekonomi dan Ilmu-Ilmu Sosial';
+                } else if ($kode_fakultas == '11222') {
+                    $fakultas = 'Pascasarjana';
+                };
+                $dekan = $this->getNamadekan($kode_fakultas);
+                $cekpeserta = $modelMkDekan->chekstauspeserta($noregis);
 
-            if ($cekpeserta != null) {
-                $data = [
-                    'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
-                    'page_title' => view('partials/rpl-page-title', ['title' => 'Print Transkrip', 'pagetitle' => 'Dashboards']),
-                    'nama_mhs' => $databio[0]['nama'],
-                    'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
-                    'jenis_rpl' => $databio[0]['jenis_rpl'],
-                    'noregis' => $noregis,
-                    'dekan' => $dekan,
-                    'fakultas' => $fakultas,
-                    'maxsks' => $makssks,
-                    "tarifrpl" => $tarifrpl,
-                    'dataKlaimAsessor' => $result,
+                if ($cekpeserta != null) {
+                    $data = [
+                        'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                        'page_title' => view('partials/rpl-page-title', ['title' => 'Print Transkrip', 'pagetitle' => 'Dashboards']),
+                        'nama_mhs' => $databio[0]['nama'],
+                        'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
+                        'jenis_rpl' => $databio[0]['jenis_rpl'],
+                        'noregis' => $noregis,
+                        'dekan' => $dekan,
+                        'fakultas' => $fakultas,
+                        'maxsks' => $makssks,
+                        "tarifrpl" => $tarifrpl,
+                        'dataKlaimAsessor' => $result,
 
 
-                ];
-                return view('Admin/rpl-print-tagihan', $data);
-            }else{
+                    ];
+                    return view('Admin/rpl-print-tagihan', $data);
+                } else {
 
                     echo "Belum Validasi Dekan";
+                }
             }
-        }
         } else {
             $this->request = service('request');
             $db      = \Config\Database::connect();

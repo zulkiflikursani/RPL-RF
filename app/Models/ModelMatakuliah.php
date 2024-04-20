@@ -5,7 +5,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 use PSpell\Config;
 
-class ModelMatakuliah extends Model
+    class ModelMatakuliah extends Model
 {
     protected $table      = 'matakuliah';
     protected $primaryKey = 'id';

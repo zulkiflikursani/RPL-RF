@@ -60,9 +60,9 @@ class ModelMkA1 extends Model
         $klaimstatus = true;
 
         foreach ($formdata['jsonObj'] as $a) {
-            $kdpt = $db->escapeString($a['kdpt']);
+            $kdpt = trim($db->escapeString($a['kdpt']));
             $nmpt = $db->escapeString($a['nmpt']);
-            $kdmk = $db->escapeString($a['kdmk']);
+            $kdmk = trim($db->escapeString($a['kdmk']));
             $nmmk = $db->escapeString($a['nmmk']);
             $sks = $db->escapeString($a['sks']);
             $nilai = $db->escapeString($a['nilai']);
@@ -80,7 +80,7 @@ class ModelMkA1 extends Model
 
             ];
 
-            $cekkdmk = $ModelMkA1->where($where)->findAll();
+            $cekkdmk = $ModelMkA1->where($where)->findAll(); //dok_a1
             if ($cekkdmk != null) {
                 echo "Duplikasi Kode Matakuliah yang diimport";
                 $klaimstatus = false;
