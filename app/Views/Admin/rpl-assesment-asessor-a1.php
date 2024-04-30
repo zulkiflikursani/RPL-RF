@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- test update -->
+    <!-- test update lenovo -->
     <?= $title_meta ?>
     <?= $this->include('partials/rpl-head-css') ?>
     <link href="<?= base_url() ?>/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
