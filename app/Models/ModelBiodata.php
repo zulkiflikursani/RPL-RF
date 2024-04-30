@@ -12,7 +12,7 @@ class ModelBiodata extends Model
     protected $returnType     = 'array';
 
 
-    protected $allowedFields = ['ta_akademik', 'no_peserta', 'nama', 'alamat', 'kotkab', 'propinsi', 'instansi_asal', 'didikakhir', 'nohape', 'email', 'kode_prodi',  'didikakhir', 'jenis_rpl','kode_konsentrasi'];
+    protected $allowedFields = ['ta_akademik', 'no_peserta', 'nama', 'alamat', 'kotkab', 'propinsi', 'instansi_asal', 'didikakhir', 'nohape', 'email', 'kode_prodi',  'didikakhir', 'jenis_rpl', 'kode_konsentrasi', 'validasi_regis_prodi', 'dodi'];
 
     protected $validationRules = [
         'ta_akademik'     => 'required',
@@ -26,9 +26,11 @@ class ModelBiodata extends Model
         'nohape'     => 'required',
         'email'        => 'required|valid_email|is_unique[bio_peserta.email]',
         'kode_prodi'        => 'required',
-        'kode_konsentrasi'=>'required',
+        'kode_konsentrasi' => 'required',
         'didikakhir'        => 'required',
         'jenis_rpl'        => 'required',
+        'validasi_regis_prodi' => 'required',
+        'dodi' => 'required'
 
     ];
     protected $validationMessages = [

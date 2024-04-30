@@ -418,7 +418,9 @@
 
                                                 if (isset($dataMkA1)) {
                                                     $i = 1;
+                                                    $jumlahsks = 0;
                                                     foreach ($dataMkA1 as $data) {
+                                                        $jumlahsks = $jumlahsks + $data['jumlah_sks'];
                                                         echo "<tr>
                                                                 <td>$i</td>
                                                                 <td>" . $data['kode_matakuliah'] . "</td>
@@ -434,6 +436,11 @@
                                                 ?>
                                             </tbody>
                                         </table>
+                                        <?php
+                                        if (isset($jumlahsks)) {
+                                            echo  "<div>Jumlah sks : $jumlahsks sks</div>";
+                                        }
+                                        ?>
                                         <button type="button" data-bs-toggle="modal" data-bs-target=".submit-matakuliah-modal" class="btn btn-primary mt-2">Submit</button>
                                     </div>
                                 </div>

@@ -23,6 +23,51 @@ if (isset($basenilai)) {
 }
 ?>
 
+<?php
+if (isset($dataKlaimAsessorA1)) {
+    $kdmk = "";
+    $no = 0;
+    $jumlahklaimsks = 0;
+    $tableKlaimA1 = "";
+    $arrayKdMkUnifa = [];
+    $arrayKdMkAsal = [];
+
+    foreach ($dataKlaimAsessorA1 as $row) {
+        $jumlahklaimsks = floatval($jumlahklaimsks) + floatval($row->sks);
+        // array_push($arrayKdMkUnifa, $row->kode_matakuliah);
+        $arrayKdMkUnifa[] = $row->kode_matakuliah;
+        $arrayKdMkAsal[] = $row->kode_matakuliah_asal;
+        if ($kdmk != $row->kode_matakuliah) {
+            $no++;
+            $tableKlaimA1 .= "<tr noregis='$row->no_peserta' idklaim='$row->idklaim'
+            kdmk='$row->kode_matakuliah'
+            kdprodi='$row->kode_prodi'
+            nmmk='$row->nama_matakuliah'
+            sks='$row->sks'
+            nilai='$row->nilai'><td rowspan='$row->entry_count'>$no</td><td rowspan='$row->entry_count'>$row->kode_matakuliah</td>
+            <td rowspan='$row->entry_count'>$row->nama_matakuliah</td>
+            <td rowspan='$row->entry_count'>$row->sks</td><td rowspan='$row->entry_count'>$row->nilai</td><td >$row->nama_matakuliah_asal</td><td>$row->jumlah_sks</td><td>$row->nilai_asal</td><td rowspan='$row->entry_count'><button class='btn btn-sm btn-warning' 
+            idklaim='$row->idklaim'
+            onclick='batalklaima1($(this))'>Batal Klaim</button></td></tr>";
+            $kdmk = $row->kode_matakuliah;
+        } else {
+
+            $tableKlaimA1 .= "<tr noregis='$row->no_peserta' idklaim='$row->idklaim'
+            kdmk='$row->kode_matakuliah'
+            nmmk='$row->nama_matakuliah'
+            sks='$row->sks'
+            kdprodi='$row->kode_prodi'
+            nilai='$row->nilai'>
+            <td>$row->nama_matakuliah_asal</td><td>$row->jumlah_sks</td><td>$row->nilai_asal</td></tr>";
+        }
+    }
+    // echo $jumlahklaimsks . " ," . $maxsksrekognisi;
+} else {
+    $arrayKdMkUnifa = [];
+    $arrayKdMkAsal = [];
+}
+?>
+
 <body data-topbar="dark" data-layout="horizontal">
 
     <!-- Begin page -->
@@ -162,11 +207,21 @@ if (isset($basenilai)) {
                                                     <div class="row col-md-12 mb-3">
                                                         <div class="col-md-2">
                                                             <label for="">Kode Matakuliah</label>
+                                                            <?php
+                                                            // print_r($arrayKdMkAsal);
+                                                            ?>
                                                             <select for="" id='kdmka' class="form-select select2" onchange="cekMkAsal()">
                                                                 <option value=''>Pilih Matakuliah Asal</option>
                                                                 <?php
 
                                                                 if (isset($datamatakuliah)) {
+                                                                    foreach ($datamatakuliah as $key => $value) {
+                                                                        if (in_array($value["kode_matakuliah"], $arrayKdMkAsal)) {
+                                                                            unset($datamatakuliah[$key]); // Remove the element
+                                                                        }
+                                                                    }
+                                                                    // Reindex the array
+                                                                    $datamatakuliah = array_values($datamatakuliah);
                                                                     foreach ($datamatakuliah as $row) {
                                                                         echo "<option value='" . $row['kode_matakuliah'] . "' sks='" . $row['jumlah_sks'] . "' nilai='" . $row['nilai'] . "' nmmk='" . $row['nama_matakuliah'] . "'>" . $row['kode_matakuliah'] . ":" . $row['nama_matakuliah'] . "</option>";
                                                                     }
@@ -226,9 +281,14 @@ if (isset($basenilai)) {
 
                                                                         <?php
                                                                         if (isset($mkrplprodi)) {
-
+                                                                            foreach ($mkrplprodi as $key => $value) {
+                                                                                if (in_array($value->kode_matakuliah, $arrayKdMkUnifa)) {
+                                                                                    unset($mkrplprodi[$key]); // Remove the element
+                                                                                }
+                                                                            }
+                                                                            // Reindex the array
+                                                                            $mkrplprodi = array_values($mkrplprodi);
                                                                             foreach ($mkrplprodi as $row) {
-
                                                                                 echo "<option value ='$row->kode_matakuliah' nmmk='$row->nama_matakuliah' sks='$row->sks' >$row->kode_matakuliah : $row->nama_matakuliah</option>";
                                                                             }
                                                                         }
@@ -291,39 +351,10 @@ if (isset($basenilai)) {
 
                                                         <tbody id='tbody-klaim-mk'>
                                                             <?php
-
-
-                                                            if (isset($dataKlaimAsessorA1)) {
-                                                                $kdmk = "";
-                                                                $no = 0;
-                                                                $jumlahklaimsks = 0;
-                                                                foreach ($dataKlaimAsessorA1 as $row) {
-                                                                    $jumlahklaimsks = floatval($jumlahklaimsks) + floatval($row->sks);
-                                                                    if ($kdmk != $row->kode_matakuliah) {
-                                                                        $no++;
-                                                                        echo "<tr noregis='$row->no_peserta' idklaim='$row->idklaim'
-                                                                        kdmk='$row->kode_matakuliah'
-                                                                        kdprodi='$row->kode_prodi'
-                                                                        nmmk='$row->nama_matakuliah'
-                                                                        sks='$row->sks'
-                                                                        nilai='$row->nilai'><td rowspan='$row->entry_count'>$no</td><td rowspan='$row->entry_count'>$row->kode_matakuliah</td>
-                                                                        <td rowspan='$row->entry_count'>$row->nama_matakuliah</td>
-                                                                        <td rowspan='$row->entry_count'>$row->sks</td><td rowspan='$row->entry_count'>$row->nilai</td><td >$row->nama_matakuliah_asal</td><td>$row->jumlah_sks</td><td>$row->nilai_asal</td><td rowspan='$row->entry_count'><button class='btn btn-sm btn-warning' 
-                                                                        idklaim='$row->idklaim'
-                                                                        onclick='batalklaima1($(this))'>Batal Klaim</button></td></tr>";
-                                                                        $kdmk = $row->kode_matakuliah;
-                                                                    } else {
-
-                                                                        echo "<tr noregis='$row->no_peserta' idklaim='$row->idklaim'
-                                                                        kdmk='$row->kode_matakuliah'
-                                                                        nmmk='$row->nama_matakuliah'
-                                                                        sks='$row->sks'
-                                                                        kdprodi='$row->kode_prodi'
-                                                                        nilai='$row->nilai'>
-                                                                        <td>$row->nama_matakuliah_asal</td><td>$row->jumlah_sks</td><td>$row->nilai_asal</td></tr>";
-                                                                    }
-                                                                }
-                                                                // echo $jumlahklaimsks . " ," . $maxsksrekognisi;
+                                                            echo $tableKlaimA1;
+                                                            if ($dodi == 1) {
+                                                                echo 'Note: Untuk Mahasiswa dengan status Dodi tidak memeiliki batas maksimum sks Rekognisi, jumlah sks yang diklaim : ' . $jumlahklaimsks;
+                                                            } else {
                                                                 echo "Jumlah Klaim Matakuliah : $jumlahklaimsks SKS dari $maxsksrekognisi maksimum SKS Rekognisi";
                                                                 if (floatval($jumlahklaimsks) > floatval($maxsksrekognisi)) {
                                                                     echo "<p class='text-danger bold'>Klaim Matakuliah Mahasiswa Melebihi Batas Klaim Rekognisi</p>";

@@ -130,6 +130,27 @@
                                                                         $html = "";
                                                                         $namamatakulia = $row['nama_matakuliah'];
                                                                         $cpmk = $row['cpmk'];
+                                                                        if ($row['jenis_matakuliah'] != NULL) {
+                                                                            if ($row['jenis_matakuliah'] == '3') {
+                                                                                $jenismk = '(Wajib Prodi)';
+                                                                            } else if ($row['jenis_matakuliah'] == '4') {
+                                                                                $jenismk = '(Wajib konsentrasi atau peminatan)';
+                                                                            } else if ($row['jenis_matakuliah'] == '5') {
+                                                                                $jenismk = '(Pilihan)';
+                                                                            } else if ($row['jenis_matakuliah'] == '6') {
+                                                                                $jenismk = '(Skripsi/thesis)';
+                                                                            } else if ($row['jenis_matakuliah'] == '7') {
+                                                                                $jenismk = '(MBKM)';
+                                                                            } else if ($row['jenis_matakuliah'] == '1') {
+                                                                                $jenismk = '(Umum)';
+                                                                            } else if ($row['jenis_matakuliah'] == '2') {
+                                                                                $jenismk = '(Universitas)';
+                                                                            } else {
+                                                                                $jenismk = "(" . $row['jenis_matakuliah'] . ")";
+                                                                            }
+                                                                        } else {
+                                                                            $jenismk = "";
+                                                                        }
                                                                         $count = 1;
                                                                         $html1 = [
                                                                             "kd_mk" => $row['kode_matakuliah'],
@@ -142,6 +163,7 @@
                                                                             "no_dokumen" => json_decode($row['no_dokumen']),
                                                                             "kode_matakuliah" => $row['kode_matakuliah'],
                                                                             "sks" => $row['sks'],
+                                                                            'jenismk' => $jenismk,
                                                                         ];
                                                                     } else {
                                                                         if ($namamatakulia == $row['nama_matakuliah']) {
@@ -171,7 +193,7 @@
                                                                             $ref .= "</td>";
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row['kode_prodi'] . "' >
                                                                                     <td for='namamk' rowspan='$count'>" . $i . "</td>
-                                                                                    <td rowspan='$count'>" . $html1['nama_matakuliah'] . "(" . $html1['sks'] . " sks)</td>
+                                                                                    <td rowspan='$count'>" . $html1['nama_matakuliah']  . " " . $html1['jenismk'] . "</td>
                                                                                     <td rowspan='$count'>" . $html1['sks'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
@@ -193,6 +215,27 @@
                                                                             $html = "";
                                                                             $count = 1;
                                                                             $namamatakulia = $row['nama_matakuliah'];
+                                                                            if ($row['jenis_matakuliah'] != NULL) {
+                                                                                if ($row['jenis_matakuliah'] == '3') {
+                                                                                    $jenismk = '(Wajib Prodi)';
+                                                                                } else if ($row['jenis_matakuliah'] == '4') {
+                                                                                    $jenismk = '(Wajib konsentrasi atau peminatan)';
+                                                                                } else if ($row['jenis_matakuliah'] == '5') {
+                                                                                    $jenismk = '(Pilihan)';
+                                                                                } else if ($row['jenis_matakuliah'] == '6') {
+                                                                                    $jenismk = '(Skripsi/thesis)';
+                                                                                } else if ($row['jenis_matakuliah'] == '7') {
+                                                                                    $jenismk = '(MBKM)';
+                                                                                } else if ($row['jenis_matakuliah'] == '1') {
+                                                                                    $jenismk = '(Umum)';
+                                                                                } else if ($row['jenis_matakuliah'] == '2') {
+                                                                                    $jenismk = '(Universitas)';
+                                                                                } else {
+                                                                                    $jenismk = "(" . $row['jenis_matakuliah'] . ")";
+                                                                                }
+                                                                            } else {
+                                                                                $jenismk = "";
+                                                                            }
                                                                             $html1 = [
                                                                                 "kd_mk" => $row['kode_matakuliah'],
                                                                                 "nama_matakuliah" => $row['nama_matakuliah'],
@@ -205,6 +248,8 @@
                                                                                 "no_dokumen" => json_decode($row['no_dokumen']),
                                                                                 "kode_matakuliah" => $row['kode_matakuliah'],
                                                                                 "sks" => $row['sks'],
+                                                                                'jenismk' => $jenismk,
+
                                                                             ];
                                                                         }
 
@@ -219,7 +264,7 @@
                                                                             $ref .= "</td>";
                                                                             echo "<tr noregis='$noregis' idklaim='" . $html1['idklaim'] . "' idcpmk='" . $html1['idcpmk'] . "' kdmk='" . $html1['kd_mk'] . "' namamk='" . $html1['nama_matakuliah'] . "' sks='" . $html1['sks'] . "' kdprodi='" . $row['kode_prodi'] . "'>
                                                                             <td for='namamk' rowspan='$count'>" . $i . "</td>
-                                                                                    <td rowspan='$count'>" . $html1['nama_matakuliah'] . "(" . $html1['sks'] . " sks)</td>
+                                                                                    <td rowspan='$count'>" . $html1['nama_matakuliah'] . " " . $html1['jenismk'] . "</td>
                                                                                     <td rowspan='$count'>" . $html1['sks'] . "</td>
                                                                                     <td for='cpmk' >" . $html1['cpmk'] . "</td>
                                                                                     <td for='nilai' >" . $html1['klaim'] . "</td>
@@ -254,15 +299,13 @@
                                         </div>
 
                                         <div>
-                                            <p class='bold' id=''>Jumlah SKS yang di klaim : <span id='sks-klaim'
-                                                    class="bold"></span> SKS dari <?= $maxsksrekognisi ?> maksimum SKS
+                                            <p class='bold' id=''>Jumlah SKS yang di klaim : <span id='sks-klaim' class="bold"></span> SKS dari <?= $maxsksrekognisi ?> maksimum SKS
                                                 Rekognisi</p>
 
                                         </div>
 
                                         <div>
-                                            <button type="button" onclick="simpan_klaim_asessor()"
-                                                class="btn btn-primary w-md">Submit</button>
+                                            <button type="button" onclick="simpan_klaim_asessor()" class="btn btn-primary w-md">Submit</button>
 
                                         </div>
                                     </div>
@@ -308,159 +351,159 @@
 </html>
 
 <script>
-$(document).ready(function() {
-    $('#loading').show()
-    noregis = '<?= $noregis ?>'
-    url = '<?= base_url('getDataKlaimAsessor') ?>'
-    $.post(url, {
-        noregis: noregis
-    }, function(data) {
-        data = JSON.parse(data)
-        // console.log(data);
-
-        $.each(data, function(index, value) {
-            $('#tbody-klaim-mk  > tr').each(function(i, tr) {
-                if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
-                    value['idklaim']) {
-                    // alert('jalan')
-                    $(this).find('td[for=tanggapan]').children().val(value[
-                        'tanggapan']);
-                    $(this).find('td[for=nilaiAs]').children().val(value[
-                        'nilai']);
-                    $(this).find('td[for=kettanggapan]').children()
-                        .val(value['ket_tanggapan']);
-
-                }
-            })
-        })
-
-
-        $('#loading').hide()
-        klaimsksass();
-
-    }).fail(function() {
-        alert("error");
-    });
-})
-
-
-function klaimsksass() {
-    klaimsks = 0;
-    $('#tbody-klaim-mk  > tr').each(function(i, tr) {
-        tanggapan = $(this).find('td[for=tanggapan]').children().val();
-        nilai = $(this).find('td[for=nilaiAs]').children().val();
-        sks = $(this).attr('sks');
-        if (tanggapan == 0 && tanggapan != '' && nilai != "E") {
-            klaimsks = parseFloat(klaimsks) + parseFloat(sks)
-        }
-    })
-    $('#sks-klaim').html(klaimsks)
-    // return klaimsks;
-}
-
-function gantinilai() {
-    // alert('gantinilai')
-    klaimsksass();
-}
-
-function simpan_klaim_asessor() {
-    $('#loading').show()
-    sksklaim = $('#sks-klaim').html();
-    klaimsksmax = '<?= $maxsksrekognisi ?>'
-
-    jsonObj = [];
-    statusdata = 0;
-    $('#tbody-klaim-mk  > tr').each(function(i, tr) {
-
-        if ($(this).attr('noregis') != undefined) {
-            idklaim = $(this).attr('idklaim')
-            no_peserta = $(this).attr('noregis')
-            kdprodi = $(this).attr('kdprodi')
-            kdmk = $(this).attr('kdmk')
-            tanggapan = $(this).find('td[for=tanggapan]').children().val();
-            if (tanggapan == 1) {
-                nilai = $(this).find('td[for=nilaiAs]').html();
-            } else if (tanggapan == 0) {
-                nilai = $(this).find('td[for=nilaiAs]').children().val();
-            }
-            kettanggapan = $(this).find('td[for=kettanggapan]').children().val();
-
-
-            if (idklaim != "" && no_peserta != "" && kdmk != "" && tanggapan != "" && nilai != "" &&
-                kettanggapan != "") {
-                item = {}
-                item["idklaim"] = idklaim;
-                item["noregis"] = no_peserta;
-                item["kdmk"] = kdmk;
-                item["kdprodi"] = kdprodi;
-                item["tanggapan"] = tanggapan;
-                item["nilai"] = nilai;
-                item["kettanggapan"] = kettanggapan;
-
-                jsonObj.push(item);
-
-            } else {
-                statusdata = 1
-            }
-        }
-
-    })
-    if (statusdata == 1) {
-        alert("Silahkan Lengkapi Tanggapan Anda !")
-        $('#loading').hide()
-    } else if (sksklaim > parseFloat(klaimsksmax)) {
-        alert("Klaim Matakuliah Melebihi batas maksimum sks rekognisi Program Studi")
-        $('#loading').hide()
-    } else {
-        url = '<?= base_url('klaimmkAsessor') ?>'
+    $(document).ready(function() {
+        $('#loading').show()
+        noregis = '<?= $noregis ?>'
+        url = '<?= base_url('getDataKlaimAsessor') ?>'
         $.post(url, {
-            jsonObj
+            noregis: noregis
         }, function(data) {
-            console.log(data);
+            data = JSON.parse(data)
+            // console.log(data);
+
+            $.each(data, function(index, value) {
+                $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+                    if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
+                        value['idklaim']) {
+                        // alert('jalan')
+                        $(this).find('td[for=tanggapan]').children().val(value[
+                            'tanggapan']);
+                        $(this).find('td[for=nilaiAs]').children().val(value[
+                            'nilai']);
+                        $(this).find('td[for=kettanggapan]').children()
+                            .val(value['ket_tanggapan']);
+
+                    }
+                })
+            })
+
+
             $('#loading').hide()
-            if (data == 'sukses') {
-                if (alert("Data berhasil disubmit")) {} else {
-                    window.location.replace('<?= base_url('Admin') ?>')
-                };
-            } else {
-                if (data = "Belum ditanggapi") {
-                    if (alert("Mahaiswa Belum melakukan tanggapan terhadap asesment sebelumnya... ")) {} else {
+            klaimsksass();
+
+        }).fail(function() {
+            alert("error");
+        });
+    })
+
+
+    function klaimsksass() {
+        klaimsks = 0;
+        $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+            tanggapan = $(this).find('td[for=tanggapan]').children().val();
+            nilai = $(this).find('td[for=nilaiAs]').children().val();
+            sks = $(this).attr('sks');
+            if (tanggapan == 0 && tanggapan != '' && nilai != "E") {
+                klaimsks = parseFloat(klaimsks) + parseFloat(sks)
+            }
+        })
+        $('#sks-klaim').html(klaimsks)
+        // return klaimsks;
+    }
+
+    function gantinilai() {
+        // alert('gantinilai')
+        klaimsksass();
+    }
+
+    function simpan_klaim_asessor() {
+        $('#loading').show()
+        sksklaim = $('#sks-klaim').html();
+        klaimsksmax = '<?= $maxsksrekognisi ?>'
+
+        jsonObj = [];
+        statusdata = 0;
+        $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+
+            if ($(this).attr('noregis') != undefined) {
+                idklaim = $(this).attr('idklaim')
+                no_peserta = $(this).attr('noregis')
+                kdprodi = $(this).attr('kdprodi')
+                kdmk = $(this).attr('kdmk')
+                tanggapan = $(this).find('td[for=tanggapan]').children().val();
+                if (tanggapan == 1) {
+                    nilai = $(this).find('td[for=nilaiAs]').html();
+                } else if (tanggapan == 0) {
+                    nilai = $(this).find('td[for=nilaiAs]').children().val();
+                }
+                kettanggapan = $(this).find('td[for=kettanggapan]').children().val();
+
+
+                if (idklaim != "" && no_peserta != "" && kdmk != "" && tanggapan != "" && nilai != "" &&
+                    kettanggapan != "") {
+                    item = {}
+                    item["idklaim"] = idklaim;
+                    item["noregis"] = no_peserta;
+                    item["kdmk"] = kdmk;
+                    item["kdprodi"] = kdprodi;
+                    item["tanggapan"] = tanggapan;
+                    item["nilai"] = nilai;
+                    item["kettanggapan"] = kettanggapan;
+
+                    jsonObj.push(item);
+
+                } else {
+                    statusdata = 1
+                }
+            }
+
+        })
+        if (statusdata == 1) {
+            alert("Silahkan Lengkapi Tanggapan Anda !")
+            $('#loading').hide()
+        } else if (sksklaim > parseFloat(klaimsksmax)) {
+            alert("Klaim Matakuliah Melebihi batas maksimum sks rekognisi Program Studi")
+            $('#loading').hide()
+        } else {
+            url = '<?= base_url('klaimmkAsessor') ?>'
+            $.post(url, {
+                jsonObj
+            }, function(data) {
+                console.log(data);
+                $('#loading').hide()
+                if (data == 'sukses') {
+                    if (alert("Data berhasil disubmit")) {} else {
                         window.location.replace('<?= base_url('Admin') ?>')
                     };
-                } else if (alert("Sesi anda berakhir, Silahkan Login ulang..")) {} else {
+                } else {
+                    if (data = "Belum ditanggapi") {
+                        if (alert("Mahaiswa Belum melakukan tanggapan terhadap asesment sebelumnya... ")) {} else {
+                            window.location.replace('<?= base_url('Admin') ?>')
+                        };
+                    } else if (alert("Sesi anda berakhir, Silahkan Login ulang..")) {} else {
+                        window.location.replace('<?= base_url('Admin') ?>')
+                    };
+                }
+            }).fail(function() {
+                $('#loading').hide()
+                if (alert("error")) {} else {
                     window.location.replace('<?= base_url('Admin') ?>')
                 };
-            }
-        }).fail(function() {
-            $('#loading').hide()
-            if (alert("error")) {} else {
-                window.location.replace('<?= base_url('Admin') ?>')
-            };
-        });
+            });
+        }
+
     }
 
-}
+    function setnilaiAsFromStatus(ini) {
+        statustanggapan = ini.val()
+        select = ini.parent().parent().find('td[for=nilaiAs]').html()
+        nilai = "<?php echo $oknilai ?>"
+        // alert(nilai)
 
-function setnilaiAsFromStatus(ini) {
-    statustanggapan = ini.val()
-    select = ini.parent().parent().find('td[for=nilaiAs]').html()
-    nilai = "<?php echo $oknilai ?>"
-    // alert(nilai)
+        if (statustanggapan == 1) {
+            ini.parent().parent().find('td[for=nilaiAs]').children().remove();
+            ini.parent().parent().find('td[for=nilaiAs]').append("Tunda");
 
-    if (statustanggapan == 1) {
-        ini.parent().parent().find('td[for=nilaiAs]').children().remove();
-        ini.parent().parent().find('td[for=nilaiAs]').append("Tunda");
+        } else if (statustanggapan == 0) {
+            ini.parent().parent().find('td[for=nilaiAs]').html("");
+            ini.parent().parent().find('td[for=nilaiAs]').append(
+                "<select class='form-select' onchange='gantinilai()'>" + nilai + "</select>"
+            );
+        }
+        klaimsksass();
 
-    } else if (statustanggapan == 0) {
-        ini.parent().parent().find('td[for=nilaiAs]').html("");
-        ini.parent().parent().find('td[for=nilaiAs]').append(
-            "<select class='form-select' onchange='gantinilai()'>" + nilai + "</select>"
-        );
+
     }
-    klaimsksass();
-
-
-}
 </script>
 <?php
 

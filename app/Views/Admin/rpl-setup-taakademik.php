@@ -4,11 +4,14 @@
 <head>
     <?= $title_meta ?>
     <?= $this->include('partials/rpl-head-css') ?>
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css"
+        rel="stylesheet" type="text/css" />
 
     <!-- Responsive datatable examples -->
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css"
+        rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -69,7 +72,8 @@
                                     <h4 class="card-title mb-2">Tahun Akademik</h4>
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <form id='form-simpan' action="<?= base_url('udpate-taakademik') ?>" method="POST" class="col-lg-6">
+                                            <form id='form-simpan' action="<?= base_url('udpate-taakademik') ?>"
+                                                method="POST" class="col-lg-6">
                                                 <select class="select form-select " name='ta_akademik' id='ta_akademik'>
                                                     <?php
                                                     $tamin = floatval(substr($ta_akademik, 0, 4)) - 5;
@@ -94,7 +98,22 @@
                                                     ?>
                                                 </select>
                                             </form>
-                                            <button class="btn btn-primary mt-3" onclick="simpantaakademik()">Simpan</button>
+                                            <button class="btn btn-primary mt-3"
+                                                onclick="simpantaakademik()">Simpan</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+                                    <h4 class="card-title mb-2">Batas Pembayaran Tagihan RPL</h4>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class=" col-lg-6">
+                                                <input type="date" class="form-control" name="tgl_batas_bayar"
+                                                    id="tgl_batas_bayar" value="<?= $batasbayar ?>">
+                                            </div>
+                                            <button class="btn btn-primary mt-3"
+                                                onclick="simpanbatasbayar()">Simpan</button>
                                         </div>
                                     </div>
                                 </div>
@@ -156,9 +175,24 @@
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 
     <script>
-        function simpantaakademik() {
-            $('#form-simpan').submit()
+    function simpantaakademik() {
+        $('#form-simpan').submit()
+    }
+
+    function simpanbatasbayar() {
+        batasbayar = $('#tgl_batas_bayar').val();
+        if (batasbayar == '') {
+            alert("Silahkan mengisi tanggal batas pembayaran")
+        } else {
+            url = '<?= base_url('udpate-batas-bayar') ?>'
+            $.post(url, {
+                tgl_batas_bayar: batasbayar
+            }, function(data) {
+                alert(data)
+            })
         }
+
+    }
     </script>
 </body>
 

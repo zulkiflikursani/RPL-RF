@@ -82,7 +82,8 @@ class ModelMkA1 extends Model
 
             $cekkdmk = $ModelMkA1->where($where)->findAll(); //dok_a1
             if ($cekkdmk != null) {
-                echo "Duplikasi Kode Matakuliah yang diimport";
+                $db->transRollback();
+                echo "Duplikasi Kode Matakuliah " . $cekkdmk[0]['kode_matakuliah'] . " " . $cekkdmk[0]['nama_matakuliah'] . " ! Periksa kembali sumber data matakuliah anda dan lakukan import ulang";
                 $klaimstatus = false;
                 break;
             }

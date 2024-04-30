@@ -12,7 +12,7 @@ class ModelRegistrasi extends Model
   protected $returnType     = 'array';
 
 
-  protected $allowedFields = ['ta_akademik', 'no_peserta', 'nama', 'alamat', 'kode_konsentrasi', 'kotkab', 'propinsi', 'instansi_asal', 'nohape', 'email', 'kode_prodi', 'validasi_keu', 'ktkunci', 'nik', 't_lahir', 'ttl', 'ibu_kandung', 'jenis_rpl'];
+  protected $allowedFields = ['ta_akademik', 'no_peserta', 'nama', 'alamat', 'kode_konsentrasi', 'kotkab', 'propinsi', 'instansi_asal', 'nohape', 'email', 'kode_prodi', 'validasi_keu', 'validasi_regis_prodi', 'ktkunci', 'nik', 't_lahir', 'ttl', 'ibu_kandung', 'jenis_rpl', 'dodi'];
 
   protected $validationRules = [
     'ta_akademik'     => 'required',
@@ -26,12 +26,14 @@ class ModelRegistrasi extends Model
     'email'        => 'required|valid_email|is_unique[bio_peserta.email]|is_unique[tb_pengguna.email]',
     'kode_prodi'        => 'required',
     'validasi_keu'        => 'required',
+    'validasi_regis_prodi' => 'required',
     'ktkunci'        => 'required',
     'nik' => 'required',
     't_lahir' => 'required',
     'ttl' => 'required',
     'ibu_kandung' => 'required',
     'jenis_rpl' => 'required',
+    'dodi' => 'required'
   ];
   protected $validationMessages = [
     'email' => [
@@ -91,7 +93,7 @@ class ModelRegistrasi extends Model
                                 LEFT JOIN tb_valid_keu ON bio_peserta.no_peserta = tb_valid_keu.no_peserta
                                 LEFT JOIN prodi on bio_peserta.kode_prodi=prodi.kode_prodi
                                 where 
-                                tb_valid_keu.no_peserta is null and bio_peserta.ta_akademik='$ta_akademik'")->getResult();
+                                tb_valid_keu.no_peserta is null and bio_peserta.ta_akademik='$ta_akademik' and bio_peserta.validasi_regis_prodi=1")->getResult();
     return $result;
   }
   public function getDataPerFakultas($ta_akademik)

@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ModelTarif extends Model
 {
     protected $table      = 'prodi';
-    protected $allowedFields = ['id', 'kode_fakultas', 'id_jenjang', 'kode_prodi', 'nama_prodi', 'ka_prodi', 'sks', 'tarif', 'prakademik', 'bpp', 'spp', 'sks_max_rekognisi'];
+    protected $allowedFields = ['id', 'kode_fakultas', 'id_jenjang', 'kode_prodi', 'nama_prodi', 'ka_prodi', 'sks', 'tarif', 'prakademik', 'bpp', 'spp', 'sks_max_rekognisi', 'tarif_dodi'];
     protected $primaryKey = 'id';
     protected $validationRules = [
         'id' => 'require',
@@ -18,6 +18,7 @@ class ModelTarif extends Model
         'ka_prodi' => 'required',
         'sks' => 'required',
         'tarif' => 'required',
+        'tarif_dodi' => 'required',
         'prakademik' => 'required',
         'bpp' => 'required',
         'spp' => 'required',

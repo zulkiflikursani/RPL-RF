@@ -108,6 +108,16 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label for="formrow-nama-input" class="form-label">Tarf
+                                                                RPL (DODI)</label>
+                                                            <input type="text" class="form-control" id="tarifdodi" placeholder="Masukkan Tarif RPL (DODI)" value="" required>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
                                                         <div class="mb-1">
                                                             <label for="formrow-nama-input" class="form-label">Biaya Pra
                                                                 Akademik</label>
@@ -165,6 +175,7 @@
                                                         <th>Kode Prodi</th>
                                                         <th>Nama Prodi</th>
                                                         <th>Tarif RPL</th>
+                                                        <th>Tarif RPL (DODI)</th>
                                                         <th>Pra Akademik</th>
                                                         <th>BPP</th>
                                                         <th>SPP</th>
@@ -183,6 +194,7 @@
                                                                     <td for='kode_prodi'>" . $row['kode_prodi'] . "</td>
                                                                     <td for='nama_prodi'>" . $row['nama_prodi'] . "</td>
                                                                     <td for='tarif'>" . $row['tarif'] . "</td>
+                                                                    <td for='tarifdodi'>" . $row['tarif_dodi'] . "</td>
                                                                     <td for='praakademik'>" . $row['prakademik'] . "</td>
                                                                     <td for='bpp'>" . $row['bpp'] . "</td>
                                                                     <td for='spp'>" . $row['spp'] . "</td>
@@ -269,6 +281,7 @@
             kode_prodi = ini.parent().parent().find('td[for=kode_prodi]').html()
             nama_prodi = ini.parent().parent().find('td[for=nama_prodi]').html()
             tarif = ini.parent().parent().find('td[for=tarif]').html()
+            tarifdodi = ini.parent().parent().find('td[for=tarifdodi]').html()
             praakademik = ini.parent().parent().find('td[for=praakademik]').html()
             bpp = ini.parent().parent().find('td[for=bpp]').html()
             spp = ini.parent().parent().find('td[for=spp]').html()
@@ -278,6 +291,7 @@
             $('#ekode_prodi').val(kode_prodi);
             $('#enama_prodi').val(nama_prodi);
             $('#tarif').val(tarif);
+            $('#tarifdodi').val(tarifdodi);
             $('#praakademik').val(praakademik);
             $('#bpp').val(bpp);
             $('#spp').val(spp);
@@ -292,6 +306,7 @@
             kode_prodi = $('#ekode_prodi').val()
             nama_prodi = $('#enama_prodi').val()
             tarif = $('#tarif').val()
+            tarifdodi = $('#tarifdodi').val()
             praakademik = $('#praakademik').val()
             bpp = $('#bpp').val()
             spp = $('#spp').val()
@@ -300,6 +315,7 @@
                 kode_prodi: kode_prodi,
                 nama_prodi: nama_prodi,
                 tarif: tarif,
+                tarif_dodi: tarifdodi,
                 praakademik: praakademik,
                 bpp: bpp,
                 spp: spp,

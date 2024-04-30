@@ -60,6 +60,9 @@
                                     <div class="col-12">
                                         <button class="btn btn-primary mb-3" data-bs-toggle="modal"
                                             data-bs-target=".tambah-asessor-modal">Tambah Pengguna</button>
+                                        <a href='<?= base_url('log-pengguna') ?>'>
+                                            <button class="btn btn-primary mb-3">Log Pengguna</button>
+                                        </a>
                                     </div>
                                     <!-- modal tambah asessor -->
                                     <div class="modal fade tambah-asessor-modal" tabindex="-1" role="dialog"
@@ -113,6 +116,7 @@
                                                                         <option value='4'>Fakultas</option>
                                                                         <option value='5'>Keuangan</option>
                                                                         <option value='6'>Akademik</option>
+                                                                        <option value='7'>PIC Prodi</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -164,6 +168,19 @@
                                                                         }
                                                                         ?>
                                                                     </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+
+                                                                <div class="mb-3">
+                                                                    <label for="formrow-nama-input"
+                                                                        class="form-label">No Hp (WA)</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="formrow-firstname-input" name="nohp"
+                                                                        placeholder="Masukkan No Hp (WA)" value=""
+                                                                        required>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -231,6 +248,7 @@
                                                                         <option value='4'>Fakultas</option>
                                                                         <option value='5'>Keuangan</option>
                                                                         <option value='6'>Akademik</option>
+                                                                        <option value='7'>PIC Prodi</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -286,6 +304,19 @@
                                                                     </select>
                                                                 </div>
                                                             </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+
+                                                                    <div class="mb-3">
+                                                                        <label for="formrow-nama-input"
+                                                                            class="form-label">No Hp (WA)</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="enohp" name="enohp"
+                                                                            placeholder="Masukkan No Hp (WA)" value=""
+                                                                            required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div>
                                                             <button type="submit"
@@ -303,10 +334,11 @@
                                             <tr>
                                                 <th class="col-1">No</th>
                                                 <th class="col-3">Nama Asessor</th>
-                                                <th class="col-3">Email</th>
+                                                <th class="col-2">Email</th>
                                                 <th class="col-1">Status</th>
                                                 <th class="col-1">Prodi</th>
                                                 <th class="col-1">fakultas</th>
+                                                <th class="col-1">No Hp</th>
                                                 <th class="col-3">Aksi</th>
                                             </tr>
                                         </thead>
@@ -329,6 +361,8 @@
                                                         $statuspengguna = "Keuangan";
                                                     } else if ($row['sttpengguna'] == 6) {
                                                         $statuspengguna = "Akademik";
+                                                    } else if ($row['sttpengguna'] == 7) {
+                                                        $statuspengguna = 'PIC Prodi';
                                                     }
 
 
@@ -339,7 +373,8 @@
                                                         <td for='status' sts='" . $row['sttpengguna'] . "'>" . $statuspengguna . "</td>
                                                         <td for='prodi'>" . $row['kode_prodi'] . "</td>
                                                         <td for='fakultas'>" . $row['kode_fakultas'] . "</td>
-                                                        <td>
+                                                        <td for='nohp'>" . $row['nohp'] . "</td>
+                                                        <td class='text-center'>
                                                         <button class='button btn-primary btn-sm' onClick='getData($(this))' >Edit</button>
                                                         <button class='button btn-primary btn-sm mx-2' onClick='getDataHapus($(this))'>Hapus</button>
                                                         <button class='button btn-primary btn-sm ' onClick='getDataResetPassword($(this))'>Reset Password</button></td>
@@ -479,6 +514,12 @@
             $('#kode_prodi').val("-");
             $('#kode_fakultas').val("");
 
+        } else if ($level == 7) {
+            $('#kode_prodi').parent().show();
+            $('#kode_fakultas').parent().hide();
+            $('#kode_prodi').val("-");
+            $('#kode_fakultas').val("-");
+
         } else {
             $('#kode_prodi').parent().hide();
             $('#kode_fakultas').parent().hide();
@@ -507,6 +548,12 @@
             $('#ekode_prodi').val("-").change();
             $('#ekode_fakultas').val("").change();
 
+        } else if ($level == 7) {
+            $('#ekode_prodi').parent().show();
+            $('#ekode_fakultas').parent().hide();
+            $('#ekode_prodi').val("-").change();
+            $('#ekode_fakultas').val("-").change();
+
         } else {
             $('#ekode_prodi').parent().hide();
             $('#ekode_fakultas').parent().hide();
@@ -514,6 +561,7 @@
             $('#ekode_fakultas').val("-").change();
 
         }
+
 
     }
 
@@ -553,6 +601,7 @@
         prodi = ini.parent().parent().find('td[for=prodi]').html();
         fakutlas = ini.parent().parent().find('td[for=fakultas]').html();
         status = ini.parent().parent().find('td[for=status]').attr('sts');
+        nohp = ini.parent().parent().find('td[for=nohp]').html();
         // alert(proedi)
         if (status == 1 || status == 5) {
             $('#ekode_prodi').parent().hide();
@@ -569,6 +618,12 @@
             $('#ekode_fakultas').parent().show();
             $('#ekode_prodi').val("-").change();
             $('#ekode_fakultas').val("");
+        } else if (status == 7) {
+            $('#ekode_prodi').parent().show();
+            $('#ekode_fakultas').parent().hide();
+            $('#ekode_prodi').val("-").change();
+            $('#ekode_fakultas').val("-").change();
+
         } else {
             $('#ekode_prodi').parent().hide();
             $('#ekode_fakultas').parent().hide();
@@ -582,6 +637,7 @@
         $("#estatus").val(status);
         $("#ekode_prodi").val(prodi);
         $("#ekode_fakultas").val(fakutlas);
+        $("#enohp").val(nohp);
         $(".edit-asessor-modal").modal('show');
     }
     </script>

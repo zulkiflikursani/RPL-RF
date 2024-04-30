@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ModelActivity;
 use App\Models\ModelRegistrasi;
 use App\Models\UserModel;
 use App\Models\UserModel2;
@@ -107,6 +108,8 @@ class AuthController extends BaseController
 				$user = $model2->check_login($this->request->getVar('username'), $this->request->getVar('userpassword'));
 				if ($user) {
 					$this->setUserSession($user);
+					$modelLogActivity = new ModelActivity();
+					$modelLogActivity->insert(['user_id' => $user['email'], 'jenis_activity' => 1]);
 					if (isset($user["no_peserta"])) {
 						return redirect()->to('/Biodata');
 					} else {

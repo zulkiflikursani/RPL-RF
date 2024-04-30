@@ -89,7 +89,8 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <h4 class="card-title mb-4">Form Matakuliah Transkrip</h4>
+                                    <h4 class="card-title mb-4">Form Matakuliah Transkrip <?= $kdptasal . "asdfasdf" ?>
+                                    </h4>
                                     <form enctype="multipart/form-data" method="POST"
                                         action="<?= base_url('generatemka1') ?>">
                                         <div class="row mb-3">
@@ -174,9 +175,11 @@
                                                 ?>
                                             </tbody>
                                         </table>
+
                                         <?php
                                         if (isset($dataGenerate)) {
                                         ?>
+                                        <div>Total Sks import : <?= $totsks ?> sks</div>
                                         <button class="btn btn-primary" onclick="simpandata()">Simpan</button>
                                         <?php } ?>
                                     </div>

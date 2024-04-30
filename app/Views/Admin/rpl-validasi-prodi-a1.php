@@ -112,22 +112,27 @@
 
                                                         <tbody id='tbody-klaim-mk'>
                                                             <?php
+                                                            $jumlahklaimsks = 0;
 
                                                             if (isset($dataKlaimAsessorA1)) {
+
                                                                 $kdmk = "";
                                                                 $no = 0;
                                                                 foreach ($dataKlaimAsessorA1 as $row) {
+                                                                    $jumlahklaimsks = floatval($jumlahklaimsks) + floatval($row->sks);
                                                                     if ($kdmk != $row->kode_matakuliah) {
                                                                         $no++;
+                                                                        $kdmk = $row->kode_matakuliah;
                                                                         echo "<tr noregis='$row->no_peserta' idklaim='$row->idklaim'
                                                                         kdmk='$row->kode_matakuliah'
                                                                         kdprodi='$row->kode_prodi'
                                                                         nmmk='$row->nama_matakuliah'
                                                                         sks='$row->sks'
-                                                                        nilai='$row->nilai'><td rowspan='$row->entry_count'>$no</td><td rowspan='$row->entry_count'>$row->kode_matakuliah</td>
+                                                                        nilai='$row->nilai'>
+                                                                        <td rowspan='$row->entry_count'>$no</td><td rowspan='$row->entry_count'>$row->kode_matakuliah</td>
                                                                         <td rowspan='$row->entry_count'>$row->nama_matakuliah</td>
-                                                                        <td rowspan='$row->entry_count'>$row->sks</td><td rowspan='$row->entry_count'>$row->nilai</td><td >$row->nama_matakuliah_asal</td><td>$row->jumlah_sks</td><td>$row->nilai_asal</td><td rowspan='$row->entry_count'></td></tr>";
-                                                                        $kdmk = $row->kode_matakuliah;
+                                                                        <td rowspan='$row->entry_count'>$row->sks</td><td rowspan='$row->entry_count'>$row->nilai</td><td >$row->nama_matakuliah_asal</td><td>$row->jumlah_sks</td><td>$row->nilai_asal</td>
+                                                                        </tr>";
                                                                     } else {
 
                                                                         echo "<tr noregis='$row->no_peserta' idklaim='$row->idklaim'
@@ -144,6 +149,16 @@
                                                             ?>
                                                         </tbody>
                                                     </table>
+                                                    <?php
+                                                    if ($dodi == 0) {
+
+                                                        echo "Jumlah Klaim Matakuliah : <span id='julmahSksValid'></span> SKS dari $maxsksrekognisi maksimum SKS Rekognisi";
+                                                        echo "<p  class='text-danger bold statusSks'></p>";
+                                                    } else {
+                                                        echo "Jumlah Klaim Matakuliah : <span id='julmahSksValid'></span> SKS (status mahasiswa dodi)";
+                                                    }
+
+                                                    ?>
                                                 </div>
                                             </div>
 
@@ -152,10 +167,12 @@
 
 
                                         <div>
-                                            <form action="<?= base_url('setvalidprodi') ?>" method="post" id='validasi-form' target="">
+                                            <form action="<?= base_url('setvalidprodi') ?>" method="post"
+                                                id='validasi-form' target="">
                                                 <input type="hidden" name="noregis" value='<?= $noregis ?>'>
                                             </form>
-                                            <form action="<?= base_url('setunvalidprodi') ?>" method="post" id='unvalidasi-form' target="">
+                                            <form action="<?= base_url('setunvalidprodi') ?>" method="post"
+                                                id='unvalidasi-form' target="">
                                                 <input type="hidden" name="noregis" value='<?= $noregis ?>'>
                                             </form>
                                             <?php if ($status == 1) {
@@ -218,51 +235,74 @@
 </html>
 
 <script>
-    $(document).ready(function() {
-        $('#loading').show()
-        noregis = '<?= $noregis ?>'
-        url = '<?= base_url('getDataKlaimAsessor') ?>'
-        $.post(url, {
-            noregis: noregis
-        }, function(data) {
-            data = JSON.parse(data)
-            console.log(data);
-            $.each(data, function(index, value) {
-                $('#tbody-klaim-mk  > tr').each(function(i, tr) {
-                    if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
-                        value['idklaim']) {
-                        // alert('jalan')
-                        $(this).find('td[for=tanggapan]').children().val(value[
-                            'tanggapan']);
-                        $(this).find('td[for=nilaiAs]').children().val(value[
-                            'nilai']);
-                        $(this).find('td[for=kettanggapan]').children()
-                            .val(value['ket_tanggapan']);
+$(document).ready(function() {
+    $('#loading').show()
+    noregis = '<?= $noregis ?>'
+    url = '<?= base_url('getDataKlaimAsessor') ?>'
+    $.post(url, {
+        noregis: noregis
+    }, function(data) {
+        data = JSON.parse(data)
+        console.log(data);
+        count = data.length;
 
+        $.each(data, function(index, value) {
+            $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+                if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
+                    value['idklaim']) {
+                    // alert('jalan')
+                    $(this).find('td[for=tanggapan]').children().val(value[
+                        'tanggapan']);
+                    $(this).find('td[for=nilaiAs]').children().val(value[
+                        'nilai']);
+                    $(this).find('td[for=kettanggapan]').children()
+                        .val(value['ket_tanggapan']);
 
-
-
+                    if (count === i + 1) {
+                        klaimsksass()
                     }
-                })
-                $('textarea').attr('readonly', 'readonly');
-                $('select').attr('disabled', 'disabled');
-                $('#loading').hide()
 
+
+                }
             })
-        }).fail(function() {
-            alert("error");
+            $('textarea').attr('readonly', 'readonly');
+            $('select').attr('disabled', 'disabled');
             $('#loading').hide()
-        });
+
+        })
+    }).fail(function() {
+        alert("error");
+        $('#loading').hide()
+    });
+})
+
+function klaimsksass() {
+
+    klaimsks = 0;
+    $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+        // tanggapan = $(this).find('td[for=tanggapan]').children().val();
+        nilai = $(this).attr('nilai');
+        sks = $(this).attr('sks');
+        if (nilai != "E") {
+            klaimsks = parseFloat(klaimsks) + parseFloat(sks)
+        }
     })
-
-    function validprodi() {
-        $('#validasi-form').submit()
+    // alert(klaimsks)
+    $('#julmahSksValid').html(klaimsks)
+    if (klaimsks > <?= $maxsksrekognisi ?>) {
+        $(".statusSks").html("Jumlah SKS Melebihi Batas Rekognisi")
     }
+    // return klaimsks;
+}
 
-    function unvalidprodi() {
-        $('#unvalidasi-form').submit()
+function validprodi() {
+    $('#validasi-form').submit()
+}
 
-    }
+function unvalidprodi() {
+    $('#unvalidasi-form').submit()
+
+}
 </script>
 <?php
 function getnamafile($no_dokumen)

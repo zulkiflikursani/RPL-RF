@@ -51,6 +51,7 @@
                             <p class='mb-0'>- Semester III s/d VIII hanya membayar BPP dengan tarif normal</p>
                             <p class='mb-0'>- Semester IX dan seterusnya hanya membayar BPP 50% dari tarif normal jika yang diprogmkan Tugas Akhir dan maximum 2 mata kuliah akhir</p>
                             <p class='mb-0'>- Semester IX dan seterusnya  membayar BPP dengan tarif normal jika yang diprogramkan tugas akhir dan lebih 2 matakuliah</p>
+                            <p>⁠⁠Kirim bukti pembayaran ke Biro Keuangan (cp: 0853-3333-4681)</p>
 
                             </div>
                             ";
@@ -63,6 +64,8 @@
                             <p class='mb-0'>- Semester V dan seterusnya hanya membayar BPP 50% dari tarif normal jika yang diprogmkan Tugas Akhid dan maximum 2 mata kuliah akhir</p>
                             <p class='mb-0'>- Semester V dan seterusnya  membayar BPP dengan tarif normal jika yang diprogramkan tugas akhir dan lebih 2 matakuliah</p>
                             <p class='mb-0'>- Alumni sarjana UNIFA yang melanjukan pendidikan pada pascasarjana UNIFA diberi potongan pembayaran BPP sebesar 25%</p>
+                            <p>- ⁠⁠Kirim bukti pembayaran ke Biro Keuangan (cp: 0853-3333-4681)</p>
+
 
 
                             </div>";
@@ -163,10 +166,12 @@
 
                                             </table>
                                             <?php
-                                            if ($jumlahsks > $sksmaxrekognisiok) {
-                                                echo "<a class='text-danger fw-bold'>Jumlah sks maksimal yang dapat diakui dalam proses rekognisi adalah $sksmaxrekognisiok SKS.</a>";
+                                            if ($dodi == 0) {
+                                                if ($jumlahsks > $sksmaxrekognisiok) {
+                                                    echo "<a class='text-danger fw-bold'>Jumlah sks maksimal yang dapat diakui dalam proses rekognisi adalah $sksmaxrekognisiok SKS.</a>";
 
-                                                $jumlahsks = $sksmaxrekognisiok;
+                                                    $jumlahsks = $sksmaxrekognisiok;
+                                                }
                                             }
                                             ?>
                                             <div class='col-12' style="font-size: 10px;">
@@ -222,7 +227,15 @@
                                                     </div>
                                                     <div class="col-6 mb-0">
                                                         <?php
-                                                        $tagihan = floatval($jumlahsks) * floatval($tarifrpl);
+                                                        if ($dodi == 1) {
+                                                            $tarifdodi = $tarifdodi;
+
+                                                            $praakademik = 0;
+                                                            $spp = 0;
+                                                            $tagihan = floatval($jumlahsks) * floatval($tarifdodi);
+                                                        } else {
+                                                            $tagihan = floatval($jumlahsks) * floatval($tarifrpl);
+                                                        }
 
                                                         ?>
                                                         <p class=' fw-bold mb-0 '>
@@ -245,9 +258,16 @@
                                                         </p>
                                                         <p class='fw-bold mb-0 '>
                                                             <?php $total = floatval($tagihan) + floatval($praakademik) + floatval($spp) + floatval($bpp) ?>
-                                                            <u?>
+                                                            <u>
                                                                 :
                                                                 <?= " Rp " . number_format($total, 0, ',', '.') ?></u>
+                                                            <?php
+                                                            if (isset($batasPembayaran)) {
+                                                                // $formattedDate = date("d-m-Y", strtotime($batasPembayaran));
+                                                                $formattedDate = tgl_indo($batasPembayaran);
+                                                                echo "<span class='text-danger mx-2'>( Batas akhir pembayaran tanggal $formattedDate) </span>";
+                                                            }
+                                                            ?>
                                                         </p>
                                                     </div>
 

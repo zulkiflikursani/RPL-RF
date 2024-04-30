@@ -15,7 +15,7 @@ use App\Models\ModelPtIndo;
 use App\Models\ModelRegistrasi;
 use App\Models\ModelTransactionKlaim;
 use App\Models\ModelNilai;
-
+use App\Models\ModelPengguna;
 use PHPExcel;
 use PHPExcel_IOFactory;
 
@@ -109,6 +109,7 @@ class Front extends BaseController
 		$identitas = $this->request->getFile('identitas');
 		$buktibayar = $this->request->getFile('buktiBayar');
 		$password1 =  random_string('alnum', 6);
+		$valid_prodi = 0;
 		// $password1 =  "5465465465d";
 		$validationRule = [
 			'buktiBayar' =>  [
@@ -167,6 +168,7 @@ class Front extends BaseController
 			'email' => $email,
 			'kode_prodi' => $prodi,
 			'validasi_keu' => 1,
+			'validasi_regis_prodi' => 0,
 			'ktkunci' => $password,
 			't_lahir' => $tlahir,
 			'kode_konsentrasi' => $konsentrasi,
@@ -174,7 +176,8 @@ class Front extends BaseController
 			'nik' => $nik,
 			'didikakhir' => $pendidikan,
 			'ibu_kandung' => $ibukandung,
-			'jenis_rpl' => $jenis_rpl
+			'jenis_rpl' => $jenis_rpl,
+			'dodi' => 0
 		];
 
 
@@ -505,12 +508,18 @@ class Front extends BaseController
 					$insert = $modelMkA1->insert($data1);
 					$carikdptasal = $modelMkA1->where('no_registrasi', $noregis)->findAll();
 
-					if (isset($carikdptasal[0]['no_registrasi'])) {
-						$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
-						$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+					if ($datasavebio[0]['dodi'] == 1) {
+						$kdptasal = "091045";
+						$nmptasal = "Universitas Fajar";
 					} else {
-						$kdptasal = "";
-						$nmptasal = "";
+
+						if (isset($carikdptasal[0]['no_registrasi'])) {
+							$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+							$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+						} else {
+							$kdptasal = "";
+							$nmptasal = "";
+						}
 					}
 					if ($insert === false) {
 						$data = [
@@ -554,12 +563,18 @@ class Front extends BaseController
 					];
 					$carikdptasal = $modelMkA1->where('no_registrasi', $noregis)->findAll();
 
-					if (isset($carikdptasal[0]['no_registrasi'])) {
-						$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
-						$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+					if ($datasavebio[0]['dodi'] == 1) {
+						$kdptasal = "091045";
+						$nmptasal = "Universitas Fajar";
 					} else {
-						$kdptasal = "";
-						$nmptasal = "";
+
+						if (isset($carikdptasal[0]['no_registrasi'])) {
+							$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+							$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+						} else {
+							$kdptasal = "";
+							$nmptasal = "";
+						}
 					}
 
 					$data = [
@@ -585,12 +600,18 @@ class Front extends BaseController
 				];
 				$carikdptasal = $modelMkA1->where('no_registrasi', $noregis)->findAll();
 
-				if (isset($carikdptasal[0]['no_registrasi'])) {
-					$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
-					$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+				if ($datasavebio[0]['dodi'] == 1) {
+					$kdptasal = "091045";
+					$nmptasal = "Universitas Fajar";
 				} else {
-					$kdptasal = "";
-					$nmptasal = "";
+
+					if (isset($carikdptasal[0]['no_registrasi'])) {
+						$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+						$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+					} else {
+						$kdptasal = "";
+						$nmptasal = "";
+					}
 				}
 
 				$data = [
@@ -673,12 +694,18 @@ class Front extends BaseController
 			$dataMkA1 = $modelMkA1->where('no_registrasi', $noregis)->findAll();
 			$carikdptasal = $modelMkA1->where('no_registrasi', $noregis)->findAll();
 
-			if (isset($carikdptasal[0]['no_registrasi'])) {
-				$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
-				$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+			if ($datasavebio[0]['dodi'] == 1) {
+				$kdptasal = "091045";
+				$nmptasal = "Universitas Fajar";
 			} else {
-				$kdptasal = "";
-				$nmptasal = "";
+
+				if (isset($carikdptasal[0]['no_registrasi'])) {
+					$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+					$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+				} else {
+					$kdptasal = "";
+					$nmptasal = "";
+				}
 			}
 			$cekvalidmk = $this->cekvalidmka1($noregis);
 			if ($cekvalidmk == true) {
@@ -771,12 +798,18 @@ class Front extends BaseController
 			$dataMkA1 = $modelMkA1->where('no_registrasi', $noregis)->findAll();
 			$carikdptasal = $modelMkA1->where('no_registrasi', $noregis)->findAll();
 
-			if (isset($carikdptasal[0]['no_peserta'])) {
-				$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
-				$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+			if ($datasavebio[0]['dodi'] == 1) {
+				$kdptasal = "091045";
+				$nmptasal = "Universitas Fajar";
 			} else {
-				$kdptasal = "";
-				$nmptasal = "";
+
+				if (isset($carikdptasal[0]['no_registrasi'])) {
+					$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+					$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+				} else {
+					$kdptasal = "";
+					$nmptasal = "";
+				}
 			}
 			$data2 = [
 				"status" => 0
@@ -850,13 +883,18 @@ class Front extends BaseController
 			$carikdptasal = $modelMkA1->where('no_registrasi', $noregis)->findAll();
 
 			// $objPHPExcel = PHPExcel_IOFactory::load();
-
-			if (isset($carikdptasal[0]['no_peserta'])) {
-				$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
-				$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+			if ($datasavebio[0]['dodi'] == 1) {
+				$kdptasal = "091045";
+				$nmptasal = "Universitas Fajar";
 			} else {
-				$kdptasal = "";
-				$nmptasal = "";
+
+				if (isset($carikdptasal[0]['no_registrasi'])) {
+					$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+					$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+				} else {
+					$kdptasal = "";
+					$nmptasal = "";
+				}
 			}
 			$data = [
 				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
@@ -905,6 +943,7 @@ class Front extends BaseController
 
 				$objPHPExcel = PHPExcel_IOFactory::load($fileLocation);
 				$sheet	= $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+				$totalsks = 0;
 				foreach ($sheet as $idx => $data) {
 					if ($idx == 1) {
 						continue;
@@ -917,17 +956,23 @@ class Front extends BaseController
 								<td for='c'>" . $data['C'] . "</td>
 								<td for='d'>" . $data['D'] . "</td>
 							</tr>";
+					$totalsks = $totalsks + $data['C'];
 				}
 			} else {
 				$html = '';
 			}
 
-			if (isset($carikdptasal[0]['no_peserta'])) {
-				$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
-				$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+			if ($datasavebio[0]['dodi'] == 1) {
+				$kdptasal = "091045";
+				$nmptasal = "Universitas Fajar";
 			} else {
-				$kdptasal = "";
-				$nmptasal = "";
+				if (isset($carikdptasal[0]['no_registrasi'])) {
+					$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+					$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+				} else {
+					$kdptasal = "";
+					$nmptasal = "";
+				}
 			}
 			$data = [
 				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
@@ -938,6 +983,7 @@ class Front extends BaseController
 				'ptasal' => $ptindo,
 				'kdptasal' => $kdptasal,
 				'nmptasal' => $nmptasal,
+				'totsks' => $totalsks,
 				'dataMkA1' => $carikdptasal,
 				'dataGenerate' => $html,
 
@@ -1010,6 +1056,7 @@ class Front extends BaseController
 				$databio = $datasave;
 			}
 			$modelKeu = new ModelKeu();
+			$validasiprodi = $datasave[0]['validasi_regis_prodi'];
 			$validasikeu = $modelKeu->cekvalidasi($noregisrasi);
 			$modelKonsentrasi = new ModelKonsentrasi();
 			$wherekons = [
@@ -1018,9 +1065,27 @@ class Front extends BaseController
 			];
 			$getkonsentrasi = $modelKonsentrasi->where($wherekons)->findAll();
 			$konsentrasi = (isset($getkonsentrasi[0]['konsentrasi']) ? $getkonsentrasi[0]['konsentrasi'] : '');
+			$modelPengguna = new ModelPengguna();
+			$dataPICProdi = $modelPengguna->where([
+				'sttpengguna' => '7',
+				'kode_prodi' => $databio[0]['kode_prodi'],
+			])->findAll();
 
 
-			if ($validasikeu == null) {
+
+			if ($validasiprodi == 0) {
+				$data = [
+					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Biodata Peserta RPL']),
+					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Pengumuman']),
+					'datasubmit' => $databio,
+					'databio' => $databio,
+					'prodi' => $prodi,
+					'dataPIC' => $dataPICProdi,
+					// 'test' => $datasave,
+					'ta_akademik' => $this->getTa_akademik()
+				];
+				return view('Front/rpl-mahasiswa-belum-valid-reg-prodi', $data);
+			} else if ($validasikeu == null) {
 				$data = [
 					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Biodata Peserta RPL']),
 					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Pengumuman']),
@@ -1088,12 +1153,18 @@ class Front extends BaseController
 
 			$carikdptasal = $modelMkA1->where('no_registrasi', $noregisrasi)->findAll();
 
-			if (isset($carikdptasal[0]['no_registrasi'])) {
-				$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
-				$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+			if ($datasavebio[0]['dodi'] == 1) {
+				$kdptasal = "091045";
+				$nmptasal = "Universitas Fajar";
 			} else {
-				$kdptasal = "";
-				$nmptasal = "";
+
+				if (isset($carikdptasal[0]['no_registrasi'])) {
+					$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+					$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+				} else {
+					$kdptasal = "";
+					$nmptasal = "";
+				}
 			}
 			$data = [
 				'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
@@ -1171,12 +1242,18 @@ class Front extends BaseController
 
 			$carikdptasal = $modelMkA1->where('no_registrasi', $noregis)->findAll();
 
-			if (isset($carikdptasal[0]['no_peserta'])) {
-				$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
-				$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+			if ($datasavebio[0]['dodi'] == 1) {
+				$kdptasal = "091045";
+				$nmptasal = "Universitas Fajar";
 			} else {
-				$kdptasal = "";
-				$nmptasal = "";
+
+				if (isset($carikdptasal[0]['no_registrasi'])) {
+					$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+					$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+				} else {
+					$kdptasal = "";
+					$nmptasal = "";
+				}
 			}
 			if (empty($nmfile)) {
 			} else {
@@ -1242,90 +1319,47 @@ class Front extends BaseController
 				$validasiRPL = 1;
 			}
 
-			if ($cekkalimasessor == null) {
-				if (!$validation->run()) {
-					$data['error'] = $validation->getError('userFile');
-					$ModalBiodata = new ModelBiodata();
+			// if ($cekkalimasessor == null) {
+			if (!$validation->run()) {
+				$data['error'] = $validation->getError('userFile');
+				$ModalBiodata = new ModelBiodata();
+				$datadokumen = $Modaldokumen->getDataBynoregis();
+				// $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+				$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+				$data = [
+					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
+					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+					'datasubmit' => $data,
+					'databio' => $databio,
+					'datadok' => $datadokumen,
+					'ptasal' => $ptindo,
+					'kdptasal' => $kdptasal,
+					'nmptasal' => $nmptasal,
+					'dataMkA1' => $carikdptasal,
+					'nilai' => $nilai,
+					// 'test' => $datasave,
+					'ta_akademik' => $this->getTa_akademik(),
+					'dataerror' => $validation->getErrors(),
+
+				];
+			} else {
+				if ($validasiRPL == 1) {
+					$userFile->move("uploads/berkas/$noregis", $fileNameRandom);
+					$path_to_file = "uploads/berkas/$noregis/$fileNameRandom";
 					$datadokumen = $Modaldokumen->getDataBynoregis();
-					// $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
-					$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-					$data = [
-						'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
-						'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-						'datasubmit' => $data,
-						'databio' => $databio,
-						'datadok' => $datadokumen,
-						'ptasal' => $ptindo,
-						'kdptasal' => $kdptasal,
-						'nmptasal' => $nmptasal,
-						'dataMkA1' => $carikdptasal,
-						'nilai' => $nilai,
-						// 'test' => $datasave,
-						'ta_akademik' => $this->getTa_akademik(),
-						'dataerror' => $validation->getErrors(),
-
-					];
-				} else {
-					if ($validasiRPL == 1) {
-						$userFile->move("uploads/berkas/$noregis", $fileNameRandom);
-						$path_to_file = "uploads/berkas/$noregis/$fileNameRandom";
-						$datadokumen = $Modaldokumen->getDataBynoregis();
-						if ($userFile->hasMoved()) {
-							$result1 = $Modaldokumen->insert($data);
-							if ($result1 === false) {
-								unlink($path_to_file);
-								$ModalBiodata = new ModelBiodata();
-								$datadokumen = $Modaldokumen->getDataBynoregis();
-								// $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
-								$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-								$data = [
-									'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
-									'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-									'databio' => $databio,
-									'datasubmit' => $data,
-									'datadok' => $datadokumen,
-									'ptasal' => $ptindo,
-									'kdptasal' => $kdptasal,
-									'nmptasal' => $nmptasal,
-									'dataMkA1' => $carikdptasal,
-									'nilai' => $nilai,
-
-									// 'test' => $datasave,
-									'ta_akademik' => $this->getTa_akademik(),
-									'dataerror' => $Modaldokumen->errors()
-								];
-							} else {
-								$ModalBiodata = new ModelBiodata();
-								$datadokumen = $Modaldokumen->getDataBynoregis();
-								// $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
-								$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-								$data = [
-									'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen']),
-									'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-									'datadok' => $datadokumen,
-									'databio' => $databio,
-									'datasubmit' => $data,
-									'datadok' => $datadokumen,
-									'ptasal' => $ptindo,
-									'kdptasal' => $kdptasal,
-									'nmptasal' => $nmptasal,
-									'dataMkA1' => $carikdptasal,
-									'nilai' => $nilai,
-
-									// 'test' => $datasave,
-									'ta_akademik' => $this->getTa_akademik(),
-									'status' => true
-								];
-							}
-						} else {
+					if ($userFile->hasMoved()) {
+						$result1 = $Modaldokumen->insert($data);
+						if ($result1 === false) {
+							unlink($path_to_file);
 							$ModalBiodata = new ModelBiodata();
+							$datadokumen = $Modaldokumen->getDataBynoregis();
+							// $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
 							$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-
 							$data = [
 								'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
 								'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-								'datasubmit' => $data,
 								'databio' => $databio,
+								'datasubmit' => $data,
 								'datadok' => $datadokumen,
 								'ptasal' => $ptindo,
 								'kdptasal' => $kdptasal,
@@ -1335,12 +1369,35 @@ class Front extends BaseController
 
 								// 'test' => $datasave,
 								'ta_akademik' => $this->getTa_akademik(),
-								'dataerror' => $userFile->getErrorString()
+								'dataerror' => $Modaldokumen->errors()
+							];
+						} else {
+							$ModalBiodata = new ModelBiodata();
+							$datadokumen = $Modaldokumen->getDataBynoregis();
+							// $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+							$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+							$data = [
+								'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen']),
+								'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+								'datadok' => $datadokumen,
+								'databio' => $databio,
+								'datasubmit' => $data,
+								'datadok' => $datadokumen,
+								'ptasal' => $ptindo,
+								'kdptasal' => $kdptasal,
+								'nmptasal' => $nmptasal,
+								'dataMkA1' => $carikdptasal,
+								'nilai' => $nilai,
+
+								// 'test' => $datasave,
+								'ta_akademik' => $this->getTa_akademik(),
+								'status' => true
 							];
 						}
 					} else {
+						$ModalBiodata = new ModelBiodata();
 						$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-						$error = ['error' => "Tidak Bisa menambahkan file Lebih dari satu"];
+
 						$data = [
 							'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
 							'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
@@ -1355,35 +1412,56 @@ class Front extends BaseController
 
 							// 'test' => $datasave,
 							'ta_akademik' => $this->getTa_akademik(),
-							'dataerror' => $error
+							'dataerror' => $userFile->getErrorString()
 						];
 					}
+				} else {
+					$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+					$error = ['error' => "Tidak Bisa menambahkan file Lebih dari satu"];
+					$data = [
+						'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
+						'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+						'datasubmit' => $data,
+						'databio' => $databio,
+						'datadok' => $datadokumen,
+						'ptasal' => $ptindo,
+						'kdptasal' => $kdptasal,
+						'nmptasal' => $nmptasal,
+						'dataMkA1' => $carikdptasal,
+						'nilai' => $nilai,
+
+						// 'test' => $datasave,
+						'ta_akademik' => $this->getTa_akademik(),
+						'dataerror' => $error
+					];
 				}
-			} else {
-				$ModalBiodata = new ModelBiodata();
-				$datadokumen = $Modaldokumen->getDataBynoregis();
-				// $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
-				$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
-
-				$error = ['error' => "Tidak Bisa menambahkan file setalah divalidasi Asessor"];
-				$data = [
-					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
-					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
-					'datadok' => $datadokumen,
-					'databio' => $databio,
-					'datasubmit' => $data,
-					'dataerror' => $error,
-					'datadok' => $datadokumen,
-					'ptasal' => $ptindo,
-					'kdptasal' => $kdptasal,
-					'nmptasal' => $nmptasal,
-					'dataMkA1' => $carikdptasal,
-					'nilai' => $nilai,
-
-					// 'test' => $datasave,
-					'ta_akademik' => $this->getTa_akademik()
-				];
 			}
+			// } else {
+
+			// 	$ModalBiodata = new ModelBiodata();
+			// 	$datadokumen = $Modaldokumen->getDataBynoregis();
+			// 	// $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
+			// 	$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+
+			// 	$error = ['error' => "Tidak Bisa menambahkan file setalah divalidasi Asessor"];
+			// 	$data = [
+			// 		'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Dokumen RPL']),
+			// 		'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
+			// 		'datadok' => $datadokumen,
+			// 		'databio' => $databio,
+			// 		'datasubmit' => $data,
+			// 		'dataerror' => $error,
+			// 		'datadok' => $datadokumen,
+			// 		'ptasal' => $ptindo,
+			// 		'kdptasal' => $kdptasal,
+			// 		'nmptasal' => $nmptasal,
+			// 		'dataMkA1' => $carikdptasal,
+			// 		'nilai' => $nilai,
+
+			// 		// 'test' => $datasave,
+			// 		'ta_akademik' => $this->getTa_akademik()
+			// 	];
+			// }
 			if ($databio[0]['jenis_rpl'] == 1) {
 				return view('Front/rpl-mahasiswa-upload-a1', $data);
 			} else {

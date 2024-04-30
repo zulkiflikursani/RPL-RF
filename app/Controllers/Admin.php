@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ModelActivity;
 use App\Models\ModelBiodata;
 use App\Models\ModelCpmk;
 use App\Models\ModelDokumen;
@@ -67,10 +68,12 @@ class Admin extends BaseController
             ];
 
             return view('Admin/rpl-home-asessor', $data);
-        } else if (session()->get('sttpengguna') == 3) {
+        } else if (session()->get('sttpengguna') == 3 || session()->get('sttpengguna') == 7) {
             $modelPeserta = new ModelPesertaAsessor();
             $ta_akademik = $this->getTa_akademik();
 
+            $modelBiodata = new ModelBiodata();
+            $datamahasiswaregistrasi = $modelBiodata->where(['kode_prodi' => session()->get('kode_prodi'), 'ta_akademik' => $ta_akademik])->orderBy('validasi_regis_prodi', 'asc')->findAll();
             $datamahasiswabelumpunyaasessro = $modelPeserta->getdataPesertaBelumPunyaAsessorByProdi(session()->get('kode_prodi'), $ta_akademik);
 
             $databelumvalidprodi = $modelPeserta->getDataPesertaBelumValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
@@ -81,6 +84,7 @@ class Admin extends BaseController
                 'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
                 'page_title' => view('partials/rpl-page-title', ['title' => 'Prodi', 'pagetitle' => 'Dashboards']),
                 'ta_akademik' => $this->getTa_akademik(),
+                'dataregistrasiMHS' => $datamahasiswaregistrasi,
                 'dataPesertaBelumValid' => $databelumvalidprodi,
                 'dataPesertaSudahValid' => $datasudahvalid,
                 'dataPesertaSudahValidDekan' => $datasudahvaliddekan,
@@ -714,7 +718,7 @@ class Admin extends BaseController
     }
     public function datastatusklaim()
     {
-        if (session()->get('sttpengguna') != 3) {
+        if (session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
         } else {
             $modelPeserta = new ModelPesertaAsessor();
@@ -1034,7 +1038,7 @@ class Admin extends BaseController
     }
     public function data_asessi_prodi()
     {
-        if (session()->get('sttpengguna') != 3) {
+        if (session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
         } else {
             $modelPengguna = new ModelPengguna();
@@ -1468,6 +1472,7 @@ class Admin extends BaseController
             $status = $db->escapeString($this->request->getPost("status"));
             $kode_prodi = $db->escapeString($this->request->getPost("kode_prodi"));
             $kode_fakultas = $db->escapeString($this->request->getPost("kode_fakultas"));
+            $nohp = $db->escapeString($this->request->getPost("nohp"));
             $password1 =  random_string('alnum', 6);
             $password = password_hash($password1, PASSWORD_BCRYPT);
             $lastidpengguna = $db->query('select max(right(idpengguna,4)) as idpengguna from tb_pengguna')->getRow();
@@ -1507,6 +1512,7 @@ class Admin extends BaseController
                 "ktkunci" => $password,
                 "kode_prodi" => $kode_prodi,
                 "kode_fakultas" => $kode_fakultas,
+                "nohp" => $nohp,
             ];
 
             $link = base_url("Login");
@@ -1592,12 +1598,14 @@ class Admin extends BaseController
             $status = $db->escapeString($this->request->getPost("estatus"));
             $kode_prodi = $db->escapeString($this->request->getPost("ekode_prodi"));
             $kode_fakultas = $db->escapeString($this->request->getPost("ekode_fakultas"));
+            $nohp = $db->escapeString($this->request->getPost("enohp"));
 
 
             $data1 = [
                 "sttpengguna" => $status,
                 "kode_prodi" => $kode_prodi,
                 "kode_fakultas" => $kode_fakultas,
+                "nohp" => $nohp,
             ];
 
             $link = base_url("Login");
@@ -1758,7 +1766,7 @@ class Admin extends BaseController
     }
     public function inputcpmk_prodi()
     {
-        if (session()->get('sttpengguna') != 3) {
+        if (session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
         } else {
 
@@ -1779,7 +1787,7 @@ class Admin extends BaseController
     }
     public function inputmk_prodi()
     {
-        if (session()->get('sttpengguna') != 3) {
+        if (session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
         } else {
 
@@ -1904,7 +1912,10 @@ class Admin extends BaseController
         } else {
             $this->request = service('request');
             $db      = \Config\Database::connect();
-            if (session()->get("sttpengguna") == 3) {
+            if (
+                session()->get("sttpengguna") == 3
+                || session()->get('sttpengguna') == 7
+            ) {
                 $kode_prodi = session()->get('kode_prodi');
             } else if (session()->get("sttpengguna") == 1) {
                 $kode_prodi = "";
@@ -2025,7 +2036,7 @@ class Admin extends BaseController
             $nmmk = $db->escapeString($this->request->getPost("nmmk"));
             $sks = $db->escapeString($this->request->getPost("sks"));
             $idkur = $db->escapeString($this->request->getPost("idkur"));
-            if (session()->get('sttpengguna') == 3) {
+            if (session()->get('sttpengguna') == 3 || session()->get('sttpengguna') == 7) {
                 $jenis_mk = $db->escapeString($this->request->getPost("jenismk"));
                 if ($jenis_mk == '4') {
                     $kdkons = $db->escapeString($this->request->getPost("kdkons"));
@@ -2099,7 +2110,7 @@ class Admin extends BaseController
     }
     public function daftarMkRplprodi()
     {
-        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3) {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3 &&  session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
         } else {
             $modelMk = new ModelMatakuliah();
@@ -2152,7 +2163,7 @@ class Admin extends BaseController
 
     public function updateMkRpl()
     {
-        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3) {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
         } else {
             $db = \Config\Database::connect();
@@ -2253,8 +2264,9 @@ class Admin extends BaseController
     }
     public function data_asessor_prodi()
     {
-        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3) {
+        if (!session()->get('sttpengguna') && session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
+            // session()->get('sttpengguna');
         } else {
 
             $modelPengguna = new ModelPengguna();
@@ -2350,7 +2362,7 @@ class Admin extends BaseController
 
     public function simpanpesertaasessor_prodi()
     {
-        if (!session()->get('sttpengguna') || session()->get("sttpengguna") != 3) {
+        if (!session()->get('sttpengguna') || session()->get("sttpengguna") != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
             // echo "test";
         } else {
@@ -2475,7 +2487,7 @@ class Admin extends BaseController
                     'jenis_rpl' => $databio[0]['jenis_rpl'],
                     'noregis' => $noregis,
                     'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
-                    'konsentrasi' => $konsentrasi[0]['konsentrasi'],
+                    'konsentrasi' => (isset($konsentrasi[0]['konsentrasi']) ? $konsentrasi[0]['konsentrasi'] : ""),
                     'maxsksrekognisi' => $maxsksrekognisi->sksmax,
                     'dataKlaimMhs' => $dataassementmandiri,
                     'basenilai' => $nilai
@@ -2510,7 +2522,12 @@ class Admin extends BaseController
                 $datamatakuliah = $ModalMkA1->where('no_registrasi', $noregis)->findAll();
                 $mkrplprodi = $this->getMatakuliahklaimperprodi1($databio[0]['kode_prodi'], $noregis, $databio[0]['kode_konsentrasi']);
                 $dataklaimAsessorA1 = $ModalMkA1->getDataKlaimAsessorA1($noregis);
-                $maxsksrekognisi = $ModalMkA1->maxsksrekognisi($databio[0]['kode_prodi']);
+                if ($databio[0]['dodi'] == 1) {
+                    $sksmax = 1000;
+                } else {
+                    $maxsksrekognisi = $ModalMkA1->maxsksrekognisi($databio[0]['kode_prodi']);
+                    $sksmax = $maxsksrekognisi->sksmax;
+                }
                 $wherekonsen = [
                     "prodi" => $databio[0]['kode_prodi'],
                     "kode_konsentrasi" => $databio[0]['kode_konsentrasi']
@@ -2526,11 +2543,13 @@ class Admin extends BaseController
                     'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                     'jenis_rpl' => $databio[0]['jenis_rpl'],
                     'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
-                    'konsentrasi' => $konsentrasi[0]['konsentrasi'],
+                    'dodi' => $databio[0]['dodi'],
+                    'konsentrasi' => (isset($konsentrasi[0]['konsentrasi']) ? $konsentrasi[0]['konsentrasi'] : ""),
+
                     'noregis' => $noregis,
                     'datamatakuliah' => $datamatakuliah,
                     'data_dok' => $datadokumen,
-                    'maxsksrekognisi' => $maxsksrekognisi->sksmax,
+                    'maxsksrekognisi' => $sksmax,
                     'mkrplprodi' => $mkrplprodi,
                     'dataKlaimAsessorA1' => $dataklaimAsessorA1,
                     'basenilai' => $nilai
@@ -2577,14 +2596,13 @@ class Admin extends BaseController
             $db      = \Config\Database::connect();
             $noregis = $db->escapeString($this->request->getPost('noregis'));
             $modelklaimasessor = new ModelKlaimAsessor();
-            
+
             $cekstatusklaimasessor = $modelklaimasessor->cekStatusKlaimAsessorBynoregis($noregis);
             $statusmk = $modelklaimasessor->cekValidProdi($noregis);
             // print_r($cekstatusklaimasessor);
             if ($cekstatusklaimasessor != NUll) {
                 echo "gagalvalidasessor";
-            }
-            else if ($statusmk == NULL) {
+            } else if ($statusmk == NULL) {
                 $modelklaimasessor->batalklaimdokA1($noregis);
             } else {
                 echo "gagalvalidprodi";
@@ -2615,7 +2633,7 @@ class Admin extends BaseController
     }
     public function validprodi($noregis, $status = 1)
     {
-        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3) {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
         } else {
             $this->request = service('request');
@@ -2639,14 +2657,14 @@ class Admin extends BaseController
             if ($kode_prodi == session()->get('kode_prodi')) {
                 // $noregis = session()->get("noregis");
                 $Modaldokumen = new ModelDokumen();
-                $ModalBiodata = new ModelBiodata();
                 $ModalAssesmentMandiri = new ModelKlaimAsessor();
                 $modelPeserta = new ModelPesertaAsessor();
                 $modelKonsentrasi = new ModelKonsentrasi();
 
                 $datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
-                $namaasessor = $modelPeserta->getnamaasessor($noregis);
+                $ModalBiodata = new ModelBiodata();
                 $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+                $namaasessor = $modelPeserta->getnamaasessor($noregis);
                 $dataassementmandiri = $ModalAssesmentMandiri->getKlaimMk_mahasiswa($noregis);
                 $wherekonsen = [
                     "prodi" => $databio[0]['kode_prodi'],
@@ -2660,14 +2678,14 @@ class Admin extends BaseController
                     'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                     'jenis_rpl' => $databio[0]['jenis_rpl'],
                     'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
-                    'konsentrasi' => $konsentrasi[0]['konsentrasi'],
-
+                    'konsentrasi' => (isset($konsentrasi[0]['konsentrasi']) ? $konsentrasi[0]['konsentrasi'] : ""),
                     'noregis' => $noregis,
                     'status' => $status,
                     'maxsksrekognisi' => $this->getmaxsksrekognisi(session()->get('kode_prodi')),
                     'dataKlaimMhs' => $dataassementmandiri,
                     'validstatus' => $statusMessage,
-                    'nm_asessor' => $namaasessor
+                    'nm_asessor' => $namaasessor,
+                    'dodi' => $databio[0]['dodi'],
 
                 ];
                 return view('Admin/rpl-validasi-prodi', $data);
@@ -2678,7 +2696,7 @@ class Admin extends BaseController
     }
     public function validprodia1($noregis, $status = 1)
     {
-        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3) {
+        if (!session()->get('sttpengguna') && session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
         } else {
             $this->request = service('request');
@@ -2731,7 +2749,9 @@ class Admin extends BaseController
                     'status' => $status,
                     'dataKlaimAsessorA1' => $dataklaimAsessorA1,
                     'validstatus' => $statusMessage,
-                    'nm_asessor' => $namaasessor
+                    'nm_asessor' => $namaasessor,
+                    'maxsksrekognisi' => $this->getmaxsksrekognisi(session()->get('kode_prodi')),
+                    "dodi" => $databio[0]['dodi'],
 
                 ];
                 return view('Admin/rpl-validasi-prodi-a1', $data);
@@ -2741,9 +2761,53 @@ class Admin extends BaseController
         }
     }
 
+    public function validasi_regis_prodi()
+    {
+        if (!session()->get('sttpengguna') && session()->get('sttpengguna') != 7) {
+            echo json_encode(['result' => 'Level pengguna tidak sesuai'], false);
+        } else {
+            $db      = \Config\Database::connect();
+            $this->request = service('request');
+            $noregis = $db->escapeString($this->request->getPost("a"));
+            $statusvalid = $db->escapeString($this->request->getPost("b"));
+            $statusdudi = $db->escapeString($this->request->getPost("c"));
+            $modelBiodata = new ModelBiodata();
+            $modelKeu = new ModelKeu();
+            $validkeu = $modelKeu->where('no_peserta', $noregis)->findAll();
+            if ($validkeu != NULL) {
+                echo json_encode(['result' => 'Tidak Bisa dilakukan Unvalidasi karena telah divalidasi oleh Keuangan']);
+            } else {
+                if ($statusvalid == '0') {
+                    $data = [
+                        'validasi_regis_prodi' => "1",
+                        'dodi' => $statusdudi
+                    ];
+                    // print_r($data);
+                    // die;
+                    $result = $modelBiodata->where('no_peserta', $noregis)->set($data)->update();
+                } else if ($statusvalid == '1') {
+                    $result = $modelBiodata->where('no_peserta', $noregis)->set(['validasi_regis_prodi' => '0', 'dodi' => 0])->update();
+                } else {
+                    echo json_encode(['result' => 'Status Validasi tidak sesuai !']);
+                    die;
+                }
+                $data = [];
+                if ($result > 0) {
+                    $data = [
+                        'result' => 'Data Berhasil udpate silahkan klik refresh untuk melihat hasil',
+                    ];
+                } else {
+                    $data = [
+                        'result' => 'Data gagal udpate silahkan klik refresh untuk melihat hasil',
+                    ];
+                };
+                echo json_encode($data, false);
+            }
+        }
+    }
     public function validasiprodi()
     {
-        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3) {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
         } else {
             $db      = \Config\Database::connect();
@@ -2765,11 +2829,15 @@ class Admin extends BaseController
                 }
             }
             $modelPeserta = new ModelPesertaAsessor();
+            $modelBiodata = new ModelBiodata();
+            $databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
 
             $ta_akademik = $this->getTa_akademik();
             $datamahasiswabelumpunyaasessro = $modelPeserta->getdataPesertaBelumPunyaAsessorByProdi(session()->get('kode_prodi'), $ta_akademik);
+
             $databelumvalidprodi = $modelPeserta->getDataPesertaBelumValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
             $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
+            $datamahasiswaregistrasi = $modelBiodata->where(['kode_prodi' => session()->get('kode_prodi'), 'ta_akademik' => $ta_akademik])->orderBy('validasi_regis_prodi', 'asc')->findAll();
             $datasudahvaliddekan = $modelPeserta->getDataPesertaAsessorSudahValidDekanPerprodi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
 
             $data = [
@@ -2779,9 +2847,12 @@ class Admin extends BaseController
                 'dataPesertaBelumValid' => $databelumvalidprodi,
                 'dataPesertaSudahValid' => $datasudahvalid,
                 'dataPesertaSudahValidDekan' => $datasudahvaliddekan,
+                'dataregistrasiMHS' => $datamahasiswaregistrasi,
                 'maxsksrekognisi' => $this->getmaxsksrekognisi(session()->get('kode_prodi')),
                 'validstatus' => $statusMessage,
-                'dataMhsbelumpunyaasessor' => $datamahasiswabelumpunyaasessro
+                'dataMhsbelumpunyaasessor' => $datamahasiswabelumpunyaasessro,
+                'maxsksrekognisi' => $this->getmaxsksrekognisi(session()->get('kode_prodi')),
+                "dodi" => $databio[0]['dodi'],
             ];
             return view('Admin/rpl-home-prodi', $data);
         }
@@ -2795,6 +2866,7 @@ class Admin extends BaseController
             $db      = \Config\Database::connect();
             $this->request = service('request');
             $noregis = $db->escapeString($this->request->getPost("noregis"));
+
 
             $modelMkDekan = new ModelKlaimDekan();
             $cekpesertaasessor = $modelMkDekan->chekstauspesertaasessor($noregis);
@@ -2819,6 +2891,8 @@ class Admin extends BaseController
                 // echo $this->validdekan($noregis, 5);
                 $statusMessage = "Peserta Belum divalidasi prodi atau belum divalidasi Asessor";
             }
+            $ModalBiodata = new ModelBiodata();
+            $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
             $modelPeserta = new ModelPesertaAsessor();
             $ta_akademik = $this->getTa_akademik();
             $kode_fakultas = session()->get('kode_fakultas');
@@ -2834,6 +2908,8 @@ class Admin extends BaseController
                 'dataPesertaSudahValid' => $datasudahvalid,
                 'validstatus' => $statusMessage,
                 'dataPesertaSudahValidkeu' => $datasudahkeu,
+                'maxsksrekognisi' => $this->getmaxsksrekognisi(session()->get('kode_prodi')),
+                "dodi" => $databio[0]['dodi'],
 
             ];
 
@@ -2873,7 +2949,7 @@ class Admin extends BaseController
     }
     public function unvalidasiprodi()
     {
-        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3) {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
         } else {
             $db      = \Config\Database::connect();
@@ -2895,8 +2971,10 @@ class Admin extends BaseController
                 // echo $this->validprodi($noregis, 7);
                 $statusMessage = "Peserta Sudah Diunvalidasi";
             }
-            $modelPeserta = new ModelPesertaAsessor();
             $ta_akademik = $this->getTa_akademik();
+            $modelBiodata = new ModelBiodata();
+            $datamahasiswaregistrasi = $modelBiodata->where(['kode_prodi' => session()->get('kode_prodi'), 'ta_akademik' => $ta_akademik])->orderBy('validasi_regis_prodi', 'asc')->findAll();
+            $modelPeserta = new ModelPesertaAsessor();
             $datamahasiswabelumpunyaasessro = $modelPeserta->getdataPesertaBelumPunyaAsessorByProdi(session()->get('kode_prodi'), $ta_akademik);
             $databelumvalidprodi = $modelPeserta->getDataPesertaBelumValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
             $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdi(session()->get('id'), session()->get('kode_prodi'), $ta_akademik);
@@ -2907,6 +2985,7 @@ class Admin extends BaseController
                 'ta_akademik' => $this->getTa_akademik(),
                 'dataPesertaBelumValid' => $databelumvalidprodi,
                 'dataPesertaSudahValid' => $datasudahvalid,
+                'dataregistrasiMHS' => $datamahasiswaregistrasi,
                 'dataPesertaSudahValidDekan' => $datasudahvaliddekan,
                 'validstatus' => $statusMessage,
                 'dataMhsbelumpunyaasessor' => $datamahasiswabelumpunyaasessro
@@ -2943,6 +3022,8 @@ class Admin extends BaseController
             $modelPeserta = new ModelPesertaAsessor();
             $ta_akademik = $this->getTa_akademik();
             $kode_fakultas = session()->get('kode_fakultas');
+            $ModalBiodata = new ModelBiodata();
+            $databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
             $databelumvalid = $modelPeserta->getDataPesertaAsessorSudahValidProdiDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
             $datasudahvalid = $modelPeserta->getDataPesertaAsessorSudahValidDekan(session()->get('id'), $kode_fakultas, $ta_akademik);
             $datasudahkeu = $modelPeserta->getDataPesertaAsessorSudahValidKeu(session()->get('id'), $kode_fakultas, $ta_akademik);
@@ -3014,6 +3095,8 @@ class Admin extends BaseController
                     'noregis' => $noregis,
                     'status' => $status,
                     'maxsksrekognisi' => $this->getmaxsksrekognisi($databio[0]['kode_prodi']),
+                    "dodi" => $databio[0]['dodi'],
+
                     'dataKlaimMhs' => $dataassementmandiri,
                     'validstatus' => $statusMessage
 
@@ -3084,7 +3167,9 @@ class Admin extends BaseController
                     'status' => $status,
                     'dataKlaimAsessorA1' => $dataklaimAsessorA1,
                     'nm_asessor' => $namaasessor,
-                    'validstatus' => $statusMessage
+                    'validstatus' => $statusMessage,
+                    'maxsksrekognisi' => $this->getmaxsksrekognisi($databio[0]['kode_prodi']),
+                    "dodi" => $databio[0]['dodi'],
 
                 ];
                 return view('Admin/rpl-validasi-dekan-a1', $data);
@@ -3200,7 +3285,7 @@ class Admin extends BaseController
                 'nama_mhs' => $databio[0]['nama'],
                 'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                 'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
-                'konsentrasi' => $konsentrasi[0]['konsentrasi'],
+                'konsentrasi' => (isset($konsentrasi[0]['konsentrasi']) ? $konsentrasi[0]['konsentrasi'] : ""),
                 'jenis_rpl' => $databio[0]['jenis_rpl'],
                 'noregis' => $noregis,
                 'dekan' => $dekan,
@@ -3249,8 +3334,7 @@ class Admin extends BaseController
             // print_r($cekstatusklaimasessor);
             if ($cekstatusklaimasessor != NUll) {
                 echo "gagalvalidasessor";
-            }
-            else if ($statusmk == NULL) {
+            } else if ($statusmk == NULL) {
                 $simpanklaim = $ModalTransactionKlaim->simpanklaimAsessorA1($formdata, $kode_prodi, $ta_akademik);
             } else {
                 echo "gagalvalidprodi";
@@ -3434,10 +3518,39 @@ class Admin extends BaseController
         }
         return $ta_akademik;
     }
+    public function getBatasPembayaran()
+    {
+        $db      = \Config\Database::connect();
+        $result = $db->query("select * from tb_ta_akademik");
+        if ($result->getResult() != NULL) {
+            foreach ($result->getResult() as $a) {
+                $batasbayar = $a->tgl_batas_akhir;
+            }
+        } else {
+            return false;
+        }
+        return $batasbayar;
+    }
+
+    public function updateBatasPembayaran()
+    {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 1) {
+            return redirect()->to('/logout');
+        } else {
+            $db      = \Config\Database::connect();
+            $batasbayar = $db->escapeString($this->request->getPost('tgl_batas_bayar'));
+            $result = $db->query("update tb_ta_akademik set tgl_batas_akhir ='$batasbayar'");
+            if ($result) {
+                return "Berhasil mengupdate batas pembayaran !";
+            } else {
+                return "Gagal mengupdate batas pembayaran !";
+            }
+        }
+    }
 
     public function dataMhsPerpodiOk($ta_akademik)
     {
-        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3) {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
         } else {
             $this->request = service('request');
@@ -3479,7 +3592,7 @@ class Admin extends BaseController
     }
     public function getDataStatusMhsPerProdi()
     {
-        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3) {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
         } else {
             $db = \Config\Database::connect();
@@ -3495,7 +3608,7 @@ class Admin extends BaseController
     }
     public function menuDataMhsPerpodi()
     {
-        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3) {
+        if (!session()->get('sttpengguna') || session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7) {
             return redirect()->to('/logout');
         } else {
             $this->request = service('request');
@@ -3720,6 +3833,7 @@ class Admin extends BaseController
                 // $kode_fakultas = session()->get('kode_fakultas');
                 $makssks = $this->getmaxsks($kode_prodi);
                 $tarifrpl = $this->gettarif($kode_prodi);
+                $tarifdodi = $this->gettarifdodi($kode_prodi);
                 $praakademik = $this->getPrakademik($kode_prodi);
                 $sksmaxrekognisi = $this->getmaxsksrekognisi($kode_prodi);
                 $bpp = $this->getBpp($kode_prodi);
@@ -3748,16 +3862,19 @@ class Admin extends BaseController
                         'jenis_rpl' => $databio[0]['jenis_rpl'],
                         'kode_konsentrasi' => $databio[0]['kode_konsentrasi'],
                         'konsentrasi' => $konsentrasi[0]['konsentrasi'],
+                        'dodi' => $databio[0]['dodi'],
                         'noregis' => $noregis,
                         'dekan' => $dekan,
                         'fakultas' => $fakultas,
                         'maxsks' => $makssks,
                         "tarifrpl" => $tarifrpl,
+                        "tarifdodi" => $tarifdodi,
                         "praakademik" => $praakademik,
                         "sksmaxrekognisi" => $sksmaxrekognisi,
                         "bpp" => $bpp,
                         "spp" => $spp,
                         'dataKlaimAsessor' => $result,
+                        'batasPembayaran' => $this->getBatasPembayaran(),
 
 
                     ];
@@ -3786,8 +3903,10 @@ class Admin extends BaseController
             // $kode_fakultas = session()->get('kode_fakultas');
             $makssks = $this->getmaxsks($kode_prodi);
             $tarifrpl = $this->gettarif($kode_prodi);
+            $tarifdodi = $this->gettarifdodi($kode_prodi);
             $makssks = $this->getmaxsks($kode_prodi);
             $tarifrpl = $this->gettarif($kode_prodi);
+            $tarifdodi = $this->gettarifdodi($kode_prodi);
             $praakademik = $this->getPrakademik($kode_prodi);
             $sksmaxrekognisi = $this->getmaxsksrekognisi($kode_prodi);
             $bpp = $this->getBpp($kode_prodi);
@@ -3815,16 +3934,19 @@ class Admin extends BaseController
                     'nama_mhs' => $databio[0]['nama'],
                     'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
                     'jenis_rpl' => $databio[0]['jenis_rpl'],
+                    'dodi' => $databio[0]['dodi'],
                     'noregis' => $noregis,
                     'dekan' => $dekan,
                     'fakultas' => $fakultas,
                     'maxsks' => $makssks,
                     "tarifrpl" => $tarifrpl,
+                    "tarifdodi" => $tarifdodi,
                     "praakademik" => $praakademik,
                     "sksmaxrekognisi" => $sksmaxrekognisi,
                     "bpp" => $bpp,
                     "spp" => $spp,
                     'dataKlaimAsessor' => $result,
+                    'batasPembayaran' => $this->getBatasPembayaran(),
 
 
                 ];
@@ -3854,6 +3976,13 @@ class Admin extends BaseController
         $result = $db->query("select tarif from prodi where kode_prodi ='$kode_prodi'")->getRow();
 
         return $result->tarif;
+    }
+    public function gettarifdodi($kode_prodi)
+    {
+        $db      = \Config\Database::connect();
+        $result = $db->query("select tarif_dodi from prodi where kode_prodi ='$kode_prodi'")->getRow();
+
+        return $result->tarif_dodi;
     }
     public function getPrakademik($kode_prodi)
     {
@@ -3959,6 +4088,7 @@ class Admin extends BaseController
             $kode_prodi = $db->escapeString($this->request->getPost("kode_prodi"));
             $nama_prodi = $db->escapeString($this->request->getPost("nama_prodi"));
             $tarif = $db->escapeString($this->request->getPost("tarif"));
+            $tarifdodi = $db->escapeString($this->request->getPost("tarif_dodi"));
             $praakademik = $db->escapeString($this->request->getPost("praakademik"));
             $bpp = $db->escapeString($this->request->getPost("bpp"));
             $spp = $db->escapeString($this->request->getPost("spp"));
@@ -3970,6 +4100,7 @@ class Admin extends BaseController
                 "bpp" => $bpp,
                 "spp" => $spp,
                 "bpp" => $bpp,
+                "tarif_dodi" => $tarifdodi,
                 "sks_max_rekognisi" => $sksmax,
             ];
 
@@ -3987,8 +4118,9 @@ class Admin extends BaseController
         } else {
             $data = [
                 'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU']),
-                'page_title' => view('partials/rpl-page-title', ['title' => 'Setup Tahun Akademik', 'pagetitle' => 'SILAJU']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Setup Tahun Akademik & Batas Bayar', 'pagetitle' => 'SILAJU']),
                 'ta_akademik' => $this->getTa_akademik(),
+                'batasbayar' => $this->getBatasPembayaran(),
 
             ];
             return view('Admin/rpl-setup-taakademik', $data);
@@ -4012,7 +4144,7 @@ class Admin extends BaseController
             }
             $data = [
                 'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU']),
-                'page_title' => view('partials/rpl-page-title', ['title' => 'Setup Tahun Akademik', 'pagetitle' => 'SILAJU']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Setup Tahun Akademik & Batas Bayar', 'pagetitle' => 'SILAJU']),
                 'ta_akademik' => $this->getTa_akademik(),
                 'alert' => $alert,
 
@@ -4023,7 +4155,7 @@ class Admin extends BaseController
 
     public function setupKonsentrasi()
     {
-        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 3)) {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7)) {
             return redirect()->to('/logout');
         } else {
             // $ta_akademik = $this->getTa_akademik();
@@ -4043,7 +4175,7 @@ class Admin extends BaseController
     }
     public function simpankons()
     {
-        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 3)) {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7)) {
             return redirect()->to('/logout');
         } else {
             // $ta_akademik = $this->getTa_akademik();
@@ -4081,7 +4213,7 @@ class Admin extends BaseController
     }
     public function udpatekons()
     {
-        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 3)) {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 3 && session()->get('sttpengguna') != 7)) {
             return redirect()->to('/logout');
         } else {
             // $ta_akademik = $this->getTa_akademik();
@@ -4507,6 +4639,40 @@ class Admin extends BaseController
                 'dataPesertaValid' => $datasudahvalidasi,
             ];
             return view('Admin/rpl-home-akademik-tosiska', $data);
+        }
+    }
+
+    public function log_activity()
+    {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 1)) {
+            return redirect()->to('/logout');
+        } else {
+            $modelLogAcitiviy = new ModelActivity();
+            $ta_akademik = $this->getTa_akademik();
+            // $dataActivity= $modelLogAcitiviy->where('tgl_acti')
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Log Aktivitas', 'pagetitle' => 'Log Aktivitas']),
+                'ta_akademik' => $this->getTa_akademik(),
+                // 'dataPesertaValid' => $datasudahvalidasi,
+            ];
+            return view('Admin/rpl-log-activity', $data);
+        }
+    }
+
+    public function getLog()
+    {
+        if (!session()->get('sttpengguna') &&  (session()->get('sttpengguna') != 1)) {
+            return redirect()->to('/logout');
+        } else {
+            $db = \Config\Database::connect();
+            $this->request = service('request');
+            $month = $db->escapeString($this->request->getPost('month'));
+            $year = $db->escapeString($this->request->getPost('year'));
+            $modelLogAcitiviy = new ModelActivity();
+            $data = $modelLogAcitiviy->where('YEAR(tgl_activity)', $year)->where('MONTH(tgl_activity)', $month)->findAll();
+            // $data = $modelLogAcitiviy->findAll();
+            echo json_encode($data, false);
         }
     }
 }

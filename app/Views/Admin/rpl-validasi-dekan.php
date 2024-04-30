@@ -93,12 +93,13 @@
                                                             <tr>
                                                                 <th>No</th>
                                                                 <th>Nama Matakuliah</th>
+                                                                <th>SKS</th>
                                                                 <th>CPMK</th>
                                                                 <th>Penguasaan</th>
                                                                 <th>Deskripsi</th>
                                                                 <th>Ref</th>
                                                                 <th>Tanggapan</th>
-                                                                <th style="width:100px">Nilai</th>
+                                                                <th style="width:120px">Nilai</th>
                                                                 <th>Keterangan Tanggapan</th>
                                                             </tr>
 
@@ -173,7 +174,9 @@
                                                                                     <option value=''>Pilih</option>
                                                                                     <option value='0'>Ok</option>
                                                                                     <option value='1'>Butuh Tindakan</option>
-                                                                                    <select class='form-select' required>
+                                                                                    </select></td>
+                                                                                    <td for='nilaiAs'  rowspan='$count'>
+                                                                                     <select class='form-select' required>
                                                                                     <option value='' selected>Pilih</option>    
                                                                                     <option value='A'>A</option>    
                                                                                     <option value='A-'>A-</option>    
@@ -527,6 +530,4 @@ function getRefmhs($datadok, $refMhs)
 
 }
 
-
-
-?
+?>

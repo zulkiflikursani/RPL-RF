@@ -18,6 +18,7 @@ class ModelPengguna extends Model
         "ktkunci",
         "kode_prodi",
         "kode_fakultas",
+        "nohp",
         "tglbuat",
         "tglubah",
     ];
@@ -32,7 +33,8 @@ class ModelPengguna extends Model
         "email" => 'required|valid_email|is_unique[tb_pengguna.email]|is_unique[reg_peserta.email]',
         "ktkunci" => 'required',
         "kode_prodi" => 'required',
-        "kode_fakultas" => 'required'
+        "kode_fakultas" => 'required',
+        "nohp" => 'required',
     ];
     protected $validationMessages = [
         'email' => [

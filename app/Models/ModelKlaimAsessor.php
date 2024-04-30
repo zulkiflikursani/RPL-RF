@@ -339,6 +339,7 @@ class ModelKlaimAsessor extends Model
                                     mk_klaim_header.no_peserta,
                                     mk_klaim_header.kode_prodi,
                                     mk_klaim_header.kode_matakuliah,
+                                    IFNULL(matakuliah.jenis_matakuliah,'Matakuliah ini sudah tidak tersaji di master matakuliah') as jenis_matakuliah,
                                     mk_klaim_header.nama_matakuliah,
                                     mk_klaim_header.desk,
                                     mk_klaim_header.sks,
@@ -355,6 +356,7 @@ class ModelKlaimAsessor extends Model
                                 left join mk_klaim_detail on mk_klaim_header.idklaim=mk_klaim_detail.idklaim 
                                 LEFT JOIN ref_klaim on mk_klaim_header.idklaim=ref_klaim.idklaim
                                 LEFT JOIN dok_portofolio on ref_klaim.no_dokumen= dok_portofolio.no_dokumen
+                                LEFT JOIN matakuliah on mk_klaim_header.kode_matakuliah = matakuliah.kode_matakuliah
                                 WHERE
                                     mk_klaim_header.no_peserta = '$noregis' order by mk_klaim_header.nama_matakuliah,mk_klaim_detail.idcpmk")->getResultArray();
 

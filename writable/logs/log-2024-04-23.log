@@ -1,0 +1,16 @@
+CRITICAL - 2024-04-23 06:02:16 --> Undefined variable: kdkons
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(2050): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 2050, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->editMk()
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#6 {main}
+CRITICAL - 2024-04-23 06:05:19 --> Undefined variable: kdkons
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/app/Controllers/Admin.php(2050): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 2050, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->editMk()
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#6 {main}

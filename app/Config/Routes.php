@@ -84,6 +84,7 @@ $routes->post('Auth/Login', 'AuthController::Login');
 //Admin
 $routes->get('/Admin', 'Admin::index');
 $routes->get('/pengguna', 'Admin::pengguna');
+$routes->get('/log-pengguna', 'Admin::log_activity');
 $routes->get('/asessor', 'Admin::Asessor');
 $routes->get('/dataasessor', 'Admin::dataAsessor');
 $routes->get('/data-peserta', 'Admin::dataPeserta');
@@ -151,6 +152,7 @@ $routes->post('cekstatusmka1', 'Admin::cekStatusMkA1');
 
 
 
+$routes->post('getlog', 'Admin::getLog');
 $routes->post('getmatakuliah', 'Admin::getMatakuliah');
 $routes->post('getcpmk', 'Admin::getcpmk');
 $routes->post('getcpmk-admin', 'Admin::getcpmkAdmin');
@@ -162,6 +164,7 @@ $routes->post('editmk', 'Admin::editMk');
 $routes->post('hapuscpmk', 'Admin::hapusCpmk');
 $routes->post('hapusmk', 'Admin::hapusMk');
 $routes->post('validasikeu', 'Admin::validKeu');
+$routes->post('validasiregprodi', 'Admin::validasi_regis_prodi');
 $routes->post('unvalidasikeu', 'Admin::unvalidKeu');
 $routes->post('validasibayar', 'Admin::validbayarKeu');
 $routes->post('unvalidasibayar', 'Admin::unvalidbayarKeu');
@@ -182,6 +185,7 @@ $routes->post('setvaliddekan', 'Admin::validasidekan');
 $routes->post('setunvaliddekan', 'Admin::unvalidasidekan');
 $routes->post('updatetarif', 'Admin::updateTarif');
 $routes->post('udpate-taakademik', 'Admin::updateTaAkademik');
+$routes->post('udpate-batas-bayar', 'Admin::updateBatasPembayaran');
 $routes->post('simpan-konsentrasi', 'Admin::simpankons');
 $routes->post('update-konsentrasi', 'Admin::udpatekons');
 $routes->post('delete-konsentrasi', 'Admin::deletekons');

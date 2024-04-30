@@ -246,6 +246,7 @@ thead input {
                                                                                 peminatan</option>
                                                                             <option value="5">Pilihan</option>
                                                                             <option value="6">Skripsi</option>
+                                                                            <option value="7">MBKM</option>
                                                                             ?>
                                                                         </select>
                                                                     </div>
@@ -435,6 +436,8 @@ thead input {
                                                         $jenismk = 'Pilihan';
                                                     } else if ($row->jenis_matakuliah == '6') {
                                                         $jenismk = 'Skripsi/thesis';
+                                                    } else if ($row->jenis_matakuliah == '7') {
+                                                        $jenismk = 'MBKM';
                                                     }
                                                     echo "<tr kdkons='" . $row->kode_konsentrasi . "' jenismk='" . $row->jenis_matakuliah . "'>
                                                     <td>$i</td>
@@ -442,7 +445,7 @@ thead input {
                                                     <td for='nmmk'>" . $row->nama_matakuliah . "</td>
                                                     <td for='kons' >" . $row->konsentrasi . "</td>
                                                     <td for='sks'>" . $row->sks . "</td>
-                                                    <td for='jenismk'>" . $jenismk . "</td>
+                                                    <td for='jenismk'>" . $jenismk . $row->jenis_matakuliah."</td>
                                                   <td><button class='btn btn-sm btn-primary bt-edit-matakuliah' data-bs-toggle='modal'
                                                   id='bt-edit-matakuliah'
                                                   data-bs-target='.edit-matakuliah-modal' >Edit</button></td>
