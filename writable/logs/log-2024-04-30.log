@@ -1,0 +1,11 @@
+CRITICAL - 2024-04-30 02:24:07 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Admin.php(3511): CodeIgniter\Database\BaseConnection->query('select * from t...')
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Admin.php(73): App\Controllers\Admin->getTa_akademik()
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->index()
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#8 {main}
