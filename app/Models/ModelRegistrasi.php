@@ -12,7 +12,7 @@ class ModelRegistrasi extends Model
   protected $returnType     = 'array';
 
 
-  protected $allowedFields = ['ta_akademik', 'no_peserta', 'nama', 'alamat', 'kode_konsentrasi', 'kotkab', 'propinsi', 'instansi_asal', 'nohape', 'email', 'kode_prodi', 'validasi_keu', 'validasi_regis_prodi', 'ktkunci', 'nik', 't_lahir', 'ttl', 'ibu_kandung', 'jenis_rpl', 'dodi'];
+  protected $allowedFields = ['ta_akademik', 'no_peserta', 'nama', 'alamat', 'kode_konsentrasi', 'kotkab', 'propinsi', 'instansi_asal', 'nohape', 'email', 'kode_prodi', 'validasi_keu', 'validasi_regis_prodi', 'ktkunci', 'nik', 't_lahir', 'ttl', 'ibu_kandung', 'jenis_rpl', 'dodi', 'didikakhir'];
 
   protected $validationRules = [
     'ta_akademik'     => 'required',
@@ -28,6 +28,7 @@ class ModelRegistrasi extends Model
     'validasi_keu'        => 'required',
     'validasi_regis_prodi' => 'required',
     'ktkunci'        => 'required',
+    'didikakhir' => 'required',
     'nik' => 'required',
     't_lahir' => 'required',
     'ttl' => 'required',

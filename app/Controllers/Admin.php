@@ -248,7 +248,7 @@ class Admin extends BaseController
 
     public function updataBuktiBayar()
     {
-        if (session()->get('sttpengguna') != 1) {
+        if (session()->get('sttpengguna') != 1 ) {
             return redirect()->to('/logout');
         } else {
             helper('File');

@@ -29,6 +29,14 @@ class UserModel extends Model
         if ($user != null) {
             if (password_verify($field2, $user['ktkunci'])) {
                 return $user;
+            } else {
+                $password = md5($field2);
+                $user = $model->where("email", $field1)->where('ktkunci', $password)->first();
+                if ($user != null) {
+                    return $user;
+                } else {
+                    return false;
+                }
             }
         } else {
             $model2 = new ModelPengguna();

@@ -1,0 +1,113 @@
+CRITICAL - 2024-05-03 07:32:01 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 1429
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString(NULL)
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Front.php(285): CodeIgniter\Database\BaseConnection->escapeString(NULL)
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->getKab()
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#7 {main}
+CRITICAL - 2024-05-03 07:56:37 --> Trying to get property 'noregis' of non-object
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Front.php(274): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\sila...', 274, Array)
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->updateBuktiByrMhs()
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#6 {main}
+CRITICAL - 2024-05-03 07:56:57 --> Trying to access array offset on value of type null
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Front.php(274): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'G:\\PROJECT\\sila...', 274, Array)
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->updateBuktiByrMhs()
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#6 {main}
+CRITICAL - 2024-05-03 07:57:25 --> Trying to access array offset on value of type null
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Front.php(274): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'G:\\PROJECT\\sila...', 274, Array)
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->updateBuktiByrMhs()
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#6 {main}
+CRITICAL - 2024-05-03 07:57:51 --> Trying to get property 'no_peserta' of non-object
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Front.php(274): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\PROJECT\\sila...', 274, Array)
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->updateBuktiByrMhs()
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#6 {main}
+CRITICAL - 2024-05-03 08:31:44 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 1429
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString(NULL)
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Front.php(2386): CodeIgniter\Database\BaseConnection->escapeString(NULL)
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->searchtpasal()
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#7 {main}
+CRITICAL - 2024-05-03 09:02:51 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 1429
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString(NULL)
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Front.php(2391): CodeIgniter\Database\BaseConnection->escapeString(NULL)
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->searchtpasal()
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#7 {main}
+CRITICAL - 2024-05-03 09:05:02 --> Undefined offset: 0
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Admin.php(2449): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\sila...', 2449, Array)
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Admin.php(2511): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#7 {main}
+CRITICAL - 2024-05-03 09:05:02 --> Undefined offset: 0
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Admin.php(2449): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\sila...', 2449, Array)
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Admin.php(2511): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#7 {main}
+CRITICAL - 2024-05-03 09:05:17 --> Undefined offset: 0
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Admin.php(2449): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\sila...', 2449, Array)
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Admin.php(2511): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#7 {main}
+CRITICAL - 2024-05-03 09:05:17 --> Undefined offset: 0
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Admin.php(2449): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\PROJECT\\sila...', 2449, Array)
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Admin.php(2511): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#7 {main}
+CRITICAL - 2024-05-03 09:05:47 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 1429
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString(NULL)
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Front.php(706): CodeIgniter\Database\BaseConnection->escapeString(NULL)
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->getKab()
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#7 {main}
+CRITICAL - 2024-05-03 09:06:53 --> Argument 1 passed to CodeIgniter\Database\MySQLi\Connection::_escapeString() must be of the type string, null given, called in G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 1429
+#0 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1429): CodeIgniter\Database\MySQLi\Connection->_escapeString(NULL)
+#1 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\app\Controllers\Front.php(706): CodeIgniter\Database\BaseConnection->escapeString(NULL)
+#2 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Front->getKab()
+#3 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#4 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 G:\PROJECT\silaju.unifa.ac.id\RPL-RF\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\PROJECT\\sila...')
+#7 {main}

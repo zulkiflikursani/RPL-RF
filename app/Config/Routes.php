@@ -71,6 +71,10 @@ $routes->post('deldok', 'Front::deleteDokumen');
 $routes->post('getKab', 'Front::getKab');
 $routes->post('searchtpasal', 'Front::searchtpasal');
 $routes->post('konsentrasi-by-prodi', 'Front::getKonsentrasiByProdi');
+$routes->post('updatebuktibayarmhs', 'Front::updateBuktiByrMhs');
+$routes->post('updateidentitasmhs', 'Front::updateIdentitasMhs');
+$routes->post('updateijazahmhs', 'Front::updateIjazahMhs');
+$routes->post('setBiodataMhs', 'Front::setBiodataMhs');
 
 
 
@@ -199,6 +203,18 @@ $routes->post('singkron-mk-siska-mku', 'Admin::sinkronMkformku');
 // $routes->post('singkron-mk-siska-mku', 'Admin::sinkronmksiskamku');
 
 
+// Api Routing
+// $routes->group('api/v1', ['namespace' => 'App\Controllers\Api\V1'], function ($routes) {
+// 	// Define version 1 API routes here
+// 	$routes->get('data', 'ControllerApi::index');
+// 	$routes->post('insert', 'ControllerApi::create');
+// 	// $routes->post('users', 'UserController::create');
+// 	// $routes->get('users/(:num)', 'UserController::show/$1');
+// 	// $routes->put('users/(:num)', 'UserController::update/$1');
+// 	// $routes->delete('users/(:num)', 'UserController::delete/$1');
+// });
+
+$routes->resource('api/v1', ['controller' => 'ControllerApi']);
 
 //Multi-language functionality 
 $routes->get('/lang/{locale}', 'Language::index');

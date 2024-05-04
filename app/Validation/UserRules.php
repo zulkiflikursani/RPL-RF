@@ -20,9 +20,20 @@ class UserRules
             if (!$user) {
                 return false;
             }
+        } else {
+            if (password_verify($data['userpassword'], $user['ktkunci'])) {
+                return $user;
+            } else {
+                $password = md5($data['userpassword']);
+                $user = $model->where("email", $data['username'])->where('ktkunci', $password)->first();
+                if ($user != null) {
+                    return $user;
+                } else {
+                    return false;
+                }
+            }
         }
 
-        return password_verify($data['userpassword'], $user['ktkunci']);
         // return strcmp($data['userpassword'], $user['ktkunci']);
     }
 

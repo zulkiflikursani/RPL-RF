@@ -7,6 +7,7 @@ use App\Models\ModelBiodata;
 use App\Models\ModelDokumen;
 use App\Models\ModelKeu;
 use App\Models\ModelKlaimAsessor;
+use App\Models\ModelKlaimMkHeader;
 use App\Models\ModelKonsentrasi;
 use App\Models\ModelMasterRpl;
 use App\Models\ModelMkA1;
@@ -136,11 +137,7 @@ class Front extends BaseController
 					'mime_in[identitas,application/pdf]',
 				]
 			],
-
-
 		];
-
-
 		$messages = [
 			'buktiBayar' =>  [
 				'mime_in' => 'File harus berformat PDF.',
@@ -262,6 +259,432 @@ class Front extends BaseController
 
 					];
 					return view('Front/rpl-layouts-horizontal', $data);
+				}
+			}
+		}
+	}
+
+	public function setBiodataMhs()
+	{
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$modalHeader = new ModelKlaimMkHeader();
+
+			$this->request = service('request');
+			$db      = \Config\Database::connect();
+			$ta = $this->getTa_akademik();
+			$no_peserta = session()->get('noregis');
+			$nama = $db->escapeString($this->request->getPost("nama"));
+			$alamat = $db->escapeString($this->request->getPost("alamat"));
+			$kab = $db->escapeString($this->request->getPost("kab"));
+			$provinsi = $db->escapeString($this->request->getPost("provinsi"));
+			$email = $db->escapeString($this->request->getPost("email"));
+			$instansi = $db->escapeString($this->request->getPost("instansi"));
+			$nohape = $db->escapeString($this->request->getPost("nohp"));
+			$prodi = $db->escapeString($this->request->getPost("prodi"));
+			$ibukandung = $db->escapeString($this->request->getPost("ibukandung"));
+			$tlahir = $db->escapeString($this->request->getPost("tlahir"));
+			$ttl = $db->escapeString($this->request->getPost("ttl"));
+			$pendidikan = $db->escapeString($this->request->getPost("pendidikan"));
+			$jenis_rpl = $db->escapeString($this->request->getPost("jenis_rpl"));
+			$konsentrasi = $db->escapeString($this->request->getPost("konsentrasi"));
+			$nik = $db->escapeString($this->request->getPost("nik"));
+
+			$data = [
+				'ta_akademik' => $ta,
+				// 'no_peserta' => $noregis,
+				'nama' => $nama,
+				'alamat' => $alamat,
+				'kotkab' => $kab,
+				'propinsi' => $provinsi,
+				'instansi_asal' => $instansi,
+				'nohape' => $nohape,
+				'email' => $email,
+				'kode_prodi' => $prodi,
+				'validasi_keu' => 1,
+				't_lahir' => $tlahir,
+				'kode_konsentrasi' => $konsentrasi,
+				'ttl' => $ttl,
+				'nik' => $nik,
+				'didikakhir' => $pendidikan,
+				'ibu_kandung' => $ibukandung,
+				'jenis_rpl' => $jenis_rpl
+			];
+			$statusklaim = $modalHeader->where('no_peserta', session()->get('noregis'))->first();
+			if ($statusklaim == NULL) {
+				$modelBiodata = $db->table('bio_peserta');
+				$result = $modelBiodata->where('no_peserta', $no_peserta)->update($data);
+				$modelBiodata = new ModelBiodata();
+				$modelProv = new ModelProv();
+				$dataProv = $modelProv->getProv();
+				$databio = $modelBiodata->where('no_peserta', $no_peserta)->findAll();
+				if ($result == 1) {
+					$data = [
+						'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+						'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+						'ta_akademik' => $this->getTa_akademik(),
+						'datasubmit' => $databio,
+						'databio' => $databio,
+						'dataprov' => $dataProv,
+						'status_update' => 1,
+
+					];
+				} else {
+					$data = [
+						'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+						'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+						'ta_akademik' => $this->getTa_akademik(),
+						'datasubmit' => $databio,
+						'databio' => $databio,
+						'dataprov' => $dataProv,
+
+						'status_update' => 0,
+
+					];
+				}
+				return view('front/rpl-biodata-mahasiswa', $data);
+			} else {
+				$modelBiodata = new ModelBiodata();
+				$modelProv = new ModelProv();
+				$dataProv = $modelProv->getProv();
+				$databio = $modelBiodata->where('no_peserta', $no_peserta)->findAll();
+
+				$data = [
+					'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+					'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+					'dataprov' => $dataProv,
+					'ta_akademik' => $this->getTa_akademik(),
+					'datasubmit' => $databio,
+					'databio' => $databio,
+					'status_update' => 0,
+
+				];
+				return view('front/rpl-biodata-mahasiswa', $data);
+			}
+		}
+	}
+	public function updateBuktiByrMhs()
+	{
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$modalHeader = new ModelKlaimMkHeader();
+			$statusklaim = $modalHeader->where('no_peserta', session()->get('noregis'))->first();
+			if ($statusklaim == NULL) {
+				helper('File');
+				$this->request = service('request');
+				$db      = \Config\Database::connect();
+				// $ta = $this->getTa_akademik();
+				$noregis = $db->escapeString(session()->get('noregis'));
+				$bukti = $this->request->getFile('buktiBayar');
+				$validationRule = [
+					'buktiBayar' =>  [
+						'label' => "Bukti Pembayaran",
+						'rules' => [
+							'uploaded[buktiBayar]',
+							'max_size[buktiBayar,1024]',
+							'mime_in[buktiBayar,application/pdf]',
+						]
+					],
+				];
+				$messages = [
+					'buktiBayar' =>  [
+						'mime_in' => 'File harus berformat PDF.',
+						'max_size' => 'Ukuran File Bukti Pembayaran maksimal  1 MB.',
+					],
+
+				];
+
+				$validation = \Config\Services::validation();
+				$validation->setRules($validationRule, $messages);
+				if (!$validation->run()) {
+
+					$modelBiodata = new ModelBiodata();
+					$modelProv = new ModelProv();
+					$dataProv = $modelProv->getProv();
+					$databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+					$data = [
+						'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+						'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+						'ta_akademik' => $this->getTa_akademik(),
+						'datasubmit' => $databio,
+						'uploaderror' => $validation->getError(),
+						'dataprov' => $dataProv,
+
+					];
+
+					return view('front/rpl-biodata-mahasiswa', $data);
+				} else {
+					// $modelKeu = new ModelKeu();
+					// $validasikeu = $modelKeu->cekvalidasi($noregis);
+					// if ($validasikeu == null) {
+					$path_to_file = "uploads/berkas/$noregis/" . "bb" . trim($noregis) . ".pdf";
+					if (file_exists($path_to_file)) {
+						unlink($path_to_file);
+					}
+					$upload = $bukti->move("uploads/berkas/$noregis", "bb" . trim($noregis) . ".pdf");
+					if ($upload) {
+						$modelBiodata = new ModelBiodata();
+						$modelProv = new ModelProv();
+						$dataProv = $modelProv->getProv();
+						$databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+						$data = [
+							'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+							'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+							'ta_akademik' => $this->getTa_akademik(),
+							'datasubmit' => $databio,
+							'statusupload' => 'sukses',
+							'dataprov' => $dataProv,
+
+						];
+					} else {
+						$modelBiodata = new ModelBiodata();
+						$modelProv = new ModelProv();
+						$dataProv = $modelProv->getProv();
+						$databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+						$data = [
+							'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+							'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+							'ta_akademik' => $this->getTa_akademik(),
+							'datasubmit' => $databio,
+							'uploaderror' => 'Gagal mengupload file',
+							'dataprov' => $dataProv,
+						];
+					}
+					return view('front/rpl-biodata-mahasiswa', $data);
+					// } else {
+					// 	$modelBiodata = new ModelBiodata();
+					// 	$modelProv = new ModelProv();
+					// 	$dataProv = $modelProv->getProv();
+					// 	$databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+					// 	$data = [
+					// 		'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+					// 		'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+					// 		'ta_akademik' => $this->getTa_akademik(),
+					// 		'datasubmit' => $databio,
+					// 		'uploaderror' => 'Gagal mengupload karena sudah divalidasi oleh keuangan',
+					// 		'dataprov' => $dataProv,
+					// 	];
+					// 	return view('front/rpl-biodata-mahasiswa', $data);
+					// }
+				}
+			}
+		}
+	}
+	public function updateIjazahMhs()
+	{
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			helper('File');
+
+			$this->request = service('request');
+			$db      = \Config\Database::connect();
+			// $ta = $this->getTa_akademik();
+			$noregis = session()->get('noregis');
+			$ijazah = $this->request->getFile('ijazah');
+			$validationRule = [
+				'ijazah' =>  [
+					'label' => "ijazah",
+					'rules' => [
+						'uploaded[ijazah]',
+						'max_size[ijazah,1024]',
+						'mime_in[ijazah,application/pdf]',
+					]
+				],
+			];
+			$messages = [
+				'ijazah' =>  [
+					'mime_in' => 'File harus berformat PDF.',
+					'max_size' => 'Ukuran File Bukti Pembayaran maksimal  1 MB.',
+				],
+
+			];
+
+			$validation = \Config\Services::validation();
+			$validation->setRules($validationRule, $messages);
+			if (!$validation->run()) {
+
+				$modelBiodata = new ModelBiodata();
+				$modelProv = new ModelProv();
+				$dataProv = $modelProv->getProv();
+				$databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+				$data = [
+					'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+					'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+					'ta_akademik' => $this->getTa_akademik(),
+					'datasubmit' => $databio,
+					'uploaderror' => $validation->getError(),
+					'dataprov' => $dataProv,
+
+				];
+
+				return view('front/rpl-biodata-mahasiswa', $data);
+			} else {
+				$modalHeader = new ModelKlaimMkHeader();
+				$statusklaim = $modalHeader->where('no_peserta', session()->get('noregis'))->first();
+				if ($statusklaim == NULL) {
+					$path_to_file = "uploads/berkas/$noregis/" . "i" . trim($noregis) . ".pdf";
+					if (file_exists($path_to_file)) {
+						unlink($path_to_file);
+					}
+					$upload = $ijazah->move("uploads/berkas/$noregis", "i" . trim($noregis) . ".pdf");
+					if ($upload) {
+						$modelBiodata = new ModelBiodata();
+						$modelProv = new ModelProv();
+						$dataProv = $modelProv->getProv();
+						$databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+						$data = [
+							'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+							'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+							'ta_akademik' => $this->getTa_akademik(),
+							'datasubmit' => $databio,
+							'statusupload' => 'sukses',
+							'dataprov' => $dataProv,
+
+						];
+					} else {
+						$modelBiodata = new ModelBiodata();
+						$modelProv = new ModelProv();
+						$dataProv = $modelProv->getProv();
+						$databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+						$data = [
+							'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+							'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+							'ta_akademik' => $this->getTa_akademik(),
+							'datasubmit' => $databio,
+							'uploaderror' => 'Gagal mengupload file',
+							'dataprov' => $dataProv,
+						];
+					}
+					return view('front/rpl-biodata-mahasiswa', $data);
+				} else {
+					$modelBiodata = new ModelBiodata();
+					$modelProv = new ModelProv();
+					$dataProv = $modelProv->getProv();
+					$databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+					$data = [
+						'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+						'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+						'ta_akademik' => $this->getTa_akademik(),
+						'datasubmit' => $databio,
+						'uploaderror' => 'Gagal mengupload karena sudah melakukan klaim',
+						'dataprov' => $dataProv,
+					];
+					return view('front/rpl-biodata-mahasiswa', $data);
+				}
+			}
+		}
+	}
+	public function updateIdentitasMhs()
+	{
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			helper('File');
+
+			$this->request = service('request');
+			$db      = \Config\Database::connect();
+			// $ta = $this->getTa_akademik();
+			$noregis = session()->get('noregis');
+			$identitas = $this->request->getFile('identitas');
+			$validationRule = [
+				'identitas' =>  [
+					'label' => "ijazah",
+					'rules' => [
+						'uploaded[identitas]',
+						'max_size[identitas,1024]',
+						'mime_in[identitas,application/pdf]',
+					]
+				],
+			];
+			$messages = [
+				'identitas' =>  [
+					'mime_in' => 'File harus berformat PDF.',
+					'max_size' => 'Ukuran File Bukti Pembayaran maksimal  1 MB.',
+				],
+
+			];
+
+			$validation = \Config\Services::validation();
+			$validation->setRules($validationRule, $messages);
+			if (!$validation->run()) {
+
+				$modelBiodata = new ModelBiodata();
+				$modelProv = new ModelProv();
+				$dataProv = $modelProv->getProv();
+				$databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+				$data = [
+					'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+					'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+					'ta_akademik' => $this->getTa_akademik(),
+					'datasubmit' => $databio,
+					'uploaderror' => $validation->getError(),
+					'dataprov' => $dataProv,
+
+				];
+
+				return view('Admin/rpl-biodata-mahasiswa', $data);
+			} else {
+
+				// $validnim = $this->data_mhs_siska($noregis);
+				// $data = json_decode($validnim, false);
+				// $result = json_encode($data->result);
+
+				// // echo $result . " atau \"not found\"";
+				// if ($result == "\"not found\"") {
+				$modalHeader = new ModelKlaimMkHeader();
+				$statusklaim = $modalHeader->where('no_peserta', session()->get('noregis'))->first();
+				if ($statusklaim == NULL) {
+					$path_to_file = "uploads/berkas/$noregis/" . "ii" . trim($noregis) . ".pdf";
+					if (file_exists($path_to_file)) {
+						unlink($path_to_file);
+					}
+					$upload = $identitas->move("uploads/berkas/$noregis", "ii" . trim($noregis) . ".pdf");
+					if ($upload) {
+						$modelBiodata = new ModelBiodata();
+						$modelProv = new ModelProv();
+						$dataProv = $modelProv->getProv();
+						$databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+						$data = [
+							'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+							'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+							'ta_akademik' => $this->getTa_akademik(),
+							'datasubmit' => $databio,
+							'statusupload' => 'sukses',
+							'dataprov' => $dataProv,
+
+						];
+					} else {
+						$modelBiodata = new ModelBiodata();
+						$modelProv = new ModelProv();
+						$dataProv = $modelProv->getProv();
+						$databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+						$data = [
+							'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+							'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+							'ta_akademik' => $this->getTa_akademik(),
+							'datasubmit' => $databio,
+							'uploaderror' => 'Gagal mengupload file',
+							'dataprov' => $dataProv,
+						];
+					}
+					return view('front/rpl-biodata-mahasiswa', $data);
+				} else {
+					$modelBiodata = new ModelBiodata();
+					$modelProv = new ModelProv();
+					$dataProv = $modelProv->getProv();
+					$databio = $modelBiodata->where('no_peserta', $noregis)->findAll();
+					$data = [
+						'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+						'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+						'ta_akademik' => $this->getTa_akademik(),
+						'datasubmit' => $databio,
+						'uploaderror' => 'Gagal mengupload karena sudah melakukan klaim',
+						'dataprov' => $dataProv,
+					];
+					return view('front/rpl-biodata-mahasiswa', $data);
 				}
 			}
 		}
@@ -1047,9 +1470,9 @@ class Front extends BaseController
 			$ModalRegisrasi = new ModelRegistrasi();
 			$ModalBiodata = new ModelBiodata();
 			$noregisrasi = session()->get("noregis");
-			$datasave = $ModalRegisrasi->where('no_peserta', $noregisrasi)->findAll();
 			$datasavebio = $ModalBiodata->where('no_peserta', $noregisrasi)->findAll();
 			$prodi = $this->getNamaProdi($this->getNamaProdiFromRegis());
+			$datasave = $ModalRegisrasi->where('no_peserta', $noregisrasi)->findAll();
 			if ($datasavebio != null) {
 				$databio = $datasavebio;
 			} else {
@@ -1097,17 +1520,20 @@ class Front extends BaseController
 				];
 				return view('Front/rpl-mahasiswa-belum-valid-keu', $data);
 			} else {
+				$modelProv = new ModelProv();
+				$dataProv = $modelProv->getProv();
 				$data = [
 					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Biodata Peserta RPL']),
 					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
 					'datasubmit' => $databio,
 					'databio' => $databio,
 					'prodi' => $prodi,
+					'dataprov' => $dataProv,
 					'konsentrasi' => $konsentrasi,
 					// 'test' => $datasave,
-					'ta_akademik' => $this->getTa_akademik()
+					'ta_akademik' => $this->getTa_akademik(),
 				];
-				return view('Front/rpl-mahasiswa', $data);
+				return view('Front/rpl-biodata-mahasiswa', $data);
 			}
 		}
 	}
