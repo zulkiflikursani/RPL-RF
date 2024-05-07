@@ -38,6 +38,8 @@ class Front extends BaseController
 			];
 			return view('Front/rpl-pages-maintenance', $data);
 		} else {
+			return redirect()->to('/logout');
+			die;
 			$modelProv = new ModelProv();
 			$dataProv = $modelProv->getProv();
 
