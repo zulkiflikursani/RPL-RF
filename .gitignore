@@ -1,5 +1,6 @@
 # Ignore vendor directory
 /vendor/
+/public/assets/berkas/
 
 # Ignore .env file
 .env
