@@ -103,7 +103,6 @@
                                                             <input type="text" class="form-control" id="confnama"
                                                                 placeholder="Masukkan Nama Mahasiswa" value="" required
                                                                 readonly>
-
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -112,8 +111,8 @@
                                                                 Mahasiswa Dodi</label>
                                                             <select class="form-select" id='confdudi'>
                                                                 <option value=''>Pilih Status Dodi</option>
-                                                                <option value="1">YA</option>
                                                                 <option value="0">TIDAK</option>
+                                                                <option value="1">YA</option>
                                                             </select>
 
                                                         </div>
@@ -459,7 +458,7 @@
         dudi = $('#confdudi').val();
 
         if (dudi == '') {
-            alert('Silahkan mengisi status dudi mahasistwa !');
+            alert('Silahkan mengisi status dodi mahasistwa !');
         } else {
             validasiRegis(noregis, 0, dudi)
         }

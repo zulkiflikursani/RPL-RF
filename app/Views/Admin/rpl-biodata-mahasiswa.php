@@ -12,6 +12,10 @@
         right: 10px;
         left: auto;
     }
+
+    .select2-container {
+        z-index: 100000;
+    }
     </style>
 </head>
 
@@ -86,12 +90,70 @@
 
                     <div class="row">
                         <div class="col-xl-12">
+                            <div class="modal fade modal-edit-prop-kot-kab" tabindex="-1" role="dialog"
+                                aria-labelledby="mytambah-modal" aria-hidden="true">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content" id='modal-content'>
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="myLargeModalLabel">Update Alamat
+                                            </h5>
+
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="mb-3  col-md-12 ">
+                                                    <label for="formrow-inputProvinsi"
+                                                        class="form-label col-md-12 ">Provinsi</label>
+                                                    <select name="provinsi" id="m-propinsi" style="width: 80%;"
+                                                        class="form-select select2 " onchange="getkab()" required>
+                                                        <option val="">Pilih Provinsi</option>
+                                                        <?php
+                                                        if (isset($dataprov)) {
+                                                            foreach ($dataprov as $a) {
+                                                                if (isset($datasubmit["propinsi"])) {
+                                                                    if ($datasubmit["propinsi"] == $a->NMPROTBPRO) {
+                                                                        $selected = "selected";
+                                                                    } else {
+                                                                        $selected = "";
+                                                                    };
+                                                                } else {
+                                                                    $selected = "";
+                                                                }
+                                                                echo "<option kdprov='$a->KDPROTBPRO' $selected>$a->NMPROTBPRO</option>";
+                                                            }
+                                                        }
+                                                        ?>
+
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3 col-md-12">
+                                                    <label for="formrow-inputKab" class="form-label col-md-12">Kota
+                                                        Kabupaten</label>
+                                                    <select name="kab" id="m-kab" style="width: 80%;"
+                                                        class="col-8 form-select select2" required></select>
+                                                </div>
+
+                                            </div>
+
+                                        </div><!-- /.modal-content -->
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary" onclick="setProvKab()">OK</button>
+                                            <button class="btn btn-warning" data-bs-dismiss="modal"
+                                                aria-label="Close">BATAL</button>
+
+                                        </div>
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+                            </div>
                             <div class="modal fade modal-edit-bukti-bayar" tabindex="-1" role="dialog"
                                 aria-labelledby="mytambah-modal" aria-hidden="true">
                                 <div class="modal-dialog modal-xl">
                                     <div class="modal-content" id='modal-content'>
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="myLargeModalLabel">Upload Bukti Pembayaran
+                                            <h5 class="modal-title" id="myLargeModalLabel">Upload Bukti
+                                                Pembayaran
                                             </h5>
 
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -111,7 +173,8 @@
                                                             id="inputGroupFile" aria-describedby="inputGroupFileAddon"
                                                             accept="application/pdf" aria-label="buktiBayar" required>
                                                     </div>
-                                                    <span class="text-danger">Note: File PDF dengan ukuran maksimal 1
+                                                    <span class="text-danger">Note: File PDF dengan ukuran
+                                                        maksimal 1
                                                         Mb</span>
                                                 </div>
                                                 <div>
@@ -148,7 +211,8 @@
                                                             id="inputGroupFile" aria-describedby="inputGroupFileAddon"
                                                             accept="application/pdf" aria-label="ijazah" required>
                                                     </div>
-                                                    <span class="text-danger">Note: File PDF dengan ukuran maksimal 1
+                                                    <span class="text-danger">Note: File PDF dengan ukuran
+                                                        maksimal 1
                                                         Mb</span>
                                                 </div>
                                                 <div>
@@ -185,7 +249,8 @@
                                                             id="inputGroupFile" aria-describedby="inputGroupFileAddon"
                                                             accept="application/pdf" aria-label="identitas" required>
                                                     </div>
-                                                    <span class="text-danger">Note: File PDF dengan ukuran maksimal 1
+                                                    <span class="text-danger">Note: File PDF dengan ukuran
+                                                        maksimal 1
                                                         Mb</span>
                                                 </div>
                                                 <div>
@@ -245,43 +310,33 @@
 
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-7">
-                                                <div class="mb-3">
-                                                    <label for="formrow-inputProvinsi"
-                                                        class="form-label">Provinsi</label>
-                                                    <!-- <input type="text" class="form-control" id="formrow-inputProvinsi"
-                                                        name="provinsi" placeholder="Masukkan Provinsi"
-                                                        value="<?= (isset($datasubmit["propinsi"]) ? $datasubmit["propinsi"] : '') ?>"
-                                                        required> -->
-                                                    <select name="provinsi" id="provinsi" class="form-select select2"
-                                                        onchange="getkab()" required>
-                                                        <option val="">Pilih Provinsi</option>
-                                                        <?php
-                                                        if (isset($dataprov)) {
-                                                            foreach ($dataprov as $a) {
-                                                                if (isset($datasubmit["propinsi"])) {
-                                                                    if ($datasubmit["propinsi"] == $a->NMPROTBPRO) {
-                                                                        $selected = "selected";
-                                                                    } else {
-                                                                        $selected = "";
-                                                                    };
-                                                                } else {
-                                                                    $selected = "";
-                                                                }
-                                                                echo "<option kdprov='$a->KDPROTBPRO' $selected>$a->NMPROTBPRO</option>";
-                                                            }
-                                                        }
-                                                        ?>
+                                            <div class="col-lg-7 row">
+                                                <div class="col-md-7">
 
-                                                    </select>
+                                                    <div class="mb-3">
+                                                        <label for="formrow-inputProvinsi"
+                                                            class="form-label">Provinsi</label>
+                                                        <input type="text" class="form-control" id="prop"
+                                                            name="provinsi" placeholder="Masukkan Provinsi"
+                                                            value="<?= (isset($datasubmit["propinsi"]) ? $datasubmit["propinsi"] : '') ?>"
+                                                            required readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 d-flex justify-content-center py-4 mt-1">
+                                                    <button type="button" data-bs-toggle="modal"
+                                                        data-bs-target=".modal-edit-prop-kot-kab"
+                                                        class="  btn btn-sm btn-primary w-auto">Edit Wilayah</button>
                                                 </div>
                                             </div>
                                             <div class="col-lg-7">
                                                 <div class="mb-3">
                                                     <label for="formrow-inputKab" class="form-label">Kota
                                                         Kabupaten</label>
-                                                    <select name="kab" id="kab" class="form-select select2"
-                                                        required></select>
+                                                    <input type="text" class="form-control" id="kotkab" name="kab"
+                                                        placeholder="Masukkan Provinsi"
+                                                        value="<?= (isset($datasubmit["kotkab"]) ? $datasubmit["kotkab"] : '') ?>"
+                                                        required readonly>
+                                                    <!-- <select name="kab" id="kab" class="form-select select2" required></select> -->
                                                 </div>
 
 
@@ -314,7 +369,8 @@
                                         <div class="row">
                                             <div class="col-lg-4">
                                                 <div class="mb-3">
-                                                    <label for="formrow-inputInstansi" class="form-label">Nama Ibu
+                                                    <label for="formrow-inputInstansi" class="form-label">Nama
+                                                        Ibu
                                                         Kandung</label>
                                                     <input type="text" class="form-control" id="formrow-inputInstansi"
                                                         name="ibukandung" placeholder="Masukkan Nama Ibu Kandung"
@@ -433,7 +489,8 @@
                                             </div>
                                         </div>
                                         <div class="row ">
-                                            <label for="formrow-inputPendidikan" class="form-label">KTP atau Kartu
+                                            <label for="formrow-inputPendidikan" class="form-label">KTP atau
+                                                Kartu
                                                 Keluarga</label>
                                             <div class="col-md-4">
                                                 <a class="button btn btn-primary btn-sm col-md-6" target="_blank"
@@ -449,7 +506,8 @@
                                             <div class="col-md-4">
                                                 <a target="_blank"
                                                     href='<?= base_url() . "/uploads/berkas/$noregis/i$noregis.pdf" ?>'
-                                                    class="button btn btn-primary btn-sm col-md-6"> Lihat Ijazah</a>
+                                                    class="button btn btn-primary btn-sm col-md-6"> Lihat
+                                                    Ijazah</a>
                                                 <a class="button btn btn-sm btn btn-secondary" data-bs-toggle="modal"
                                                     data-bs-target=".modal-edit-ijazah">Ubah File</a>
                                             </div>
@@ -555,9 +613,13 @@
 
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
     <script>
+    $(document).on('select2:open', () => {
+        document.querySelector('.select2-search__field').focus();
+    });
     $('document').ready(function() {
         $('.select2').select2({
-            placeholder: 'Select an option'
+            placeholder: 'Select an option',
+            dropdownParent: $('.modal-edit-prop-kot-kab')
         });
 
         <?php
@@ -580,6 +642,14 @@
         findprodi1(ini)
         findkonsentrasi();
     })
+
+    function setProvKab() {
+        prov = $('#m-propinsi').val();
+        kab = $('#m-kab').val()
+        $('#prop').val(prov)
+        $('#kotkab').val(kab)
+        $('.modal-edit-prop-kot-kab').modal('hide')
+    }
 
     function findkonsentrasi() {
         prodi = $('#kode_prodi').val();
@@ -611,7 +681,8 @@
                 } else {
                     select = '';
                 }
-                $("#konsentrasi").append("<option value='" + row['kode_konsentrasi'] + "'" + select +
+                $("#konsentrasi").append("<option value='" + row['kode_konsentrasi'] + "'" +
+                    select +
                     ">" + row[
                         'konsentrasi'] + "</option>")
 
@@ -686,9 +757,9 @@
 
     function getkab() {
         $('#loading').show();
-        $('#kab').children().remove();
+        $('#m-kab').children().remove();
         url = '<?= base_url('getKab') ?>'
-        a = $('#provinsi option:selected').attr('kdprov');
+        a = $('#m-propinsi option:selected').attr('kdprov');
         $.post(url, {
             "a": a
         }).done(function(data) {
@@ -699,6 +770,7 @@
 
 
         })
+        $('#loading').hide();
     }
 
     function updatebuktibayar() {
@@ -709,10 +781,11 @@
     function setkab(data) {
         var kotkab = '<?= (isset($datasubmit["kotkab"]) ? $datasubmit["kotkab"] : '') ?>'
         $.each(data, async function(index, row) {
-            await $('#kab').append("<option value='" + row['nama_wilayah'] + "' >" + row['nama_wilayah'] +
+            await $('#m-kab').append("<option value='" + row['nama_wilayah'] + "' >" + row[
+                    'nama_wilayah'] +
                 "</option>")
         })
-        $('#kab').val(kotkab).trigger('change')
+        $('#m-kab').val(kotkab).trigger('change')
         // alert(kotkab)
         $('#loading').hide();
 

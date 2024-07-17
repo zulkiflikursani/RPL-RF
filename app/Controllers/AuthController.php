@@ -104,6 +104,7 @@ class AuthController extends BaseController
 				$data['validation'] = $this->validator;
 				$data['title_meta'] = view('partials/title-meta', ['title' => 'Login']);
 			} else {
+				$data['title_meta'] = view('partials/title-meta', ['title' => 'Login']);
 				$model2 = new UserModel();
 				$user = $model2->check_login($this->request->getVar('username'), $this->request->getVar('userpassword'));
 				if ($user) {

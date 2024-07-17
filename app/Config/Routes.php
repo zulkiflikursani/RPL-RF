@@ -139,6 +139,7 @@ $routes->get('/data-mahasiswa-siska/(:any)', 'Admin::data_mhs_siska/$1');
 $routes->get('/home-akademik-2', 'Admin::home_akademik_2_nofilter');
 $routes->get('/home-akademik-2/(:any)', 'Admin::home_akademik_2/$1');
 $routes->get('/keuangan/(:any)', 'Admin::keuangan/$1');
+$routes->get('/pt', 'Admin::perguruan_tinggi');
 
 
 
@@ -200,6 +201,9 @@ $routes->post('data-mahasiswa-siska-nim', 'Admin::data_mhs_siska_nim');
 $routes->post('push-siska', 'Admin::push_siska');
 $routes->post('singkron-mk-siska', 'Admin::sinkronmksiska');
 $routes->post('singkron-mk-siska-mku', 'Admin::sinkronMkformku');
+$routes->post('updatedatapt', 'Admin::update_perguruan_tinggi');
+$routes->post('insertdatapt', 'Admin::insert_perguruan_tinggi');
+
 // $routes->post('singkron-mk-siska-mku', 'Admin::sinkronmksiskamku');
 
 

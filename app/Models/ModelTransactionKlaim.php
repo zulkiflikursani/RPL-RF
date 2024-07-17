@@ -32,11 +32,12 @@ class ModelTransactionKlaim extends Model
             }
             // $kdmk = $a['kdmk'];
 
-            $cekstatus2 = $db->query("select statusklaim from mk_klaim_detail where idklaim = '$idklaim' and idcpmk='" . $a['idcpmk'] . "'")->getResult();
 
+            $cekstatusmk = $BuilderMkDetail->where(['idklaim' => $idklaim, 'idcmpmk', $a['idcpmk']])->get();
+
+            $cekstatus2 = $db->query("select statusklaim from mk_klaim_detail where idklaim = '$idklaim' and idcpmk='" . $a['idcpmk'] . "'")->getResult();
             if ($cekstatus2 != null) {
                 foreach ($cekstatus2 as $row) {
-
                     $statuspengajuan = $row->statusklaim;
                 }
             }

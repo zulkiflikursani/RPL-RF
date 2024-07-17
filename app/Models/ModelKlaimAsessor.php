@@ -78,7 +78,7 @@ class ModelKlaimAsessor extends Model
             $kettanggapan = $a['kettanggapan'];
             $cekmk = $this->CekMatakuliahAsessor($a['idklaim']);
             $cekstatusTanggapanMhs = $this->cekstatuTanggapanMhs($noregis);
-            // print_r($cekmk);
+            // print_r($cekstatusTanggapanMhs);
             $cekvalidprodi = $this->cekValidProdi($idklaim);
             if ($cekstatusTanggapanMhs != null) {
                 echo "Belum ditanggapi";

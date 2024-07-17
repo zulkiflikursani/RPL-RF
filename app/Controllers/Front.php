@@ -2231,6 +2231,7 @@ class Front extends BaseController
 		} else {
 			$db      = \Config\Database::connect();
 			$noregis = session()->get('noregis');
+			$ta_akademik = substr($noregis, 0, 5);
 
 			$kode_prodi = $this->getkodeprodi(session()->get('noregis'));
 			// $kode_matakuliah = $db->escapeString($this->request->getPost('kdmk'));
@@ -2250,7 +2251,7 @@ class Front extends BaseController
 									FROM
 										matakuliah
 									LEFT JOIN mk_cpmk ON matakuliah.kode_matakuliah = mk_cpmk.kode_matakuliah
-									AND (mk_cpmk.kode_prodi = '$kode_prodi' or (mk_cpmk.kode_prodi='0' and matakuliah.jenis_matakuliah < 3))
+									AND (mk_cpmk.kode_prodi = '$kode_prodi' or (mk_cpmk.kode_prodi='0' and matakuliah.jenis_matakuliah < 3)) and mk_cpmk.ta_akademik='$ta_akademik'
 									LEFT JOIN mk_klaim_detail ON mk_cpmk.idcpmk = mk_klaim_detail.idcpmk
 									AND mid(
 										mk_klaim_detail.idklaim,

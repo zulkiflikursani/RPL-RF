@@ -400,7 +400,7 @@ class ModelRegistrasi extends Model
         left JOIN (
           select 
             mk_klaim_asessor.no_peserta,
-            mk_klaim_asessor.tanggapan
+            if(sum(mk_klaim_asessor.tanggapan=2)>0,2,if(sum(mk_klaim_asessor.tanggapan=1)> 0,1,0)) as tanggapan
           from 
             mk_klaim_asessor 
           where 
@@ -475,8 +475,7 @@ class ModelRegistrasi extends Model
         ) status_valid_bayar on bio_peserta.no_peserta = status_valid_bayar.no_peserta 
       WHERE 
         bio_peserta.ta_akademik = '$ta_akademik' 
-        AND bio_peserta.Kode_Prodi = '$kode_prodi'
-      ")->getResult();
+        AND bio_peserta.Kode_Prodi = '$kode_prodi'")->getResult();
     return ($result);
   }
 }

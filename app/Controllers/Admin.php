@@ -21,6 +21,7 @@ use App\Models\ModelNilai;
 use App\Models\ModelPengguna;
 use App\Models\ModelPesertaAsessor;
 use App\Models\ModelProv;
+use App\Models\ModelPtIndo;
 use App\Models\ModelRegistrasi;
 use App\Models\ModelRpl;
 use App\Models\ModelTarif;
@@ -196,7 +197,7 @@ class Admin extends BaseController
             $nik = $db->escapeString($this->request->getPost("nik"));
 
             $data = [
-                'ta_akademik' => $ta,
+                // 'ta_akademik' => $ta,
                 // 'no_peserta' => $noregis,
                 'nama' => $nama,
                 'alamat' => $alamat,
@@ -248,7 +249,7 @@ class Admin extends BaseController
 
     public function updataBuktiBayar()
     {
-        if (session()->get('sttpengguna') != 1 ) {
+        if (session()->get('sttpengguna') != 1) {
             return redirect()->to('/logout');
         } else {
             helper('File');
@@ -753,6 +754,7 @@ class Admin extends BaseController
             return view('Admin/rpl-data-reg-mhs', $data);
         }
     }
+
     public function validKeu()
     {
         if (session()->get('sttpengguna') != 5) {
@@ -2047,12 +2049,16 @@ class Admin extends BaseController
                 $kdkons = "";
                 $jenis_mk = $db->escapeString($this->request->getPost("jenismk"));
             }
-            $modelCpmk = new ModelMatakuliah();
-            $simpan = $modelCpmk->editMk($kdmk, $kode_prodi, $nmmk, $kdkons, $sks, $idkur, $jenis_mk);
-            if ($simpan === false) {
-                echo $modelCpmk->errors();
+            if ($jenis_mk == "") {
+                echo "Data jenis matakuliah belum di isi !";
             } else {
-                echo "Berhasil Mengedit Matakuliah";
+                $modelCpmk = new ModelMatakuliah();
+                $simpan = $modelCpmk->editMk($kdmk, $kode_prodi, $nmmk, $kdkons, $sks, $idkur, $jenis_mk);
+                if ($simpan === false) {
+                    echo $modelCpmk->errors();
+                } else {
+                    echo "Berhasil Mengedit Matakuliah";
+                }
             }
         };
     }
@@ -4673,6 +4679,85 @@ class Admin extends BaseController
             $data = $modelLogAcitiviy->where('YEAR(tgl_activity)', $year)->where('MONTH(tgl_activity)', $month)->findAll();
             // $data = $modelLogAcitiviy->findAll();
             echo json_encode($data, false);
+        }
+    }
+
+    public function perguruan_tinggi()
+    {
+        if (session()->get('sttpengguna') != 6) {
+            return redirect()->to('/logout');
+        } else {
+            $modelPT = new ModelPtIndo();
+            $dataPT = $modelPT->findAll();
+            $data = [
+                'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+                'page_title' => view('partials/rpl-page-title', ['title' => 'Perguruan Tinggi', 'pagetitle' => 'Akademik']),
+                'dataPT' => $dataPT
+            ];
+
+            return view('Admin/rpl-perguruan-tinggi', $data);
+        };
+    }
+
+    public function update_perguruan_tinggi()
+    {
+        if (session()->get('sttpengguna') != 6) {
+            return redirect()->to('/logout');
+        } else {
+            $db = \Config\Database::connect();
+            $this->request = service('request');
+            $modelPT = new ModelPtIndo();
+            $kodeptdikti = $db->escapeString($this->request->getPost('kodeptdikti'));
+            $kodept = $db->escapeString($this->request->getPost('kodept'));
+            $namapt = $db->escapeString($this->request->getPost('namapt'));
+            $namasingkat = $db->escapeString($this->request->getPost('namasingkat'));
+            $updatedata = $modelPT->where(['kode_perguruan_tinggi' => $kodept, 'id_perguruan_tinggi_dikti' => $kodeptdikti])->set([
+                'nama_perguruan_tinggi' => $namapt,
+                'nama_singkat' => $namasingkat
+            ])->update();
+            if ($updatedata > 0) {
+                echo "data berhasil diudpate";
+            } else {
+                echo "Gagal mengupdate data";
+            }
+        }
+    }
+
+    public function insert_perguruan_tinggi()
+    {
+        if (session()->get('sttpengguna') != 6) {
+            return redirect()->to('/logout');
+        } else {
+            $db = \Config\Database::connect();
+            $this->request = service('request');
+            $modelPT = new ModelPtIndo();
+            $kodeptdikti = $db->escapeString($this->request->getPost('kodeptdikti'));
+            $kodept = $db->escapeString($this->request->getPost('kodept'));
+            $namapt = $db->escapeString($this->request->getPost('namapt'));
+            $namasingkat = $db->escapeString($this->request->getPost('namasingkat'));
+            if ($namapt == "" || $kodept == "" || $kodeptdikti == '') {
+                echo "Data Tidak lengkap";
+            } else {
+
+                $data = [
+                    'id_perguruan_tinggi_dikti' => $kodeptdikti,
+                    'kode_perguruan_tinggi' => $kodept,
+                    'nama_perguruan_tinggi' => $namapt,
+                    'nama_singkat' => $namasingkat
+                ];
+                $cekduplikat = $modelPT->where(['kode_perguruan_tinggi' => $kodept, 'id_perguruan_tinggi_dikti' => $kodeptdikti])->findAll();
+                if ($cekduplikat != null) {
+                    echo "Kode perguruan tinggi dan id perguruan tinggi dikti sudah digunakan";
+                } else {
+                    // echo "ok";
+                    $insertpt = $modelPT->insert($data, false);
+                    if ($insertpt) {
+                        echo "Data berhasil ditambahkan";
+                    } else {
+                        echo "Gagal manambahkan data";
+                    }
+                }
+            }
         }
     }
 }

@@ -269,5 +269,6 @@ return [
     'RPL' => 'RPL',
     'Matakuliah' => 'Matakuliah',
     'login RPL' => 'login RPL',
-    'Admin RPL' => 'Admin RPL'
+    'Admin RPL' => 'Admin RPL',
+    'Perguruan Tinggi' => 'Perguruan Tinggi'
 ];

@@ -445,7 +445,7 @@ thead input {
                                                     <td for='nmmk'>" . $row->nama_matakuliah . "</td>
                                                     <td for='kons' >" . $row->konsentrasi . "</td>
                                                     <td for='sks'>" . $row->sks . "</td>
-                                                    <td for='jenismk'>" . $jenismk . $row->jenis_matakuliah."</td>
+                                                    <td for='jenismk'>" . $jenismk . $row->jenis_matakuliah . "</td>
                                                   <td><button class='btn btn-sm btn-primary bt-edit-matakuliah' data-bs-toggle='modal'
                                                   id='bt-edit-matakuliah'
                                                   data-bs-target='.edit-matakuliah-modal' >Edit</button></td>
@@ -538,7 +538,6 @@ thead input {
         var table = $('.table-matakuliah').DataTable()
         cari.on('change', function() {
             // alert(cari.val())
-
             table.draw();
             $("#loading").hide();
 
@@ -636,24 +635,28 @@ thead input {
         sks = $('#esks').val();
         idkur = $('#eidkur').val();
         jenismk = $('#ejenis-mk').val();
-        url = '<?= base_url('editmk') ?>'
+        if (jenismk == "") {
+            alert('Data Jenis Matakuliah belum di isi !')
+            $('#loading').hide();
+        } else {
+            url = '<?= base_url('editmk') ?>'
+            $.post(url, {
+                prodi: prodi,
+                kdmk: kdmk,
+                nmmk: nmmk,
+                kdkons: kdkons,
+                jenismk: jenismk,
+                sks: sks,
+                idkur: idkur
+            }, function(data) {
+                if (alert(data)) {} else {
+                    window.location.reload()
+                    $("#loading").hide();
 
-        $.post(url, {
-            prodi: prodi,
-            kdmk: kdmk,
-            nmmk: nmmk,
-            kdkons: kdkons,
-            jenismk: jenismk,
-            sks: sks,
-            idkur: idkur
-        }, function(data) {
-            if (alert(data)) {} else {
-                window.location.reload()
-                $("#loading").hide();
 
-
-            };
-        })
+                };
+            })
+        }
 
 
     }
