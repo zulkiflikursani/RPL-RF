@@ -1,0 +1,919 @@
+CRITICAL - 2024-07-26 00:13:01 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:13:01 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:13:02 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:13:02 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 13:13:16 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':mid(idklaim,6,10):' at line 3
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelKlaimAsessor.php(264): CodeIgniter\BaseModel->findAll()
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelKlaimAsessor.php(68): App\Models\ModelKlaimAsessor->cekValidProdiByNoregis('20231-0272')
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3330): App\Models\ModelKlaimAsessor->simpanklaimAsessor('20231-0272')
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->submitklaimMkAsessor()
+#10 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#11 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#13 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#14 {main}
+CRITICAL - 2024-07-26 00:13:23 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:13:23 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 13:13:32 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':mid(idklaim,6,10):' at line 3
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelKlaimAsessor.php(264): CodeIgniter\BaseModel->findAll()
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelKlaimAsessor.php(68): App\Models\ModelKlaimAsessor->cekValidProdiByNoregis('20231-0272')
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3330): App\Models\ModelKlaimAsessor->simpanklaimAsessor('20231-0272')
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->submitklaimMkAsessor()
+#10 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#11 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#13 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#14 {main}
+CRITICAL - 2024-07-26 00:19:09 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:19:09 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:19:23 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:19:23 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:19:44 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:19:44 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 13:22:48 --> Call to a member function getResult() on bool
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3330): App\Models\ModelKlaimAsessor->simpanklaimAsessor('20231-0272')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->submitklaimMkAsessor()
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#6 {main}
+CRITICAL - 2024-07-26 00:25:35 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:25:35 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:26:46 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:26:46 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:28:25 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:28:25 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:31:17 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:31:17 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:42:04 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:42:04 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:47:44 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:47:44 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:48:24 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:48:24 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:49:57 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:49:57 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:50:03 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:50:03 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:56:13 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:56:13 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:56:40 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:56:40 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:58:31 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 00:58:31 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:12:20 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:12:20 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:12:21 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:12:21 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:15:40 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:15:40 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:15:40 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:15:40 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:15:43 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:15:43 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:18:02 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:18:02 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:18:02 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:18:02 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 14:18:41 --> Duplicate entry '2023120231-027210000BAI2' for key 'mk_klaim_asessor.PRIMARY'
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('INSERT INTO mk_...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO mk_...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO mk_...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelKlaimAsessor.php(72): CodeIgniter\Database\BaseConnection->query('INSERT INTO mk_...')
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3330): App\Models\ModelKlaimAsessor->simpanklaimAsessor('20231-0272')
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->submitklaimMkAsessor()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-07-26 01:19:18 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:19:18 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 14:19:21 --> Duplicate entry '2023120231-027210000BAI2' for key 'mk_klaim_asessor.PRIMARY'
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('INSERT INTO mk_...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO mk_...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO mk_...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelKlaimAsessor.php(72): CodeIgniter\Database\BaseConnection->query('INSERT INTO mk_...')
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3330): App\Models\ModelKlaimAsessor->simpanklaimAsessor('20231-0272')
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->submitklaimMkAsessor()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-07-26 01:19:33 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:19:33 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 14:19:39 --> Duplicate entry '2023120231-027210000BAI2' for key 'mk_klaim_asessor.PRIMARY'
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('INSERT INTO mk_...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO mk_...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO mk_...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelKlaimAsessor.php(72): CodeIgniter\Database\BaseConnection->query('INSERT INTO mk_...')
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3330): App\Models\ModelKlaimAsessor->simpanklaimAsessor('20231-0272')
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->submitklaimMkAsessor()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-07-26 01:24:06 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:24:06 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 14:24:08 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mk_klaim_asessor where idklaim like '%20231-0272%'' at line 1
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('select idklaim ...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('select idklaim ...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('select idklaim ...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelKlaimAsessor.php(67): CodeIgniter\Database\BaseConnection->query('select idklaim ...')
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3330): App\Models\ModelKlaimAsessor->simpanklaimAsessor('20231-0272')
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->submitklaimMkAsessor()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-07-26 01:24:16 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:24:16 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 14:24:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mk_klaim_asessor where idklaim like '%20231-0272%'' at line 1
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('select idklaim ...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('select idklaim ...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('select idklaim ...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelKlaimAsessor.php(67): CodeIgniter\Database\BaseConnection->query('select idklaim ...')
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3330): App\Models\ModelKlaimAsessor->simpanklaimAsessor('20231-0272')
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->submitklaimMkAsessor()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-07-26 01:24:50 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:24:50 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:25:04 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:25:04 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:29:06 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:29:06 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:29:06 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:29:14 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:29:14 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:29:26 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:29:26 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:29:51 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:29:51 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:33:50 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:33:50 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:36:49 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:36:49 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:36:49 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:36:49 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:37:29 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:37:29 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:37:40 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:37:40 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:43:55 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:43:55 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:44:01 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:44:01 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:44:44 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:44:44 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:46:40 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 01:46:40 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 05:15:42 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-07-26 05:15:42 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2464, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2474): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessor('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}

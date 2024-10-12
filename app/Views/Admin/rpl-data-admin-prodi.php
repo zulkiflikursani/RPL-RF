@@ -84,7 +84,8 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <!-- content -->
-                                                    <form method="POST" action="<?= base_url("Admin/SimpanPenggunaprodi") ?>"
+                                                    <form method="POST"
+                                                        action="<?= base_url("Admin/SimpanPenggunaprodi") ?>"
                                                         enctype="multipart/form-data">
                                                         <div class="row">
                                                             <div class="col-md-6">

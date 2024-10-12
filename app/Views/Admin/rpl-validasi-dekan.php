@@ -320,12 +320,6 @@
 
                 </div>
                 <!-- end row -->
-
-
-
-
-
-
             </div> <!-- container-fluid -->
         </div>
         <!-- End Page-content -->
@@ -356,16 +350,18 @@
 
 <script>
 $(document).ready(function() {
+    $('#loading').show()
+
     noregis = '<?= $noregis ?>'
     url = '<?= base_url('getDataKlaimAsessor') ?>'
     $.post(url, {
         noregis: noregis
     }, function(data) {
         data = JSON.parse(data)
-        console.log(data);
+        // console.log(data);
         count = data.length;
 
-        $.each(data, function(index, value) {
+        $.each(data['data'], function(index, value) {
             $('#tbody-klaim-mk  > tr').each(function(i, tr) {
                 if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
                     value['idklaim']) {
@@ -377,9 +373,6 @@ $(document).ready(function() {
                     $(this).find('td[for=kettanggapan]').children()
                         .val(value['ket_tanggapan']);
 
-                    if (count === index + 1) {
-                        klaimsksass()
-                    }
 
 
                 }
@@ -388,8 +381,12 @@ $(document).ready(function() {
             $('select').attr('disabled', 'disabled');
 
         })
+        $('#loading').hide()
+        klaimsksass();
+        // $('#loading').hide()
     }).fail(function() {
         alert("error");
+        $('#loading').hide()
     });
 })
 

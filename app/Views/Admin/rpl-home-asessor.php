@@ -5,11 +5,14 @@
 
     <?= $title_meta ?>
     <?= $this->include('partials/rpl-head-css') ?>
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css"
+        rel="stylesheet" type="text/css" />
 
     <!-- Responsive datatable examples -->
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css"
+        rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -62,48 +65,7 @@
                                     <h4 class="card-title mb-2">Data Asessor A1</h4>
                                 </div>
                             </div>
-                            <!-- <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title mb-4">Data Mahasiswa Belum Memasukkan Matakuliah</h4>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        <th>No</th>
-                                                        <th>No Registrasi</th>
-                                                        <th>Nama Mahasiswa</th>
-                                                        <th>Program Studi</th>
-                                                        <th>Aksi</th>
 
-                                                    </tr>
-                                                </thead>
-                                                <tbody id='bodytable'>
-                                                    <?php
-                                                    // print_r($dataPesertaAsessor);
-                                                    if ($dataPesertaBelumUploadMk) {
-                                                        $i = 0;
-                                                        foreach ($dataPesertaBelumUploadMk as $row) {
-                                                            $i++;
-                                                            echo "<tr>
-                                                                    <td>$i</td>
-                                                                    <td>$row->no_peserta</td>
-                                                                    <td>$row->nama</td>
-                                                                    <td>$row->nama_prodi</td>
-                                                                    <td><a href='" . base_url("tanggapanasessor/$row->no_peserta") . "'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
-                                                                </tr>";
-                                                            // echo $row->nama;
-                                                        }
-                                                    }
-                                                    ?>
-
-                                                </tbody>
-                                            </table>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">Data Mahasiswa Belum Diassessment A1</h4>
@@ -199,7 +161,7 @@
                             </div>
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Data Mahasiswa Sudah Diassessment</h4>
+                                    <h4 class="card-title mb-4">Data Tanggapan Mahasiswa Belum Diassessment</h4>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <table class="table table-bordered">
@@ -207,7 +169,6 @@
                                                     <tr>
                                                         <th>No</th>
                                                         <th>Tanggal Pengajuan</th>
-                                                        <th>Tanggal Validasi</th>
                                                         <th>No Registrasi</th>
                                                         <th>Nama Mahasiswa</th>
                                                         <th>Program Studi</th>
@@ -218,9 +179,10 @@
                                                 <tbody id='bodytable'>
                                                     <?php
                                                     // print_r($dataPesertaAsessor);
-                                                    if ($dataPesertaSudahValid) {
+                                                    if ($dataMhsSudahMenanggapi) {
                                                         $i = 0;
-                                                        foreach ($dataPesertaSudahValid as $row) {
+                                                        foreach ($dataMhsSudahMenanggapi as $row) {
+                                                            $i++;
                                                             if ($row->jenis_rpl == 1) {
                                                                 $url = base_url("tanggapanasessora1/$row->no_peserta");
                                                                 $urlbatal = base_url("unvalidasessor/$row->no_peserta");
@@ -229,15 +191,13 @@
                                                                 $urlbatal = base_url("unvalidasessor/$row->no_peserta");
                                                             }
 
-                                                            $i++;
                                                             echo "<tr>
                                                                     <td>$i</td>
-                                                                    <td>$row->tglpengajuan</td>
-                                                                    <td>$row->tglvalid</td>
+                                                                    <td>$row->no_peserta</td>
                                                                     <td>$row->no_peserta</td>
                                                                     <td>$row->nama</td>
                                                                     <td>$row->nama_prodi</td>
-                                                                    <td><a href='$url'><button class='btn btn-sm btn-primary'>Detail</button></a><a href='$urlbatal'><button class='btn btn-sm btn-primary mx-1'>Batal</button></a></td>
+                                                                    <td><a href='" . $url . "'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
                                                                 </tr>";
                                                             // echo $row->nama;
                                                         }
@@ -251,52 +211,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title mb-4">Data Mahasiswa Sudah Divalidasi Prodi</h4>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <table class="table table-bordered">
-                                                <thead class="table-light">
-                                                    <tr>
-                                                        <th>No</th>
-                                                        <th>No Registrasi</th>
-                                                        <th>Nama Mahasiswa</th>
-                                                        <th>Program Studi</th>
-                                                        <th>Aksi</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id='bodytable'>
-                                                    <?php
-                                                    // print_r($dataPesertaAsessor);
-                                                    if ($dataPesertaSudahValidProdi) {
-                                                        $i = 0;
-                                                        foreach ($dataPesertaSudahValidProdi as $row) {
-                                                            $i++;
-                                                            if ($row->jenis_rpl == 1) {
-                                                                $url = base_url("tanggapanasessora1/$row->no_peserta");
-                                                            } else {
-                                                                $url = base_url("tanggapanasessor/$row->no_peserta");
-                                                            }
-                                                            echo "<tr>
-                                                                    <td>$i</td>
-                                                                    <td>$row->no_peserta</td>
-                                                                    <td>$row->nama</td>
-                                                                    <td>$row->nama_prodi</td>
-                                                                    <td><a href='$url'><button class='btn btn-sm btn-primary'>Detail</button></a></td>
-                                                                </tr>";
-                                                            // echo $row->nama;
-                                                        }
-                                                    }
-                                                    ?>
 
-                                                </tbody>
-                                            </table>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 

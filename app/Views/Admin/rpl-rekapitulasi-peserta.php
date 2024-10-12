@@ -54,6 +54,39 @@
 
                     <div class="row" id='body-print'>
                         <div class="col-xl-12">
+                            <div class="card">
+                                <div class="card-body d-flex gap-3 align-items-center ">
+                                    <div class=" col-lg-6">
+                                        <label for="">Tahun Akademik</label>
+                                        <select class="select form-select " name='taakademik' id='taakademik'>
+                                            <?php
+                                            $tamin = floatval(substr($ta_akademik, 0, 4)) - 5;
+                                            $tamax = floatval(substr($ta_akademik, 0, 4)) + 5;
+
+                                            for ($x = $tamin; $x <= $tamax; $x++) {
+                                                if ($x . "1" == $ta_akademik) {
+                                                    $selected1 = 'selected';
+                                                    $selected2 = '';
+                                                } else  
+                                                    if ($x . "2" == $ta_akademik) {
+
+                                                    $selected1 = '';
+                                                    $selected2 = 'selected';
+                                                } else {
+                                                    $selected1 = '';
+                                                    $selected2 = '';
+                                                }
+                                                echo "<option value='" . $x . "1' $selected1>" . $x . "1</option>";
+                                                echo "<option value='" . $x . "2' $selected2>" . $x . "2</option>";
+                                            }
+                                            ?>
+                                        </select>
+
+                                    </div>
+                                    <button class="btn btn-primary btn-sm py-1 mt-4 "
+                                        onclick="tampilkan()">Tampilkan</button>
+                                </div>
+                            </div>
 
                             <div class="card">
                                 <div class="card-body">
@@ -118,6 +151,7 @@
                                     </div>
                                     -->
 
+
                                     <table class='table table-bordered text-center'>
                                         <thead>
                                             <tr>
@@ -168,20 +202,20 @@
                                         </tbody>
                                     </table>
                                     <style type="text/css" media="print">
-                                        .no-print {
-                                            display: none;
-                                        }
+                                    .no-print {
+                                        display: none;
+                                    }
 
-                                        table,
-                                        td,
-                                        th {
-                                            border: 1px solid;
-                                        }
+                                    table,
+                                    td,
+                                    th {
+                                        border: 1px solid;
+                                    }
 
-                                        table {
-                                            width: 100%;
-                                            border-collapse: collapse;
-                                        }
+                                    table {
+                                        width: 100%;
+                                        border-collapse: collapse;
+                                    }
                                     </style>
                                     <button class="btn btn-sm btn-primary no-print" onclick="simpan_pdf()">
                                         Print</button>
@@ -217,16 +251,23 @@
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 
     <script>
-        function simpan_pdf() {
-            var divContents = document.getElementById("body-print").innerHTML;
-            var a = window.open('', '', 'height=500, width=500');
-            a.document.write('<html>');
-            a.document.write('<body > <h1>Rekapitulasi Peserta RPL <br>');
-            a.document.write(divContents);
-            a.document.write('</body></html>');
-            a.document.close();
-            a.print();
-        }
+    function simpan_pdf() {
+        var divContents = document.getElementById("body-print").innerHTML;
+        var a = window.open('', '', 'height=500, width=500');
+        a.document.write('<html>');
+        a.document.write('<body > <h1>Rekapitulasi Peserta RPL <br>');
+        a.document.write(divContents);
+        a.document.write('</body></html>');
+        a.document.close();
+        a.print();
+    }
+
+    function tampilkan() {
+        a = $("#taakademik").val()
+        window.location.replace('/data-peserta/' +
+            a)
+
+    }
     </script>
 </body>
 

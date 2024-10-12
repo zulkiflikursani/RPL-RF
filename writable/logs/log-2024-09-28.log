@@ -1,0 +1,479 @@
+CRITICAL - 2024-09-28 22:39:34 --> Call to undefined method App\Models\ModelKlaimAsessor::getMatakuliahklaimperprodi
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3548): CodeIgniter\Model->__call('getMatakuliahkl...', Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20231')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#6 {main}
+CRITICAL - 2024-09-28 22:41:57 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('20231')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20231')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 22:48:01 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('20231')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20231')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 22:48:02 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('20231')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20231')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 22:48:19 --> Undefined variable: noregis
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor.php(172): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 172, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3556): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-28 22:54:05 --> Undefined variable: noregis
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor.php(172): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 172, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3556): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-28 23:02:21 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('20231')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20231')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:02:51 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2556): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2556, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2622): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:02:51 --> Undefined offset: 0
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2556): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/macbookp...', 2556, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2622): App\Controllers\Admin->getasessorbynoregis('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->tanggapanAsessorA1('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:03:15 --> Trying to get property 'kode_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3655): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3655, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3169): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->validdekan('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:03:15 --> Trying to get property 'kode_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3655): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3655, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3169): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->validdekan('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:39:09 --> Undefined variable: maxsksrekognisi
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor.php(281): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 281, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3556): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-28 23:39:28 --> Undefined variable: noregis
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor.php(336): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 336, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3556): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-28 23:40:25 --> Undefined variable: noregis
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor.php(336): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 336, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3556): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-28 23:40:35 --> Undefined variable: maxsksrekognisi
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor.php(428): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 428, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3556): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-28 23:40:49 --> Undefined variable: maxsksrekognisi
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor.php(481): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 481, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3556): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-28 23:41:00 --> Undefined variable: oknilai
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor.php(488): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 488, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3556): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-28 23:41:16 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:16 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:17 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:17 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:18 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:18 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:19 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:19 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:19 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:20 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:20 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:20 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:21 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:21 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:21 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:21 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:22 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:22 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:50 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:41:50 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:43:02 --> Undefined index: nama_matakuliah
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor.php(109): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/macbookp...', 109, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3556): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-28 23:43:30 --> Undefined index: idklaim
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor.php(138): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/macbookp...', 138, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3556): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-28 23:43:47 --> Undefined variable: noregis
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor.php(172): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 172, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3556): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-28 23:45:38 --> Undefined variable: oknilai
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor.php(188): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 188, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3556): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-28 23:47:38 --> Undefined index: noregis
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor.php(173): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/macbookp...', 173, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3556): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-28 23:48:10 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:48:10 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:48:32 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:48:32 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:52:13 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:52:13 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-28 23:52:13 --> Trying to get property 'nama_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3474): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3474, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3553): App\Controllers\Admin->getNamaProdi('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}

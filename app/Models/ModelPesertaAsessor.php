@@ -169,34 +169,87 @@ class ModelPesertaAsessor extends Model
                                         mk_klaim_detail.statusklaim,
                                         mk_klaim_detail.tglubah,
                                         prodi.nama_prodi
-                                    FROM
-                                        bio_peserta
-                                    LEFT JOIN mk_klaim_asessor ON bio_peserta.no_peserta = mk_klaim_asessor.no_peserta
-                                    LEFT JOIN tb_peserta_asessor ON bio_peserta.no_peserta = tb_peserta_asessor.no_peserta
-                                    LEFT JOIN mk_klaim_detail ON mid(mk_klaim_detail.idklaim,6,10)= bio_peserta.no_peserta
-                                    LEFT JOIN prodi ON bio_peserta.kode_prodi = prodi.kode_prodi
-                                    LEFT JOIN (
+                                    FROM (
                                         SELECT
-                                            no_peserta,
-                                            tanggapan
+                                            tb_peserta_asessor.no_peserta,
+                                            tb_peserta_asessor.no_asessor
                                         FROM
-                                            mk_klaim_asessor
-                                        WHERE
-                                            tanggapan != 0
-                                    ) AS st ON st.no_peserta = bio_peserta.no_peserta
-                                    WHERE
-                                        bio_peserta.ta_akademik = '$ta_akademik'
-                                    AND tb_peserta_asessor.no_asessor = '$id_asessor'
-                                    AND mk_klaim_detail.idklaim IS NOT NULL
-                                    AND (
-                                        mk_klaim_asessor.idklaim IS NULL
-                                        OR st.no_peserta IS NOT NULL
-                                    )
-                                    AND mk_klaim_detail.statusklaim IS NOT NULL
-                                    AND mk_klaim_detail.statusklaim != 1
+                                            tb_peserta_asessor
+                                        WHERE (tb_peserta_asessor.ta_akademik = '$ta_akademik')
+                                        and(tb_peserta_asessor.no_asessor = '$id_asessor')
+                                        ) tb_peserta_asessor
+                                        LEFT JOIN bio_peserta ON (bio_peserta.no_peserta = tb_peserta_asessor.no_peserta)
+                                        LEFT JOIN mk_klaim_asessor ON (tb_peserta_asessor.no_peserta = mk_klaim_asessor.no_peserta)
+                                        LEFT JOIN mk_klaim_detail ON (mid(mk_klaim_detail.idklaim, 6, 10) = tb_peserta_asessor.no_peserta)
+                                        LEFT JOIN prodi ON bio_peserta.kode_prodi = prodi.kode_prodi
+                                        -- LEFT JOIN (
+                                        --     SELECT
+                                        --         no_peserta, tanggapan
+                                        --     FROM
+                                        --         mk_klaim_asessor
+                                        --     WHERE
+                                        --         mk_klaim_asessor.tanggapan = 2 and mk_klaim_asessor.ta_akademik='$ta_akademik') AS st ON st.no_peserta = tb_peserta_asessor.no_peserta
+                                    WHERE (mk_klaim_detail.idklaim IS NOT NULL)
+                                    AND(mk_klaim_asessor.idklaim IS NULL
+                                       )
+                                    AND(mk_klaim_detail.statusklaim IS NOT NULL)
+                                    AND(mk_klaim_detail.statusklaim != 1)
                                     GROUP BY
                                         bio_peserta.no_peserta
                                 ")->getResult();
+        // $dataMahasiswa = $db->query("SELECT
+        //                                 bio_peserta.ta_akademik,
+        //                                 bio_peserta.no_peserta,
+        //                                 bio_peserta.nama,
+        //                                 bio_peserta.alamat,
+        //                                 bio_peserta.kotkab,
+        //                                 bio_peserta.propinsi,
+        //                                 bio_peserta.instansi_asal,
+        //                                 bio_peserta.nohape,
+        //                                 bio_peserta.email,
+        //                                 bio_peserta.jenis_rpl,
+        //                                 bio_peserta.kode_prodi,
+        //                                 mk_klaim_asessor.idklaim,
+        //                                 mk_klaim_asessor.ta_akademik,
+        //                                 mk_klaim_asessor.idpengguna,
+        //                                 mk_klaim_asessor.kode_matakuliah,
+        //                                 mk_klaim_asessor.nilai,
+        //                                 mk_klaim_asessor.tanggapan,
+        //                                 mk_klaim_asessor.ket_tanggapan,
+        //                                 mk_klaim_asessor.no_peserta,
+        //                                 tb_peserta_asessor.no_peserta,
+        //                                 tb_peserta_asessor.no_asessor,
+        //                                 mk_klaim_detail.statusklaim,
+        //                                 mk_klaim_detail.tglubah,
+        //                                 prodi.nama_prodi
+        //                             FROM
+        //                                 bio_peserta
+        //                             LEFT JOIN mk_klaim_asessor ON bio_peserta.no_peserta = mk_klaim_asessor.no_peserta and mk_klaim_asessor.ta_akademik='$ta_akademik'
+        //                             LEFT JOIN tb_peserta_asessor ON bio_peserta.no_peserta = tb_peserta_asessor.no_peserta and tb_peserta_asessor.ta_akademik='$ta_akademik'
+        //                             LEFT JOIN mk_klaim_detail ON mid(mk_klaim_detail.idklaim,6,10)= bio_peserta.no_peserta
+        //                             LEFT JOIN prodi ON bio_peserta.kode_prodi = prodi.kode_prodi
+        //                             LEFT JOIN (
+        //                                 SELECT
+        //                                     no_peserta,
+        //                                     tanggapan
+        //                                 FROM
+        //                                     mk_klaim_asessor
+        //                                 WHERE
+        //                                     tanggapan != 0
+        //                             ) AS st ON st.no_peserta = bio_peserta.no_peserta
+        //                             WHERE
+        //                                 bio_peserta.ta_akademik = '$ta_akademik'
+        //                             AND tb_peserta_asessor.no_asessor = '$id_asessor'
+        //                             AND mk_klaim_detail.idklaim IS NOT NULL
+        //                             AND (
+        //                                 mk_klaim_asessor.idklaim IS NULL
+        //                                 OR st.no_peserta IS NOT NULL
+        //                             )
+        //                             AND mk_klaim_detail.statusklaim IS NOT NULL
+        //                             AND mk_klaim_detail.statusklaim != 1
+        //                             GROUP BY
+        //                                 bio_peserta.no_peserta
+        //                         ")->getResult();
         return $dataMahasiswa;
     }
 
@@ -247,8 +300,9 @@ class ModelPesertaAsessor extends Model
                                             mk_klaim_asessor
                                         WHERE
                                             mk_klaim_asessor.idpengguna = '$id_asessor'
+                                            and mk_klaim_asessor.ta_akademik = '$ta_akademik'
                                     ) mk_klaim_asessorx ON bio_peserta.no_peserta = mk_klaim_asessorx.no_peserta
-                                    LEFT JOIN mk_klaim_header ON bio_peserta.no_peserta = mk_klaim_header.no_peserta
+                                    LEFT JOIN mk_klaim_header ON bio_peserta.no_peserta = mk_klaim_header.no_peserta and mk_klaim_header.ta_akademik='$ta_akademik'
                                     LEFT JOIN tb_peserta_asessor ON bio_peserta.no_peserta = tb_peserta_asessor.no_peserta
                                     LEFT JOIN (
                                         SELECT
@@ -454,7 +508,7 @@ class ModelPesertaAsessor extends Model
                                         WHERE
                                             mk_klaim_asessor.kode_prodi = '$kode_prodi'
                                         AND mk_klaim_asessor.ta_akademik = '$ta_akademik'
-                                        AND mk_klaim_asessor.tanggapan = 1
+                                        AND (mk_klaim_asessor.tanggapan = 1 or mk_klaim_asessor.tanggapan = 2)
                                     ) AS status_klaim_nonvalid ON bio_pesertax.no_peserta = status_klaim_nonvalid.no_peserta
                                     LEFT JOIN (
                                         SELECT
@@ -540,7 +594,7 @@ class ModelPesertaAsessor extends Model
                                 FROM
                                 bio_peserta
                                 LEFT JOIN mk_klaim_asessor ON bio_peserta.no_peserta = mk_klaim_asessor.no_peserta
-                                LEFT JOIN mk_klaim_dekan ON mk_klaim_asessor.idklaim = mk_klaim_dekan.idklaim
+                            LEFT JOIN mk_klaim_dekan ON mk_klaim_asessor.idklaim = mk_klaim_dekan.idklaim
                                 LEFT JOIN tb_peserta_asessor ON bio_peserta.no_peserta = tb_peserta_asessor.no_peserta
                                 left join prodi on
                                 bio_peserta.kode_prodi= prodi.kode_prodi
@@ -667,6 +721,42 @@ class ModelPesertaAsessor extends Model
     ORDER BY
         bio_peserta.kode_prodi,
         bio_peserta.no_peserta")->getResult();
+        return $dataMahasiswa;
+    }
+
+    public function getDataMahasiswaDimintaTanggapan($idpengguna, $kode_prodi, $ta_akademik)
+    {
+
+        $db = \Config\Database::connect();
+        $dataMahasiswa = $db->query("SELECT 
+        mk_klaim_asessor.no_peserta,
+        bio_peserta.nama,
+        bio_peserta.kode_prodi, 
+        bio_peserta.jenis_rpl, 
+        prodi.nama_prodi 
+        from mk_klaim_asessor 
+        left join 
+        (select bio_peserta.nama,bio_peserta.no_peserta,bio_peserta.kode_prodi, bio_peserta.jenis_rpl from bio_peserta where bio_peserta.ta_akademik='$ta_akademik' and kode_prodi='$kode_prodi')bio_peserta on bio_peserta.no_peserta=mk_klaim_asessor.no_peserta 
+        left join prodi on  prodi.kode_prodi = bio_peserta.kode_prodi 
+        WHERE mk_klaim_asessor.ta_akademik='$ta_akademik' and mk_klaim_asessor.idpengguna='$idpengguna' and mk_klaim_asessor.tanggapan='1' group by mk_klaim_asessor.no_peserta ")->getResult();
+        return $dataMahasiswa;
+    }
+    public function getDataMahasiswaSudahMemberiTanggapan($idpengguna, $kode_prodi, $ta_akademik)
+    {
+
+        $db = \Config\Database::connect();
+        $dataMahasiswa = $db->query("SELECT 
+        mk_klaim_asessor.no_peserta,
+        bio_peserta.nama,
+        bio_peserta.kode_prodi, 
+        bio_peserta.jenis_rpl, 
+        prodi.nama_prodi 
+        from mk_klaim_asessor 
+        left join 
+        (select bio_peserta.nama,bio_peserta.no_peserta,bio_peserta.kode_prodi, bio_peserta.jenis_rpl from bio_peserta where bio_peserta.ta_akademik='$ta_akademik' and kode_prodi='$kode_prodi')bio_peserta on bio_peserta.no_peserta=mk_klaim_asessor.no_peserta 
+        left join prodi on  prodi.kode_prodi = bio_peserta.kode_prodi 
+        left join (select mk_klaim_asessor.no_peserta from mk_klaim_asessor where mk_klaim_asessor.tanggapan = 1 and mk_klaim_asessor.kode_prodi='$kode_prodi' and mk_klaim_asessor.ta_akademik='$ta_akademik')st on mk_klaim_asessor.no_peserta = st.no_peserta
+        WHERE mk_klaim_asessor.ta_akademik='$ta_akademik' and mk_klaim_asessor.idpengguna='$idpengguna' and mk_klaim_asessor.tanggapan='2' and st.no_peserta is null group by mk_klaim_asessor.no_peserta ")->getResult();
         return $dataMahasiswa;
     }
 }

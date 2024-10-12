@@ -1,0 +1,94 @@
+CRITICAL - 2024-09-30 11:20:35 --> Undefined variable: dekan
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Views/Admin/rpl-ba-assesment-asessor-a1.php(174): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 174, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(230): include('/Users/macbookp...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Common.php(1250): CodeIgniter\View\View->render('Admin/rpl-ba-as...', Array, true)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3579): view('Admin/rpl-ba-as...', Array)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentA1Perprodi('20201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-30 09:37:42 --> Trying to get property 'kode_fakultas' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3481): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3481, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3736): App\Controllers\Admin->getKodeFakultasby('undefined')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->dataMhsPerpodiOk('20231')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-30 09:39:19 --> Undefined variable: fakultas
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3834): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 3834, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->dataMhsPerFak('20231')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#6 {main}
+CRITICAL - 2024-09-30 09:41:33 --> Undefined variable: fakultas
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3834): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/macbookp...', 3834, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->dataMhsPerFak('20231')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#6 {main}
+CRITICAL - 2024-09-30 09:41:37 --> Trying to get property 'kode_fakultas' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3481): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3481, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3736): App\Controllers\Admin->getKodeFakultasby('undefined')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->dataMhsPerpodiOk('20231')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-30 09:53:17 --> Unknown column 'mk_kalim_asessor.no_peserta' in 'on clause'
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('SELECT\n        ...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\n        ...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\n        ...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelKlaimAsessor.php(385): CodeIgniter\Database\BaseConnection->query('SELECT\n        ...')
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3548): App\Models\ModelKlaimAsessor->getKlaimMk_mahasiswaByProdi('62201', '20231')
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentPerprodi('62201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-30 11:28:44 --> Unknown column 'mk_klaim_asessor.no_peserta' in 'on clause'
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('SELECT\n        ...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\n        ...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\n        ...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelKlaimAsessor.php(473): CodeIgniter\Database\BaseConnection->query('SELECT\n        ...')
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3570): App\Models\ModelKlaimAsessor->getKlaimMk_mahasiswaA1ByProdi('62201', '20231')
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentA1Perprodi('62201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-30 11:31:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'group by mk_klaim_asessor.idklaim' at line 82
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('SELECT\n        ...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\n        ...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\n        ...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelKlaimAsessor.php(473): CodeIgniter\Database\BaseConnection->query('SELECT\n        ...')
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3570): App\Models\ModelKlaimAsessor->getKlaimMk_mahasiswaA1ByProdi('62201', '20231')
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentA1Perprodi('62201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-30 11:34:06 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'group by mk_klaim_asessor.idklaim' at line 82
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('SELECT\n        ...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\n        ...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\n        ...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelKlaimAsessor.php(473): CodeIgniter\Database\BaseConnection->query('SELECT\n        ...')
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3570): App\Models\ModelKlaimAsessor->getKlaimMk_mahasiswaA1ByProdi('62201', '20231')
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->BeritaAcaraAsessmentA1Perprodi('62201')
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}

@@ -1,0 +1,84 @@
+CRITICAL - 2024-09-13 04:53:04 --> Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'rpl.uf.01.11.23.bio_peserta.nama' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('(SELECT\n       ...')
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('(SELECT\n       ...')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('(SELECT\n       ...')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Models/ModelPesertaAsessor.php(139): CodeIgniter\Database\BaseConnection->query('(SELECT\n       ...')
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(79): App\Models\ModelPesertaAsessor->getdataPesertaBelumPunyaAsessorByProdi('70101', '20231')
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->index()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#10 {main}
+CRITICAL - 2024-09-13 04:54:48 --> Trying to get property 'kode_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3538): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3538, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2724): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->validprodia1('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-13 04:54:48 --> Trying to get property 'kode_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3538): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3538, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2724): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->validprodia1('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-13 04:55:18 --> Trying to get property 'kode_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3538): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3538, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2724): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->validprodia1('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-13 04:55:18 --> Trying to get property 'kode_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3538): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3538, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2724): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->validprodia1('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-13 04:57:24 --> Trying to get property 'kode_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3538): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3538, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2724): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->validprodia1('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-13 04:57:24 --> Trying to get property 'kode_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3538): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3538, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2724): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->validprodia1('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-13 04:58:22 --> Trying to get property 'kode_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3538): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3538, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2724): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->validprodia1('assets', 'images', 'logo.svg')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}
+CRITICAL - 2024-09-13 04:58:22 --> Trying to get property 'kode_prodi' of non-object
+#0 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(3538): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/macbookp...', 3538, Array)
+#1 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/app/Controllers/Admin.php(2724): App\Controllers\Admin->getKodeProdiBy('assets')
+#2 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Admin->validprodia1('assets', 'images', 'logo-dark.png')
+#3 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#4 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/macbookprom2/Desktop/PROJECT/silaju.unifa.ac.id/RPL-RF/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(45): require_once('/Users/macbookp...')
+#7 {main}

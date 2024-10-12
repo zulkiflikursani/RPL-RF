@@ -282,10 +282,12 @@
 
 
                                         <div>
-                                            <form action="<?= base_url('setvalidprodi') ?>" method="post" id='validasi-form' target="">
+                                            <form action="<?= base_url('setvalidprodi') ?>" method="post"
+                                                id='validasi-form' target="">
                                                 <input type="hidden" name="noregis" value='<?= $noregis ?>'>
                                             </form>
-                                            <form action="<?= base_url('setunvalidprodi') ?>" method="post" id='unvalidasi-form' target="">
+                                            <form action="<?= base_url('setunvalidprodi') ?>" method="post"
+                                                id='unvalidasi-form' target="">
                                                 <input type="hidden" name="noregis" value='<?= $noregis ?>'>
                                             </form>
                                             <?php if ($status == 1) {
@@ -348,76 +350,75 @@
 </html>
 
 <script>
-    $(document).ready(function() {
-        $('#loading').show()
-        noregis = '<?= $noregis ?>'
-        url = '<?= base_url('getDataKlaimAsessor') ?>'
-        $.post(url, {
-            noregis: noregis
-        }, function(data) {
-            data = JSON.parse(data)
-            // console.log(data);
-            count = data.length;
-            // alert(count)
-            $.each(data, function(index, value) {
-                $('#tbody-klaim-mk  > tr').each(function(i, tr) {
-                    if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
-                        value['idklaim']) {
-                        // alert('jalan')
-                        $(this).find('td[for=tanggapan]').children().val(value[
-                            'tanggapan']);
-                        $(this).find('td[for=nilaiAs]').children().val(value[
-                            'nilai']);
-                        $(this).find('td[for=kettanggapan]').children()
-                            .val(value['ket_tanggapan']);
+$(document).ready(function() {
+    $('#loading').show()
+    noregis = '<?= $noregis ?>'
+    url = '<?= base_url('getDataKlaimAsessor') ?>'
+    $.post(url, {
+        noregis: noregis
+    }, function(data) {
+        data = JSON.parse(data)
+        count = data.length;
+        $.each(data['data'], function(index, value) {
+            $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+                if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
+                    value['idklaim']) {
+                    // alert('jalan')
+                    $(this).find('td[for=tanggapan]').children().val(value[
+                        'tanggapan']);
+                    $(this).find('td[for=nilaiAs]').children().val(value[
+                        'nilai']);
+                    $(this).find('td[for=kettanggapan]').children()
+                        .val(value['ket_tanggapan']);
+                    // if (count === index + 1) {
+                    //     klaimsksass()
+                    // }
 
 
-                        if (count === index + 1) {
-                            klaimsksass()
-                        }
-
-
-                    }
-                })
-                $('textarea').attr('readonly', 'readonly');
-                $('select').attr('disabled', 'disabled');
-                $('#loading').hide()
-
+                }
             })
-        }).fail(function() {
-            alert("error");
+            $('textarea').attr('readonly', 'readonly');
+            $('select').attr('disabled', 'disabled');
             $('#loading').hide()
-        });
 
-    })
-
-
-    function klaimsksass() {
-        klaimsks = 0;
-        $('#tbody-klaim-mk  > tr').each(function(i, tr) {
-            tanggapan = $(this).find('td[for=tanggapan]').children().val();
-            nilai = $(this).find('td[for=nilaiAs]').children().val();
-            sks = $(this).attr('sks');
-            if (tanggapan == 0 && tanggapan != '' && nilai != "E") {
-                klaimsks = parseFloat(klaimsks) + parseFloat(sks)
-            }
         })
-        // alert(klaimsks)
-        $('#julmahSksValid').html(klaimsks)
-        if (klaimsks > <?= $maxsksrekognisi ?>) {
-            $(".statusSks").html("Jumlah SKS Melebihi Batas Rekognisi")
+        $('#loading').hide()
+        klaimsksass();
+    }).fail(function() {
+        alert("error");
+        $('#loading').hide()
+    });
+
+})
+
+
+function klaimsksass() {
+    klaimsks = 0;
+    $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+        tanggapan = $(this).find('td[for=tanggapan]').children().val();
+        nilai = $(this).find('td[for=nilaiAs]').children().val();
+        sks = $(this).attr('sks');
+        if (tanggapan == 0 && tanggapan != '' && nilai != "E") {
+
+            klaimsks = parseFloat(klaimsks) + parseFloat(sks)
         }
-        // return klaimsks;
+    })
+    // alert(klaimsks)
+    $('#julmahSksValid').html(klaimsks)
+    if (klaimsks > <?= $maxsksrekognisi ?>) {
+        $(".statusSks").html("Jumlah SKS Melebihi Batas Rekognisi")
     }
+    // return klaimsks;
+}
 
-    function validprodi() {
-        $('#validasi-form').submit()
-    }
+function validprodi() {
+    $('#validasi-form').submit()
+}
 
-    function unvalidprodi() {
-        $('#unvalidasi-form').submit()
+function unvalidprodi() {
+    $('#unvalidasi-form').submit()
 
-    }
+}
 </script>
 <?php
 function getnamafile($no_dokumen)

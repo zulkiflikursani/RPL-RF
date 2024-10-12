@@ -8,10 +8,10 @@
     <link href="<?= base_url() ?>/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 
     <style>
-    .select2-container--default .select2-selection--single .select2-selection__arrow {
-        right: 10px;
-        left: auto;
-    }
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            right: 10px;
+            left: auto;
+        }
     </style>
 </head>
 
@@ -111,10 +111,10 @@
                                                                 }
                                                             } else {
                                                         ?>
-                                                        <input type="hidden" id='ptasal' class="form-control"
-                                                            name='ptasa' value='<?= $kdptasal ?>' readonly />
-                                                        <input type="text" id='nmptasal' class="form-control"
-                                                            name='nmptasal' value='<?= $nmptasal ?>' readonly />
+                                                                <input type="hidden" id='ptasal' class="form-control"
+                                                                    name='ptasa' value='<?= $kdptasal ?>' readonly />
+                                                                <input type="text" id='nmptasal' class="form-control"
+                                                                    name='nmptasal' value='<?= $nmptasal ?>' readonly />
                                                         <?php
 
                                                             }
@@ -143,12 +143,24 @@
 
                                         <div class=" mt-3">
                                             <label for="">File Import</label>
-                                            <input type="file" name="datamka1" class="form-control mb-3" id="">
-                                            <span class="text-danger mt-3">Note: File Harus Sesuai dengan Template yang
-                                                sudah
-                                                disipakan <a href='<?= base_url() . "/template/template-mk-a1.xlsx" ?>'
-                                                    target='_blank' class="btn btn-sm btn-danger">Unduh
-                                                    Template</a></span>
+                                            <input type="file" name="datamka1" class="form-control mb-3" id=""
+                                                accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                                            <span class="text-danger mt-3">
+                                                <div>
+                                                    Note:
+                                                    <ul class="list-unstyled">
+                                                        <li> 1. File Harus Sesuai dengan
+                                                            Template yang
+                                                            sudah
+                                                            disipakan <a
+                                                                href='<?= base_url() . "/template/template-mk-a1.xlsx" ?>'
+                                                                target='_blank' class="btn btn-sm btn-danger">Unduh
+                                                                Template</a></li>
+                                                        <li>2. Direkomendasikan menggunakan laptop dengan koneksi
+                                                            internet stabil</li>
+                                                    </ul>
+                                                </div>
+                                            </span>
                                         </div>
 
                                         <button type="submit" class="btn btn-primary ">Import</button>
@@ -179,8 +191,8 @@
                                         <?php
                                         if (isset($dataGenerate)) {
                                         ?>
-                                        <div>Total Sks import : <?= $totsks ?> sks</div>
-                                        <button class="btn btn-primary" onclick="simpandata()">Simpan</button>
+                                            <div>Total Sks import : <?= $totsks ?> sks</div>
+                                            <button class="btn btn-primary" onclick="simpandata()">Simpan</button>
                                         <?php } ?>
                                     </div>
                                 </div>
@@ -226,129 +238,129 @@
 </html>
 
 <script>
-var url = '<?= base_url('searchtpasal') ?>'
-$('.select2').select2({
-    ajax: {
-        url: url,
-        type: "post",
-        dataType: 'json',
-        delay: 250,
-        data: function(params) {
-            return {
-                searchTerm: params.term // search term
-            };
-        },
-        processResults: function(response) {
-            return {
-                results: response
-            };
-        },
-        cache: true
-    }
-});
-$(document).ready(function() {
-    // $('.select2').select2();
-    $('#formRadios1').click(function() {
-        $('#input-url').hide()
-        $('#input-upload').show()
-    })
-    $('#formRadios2').click(function() {
-        $('#input-url').show()
-        $('#input-upload').hide()
-    })
-
-    $('.tambah-matakuliah-modal').on('show.bs.modal', function(e) {
-        kdpt = $('#ptasal').val()
-        if (kdpt == "") {
-            alert('Pilih Perguruan Tinggi')
-            // $('.tambah-matakuliah-modal').modal('hide')
-            e.preventDefault(); // prevent the modal from being hidden
-        } else {
-            $('#mkode-pt').val(kdpt);
+    var url = '<?= base_url('searchtpasal') ?>'
+    $('.select2').select2({
+        ajax: {
+            url: url,
+            type: "post",
+            dataType: 'json',
+            delay: 250,
+            data: function(params) {
+                return {
+                    searchTerm: params.term // search term
+                };
+            },
+            processResults: function(response) {
+                return {
+                    results: response
+                };
+            },
+            cache: true
         }
-        // if (someCondition) {}
-    })
-
-    $(".delete-matakuliah").on('click', function() {
-        b = $(this).attr('kdmk')
-
-        $('#ekdmk').val(b);
     });
+    $(document).ready(function() {
+        // $('.select2').select2();
+        $('#formRadios1').click(function() {
+            $('#input-url').hide()
+            $('#input-upload').show()
+        })
+        $('#formRadios2').click(function() {
+            $('#input-url').show()
+            $('#input-upload').hide()
+        })
 
-})
+        $('.tambah-matakuliah-modal').on('show.bs.modal', function(e) {
+            kdpt = $('#ptasal').val()
+            if (kdpt == "") {
+                alert('Pilih Perguruan Tinggi')
+                // $('.tambah-matakuliah-modal').modal('hide')
+                e.preventDefault(); // prevent the modal from being hidden
+            } else {
+                $('#mkode-pt').val(kdpt);
+            }
+            // if (someCondition) {}
+        })
 
-function simpandata() {
-    $('#loading').show()
-    <?php if (isset($nmptasal) && $nmptasal != "") {
+        $(".delete-matakuliah").on('click', function() {
+            b = $(this).attr('kdmk')
+
+            $('#ekdmk').val(b);
+        });
+
+    })
+
+    function simpandata() {
+        $('#loading').show()
+        <?php if (isset($nmptasal) && $nmptasal != "") {
         ?>
-    kdpt = '<?= $kdptasal ?>'
-    nmpt = '<?= $nmptasal ?>'
-    <?php
+            kdpt = '<?= $kdptasal ?>'
+            nmpt = '<?= $nmptasal ?>'
+        <?php
         } else {
         ?>
-    kdpt = $('#ptasal').val()
-    nmpt = $('#ptasal').text()
-    <?php
+            kdpt = $('#ptasal').val()
+            nmpt = $('#ptasal').text()
+        <?php
         }
         ?>
 
-    if (kdpt == "") {
-        alert('Anda Belum memilih Perguruan Tinggi.')
-        $('#loading').hide()
+        if (kdpt == "") {
+            alert('Anda Belum memilih Perguruan Tinggi.')
+            $('#loading').hide()
 
-    } else {
-        jsonObj = [];
-        $('#tbody-mk  > tr').each(function(i, tr) {
-            var kdmk = $(this).find("td[for=a]").html()
-            var nmmk = $(this).find("td[for=b]").html();
-            var sks = $(this).find("td[for=c]").html();
-            var nilai = $(this).find("td[for=d]").html();
+        } else {
+            jsonObj = [];
+            $('#tbody-mk  > tr').each(function(i, tr) {
+                var kdmk = $(this).find("td[for=a]").html()
+                var nmmk = $(this).find("td[for=b]").html();
+                var sks = $(this).find("td[for=c]").html();
+                var nilai = $(this).find("td[for=d]").html();
 
-            item = {}
-            item["kdpt"] = kdpt.trim();
-            item["nmpt"] = nmpt.trim();
-            item["kdmk"] = kdmk.trim();
-            item["nmmk"] = nmmk.trim();
-            item["sks"] = sks.trim();
-            item["nilai"] = nilai.trim();
+                item = {}
+                item["kdpt"] = kdpt.trim();
+                item["nmpt"] = nmpt.trim();
+                item["kdmk"] = kdmk.trim();
+                item["nmmk"] = nmmk.trim();
+                item["sks"] = sks.trim();
+                item["nilai"] = nilai.trim();
 
-            jsonObj.push(item);
-            // alert(desk);
-        });
-        url = '<?= base_url('simpanklaimimport') ?>'
+                jsonObj.push(item);
+                // alert(desk);
+            });
+            url = '<?= base_url('simpanklaimimport') ?>'
+            $.post(url, {
+                jsonObj
+            }).done(function(data) {
+                $('#loading').hide()
+                if (alert(data)) {} else {
+                    window.location.replace('<?= base_url('uploada1') ?>')
+                };
+            }).fail(function() {
+                $('#loading').hide()
+                alert("error");
+            })
+        }
+    }
+
+    function showModal(ini) {
+
+        $('#btya').attr('iddokumen', ini)
+        $('.confirmasi-modal').modal("show")
+    }
+
+    function hapus(ini) {
+        $('#loading').show();
+        url = '<?= base_url('deldok') ?>'
+        nodokumen = ini.attr('iddokumen');
         $.post(url, {
-            jsonObj
+            nodokumen: nodokumen
         }).done(function(data) {
-            $('#loading').hide()
+            $('#loading').hide();
+            $('.confirmasi-modal').modal("hide")
             if (alert(data)) {} else {
-                window.location.replace('<?= base_url('uploada1') ?>')
+                window.location.replace('<?= base_url('upload') ?>')
             };
-        }).fail(function() {
-            $('#loading').hide()
-            alert("error");
+
         })
     }
-}
-
-function showModal(ini) {
-
-    $('#btya').attr('iddokumen', ini)
-    $('.confirmasi-modal').modal("show")
-}
-
-function hapus(ini) {
-    $('#loading').show();
-    url = '<?= base_url('deldok') ?>'
-    nodokumen = ini.attr('iddokumen');
-    $.post(url, {
-        nodokumen: nodokumen
-    }).done(function(data) {
-        $('#loading').hide();
-        $('.confirmasi-modal').modal("hide")
-        if (alert(data)) {} else {
-            window.location.replace('<?= base_url('upload') ?>')
-        };
-
-    })
-}
 </script>

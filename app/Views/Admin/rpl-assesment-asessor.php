@@ -305,10 +305,15 @@
 
                                         </div>
 
-                                        <div>
-                                            <button type="button" onclick="simpan_klaim_asessor()"
-                                                class="btn btn-primary w-md">Submit</button>
-
+                                        <div class="d-flex justify-content-between ">
+                                            <div>
+                                                <button type="button" onclick="submit_klaim_asessor(2)" id="btn-submit"
+                                                    class="btn btn-primary w-md">Submit</button>
+                                                <button type="button" onclick="submit_klaim_asessor(1)" id="btn-submit"
+                                                    class="btn btn-primary w-md">Minta Tanggapan</button>
+                                            </div>
+                                            <button type="button" onclick="simpan_klaim_asessor()" id="btn-simpan"
+                                                class="btn btn-primary w-md">Simpan</button>
                                         </div>
                                     </div>
                                 </div>
@@ -361,9 +366,18 @@ $(document).ready(function() {
         noregis: noregis
     }, function(data) {
         data = JSON.parse(data)
-        // console.log(data);
+        // console.log(data);   
 
-        $.each(data, function(index, value) {
+        data_sumber = data['datasumber'];
+        if (data['datasumber'] == 1) {
+            $('#btn-submit').show()
+            $('#btn-simpan').hide()
+
+        } else if (data['datasumber'] == 2) {
+            $('#btn-simpan').show()
+            $('#btn-submit').show()
+        }
+        $.each(data['data'], function(index, value) {
             $('#tbody-klaim-mk  > tr').each(function(i, tr) {
                 if ($(this).attr('noregis') == noregis && $(this).attr('idklaim') ==
                     value['idklaim']) {
@@ -376,6 +390,20 @@ $(document).ready(function() {
                         $(this).parent().find('tr[kdmk=' + kdmk + ']').css(
                             'background-color',
                             'rgba(255,255,0,0.3)')
+                        if (data_sumber == 1) {
+                            $('#buram').show();
+                            $('#notif-message').html(
+                                'Mahasiswa masih belum menyelesaikan semua tanggapan.'
+                            )
+                            $('.modal-notif').modal({
+                                backdrop: 'static',
+                                keyboard: false
+                            })
+                            $('.modal-notif').modal('show', {
+                                backdrop: 'static',
+                                keyboard: false
+                            })
+                        }
                     } else if (value['tanggapan'] ==
                         '0') {
                         $(this).parent().find('tr[kdmk=' + kdmk + ']').css(
@@ -393,6 +421,7 @@ $(document).ready(function() {
 
 
         $('#loading').hide()
+
         klaimsksass();
 
     }).fail(function() {
@@ -420,6 +449,113 @@ function gantinilai() {
     klaimsksass();
 }
 
+function submit_klaim_asessor(btn_status) {
+    $('#loading').show()
+    sksklaim = $('#sks-klaim').html();
+    klaimsksmax = '<?= $maxsksrekognisi ?>'
+
+    jsonObj = [];
+    statusdata = 0;
+    status_tanggapan = 0;
+    $('#tbody-klaim-mk  > tr').each(function(i, tr) {
+        if ($(this).attr('noregis') != undefined) {
+            idklaim = $(this).attr('idklaim')
+            no_peserta = $(this).attr('noregis')
+            kdprodi = $(this).attr('kdprodi')
+            kdmk = $(this).attr('kdmk')
+            tanggapan = $(this).find('td[for=tanggapan]').children().val();
+            if (btn_status == 2) {
+                //validasi assessor
+                if (tanggapan == 1) {
+                    nilai = $(this).find('td[for=nilaiAs]').html();
+                    alert('Terdapat matakuliah yang memerlukan tanggapan, Submit tidak dapat dilakukan')
+                    status_tanggapan = "ada";
+                    return false
+                } else if (tanggapan == 0) {
+                    nilai = $(this).find('td[for=nilaiAs]').children().val();
+                }
+            } else if (btn_status == 1) {
+                // minta tanggapan
+                if (tanggapan == 1) {
+                    nilai = $(this).find('td[for=nilaiAs]').html();
+                    status_tanggapan = "ada";
+                } else if (tanggapan == 0) {
+                    nilai = $(this).find('td[for=nilaiAs]').children().val();
+                }
+            }
+
+            kettanggapan = $(this).find('td[for=kettanggapan]').children().val();
+
+            if (idklaim != "" && no_peserta != "" && kdmk != "" && tanggapan != "" && nilai != "" &&
+                kettanggapan.trim() != "") {
+                item = {}
+                item["idklaim"] = idklaim;
+                item["noregis"] = no_peserta;
+                item["kdmk"] = kdmk;
+                item["kdprodi"] = kdprodi;
+                item["tanggapan"] = tanggapan;
+                item["nilai"] = nilai;
+                item["kettanggapan"] = kettanggapan;
+
+                jsonObj.push(item);
+
+            } else {
+                statusdata = 1
+            }
+
+
+        }
+
+    })
+    if (status_tanggapan == 'ada' && btn_status == 2) {
+        // alert('Tidak ada matakuliah yang memerlukan tanggapan, Permintaan tanggapan tidak dapat dilakukan')
+        $('#loading').hide()
+    } else if (status_tanggapan == '' && btn_status == 1) {
+        alert('Tidak ada matakuliah yang memerlukan tanggapan, Permintaan tanggapan tidak dapat dilakukan')
+        $('#loading').hide()
+    } else if (statusdata == 1) {
+        alert("Silahkan Lengkapi Tanggapan Anda !")
+        $('#loading').hide()
+    } else if (sksklaim > parseFloat(klaimsksmax)) {
+        alert("Klaim Matakuliah Melebihi batas maksimum sks rekognisi Program Studi")
+        $('#loading').hide()
+    } else {
+        url = '<?= base_url('klaimmkAsessor') ?>'
+        $.post(url, {
+            jsonObj
+        }, function(data) {
+            console.log(data);
+            $('#loading').hide()
+            if (data == 'suksessukses') {
+                if (btn_status == 1) {
+                    if (alert("Data berhasil dikirim ke mahasiswa")) {} else {
+                        window.location.replace('<?= base_url('Admin') ?>')
+                    };
+                } else {
+                    if (alert("Data berhasil disubmit")) {} else {
+                        window.location.replace('<?= base_url('Admin') ?>')
+                    };
+                }
+            } else {
+                if (data == "Belum ditanggapi") {
+                    if (alert(
+                            "Mahaiswa Belum melakukan tanggapan terhadap asesment sebelumnya... ")) {} else {
+                        // window.location.replace('<?= base_url('Admin') ?>')
+                    };
+                } else if (alert(data)) {} else {
+                    // window.location.replace('<?= base_url('Admin') ?>')
+                };
+            }
+        }).fail(function() {
+            $('#loading').hide()
+            if (alert("error")) {} else {
+                window.location.replace('<?= base_url('Admin') ?>')
+            };
+        });
+    }
+
+}
+
 function simpan_klaim_asessor() {
     $('#loading').show()
     sksklaim = $('#sks-klaim').html();
@@ -443,22 +579,22 @@ function simpan_klaim_asessor() {
             kettanggapan = $(this).find('td[for=kettanggapan]').children().val();
 
 
-            if (idklaim != "" && no_peserta != "" && kdmk != "" && tanggapan != "" && nilai != "" &&
-                kettanggapan != "") {
-                item = {}
-                item["idklaim"] = idklaim;
-                item["noregis"] = no_peserta;
-                item["kdmk"] = kdmk;
-                item["kdprodi"] = kdprodi;
-                item["tanggapan"] = tanggapan;
-                item["nilai"] = nilai;
-                item["kettanggapan"] = kettanggapan;
+            // if (idklaim != "" && no_peserta != "" && kdmk != "" && tanggapan != "" && nilai != "" &&
+            //     kettanggapan != "") {
+            item = {}
+            item["idklaim"] = idklaim;
+            item["noregis"] = no_peserta;
+            item["kdmk"] = kdmk;
+            item["kdprodi"] = kdprodi;
+            item["tanggapan"] = tanggapan;
+            item["nilai"] = nilai;
+            item["kettanggapan"] = kettanggapan;
 
-                jsonObj.push(item);
+            jsonObj.push(item);
 
-            } else {
-                statusdata = 1
-            }
+            // } else {
+            //     statusdata = 1
+            // }
         }
 
     })
@@ -468,24 +604,26 @@ function simpan_klaim_asessor() {
     } else if (sksklaim > parseFloat(klaimsksmax)) {
         alert("Klaim Matakuliah Melebihi batas maksimum sks rekognisi Program Studi")
         $('#loading').hide()
+
     } else {
-        url = '<?= base_url('klaimmkAsessor') ?>'
+        url = '<?= base_url('simpanklaimmkAsessor') ?>'
         $.post(url, {
             jsonObj
         }, function(data) {
             console.log(data);
             $('#loading').hide()
             if (data == 'sukses') {
-                if (alert("Data berhasil disubmit")) {} else {
-                    window.location.replace('<?= base_url('Admin') ?>')
+                if (alert("Data berhasil disimpan")) {} else {
+                    // window.location.replace('<?= base_url('Admin') ?>')
                 };
             } else {
                 if (data == "Belum ditanggapi") {
-                    if (alert("Mahaiswa Belum melakukan tanggapan terhadap asesment sebelumnya... ")) {} else {
-                        window.location.replace('<?= base_url('Admin') ?>')
+                    if (alert(
+                            "Mahaiswa Belum melakukan tanggapan terhadap asesment sebelumnya... ")) {} else {
+                        // window.location.replace('<?= base_url('Admin') ?>')
                     };
-                } else if (alert("Sesi anda berakhir, Silahkan Login ulang..")) {} else {
-                    window.location.replace('<?= base_url('Admin') ?>')
+                } else if (alert(data)) {} else {
+                    // window.location.replace('<?= base_url('Admin') ?>')
                 };
             }
         }).fail(function() {

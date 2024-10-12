@@ -8,10 +8,10 @@
     <link href="<?= base_url() ?>/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 
     <style>
-    .select2-container--default .select2-selection--single .select2-selection__arrow {
-        right: 10px;
-        left: auto;
-    }
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            right: 10px;
+            left: auto;
+        }
     </style>
 </head>
 
@@ -594,183 +594,183 @@
 
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
     <script>
-    $(document).on('select2:open', () => {
-        document.querySelector('.select2-search__field').focus();
-    });
-    $('document').ready(function() {
-        $('.select2').select2({
-            placeholder: 'Select an option',
-            dropdownParent: $('.modal-edit-prop-kot-kab')
-
+        $(document).on('select2:open', () => {
+            document.querySelector('.select2-search__field').focus();
         });
+        $('document').ready(function() {
+            $('.select2').select2({
+                placeholder: 'Select an option',
+                dropdownParent: $('.modal-edit-prop-kot-kab')
 
-        <?php
+            });
+
+            <?php
             if (isset($status_update)) {
                 if ($status_update == 1) {
             ?>
-        alert("DATA BERHASIL DI UPDATE");
-        <?php
+                    alert("DATA BERHASIL DI UPDATE");
+                <?php
                 } else {
                 ?>
-        alert("DATA GAGAL DI UPDATE");
+                    alert("DATA GAGAL DI UPDATE");
 
-        <?php
+            <?php
                 }
             }
             ?>
 
-        getkab();
-        ini = $('#jenis_rpl').val();
-        findprodi1(ini)
-        findkonsentrasi();
-    })
+            getkab();
+            ini = $('#jenis_rpl').val();
+            findprodi1(ini)
+            findkonsentrasi();
+        })
 
-    function findkonsentrasi() {
-        prodi = $('#kode_prodi').val();
-        if (prodi == "") {
-            prodi = '<?= (isset($datasubmit["kode_prodi"]) ? $datasubmit['kode_prodi'] : '') ?>';
+        function findkonsentrasi() {
+            prodi = $('#kode_prodi').val();
+            if (prodi == "") {
+                prodi = '<?= (isset($datasubmit["kode_prodi"]) ? $datasubmit['kode_prodi'] : '') ?>';
+            }
+            url = '<?= base_url("konsentrasi-by-prodi") ?>'
+
+            $.post(url, {
+                prodi: prodi
+            }, function(data) {
+                data = JSON.parse(data)
+                $('#konsentrasi').children().remove();
+                if (data.length == 0) {
+
+                    $('#konsentrasi').prop('required', false)
+                    $('#konsentrasi').prop('readonly', true)
+                    $('#konsentrasi').append("<option value=''> Tidak ada pilihan konsentrasi</option>")
+                } else {
+                    $('#konsentrasi').prop('required', true)
+                    $('#konsentrasi').append("<option value=''> Pilih Konsentrasi.....</option>")
+
+                }
+
+                $.each(data, function(i, row) {
+                    if ('<?= (isset($datasubmit["kode_konsentrasi"]) ? $datasubmit['kode_konsentrasi'] : '') ?>' ==
+                        row['kode_konsentrasi']) {
+                        select = "selected";
+                    } else {
+                        select = '';
+                    }
+                    $("#konsentrasi").append("<option value='" + row['kode_konsentrasi'] + "'" + select +
+                        ">" + row[
+                            'konsentrasi'] + "</option>")
+
+                })
+
+            })
+
         }
-        url = '<?= base_url("konsentrasi-by-prodi") ?>'
 
-        $.post(url, {
-            prodi: prodi
-        }, function(data) {
-            data = JSON.parse(data)
-            $('#konsentrasi').children().remove();
-            if (data.length == 0) {
+        function setProvKab() {
+            prov = $('#m-propinsi').val();
+            kab = $('#m-kab').val()
+            $('#prop').val(prov)
+            $('#kotkab').val(kab)
+            $('.modal-edit-prop-kot-kab').modal('hide')
+        }
 
-                $('#konsentrasi').prop('required', false)
-                $('#konsentrasi').prop('readonly', true)
-                $('#konsentrasi').append("<option value=''> Tidak ada pilihan konsentrasi</option>")
+        function findprodi1(ini) {
+
+            url = '<?= base_url('getProdiByRpl') ?>'
+
+            jenisrpl = ini
+            if (jenisrpl != "") {
+                $.post(url, {
+                    jenis_rpl: jenisrpl
+                }, function(data) {
+                    data = JSON.parse(data)
+                    $('#kode_prodi').children().remove()
+                    $('#kode_prodi').append("<option value=''> Pilih Prodi.....</option>")
+                    $.each(data, function(i, row) {
+
+                        if ('<?= (isset($datasubmit["kode_prodi"]) ? $datasubmit['kode_prodi'] : '') ?>' ==
+                            row['kode_prodi']) {
+                            select = 'selected';
+                        } else {
+                            select = ''
+                        }
+                        $('#kode_prodi').append("<option value='" + row['kode_prodi'] + "' " + select +
+                            " >" + row[
+                                'nama_prodi'] + "</option>")
+
+                    })
+                })
             } else {
-                $('#konsentrasi').prop('required', true)
-                $('#konsentrasi').append("<option value=''> Pilih Konsentrasi.....</option>")
+                $('#kode_prodi').children().remove()
+                $('#kode_prodi').append("<option val=''> Pilih Prodi</option>")
+
 
             }
+        }
 
-            $.each(data, function(i, row) {
-                if ('<?= (isset($datasubmit["kode_konsentrasi"]) ? $datasubmit['kode_konsentrasi'] : '') ?>' ==
-                    row['kode_konsentrasi']) {
-                    select = "selected";
-                } else {
-                    select = '';
-                }
-                $("#konsentrasi").append("<option value='" + row['kode_konsentrasi'] + "'" + select +
-                    ">" + row[
-                        'konsentrasi'] + "</option>")
+        function findprodi(ini) {
+            url = '<?= base_url('getProdiByRpl') ?>'
+            jenisrpl = ini.val()
+            if (jenisrpl != "") {
+                $.post(url, {
+                    jenis_rpl: jenisrpl
+                }, function(data) {
 
-            })
+                    data = JSON.parse(data)
 
-        })
+                    $('#kode_prodi').children().remove()
+                    $('#kode_prodi').append("<option value=''> Pilih Prodi.....</option>")
 
-    }
 
-    function setProvKab() {
-        prov = $('#m-propinsi').val();
-        kab = $('#m-kab').val()
-        $('#prop').val(prov)
-        $('#kotkab').val(kab)
-        $('.modal-edit-prop-kot-kab').modal('hide')
-    }
-
-    function findprodi1(ini) {
-
-        url = '<?= base_url('getProdiByRpl') ?>'
-
-        jenisrpl = ini
-        if (jenisrpl != "") {
-            $.post(url, {
-                jenis_rpl: jenisrpl
-            }, function(data) {
-                data = JSON.parse(data)
-                $('#kode_prodi').children().remove()
-                $('#kode_prodi').append("<option value=''> Pilih Prodi.....</option>")
-                $.each(data, function(i, row) {
-
-                    if ('<?= (isset($datasubmit["kode_prodi"]) ? $datasubmit['kode_prodi'] : '') ?>' ==
-                        row['kode_prodi']) {
-                        select = 'selected';
-                    } else {
-                        select = ''
-                    }
-                    $('#kode_prodi').append("<option value='" + row['kode_prodi'] + "' " + select +
-                        " >" + row[
+                    $.each(data, function(i, row) {
+                        $('#kode_prodi').append("<option value='" + row['kode_prodi'] + "'>" + row[
                             'nama_prodi'] + "</option>")
 
+                    })
+
                 })
-            })
-        } else {
-            $('#kode_prodi').children().remove()
-            $('#kode_prodi').append("<option val=''> Pilih Prodi</option>")
-
-
-        }
-    }
-
-    function findprodi(ini) {
-        url = '<?= base_url('getProdiByRpl') ?>'
-        jenisrpl = ini.val()
-        if (jenisrpl != "") {
-            $.post(url, {
-                jenis_rpl: jenisrpl
-            }, function(data) {
-
-                data = JSON.parse(data)
-
+            } else {
                 $('#kode_prodi').children().remove()
-                $('#kode_prodi').append("<option value=''> Pilih Prodi.....</option>")
+                $('#kode_prodi').append("<option val=''> Pilih Prodi</option>")
 
 
-                $.each(data, function(i, row) {
-                    $('#kode_prodi').append("<option value='" + row['kode_prodi'] + "'>" + row[
-                        'nama_prodi'] + "</option>")
+            }
+        }
 
-                })
+        function getkab() {
+            $('#loading').show();
+            $('#m-kab').children().remove();
+            url = '<?= base_url('getKab') ?>'
+            a = $('#m-propinsi option:selected').attr('kdprov');
+            $.post(url, {
+                "a": a
+            }).done(function(data) {
+                data = JSON.parse(data)
+                // console.log(data);
+                setkab(data)
+                // $('#loading').hide();
+
 
             })
-        } else {
-            $('#kode_prodi').children().remove()
-            $('#kode_prodi').append("<option val=''> Pilih Prodi</option>")
+            $('#loading').hide();
+        }
+
+        function updatebuktibayar() {
 
 
         }
-    }
 
-    function getkab() {
-        $('#loading').show();
-        $('#m-kab').children().remove();
-        url = '<?= base_url('getKab') ?>'
-        a = $('#m-propinsi option:selected').attr('kdprov');
-        $.post(url, {
-            "a": a
-        }).done(function(data) {
-            data = JSON.parse(data)
-            // console.log(data);
-            setkab(data)
-            // $('#loading').hide();
+        function setkab(data) {
+            var kotkab = '<?= (isset($datasubmit["kotkab"]) ? $datasubmit["kotkab"] : '') ?>'
+            $.each(data, async function(index, row) {
+                await $('#m-kab').append("<option value='" + row['nama_wilayah'] + "' >" + row[
+                        'nama_wilayah'] +
+                    "</option>")
+            })
+            $('#m-kab').val(kotkab).trigger('change')
+            // alert(kotkab)
+            $('#loading').hide();
 
-
-        })
-        $('#loading').hide();
-    }
-
-    function updatebuktibayar() {
-
-
-    }
-
-    function setkab(data) {
-        var kotkab = '<?= (isset($datasubmit["kotkab"]) ? $datasubmit["kotkab"] : '') ?>'
-        $.each(data, async function(index, row) {
-            await $('#m-kab').append("<option value='" + row['nama_wilayah'] + "' >" + row[
-                    'nama_wilayah'] +
-                "</option>")
-        })
-        $('#m-kab').val(kotkab).trigger('change')
-        // alert(kotkab)
-        $('#loading').hide();
-
-    }
+        }
     </script>
 </body>
 

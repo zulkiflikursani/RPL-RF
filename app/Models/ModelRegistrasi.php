@@ -170,7 +170,9 @@ class ModelRegistrasi extends Model
                                         fakultas.kode_fakultas
                                 ) lulus_rpl ON (
                                     lulus_rpl.kode_fakultas = mfak.kode_fakultas
-                                )")->getResult();
+                                )
+                                where mfak.kode_fakultas is not null
+                                ")->getResult();
     return $result;
   }
   public function getDataPerProdi($ta_akademik)
@@ -321,7 +323,8 @@ class ModelRegistrasi extends Model
        ON ( valid_keu.kode_prodi = prodi.kode_prodi )
       GROUP BY prodi.kode_prodi
   ) valid_keu
-   ON ( valid_keu.kode_prodi = mprodi.kode_prodi )")->getResult();
+   ON ( valid_keu.kode_prodi = mprodi.kode_prodi )
+   where mprodi.kode_prodi is not null")->getResult();
     return $result;
   }
   public function getDataStatusMahasiswaRPL($ta_akademik, $kode_prodi)

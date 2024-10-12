@@ -45,8 +45,13 @@ class ModelKlaimProdi extends Model
     public function unvalidprodi($noregis, $idpengguna)
     {
         $db = \Config\Database::connect();
-        $result = $db->query("delete from mk_klaim_prodi where mid(idklaim,6,10)='$noregis' and idpengguna='$idpengguna'");
-        return $result;
+        $cekuser = $db->query("select * from mk_klaim_prodi where mid(idklaim,6,10)='$noregis' and idpengguna='$idpengguna'")->getResult();
+        if ($cekuser != NULL) {
+            $result = $db->query("delete from mk_klaim_prodi where mid(idklaim,6,10)='$noregis' and idpengguna='$idpengguna'");
+            return $result;
+        } else {
+            return 'user false';
+        }
     }
 
     public function chekstauspeserta($noregis)

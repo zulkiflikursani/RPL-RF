@@ -1088,6 +1088,118 @@ class Front extends BaseController
 			}
 		}
 	}
+	public function HapusSemuaMatakuliahA1()
+	{
+		if (!session()->get('noregis')) {
+			return redirect()->to('/logout');
+		} else {
+			$this->request = service('request');
+			$db      = \Config\Database::connect();
+			$modelMkA1 = new ModelMkA1();
+			$ModalBiodata = new ModelBiodata();
+			$Modaldokumen = new ModelDokumen();
+			$ModalNilai  = new ModelNilai();
+			$masternilai = $ModalNilai->findAll();
+
+			$ModalPtIndo = new ModelPtIndo();
+			$noregis = session()->get("noregis");
+			$datasavebio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
+			$datadokumen = $Modaldokumen->getDataBynoregis();
+			$ptindo = "";
+
+			// $noregis = session()->get("noregis");
+
+			$ta_akademik = $this->getTa_akademik();
+
+			$data1 = [
+				"ta_akademik" => $ta_akademik,
+				"no_registrasi" => $noregis,
+			];
+			$dataMkA1 = $modelMkA1->where('no_registrasi', $noregis)->findAll();
+			$carikdptasal = $modelMkA1->where('no_registrasi', $noregis)->findAll();
+
+			if ($datasavebio[0]['dodi'] == 1) {
+				$kdptasal = "091045";
+				$nmptasal = "Universitas Fajar";
+			} else {
+
+				if (isset($carikdptasal[0]['no_registrasi'])) {
+					$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+					$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+				} else {
+					$kdptasal = "";
+					$nmptasal = "";
+				}
+			}
+			$cekvalidmk = $this->cekvalidmka1($noregis);
+			if ($cekvalidmk == true) {
+				$delete = $modelMkA1->where($data1)->delete();
+				$dataMkA1 = $modelMkA1->where('no_registrasi', $noregis)->findAll();
+				$carikdptasal = $modelMkA1->where('no_registrasi', $noregis)->findAll();
+
+				if (isset($carikdptasal[0]['no_registrasi'])) {
+					$kdptasal = $carikdptasal[0]['kode_perguruan_tinggi'];
+					$nmptasal = $carikdptasal[0]['nama_perguruan_tinggi'];
+				} else {
+					$kdptasal = "";
+					$nmptasal = "";
+				}
+				if ($delete === false) {
+					$data = [
+						'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
+						'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
+						'datasubmit' => $datasavebio,
+						'datadok' => $datadokumen,
+						'databio' => $datasavebio,
+						'ptasal' => $ptindo,
+						'kdptasal' => $kdptasal,
+						'nmptasal' => $nmptasal,
+						'dataerror' => $modelMkA1->errors(),
+						'dataMkA1' => $dataMkA1,
+						'nilai' => $masternilai,
+						// 'test' => $datasave,
+						'ta_akademik' => $this->getTa_akademik()
+					];
+					return view('Front/rpl-mahasiswa-upload-a1', $data);
+				} else {
+					$data = [
+						'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
+						'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
+						'datasubmit' => $datasavebio,
+						'datadok' => $datadokumen,
+						'databio' => $datasavebio,
+						'ptasal' => $ptindo,
+						'kdptasal' => $kdptasal,
+						'nmptasal' => $nmptasal,
+						'statushapus' => true,
+						'dataMkA1' => $dataMkA1,
+						'nilai' => $masternilai,
+						// 'test' => $datasave,
+						'ta_akademik' => $this->getTa_akademik()
+					];
+					return view('Front/rpl-mahasiswa-upload-a1', $data);
+				}
+			} else {
+				$error = ['error' => "Tidak bisa menghapus matakuliah karena sudah diajukan"];
+				$data = [
+					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Upload Berkas']),
+					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
+					'datasubmit' => $datasavebio,
+					'datadok' => $datadokumen,
+					'databio' => $datasavebio,
+					'ptasal' => $ptindo,
+					'kdptasal' => $kdptasal,
+					'nmptasal' => $nmptasal,
+					'dataerror' => $error,
+					'dataMkA1' => $dataMkA1,
+					// 'test' => $datasave,
+					'nilai' => $masternilai,
+					'ta_akademik' => $this->getTa_akademik()
+				];
+				return view('Front/rpl-mahasiswa-upload-a1', $data);
+			}
+		}
+	}
 	public function HapusMatakuliahA1()
 	{
 		if (!session()->get('noregis')) {
@@ -1619,7 +1731,7 @@ class Front extends BaseController
 			$db      = \Config\Database::connect();
 			$noregis = session()->get('noregis');
 			$nodokumen = $nmfile = $db->escapeString($this->request->getPost('nodokumen'));
-			$cekstatuskalim = $db->query("(select no_peserta from mk_klaim_header where no_peserta= '$noregis')union(select no_registrasi from dok_a1 where no_registrasi='$noregis')")->getResult();
+			$cekstatuskalim = $db->query("(SELECT mk_klaim_header.no_peserta FROM mk_klaim_header left join bio_peserta on mk_klaim_header.no_peserta=bio_peserta.no_peserta left join ref_klaim on mk_klaim_header.idklaim=ref_klaim.idklaim where mk_klaim_header.no_peserta='$noregis' and ref_klaim.idklaim is not null and ref_klaim.no_dokumen like '%\"" . $nodokumen . "\"%' group by mk_klaim_header.idklaim)union(select no_registrasi from dok_a1 where no_registrasi='$noregis')")->getResult();
 			$modelDokumen = new ModelDokumen();
 			$data = $modelDokumen->where('no_dokumen', $nodokumen)->findAll();
 			foreach ($data as $row) {
@@ -1627,7 +1739,7 @@ class Front extends BaseController
 			}
 			$path = $row['lokasi_file'] . "/" . $nmfile;
 			if ($cekstatuskalim != null) {
-				echo "Anda sudah melakukan klaim matakuliah. silahkan batalkan semua klaim untuk menghapus dokumen";
+				echo "Anda sudah melakukan klaim matakuliah menggunakan dokumen ini. silahkan batalkan  klaim untuk menghapus dokumen";
 			} else {
 				$modelDokumen = new ModelDokumen();
 				$deletedok = $modelDokumen->where('no_dokumen', $nodokumen)->delete();

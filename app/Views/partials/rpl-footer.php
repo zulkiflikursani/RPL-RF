@@ -11,6 +11,20 @@
     display: none;
 }
 
+#buram {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: #272e7e;
+    opacity: 0.3;
+    z-index: 1054;
+    display: none;
+}
+
+
+
 #loading>i {
     top: 35%;
     left: 50%;
@@ -29,12 +43,36 @@
 $(document).on('select2:open', () => {
     document.querySelector('.select2-search__field').focus();
 });
+
+function redirectHome() {
+    window.location.href = "/Admin";
+}
 </script>
 
 
 <div id='loading'>
     <i class="bx bx-loader bx-spin  align-middle me-2"></i>
-
+</div>
+<div id='buram'>
+</div>
+<div class="modal modal-notif" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Notifikasi</h5>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+                <!-- <span aria-hidden="true">&times;</span> -->
+                <!-- </button> -->
+            </div>
+            <div class="modal-body">
+                <p id='notif-message'></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    onclick="redirectHome()">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="container-fluid  text-white pt-3 pb-2" style="background-color:#272e7e !important">
     <div class="row">

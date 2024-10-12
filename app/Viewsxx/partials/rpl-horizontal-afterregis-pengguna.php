@@ -112,61 +112,68 @@
                     <?php
                     if (session()->get('sttpengguna') == 1) {
                     ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('pengguna') ?>" id="topnav-dashboard"
-                            role="button">
-                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Data Pengguna' ?></span>
-                            <div class="arrow-down"></div>
-                        </a>
-                    </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link arrow-none" href="<?= base_url('pengguna') ?>" id="topnav-dashboard"
+                                role="button">
+                                <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Data Pengguna' ?></span>
+                                <div class="arrow-down"></div>
+                            </a>
+                        </li>
                     <?php
                     };
                     if (session()->get('sttpengguna') == 1) {
                     ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('resetpassmhs') ?>" id="topnav-dashboard"
-                            role="button">
-                            <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= 'Reset Akun Maba' ?></span>
-                            <div class="arrow-down"></div>
-                        </a>
-                    </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link arrow-none" href="<?= base_url('resetpassmhs') ?>" id="topnav-dashboard"
+                                role="button">
+                                <i class="bx bx-home-circle me-2"></i><span
+                                    key="t-dashboards"><?= 'Reset Akun Maba' ?></span>
+                                <div class="arrow-down"></div>
+                            </a>
+                        </li>
                     <?php
                     };
                     if (session()->get('sttpengguna') == 3) {
                     ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('data-mhs-per-prodi') ?>"
-                            id="topnav-dashboard" role="button" target="_blank">
-                            <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= 'Data Klaim Mahasiswa' ?></span>
-                            <div class="arrow-down"></div>
-                        </a>
-                    </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link arrow-none" href="<?= base_url('data-mhs-per-prodi') ?>"
+                                id="topnav-dashboard" role="button" target="_blank">
+                                <i class="bx bx-home-circle me-2"></i><span
+                                    key="t-dashboards"><?= 'Data Klaim Mahasiswa' ?></span>
+                                <div class="arrow-down"></div>
+                            </a>
+                        </li>
                     <?php
                     };
 
                     if (session()->get('sttpengguna') == 1) {
                     ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('dataasessor') ?>" id="topnav-dashboard"
-                            role="button">
-                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Data Asessor' ?></span>
-                            <div class="arrow-down"></div>
-                        </a>
-                    </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link arrow-none" href="<?= base_url('dataasessor') ?>" id="topnav-dashboard"
+                                role="button">
+                                <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Data Asessor' ?></span>
+                                <div class="arrow-down"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link arrow-none" href="<?= base_url('pelaporan') ?>" id="topnav-dashboard"
+                                role="button">
+                                <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'PELAPORAN' ?></span>
+                                <div class="arrow-down"></div>
+                            </a>
+                        </li>
                     <?php
                     };
                     if (session()->get('sttpengguna') == 1) {
                     ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('cpmk') ?>" id="topnav-dashboard"
-                            role="button">
-                            <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= 'Data Matakuliah' ?></span>
-                            <div class="arrow-down"></div>
-                        </a>
-                    </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link arrow-none" href="<?= base_url('cpmk') ?>" id="topnav-dashboard"
+                                role="button">
+                                <i class="bx bx-home-circle me-2"></i><span
+                                    key="t-dashboards"><?= 'Data Matakuliah' ?></span>
+                                <div class="arrow-down"></div>
+                            </a>
+                        </li>
                     <?php
                     };
                     ?>

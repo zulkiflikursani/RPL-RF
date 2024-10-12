@@ -123,7 +123,7 @@
 
                                             </table>
                                             <table class='table table-bordered table-responsive table-sm border-dark'
-                                                style="font-size: 10px;">
+                                                style="font-size: 8px;">
                                                 <thead class="">
                                                     <tr>
                                                         <th width='5%'>No</th>
@@ -374,14 +374,14 @@
 </html>
 
 <script>
-function validprodi() {
-    $('#validasi-form').submit()
-}
+    function validprodi() {
+        $('#validasi-form').submit()
+    }
 
-function unvalidprodi() {
-    $('#unvalidasi-form').submit()
+    function unvalidprodi() {
+        $('#unvalidasi-form').submit()
 
-}
+    }
 </script>
 <?php
 function tgl_indo($tanggal)

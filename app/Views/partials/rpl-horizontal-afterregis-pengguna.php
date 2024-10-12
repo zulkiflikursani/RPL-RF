@@ -101,7 +101,10 @@
 
             <div class="collapse navbar-collapse" id="topnav-menu-content">
                 <ul class="navbar-nav">
+                    <?php
+                    if (session()->get('sttpengguna') != 2) {
 
+                    ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="<?= base_url('Admin') ?>" id="topnav-dashboard"
                             role="button">
@@ -110,6 +113,7 @@
                         </a>
                     </li>
                     <?php
+                    }
 
                     if (session()->get('sttpengguna') == 1) {
                     ?>
@@ -135,6 +139,8 @@
                                 key="t-default"><?= "Password & Biodata" ?></a>
                             <a href="<?= base_url('adminklaim') ?>" class="dropdown-item"
                                 key="t-default"><?= "Klaim Mandiri" ?></a>
+                            <a href="<?= base_url('menu-data-mhs-per-prodi') ?>" class="dropdown-item"
+                                key="t-default"><?= "Status Peserta RPL" ?></a>
 
 
                         </div>
@@ -199,6 +205,48 @@
                     </li>
                     <?php
                     };
+                    if (session()->get('sttpengguna') == 2) {
+                    ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('Admin') ?>" id="topnav-dashboard"
+                            role="button">
+                            <i class="bx bx-home-circle me-2"></i><span
+                                key="t-dashboards"><?= 'Belum diasesment' ?></span>
+
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('Admin') ?>" id="topnav-dashboard"
+                            role="button">
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Dashboard' ?></span>
+
+                        </a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('mahasiswa-sudah-asessment') ?>"
+                            id="topnav-dashboard" role="button">
+                            <i class="bx bx-home-circle me-2"></i><span
+                                key="t-dashboards"><?= 'Sudah diasesment' ?></span>
+
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('mahasiswa-valid-prodi') ?>"
+                            id="topnav-dashboard" role="button">
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= ' Valid Prodi' ?></span>
+
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('dimintai-tanggapan') ?>"
+                            id="topnav-dashboard" role="button">
+                            <i class="bx bx-home-circle me-2"></i><span
+                                key="t-dashboards"><?= 'Dimintai Tanggapan' ?></span>
+
+                        </a>
+                    </li>
+                    <?php
+                    }
                     if (session()->get('sttpengguna') == 3 or session()->get('sttpengguna') == 7) {
                     ?>
 
@@ -258,11 +306,19 @@
                                 key="t-default"><?= "Tahun Akademik & Batas Bayar" ?></a>
                             <a href="<?= base_url('setup-rpl') ?>" class="dropdown-item"
                                 key="t-default"><?= "Prodi Penyelenggara RPL" ?></a>
+                            <a href="<?= base_url('kampus-asal') ?>" class="dropdown-item"
+                                key="t-default"><?= "Setting Kampus Asal" ?></a>
 
 
                         </div>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('pelaporan') ?>" id="topnav-dashboard"
+                            role="button">
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Pelaporan' ?></span>
 
+                        </a>
+                    </li>
                     <?php
 
                     };
@@ -296,6 +352,11 @@
 
                         </a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="<?= base_url('pt') ?>" id="topnav-dashboard" role="button">
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Setting PT' ?></span>
+                        </a>
+                    </li>
                     <?php
                     };
                     ?>
@@ -305,14 +366,8 @@
                             role="button" target='_blank'>
                             <i class="bx bx-home-circle me-2"></i><span
                                 key="t-dashboards"><?= 'Panduan Silaju' ?></span>
-
                         </a>
-
-
                     </li>
-
-
-
                 </ul>
             </div>
         </nav>

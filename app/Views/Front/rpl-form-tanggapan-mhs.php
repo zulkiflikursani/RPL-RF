@@ -308,7 +308,7 @@ function pengajuan_klaim() {
     }).done(function(data) {
         $('#loading').hide()
         if (alert(data)) {} else {
-            window.location.replace('<?= base_url('assesment-mandiri') ?>')
+            window.location.replace('<?= base_url('respon-asessor') ?>')
         };
     }).fail(function() {
         $('#loading').hide()

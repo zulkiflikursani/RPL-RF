@@ -41,8 +41,13 @@ class ModelKlaimDekan extends Model
     public function unvaliddekan($noregis, $idpengguna)
     {
         $db = \Config\Database::connect();
-        $result = $db->query("delete from mk_klaim_dekan where mid(idklaim,6,10)='$noregis' and idpengguna='$idpengguna'");
-        return $result;
+        $cekuser = $db->query("select * from mk_klaim_dekan where mid(idklaim,6,10)='$noregis' and idpengguna='$idpengguna'")->getResult();
+        if ($cekuser != null) {
+            $result = $db->query("delete from mk_klaim_dekan where mid(idklaim,6,10)='$noregis' and idpengguna='$idpengguna'");
+            return $result;
+        } else {
+            return "user false";
+        }
     }
 
     public function chekstauspeserta($noregis)

@@ -4,11 +4,14 @@
 <head>
     <?= $title_meta ?>
     <?= $this->include('partials/rpl-head-css') ?>
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css"
+        rel="stylesheet" type="text/css" />
 
     <!-- Responsive datatable examples -->
-    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css"
+        rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -133,14 +136,41 @@
                                                 </select>
 
                                             </div>
+                                            <?php
+                                            if (session()->get('sttpengguna') == 1) {
+
+                                            ?>
+                                            <div class="col-lg-6 mt-2">
+                                                <label for="Jenis Laporan">Prodi</label>
+                                                <select name="" class="select form-select" name='prodi' id='prodi'>
+                                                    <?php
+                                                        if ($prodi) {
+                                                            foreach ($prodi as $row) {
+
+                                                                echo "<option value='$row->kode_prodi'>$row->nama_prodi</option>";
+                                                            }
+                                                        }
+                                                        ?>
+                                                </select>
+                                            </div>
+                                            <?php
+
+                                            } else {
+
+                                            ?>
                                             <div class="col-lg-6 mt-2">
                                                 <label for="Jenis Laporan">Jenis Laporan</label>
-                                                <select name="" class="select form-select" name='jenislaporan' id='jenislaporan'>
+                                                <select name="" class="select form-select" name='jenislaporan'
+                                                    id='jenislaporan'>
                                                     <option value="1">Transkrip Nilai</option>
                                                     <option value="2">Daftar Mahasiswa RPL</option>
                                                 </select>
                                             </div>
-                                            <button class="btn btn-primary mt-3" onclick="setTampilkan()">Tampilkan</button>
+                                            <?php
+                                            }
+                                            ?>
+                                            <button class="btn btn-primary mt-3"
+                                                onclick="setTampilkan()">Tampilkan</button>
                                         </div>
                                     </div>
                                     <div class="row mt-3">
@@ -224,76 +254,96 @@
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 
     <script>
-        $('document').ready(function() {
-            taakademik = $('#ta_akademik').val()
+    $('document').ready(function() {
+        taakademik = $('#ta_akademik').val()
 
 
-            $(".table").DataTable({
-                dom: 'Bfrtip',
-                buttons: [{
-                    extend: 'excel',
-                    title: 'DAFTAR PESERTA REKOGNISI TAHUN AKADEMIK ' + taakademik,
+        $(".table").DataTable({
+            dom: 'Bfrtip',
+            buttons: [{
+                extend: 'excel',
+                title: 'DAFTAR PESERTA REKOGNISI TAHUN AKADEMIK ' + taakademik,
 
-                }, {
-                    extend: 'print',
-                    title: 'DAFTAR PESERTA REKOGNISI TAHUN AKADEMIK ' + taakademik,
+            }, {
+                extend: 'print',
+                title: 'DAFTAR PESERTA REKOGNISI TAHUN AKADEMIK ' + taakademik,
 
-                }]
-            })
-            $('#spantaakademik').html(taakademik)
+            }]
         })
+        $('#spantaakademik').html(taakademik)
+    })
 
-        function setTampilkan() {
-            jenislaporan = $('#jenislaporan').val();
-            if (jenislaporan == 1) {
-                tampilkan();
-            } else if (jenislaporan == 2) {
-                tampilkandataprodi();
+    function setTampilkan() {
+        <?php
+            if (session()->get('sttpengguna') == 1) {
+            ?>
+        tampilkandataprodi()
+        <?php
+            } else {
+            ?>
+        jenislaporan = $('#jenislaporan').val();
+        if (jenislaporan == 1) {
+            tampilkan();
+        } else if (jenislaporan == 2) {
+            tampilkandataprodi();
+        }
+        <?php
             }
-        }
+            ?>
+    }
 
-        function tampilkan() {
-            taakademik = $('#ta_akademik').val()
-            url = '<?= base_url('data-mhs-per-prodi') ?>' + "/" + taakademik;
-            var location = window.open(url, '_blank')
-            location.focus();
-        }
+    function tampilkan() {
+        taakademik = $('#ta_akademik').val()
+        url = '<?= base_url('data-mhs-per-prodi') ?>' + "/" + taakademik;
+        var location = window.open(url, '_blank')
+        location.focus();
+    }
 
-        function tampilkandataprodi() {
+    function tampilkandataprodi() {
 
-            dataTable = $('.tabel-mahasiswa').DataTable()
-            taakademik = $('#ta_akademik').val()
+        dataTable = $('.tabel-mahasiswa').DataTable()
+        taakademik = $('#ta_akademik').val()
 
-            kode_prodi = '<?= session()->get("kode_prodi") ?>'
-            url = '<?= base_url('getStatusMhsRpl') ?>'
-            $.post(url, {
-                ta_akademik: taakademik,
-                kode_prodi: kode_prodi
-            }, function(data) {
-                // console.log(data);
-                data = JSON.parse(data)
-                let i = 0;
-                dataTable.rows().remove().draw();
+        <?php
+            if (session()->get('sttpengguna') == 1) {
+            ?>
+        kode_prodi = $('#prodi').val()
+        <?php
+            } else {
+            ?>
+        kode_prodi = '<?= session()->get("kode_prodi") ?>'
+        <?php
+            }
+            ?>
+        url = '<?= base_url('getStatusMhsRpl') ?>'
+        $.post(url, {
+            ta_akademik: taakademik,
+            kode_prodi: kode_prodi
+        }, function(data) {
+            // console.log(data);
+            data = JSON.parse(data)
+            let i = 0;
+            dataTable.rows().remove().draw();
 
-                $.each(data, function(a, row) {
-                    i++
-                    dataTable.row.add([
-                        i,
-                        row['no_peserta'],
-                        row['nama'],
-                        "A" + row['jenis_rpl'],
-                        row['konsentrasi'],
-                        row['nm_asessor'],
-                        row['status_mahasiswa_rpl']
+            $.each(data, function(a, row) {
+                i++
+                dataTable.row.add([
+                    i,
+                    row['no_peserta'],
+                    row['nama'],
+                    "A" + row['jenis_rpl'],
+                    row['konsentrasi'],
+                    row['nm_asessor'],
+                    row['status_mahasiswa_rpl']
 
 
-                    ]).draw()
+                ]).draw()
 
 
-                })
             })
-            $('#spantaakademik').html(taakademik)
-        }
+        })
+        $('#spantaakademik').html(taakademik)
+    }
     </script>
 </body>
 

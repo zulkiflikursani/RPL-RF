@@ -100,7 +100,7 @@ thead input {
                                             <div class="col-md-6">
                                                 <div class="mb-2">
                                                     <label for="formrow-nama-input" class="form-label">Kode Perguruan
-                                                        Tinggi </label>
+                                                        Tinggi Dikti </label>
                                                     <input type="text" class="form-control" id="kdptdikti"
                                                         placeholder="Masukkan Kode Perguruan Tinggi" value="" required>
 

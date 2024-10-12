@@ -434,6 +434,19 @@
     $('document').ready(function() {
 
         $(".table").DataTable()
+        <?php
+            if (session()->get('sttpengguna') == 7) {
+            ?>
+        //trigerr pengambilan data simba
+        // $.get('https://simba.unifa.ac.id/silaju.php', {
+        //     a: 1
+        // }, function(data) {
+        //     // alert(data)
+        // })
+        <?php
+
+            }
+            ?>
     })
 
     function confimValidasiRegistrasi(a, b, c, d) {

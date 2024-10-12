@@ -53,11 +53,13 @@ $routes->get('/respon-asessor', 'Front::AsessmentRespon');
 $routes->get('/form-assesment/(:any)', 'Front::AssesmentMandiri_mk/$1');
 $routes->get('/form-tanggapan/(:any)', 'Front::tanggapanAsessmentMhs/$1');
 
+
 // FRONT POST
 $routes->post('Front/Registrasi', 'Front::Registrasi');
 $routes->post('/getProdiByRpl', 'Front::getProdiByRpl');
 $routes->post('Front/SimpanMatakuliahA1', 'Front::SimpanMatakuliahA1');
 $routes->post('Front/HapusMatakuliahA1', 'Front::HapusMatakuliahA1');
+$routes->post('delallklaimmka1', 'Front::HapusSemuaMatakuliahA1');
 $routes->post('Front/SubmitMatakuliahA1', 'Front::SubmitMatakuliahA1');
 $routes->post('generatemka1', 'Front::generateMkA1');
 $routes->post('simpanklaimimport', 'Front::SimpanMatakuliahA1import');
@@ -92,7 +94,7 @@ $routes->get('/log-pengguna', 'Admin::log_activity');
 $routes->get('/asessor', 'Admin::Asessor');
 $routes->get('/dataasessor', 'Admin::dataAsessor');
 $routes->get('/data-peserta', 'Admin::dataPeserta');
-$routes->get('/data-peserta/(:any)', 'Admin::dataPeserta1/$1');
+$routes->get('/data-peserta/(:any)', 'Admin::dataPesertasRekap/$1');
 $routes->get('/statusklaim', 'Admin::datastatusklaim');
 $routes->get('/cpmk', 'Admin::inputcpmk');
 $routes->get('/cpmk-prodi', 'Admin::inputcpmk_prodi');
@@ -126,6 +128,7 @@ $routes->get('/data-status-mhs/(:any)/', 'Admin::statusMhsKeu/$1');
 
 $routes->get('/convert-excel/(:any)/', 'Admin::exportexcel/$1');
 $routes->get('/data-mhs-per-prodi/(:any)', 'Admin::dataMhsPerpodiOk/$1');
+$routes->get('/data-mhs-per-fak/(:any)', 'Admin::dataMhsPerFak/$1');
 $routes->get('/menu-data-mhs-per-prodi', 'Admin::menuDataMhsPerpodi');
 $routes->get('/menu-rekap-mhs-per-periode', 'Admin::menuRekapMhsPerperiode');
 $routes->get('/data-asessi-prodi', 'Admin::data_asessi_prodi');
@@ -140,6 +143,13 @@ $routes->get('/home-akademik-2', 'Admin::home_akademik_2_nofilter');
 $routes->get('/home-akademik-2/(:any)', 'Admin::home_akademik_2/$1');
 $routes->get('/keuangan/(:any)', 'Admin::keuangan/$1');
 $routes->get('/pt', 'Admin::perguruan_tinggi');
+$routes->get('/mahasiswa-sudah-asessment', 'Admin::MahasiswaSudahAsessment');
+$routes->get('/mahasiswa-belum-asessment', 'Admin::MahasiswaBelumAsessment');
+$routes->get('/mahasiswa-valid-prodi', 'Admin::MahasiswaValidProdi');
+$routes->get('/dimintai-tanggapan', 'Admin::MahasiswaDimintaTanggapan');
+$routes->get('/baasessmentProdi/(:any)', 'Admin::BeritaAcaraAsessmentPerprodi/$1');
+$routes->get('/baasessmentA1Prodi/(:any)', 'Admin::BeritaAcaraAsessmentA1Perprodi/$1');
+$routes->get('/pelaporan', 'Admin::Pelaporan');
 
 
 
@@ -178,7 +188,8 @@ $routes->post('resetpasswordprodi', 'Admin::resetPasswordProdi');
 $routes->post('resetmhs', 'Admin::resetPasswordMhs');
 $routes->post('getDataMhsPerAsessor', 'Admin::getDataMhsPerAsessor');
 $routes->post('getdatamhsblmpunyaassessor', 'Admin::getdatamahsiswaBelumPunyaAsessor');
-$routes->post('klaimmkAsessor', 'Admin::KlaimmkAsessor');
+$routes->post('simpanklaimmkAsessor', 'Admin::simpanKlaimmkAsessor');
+$routes->post('klaimmkAsessor', 'Admin::submitKlaimmkAsessor');
 $routes->post('klaimmkAsessorA1', 'Admin::KlaimmkAsessorA1');
 $routes->post('batalklaimmkAsessorA1', 'Admin::batalKlaimmkA1');
 $routes->post('getDataKlaimAsessor', 'Admin::getDataKlaimasessor');
@@ -203,6 +214,7 @@ $routes->post('singkron-mk-siska', 'Admin::sinkronmksiska');
 $routes->post('singkron-mk-siska-mku', 'Admin::sinkronMkformku');
 $routes->post('updatedatapt', 'Admin::update_perguruan_tinggi');
 $routes->post('insertdatapt', 'Admin::insert_perguruan_tinggi');
+
 
 // $routes->post('singkron-mk-siska-mku', 'Admin::sinkronmksiskamku');
 

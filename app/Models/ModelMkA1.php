@@ -131,10 +131,10 @@ class ModelMkA1 extends Model
                             dok_a1.nama_matakuliah,
                             dok_a1.jumlah_sks,
                             dok_a1.nilai,
-                            prodi.nama_prodi
+                            prodi.nama_prodi 
                             FROM
                             bio_peserta
-                            LEFT JOIN dok_a1 ON bio_peserta.no_peserta = dok_a1.no_registrasi AND bio_peserta.ta_akademik = dok_a1.ta_akademik
+                            LEFT JOIN (select * from dok_a1 where dok_a1.ta_akademik='$ta_akademik')dok_a1 ON bio_peserta.no_peserta = dok_a1.no_registrasi AND bio_peserta.ta_akademik = dok_a1.ta_akademik
                             left join 
                             prodi on bio_peserta.kode_prodi = prodi.kode_prodi
                             where bio_peserta.jenis_rpl=1 and (dok_a1.no_registrasi is null or dok_a1.status= 1) and bio_peserta.ta_akademik='$ta_akademik'

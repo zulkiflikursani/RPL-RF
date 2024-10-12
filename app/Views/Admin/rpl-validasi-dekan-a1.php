@@ -267,9 +267,9 @@ $(document).ready(function() {
                     $(this).find('td[for=kettanggapan]').children()
                         .val(value['ket_tanggapan']);
 
-                    if (count === i + 1) {
-                        klaimsksass()
-                    }
+                    // if (count === i + 1) {
+                    //     klaimsksass()
+                    // }
 
 
 
@@ -278,6 +278,7 @@ $(document).ready(function() {
             $('textarea').attr('readonly', 'readonly');
             $('select').attr('disabled', 'disabled');
             $('#loading').hide()
+            klaimsksass()
 
         })
     }).fail(function() {
