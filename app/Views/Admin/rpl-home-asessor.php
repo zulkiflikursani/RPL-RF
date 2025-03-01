@@ -179,7 +179,7 @@
                                                 <tbody id='bodytable'>
                                                     <?php
                                                     // print_r($dataPesertaAsessor);
-                                                    if ($dataMhsSudahMenanggapi) {
+                                                    if (isset($dataMhsSudahMenanggapi)) {
                                                         $i = 0;
                                                         foreach ($dataMhsSudahMenanggapi as $row) {
                                                             $i++;
@@ -265,10 +265,10 @@
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
 
     <script>
-        $('document').ready(function() {
+    $('document').ready(function() {
 
-            $(".table").DataTable()
-        })
+        $(".table").DataTable()
+    })
     </script>
 </body>
 

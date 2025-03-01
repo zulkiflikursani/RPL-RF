@@ -21,6 +21,7 @@
             <div class="container position-absolute" data-aos="fade-up" data-aos-delay="500">
                 <nav class=" navbar navbar-expand-lg navbar-light bg-light-transparan">
                     <a class="navbar-brand" href="#">Universitas Fajar</a>
+
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">

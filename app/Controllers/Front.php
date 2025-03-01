@@ -293,6 +293,67 @@ class Front extends BaseController
 			$konsentrasi = $db->escapeString($this->request->getPost("konsentrasi"));
 			$nik = $db->escapeString($this->request->getPost("nik"));
 
+			$modelKonsentrasi = new ModelKonsentrasi();
+			$statuskonsentrasi = $modelKonsentrasi->where('prodi', $prodi)->first();
+
+			$modelBiodata = new ModelBiodata();
+			$databio = $modelBiodata->where('no_peserta', $no_peserta)->findAll();
+			$statusbiodata = FALSE;
+			if ($databio[0]['jenis_rpl'] !== NULL && $databio[0]['kode_prodi'] !== NULL) {
+				$statuskonsentrasi = $modelKonsentrasi->where('prodi', $prodi)->first();
+				if ($statuskonsentrasi == NULL) {
+					$statusbiodata = TRUE;
+				} else {
+					if ($databio[0]['kode_konsentrasi'] == '') {
+						$statusbiodata = FALSE;
+					} else {
+
+						$statusbiodata = TRUE;
+					}
+				}
+			} else {
+				$statusbiodata = FALSE;
+			}
+			if ($nama == "" || $alamat == "" || $kab == "" || $provinsi == "" || $email == "" || $instansi == "" || $nohape == "" || $prodi == "" || $ibukandung == "" || $tlahir == "" || $ttl == "" || $pendidikan == "" || $jenis_rpl == "" || $nik == "" || $nama == null || $alamat == null || $kab == null || $provinsi == null || $email == null || $instansi == null || $nohape == null || $prodi == null || $ibukandung == null || $tlahir == null || $ttl == null || $pendidikan == null || $jenis_rpl == null ||  $nik == null) {
+				// Handle the error, for example, by returning an error message or redirecting to an error page
+				$modelProv = new ModelProv();
+				$dataProv = $modelProv->getProv();
+
+
+				$data = [
+					'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+					'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+					'ta_akademik' => $this->getTa_akademik(),
+					'datasubmit' => $databio,
+					'databio' => $databio,
+					'dataprov' => $dataProv,
+					'statusbiodata' => $statusbiodata,
+					'status_update' => 0,
+
+				];
+				return view('front/rpl-biodata-mahasiswa', $data);
+			} else if ($statuskonsentrasi !== NULL) {
+				if ($konsentrasi == "" || $konsentrasi == null) {
+					$modelBiodata = new ModelBiodata();
+					$modelProv = new ModelProv();
+					$dataProv = $modelProv->getProv();
+					// $databio = $modelBiodata->where('no_peserta', $no_peserta)->findAll();
+					$data = [
+						'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
+						'page_title' => view('partials/rpl-page-title', ['title' => 'Biodata', 'pagetitle' => 'Dashboards']),
+						'ta_akademik' => $this->getTa_akademik(),
+						'datasubmit' => $databio,
+						'databio' => $databio,
+						'dataprov' => $dataProv,
+						'statusbiodata' => $statusbiodata,
+
+						'status_update' => 0,
+
+					];
+					return view('front/rpl-biodata-mahasiswa', $data);
+				}
+			}
+
 			$data = [
 				'ta_akademik' => $ta,
 				// 'no_peserta' => $noregis,
@@ -329,6 +390,8 @@ class Front extends BaseController
 						'datasubmit' => $databio,
 						'databio' => $databio,
 						'dataprov' => $dataProv,
+						'statusbiodata' => $statusbiodata,
+
 						'status_update' => 1,
 
 					];
@@ -340,6 +403,8 @@ class Front extends BaseController
 						'datasubmit' => $databio,
 						'databio' => $databio,
 						'dataprov' => $dataProv,
+						'statusbiodata' => $statusbiodata,
+
 
 						'status_update' => 0,
 
@@ -359,7 +424,9 @@ class Front extends BaseController
 					'ta_akademik' => $this->getTa_akademik(),
 					'datasubmit' => $databio,
 					'databio' => $databio,
-					'status_update' => 0,
+					'statusbiodata' => $statusbiodata,
+
+					'status_update' => 3,
 
 				];
 				return view('front/rpl-biodata-mahasiswa', $data);
@@ -1609,6 +1676,22 @@ class Front extends BaseController
 			])->findAll();
 
 
+			$statusbiodata = FALSE;
+			if ($databio[0]['jenis_rpl'] !== NULL && $databio[0]['kode_prodi'] !== NULL && $databio[0]['kotkab'] !== "") {
+				$statuskonsentrasi = $modelKonsentrasi->where('prodi', $databio[0]['kode_prodi'])->first();
+				if ($statuskonsentrasi == NULL) {
+					$statusbiodata = TRUE;
+				} else {
+					if ($databio[0]['kode_konsentrasi'] == '') {
+						$statusbiodata = FALSE;
+					} else {
+
+						$statusbiodata = TRUE;
+					}
+				}
+			} else {
+				$statusbiodata = FALSE;
+			}
 
 			if ($validasiprodi == 0) {
 				$data = [
@@ -1636,6 +1719,7 @@ class Front extends BaseController
 			} else {
 				$modelProv = new ModelProv();
 				$dataProv = $modelProv->getProv();
+
 				$data = [
 					'title_meta' => view('partials/rpl-title-meta', ['title' => 'Biodata Peserta RPL']),
 					'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Biodata']),
@@ -1645,6 +1729,7 @@ class Front extends BaseController
 					'dataprov' => $dataProv,
 					'konsentrasi' => $konsentrasi,
 					// 'test' => $datasave,
+					'statusbiodata' => $statusbiodata,
 					'ta_akademik' => $this->getTa_akademik(),
 				];
 				return view('Front/rpl-biodata-mahasiswa', $data);
@@ -1737,7 +1822,9 @@ class Front extends BaseController
 			foreach ($data as $row) {
 				$nmfile = $row['nmfile_asli'];
 			}
-			$path = $row['lokasi_file'] . "/" . $nmfile;
+			// $path = $row['lokasi_file'] . "/" . $nmfile;
+			$path = "/mnt/Files-Silaju/uploads/berkas/$noregis" . "/" . $nmfile;
+
 			if ($cekstatuskalim != null) {
 				echo "Anda sudah melakukan klaim matakuliah menggunakan dokumen ini. silahkan batalkan  klaim untuk menghapus dokumen";
 			} else {
@@ -1884,8 +1971,13 @@ class Front extends BaseController
 				];
 			} else {
 				if ($validasiRPL == 1) {
-					$userFile->move("uploads/berkas/$noregis", $fileNameRandom);
-					$path_to_file = "uploads/berkas/$noregis/$fileNameRandom";
+					$newPath = "/mnt/Files-Silaju/uploads/berkas/$noregis";
+					$userFile->move($newPath, $fileNameRandom);
+					// $fileNameRandom = $userFile->getName();
+					// $userFile->move("uploads/berkas/$noregis", $fileNameRandom);
+					// $path_to_file = "uploads/berkas/$noregis/$fileNameRandom";
+					$path_to_file = $newPath . "/" . $fileNameRandom;
+
 					$datadokumen = $Modaldokumen->getDataBynoregis();
 					if ($userFile->hasMoved()) {
 						$result1 = $Modaldokumen->insert($data);
@@ -2068,6 +2160,18 @@ class Front extends BaseController
 			$datadokumen = $Modaldokumen->where('no_peserta', $noregis)->findAll();
 			$databio = $ModalBiodata->where('no_peserta', $noregis)->findAll();
 			$dataassementmandiri = "";
+			$modelKonsentrasi = new ModelKonsentrasi();
+			$getKonsentrasi = $modelKonsentrasi->where('prodi', $databio[0]['kode_prodi'])->first();
+			$statuskonsentrasi = FALSE;
+			if ($getKonsentrasi == NULL) {
+				$statuskonsentrasi = TRUE;
+			} else {
+				if ($databio[0]['kode_konsentrasi'] == "") {
+					$statuskonsentrasi = FALSE;
+				} else {
+					$statuskonsentrasi = TRUE;
+				}
+			}
 			$data = [
 				'title_meta' => view('partials/rpl-title-meta', ['title' => 'SILAJU RPL']),
 				'page_title' => view('partials/rpl-page-title', ['title' => 'RPL', 'pagetitle' => 'Dashboards']),
@@ -2075,6 +2179,7 @@ class Front extends BaseController
 				'nm_prodi' => $this->getNamaProdi($databio[0]['kode_prodi']),
 				'getMatakuliah' => $this->getMatakuliahklaimperprodi($databio[0]['kode_prodi'], $noregis, $databio[0]['kode_konsentrasi']),
 				'dataKlaimMhs' => $dataassementmandiri,
+				'statuskonsentrasi' => $statuskonsentrasi,
 				'databio' => $databio,
 
 			];

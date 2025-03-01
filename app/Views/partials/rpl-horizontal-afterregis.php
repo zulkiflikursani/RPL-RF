@@ -137,56 +137,70 @@
 
                             if (isset($databio['jenis_rpl'])) {
                                 $jenis_rpl = $databio['jenis_rpl'];
+                                if ($databio['jenis_rpl'] == null || $databio['jenis_rpl'] == 0 || $databio['alamat'] == '' || $databio['kotkab'] == '' || $databio['instansi_asal'] == '' || $databio['didikakhir'] == '' || $databio['nohape'] == '' || $databio['t_lahir'] == '' || $databio['ibu_kandung'] == '' || $databio['nik'] == '' || $databio['ttl'] == '') {
+                                    $kelengkapan_berkas = 0;
+                                    $jenis_rpl = $databio['jenis_rpl'];
+                                } else {
+                                    $kelengkapan_berkas = 1;
+                                    $jenis_rpl = '';
+                                }
                             } else {
                                 if (isset($databio[0]['jenis_rpl'])) {
-                                    $jenis_rpl = $databio[0]['jenis_rpl'];
+                                    if ($databio[0]['jenis_rpl'] == '' || $databio[0]['jenis_rpl'] == 0 || $databio[0]['alamat'] == '' || $databio[0]['kotkab'] == '' || $databio[0]['instansi_asal'] == '' || $databio[0]['didikakhir'] == '' || $databio[0]['nohape'] == '' || $databio[0]['t_lahir'] == '' || $databio[0]['ibu_kandung'] == '' || $databio[0]['nik'] == '' || $databio[0]['ttl'] == '') {
+                                        $kelengkapan_berkas = 0;
+                                        $jenis_rpl = null;
+                                    } else {
+                                        // $jenis_rpl = $databio[0]['jenis_rpl'];
+                                        $kelengkapan_berkas = 1;
+                                        $jenis_rpl = $databio[0]['jenis_rpl'];
+                                    }
                                 } else {
 
                                     $jenis_rpl = null;
                                 }
                             }
-                            if ($jenis_rpl != null) {
+                            if ($kelengkapan_berkas == 1) {
                                 if ($jenis_rpl == 1) {
                     ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('uploada1') ?>" id="topnav-dashboard"
-                            role="button">
-                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Upload Berkas' ?></span>
-                            <div class="arrow-down"></div>
-                        </a>
-                    </li>
-                    <?php
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link arrow-none" href="<?= base_url('uploada1') ?>" id="topnav-dashboard"
+                                            role="button">
+                                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Upload Berkas' ?></span>
+                                            <div class="arrow-down"></div>
+                                        </a>
+                                    </li>
+                                <?php
                                 } else {
 
                                 ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('upload') ?>" id="topnav-dashboard"
-                            role="button">
-                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Upload Berkas' ?></span>
-                            <div class="arrow-down"></div>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('assesment-mandiri') ?>" id="topnav-dashboard"
-                            role="button">
-                            <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= 'Assesment Mandiri' ?></span>
-                            <div class="arrow-down"></div>
-                        </a>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link arrow-none" href="<?= base_url('upload') ?>" id="topnav-dashboard"
+                                            role="button">
+                                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Upload Berkas' ?></span>
+                                            <div class="arrow-down"></div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link arrow-none" href="<?= base_url('assesment-mandiri') ?>" id="topnav-dashboard"
+                                            role="button">
+                                            <i class="bx bx-home-circle me-2"></i><span
+                                                key="t-dashboards"><?= 'Assesment Mandiri' ?></span>
+                                            <div class="arrow-down"></div>
+                                        </a>
 
 
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('respon-asessor') ?>" id="topnav-dashboard"
-                            role="button">
-                            <i class="bx bx-home-circle me-2"></i><span
-                                key="t-dashboards"><?= 'Respon Asessor' ?></span>
-                            <div class="arrow-down"></div>
-                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link arrow-none" href="<?= base_url('respon-asessor') ?>" id="topnav-dashboard"
+                                            role="button">
+                                            <i class="bx bx-home-circle me-2"></i><span
+                                                key="t-dashboards"><?= 'Respon Asessor' ?></span>
+                                            <div class="arrow-down"></div>
+                                        </a>
 
 
-                    </li>
-                    <?php
+                                    </li>
+                        <?php
                                 }
                             }
                         }
@@ -196,15 +210,15 @@
 
                     if ($cekvaliddekan == true) {
                         ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="<?= base_url('print-tagihan/' . $noregis) ?>"
-                            id="topnav-dashboard" role="button" target='_blank'>
-                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Tagihan' ?></span>
-                            <div class="arrow-down"></div>
-                        </a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link arrow-none" href="<?= base_url('print-tagihan/' . $noregis) ?>"
+                                id="topnav-dashboard" role="button" target='_blank'>
+                                <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Tagihan' ?></span>
+                                <div class="arrow-down"></div>
+                            </a>
 
 
-                    </li>
+                        </li>
                     <?php
                     }
                     ?>

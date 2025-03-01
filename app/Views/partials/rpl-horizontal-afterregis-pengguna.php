@@ -150,7 +150,7 @@
                     };
                     if (session()->get('sttpengguna') == 3 or session()->get('sttpengguna') == 7) {
                     ?>
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="<?= base_url('statusklaim') ?>" id="topnav-dashboard"
                             role="button">
                             <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= 'Status Klaim' ?></span>
@@ -164,6 +164,21 @@
                                 key="t-dashboards"><?= 'Daftar Peserta' ?></span>
 
                         </a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-dashboard" role="button">
+                            <i class="bx bx-home-circle me-2"></i><span key="t-dashboards"><?= "Mahasiswa" ?></span>
+                            <div class="arrow-down"></div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
+                            <a href="<?= base_url('statusklaim') ?>" class="dropdown-item"
+                                key="t-default"><?= "Status Klaim" ?></a>
+                            <a href="<?= base_url('menu-data-mhs-per-prodi') ?>" class="dropdown-item"
+                                key="t-default"><?= "Daftar Peserta" ?></a>
+                            <a href="<?= base_url('adminklaimprodi') ?>" class="dropdown-item"
+                                key="t-default"><?= "Klaim Mahasiswa" ?></a>
+
+                        </div>
                     </li>
                     <?php
                     };

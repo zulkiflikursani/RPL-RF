@@ -6,6 +6,7 @@ use App\Models\ModelActivity;
 use App\Models\ModelRegistrasi;
 use App\Models\UserModel;
 use App\Models\UserModel2;
+use Config\Validation;
 
 class AuthController extends BaseController
 {
@@ -117,7 +118,10 @@ class AuthController extends BaseController
 
 						return redirect()->to('/Admin');
 					}
+				} else {
+					$data['validationuser'] = "user atau password yang digunakan tidak sesuai";
 				}
+				// print_r($user);
 			}
 			return view('auth/rpl-auth-login', $data);
 		}

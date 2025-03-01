@@ -644,8 +644,13 @@
     })
 
     function setProvKab() {
+
         prov = $('#m-propinsi').val();
         kab = $('#m-kab').val()
+        if (kab == "" || kab == null) {
+            alert("Pilih Kabupaten/Kota terlebih dahulu");
+            return;
+        }
         $('#prop').val(prov)
         $('#kotkab').val(kab)
         $('.modal-edit-prop-kot-kab').modal('hide')

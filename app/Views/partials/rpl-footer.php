@@ -39,12 +39,22 @@
 
 <!-- Modal -->
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+</script>
+<script src="<?= base_url() ?>/assets/js/jquery.min.js"></script>
 <script>
-$(document).on('select2:open', () => {
-    document.querySelector('.select2-search__field').focus();
+jQuery(document).on('select2:open', (event) => {
+    const searchField = event.target.querySelector('.select2-search__field');
+    if (searchField) {
+        searchField.focus();
+    }
 });
 
 function redirectHome() {
+    if (typeof window.location.href !== "undefined") {
+        window.location.href = "/Admin";
+    }
+
     window.location.href = "/Admin";
 }
 </script>
@@ -184,3 +194,4 @@ function redirectHome() {
             </div>
         </div>
     </footer>
+    /****** d4304cde-0316-47fd-900d-e1ab1cc8c0e1 *******/

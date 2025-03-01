@@ -91,4 +91,51 @@ class ModelBiodata extends Model
             return $dataMahasiswa;
         }
     }
+
+    public function getKlaimMhsProdi($ta_akademik, $prodi)
+    {
+        if (session()->get('sttpengguna') == 3 || session()->get('sttpengguna') == 7) {
+            $db = \Config\Database::connect();
+            $dataMahasiswa = $db->query("SELECT 
+            mk_klaim_detailx.idklaim,
+            bio_peserta.no_peserta,
+            bio_peserta.nama,
+            prodi.nama_prodi
+        FROM
+            (
+            (SELECT 
+                mk_klaim_detail.idklaim, mk_klaim_detail.statusklaim
+            FROM
+                mk_klaim_detail
+            WHERE
+                (LEFT(mk_klaim_detail.idklaim, 5) = '$ta_akademik')
+                    AND (mk_klaim_detail.statusklaim = 2)
+            ) 
+            UNION 
+            (
+            SELECT 
+                CONCAT(dok_a1.ta_akademik, dok_a1.no_registrasi) AS idklaim,
+                    dok_a1.status
+            FROM
+                dok_a1
+            WHERE
+                dok_a1.ta_akademik = '$ta_akademik'
+                    AND dok_a1.status = 0
+            )
+            ) mk_klaim_detailx
+                LEFT JOIN
+            mk_klaim_asessor ON MID(mk_klaim_detailx.idklaim, 6, 10) = mk_klaim_asessor.no_peserta
+                LEFT JOIN
+            bio_peserta ON MID(mk_klaim_detailx.idklaim, 6, 10) = bio_peserta.no_peserta and bio_peserta.kode_prodi = '$prodi' 
+                LEFT JOIN
+            prodi ON bio_peserta.kode_prodi = prodi.kode_prodi and prodi.kode_prodi = '$prodi'
+        WHERE
+            mk_klaim_detailx.statusklaim IS NOT NULL
+                AND mk_klaim_asessor.idklaim IS NULL
+                and bio_peserta.no_peserta is not null
+        GROUP BY MID(mk_klaim_detailx.idklaim, 6, 10)")->getResult();
+
+            return $dataMahasiswa;
+        }
+    }
 }

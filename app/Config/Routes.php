@@ -63,7 +63,7 @@ $routes->post('delallklaimmka1', 'Front::HapusSemuaMatakuliahA1');
 $routes->post('Front/SubmitMatakuliahA1', 'Front::SubmitMatakuliahA1');
 $routes->post('generatemka1', 'Front::generateMkA1');
 $routes->post('simpanklaimimport', 'Front::SimpanMatakuliahA1import');
-$routes->post('Simpanberkas', 'Front::Simpanberkas');
+$routes->post('Simpanberkas', 'Front::Simpanbevalidasiregprodirkas');
 $routes->post('klaimmk', 'Front::Klaimmk');
 $routes->post('ajukantanggapan', 'Front::ajukanKlaimmk');
 $routes->post('batalklaimmk', 'Front::batalKlaimmk');
@@ -133,6 +133,7 @@ $routes->get('/menu-data-mhs-per-prodi', 'Admin::menuDataMhsPerpodi');
 $routes->get('/menu-rekap-mhs-per-periode', 'Admin::menuRekapMhsPerperiode');
 $routes->get('/data-asessi-prodi', 'Admin::data_asessi_prodi');
 $routes->get('/adminklaim', 'Admin::adminklaimmhs');
+$routes->get('/adminklaimprodi', 'Admin::adminklaimmhsprodi');
 $routes->get('/setup-taakademik', 'Admin::setupTaakademik');
 $routes->get('/setup-konsentrasi', 'Admin::setupKonsentrasi');
 $routes->get('/setup-rpl', 'Admin::setupRpl');
@@ -151,6 +152,9 @@ $routes->get('/baasessmentProdi/(:any)', 'Admin::BeritaAcaraAsessmentPerprodi/$1
 $routes->get('/baasessmentA1Prodi/(:any)', 'Admin::BeritaAcaraAsessmentA1Perprodi/$1');
 $routes->get('/pelaporan', 'Admin::Pelaporan');
 
+$routes->get('/berkas/(:any)', 'FileController::getFile/$1');
+$routes->get('/berkas', 'FileController::index');
+
 
 
 $routes->post('Admin/SimpanPengguna', 'Admin::SimpanPengguna');
@@ -164,6 +168,7 @@ $routes->post('updateijazah', 'Admin::updateIjazah');
 $routes->post('batalasesi', 'Admin::batalAsesi');
 $routes->post('getStatusMhsRpl', 'Admin::getDataStatusMhsPerProdi');
 $routes->post('cekstatusmka1', 'Admin::cekStatusMkA1');
+
 
 
 
@@ -216,6 +221,8 @@ $routes->post('updatedatapt', 'Admin::update_perguruan_tinggi');
 $routes->post('insertdatapt', 'Admin::insert_perguruan_tinggi');
 
 
+
+$routes->post('/api/totsks', 'Admin::getTotSksByNoregis');
 // $routes->post('singkron-mk-siska-mku', 'Admin::sinkronmksiskamku');
 
 

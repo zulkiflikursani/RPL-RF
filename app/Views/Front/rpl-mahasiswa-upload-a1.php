@@ -467,6 +467,8 @@
 
 
                                                 </div>
+                                                <span class="text-danger mt-2">Masukkan mininal 3 huruf untuk mencari
+                                                    Perguruan Tinggi</span>
                                             </div>
                                             <div class="row">
 

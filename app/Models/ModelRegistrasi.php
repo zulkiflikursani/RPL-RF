@@ -337,7 +337,7 @@ class ModelRegistrasi extends Model
         bio_peserta.jenis_rpl, 
         tb_konsentrasi.konsentrasi, 
         asessor_mhs.nm_asessor,
-        if(status_valid_bayar.no_peserta is not null,'Telah Melakukan Pembayaran RPL',if(status_dekan.no_peserta is not null,'Telah divalidasi dekan',if(status_prodi.no_peserta is not null,'Telah divalidasi prodi',if(status_asessor.no_peserta is not null, if(status_asessor.tanggapan=0,'Sudah divalidasi asessor', if(status_asessor.tanggapan=1,'Sudah diassessment & butuh tindak lanjut dari mahasiswa',if(status_asessor.tanggapan = 2,'Assessment telah ditindaklanjuti mahasiwa & butuh validasi asesor',''))), if(status_asessor_mhs.no_peserta is not null,'Telah melakukan klaim',if(
+        if(status_valid_bayar.no_peserta is not null,'Telah Melakukan Pembayaran RPL',if(status_dekan.no_peserta is not null,'Telah divalidasi dekan',if(status_prodi.no_peserta is not null,'Telah divalidasi prodi',if(status_asessor.no_peserta is not null, if(status_asessor.tanggapan=0,'Sudah divalidasi asessor', if(status_asessor.tanggapan=1,'Sudah diassessment & butuh tindak lanjut dari mahasiswa',if(status_asessor.tanggapan = 2,'Assessment telah ditindaklanjuti mahasiwa & butuh validasi asesor',''))), if(status_asessor_mhs.no_peserta is not null,'Telah melakukan klaim mandiri',if(
           bio_peserta.jenis_rpl = 1, 
           if(
             mk_a1.no_registrasi is not null, 'Telah Melakukan Klaim', 

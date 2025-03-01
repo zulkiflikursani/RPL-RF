@@ -164,7 +164,7 @@
                                                             <div class="mb-3">
                                                                 <label for="formrow-nama-input"
                                                                     class="form-label">Desrkipsi</label>
-                                                                <textarea class="form-control" id="desk"
+                                                                <textarea class="form-control" id="desk1"
                                                                     name="deskripsi" placeholder="Deskripsi"
                                                                     required><?= (isset($deksripsi) ? $deksripsi : '') ?></textarea>
                                                             </div>
@@ -285,7 +285,7 @@ function pengajuan_klaim() {
             var idcmpk = $(this).find("td[for=idcpmk]").html()
             var cpmk = $(this).find("td[for=cpmk]").html();
             var nilai = $(this).find("td[for=nilai]").find(":selected").val();
-            var desk = $('textarea#desk').val();
+            var desk = $('textarea#desk1').val();
             var ref = $('#ref_klaim').val();
 
             item = {}
@@ -351,7 +351,9 @@ function inputnilai($idcpmk, $nilai = "")
             <option value='' >Pilih</option>    
             <option >B</option>    
             <option selected >C</option>    
-            <option >K</option>    
+            <option >K</option>   
+            <option>T</option>    
+
             </select></td>";
         } else if ($nilai == "K") {
             return "<td for='nilai' idcmk='$idcpmk'>
@@ -360,6 +362,16 @@ function inputnilai($idcpmk, $nilai = "")
             <option >B</option>    
             <option >C</option>    
             <option selected >K</option>    
+            <option>T</option>    
+            </select></td>";
+        } else if ($nilai == "T") {
+            return "<td for='nilai' idcmk='$idcpmk'>
+            <select class='form-select' required>
+            <option value='' >Pilih</option>    
+            <option >B</option>    
+            <option >C</option>    
+            <option >K</option>
+            <option selected >T</option>    
             </select></td>";
         } else {
             return "<td for='nilai' idcmk='$idcpmk'>
@@ -367,11 +379,12 @@ function inputnilai($idcpmk, $nilai = "")
             <option value='' selected>Pilih</option>    
             <option >B</option>    
             <option >C</option>    
-            <option >K</option>    
+            <option >K</option>   
+            <option>T</option>    
             </select></td>";
         }
     } else {
-        return "<td for='nilai' idcmk='$idcpmk'><select class='form-select select-cpmk' required><option value='' selected>Pilih</option><option >B</option><option >C</option><option >K</option></select></td>";
+        return "<td for='nilai' idcmk='$idcpmk'><select class='form-select select-cpmk' required><option value='' selected>Pilih</option><option >B</option><option >C</option><option >K</option><option>T</option></select></td>";
     }
 }
 

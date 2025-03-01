@@ -172,4 +172,29 @@ class ModelKeu extends Model
                 ")->getResult();
         return $result;
     }
+
+    public function getTotSksByNoregis($noregis)
+    {
+        $db = \Config\Database::connect();
+        $result = $db->query("SELECT
+                    
+                        bio_peserta.no_peserta,
+                        bio_peserta.no_tes_simba,
+                        sum(matakuliah.sks) as jumlah_sks
+                        FROM
+                        bio_peserta
+                        LEFT JOIN tb_valid_keu ON tb_valid_keu.no_peserta = bio_peserta.no_peserta
+                        LEFT JOIN mk_klaim_dekan ON tb_valid_keu.no_peserta = mid(mk_klaim_dekan.idklaim,6,10)
+                        left join mk_klaim_asessor 
+                        on mk_klaim_asessor.idklaim=mk_klaim_dekan.idklaim
+                        LEFT JOIN prodi on bio_peserta.kode_prodi=prodi.kode_prodi
+                        left join matakuliah
+                        on matakuliah.kode_matakuliah=mk_klaim_asessor.kode_matakuliah
+                        WHERE
+                        mk_klaim_dekan.idklaim is not null and bio_peserta.no_tes_simba='$noregis' and tb_valid_keu.valid=1 and mk_klaim_asessor.nilai != 'E'
+                        group by bio_peserta.no_peserta
+                order by bio_peserta.no_peserta,bio_peserta.nama,bio_peserta.kode_prodi
+                ")->getResult();
+        return $result;
+    }
 }

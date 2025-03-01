@@ -106,7 +106,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <div class="mb-1">
+                                                        <!-- <div class="mb-1">
                                                             <label for="formrow-nama-input" class="form-label">Status
                                                                 Mahasiswa Dodi</label>
                                                             <select class="form-select" id='confdudi'>
@@ -115,7 +115,7 @@
                                                                 <option value="1">YA</option>
                                                             </select>
 
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                 </div>
                                                 <div>
@@ -448,18 +448,14 @@
             }
             ?>
     })
-
+    // confimValidasiRegistrasi('" . $noregis . "',$statusvalid,$jenisrpl,'$namapeserta')
     function confimValidasiRegistrasi(a, b, c, d) {
         nopeserta = a;
         namapeserta = d;
-        if (c == 1) {
-            if (b == 0) {
-                $('#confnopeserta').val(nopeserta)
-                $('#confnama').val(namapeserta)
-                $('.confirm-validasi-dodi').modal('show');
-            } else {
-                validasiRegis(a, b, 0)
-            }
+        if (b == 0) {
+            $('#confnopeserta').val(nopeserta)
+            $('#confnama').val(namapeserta)
+            $('.confirm-validasi-dodi').modal('show');
         } else {
             validasiRegis(a, b, 0)
         }
@@ -473,7 +469,7 @@
         if (dudi == '') {
             alert('Silahkan mengisi status dodi mahasistwa !');
         } else {
-            validasiRegis(noregis, 0, dudi)
+            validasiRegis(noregis, 0, 0)
         }
 
     }

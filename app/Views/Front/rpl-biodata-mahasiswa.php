@@ -8,10 +8,10 @@
     <link href="<?= base_url() ?>/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 
     <style>
-        .select2-container--default .select2-selection--single .select2-selection__arrow {
-            right: 10px;
-            left: auto;
-        }
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        right: 10px;
+        left: auto;
+    }
     </style>
 </head>
 
@@ -260,7 +260,7 @@
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">Biodata Mahasiswa</h4>
 
-                                    <form method="POST" action="<?= base_url("setBiodataMhs") ?>">
+                                    <form method="POST" id='formSetBioadata' action="<?= base_url("setBiodataMhs") ?>">
 
                                         <div class="row">
 
@@ -445,7 +445,7 @@
                                                         RPL</label>
                                                     <select class="form-select" id="jenis_rpl" name='jenis_rpl'
                                                         onchange="findprodi($(this))">
-                                                        <option value=''>
+                                                        <option value="null">
                                                             Pilih...</option>
                                                         <option value="1"
                                                             <?= (isset($datasubmit["jenis_rpl"]) && $datasubmit["jenis_rpl"] == "1" ? 'selected="selected"' : '') ?>>
@@ -453,9 +453,7 @@
                                                         <option value="2"
                                                             <?= (isset($datasubmit["jenis_rpl"]) && $datasubmit["jenis_rpl"] == "2" ? 'selected="selected"' : '') ?>>
                                                             A2</option>
-                                                        <option value="3"
-                                                            <?= (isset($datasubmit["jenis_rpl"]) && $datasubmit["jenis_rpl"] == "3" ? 'selected="selected"' : '') ?>>
-                                                            A3</option>
+
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
@@ -480,92 +478,47 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <div class="row ">
-                                            <label for="formrow-inputPendidikan" class="form-label">KTP atau Kartu
-                                                Keluarga</label>
-                                            <div class="col-md-4">
-                                                <a class="button btn btn-primary btn-sm col-md-6" target="_blank" href='<?= base_url() . "/uploads/berkas/$noregis/ii$noregis.pdf" ?>'>
-                                                    Lihat Identitas</a>
-                                                <a class="button btn btn-sm btn btn-secondary" data-bs-toggle="modal" data-bs-target=".modal-edit-identitas">Ubah File</a>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-1">
-                                            <label for="formrow-inputPendidikan col-md-6" class="form-label">Ijazah</label>
-                                            <div class="col-md-4">
-                                                <a target="_blank" href='<?= base_url() . "/uploads/berkas/$noregis/i$noregis.pdf" ?>' class="button btn btn-primary btn-sm col-md-6"> Lihat Ijazah</a>
-                                                <a class="button btn btn-sm btn btn-secondary" data-bs-toggle="modal" data-bs-target=".modal-edit-ijazah">Ubah File</a>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-1">
-                                            <label for="formrow-inputPendidikan" class="form-label">Bukti
-                                                Pembayaran</label>
-                                            <div class="col-md-4">
 
-                                                <a target="_blank" href='<?= base_url() . "/uploads/berkas/$noregis/bb$noregis.pdf" ?>' class="button btn btn-primary btn-sm col-md-6"> Lihat Bukti
-                                                    Pembayaran</a>
-                                                <a class="button btn btn-sm btn btn-secondary" data-bs-toggle="modal" data-bs-target=".modal-edit-bukti-bayar">Ubah File</a>
-                                            </div> -->
                                 </div>
-
-                                <!-- <div class="row mb-3">
-                                            <label class="form-check-label" for="formRadios1">
-                                                Upload KTP atau Kartu Keluarga
-                                            </label>
-                                            <div class="input-group mt-3" id='input-buktibayar'>
-                                                <input type="file" class="form-control" name='identitas'
-                                                    id="inputGroupFile" aria-describedby="inputGroupFileAddon"
-                                                    accept="application/pdf" aria-label="buktiBayar" required>
-                                            </div>
-                                            <span class="text-danger">Note: File PDF dengan ukuran maksimal 1
-                                                Mb</span>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <label class="form-check-label" for="formRadios1">
-                                                Upload Ijazah
-                                            </label>
-                                            <div class="input-group mt-3" id='input-ijazah'>
-                                                <input type="file" class="form-control" name='ijazah'
-                                                    id="inputGroupFile" aria-describedby="inputGroupFileAddon"
-                                                    accept="application/pdf" aria-label="ijazah" required>
-                                            </div>
-                                            <span class="text-danger">Note: File PDF dengan ukuran maksimal 1
-                                                Mb</span>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <label class="form-check-label" for="formRadios1">
-                                                Upload Bukti Pembayaran
-                                            </label>
-                                            <div class="input-group mt-3" id='input-buktibayar'>
-                                                <input type="file" class="form-control" name='buktiBayar'
-                                                    id="inputGroupFile" aria-describedby="inputGroupFileAddon"
-                                                    accept="application/pdf" aria-label="buktiBayar" required>
-                                            </div>
-                                            <span class="text-danger">Note: File PDF dengan ukuran maksimal 1
-                                                Mb</span>
-                                        </div> -->
-
+                                <?php
+                                if (isset($statusbiodata)) {
+                                    if ($statusbiodata == FALSE) {
+                                ?>
 
                                 <div class="row mt-4">
-                                    <div class="col-md-2">
-
-                                        <button type="submit" class="btn btn-primary w-md">Submit</button>
+                                    <div class="col-md-2 m-3">
+                                        <button type="submit" class=" btn btn-primary w-md">Submit</button>
                                     </div>
                                 </div>
+                                <?php
+                                    }
+                                } else {
+                                    ?>
+
+                                <div class="row mt-4">
+                                    <div class="col-md-2 m-3">
+                                        <button type="submit" class=" btn btn-primary w-md">Submit</button>
+                                    </div>
+                                </div>
+                                <?php
+                                }
+                                ?>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <!-- end row -->
+
+        </div>
+        <!-- end row -->
 
 
 
 
 
 
-        </div> <!-- container-fluid -->
+    </div> <!-- container-fluid -->
     </div>
     <!-- End Page-content -->
 
@@ -594,183 +547,196 @@
 
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
     <script>
-        $(document).on('select2:open', () => {
-            document.querySelector('.select2-search__field').focus();
+    $(document).on('select2:open', () => {
+        document.querySelector('.select2-search__field').focus();
+    });
+    $('document').ready(function() {
+        $('.select2').select2({
+            placeholder: 'Select an option',
+            dropdownParent: $('.modal-edit-prop-kot-kab')
+
         });
-        $('document').ready(function() {
-            $('.select2').select2({
-                placeholder: 'Select an option',
-                dropdownParent: $('.modal-edit-prop-kot-kab')
 
-            });
-
-            <?php
+        <?php
             if (isset($status_update)) {
                 if ($status_update == 1) {
             ?>
-                    alert("DATA BERHASIL DI UPDATE");
-                <?php
-                } else {
+        alert("DATA BERHASIL DI UPDATE");
+        <?php
+                } else if ($status_update == 3) {
                 ?>
-                    alert("DATA GAGAL DI UPDATE");
+        alert("DATA GAGAL DI UPDATE ANDA TELAH MELAKUKAN KLAIM MANDIRI");
 
-            <?php
+        <?php
+                } else if ($status_update == 0) {
+                ?>
+        alert("DATA GAGAL DI UPDATE");
+
+        <?php
                 }
             }
             ?>
 
-            getkab();
-            ini = $('#jenis_rpl').val();
-            findprodi1(ini)
-            findkonsentrasi();
+        getkab();
+        ini = $('#jenis_rpl').val();
+        findprodi1(ini)
+        findkonsentrasi();
+    })
+
+    function setBiodata() {
+        alert('set biodata')
+    }
+
+    function findkonsentrasi() {
+        prodi = $('#kode_prodi').val();
+        if (prodi == "") {
+            prodi = '<?= (isset($datasubmit["kode_prodi"]) ? $datasubmit['kode_prodi'] : '') ?>';
+        }
+        url = '<?= base_url("konsentrasi-by-prodi") ?>'
+
+        $.post(url, {
+            prodi: prodi
+        }, function(data) {
+            data = JSON.parse(data)
+            $('#konsentrasi').children().remove();
+            if (data.length == 0) {
+
+                $('#konsentrasi').prop('required', false)
+                $('#konsentrasi').prop('readonly', true)
+                $('#konsentrasi').append("<option value=''> Tidak ada pilihan konsentrasi</option>")
+            } else {
+                $('#konsentrasi').prop('required', true)
+                $('#konsentrasi').append("<option value=''> Pilih Konsentrasi.....</option>")
+
+            }
+
+            $.each(data, function(i, row) {
+                if ('<?= (isset($datasubmit["kode_konsentrasi"]) ? $datasubmit['kode_konsentrasi'] : '') ?>' ==
+                    row['kode_konsentrasi']) {
+                    select = "selected";
+                } else {
+                    select = '';
+                }
+                $("#konsentrasi").append("<option value='" + row['kode_konsentrasi'] + "'" + select +
+                    ">" + row[
+                        'konsentrasi'] + "</option>")
+
+            })
+
         })
 
-        function findkonsentrasi() {
-            prodi = $('#kode_prodi').val();
-            if (prodi == "") {
-                prodi = '<?= (isset($datasubmit["kode_prodi"]) ? $datasubmit['kode_prodi'] : '') ?>';
-            }
-            url = '<?= base_url("konsentrasi-by-prodi") ?>'
+    }
 
+    function setProvKab() {
+        prov = $('#m-propinsi').val();
+        kab = $('#m-kab').val()
+        if (prop == "" || prop == null || kab == "" || kab == null) {
+            alert('Pilih Propinsi dan Kabupaten/Kota terlebih dahulu')
+            return
+        }
+        $('#prop').val(prov)
+        $('#kotkab').val(kab)
+        $('.modal-edit-prop-kot-kab').modal('hide')
+    }
+
+    function findprodi1(ini) {
+
+        url = '<?= base_url('getProdiByRpl') ?>'
+
+        jenisrpl = ini
+        if (jenisrpl != "") {
             $.post(url, {
-                prodi: prodi
+                jenis_rpl: jenisrpl
             }, function(data) {
                 data = JSON.parse(data)
-                $('#konsentrasi').children().remove();
-                if (data.length == 0) {
-
-                    $('#konsentrasi').prop('required', false)
-                    $('#konsentrasi').prop('readonly', true)
-                    $('#konsentrasi').append("<option value=''> Tidak ada pilihan konsentrasi</option>")
-                } else {
-                    $('#konsentrasi').prop('required', true)
-                    $('#konsentrasi').append("<option value=''> Pilih Konsentrasi.....</option>")
-
-                }
-
-                $.each(data, function(i, row) {
-                    if ('<?= (isset($datasubmit["kode_konsentrasi"]) ? $datasubmit['kode_konsentrasi'] : '') ?>' ==
-                        row['kode_konsentrasi']) {
-                        select = "selected";
-                    } else {
-                        select = '';
-                    }
-                    $("#konsentrasi").append("<option value='" + row['kode_konsentrasi'] + "'" + select +
-                        ">" + row[
-                            'konsentrasi'] + "</option>")
-
-                })
-
-            })
-
-        }
-
-        function setProvKab() {
-            prov = $('#m-propinsi').val();
-            kab = $('#m-kab').val()
-            $('#prop').val(prov)
-            $('#kotkab').val(kab)
-            $('.modal-edit-prop-kot-kab').modal('hide')
-        }
-
-        function findprodi1(ini) {
-
-            url = '<?= base_url('getProdiByRpl') ?>'
-
-            jenisrpl = ini
-            if (jenisrpl != "") {
-                $.post(url, {
-                    jenis_rpl: jenisrpl
-                }, function(data) {
-                    data = JSON.parse(data)
-                    $('#kode_prodi').children().remove()
-                    $('#kode_prodi').append("<option value=''> Pilih Prodi.....</option>")
-                    $.each(data, function(i, row) {
-
-                        if ('<?= (isset($datasubmit["kode_prodi"]) ? $datasubmit['kode_prodi'] : '') ?>' ==
-                            row['kode_prodi']) {
-                            select = 'selected';
-                        } else {
-                            select = ''
-                        }
-                        $('#kode_prodi').append("<option value='" + row['kode_prodi'] + "' " + select +
-                            " >" + row[
-                                'nama_prodi'] + "</option>")
-
-                    })
-                })
-            } else {
                 $('#kode_prodi').children().remove()
-                $('#kode_prodi').append("<option val=''> Pilih Prodi</option>")
+                $('#kode_prodi').append("<option value=''> Pilih Prodi.....</option>")
+                $.each(data, function(i, row) {
 
-
-            }
-        }
-
-        function findprodi(ini) {
-            url = '<?= base_url('getProdiByRpl') ?>'
-            jenisrpl = ini.val()
-            if (jenisrpl != "") {
-                $.post(url, {
-                    jenis_rpl: jenisrpl
-                }, function(data) {
-
-                    data = JSON.parse(data)
-
-                    $('#kode_prodi').children().remove()
-                    $('#kode_prodi').append("<option value=''> Pilih Prodi.....</option>")
-
-
-                    $.each(data, function(i, row) {
-                        $('#kode_prodi').append("<option value='" + row['kode_prodi'] + "'>" + row[
+                    if ('<?= (isset($datasubmit["kode_prodi"]) ? $datasubmit['kode_prodi'] : '') ?>' ==
+                        row['kode_prodi']) {
+                        select = 'selected';
+                    } else {
+                        select = ''
+                    }
+                    $('#kode_prodi').append("<option value='" + row['kode_prodi'] + "' " + select +
+                        " >" + row[
                             'nama_prodi'] + "</option>")
 
-                    })
+                })
+            })
+        } else {
+            $('#kode_prodi').children().remove()
+            $('#kode_prodi').append("<option val=''> Pilih Prodi</option>")
+
+
+        }
+    }
+
+    function findprodi(ini) {
+        url = '<?= base_url('getProdiByRpl') ?>'
+        jenisrpl = ini.val()
+        if (jenisrpl != "") {
+            $.post(url, {
+                jenis_rpl: jenisrpl
+            }, function(data) {
+
+                data = JSON.parse(data)
+
+                $('#kode_prodi').children().remove()
+                $('#kode_prodi').append("<option value=''> Pilih Prodi.....</option>")
+
+
+                $.each(data, function(i, row) {
+                    $('#kode_prodi').append("<option value='" + row['kode_prodi'] + "'>" + row[
+                        'nama_prodi'] + "</option>")
 
                 })
-            } else {
-                $('#kode_prodi').children().remove()
-                $('#kode_prodi').append("<option val=''> Pilih Prodi</option>")
-
-
-            }
-        }
-
-        function getkab() {
-            $('#loading').show();
-            $('#m-kab').children().remove();
-            url = '<?= base_url('getKab') ?>'
-            a = $('#m-propinsi option:selected').attr('kdprov');
-            $.post(url, {
-                "a": a
-            }).done(function(data) {
-                data = JSON.parse(data)
-                // console.log(data);
-                setkab(data)
-                // $('#loading').hide();
-
 
             })
-            $('#loading').hide();
-        }
+        } else {
+            $('#kode_prodi').children().remove()
+            $('#kode_prodi').append("<option val=''> Pilih Prodi</option>")
 
-        function updatebuktibayar() {
-
-
-        }
-
-        function setkab(data) {
-            var kotkab = '<?= (isset($datasubmit["kotkab"]) ? $datasubmit["kotkab"] : '') ?>'
-            $.each(data, async function(index, row) {
-                await $('#m-kab').append("<option value='" + row['nama_wilayah'] + "' >" + row[
-                        'nama_wilayah'] +
-                    "</option>")
-            })
-            $('#m-kab').val(kotkab).trigger('change')
-            // alert(kotkab)
-            $('#loading').hide();
 
         }
+    }
+
+    function getkab() {
+        $('#loading').show();
+        $('#m-kab').children().remove();
+        url = '<?= base_url('getKab') ?>'
+        a = $('#m-propinsi option:selected').attr('kdprov');
+        $.post(url, {
+            "a": a
+        }).done(function(data) {
+            data = JSON.parse(data)
+            // console.log(data);
+            setkab(data)
+            // $('#loading').hide();
+
+
+        })
+        $('#loading').hide();
+    }
+
+    function updatebuktibayar() {
+
+
+    }
+
+    function setkab(data) {
+        var kotkab = '<?= (isset($datasubmit["kotkab"]) ? $datasubmit["kotkab"] : '') ?>'
+        $.each(data, async function(index, row) {
+            await $('#m-kab').append("<option value='" + row['nama_wilayah'] + "' >" + row[
+                    'nama_wilayah'] +
+                "</option>")
+        })
+        $('#m-kab').val(kotkab).trigger('change')
+        // alert(kotkab)
+        $('#loading').hide();
+
+    }
     </script>
 </body>
 

@@ -87,7 +87,7 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                            // print_r($dataAsessor);
+                                            // print_r($dataMhs);
                                             if ($dataMhs != null) {
                                                 $i = 0;
                                                 foreach ($dataMhs as $row) {
@@ -190,8 +190,6 @@
         $('.batalklaim-modal').modal('show')
 
     }
-
-    
     </script>
 </body>
 
